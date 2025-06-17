@@ -1,0 +1,66 @@
+  conj
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Complex conjugate.
+
+      [1mSyntax[0m
+        conj ( [4mA[24m )
+
+      [1mDescription[0m
+        Conj returns the complex conjugate of its input argument.  For
+        MATRIX arguments the conjugate is performed element by element.
+
+
+     [1mSee Also[0m
+        imag, real
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

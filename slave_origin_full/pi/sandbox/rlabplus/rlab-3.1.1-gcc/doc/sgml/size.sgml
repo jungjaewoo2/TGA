@@ -1,0 +1,29 @@
+<sect> size 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the size of an object.
+<tag> Syntax </tag> size ( <em>A</> )
+<tag> Description </tag>
+	
+	The size function returns the size of the argument. 
+
+	<descrip>
+
+	<tag>NUMERIC</tag> size returns a matrix whose 1st element is
+		the number of rows, and whose 2nd element is the
+		number of columns.
+
+	<tag>STRING</tag> size returns a matrix whose 1st element is
+		the number of rows, and whose 2nd element is the
+		number of columns. If the length of a particular
+		string is desired, then the length function must be
+		used.
+
+	<tag>LIST</tag> size returns the number of elements in the
+		list. 
+
+	</descrip>
+
+<tag>See Also</tag>   length, show
+
+</descrip>

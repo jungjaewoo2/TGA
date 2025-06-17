@@ -1,0 +1,230 @@
+
+	Solutions to some problems.
+
+	1.q) When I run `make Test' I get the message:
+
+		***complex division inaccuracy, check manually***
+
+	1.a) Some compilers do not generate the best code for complex
+	division. Most do. Some will pass or fail the test depending
+	upon the level of optimization used. If RLaB fails this test
+	do a manual check of complex division to verify that the
+	answer is correct to within +/- machine-epsilon. If the answer
+	is correct to within +/- machine-epsilon then it is safe to
+	use RLaB.
+
+	2.q) I get undefined symbols (like pow_zi) when the Makefile
+	tries to link rlab?
+
+	2.a) Undefined symbols like pow_zi are usually from the f2c
+	libraries. If the Makefile found libF77.a and libI77.a, and
+	these symbols are still undefined, then you probably have a
+	Fortran compiler installed on your machine. Some vendors
+	Fortran libraries will work OK. But, other vendors have
+	gratuitously changed the libraries. 
+
+	Try getting the latest version of the f2c libraries
+	(netlib.att.com). Or, you could write a Fortran interface and
+	mail it to me :-) 
+
+	3.q) alloca is undefined?
+
+	3.a) `make ALLOCA=alloca.o'
+
+	4.q) When I run `make Test', it fails immediately.
+
+	4.a) The problem may be that your system does not declare
+	strtod() in its header files. strtod() is used heavily by the
+	scanner, and if it is not declared the compiler will think it
+	returns int, which is not right at all. Fix: add
+
+		#include <whatever_include_defs_strtod.h>
+
+	5.q) When I run `make Test' RLaB reports an error in round()?
+
+	5.a) Some platforms (HP for instance) have a rint() function
+	in the system library, but it does not work. To fix: go into
+	config.h and comment out the two lines:
+
+		#define HAVE_RINT 1
+		#define HAVE_RINT_DEC 1
+
+	Then RLaB will uses its own rint().
+	***NOTE*** configure now checks for broken rint functions, and
+	will setup config.h properly.
+
+	6.q) I have compiled RLaB on a Sun, using SunOS-4.1.3 and gcc.
+	When I try and run RLaB I get an "out of memory" message, and
+	some complaints from flex?
+
+	6.a) This is a strange one, it does not happen on all Suns,
+	but someone discovered that compiling and linking to the GNU
+	libmalloc.a curred the problem.
+
+	7.q) (borrowed from Plplot FAQ) 3.5 I would like to issue a
+	plot command, have the window appear, or be re-painted, and
+	allow the user to continue with command line operation of
+	RLaB. I would like the user to be able to resize the window at
+	any time or cover/un-cover it at any time and have it re-paint
+	itself. The way I can get it to work is: the user issues plot
+	command, window appears and is resizable, etc... the user must
+	use the 3rd mouse button to "release" the window, after that
+	control returns to the command line, but the window will no
+	longer resize/repaint.
+
+	7.a) This is a feature, not a bug :-).
+
+	When the plotting package is waiting for the user to advance
+	the page, it is actually waiting for any X event.  So events
+	like refresh and resize get intercepted and processed.
+
+	Also during the normal course of plotting, the X server is
+	periodically polled to find out if there are any events that
+	need processing, and handles them if so.  I don't do this on
+	every graphics instruction because otherwise the overhead is
+	too large -- currently on every 20 line draws, every 10
+	polyline draws, and on every other call. 
+
+	But once the user signals for the page advance, and control is
+	returned to the user program, there is no way for the X driver
+	to process any events simply because the control is in your
+	program, not in the X driver. The single-headedness of your
+	process becomes the culprit here.  You can either sit in an
+	event loop, or be doing user code specific things, but not
+	both.  There is one improvement that could still be made which
+	is to provide a plevents() call so you can explicitly force
+	all events to be handled, but that's just a bandaid solution
+	so I never put it in. 
+
+	The real solution is to fork off the rendering into a separate
+	process, and this is just what I did with the Tcl/TK driver.
+	So, if you select the tk driver, your code can go about its
+	merry way while the graphics window can be refreshed, resized,
+	zoomed, printed, dumped, or whatever.
+
+	It'd also be a worthwhile project to split the X driver up
+	similarly, and there has been some interest in doing that (but
+	I don't plan to work on it).
+
+	8.q) Trying to run `make install' on a DECstation results in
+	make and/or shell errors?
+
+	8.a) The DECstation has a buggy make, and a horribly old
+	version of sh. Doing
+
+		gmake SHELL=/bin/sh5 install
+
+	Will yield a clean install. Note: gmake is GNU make.
+
+	10.q&a) On HP and DEC-Alpha computers you may need to compile
+	everything in the "traditional" mode (not ANSI), with the
+	exception of r_plot.c. This may also be true for IBMs AIX.
+
+	11.q) I am having trouble with compiling fpe.c, I gets lots of
+	errors I don't understand.
+
+	11.a) Apparently configure did not understand your systems
+	method of setting up floating point exceptions. You can
+	completely disable the function setup_fpe_handling by running
+	configure with the `--disable-fpe' option.
+
+	12.q) Configure cannot find libplplotdtk.a even though I am
+	using the --with-PLIBS option?
+
+	12.a) Configure tries to link a test program. The test can
+	fail for a number of reasons. One of the most common is that a
+	support library cannot be found. In this case it is most
+	likely libtcl.a or libtk.a. On some Linux systems, these are
+	in strange places. They should be in /lib, /usr/lib, or
+	/usr/local/lib. 
+
+	13.q) I am trying to compile rlab on an HP, and I can't get
+	the floating point handling to generate infs and NaNs.
+
+	13.a) HP has a confusing, and ever changing method of providing
+	floating point support. Last I checked the fpsetmask() type
+	functions were defined in math.h, and stored in libm.a, iff
+	you have a pa1.1 architecture (don't ask me what that
+	means). If you have the pa1.1, the using the +LDA1.1 flag to
+	the linker will get the right math library.
+
+	14.q) I ran configure and tried `make' on a (HP | DEC | SGI),
+	but all I get is lots of compiler error messages.
+
+	14.a) Some platforms just can't give up on their "sort-of"
+	ANSI C compilers. Sometimes the system comes with a default
+	K&R C compiler, with a purchase-able add-on of a ANSI C
+	compiler. Some platforms come with one compiler that tries to
+	be everything to everybody. In either case, there are often
+	compiler flags that will turn ANSI behavior on or off.
+
+	You want to compile rlab with the same compiler options that
+	were used during when configure was run. Often it is the
+	omission of one of these flags that is preventing a clean
+	compile from happening. If you have to, add a statement like:
+
+		CC="cc -ansi_behavior_on_please"
+
+	below the `#!/bin/sh' statement.
+
+	15.q) I installed Plplot on my system but, configure can't
+	find it.
+
+	15.a) There are two common problems here:
+
+	   1) Plplot is installed someplace other than
+	   /usr/local/plplot or /usr/local/lib. Try running configure
+	   with --PLIBS=/directory/where/plplot/root/is/located
+
+	   2) You have installed Plplot shared libraries. The Plplot
+	   makefiles do not build shared libraries the "correct" way
+	   (IMHO). These shared libraries do not necessarily know how
+	   to resolve their own symbols. The solution is to either a)
+	   fix the Plplot Makefile, and build the shared libs
+	   correctly, or b) run Plplot's configure with the
+	   `--without-shlibs' option.
+
+	17.q) I can't get gc to compile on an HPUX machine.
+
+	17.a) You probably need an ANSI-C compiler. GCC will do. Run
+	      Rlab's configure with `--with-gcc'
+
+	18.q) RLaB core dumps when runnin test-superlu.r on a Sparc.
+
+	18.a) You need to read README.solaris in the gc-4.11
+	      directory. gc (the garbage-collector) must be recompiled
+	      to that all of the malloc/realloc/free goes through
+	      gc. This is not difficult to do. Modify the Makefile to
+	      look like:
+
+gc:
+	cd ./gc-4.11; make test \
+	CFLAGS="-O -DNO_SIGNALS -DSILENT \
+		-DREDIRECT_MALLOC=GC_malloc_uncollectable" CC=$(CC)
+.PHONY:		gc
+
+
+	19.q) When using the help facility the screen gets cleared
+	      after the file has been displayed.
+
+	19.a) Your system probably has less on it (instead of
+	      more). This is the default behavior of less for some
+	      terminals (most noticably xterm). You can change less'
+	      behavior by changing the invocation or the environment
+	      variable. For example:
+
+		export LESS="-X"
+
+		or
+
+		setenv LESS "-X"
+
+
+        20.q) Running `make check' produces a "sparse-multiply error".
+
+        20.a) I have seen this on a Sparc Ultra-5 for no apparent
+              reason.  Manually viewing the results shows that the
+              accuracy is on the order of single precision, and not
+              double.  I haven't tracked this one down yet.  I would
+              not be very concerned unless you are solving large
+              sparse problems that require a high degree of accuracy.

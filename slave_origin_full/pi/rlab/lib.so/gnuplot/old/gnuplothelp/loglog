@@ -1,0 +1,13 @@
+loglog:
+
+Synopsis: Sets the plot-window bottom x- and left y-axis logaritmic.
+
+Syntax: loglog ( I )
+
+Description:
+
+	Sets the I:th plot-window bottom x- and left y-axis logaritmic.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: loglog2, semilogx, semilogx2, semilogy, semilogy2, nolog, nolog2

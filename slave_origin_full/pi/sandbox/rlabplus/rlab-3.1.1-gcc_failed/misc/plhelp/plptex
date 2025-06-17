@@ -1,0 +1,55 @@
+plptex:
+
+Synopsis: Place text in the current sub-plot.
+
+Syntax: plptex ( TEXT, X , Y , DX , DY , JUST )
+
+Description:
+
+	Place TEXT in the plot window.
+
+	X: Specify the X coordinate for text placement.
+	Y: Specify the Y coordinate for text placement.
+	DX (optional): X + DX specifies the X orientation of the text.
+	DY (optional): Y + DY specifies the Y orientation of the text.
+	JUST (optional): Specifies the position of the string relative
+	      to its reference point. If JUST=0, the reference point
+	      is at the left and if JUST=1 it is at the right of the
+	      string. Other values of JUST give intermediate
+	      justifications.
+
+	Since plptex uses the plot-data coordinates for text
+	placement, plptex must be called AFTER the plot is created.
+
+	Note: Some plot devices may require the usage of _plflush() to
+	      make the test visible (see `help plot').
+
+	Escape Sequences:
+
+	Plplot offers escape sequences to obtain text features like
+	super and subscripts. All escape sequences start with the
+	number symbol (#).
+
+	#u   move up to the superscript position (end with #d)
+	
+	#d   move down to the subscript position (end with #u)
+
+	#b   backspace (to allow overprinting)
+
+	##   the number symbol
+
+	#+   toggle overline mode
+
+	#-   toggle underline mode
+
+	#gx  the Greek letter corresponding to Roman letter x
+
+	#fn  switch to normal font
+
+	#fr  switch to Roman font
+
+	#fi  switch to italic font
+
+	#fs  switch to script font
+
+	#(nnn) Hershey character nnn (1 to 4 decimal digits)

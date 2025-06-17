@@ -1,0 +1,66 @@
+  spsolve
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Solve sparse linear equations.
+
+      [1mSyntax[0m
+        spsolve ( [4mA[24m, [4mB[24m, [4mDIAG_PIVOT[24m, [4mPERMV[24m )
+
+      [1mDescription[0m
+        Solve solves a system of sparse linear equations:
+
+
+          [4mA[24m [4m*[24m [4mX[24m [4m=[24m [4mB[0m
+
+
+
+        [4mA[24m  is the coefficient matrix.
+
+        [4mB[24m  is the right hand side.
+
+        [4mDIAG_PIVOT[0m
+           specifies the diagonal-pivoting threshold.
+
+        [4mPERMV[0m
+           is the permutation vector.
+
+        [4mX[24m  is the solution vector/matrix.
+
+     To be finished later...
+
+     [1mSee Also[0m
+        solve, backsub, factor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

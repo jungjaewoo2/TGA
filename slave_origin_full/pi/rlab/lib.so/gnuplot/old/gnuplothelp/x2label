@@ -1,0 +1,16 @@
+x2label:
+
+Synopsis: Set the x-axis text label for the top x-axis.
+
+Syntax: xlabel2 ( "string", I )
+
+Description:
+
+	Set the x-axis label for the I:th plot-window. 
+	x2label() uses the top x-axis.
+	If x2label() is used without any arguments, then the
+	x-axis label is set to the null-string. 
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: xlabel, ylabel, y2label, zlabel, label, title

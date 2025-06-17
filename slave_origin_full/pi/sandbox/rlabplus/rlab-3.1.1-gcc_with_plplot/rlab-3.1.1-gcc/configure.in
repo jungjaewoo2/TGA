@@ -1,0 +1,779 @@
+dnl configure.in for RLaB
+dnl Process this file with autoconf to prodice a configure script
+
+dnl The following bit of shell script was shamelessly borrowed
+dnl from the GNU emacs configure.in
+
+[#!/bin/sh
+progname="`echo $0`"
+
+## Usage messages.
+
+short_usage="Usage: ${progname} [--with-LIBS=dir] ...
+
+Set compilation and installation parameters for RLaB.
+--with-LIBS=DIR		Add DIR to list of directories to search for
+			ALL libraries.
+--with-NALIBS=DIR	Search for Numerical Analysis libraries in DIR.
+--with-FLIBS=DIR	Search for Fortran libraries in DIR.
+--with-gcc		Force usage of the GNU C compiler.
+--with-cc		Force usage of cc(1)
+--with-dl		Use shared objects (dynamic linking).
+--prefix=DIR		Set the Makefile variable \'prefix\' to DIR.
+			RLaB will be installed with DIR as the root
+			directory.
+
+--enable-METIS3		Enable the use of the Metis graph partitioning
+			library.
+
+--enable-SUPERLU	Enable the use of the SuperLU sparse solver.
+
+--disable-GC		Disable the use of the Garbage-Collector (GC). This 
+			is not recommended. But, if you can't get gc to work,
+			then you might want to do this.
+
+--disable-fpe		Don't try and set the floating point exception
+			handling. Use whatever the system provides.
+
+--with-gnuplot		Use Gnuplot interface.
+
+--with-plplot=<dir>	Use PLplot interface. Plplot installed in <dir>.
+
+--with-pgplot=<dir>	Use PGplot interface.  Pgplot installed in <dir>.
+
+--with-plotmtv		Use PlotMTV interface.
+
+--with-pgraf		Use Pgraf interface.
+
+If successful, ${progname} leaves its status in config.status.  If
+unsuccessful after disturbing the status quo, it removes config.status."
+]
+
+
+AC_INIT(rlab.h)
+AC_CONFIG_HEADER(config.h)
+
+# -----------------------------------------------------------------------
+# First get system using uname.
+# -----------------------------------------------------------------------
+
+AC_CHECK_PROG(uname_found, uname, 1, 0)
+
+[ 
+  if test $uname_found -eq 1 ; then
+    system=`uname -s`-`uname -r`
+
+    # Fix Cray braindamage
+
+    case "$system" in
+	sn* )
+	    system=`uname -m`-`uname -r`
+	;;
+    esac
+
+fi 
+]
+
+[
+if test "$system" ; then
+    echo "system is: $system"
+    SYSTEM=$system;
+fi
+]
+
+dnl
+dnl Now get the build directory
+dnl
+
+[ 
+BUILD_DIR=`pwd`
+echo "Build Directory is: $BUILD_DIR"
+]
+
+dnl
+dnl Set default library search path
+dnl LIBS is what configure uses for tests. RLaB uses LLIBS, and
+dnl other specific library variables such as PLIBS.
+dnl
+
+AC_ARG_WITH(LIBS,    
+[  --with-LIBS=DIR         Search for libraries in DIR],
+  LIBS="-L$withval "
+  LLIBS="-L$withval "
+  LIB_PATH="$withval"
+],
+[
+  LIBS="-L/usr/local/lib "
+  LLIBS="-L/usr/local/lib "
+  LIB_PATH="/usr/local/lib"
+])
+
+dnl Find the necessary programs
+AC_CHECK_PROGS(YACC, [byacc "bison -y"], [yacc])
+
+dnl Flex is required
+AC_CHECK_PROG(FLEX, flex, flex)
+
+AC_PROG_LN_S
+AC_PROG_AWK
+AC_PROG_INSTALL
+AC_PROG_RANLIB
+AC_CHECK_PROG(AR, ar, ar)
+AC_CHECK_PROG(F77, g77, g77)
+AC_CHECK_PROG(F77, f77, f77)
+AC_CHECK_PROG(F77, fort, fort)
+AC_CHECK_PROG(F77, fort77, fort77)
+AC_CHECK_PROG(F77, gfortran, gfortran)
+
+AC_CHECK_PROG(MSHELL, /usr/bin/sh5, /usr/bin/sh5, /bin/sh)
+
+dnl Check to see if `--with-cc' or `--with-gcc'
+dnl was specified on the command line.
+
+AC_ARG_WITH(cc,      [  --with-cc               use systems C compiler],
+                [CC="cc"])
+AC_ARG_WITH(gcc,     [  --with-gcc              use GNU C compiler], 
+                [CC="gcc" GCC=1])
+
+[
+#
+# On some systems it is better to use something other than cc
+# IFF it is delivered with UNIX (not an extra)
+# Also, we may need to set C_SH_FLAGS, etc... for dynamic 
+# linking, and Fortran, etc...
+#
+# The following switch statement allows us to set certain make
+# variables that cannot be determined with configure.
+#
+
+    case "$system" in 
+	aix*|AIX*|rs*|RS*|ibm*|IBM* ) 
+            case "$system" in
+               *3.* )
+ 	          F77LIBS="-L. -lxlf -lxlfutil"
+	          F77CONV="-DUSE_LOWER"
+	          CC="cc"
+	          CFLAGS="-qlanglvl=ansi"
+                  FFLAGS="-O"
+                  ;;
+               *4.* )
+ 	          F77LIBS="-L. -lxlf -lxlfutil -lxlf90"
+	          F77CONV="-DUSE_LOWER"
+	          CC="cc"
+	          CFLAGS="-O"
+                  FFLAGS="-O"
+                  ;;
+               esac
+	;;
+	alpha*|ALPHA*|Alpha*|OSF* ) 
+	    CC="cc -std1 -Dunix"
+	    CFLAGS="-g"
+            FFLAGS="-g"
+	    F77LIBS="-L. -lfor -lUfor -lFutil -lots -lm -lc"
+	    F77CONV="-DUSE_F2C"
+	;;
+	convex*|ConvexOS* ) 
+	;;
+	dg*|DG* ) 
+	;;
+	hp*|HP* ) 
+	    F77LIBS="-lU77 -lcl -lm"
+	    F77CONV="-DUSE_LOWER"
+	    C_SH_FLAGS="+z"
+	    F_SH_FLAGS="+z"
+	    LD_SH_FLAGS=""
+	    SHLIB_BUILD="ld -b -o"
+	    DL="YES"
+            DL_HP="YES"
+	;;
+	irix*|IRIX*|Irix*|sgi*|SGI* ) 
+            F77LIBS="-lF77 -lI77 -lU77 -lisam -lfpe"
+            F77CONV="-DUSE_F2C"
+	;;
+	linux*|LINUX*|Linux* ) 
+	    CC="gcc"
+	    CFLAGS="-O2"
+	    FFLAGS="-O2"
+            F77CONV="-DUSE_F2C"
+	;;
+	next*|NeXT*|NEXT* ) 
+	    CC="gcc"
+            CFLAGS="-O"
+            FFLAGS="-O"
+            F77CONV="-DUSE_F2C"
+	;;
+	SunOS-* )
+	    case "$system" in 
+		*5.* )
+		   F77LIBS="-L/opt/SUNWspro/SC4.0/lib -lF77 -lM77 -lsunmath"
+		   F77CONV="-DUSE_F2C"
+		   C_SH_FLAGS="-K PIC"	
+		   F_SH_FLAGS="-KPIC"
+		   LD_SH_FLAGS="-G"
+                   CFLAGS="-O"
+                   FFLAGS="-O"
+		   ;;
+		*4* )
+		   F77LIBS="-L/usr/lang/SC1.0 -lF77"
+		   F77CONV="-DUSE_F2C"
+		   C_SH_FLAGS="-pic"	
+		   F_SH_FLAGS="-pic"
+		   LD_SH_FLAGS=""
+                   CFLAGS="-O"
+                   FFLAGS="-O"
+		   ;;
+		esac
+	;;
+	sx*|Sx*|SX*|monte*|Monte*|MONTE* ) 
+	;;
+	ultrix*|ULTRIX* ) 
+	    F77LIBS="-L. -lF77 -lI77 -lUfor -lfor -lutil -lots \
+		     -L/usr/lib/cmplrs/fort -li_31"
+	    F77CONV=-DUSE_F2C
+            CFLAGS="-O"
+            FFLAGS="-O"
+	;;
+	*4* )   # System V Release 4.0
+	   F77LIBS="?"
+	   F77CONV="-DUSE_F2C"
+	   C_SH_FLAGS="-K PIC"	
+	   F_SH_FLAGS="-KPIC"
+	   LD_SH_FLAGS="-G"
+           CFLAGS="-O"
+           FFLAGS="-O"
+    esac
+]
+
+[
+#
+# If nothing specified, leave it up to configure
+#
+if test -z "$CC" ; then
+ ] AC_PROG_CC [
+fi
+]
+
+echo "CC is set to   $CC"
+
+dnl
+dnl Figure out the version number for the Makefile
+dnl
+[
+  VER=`$AWK '$3 == "version_string[]" {gsub("\"","");print $5}' < version.h`
+]
+
+dnl Check on the double word-size of the machine
+AC_CHECK_SIZEOF(double)
+AC_CHECK_SIZEOF(long int)
+AC_CHECK_SIZEOF(int)
+AC_CHECK_SIZEOF(short int)
+
+dnl Determine the compiler characteristics
+AC_C_CONST
+AC_TYPE_SIZE_T
+AC_C_BIGENDIAN
+
+dnl
+dnl Determine the C <-> Fortran inter-language calling convention
+dnl
+
+AC_MSG_CHECKING(C -> Fortran interlanguage calling convention)
+
+dnl First, build the Fortran support lib
+[
+  $F77 -c fitest_f.f
+  ar r libfitest_f.a fitest_f.o
+  OLD_LIBS="$LIBS"
+  LIBS="-L. -lfitest_f"  
+  CFLAGS="-DUSE_UPPER"
+]
+
+  AC_TRY_RUN([#include "fitest.h"
+                 main()
+                 { 
+                   F_REAL a = 1.0;
+                   F_REAL b = 2.0;
+                   TEST (&a, &b);
+                   exit(0);
+                 }], [AC_MSG_RESULT(UPPER); F77CONV="-DUSE_UPPER"],
+                     [F77CONV="no"])
+
+[ if test "$F77CONV" = "no" ; then 
+  CFLAGS="-DUSE_F2C" ]
+AC_TRY_RUN([#include "fitest.h"
+                 main()
+                 { 
+                   F_REAL a = 1.0;
+                   F_REAL b = 2.0;
+                   TEST (&a, &b);
+                   exit(0);
+                 }], [AC_MSG_RESULT(F2C); F77CONV="-DUSE_F2C"],
+                     [F77CONV="no"])
+[ fi ]
+
+[ if test "$F77CONV" = "no" ; then 
+  CFLAGS="-DUSE_LOWER" ]
+AC_TRY_RUN([#include "fitest.h"
+                 main()
+                 { 
+                   F_REAL a = 1.0;
+                   F_REAL b = 2.0;
+                   TEST (&a, &b);
+                   exit(0);
+                 }], [AC_MSG_RESULT(LOWER); F77CONV="-DUSE_LOWER"],
+                     [F77CONV="no"])
+[ fi ]
+
+[ if test "$F77CONV" = "no" ; then 
+  CFLAGS="-DUSE_FRONT" ]
+AC_TRY_RUN([#include "fitest.h"
+                 main()
+                 { 
+                   F_REAL a = 1.0;
+                   F_REAL b = 2.0;
+                   TEST (&a, &b);
+                   exit(0);
+                 }], [AC_MSG_RESULT(FRONT); F77CONV="-DUSE_FRONT"],
+                     [F77CONV="no"])
+[ fi ]
+[ LIBS="$OLD_LIBS" ]
+
+dnl
+dnl FINISHED C -> FORTRAN CALLING CONVENTION
+dnl
+
+dnl Make sure unix is defined
+AC_EGREP_CPP(yes,
+[#ifdef unix
+ yes
+#endif
+], RUNIX=1)
+
+[
+if test -z "$RUNIX" ; then
+] AC_DEFINE(unix, 1) [
+fi
+]
+
+AC_CHECK_PROG(PAGER, less, less)
+[ 
+  if test -z "$PAGER" ; then
+    ] AC_CHECK_PROG(PAGER, more, more) [
+    if test -z "$PAGER" ; then
+      ] AC_CHECK_PROG(PAGER, pg, pg) [
+    fi
+  fi
+]
+
+AC_HEADER_STDC
+AC_HEADER_DIRENT
+AC_CHECK_HEADERS(stdlib.h time.h float.h unistd.h dlfcn.h values.h dl.h)
+AC_CHECK_HEADERS(ieeefp.h floatingpoint.h machine/fpu.h fpu_control.h, [break])
+dnl Look for certain functions
+dnl AC_CHECK_LIB(m, main)
+LIBS="$LIBS -lm -lc"
+AC_CHECK_FUNCS(difftime rindex matherr getenv putenv sleep logb)
+AC_FUNC_ALLOCA 
+AC_CHECK_HEADER(elf.h, AC_DEFINE(SVR4))
+
+dnl
+dnl Do a special test for rint() since it is broken
+dnl on some platforms (like HP).
+dnl
+
+AC_EGREP_HEADER([ rint], math.h, AC_DEFINE(HAVE_RINT_DEC,1))
+echo "checking for working rint"
+AC_TRY_RUN([#include <math.h> 
+                 main()
+                 { 
+                   if (rint(1.4) == 1.0) 
+                     exit(0);
+                   else 
+                     exit(1);
+                 }], AC_DEFINE(HAVE_RINT))
+
+dnl
+dnl Check for ways to handle floating point exceptions.
+dnl
+
+dnl Neglect floating point setup altogether ?
+dnl Default is NO.
+
+AC_ARG_ENABLE(fpe,
+            [  --disable-fpe           disable standard fpe handling], 
+            [if test "$enableval" = "yes" ; then
+               AC_DEFINE(SETUP_FPE)
+             fi],
+            [AC_DEFINE(SETUP_FPE)])
+
+dnl SVR4 method (fpsetmask)
+dnl Berkeley/SunOS-4 method (ieee_handler)
+dnl DEC-Alpha method (ieee_set_fp_control)
+dnl Linux method (__setfpucw)
+AC_CHECK_LIB(ieee, main, [MLIB="-lieee"])
+AC_CHECK_FUNCS(fpsetmask ieee_handler ieee_set_fp_control __setfpucw, [break])
+AC_CHECK_LIB(c, __setfpucw)
+
+dnl
+dnl Check for an accurate timer.
+dnl
+
+AC_CHECK_FUNCS(times)
+AC_CHECK_FUNCS(clock)
+AC_CHECK_FUNCS(sysconf)
+AC_CHECK_HEADERS(sys/types.h)
+AC_CHECK_HEADERS(sys/times.h)
+AC_CHECK_HEADERS(sys/time.h)
+
+dnl
+dnl Check for shared object request (dynamic linking)
+dnl
+
+dnl
+dnl SVR4.0 / Solaris type Shared Object...
+dnl
+
+AC_CHECK_LIB(dl, main, [LIBS="-ldl $LIBS"; DL_LIB="-ldl"; DL="YES"],[DL=""])
+AC_CHECK_FUNC(dlopen, AC_DEFINE(HAVE_DLOPEN, 1),[DL=""])
+AC_CHECK_FUNC(dlsym, AC_DEFINE(HAVE_DLSYM, 1),[DL=""])
+AC_CHECK_FUNC(dlclose, AC_DEFINE(HAVE_DLCLOSE, 1),[DL=""])
+[
+if test -n "$DL" ; then
+  ] AC_DEFINE(HAVE_SO) [
+  LLIBS="$LLIBS $DL_LIB"
+fi
+]
+
+dnl
+dnl Special check for HP shared object environment
+dnl
+
+[
+if test -n "$DL_HP" ; then
+  ] AC_DEFINE(HAVE_DL_HP) [
+fi
+]
+
+dnl Find the REQUIRED numerical libraries
+dnl They are probably all in /usr/local/lib
+dnl
+
+AC_ARG_WITH(NALIBS, 
+[  --with-NALIBS=DIR       look for Numerical Analysis libs in DIR],
+[ 
+  LIBS="$LIBS -L$withval"
+  NALIB_DIR="-L$withval "
+],
+[
+  NALIB_DIR=""
+])
+
+dnl
+dnl Use Metis Graph Partitioning Library ???
+dnl
+
+AC_ARG_ENABLE(METIS3,
+            [  --enable-METIS3               enable METIS-3 usage],
+            [if test "$enableval" = "yes" ; then
+               AC_DEFINE(HAVE_METIS3)
+
+AC_MSG_CHECKING(for libmetis)
+[ save_libs="$LIBS"; LIBS="-lmetis $FLIBS $LIBS"]
+AC_TRY_LINK([int MAIN__(){return(1);}], [return(1);],
+            [AC_MSG_RESULT(yes); GRAPH_LIB="$NALIB_DIR -lmetis"; 
+             LIBS="$save_libs"],
+            [AC_MSG_RESULT(no); LIBS="$save_libs"])
+             fi])
+
+dnl
+dnl Use SuperLU Sparse Matrix Factorization
+dnl
+
+AC_ARG_ENABLE(SUPERLU,
+            [  --enable-SUPERLU                enable SuperLU usage],
+            [if test "$enableval" = "yes" ; then
+               AC_DEFINE(HAVE_SUPERLU)
+               AC_MSG_CHECKING(for libsuperlu)
+                  [ save_libs="$LIBS"; LIBS="-lsuperlu $FLIBS $LIBS"]
+                  AC_TRY_LINK([int MAIN__(){return(1);}], [return(1);],
+                  [AC_MSG_RESULT(yes); SPARSE_LIB="$NALIB_DIR -lsuperlu"; 
+                  LIBS="$save_libs"],
+
+                  [AC_MSG_RESULT(no); LIBS="$save_libs"])
+             fi])
+
+dnl AC_TRY_CPP([#include "superlu/supermatrix.h"],[SPARSE_INC],[])
+
+dnl
+dnl Get libreadline.a if available
+dnl
+
+AC_CHECK_LIB(termcap, main, [CMDLIBS="-ltermcap"])
+AC_CHECK_LIB(ncurses, tgetnum, [CMDLIBS="-lncurses $CMDLIBS"])
+
+dnl AC_CHECK_LIB(readline, readline, [
+dnl            CMDLIBS="-lreadline $CMDLIBS";
+dnl 	       AC_DEFINE(HAVE_READLINE,1)], , ["-lncurses"])
+
+AC_MSG_CHECKING(for -lreadline)
+[ save_libs="$LIBS"; LIBS="-lreadline $CMDLIBS $LIBS"]
+AC_TRY_LINK([int MAIN__(){return(1);}], [return(1);],
+           [AC_MSG_RESULT(yes); AC_DEFINE(HAVE_READLINE,1)
+            CMDLIBS="-lreadline $CMDLIBS"; LIBS="$save_libs"],
+           [AC_MSG_RESULT(no); LIBS="$save_libs"])
+
+
+dnl ------------------------------------------------------------------
+dnl Find the X11 stuff in case we need it later...
+dnl
+
+AC_PATH_X
+[
+if test -z "$x_libraries" ; then
+  xlibdir=""
+else
+  xlibdir="-L$x_libraries"
+fi
+
+X11LIB="$xlibdir -lX11"
+]
+
+AC_CHECK_LIB(nsl, main, [NSL=true])
+[
+if test -n "$NSL" ; then
+  LIBS="$LIBS -lnsl"
+]
+  AC_CHECK_LIB(socket, main, [X11LIB="$X11LIB -lsocket -lnsl"])
+[
+fi
+]
+
+dnl ------------------------------------------------------------------
+dnl Check for gnuplot specification
+dnl
+
+AC_ARG_WITH(gnuplot, [  --with-gnuplot          use Gnuplot], 
+[
+  PLIBS=""
+  PLIB_INC_DIR=""
+  PLOT_PROG="gnuplot"
+])
+
+[
+if test -n "$PLOT_PROG" ; then
+  ] AC_CHECK_PROG(PLOT_PROG, gnuplot, gnuplot, nothing) [
+fi
+]
+
+dnl ------------------------------------------------------------------
+dnl Check for specification of Plplot directory root
+dnl
+
+AC_ARG_WITH(plplot, [   --with-plplot           use Plplot],
+[
+  if test -n "$PLOT_PROG" ; then
+    echo "ERROR! cannot specify more than one plot interface!"
+    exit 1;
+  fi
+  if test "$withval" = "yes" ; then
+    echo "ERROR! must specify Plplot installation directory."
+    exit 1;
+  fi
+
+  PLOT_PROG="plplot"
+  PLIB_DIR=-L$withval
+  PLOT_DIR="$withval"
+  PLIB_INC_DIR="-I$withval"
+  PLIBS="-L$withval -lplplotdX $X11LIB"
+])
+
+dnl ------------------------------------------------------------------
+dnl Use the PlotMTV interface.
+dnl
+
+AC_ARG_WITH(plotmtv, [  --with-plotmtv          use PlotMTV], 
+[
+  if test -n "$PLOT_PROG" ; then
+    echo "ERROR! cannot specify more than one plot interface!"
+  fi
+  PLIBS=""
+  PLIB_INC_DIR=""
+  PLOT_PROG="plotmtv"
+])
+
+[
+if test "$PLOT_PROG" = "plotmtv" ; then
+  ] AC_CHECK_PROG(PLOT_PROG, plotmtv, plotmtv, nothing) [
+fi
+]
+
+dnl ------------------------------------------------------------------
+dnl Use the Pgraf interface.
+dnl
+
+AC_ARG_WITH(pgraf, [  --with-pgraf          use Pgraf], 
+[
+  if test -n "$PLOT_PROG" ; then
+    echo "ERROR! cannot specify more than one plot interface!"
+  fi
+  PLIBS=""
+  PLIB_INC_DIR=""
+  PLOT_PROG="pgraf"
+])
+
+[
+if test "$PLOT_PROG" = "pgraf" ; then
+  ] AC_CHECK_PROG(PLOT_PROG, pgraf, pgraf, nothing) [
+fi
+]
+
+dnl ------------------------------------------------------------------
+dnl Check for specification of PGplot directory root
+dnl
+
+AC_ARG_WITH(pgplot, [   --with-pgplot           use PGplot],
+[
+  if test -n "$PLOT_PROG" ; then
+    echo "ERROR! cannot specify more than one plot interface!"
+  fi
+  if test "$withval" = "yes" ; then
+    echo "ERROR! must specify Pgplot installation directory."
+    exit 1;
+  fi
+
+  PLOT_PROG="pgplot"
+  PLIBS="-L$withval -lcpgplot -lpgplot $X11LIB"
+  PLIB_INC_DIR="-I$withval"
+  PLOT_DIR="$withval"
+  AC_DEFINE(HAVE_RLAB_PGPLOT,1)
+])
+
+dnl ------------------------------------------------------------------
+dnl Find the Garbage Collection library (libgc.a)
+dnl
+
+dnl First action is used if disable/enable GC is specified. If YES,
+dnl then setup for GC. The default action (nothing is specified) is to
+dnl configure for GC.
+
+AC_ARG_ENABLE(GC,
+            [  --disable-GC            disable use of the Garbage-Collector],
+            [if test "$enableval" = "yes" ; then
+               AC_DEFINE(HAVE_GC) [LIBGC="../gc/.libs/libgc.a"; 
+                                   IGC="-I./gc/include"]
+             fi],
+            [AC_DEFINE(HAVE_GC) [LIBGC="./gc/.libs/libgc.a";
+                                 IGC="-I./gc/include"]])
+dnl ------------------------------------------------------------------
+
+AC_TRY_LINK([#include <stdio.h>],
+            [int (*x)()=(int(*)())fprintf;],
+            AC_DEFINE(HAVE_FPRINTF_DEC))
+AC_TRY_LINK([#include <stdio.h>],
+            [int (*x)()=(int(*)())sprintf;], 
+            AC_DEFINE(HAVE_SPRINTF_DEC))
+AC_TRY_LINK([#include <stdio.h>],
+            [int (*x)()=(int(*)())fread;], 
+            AC_DEFINE(HAVE_FREAD_DEC))
+
+dnl Now do checks for getline command-line interface.
+dnl Getline needs to know if termios exists
+dnl AC_CHECK_HEADER(termios.h)
+
+[
+#
+# Clean up some things...
+#
+    case "$system" in 
+	aix*|AIX*|rs*|RS*|ibm*|IBM* ) 
+	;;
+	alpha*|ALPHA*|Alpha*|OSF* ) 
+	;;
+	convex*|ConvexOS* ) 
+	;;
+	dg*|DG* ) 
+	;;
+	hp*|HP* ) 
+	;;
+	irix*|IRIX*|Irix*|sgi*|SGI* ) 
+	;;
+	linux*|LINUX*|Linux* ) 
+	    EXFLAGS="-Wl,-export-dynamic";
+            if test "$LIB_PATH" ; then
+              EXFLAGS="$EXFLAGS -Wl,-rpath $LIB_PATH" ;
+            fi
+            if test "$PLIB_PATH" ; then
+              EXFLAGS="$EXFLAGS -Wl,-rpath $PLIB_PATH" ;
+            fi
+	;;
+	next*|NeXT*|NEXT* ) 
+	;;
+	SunOS-* )
+	    case "$system" in 
+		*5.* )
+                   if test "$LIB_PATH" ; then
+                     EXFLAGS="$EXFLAGS -R $LIB_PATH" ;
+                   fi
+                   if test "$PLIB_PATH" ; then
+                     EXFLAGS="$EXFLAGS -R $PLIB_PATH" ;
+                   fi
+		   ;;
+		*4* )
+		   ;;
+		esac
+	;;
+	sx*|Sx*|SX*|monte*|Monte*|MONTE* ) 
+	;;
+	ultrix*|ULTRIX* ) 
+	;;
+	*4* )   # System V Release 4.0
+    esac
+]
+
+
+AC_SUBST(BUILD_DIR)
+AC_SUBST(SYSTEM)
+AC_SUBST(VER)
+AC_SUBST(MSHELL)
+AC_SUBST(AR)
+AC_SUBST(CC)
+AC_SUBST(F77)
+AC_SUBST(F2C)
+AC_SUBST(FLEX)
+AC_SUBST(RANLIB)
+AC_SUBST(INSTALL)
+AC_SUBST(INSTALL_PROGRAM)
+AC_SUBST(PAGER)
+AC_SUBST(CFLAGS)
+AC_SUBST(FFLAGS)
+AC_SUBST(EXFLAGS)
+AC_SUBST(C_SH_FLAGS)
+AC_SUBST(F_SH_FLAGS)
+AC_SUBST(LD_SH_FLAGS)
+
+AC_SUBST(LLIBS)
+AC_SUBST(NALIBS)
+AC_SUBST(FLIBS)
+AC_SUBST(F77LIBS)
+AC_SUBST(F77CONV)
+AC_SUBST(CMDLIBS)
+AC_SUBST(PLIBS)
+AC_SUBST(MLIB)
+AC_SUBST(PLOT_DIR)
+AC_SUBST(PLOT_PROG)
+AC_SUBST(PLIB_INC_DIR)
+AC_SUBST(LIBGC)
+AC_SUBST(IGC)
+AC_SUBST(SPARSE_SRC)
+AC_SUBST(SPARSE_OBJ)
+AC_SUBST(SPARSE_INC)
+AC_SUBST(SPARSE_LIB)
+AC_SUBST(GRAPH_LIB)
+
+dnl done, write the Makefile
+AC_OUTPUT(Makefile flibs/fftpack/Makefile)
+
+dnl [if test -r "$cache_file" ; then
+dnl   echo "deleting $cache_file"
+dnl   rm -f "$cache_file"
+dnl fi]

@@ -1,0 +1,66 @@
+  sum
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Sum the elements of a matrix.
+
+      [1mSyntax[0m
+        sum ( [4mA[24m )
+
+      [1mDescription[0m
+        Sum computes the sum of a matrix. The return object is a row
+        matrix which contains the sum of each column of the input.
+
+        If the input is a vector (row-matrix) then the sum of the
+        elements is returned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3751 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Builtin Functions</TITLE>
+ <LINK HREF="rlab-ref-8.html" REL=next>
+ <LINK HREF="rlab-ref-6.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="rlab-ref-8.html">Next</A>
+<A HREF="rlab-ref-6.html">Previous</A>
+<A HREF="rlab-ref.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="s7">7. Builtin Functions</A></H2>
+
+<P>
+<P>This chapter covers the built-in functions. Normally, no distinction
+is made between the built-in, and the user-functions. However, they
+are documented separately because custom installations, and program
+execution options make it possible for Rlab to run with many of the
+user-functions missing.
+<P>The documentation for each built-in function is nearly the same as
+the online help. In fact, the printed documentation is the source of
+the online help files.
+<P>
+<P>
+<P>
+<H2><A NAME="ss7.1">7.1 abs </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the absolute value. 
+<DT><B> Syntax </B><DD><P>abs ( <EM> A </EM> )
+<DT><B> Description </B><DD><P>abs returns the absolute value of it's input,
+<EM>A</EM>. abs is a scalar function.
+<P>For complex values abs returns the square root of the
+sum of the squares of the real and imaginary parts.
+<P>
+</DL>
+<H2><A NAME="ss7.2">7.2 acos </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the arc-cosine. 
+<DT><B> Syntax </B><DD><P>acos ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>The trigonometric functions are scalars functions.  The return
+value is the result of the trigonometric operation performed
+on the input, element-by-element.
+<P>All the trigonometric functions use the C language math
+library functions, so details about the ranges and error
+conditions can be found by examining the appropriate man pages
+on your system.
+<P>
+</DL>
+<H2><A NAME="ss7.3">7.3 all </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Check if <EM>all</EM> elements are non-zero. 
+<DT><B> Syntax </B><DD><P>all ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>When <EM>A</EM> is a vector (row or column):
+<BLOCKQUOTE>
+all returns TRUE (1) if all of the elements of <EM>A</EM> are non-zero.
+all returns zero otherwise.
+</BLOCKQUOTE>
+<P>When <EM>A</EM> is a matrix:
+<BLOCKQUOTE>
+all operates on the columns of <EM>A</EM>, returning a row-vector of
+ones and zeros.
+</BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>any
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.4">7.4 any </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Check if <EM>any</EM> elements are non-zero. 
+<DT><B> Syntax </B><DD><P>any ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>When <EM>A</EM> is a vector (row or column):
+<BLOCKQUOTE>
+any returns TRUE (1) if any of the elements of <EM>A</EM> are non-zero.
+any returns FALSE (0) otherwise.
+</BLOCKQUOTE>
+<P>When <EM>A</EM> is a matrix:
+<BLOCKQUOTE>
+any operates on the columns of <EM>A</EM>, returning a row-vector of
+ones and zeros.
+</BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>all
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.5">7.5 asin </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the arc-sin. 
+<DT><B> Syntax </B><DD><P>asin ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>RLaB trigonometric functions are designed to take scalars, and
+matrices as arguments. The return value is the input argument
+with the trigonometric operation performed element by element.
+<P>The trigonometric functions use the C language math library
+functions, so details about the ranges and error conditions
+can be found by examining the appropriate man pages on your
+system.
+<P>
+</DL>
+<H2><A NAME="ss7.6">7.6 atan </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the arc-tangent. 
+<DT><B> Syntax </B><DD><P>atan ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>RLaB trigonometric functions are designed to take scalars, and
+matrices as arguments. The return value is the input argument
+with the trigonometric operation performed element by element.
+<P>The trigonometric functions use the C language math library
+functions, so details about the ranges and error conditions
+can be found by examining the appropriate man pages on your
+system.
+<P>
+</DL>
+<H2><A NAME="ss7.7">7.7 atan2 </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the arc-tangent. 
+<DT><B> Syntax </B><DD><P>atan2 ( <EM>y</EM> , <EM>x</EM> )
+<DT><B> Description </B><DD><P>RLaB trigonometric functions are designed to take scalars, and
+matrices as arguments. The return value is the input argument
+with the trigonometric operation performed element by element.
+<P>atan2 takes two arguments, which are the y, and x values
+used to form the tangent. All the trigonometric functions use
+the C language math library functions, so details about the
+ranges and error conditions can be found by examining the
+appropriate man pages on your system.
+<P>Atan2 does not operate on complex arguments.
+<P>
+</DL>
+<H2><A NAME="ss7.8">7.8 backsub </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Solution of <CODE>Ax = B</CODE> by backsubstitution. 
+<DT><B> Syntax </B><DD><P>backsub ( <EM>LIST</EM>, <EM>B</EM> )
+<DT><B> Description </B><DD><P>The backsub function computes the solution to the set of
+linear equations described by:
+<P>
+<BLOCKQUOTE>
+A * X = B 
+</BLOCKQUOTE>
+<P>The 1st argument to backsub (<EM>LIST</EM>) is the result from
+`factor(A)'. The second argument to backsub is the matrix
+<EM>B</EM>.  <EM>B</EM> can contain multiple right hand sides.
+<P>Backsub returns a matrix <EM>X</EM> which contains the solution(s) to
+the aforementioned equations.
+<P>Backsub utilizes the LAPACK subroutines DGETRS or ZGETRS if
+<EM>LIST</EM> contains LU factors or LAPACK subroutins DSYTRS or ZHETRS
+if <EM>LIST</EM> contains the LDL factors.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> A = [1,2,3;4,5,6;7,8,0]
+        1          2          3  
+        4          5          6  
+        7          8          0  
+> B = [1;2;3]
+        1  
+        2  
+        3  
+> X = backsub(factor(A), B)
+   -0.333  
+    0.667  
+-3.52e-18  
+> A*X - B
+        0  
+        0  
+        0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>factor, inv, lu, solve
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.9">7.9 balance </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Balance a matrix for equal row and column norms. 
+<DT><B> Syntax </B><DD><P>balance ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Balance uses the LAPACK subroutines DGEBAL and ZGEBAL to
+balance the input matrix so that the row and column norms are
+approximately equal.
+<P>balance returns a list with elements <EM>t</EM> and <EM>ab</EM>.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> a
+        0          0          1          0  
+        0          0          0          1  
+       11         10          0          0  
+       10         11          0          0  
+> &lt;/ ab ; t /> = balance(a);
+> inv(t)*a*t - ab
+        0          0          0          0  
+        0          0          0          0  
+        0          0          0          0  
+        0          0          0          0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Only square matrices are allowed.
+<P>
+</DL>
+<H2><A NAME="ss7.10">7.10 ceil </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Smallest integer not less than argument. 
+<DT><B> Syntax </B><DD><P>ceil ( <EM>a</EM> )
+<DT><B> Description </B><DD><P>Ceil returns the smallest integer not less than the argument.
+If the argument is a MATRIX then the ceil operation is
+performed on an element-by-element basis.
+<P>
+<DT><B>See Also</B><DD><P>floor, int
+<P>
+</DL>
+<H2><A NAME="ss7.11">7.11 chol </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Cholesky factorization. 
+<DT><B> Syntax </B><DD><P>chol( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Chol computes the Cholesky factorization of the input matrix.
+The input matrix must be real symmetric positive definite, or
+complex Hermitian positive definite.  chol() produces an upper
+triangular matrix <EM>U</EM>, such that <CODE>U'*U</CODE> and <EM>A</EM>
+(the input) are equal.
+<P>chol use the LAPACK subroutine DPOTRF and ZPOTRF.
+<P>
+</DL>
+<H2><A NAME="ss7.12">7.12 class </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Identify the class of an object. 
+<DT><B> Syntax </B><DD><P>class ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Class returns a string which identifies the type of the object
+that <EM>A</EM> represents. Valid classes are:
+<P>
+<UL>
+<LI>    num</LI>
+<LI>    string</LI>
+<LI>    list</LI>
+<LI>    function</LI>
+</UL>
+<P>It is often useful to:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+if(class(m) == "num") 
+{
+  # Perform numerical computation on m
+}
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The class of a variable can also be determined by using the
+class member reference (except for LISTs), like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> zeros.class
+function
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>show, type
+<P>
+</DL>
+<H2><A NAME="ss7.13">7.13 clear </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Delete a variable. 
+<DT><B> Syntax </B><DD><P>clear ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Clear effectively deletes a variables object from the symbol
+table. The effect is the variable does not show up when who()
+is used. The memory associated with the variable is freed. 
+<P>Clear accepts up to 32 arguments, the return value is the
+number of objects that have been successfully cleared.
+<P>
+</DL>
+<H2><A NAME="ss7.14">7.14 close </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Close a file. 
+<DT><B> Syntax </B><DD><P>close ( <EM>filename</EM> )
+<DT><B> Description </B><DD><P>close takes a string (<EM>filename</EM>) as input, and attempts
+to close the output stream associated with
+<EM>filename</EM>. close returns TRUE (1) if the output stream
+was successfully closed, FALSE (0) if the output stream could
+not be closed.
+<P>If you want to read the contents of a file that you have
+created with the write function in the present session, then
+be sure to close the file before using the read function.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+write( "eig_output", a , vec , val );
+close( "eig_output" );
+read( "eig_output" );
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>printf, fprintf, getline, open, read, readb, readm, write, writeb, writem
+<P>
+</DL>
+<H2><A NAME="ss7.15">7.15 conj </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Complex conjugate. 
+<DT><B> Syntax </B><DD><P>conj ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Conj returns the complex conjugate of its input argument.
+For MATRIX arguments the conjugate is performed element by
+element.
+<P>
+<DT><B>See Also</B><DD><P>imag, real
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.16">7.16 cos </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the cosine. 
+<DT><B> Syntax </B><DD><P>cos ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>The trigonometric functions are scalars functions.  The return
+value is the result of the trigonometric operation performed
+on the input, element-by-element.
+<P>All the trigonometric functions use the C language math
+library functions, so details about the ranges and error
+conditions can be found by examining the appropriate man pages
+on your system.
+<P>
+</DL>
+<H2><A NAME="ss7.17">7.17 cumprod </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Cumulative product. 
+<DT><B> Syntax </B><DD><P>cumprod ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>cumprod computes the running, or cumulative product of the
+input, <EM>A</EM>. If the input is a rectangular matrix, then the
+cumulative product is performed over the columns of the
+matrix. 
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a=1:4
+ a =
+        1          2          3          4  
+> cumprod (a)
+        1          2          6         24  
+> a = [1,2,3;4,5,6;7,8,9]
+ a =
+        1          2          3  
+        4          5          6  
+        7          8          9  
+> cumprod (a)
+        1          2          3  
+        4         10         18  
+       28         80        162  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>cumsum, prod, sum
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.18">7.18 cumsum </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Cumulative sum. 
+<DT><B> Syntax </B><DD><P>cumsum ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>cumsum computes the running, or cumulative sum of a vector or
+matrix. The return object is a matrix the same size as the
+input, <EM>A</EM>. If <EM>A</EM> is a rectangular matrix, then the
+cumulative sums are performed over the columns of the matrix.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = 1:4
+ a =
+        1          2          3          4  
+> cumsum(a)
+        1          3          6         10  
+> a= [1,2,3;4,5,6;7,8,9]
+ a =
+        1          2          3  
+        4          5          6  
+        7          8          9  
+> cumsum (a)
+        1          2          3  
+        5          7          9  
+       12         15         18  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>cumprod, prod, sum
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.19">7.19 det </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Matrix determinant. 
+<DT><B> Syntax </B><DD><P>det ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Det computes the determinant of the matrix argument.
+<P>Det uses the LAPACK functions to factor the input, and the
+LINPACK algorithm to calculate the determinant.
+<P>See Also inv, lu, rcond
+<P>
+</DL>
+<H2><A NAME="ss7.20">7.20 diag </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Diagnonal matrix. 
+<DT><B> Syntax </B><DD><P>diag ( <EM>A</EM> )
+<P>    diag ( <EM>A</EM>, <EM>K</EM> )
+<DT><B> Description </B><DD><P>If the 1st argument, <EM>A</EM> is a 1xN matrix construct a
+diagonal matrix from the input. Optionally if <EM>K</EM>
+(scalar) is specified then create a matrix with the vector as
+the <EM>K</EM>th diagonal.
+<P>If the 1st argument is a MxN matrix, construct a 1xN matrix
+from the diagonal elements of the input matrix. Optionally if
+<EM>K</EM> is specified return the vector from the <EM>K</EM>th
+diagonal of the input matrix.
+<P>
+<BLOCKQUOTE>
+<EM>K</EM> &lt; is below the main diagonal.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+<EM>K</EM> &gt; is above the main diagonal.
+</BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>tril, triu
+<P>
+</DL>
+<H2><A NAME="ss7.21">7.21 diary</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Log commands (program statements) to a file.
+<DT><B> Syntax </B><DD><P>diary ( ) 
+<P>diary ( <EM>FILENAME</EM> )
+<DT><B> Description </B><DD><P>The diary function echoes all input commands and Rlab output
+to a diary file. If <EM>FILENAME</EM> is not specified, then a
+file named: <CODE>DIARY</CODE> is opened.
+<P>The diary, used without any arguments will turn on statement
+logging, or turn off statement logging if a diary file is
+already open.
+<P>
+</DL>
+<H2><A NAME="ss7.22">7.22 dlopen </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Dynamically link a function. 
+<DT><B> Syntax </B><DD><P>dlopen ( <EM>FILENAME</EM> , <EM>FUNCTION_NAME</EM> )
+<DT><B> Description </B><DD><P>dlopen opens a shared object, <EM>FILENAME</EM>, and creates a
+builtin function that points to <EM>FUNCTION_NAME</EM>. dlopen
+returns the newly created builtin function.
+<P>For information on how to write and compile functions that can
+be linked with dlopen, consult the RLaB Programmer's Guide and
+Reference Manual.
+<P>dlopen only exists for those platforms that support dynamic
+linking. As of this writing support exists for Solaris 2.x and
+Linux/ELF platforms.
+<P>
+</DL>
+<H2><A NAME="ss7.23">7.23 eig </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Eigensolver. 
+<DT><B> Syntax </B><DD><P>eig ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>
+<DL>
+<DT><B>eig ( <EM>A</EM> )</B><DD><P>Computes the eigenvectors, and values of matrix
+<EM>A</EM>. eig() returns a LIST with elements `val' and
+`vec' which are the eigenvalues and eigenvectors. Eig
+checks for symmetry in <EM>A</EM>, and uses the
+appropriate solver.
+<P>
+<DT><B>eig ( <EM>A</EM> , <EM>B</EM> )</B><DD><P>Computes the eigenvectors, and values of <EM>A</EM>, and
+<EM>B</EM>.  Where <CODE>A*x = lambda*B*x</CODE>. The values
+and vectors are returned in a list with element names
+<EM>val</EM> and <EM>vec</EM>. Eig checks for symmetry in
+<EM>A</EM> and <EM>B</EM> and uses the appropriate solver.
+<P>
+</DL>
+<P>Uses the LAPACK subroutines DSYEV/ZHEEV or DGEEV/ZGEEV.
+<P><B>Example:</B>
+<P>The generalized eigenvalue problem arises quite regularly in
+structures. From the second order differential equations
+describing a lumped mass system arise $M$ and $K$, coefficient
+matrices representing the mass and stiffness of the various
+physical degress of freedom. The equations are formulated as
+follows:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+M*dx^2/dt^2 + K*x = F 
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Which leads to the eigenvalue problem:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+K*v = w^2*M*v 
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>For a two degree of freedom system we might have:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> m = eye(2,2)
+> k = [5,1;1,5]
+> &lt;/ val ; vec /> = eig(k, m);
+        
+> // Test the solution
+        
+> k * vec[;1]
+    -2.83  
+     2.83  
+> val[1] * m * vec[;1]
+    -2.83  
+     2.83  
+        
+> // Properties of the solution
+
+> vec' * m * vec
+        1  -4.27e-17  
+-4.27e-17          1  
+        
+> vec' * k * vec
+        4  -1.71e-16  
+ 1.23e-16          6  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The eigenvalues and vectors are sometimes obtained by
+converting the generalized problem into a standard eigenvalue
+problem (this is only feasible under certain conditions).
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = m\k
+ a =
+        5          1  
+        1          5  
+> eig(a).val
+ val =
+        4          6  
+> eig(a).vec
+ vec =
+   -0.707      0.707  
+    0.707      0.707  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>svd, schur
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.24">7.24 entinfo </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return entity information.
+<DT><B> Syntax </B><DD><P>entinfo ( <EM>VAR</EM> )
+<DT><B> Description </B><DD><P>Entinfo returns the internal address, and reference count of
+<EM>VAR</EM>. This function is not intended for general
+use... so no explanation of the function's purpose, or
+guarentees regarding its future availability will be made.
+<P>
+</DL>
+<H2><A NAME="ss7.25">7.25 error </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Error handling / reporting.
+<DT><B> Syntax </B><DD><P>error ( <EM>STRING</EM> ) 
+<DT><B> Description </B><DD><P>The error function allows user-functions to jump back to the
+prompt when some sort of error has occurred. The nature of the
+error is up to the user. When an error is detected the user
+simply calls error(). If no argument is supplied, error() will
+print the default message. Otherwise, error prints the string
+supplied as an argument, and jumps back to the prompt.
+<P>Jumping "back to the prompt" means execution of the current
+loop or function is terminated immediately and execution of
+any prompt-level statements is performed.
+<P>
+</DL>
+<H2><A NAME="ss7.26">7.26 eval </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Evaluate expressions.
+<DT><B> Syntax </B><DD><P>eval ( <EM>S</EM> ) 
+<DT><B> Description </B><DD><P>The eval function evaluates the statement contained in the
+string argument <EM>S</EM>. eval returns the result of the
+statement in <EM>S</EM>. eval can be used within functions and
+can distinguish local and argument variables from global.
+<P>Before we go any further, we should note that eval is not
+really a necessary part of RLaB. Users should defintely not
+use it a a crutch as with some other matrix programming
+languages. The RLaB concept of variables, and the list class
+are more efficient ways of dealing with function evaluations
+and variable variable names than eval.
+<P>Examples:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> // Evaluate a simple string.
+> // Demonstrate the ability to work with function
+> // arguments.
+>
+> x=function(s,a){return eval(s);}
+        &lt;user-function>
+> str = "yy = 2 + x(\"2*a\", 3.5)"
+ str =
+yy = 2 + x("2*a", 3.5)
+> z = eval(str)
+ z =
+        9
+> whos();
+        Name            Class   Type    Size            NBytes
+        eps             num     real    1       1       16
+        pi              num     real    1       1       16
+        str             string  string  1       1       22
+        yy              num     real    1       1       16
+        z               num     real    1       1       16
+Total MBytes = 0.129062
+> // First create a function that will eval a matrix.
+>
+> evalm = function ( m )
+> {
+>   local (mnew, i)
+>       
+>   mnew = zeros (size (m));
+>    for (i in 1:m.n)
+>   {
+>     mnew[i] = eval (m[i]);
+>   }
+>       
+>   return mnew;
+> };
+>
+> // Then create a string matrix...
+>
+> mstr = ["x + 1",    "x + sqrt(x)" ;
+>         "cos(2*x)", "sin(sqrt(x))" ]
+        > x = 2
+ x =
+        2
+>
+> m = evalm(mstr)
+ m =
+        3       3.41  
+   -0.654      0.988  
+>
+> // Define a second function that does eval twice
+> 
+> eval2m = function ( m )
+> {
+>   local (mnew, i)
+> 
+>   mnew = zeros (size (m));
+>   for (i in 1:m.n)
+>   {
+>     mnew[i] = eval (eval (m[i]));
+>   }
+> 
+>   return mnew;
+> };
+> 
+> mstr = [ "E1", "E2" ;
+>          "E2", "E3" ]
+ mstr =
+E1  E2  
+E2  E3  
+> E1 = "cos(2*x) + 3";
+> E2 = "tan(x)";
+> E3 = "exp(x)";
+> m = eval2m(mstr)
+ m =
+     2.35      -2.19  
+    -2.19       7.39  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.27">7.27 exist </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Check the existence of a variable.
+<DT><B> Syntax </B><DD><P>exist ( <EM>VAR</EM> ) 
+<DT><B> Description </B><DD><P>The exist function returns TRUE (1) if <EM>VAR</EM> exists, and
+FALSE (0), if <EM>VAR</EM> does not exist. <EM>VAR</EM> is any
+valid variable name.
+<P>If you need to know if a variable exists, and if it is a
+function or data, then use the exist function in conjunction
+with the class or type functions.
+<P>
+<DT><B>See Also</B><DD><P>class, type, who, what
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.28">7.28 exp </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Exponential function.
+<DT><B> Syntax </B><DD><P>exp ( <EM>X</EM> )
+<DT><B> Description </B><DD><P>Exp returns the value of e (the base of natural logarithms)
+raised to the power of <EM>X</EM>. If the argument to exp is a
+matrix then an element-by-element operation is performed.
+<P>
+</DL>
+<H2><A NAME="ss7.29">7.29 factor </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Factor a square matrix.
+<DT><B> Syntax </B><DD><P>factor ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>The factor function computes the LU factorization of the input
+matrix <EM>A</EM>. Factor returns a list with 3 elements: 
+<P><B> if <EM>A</EM> is a general matrix: </B>
+<DL>
+<DT><B><EM>lu</EM></B><DD><P>a matrix containing the LU factors
+<DT><B><EM>pvt</EM></B><DD><P>a vector containing the pivot indices
+<DT><B><EM>rcond</EM></B><DD><P>the inverse of the condition estimate
+</DL>
+<P>Factor utilizes the LAPACK subroutines DGETRF, DGECON or
+ZGETRF, ZGECON.
+<P><B> if <EM>A</EM> is a symmetric matrix: </B>
+<DL>
+<DT><B><EM>ldl</EM></B><DD><P>a matrix containing the block diagonal
+matrix D, and the multipliers used to obtain L.
+<DT><B><EM>pvt</EM></B><DD><P>a vector containing the pivot indices
+<DT><B><EM>rcond</EM></B><DD><P>the inverse of the condition estimate
+</DL>
+<P>Factor utilizes the LAPACK subroutines DSYTRF, DSYCON or
+ZHETRF, ZHECON.
+<P>The user can overide factor's choice of solution type with the
+optional argument TYPE. 
+<P>
+<BLOCKQUOTE>
+TYPE = "g" or "G"       The general solution is used.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+TYPE = "s" or "S"       the symmetric solution is used.
+</BLOCKQUOTE>
+<P>Factor returns the results in the above format, so that they
+may be conveniently used with backsub for repetitive
+solutions. The user-function lu will separate the results from
+factor into separate L and U matrices.
+<P>
+<DT><B>See Also</B><DD><P>backsub, inv, lu, solve
+<P>
+</DL>
+<H2><A NAME="ss7.30">7.30 fft </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Discrete Fourier Transform.
+<DT><B> Syntax </B><DD><P>fft ( <EM>X</EM> )
+<P>    fft ( <EM>X</EM>, <EM>N</EM> )
+<DT><B> Description </B><DD><P>Fft utilizes the FFTPACK subroutine CFFTF to compute a
+discrete forward Fourier transform of the input.
+<P>If fft is used with a second argument, <EM>N</EM>, then the
+matrix <EM>X</EM> is either padded with zeros, or truncated till
+it is of length <EM>N</EM> (if <EM>X</EM> is a vector), or has row
+dimension <EM>N</EM> (if it is a matrix).
+<P>Subroutine CFFTF computes the forward complex discrete Fourier
+transform (the Fourier analysis). equivalently , CFFTF
+computes the Fourier coefficients of a complex periodic
+sequence.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        for j=1,...,n
+        
+           c(j)=the sum from k=1,...,n of
+        
+                 c(k)*exp(-i*(j-1)*(k-1)*2*pi/n)
+        
+                       where i=sqrt(-1)
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The argument <EM>X</EM> must be a matrix. If <EM>X</EM> is a row,
+or column matrix then a vector fft is performed. If <EM>X</EM>
+is a MxN matrix then the <EM>N</EM> columns of <EM>X</EM> are
+fft'ed.
+<P>
+<DT><B>See Also</B><DD><P>ifft
+<P>
+</DL>
+<H2><A NAME="ss7.31">7.31 filter</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Discrete time recursive filter.
+<DT><B> Syntax   </B><DD><P>filter ( <EM>B</EM>, <EM>A</EM>, <EM>X</EM> )
+<P>filter ( <EM>B</EM>, <EM>A</EM>, <EM>X</EM>, <EM>Zi</EM> )
+<DT><B> Description </B><DD><P>Filter is an implementation of the standard difference
+equation:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+y[n] = b(1)*x[n] + b(2)*x[n-1] + ... b(nb+1)*x[n-nb]
+                 - a(2)*y[n-1] - ... a(na+1)*y[n-na]
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The filter is implemented using a method described as a
+"Direct Form II Transposed" filter. More for information see
+Chapter 6 of "Discrete-Time Signal Processing" by Oppenheim
+and Schafer.
+<P>The inputs to filter are:
+<DL>
+<DT><B><EM>B</EM></B><DD><P>The numerator coefficients, or zeros of the
+system transfer function. The coefficients are
+specified in a vector like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ [ b(1) , b(2) , ... b(nb) ] 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><EM>A</EM></B><DD><P>The denominator coefficients, or the poles of
+the system transfer function. the coefficients
+are specified in a vector like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ [ a(1) , a(2) , ... a(na) ]  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><EM>X</EM></B><DD><P>A vector of the filter inputs.
+<P>
+<DT><B><EM>Zi</EM></B><DD>[<P>Optional] The initial delays of the filter.
+</DL>
+<P>The filter outputs are in a list with element names:
+<P>
+<DL>
+<DT><B><EM>y</EM></B><DD><P>The filter output. <EM>y</EM> is a vector of the same
+dimension as <EM>X</EM>. 
+<P>
+<DT><B><EM>zf</EM></B><DD><P>A vector of the final values of the filter delays.
+</DL>
+<P>The A(1) coefficient must be non-zero, as the other
+coefficients are divided by A(1).
+<P>Below is an implementation of filter() in a r-file - it is
+provided for informational usage only.
+<P>
+<P>
+<HR>
+<PRE>
+#
+#  Simplistic version of RLaB's builtin function filter()
+#  Y = filter ( b, a, x )
+#  Y = filter ( b, a, x, zi )
+#
+
+rfilter = function ( b , a , x , zi )
+{
+  local ( b , a , x , zi )
+          ntotal = x.nr * x.nc;
+  M = b.nr * b.nc;
+  N = a.nr * a.nc;
+  NN = max ([ M, N ]);
+  y = zeros (x.nr, x.nc); 
+
+  # Fix up pole and zero vectors.
+  # Make them the same length, this makes
+  # filter's job much easier.
+
+  if (N &lt; NN) { a[NN] = 0; }
+  if (M &lt; NN) { b[NN] = 0; }
+  
+  # Adjust filter coefficients
+  if (a[1] == 0) { error ("rfilter: 1st A term must be non-zero"); }
+  a[2:NN] = a[2:NN] ./ a[1];
+  b = b ./ a[1];
+
+  # Create delay vectors and load inital delays.
+  # Add an extra term to vi[] to make filter's 
+  # job a little easier. This extra term will
+  # always be zero.
+
+  v = zeros (NN, 1);
+  vi = zeros (NN+1, 1);
+
+  if (exist (zi))
+  {
+    vi[1:NN] = zi;   
+  }
+
+  #
+  # Do the work...
+  #
+
+  for (n in 1:ntotal)
+  {
+    v[1] = b[1]*x[n] + vi[2];
+    y[n] = v[1];
+    for (k in 2:NN)
+    {
+      v[k] = b[k]*x[n] - a[k]*v[1] + vi[k+1];
+      vi[k] = v[k];
+    }
+  }
+
+  return &lt;&lt; y = y; zf = v >>;
+};
+</PRE>
+<HR>
+<P>
+</DL>
+<H2><A NAME="ss7.32">7.32 find </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Find non-zeros.
+<DT><B> Syntax </B><DD><P>find ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Find returns a matrix that contains the indices of the
+non-zero elements of the input matrix <EM>A</EM>.
+<P>A common usage for find, is the selection of matrix elements
+that meet certain criteria.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = rand(4,4)
+ a =
+ matrix columns 1 thru 4
+    0.647      0.665      0.655      0.299  
+    0.333     0.0847      0.129      0.265  
+   0.0369      0.204       0.91        0.7  
+    0.162      0.167      0.112       0.95  
+> x = a[ find( a &lt; .1 ) ]
+ x =
+ matrix columns 1 thru 2
+   0.0369     0.0847  
+</PRE>
+</CODE></BLOCKQUOTE>
+</DL>
+<H2><A NAME="ss7.33">7.33 finite </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Test variable for finite values.
+<DT><B> Syntax </B><DD><P>finite ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>finite returns a matrix, the same size as the input
+(<EM>A</EM>), consisting of ones and zeros. The elements of the
+return matrix are 1 if the corresponding value of <EM>A</EM> is
+finite, or zero if the corresponding element of <EM>A</EM> is an
+Inf or a NaN.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, inf(), 3; 4, 5, 6; inf(), 8, nan()]
+ a =
+        1        inf          3  
+        4          5          6  
+      inf          8  nan0x80000000  
+> finite (a)
+        1          0          1  
+        1          1          1  
+        0          1          0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<DT><B>See Also</B><DD><P>isinf, isnan
+<P>
+</DL>
+<H2><A NAME="ss7.34">7.34 floor </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Largest integral value not greater than <EM>X</EM>
+<DT><B> Syntax </B><DD><P>floor ( <EM>X</EM> )
+<DT><B> Description </B><DD><P>Floor returns the largest integer not greater than the
+argument. If the argument is a MATRIX then the floor operation
+is performed on an element-by-element basis.
+<P>
+<DT><B>See Also</B><DD><P>ceil, int
+<P>
+</DL>
+<H2><A NAME="ss7.35">7.35 format </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Set the printing format.
+<DT><B> Syntax </B><DD><P>format ( ) 
+<P>    format ( <EM>PRECISION</EM> )
+<P>    format ( <EM>WIDTH</EM>, <EM>PRECISION</EM> )
+<P>    format ( [ <EM>WIDTH</EM>, <EM>PRECISION</EM> ] )
+<DT><B> Description </B><DD><P>Format sets the output print format for all numeric output. If
+no arguments are supplied, then the output print formats are
+reset to the default values.
+<P>
+<DL>
+<P>
+<DT><B><EM>PRECISION</EM></B><DD><P>represents the precision with
+which numbers will be printed. For instance, if
+<EM>PRECISION</EM> has a value of 4, then 4 significant digits
+will be printed for numeric values.
+<P>
+<DT><B><EM>WIDTH</EM></B><DD><P>represents the minimum field width of
+the formatted output.
+<P>
+</DL>
+<P>Format returns a 2-element matrix contains the previous width
+and precision values. Subsequently, this matrix can be used to
+reset format.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> 123456789.123456789
+ 1.235e+08
+> format(10);
+> 123456789.123456789
+123456789.1
+> format();
+> a = rand(3,3)
+ a =
+ matrix columns 1 thru 3
+         1      0.3331      0.6646  
+    0.9745     0.03694     0.08467  
+    0.6475      0.1617      0.2041  
+> format(10);
+> a
+ a =
+ matrix columns 1 thru 3
+0.9999996424  0.3330855668  0.6646450162  
+0.9745196104  0.03694454208  0.08467286825  
+0.6474838853  0.1617118716  0.2041363865  
+> format(15,10);
+> a
+ a =
+ matrix columns 1 thru 3
+   0.9999996424     0.3330855668     0.6646450162  
+   0.9745196104    0.03694454208    0.08467286825  
+   0.6474838853     0.1617118716     0.2041363865  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.36">7.36 fprintf </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Formatted printing to a file.
+<DT><B> Syntax </B><DD><P>fprintf ( <EM>filestring</EM>, <EM>formatstring</EM>, <EM>VARi</EM> ... )
+<DT><B> Description </B><DD><P>The RLaB fprintf is a limited feature version of the
+C-language fprintf. The features are limited because RLaB
+does not support all of the data types the C-language does.
+<P>
+<DL>
+<P>
+<DT><B><EM>filestring</EM></B><DD><P>The 1st string argument
+determines the file to which the output is sent. If the
+filename starts with a <CODE>|</CODE> then a pipe is opened to the
+process following the <CODE>|</CODE> and the output is written to
+the pipe. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> fprintf("|gnuplot"; "set term X11\n plot sin(x)\n");
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>will create the sub-process gnuplot, and pipe the command
+string to it.
+<P>
+<DT><B><EM>formatstring</EM></B><DD><P>A valid fprintf format string.
+<P>
+<DT><B><EM>VARi</EM></B><DD><P>Are any number of constants or
+variables that match the format string. fprintf cannot print
+out vector, matrix, or  list objects as a whole. Valid print
+objects are strings,    constants, and scalars. 
+<P>
+</DL>
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> for (i in 1:a.n) { fprintf("stdout", "element %i: %20.10g\n", i, a[i]); }
+element 1:          1.414213562
+element 2:          4.242640687
+element 3:          2.828427125
+element 4:          5.656854249
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>printf, sprintf, write, read
+<P>
+</DL>
+<H2><A NAME="ss7.37">7.37 fread </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Binary stream input.
+<DT><B> Syntax </B><DD><P>fread ( <EM>FILENAME</EM>, <EM>NITEMS</EM>, <EM>TYPE</EM>, <EM>SWAPB</EM> )
+<DT><B> Description </B><DD><P>fread reads <EM>NITEMS</EM> of type <EM>TYPE</EM> from
+<EM>FILENAME</EM> (a string) and returns the result in a numeric
+matrix.
+<P>Allowable arguments are:
+<DL>
+<P>
+<DT><B><EM>NITEMS</EM></B><DD><P>Number of objects of type <EM>TYPE</EM>
+to read from <EM>FILENAME</EM>. If <EM>NITEMS</EM> is inf(), then
+fread will read from <EM>FILENAME</EM> until end-of-file is
+reached. 
+<P>
+<DT><B><EM>TYPE</EM></B><DD><P>
+<BLOCKQUOTE>
+"char"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"unsigned char"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"short int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"unsigned int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"float"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"double"
+</BLOCKQUOTE>
+<P>
+<DT><B><EM>SWAPB</EM></B><DD><P>
+<BLOCKQUOTE>
+0       Do not swap bytes in a word (default).
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+1       Do swap the bytes in each word.
+</BLOCKQUOTE>
+<P>
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>FILES, fseek, fwrite, close, open, write
+<P>
+</DL>
+<H2><A NAME="ss7.38">7.38 frexp </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Convert floating-point number to fractional and
+integral components 
+<DT><B> Syntax </B><DD><P>frexp ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Frexp returns a list with elements <EM>f</EM> and <EM>e</EM>
+Frexp splits <EM>A</EM> into a normalized fraction in the interval:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+                0.5 &lt;= abs(f) &lt;= 1
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>which is returned in <EM>f</EM>, and a power of 2, which is returned
+in <EM>e</EM>. If <EM>A</EM> is zero, then both <EM>e</EM> and
+<EM>f</EM> are zero.
+<P>Frexp operates on REAL matrices of any dimension.
+<P>
+<DT><B>See Also</B><DD><P>log, log10, log2, exp, mod
+<P>
+</DL>
+<H2><A NAME="ss7.39">7.39 fseek </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Reposition a stream.
+<DT><B> Syntax </B><DD><P>fseek ( <EM>FILENAME</EM>, <EM>OFFSET</EM> )
+<P>    fseek ( <EM>FILENAME</EM>, <EM>OFFSET</EM>, <EM>OFFSET</EM> )
+<DT><B> Description </B><DD><P>fseek sets the current position in <EM>FILENAME</EM>. a
+subsequent read will access data beginning at the new
+position. fseek is an interface to the C library function of
+the same name. <EM>OFFSET</EM> is specified in bytes.
+<P>
+<DL>
+<DT><B><EM>ORIGIN</EM></B><DD><P>
+<BLOCKQUOTE>
+"SEEK_SET"      beginning of file (default)
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"SEEK_CUR"      current position
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"SEEK_END"      end of file
+</BLOCKQUOTE>
+<P>
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>FILES, fread, open, close
+<P>
+</DL>
+<H2><A NAME="ss7.40">7.40 full </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Convert sparse storage to full (dense) storage. 
+<DT><B> Syntax </B><DD><P>full( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>full converts its argument from the sparse storage format
+to the full, or dense, storage format.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> d = [1, 1, 10;
+>      2, 4, 20;
+>      3, 1, 12;
+>      5, 2, 13;
+>      1, 4, 3];
+> s = spconvert(d)
+ (1, 1)                10
+ (1, 4)                 3
+ (2, 4)                20
+ (3, 1)                12
+ (5, 2)                13
+> f = full(s)
+       10          0          0          3  
+        0          0          0         20  
+       12          0          0          0  
+        0          0          0          0  
+        0         13          0          0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>sparse, spconvert
+</DL>
+<H2><A NAME="ss7.41">7.41 fwrite</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Binary stream output.
+<DT><B> Syntax </B><DD><P>fwrite ( <EM>FILENAME</EM>, <EM>TYPE</EM>, <EM>DATA</EM> )
+<DT><B> Description </B><DD><P>fwrite writes <EM>DATA</EM> to the file identified by
+<EM>FILENAME</EM>. <EM>DATA</EM> is cast, or converted to the data
+type identified in <EM>TYPE</EM>. fwrite roughly mimincs the C
+programming language's fwrite library function.
+<P><EM>DATA</EM> can either be a dense numeric matrix, or a string
+matrix. The size of the matrix does not need to be specified
+because the entire matrix is written.
+<P>If <EM>DATA</EM> is a string matrix, then the first character of
+each element is written to <EM>FILENAME</EM>, after being
+coerced to type <EM>TYPE</EM>. 
+<P>Allowable arguments are:
+<DL>
+<P>
+<DT><B><EM>TYPE</EM></B><DD><P>
+<BLOCKQUOTE>
+"char"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"unsigned char"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"short int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"unsigned int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"int"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"float"
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+"double"
+</BLOCKQUOTE>
+<P>
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>FILES, fread, fseek, close, open, write
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss7.42">7.42 getenv </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Get an environment variable
+<DT><B> Syntax </B><DD><P>getenv ( <EM>NAME</EM> )
+<DT><B> Description </B><DD><P>Getenv searches the current environment for a variable with
+name <EM>NAME</EM>. The value of the environment variable is
+returned as a string.
+<P>Exactly how getenv behaves is depends upon the underlying
+operating system implementation. On UNIX system getenv will
+return a NULL string if the environment variable does not
+exist. 
+<P>
+<DT><B>See Also</B><DD><P>putenv
+<P>
+</DL>
+<H2><A NAME="ss7.43">7.43 getline </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Get a line of input.
+<DT><B> Syntax </B><DD><P>getline ( <EM>FN</EM> ) 
+<P>    getline ( <EM>FN</EM>, <EM>LL</EM> )
+<DT><B> Description </B><DD><P>Getline returns an N-element list which contains all of the
+tokens from a line in the file described by <EM>FN</EM>. The
+tokens are delimited by whitespace. Numbers are installed in
+the list as numeric scalars, everything else is installed as
+scalar strings.
+<P>The list elements have numeric indices, and are numbered from
+1 to N. The 1st element containing the 1st token on the line,
+and the Nth element containing the last token on the line. The
+newline is not returned as a token.
+<P>Getline will also recognize everything enclosed within a pair
+of <CODE>"</CODE> as a string, including escape characters.
+<P>Getline will always return a list-object. When an empty-line
+has been read, getline returns an empty list. Getline will
+terminate on an End-Of-File (EOF).
+<P>The filename can be a string that specifies a sub-process (see
+<CODE>help FILES</CODE>), in which case getline will run the
+sub-process, and read from the process's standard output.
+<P>The second, and optional argument,<EM> LL</EM>, forces getline
+to return the entire line (including the newline) as a string,
+without any parsing. If <EM>LL</EM> is &lt;= 0, then getline will
+read lines as long as 512 characters. If <EM>LL</EM> > 0, then
+getline will read lines as long as <EM>LL</EM> characters. The
+return value is a single string, not a list, when <EM>LL</EM> is
+used. If getline encounters and EOF, while LL is being used, a
+numeric value of 0 is returned.
+<P>Examples:
+<P>To get input interactively:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> printf( "Enter a string and a number: " ); x = getline( "stdin" );
+Enter a string and a number: test-string 1.234e5
+> show(x)
+   name:   x     
+   class:  list  
+       n:  2     
+> x.[1]
+test-string
+> x.[2]
+ 2 =
+ 1.23e+05
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Given a file named `test', which contains the following lines:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+jcool  259  4 1075  822 vt01     S   Dec 29  9:32 X :0 -p 1 -s 5 
+jcool  256  0   21    0 console  S   Dec 29  0:00 startx 
+jcool  261  0  338   88 console  S   Dec 29  0:16 twm 
+jcool  288  8  635  333 ?        S   Dec 29  2:00 emacs 
+jcool  287  0  408   65 console  S   Dec 29  0:01 xclock 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> tmp = getline( "test" );
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>would produce a list variable named `tmp' with 16 elements:
+tmp.[1] would be the string "jcool" and tmp.[16] would be the
+number 5.  The next call to getline() would read the second
+line in the file, and create a new list containing those
+elements.
+<P>The above could also have been done with:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> tmp = getline( "|ps -aux | grep jcool" );
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Which would open a readable pipe to the "ps -aux | grep jcool"
+command and grab a line at a time from the process.
+<P>To read the entire contents of a file:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+if (length (ans = getline("stdin"))) 
+{ 
+  // do something with ans
+else
+  // finish up
+}
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Since getline returns an empty list when there is no input, we
+can tell when to terminate the input loop by checking the
+length of the returned list.
+<P>Using the optional second arguemnt to getline we can get
+old-style Fortran formattted output. For example, we have a
+file filled with:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+0.1285186E+000.1463163E+000.0000000E+000.0000000E+000.0000000E+000.0000000E+00
+0.0000000E+000.0000000E+000.0000000E+000.0000000E+000.7322469E-010.5245288E-01
+0.0000000E+00-.9399651E-010.2397120E-01-.6551484E-010.2616772E+020.5796479E-01
+0.0000000E+000.2500000E+000.7788281E-010.2121489E-010.0000000E+00-.1345507E+00
+0.1516225E-01-.1284981E+000.1136876E+020.3010250E-010.0000000E+00-.2500000E+00
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>we can do:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> lv = strtod (getline (FN, 13));
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>and get a vector with the numeric values for each line.
+<P>
+<DT><B>See Also</B><DD><P>strsplt
+<P>
+</DL>
+<H2><A NAME="ss7.44">7.44 help </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Online Help
+<DT><B> Syntax </B><DD><P>help 
+<P>    help <EM>NAME</EM>
+<DT><B> Description </B><DD><P>
+<DL>
+<P>
+<DT><B>help</B><DD><P>Prints a list of available help files. Help
+first prints out the help files in the default help
+file directory. Next, the directories identified in
+the environment variable <CODE>RLAB_SEARCH_PATH</CODE> are
+searched for files ending in `.r' -- rfiles. A list of
+each directory's rfiles is printed on the standard
+output.
+<P>
+<DT><B>help <EM>NAME</EM></B><DD><P>Prints out the help file
+identified by <EM>NAME</EM>. If <EM>NAME</EM> matches a
+file in the default help directory, that file is paged
+to the standard output. If no match is found, the
+directories identified in the environment variable
+<CODE>RLAB_SEARCH_PATH</CODE> are searched for matches. The
+first match is paged to the standard output. The rfile
+extension (`.r') is not considered when checking for
+matches.
+<P>
+</DL>
+<P>If the user's environment does not contain
+<CODE>RLAB_SEARCH_PATH</CODE>, then the default search-path is
+used. The default is set at compile time. Normally the default
+is ".", the current working directory.
+<P>Help is a command, not an expression or statement. Therefore,
+it must be issued on a line by itself, and cannot occur in the
+midst of another statement or expression.
+<P>
+<DT><B>See Also</B><DD><P>rfile 
+<P>
+</DL>
+<H2><A NAME="ss7.45">7.45 hess </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Find the Hessenberg form of a matrix.
+<DT><B> Syntax </B><DD><P>hess( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Hess finds the Hessenberg from of a matrix. Hess takes a
+single matrix, <EM>A</EM>, as input, and returns a list with two
+elements, <EM>h</EM>, and <EM>p</EM>.
+<P>
+<BLOCKQUOTE>
+A = p * h * p'          where A is the input
+</BLOCKQUOTE>
+<P>Hess uses the LAPACK subroutines DGEHRD, DORGHR, and ZGEHRD,
+ZUNGHR.
+<P>
+</DL>
+<H2><A NAME="ss7.46">7.46 ifft </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Inverse Discrete Fourier Transform
+<DT><B> Syntax </B><DD><P>ifft ( <EM>X</EM> )
+<P>    ifft ( <EM>X</EM>, <EM>N</EM> )
+<DT><B> Description </B><DD><P>Ifft utilizes the FFTPACK subroutine CFFTB to compute a
+discrete Fourier transform of the input. The output is scaled
+by 1/N, so that a call to fft() followed by a call to ifft()
+will reproduce the original input. 
+<P>If ifft is used with a second argument, <EM>N</EM>, then the
+matrix <EM>X</EM> is either padded with zeros, or truncated till
+it is of length <EM>N</EM> (if <EM>X</EM> is a vector), or has row
+dimension <EM>N</EM> (if it is a matrix).
+<P>Subroutine CFFTB computes the backward complex discrete
+Fourier transform (the Fourier synthesis). equivalently, CFFTB
+computes a complex periodic sequence from its Fourier
+coefficients.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        for j=1,...,n
+
+           c(j)=the sum from k=1,...,n of
+
+                 c(k)*exp(i*(j-1)*(k-1)*2*pi/n)
+
+                         where i=sqrt(-1)
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The argument <EM>X</EM> must be a matrix. If <EM>X</EM> is a row,
+or column matrix then a vector ifft is performed. If <EM>X</EM>
+is a MxN matrix then the N columns of <EM>X</EM> are ifft'ed.
+<P>
+<DT><B>See Also</B><DD><P>fft
+<P>
+</DL>
+<H2><A NAME="ss7.47">7.47 imag </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Imaginary part
+<DT><B> Syntax </B><DD><P>imag ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Imag returns the imaginary part of an <EM>A</EM>.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> z = pi + 3*pi*1j
+            3.14 + 9.42i
+> imag(z)
+     9.42  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>conj, real
+<P>
+</DL>
+<H2><A NAME="ss7.48">7.48 inf </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Create a variable with value of infinity.
+<DT><B> Syntax </B><DD><P>inf ( )
+<DT><B> Description </B><DD><P>Inf returns a scalar whose value is infinity, according to
+IEEE-754. Unlike NaN, inf == inf should return TRUE (1).
+<P>
+<DT><B>See Also</B><DD><P>nan
+<P>
+</DL>
+<H2><A NAME="ss7.49">7.49 int </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return an integer.
+<DT><B> Syntax </B><DD><P>int ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Int returns its argument after it has been "cast" to an
+integer. If the argument is a MATRIX then the int operation is
+performed on an element-by-element basis.
+<P>int has the effect of truncating the input, for example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> int(1.1)
+           1
+> int(1.5)
+           1
+> int(1.999)
+           1
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>ceil, floor
+<P>
+</DL>
+<H2><A NAME="ss7.50">7.50 isinf </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Test for values of infinity.
+<DT><B> Syntax </B><DD><P>isinf ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>isinf returns TRUE (1) if <EM>A</EM> is Infinity (according to
+IEEE-754). If <EM>A</EM> is a vector or a matrix the test is
+performed element-by-element, and a matrix the same size as
+<EM>A</EM> is returned.
+<P>Infs can usually be created by attempting to divide by zero,
+or using the builtin inf function.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, 2, 3; 4, 5, inf(); 7, 8, 9]
+ a =
+        1          2          3  
+        4          5        inf  
+        7          8          9  
+> isinf (a)
+        0          0          0  
+        0          0          1  
+        0          0          0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<DT><B>See Also</B><DD><P>isnan, finite
+<P>
+</DL>
+<H2><A NAME="ss7.51">7.51 isnan </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Test for NaN values.
+<DT><B> Syntax </B><DD><P>isnan ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>isnan returns TRUE (1) if <EM>A</EM> is a NaN (Not A Number). If
+<EM>A</EM> is a vector or a matrix the test is performed
+element-by-element, and a matrix the same size as <EM>A</EM> is
+returned.
+<P>NaNs can be create by the 0/0 operation on most computers.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, 2, 3; 4, 5, nan(); 7, 8, 9]
+ a =
+        1          2          3  
+        4          5  nan0x80000000  
+        7          8          9  
+> isnan (a)
+        0          0          0  
+        0          0          1  
+        0          0          0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>inf, isinf, finite, nan
+<P>
+</DL>
+<H2><A NAME="ss7.52">7.52 issymm </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Test matrix for symmetry
+<DT><B> Syntax </B><DD><P>issymm ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Issymm returns TRUE (1) if the argument <EM>A</EM> is a
+symmetric (or Hermitian) matrix, and FALSE (0) if <EM>A</EM> is
+not symmetric (Hermitian).
+<P>
+</DL>
+<H2><A NAME="ss7.53">7.53 ldexp </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Multiply floating point number 
+by integral power of 2
+<DT><B> Syntax </B><DD><P>ldexp ( <EM>X</EM> , <EM>EXP</EM> )
+<DT><B> Description </B><DD><P>Ldexp returns a numeric matrix which contains the value(s)
+resulting from the operation:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+                X * 2^EXP
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The dimensions of <EM>X</EM> and <EM>EXP</EM> must be the
+same. Optionally, <EM>EXP</EM> can be a scalar, independent of
+the size of <EM>X</EM>.
+<P>
+<DT><B>See Also</B><DD><P>frexp
+<P>
+</DL>
+<H2><A NAME="ss7.54">7.54 length </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return the length of an object.
+<DT><B> Syntax </B><DD><P>length ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>The length function returns the length of vector <EM>A</EM>. It
+is equivalent to <CODE>max (size (A))</CODE>, when <EM>A</EM> is
+numeric.
+<P>To summarize:
+<P>
+<DL>
+<P>
+<DT><B>NUMERIC:</B><DD><P><CODE>max (size (A))</CODE>
+<P>
+<DT><B>STRING:</B><DD><P>number of characters in a string.
+<P>
+<DT><B>LIST:</B><DD><P>number of elements in list.
+<P>
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>show, size
+<P>
+</DL>
+<H2><A NAME="ss7.55">7.55 load </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Load / execute the instructions in a file.
+<DT><B> Syntax </B><DD><P>load( <EM>filename</EM> ) 
+<DT><B> Description </B><DD><P>Load opens the file named <EM>filename</EM> and reads its
+contents as though a user were typing the contents at the
+command line. Thus a user can use load to enter data,
+user-functions, or execute repetitive commands saved in a
+file. there is no limit to the number of functions, or regular
+statements that can exist in a file called by load.
+<P>Immediately after the the input is read, load closes the
+file, so that subsequent calls to load will re-open the
+file.
+<P>Load requires that a complete file specification be provided.
+If the file is in the present working directory, then only the
+filename is necessary otherwise, a complete path is required.
+<P>In most cases the rfile command is simpler to use.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+// load the roots() function into memory
+> load( "roots.r" )
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>rfile
+<P>
+</DL>
+<H2><A NAME="ss7.56">7.56 log </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Logarithmic function.
+<DT><B> Syntax </B><DD><P>log ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Log returns the natural logarithm of it's argument. If the
+argument is a VECTOR or MATRIX an element-by-element log
+operation is performed.
+<P>
+</DL>
+<H2><A NAME="ss7.57">7.57 log10 </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Base-10 logarithm.
+<DT><B> Syntax </B><DD><P>log10 ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Log10 returns the base-10 logarithm of it's argument. If the
+argument is a MATRIX, an element-by-element log10 operation is
+performed.
+<P>log10 is not implemented yet for COMPLEX data.
+<P>
+</DL>
+<H2><A NAME="ss7.58">7.58 logb </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Unbiased exponent.
+<DT><B> Syntax </B><DD><P>logb ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Logb returns the unbiased exponent of its REAL argument.
+<P>This function depends upon operating system support. Logb is
+part of the IEEE-754 standard, and should be available on most
+machines that implement this standard in one form or another.
+<P>
+<DT><B>See Also</B><DD><P>frexp
+<P>
+</DL>
+<H2><A NAME="ss7.59">7.59 max </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Maximum function
+<DT><B> Syntax </B><DD><P>max ( <EM>A</EM> ) 
+<P>    max ( <EM>A</EM>, <EM>B</EM> )
+<DT><B> Description </B><DD><P>Max returns the maximum value(s) contained in the matrix
+<EM>A</EM>. If the argument is a vector, then the largest value
+is returned.  If <EM>A</EM> is a MxN matrix, then a row-vector
+of N columns is returned containing the maximum value from
+each column of <EM>A</EM>.
+<P>If max is used with two arguments, then max returns a matrix
+the same size as <EM>A</EM> and <EM>B</EM> filled with the largest
+elements from <EM>A</EM> and <EM>B</EM>.
+<P>When matrix elements are complex the absolute value is used
+for comparison purposes.
+<P>
+<DT><B>See Also</B><DD><P>maxi, min, mini
+<P>
+</DL>
+<H2><A NAME="ss7.60">7.60 maxi </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Maximum value indices
+<DT><B> Syntax </B><DD><P>maxi ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Maxi returns the index of the maximum value contained in
+matrix. If the input argument (<EM>A</EM>) is a vector, then the
+index of the largest value is returned. If <EM>A</EM> is a MxN
+matrix, then a row-vector of the column indices of the largest
+column values of <EM>A</EM> is returned.
+<P>
+<DT><B>See Also</B><DD><P>max, min, mini
+<P>
+</DL>
+<H2><A NAME="ss7.61">7.61 members </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return an object's member names.
+<DT><B> Syntax </B><DD><P>members ( <EM>L</EM> )
+<DT><B> Description </B><DD><P>The members function takes a variable as an argument
+(<EM>L</EM>), and returns a string-vector containing the
+object's member names.
+<P>For example: <CODE>x = members ($$)</CODE> will
+create a row-vector and assign it to <EM>x</EM>. The row-vector
+will contain the names of all the elements in the
+global-symbol-table.
+<P>The members function is probably most useful when used in
+conjunction with for-loops. The result of members can be
+used as the loop index, allowing users to operate on the
+elements of an object. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+ll = &lt;&lt; a = rand(3,3); b = rand(3,3); c = rand(3,3) >>;
+for (i in members (ll)) { ll.[i] = diag(ll.[i]); }
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.62">7.62 min </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Minimum function.
+<DT><B> Syntax </B><DD><P>min ( <EM>A</EM> )
+<P>    min ( <EM>A</EM>, <EM>B</EM> )
+<DT><B> Description </B><DD><P>Min returns the minimum value(s) contained in the matrix
+<EM>A</EM>. If the argument is a vector, then the smallest value
+is returned.  If <EM>A</EM> is a MxN matrix, then a row-vector
+of N columns is returned containing the minimum value from
+each column of <EM>A</EM>.
+<P>If min is used with two arguments, then min returns a matrix
+the same size as <EM>A</EM> and <EM>B</EM> filled with the
+smallest elements from <EM>A</EM> and <EM>B</EM>.
+<P>When matrix elements are complex the absolute value is used
+for comparison purposes.
+<P>
+<DT><B>See Also</B><DD><P>mini, max, maxi
+<P>
+</DL>
+<H2><A NAME="ss7.63">7.63 mini </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Minimum value indices.
+<DT><B> Syntax </B><DD><P>mini ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Mini returns the index of the minimum value contained in
+matrix. If the input argument (<EM>A</EM>) is a vector, then the
+index of the smallest value is returned. If <EM>A</EM> is a MxN
+matrix, then a row-vector of the column indices of the
+smallest column values of <EM>A</EM> is returned.
+<P>
+<DT><B>See Also</B><DD><P>max, maxi, min
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.64">7.64 mnorm</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the matrix norm.
+<DT><B> Syntax   </B><DD><P>mnorm ( <EM>A</EM> )
+<P>         mnorm ( <EM>A</EM> , <EM>TYPE</EM> )
+<P>
+<DT><B> Description </B><DD><P>The first form defaults to computing the 1-norm of the input
+matrix. The second form allows the user to specify the desired
+type of matrix norm with a string argument.
+<P>
+<DL>
+<P>
+<DT><B><CODE>M</CODE> or <CODE>m</CODE></B><DD><P>returns <CODE>max(abs( <EM>A</EM> ))</CODE>
+<P>
+<DT><B> <CODE>1</CODE>, <CODE>O</CODE> or <CODE>o</CODE> </B><DD><P>return the 1-norm (default), the largest column sum
+(max(sum(abs(A)))). 
+<P>
+<DT><B> <CODE>2</CODE> </B><DD><P>returns the matrix 2-norm 
+(largest singular value)
+<P>
+<DT><B> <CODE>I</CODE> or <CODE>i</CODE> </B><DD><P>returns the infinity-norm,
+the largest row sum (max(sum(abs(A')))).
+<P>
+<DT><B> <CODE>F</CODE>, <CODE>f</CODE>, <CODE>E</CODE> or <CODE>e</CODE> </B><DD><P>returns the Frobenius norm.
+<P>
+</DL>
+<P>LAPACK subroutines DLANGE and ZLANGE are used to compute all
+norms, except the 2-norm.
+<P><B>Obscure feature:</B> If <EM>TYPE</EM> is Inf (the output from
+<CODE>inf()</CODE>, for example), then norm will compute the
+Infinity norm of the matrix <EM>A</EM>.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = magic(4)
+       16          2          3         13  
+        5         11         10          8  
+        9          7          6         12  
+        4         14         15          1  
+> mnorm ( a )
+       34  
+> mnorm ( a , "m" )
+       16  
+> mnorm ( a , "1" )
+       34  
+> mnorm ( a , "2" )
+       34  
+> mnorm ( a , "i" )
+       34  
+> mnorm ( a , inf() )
+       34  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.65">7.65 mod </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Floating point remainder
+<DT><B> Syntax </B><DD><P>mod( <EM>A</EM>, <EM>B</EM> ) 
+<DT><B> Description </B><DD><P>The mod routine returns the floating point remainder of the
+division of <EM>A</EM> by <EM>B</EM>: zero if <EM>B</EM> is zero or
+if <EM>A</EM>/<EM>B</EM> would overflow; otherwise the number F
+with the same sign as <EM>A</EM>, such that <EM>A</EM> = i<EM>B</EM>
++ F for some integer i, and |f| &lt; |B|.
+<P>When the arguments to mod are two matrices, then an element by
+element mod is performed. Mod works on complex number also.
+<P>mod(x,y) is equivalent to: 
+<BLOCKQUOTE>
+n = int( x/y )
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+mod(x,y) = x - y.*n
+</BLOCKQUOTE>
+<P>mod is implemented via libm.a fmod function.
+<P>
+</DL>
+<H2><A NAME="ss7.66">7.66 nan </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return a NaN (Not a Number)
+<DT><B> Syntax </B><DD><P>nan ( ) 
+<DT><B> Description </B><DD><P>Nan returns a NaN (Not a Number) according to IEEE-754. One
+way to determine if a variable contains a NaN is to test it
+against itself.
+<P>
+<BLOCKQUOTE>
+NaN == NaN
+</BLOCKQUOTE>
+<P>Should always return FALSE (0).
+<P>
+<DT><B>See Also</B><DD><P>inf
+<P>
+</DL>
+<H2><A NAME="ss7.67">7.67 nlleastsq</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Solve systems of nonlinear equations (nonlinear
+least squares)
+<DT><B> Syntax </B><DD><P>nlleastsq ( <EM>feval</EM>, <EM>neq</EM>, <EM>guess</EM> )
+<DT><B> Description </B><DD><P>nlleastsq is a high level interface to the MINPACK function:
+LMDIF1. nlleastsq is only availble as a builtin function if
+your Rlab installation was compiled with MINPACK enabled, and
+you have the MINPACK library installed on your system. From the
+MINAPCK documentation:
+<P>
+<BLOCKQUOTE>
+The purpose of lmdif1 is to minimize the sum of the squares of m
+nonlinear functions in n variables by a modification of the
+levenberg-marquardt algorithm. this is done by using the more
+general least-squares solver lmdif. the user must provide a
+subroutine which calculates the functions. the jacobian is then
+calculated by a forward-difference approximation.
+</BLOCKQUOTE>
+        
+<P>The arguments to ode are:
+<P>
+<DL>
+<DT><B><EM>feval</EM></B><DD><P>The user-supplied function which
+calculates the functions, and returns a vector of the
+solution.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+feval = function ( m, n, x, fvec, iflag )
+{
+  /* Do something */
+  return fvec;
+};
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><EM>neq</EM></B><DD><P>The number of equations.
+<P>
+<DT><B><EM>guess</EM></B><DD><P>The initial guess at the solution.
+<P>
+</DL>
+<P>
+</DL>
+<H2><A NAME="ss7.68">7.68 ode </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Integrate Ordinary Differential Equations.
+<DT><B> Syntax </B><DD><P>ode ( <EM>rhsf</EM>, <EM>tstart</EM>, <EM>tend</EM>, <EM>ystart</EM>, <EM>dtout</EM>, <EM>relerr</EM>, <EM>abserr</EM>, <EM>uout</EM> )
+<DT><B> Description </B><DD><P>ode integrates a system of N first order ordinary
+differential equations of the form: 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+dy(i)/dt = f(t,y(1),y(2),...,y(N))
+y(i) given at  t .
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The arguments to ode are:
+<P>
+<DL>
+<DT><B><EM>rhsf</EM></B><DD><P>A function that evaluates <CODE>dy(i)/dt</CODE> at
+<CODE>t</CODE>. The function takes two arguments and returns
+<CODE>dy/dt</CODE>. An example that generates <CODE>dy/dt</CODE>
+for Van der Pol's equation is shown below.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+vdpol = function ( t , x ) 
+{
+  xp = zeros(2,1);
+  xp[1] = x[1] * (1 - x[2]^2) - x[2];
+  xp[2] = x[1];
+  return xp;
+};
+                
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><EM>ystart</EM></B><DD><P>The initial values of <CODE>y, y(tstart)</CODE>.
+<P>
+<DT><B><EM>tstart</EM></B><DD><P>The initial value of the independent
+variable. 
+<P>
+<DT><B><EM>tend</EM></B><DD><P>The final value of the independent
+variable. 
+<P>
+<DT><B><EM>dtout</EM></B><DD><P>The output interval. The vector <CODE>y</CODE> will
+be saved at <EM>tstart</EM>, increments of <EM>tstart</EM>
++ <EM>dtout</EM>, and <EM>tend</EM>. If <EM>dtout</EM> is
+not specified, then the default is to store output at
+101 values of the independent variable.
+<P>
+<DT><B><EM>relerr</EM></B><DD><P>The relative error tolerance. Default
+value is 1.e-6. 
+<P>
+<DT><B><EM>abserr</EM></B><DD><P>The absolute error tolerance. At each
+step, ode requires that:
+<P>
+<BLOCKQUOTE>
+abs(local error) &lt;= abs(y)*relerr + abserr
+</BLOCKQUOTE>
+<P>For each component of the local error and solution
+vectors. The default value is 1.e-6.
+<P>
+<DT><B><EM>uout</EM></B><DD><P>Optional. A user-supplied function that
+computes an arbitrary output during the
+integration. <EM>uout</EM> must return a row-matrix at
+each dtout during the integration. It is entirely up
+to the user what to put in the matrix. The matrix is
+used to build up a larger matrix of the output, with
+one row for each <EM>dtout</EM>. The resulting matrix is
+returned by ode when the integration is complete.
+<P>
+</DL>
+<P>The Fortran source code for ode is completely explained and
+documented in the text, "Computer Solution of Ordinary
+Differential Equations: The Initial Value Problem" by 
+L. F. Shampine and  M. K. Gordon.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+//
+//  Integrate the Van der Pol equation, and measure the effect
+//  of relerr and abserr on the solution.
+//
+
+vdpol = function ( t , x ) 
+{
+  xp = zeros(2,1);
+  xp[1] = x[1] * (1 - x[2]^2) - x[2];
+  xp[2] = x[1];
+  return xp;
+};
+
+t0 = 0;
+tf = 10;
+x0 = [0; 0.25];
+dtout = 0.05;
+
+relerr = [1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1];
+abserr = relerr;
+
+//
+//  Baseline
+//
+
+xbase = ode( vdpol, 0, 20, x0, 0.05, 1e-9, 1e-9);
+results = zeros (relerr.n, abserr.n);
+elapse = zeros (relerr.n, abserr.n);
+
+//
+// Now loop through the combinations of relerr
+// and abserr, saving the results, and computing
+// the maximum difference.
+//
+        "start testing loop"
+for (i in 1:abserr.n)
+{
+  xode.[i] = &lt;&lt;>>;
+  for (j in 1:relerr.n)
+  {
+    printf("\t%i %i\n", i, j);
+    tic();
+    xode.[i].[j] = ode( vdpol, 0, 20, x0, 0.05, relerr[j], abserr[i]);
+    elapse[i;j] = toc();
+
+    // Save results
+    results[i;j] = max (max (abs (xode.[i].[j] - xbase)));
+  }
+}
+
+> results
+ results =
+ matrix columns 1 thru 6
+ 1.97e-05   0.000297   0.000634    0.00815      0.078       1.44  
+ 0.000128   7.89e-05   0.000632    0.00924     0.0732       1.61  
+ 0.000647   0.000625    0.00112     0.0147     0.0995       1.46  
+  0.00355    0.00352    0.00271     0.0118     0.0883      0.862  
+   0.0254     0.0254     0.0254      0.104      0.218       1.72  
+    0.513      0.513      0.513      0.589      0.467       1.82  
+
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Each row of results is a function of the absolute error
+(abserr) and each column is a function of the relative error
+(relerr).
+<P>
+<DT><B>See Also</B><DD><P>ode4
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.69">7.69 ones </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Create a matrix filled with ones.
+<DT><B> Syntax </B><DD><P>ones ( <EM>M</EM> , <EM>N</EM> ) 
+<P>    ones ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Create a matrix of ones. If the input is two scalars, then
+create a matrix of 1s with dimensions <EM>N</EM>x<EM>M</EM>.
+<P>If the input is a 2 element matrix, then create a matrix with
+row and column dimensions equal to <EM>A</EM>[1] and
+<EM>A</EM>[2] respectively.  This is useful when used
+in conjunction with size():
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        ones( size( X ) )
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>will return a matrix of ones the same size as <CODE>X</CODE>.
+<P>
+<DT><B>See Also</B><DD><P>zeros
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.70">7.70 open </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Open a file for reading.
+<DT><B> Syntax </B><DD><P>open ( <EM>FILENAME</EM>, <EM>MODE</EM> ) 
+<P>    open ( <EM>FILENAME</EM>, <EM>MODE</EM>, <EM>BUFFSIZE</EM> ) 
+<DT><B> Description </B><DD><P>Open will open a file or a pipe for read or write
+operations. Open allows the user to specify the mode of
+operation, and optionally a buffer-size for I/O. The "normal"
+UNIX modes are:
+<P>
+<DL>
+<DT><B>r</B><DD><P>read access
+<DT><B>w</B><DD><P>write access
+<DT><B>a</B><DD><P>append: open for writing at end of file, or
+create for writing
+<P>
+<DT><B><EM>BUFFSIZE</EM></B><DD><P>Buffersize is specified in
+bytes. If BUFFSIZE  is not specified the system
+defaults are used. 
+</DL>
+<P>Other operating systems may have different mode keys. Look at
+the API documentation for fopen on your system to find what
+mode values are acceptable.
+<P>
+<DT><B>See Also</B><DD><P>close, printf, fprintf, read, readb, readm, write, writeb, writem
+<P>
+</DL>
+<H2><A NAME="ss7.71">7.71 printf </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Formatted printing.
+<DT><B> Syntax </B><DD><P>printf ( <EM>formatstring</EM> , <EM>VARi</EM> ... )
+<DT><B> Description </B><DD><P>The RLaB printf is a limited feature version of the C-language
+printf(). The features are limited because RLaB does not
+support all of the data type the C-language does.
+<P>
+<DL>
+<P>
+<DT><B><EM>formatstring</EM></B><DD><P>must be a valid printf format
+string
+<P>
+<DT><B><EM>VARi</EM></B><DD><P>are any number of constants or
+variables that match the format string. printf
+cannot print out vector, matrix, or list objects as a
+whole. Valid print objects are strings, constants, and
+scalars.
+</DL>
+<P>The following shows how one might print out the annotated
+contents of a matrix.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+for(i in 0:size(a)[0]-1) 
+{
+  for(j in 0:size(a)[1]-1) 
+  {
+    printf("a[%i;%i] = %f\n", i, j, a[i;j]);
+  }
+}
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>However, it would be more efficient to use:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> writem("stdout", a);
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>fprintf, sprintf, write, read
+<P>
+</DL>
+<H2><A NAME="ss7.72">7.72 prod </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Product.
+<DT><B> Syntax </B><DD><P>prod ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Compute the product of the elements of <EM>A</EM> (if <EM>A</EM>
+is a vector).  If <EM>A</EM> is a matrix return a row vector
+containing the product of each column.
+<P>
+</DL>
+<H2><A NAME="ss7.73">7.73 putenv </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Change or add an environment variable.
+<DT><B> Syntax </B><DD><P>putenv ( <EM>STRING</EM> ) 
+<DT><B> Description </B><DD><P>putenv takes a single argument, <EM>STRING</EM>, of the form:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+"NAME=VALUE"
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>putenv make the value of the environment variable <CODE>NAME</CODE> equal
+to <CODE>VALUE</CODE> by altering an existing variable or creating a new
+one. 
+<P>Exactly how putenv behaves is depends upon the underlying
+operating system implementation. 
+<P>On most Unix systems putenv will return  non-zero if an error
+occurred, and zero otherwise.
+<P>
+<DT><B>See Also</B><DD><P>getenv
+<P>
+</DL>
+<H2><A NAME="ss7.74">7.74 qr </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>QR decomposition
+<DT><B> Syntax </B><DD><P>qr ( <EM>A</EM> )
+<P>    qr ( <EM>A</EM>, <CODE>"p"</CODE> )
+<DT><B> Description </B><DD><P>
+<P>Qr computes the QR decomposition of the input matrix A such
+that: 
+<P>
+<BLOCKQUOTE>
+A = Q * R
+</BLOCKQUOTE>
+<P>or
+<P>
+<BLOCKQUOTE>
+A*p = Q * R
+</BLOCKQUOTE>
+<P>Qr returns a list containing elements <EM>q</EM> and
+<EM>r</EM>. Optionally, qr can take a second argument,
+<CODE>"p"</CODE> which tells qr to perform column pivoting when
+computing <EM>q</EM> and <EM>r</EM>. The permutation matrix
+<EM>p</EM> is returned in the same list as <EM>q</EM> and
+<EM>r</EM>.
+<P>Qr utilizes LAPACK subroutines DGEQRF and DORGQR for REAL
+inputs, and ZGEQRF and ZUNGQR for COMPLEX inputs. When column
+pivoting is requested the LAPACK subroutines DGEQPF, and
+ZGEQPF are used.
+<P>
+</DL>
+<H2><A NAME="ss7.75">7.75 quit </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Quit, terminate an Rlab session.
+<DT><B> Syntax </B><DD><P>quit
+<DT><B> Description </B><DD><P>The statement <CODE>quit</CODE> causes RLaB to stop execution
+immediately. Quit is an executable statement, that is, it is
+not built into the parser, it only takes effect when executed.
+This allows users to embed a quit statement in a branch of a
+conditional statement.
+<P>RLaB can also be stopped by a ctrl-d (hold down the control
+key while typing `d').
+<P>
+</DL>
+<H2><A NAME="ss7.76">7.76 rand </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Random number generator.
+<DT><B> Syntax </B><DD><P>rand ( ) 
+<P>    rand ( <EM>nrow</EM>, <EM>ncol</EM> )
+<P>    rand ( <EM>DTYPE</EM>, <EM>D1</EM> )
+<P>    rand ( <EM>DTYPE</EM>, <EM>D1</EM>, <EM>D2</EM> )
+<DT><B> Description </B><DD><P>
+<DL>
+<P>
+<DT><B>rand()</B><DD><P>produces a random scalar.
+<P>
+<DT><B>rand ( <EM>X</EM> , <EM>Y</EM> )</B><DD><P>produces a randomly
+generated MATRIX with row dimension <EM>X</EM>, and
+column dimension <EM>Y</EM>.
+<P>
+<DT><B>rand ( <EM>DTYPE</EM> , ... )</B><DD><P>changes the
+distribution used when generating random numbers. The
+value of <EM>DTYPE</EM> determines the subsequent
+parameters.
+<P>
+</DL>
+<P>Types of distributions:
+<P>
+<DL>
+<P>
+<DT><B><CODE>rand ( "beta" , A , B )</CODE></B><DD><P>Sets the generator to return a random deviate from the beta
+distribution with parameters <CODE>A</CODE> and <CODE>B</CODE>.  The
+density of the beta is
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+x^(a-1) * (1-x)^(b-1) / B(a,b) for 0 &lt; x &lt; 1
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><CODE>rand ( "chi" , DF )</CODE></B><DD><P>Sets the generator to return a random deviate from the
+distribution of a chi-square with <CODE>DF</CODE> degrees of freedom
+random variable.
+<P>
+<DT><B><CODE>rand ( "exp" , AV )</CODE></B><DD><P>Sets the generator to return a random deviate from an
+exponential distribution with mean <CODE>AV</CODE>.
+<P>
+<DT><B><CODE>rand ( "f" , DFN  DFD )</CODE></B><DD><P>Sets the generator to return a random deviate from the F
+(variance ratio) distribution with <CODE>DFN</CODE> degrees of
+freedom in the numerator and <CODE>DFD</CODE> degrees of freedom in
+the denominator.
+<P>
+<DT><B><CODE>rand ( "gamma" , A , R )</CODE></B><DD><P>Sets the generator to return a random deviate from the gamma
+distribution whose density is:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+(A**R)/Gamma(R) * X**(R-1) * Exp(-A*X)
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B><CODE>rand ( "nchi" , DF , XNONC )</CODE></B><DD><P>Sets the generator to return a random deviate from the
+distribution of a noncentral chi-square with <CODE>DF</CODE> degrees
+of freedom and noncentrality parameter <CODE>XNONC</CODE>.
+<P>
+<DT><B><CODE>rand ( "nf" , DFN , DFD, XNONC )</CODE></B><DD><P>Sets the generator to return a random deviate from the
+noncentral F (variance ratio) distribution with <CODE>DFN</CODE>
+degrees of freedom in the numerator, and <CODE>DFD</CODE> degrees of
+freedom in the denominator, and noncentrality parameter
+<CODE>XNONC</CODE>.
+<P>
+<DT><B><CODE>rand ( "normal" , AV , SD )</CODE></B><DD><P>Sets the generator to return a random deviate from a normal
+distribution with mean, <EM>AV</EM>, and standard deviation,
+<EM>SD</EM>.
+<P>
+<DT><B><CODE>rand ( "uniform" , LOW , HIGH )</CODE></B><DD><P>Sets the generator to return a uniform double between
+<CODE>LOW</CODE> and <CODE>HIGH</CODE>.
+<P>
+<DT><B><CODE>rand ( "bin" , N , P )</CODE></B><DD><P>Returns a single random deviate from a binomial distribution
+whose number of trials is <CODE>N</CODE> and whose probability of an
+event in each trial is <CODE>P</CODE>.
+<P>
+<DT><B><CODE>rand ( "poisson" , AV )</CODE></B><DD><P>Sets the generator to return a random deviate from a
+Poisson distribution with mean <CODE>AV</CODE>.
+<P>
+<DT><B><CODE>rand ( "default" )</CODE></B><DD><P>Resets the random number generator to the default generator,
+which generates a distributed random variable in the interval
+0 -&gt; 1. The interval endpoints are not returned.
+<P>
+</DL>
+
+Examples:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> rand()
+       0.368
+> rand(4)
+ vector elements 1 thru 4
+       0.983       0.535       0.766       0.646
+> rand(3,3)
+ matrix columns 1 thru 3
+       0.767       0.152       0.347
+        0.78       0.625       0.917
+       0.823       0.315        0.52
+
+> rand("norm", 10.0, 2.0 );
+> rand(10)
+ vector elements 1 thru 5
+        9.86        11.8        12.1        7.35        8.76
+ vector elements 6 thru 10
+        10.5        7.44        11.1        6.93        9.87
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>rand uses the RANLIB library, authored by B. W. Brown and
+J. Lovato under grant CA-16672 from the National Cancer
+Institute.
+<P>
+<DT><B>See Also</B><DD><P>srand
+<P>
+</DL>
+<H2><A NAME="ss7.77">7.77 rcond </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Condition number.
+<DT><B> Syntax </B><DD><P>rcond( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Rcond computes an estimate of the condition number of the
+input matrix, <EM>A</EM>. rcond() uses the LAPACK routines
+DGECON, or ZGECON.
+<P>Probably the most published way to compute the condition of a
+matrix is:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+Kcond = ||A|| * ||inv(A)||
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Another method is to use the 1st and last singular values of
+A:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+Kcond = sigma(1)/sigma(n)
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>rcond computes an ESTIMATE of the condition number without
+computing all of the columns of inv(A). For more information
+see the LAPACK User's Guide.
+<P>See Also  inv, det, lu
+<P>
+</DL>
+<H2><A NAME="ss7.78">7.78 read </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Read data from a file.
+<DT><B> Syntax </B><DD><P>read ( <EM>FILENAME</EM> )
+<P>    read ( <EM>FILENAME</EM>, <EM>LIST</EM> )
+<DT><B> Description </B><DD><P>read reads the file identified by the <EM>FILENAME</EM>. The
+file is opened with read access, and all of the contents are
+read.  The file identified by the 1st argument must contain
+data that is in RLaB binary format.  The entities in the file
+are installed in the global symbol table, overwriting any
+existing entities. Upon completion the file is closed.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+read ("bunch_of_data_in_a_file");
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The second form of the read function allows the data in the
+file to be read into list variable <EM>LIST</EM>. The
+global-symbol-table is untouched (except for <EM>LIST</EM>).
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+read ("bunch_of_data", X);
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The contents of the file <CODE>bunch_of_data</CODE> are read and
+stored in the list variable <CODE>X</CODE>. Except for the
+creation/modification of the variable <CODE>X</CODE>, the
+global-symbol-table is unchanged.
+<P>Read will read most numeric matrices written by MATLAB's save
+command. Read will not read MATLAB text matrices, or sparse
+matrices, or matrices written with reduced precision (integer
+format). Read will not read Cray, or VAX binaries. Read will
+read big and little endian binaries - this includes binaries
+written from PCs, DEC Risc, Macintosh, Sun, and Apollo.
+<P>
+<DT><B>See Also</B><DD><P>FILES, close, getline, read, readm, writem
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.79">7.79 read_ascii </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Read ASCII data from a file.
+<DT><B> Syntax </B><DD><P>read_ascii ( <EM>FILENAME</EM> )
+<P>    read_ascii ( <EM>FILENAME</EM>, <EM>LIST</EM> )
+<DT><B> Description </B><DD><P>read_ascii reads the file identified by the <EM>FILENAME</EM>. The
+file is opened with read access, and all of the contents are
+read.  The file identified by the 1st argument must contain
+data that is in RLaB ASCII format.  The entities in the file
+are installed in the global symbol table, overwriting any
+existing entities. Upon completion the file is closed.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+read_ascii ("bunch_of_data_in_a_file");
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The second form of the read function allows the data in the
+file to be read into list variable <EM>LIST</EM>. The
+global-symbol-table is untouched (except for <EM>LIST</EM>).
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+read_ascii ("bunch_of_data", X);
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The contents of the file <CODE>bunch_of_data</CODE> are read and
+stored in the list variable <CODE>X</CODE>. Except for the
+creation/modification of the variable <CODE>X</CODE>, the
+global-symbol-table is unchanged.
+<P>
+<DT><B>See Also</B><DD><P>write_ascii, FILES, close, getline, read, readm, writem
+<P>
+</DL>
+<H2><A NAME="ss7.80">7.80 readm </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Read ASCII matrices from a file.
+<DT><B> Syntax </B><DD><P>readm ( <EM>FILENAME</EM> )
+<P>    readm ( <EM>FILENAME</EM>, [ <EM>NR</EM>,<EM>NC</EM> ] )
+<P>    readm ( <EM>FILENAME</EM>, <EM>NROW</EM> )
+<DT><B> Description </B><DD><P>Readm reads a generic matrix of data from the file denoted by
+the string argument <EM>FILENAME</EM>. The return value is the
+newly created matrix. The second, and optional, argument is a
+two-element matrix that specifies the size of the matrix to
+read.
+<P>If the matrix size is not specified, then the matrix is filled
+row-wise with the input data. Otherwise (if the size is
+specified), the matrix if filled column-wise, as the input is
+read.
+<P>The file format is generic ASCII. The rows of the matrix are
+separated by newlines, and the columns are separated by
+whitespace. Unnecessary newlines, either before, or after the
+data will confuse readm, and will probably result in an error
+message. Only one matrix can be stored in a file. If you need
+to store more than one matrix in a file, use write, and
+read. 
+<P>Readm can only read in numeric matrices. The result of reading
+in string matrices is undefined.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+1 2 3 4
+5 6 7 8
+9 10 11 12
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The above values in a file called "test" would be read in like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = readm("test")
+ a =
+ matrix columns 1 thru 4
+        1          2          3          4  
+        5          6          7          8  
+        9         10         11         12  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Readm exists to read in data from other programs. In many
+cases a simple awk script will filter the other programs
+output into one or more columns of data. readm will read the
+data into the matrix, then the matrix can be reshaped if
+necessary.
+<P>Notes:
+<P>Readm has no idea how many rows are in the matrix it is
+reading. This is because readm can work with pipes and process
+output where it gets the matrix as a stream. Readm uses a
+heuristic to guess how many rows of the matrix to allocate at
+one time. A second, optional argument, NROW can be specified
+if the heuristic does not yield the performance you
+desire. The heuristic is purposely memory conservative.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+readm ( "filename" , NROW )
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>reshape, getline, open, read, write, writem
+<P>
+</DL>
+<H2><A NAME="ss7.81">7.81 require </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Specify program dependencies/requirements.
+<DT><B> Syntax </B><DD><P>require <EM>NAME</EM>
+<DT><B> Description </B><DD><P>The require command takes Rfile names as operands, and checks
+the workspace for a function variable called <EM>NAME</EM>. If
+that function exists, then no action is taken. If the function
+does not exist, then the file <CODE>NAME.r</CODE> is loaded.
+<P>More than one <EM>NAME</EM> can be given on the same
+line. Continuations are not allowed.
+<P><EM>NAME</EM> can contain the `.r' extension that distinguishes
+Rfiles (by convention), or <EM>NAME</EM> can omit the `.r'
+extension. In either case a workspace variable without the
+`.r' extension is checked for.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> require roots poly.r bode
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The require command syntax is identical to the rfile command,
+with the obvious exception of the initial keyword.
+<P>The rules for searching the user's <CODE>RLAB2_PATH</CODE> are the
+same as those used with the rfile command.
+<P>
+<DT><B>See Also</B><DD><P>rfile, load
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.82">7.82 reshape </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Reshape a matrix
+<DT><B> Syntax </B><DD><P>reshape ( <EM>A</EM>, <EM>nrow</EM>, <EM>ncol</EM> )
+<DT><B> Description </B><DD><P>Reshape does what its name implies, it reshapes the input
+matrix so that the return value has the number of rows and
+columns specified by the last two arguments. Reshape will not
+reshape the matrix if the product of the new row and column
+dimensions does not equal the product of the existing row and
+column dimensions.
+<P>Examples:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+m = [1,2,3;4,5,6;7,8,9];
+mrow = reshape(m, 1, 9); // converts m to a row matrix
+mcol = reshape(m, 9, 1); // converts m to a column matrix
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.83">7.83 rfile </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Load an rfile.
+<DT><B> Syntax </B><DD><P>rfile
+<P>    rfile <EM>NAME</EM>
+<DT><B> Description </B><DD><P>
+<DL>
+<P>
+<DT><B>rfile</B><DD><P>Prints a list of all the files with a `.r'
+suffix. The list is compiled by searching the
+directories contained in the environment variable
+<CODE>RLAB2__PATH</CODE>.
+<P>
+<DT><B>rfile <EM>NAME</EM></B><DD><P>Loads the contents of the file
+denoted by <EM>NAME</EM> into the workspace. The
+<EM>NAME</EM> argument is NOT a string, and does not
+have to include the `.r' suffix.
+<P>Allowable names for rfiles are filenames that start
+with:
+<BLOCKQUOTE>
+A digit, or a letter (a-z or A-Z).
+</BLOCKQUOTE>
+
+and contain:
+<BLOCKQUOTE>
+        
+digits, letters, and/or <CODE>-</CODE>, <CODE>_</CODE>, <CODE>.</CODE>
+</BLOCKQUOTE>
+<P>You may not be able to use all the possible filenames
+allowed by the host operating system.
+<P>
+</DL>
+<P>If the user's environment does not contain <CODE>RLAB2_PATH</CODE>,
+then the default search-path is used. The default is set at
+compile time. Normally the default is ".", the current working
+directory. 
+<P>Rfile is a command, not an expression or statement. Therefore,
+it must be issued on a line by itself, and cannot occur in the
+midst of another statement or expression.  The rfile command
+cannot be continued across lines (no continuations).
+<P>The command `rfile <EM>NAME</EM>' can be used more than
+once. Each time the command is issued the file `<EM>NAME</EM>.r'
+is loaded.
+<P>The rfile command tries to be friendly. If you give it a
+string without the `.r' extension, it will automatically add
+one for you. If you give is a string with the `.r' extension,
+it will leave it alone.
+<P>The contents of the named file can be any valid RLaB commands
+or functions. There is no limit to the number of functions
+that a file can contain. Additionally, a mixture of commands,
+and function definitions can be included in the same file.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> rfile roots.r poly bode
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>help, load, require
+<P>
+</DL>
+<H2><A NAME="ss7.84">7.84 round </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Round to the nearest integer.
+<DT><B> Syntax </B><DD><P>round ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Round returns the nearest integer value to its floating point
+argument <EM>X</EM> as a double-precision floating point
+number. The returned value is rounded according to the
+currently set machine rounding mode. If round-to-nearest (the
+default mode) is set and the difference between the function
+argument and the rounded result is exactly 0.5, then the
+result will be rounded to the nearest even integer.
+<P>Round uses the libm.a function rint. If your machine does not
+have rint, then the supplied rint is used.
+<P>
+<DT><B>See Also</B><DD><P>ceil, int, floor
+<P>
+</DL>
+<H2><A NAME="ss7.85">7.85 schur </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Schur decomposition.
+<DT><B> Syntax </B><DD><P>schur ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>The schur function returns a list containing elements <EM>t</EM>
+and <EM>z</EM>, such that:
+<P>
+<BLOCKQUOTE>
+        
+<EM>A = z * t * z'</EM>
+</BLOCKQUOTE>
+<P>If <EM>A</EM> is real, the <EM>t</EM> is in "Real-Schur" form. The
+"Real-Schur" form is block upper-triangular with 1-by-1 and
+2-by-2 diagonal blocks; each 2-by-2 diagonal block has its
+diagonal elements equal and its off-diagonal elements of
+opposite sign. The eigenvalues of the 2-by-2 block: 
+<CODE>[a, b; c, a]</CODE> are: <CODE>a +/- sqrt(b*c)</CODE>
+<P>schur uses the LAPACK subroutines DGEES, and ZGEES.
+<P>
+</DL>
+<H2><A NAME="ss7.86">7.86 sign </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return the sign of <EM>A</EM>
+<DT><B> Syntax </B><DD><P>sign ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>
+<P>For real scalar argument, sign returns:
+<P>
+<BLOCKQUOTE>
+1 if A &gt; 0
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+0 if A == 0
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+-1 if A &lt; 0
+</BLOCKQUOTE>
+<P>For a complex scalar sign returns:
+<P>
+<BLOCKQUOTE>
+A ./ abs (A)
+</BLOCKQUOTE>
+<P>sign performs its operation on real and complex matrices in an
+element by element fashion.
+<P>
+</DL>
+<H2><A NAME="ss7.87">7.87 trig </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the sin.
+<DT><B> Syntax </B><DD><P>sin ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>RLaB trigonometric functions are designed to take scalars, and
+matrices as arguments. The return value is the input argument
+with the trigonometric operation performed element by element.
+<P>All the trigonometric functions use the C language math
+library functions, so details about the ranges and error
+conditions can be found by examining the appropriate man pages
+on your system.
+<P>
+</DL>
+<H2><A NAME="ss7.88">7.88 size </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return the size of an object.
+<DT><B> Syntax </B><DD><P>size ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>The size function returns the size of the argument. 
+<P>
+<DL>
+<P>
+<DT><B>NUMERIC</B><DD><P>size returns a matrix whose 1st element is
+the number of rows, and whose 2nd element is the
+number of columns.
+<P>
+<DT><B>STRING</B><DD><P>size returns a matrix whose 1st element is
+the number of rows, and whose 2nd element is the
+number of columns. If the length of a particular
+string is desired, then the length function must be
+used.
+<P>
+<DT><B>LIST</B><DD><P>size returns the number of elements in the
+list. 
+<P>
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>length, show
+<P>
+</DL>
+<H2><A NAME="ss7.89">7.89 sizeof </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return the size of an object in bytes.
+<DT><B> Syntax </B><DD><P>sizeof ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>The sizeof function returns the number of bytes of data in the
+argument <EM>A</EM>.
+<P>
+<DT><B>See Also</B><DD><P>size, who, whos
+<P>
+</DL>
+<H2><A NAME="ss7.90">7.90 sleep</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Put RLaB to sleep.
+<DT><B> Syntax </B><DD><P>sleep ( <EM>sleepval</EM> )
+<DT><B> Description </B><DD><P>Sleep is an interface to the POSIX.1 sleep system
+function. The argument, <EM>sleepval</EM> specifies the number
+of seconds the process should sleep for.
+<P>The return value is either zero or the number of seconds left
+to sleep (if the sleep has been interrupted).
+<P>
+</DL>
+<H2><A NAME="ss7.91">7.91 solve </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Solve linear equations.
+<DT><B> Syntax </B><DD><P>solve ( <EM>A</EM>, <EM>B</EM> )
+<P>    solve ( <EM>A</EM>, <EM>B</EM>, <EM>TYPE</EM> )
+<DT><B> Description </B><DD><P>Solve solves a system of linear equations:
+<P>
+<BLOCKQUOTE>
+<EM>A * X = B</EM>
+</BLOCKQUOTE>
+<P>
+<DL>
+<DT><B><EM>A</EM></B><DD><P>is the coefficient matrix.
+<DT><B><EM>B</EM></B><DD><P>is the right hand side.
+<DT><B><EM>X</EM></B><DD><P>is the solution.
+</DL>
+<P><EM>B</EM> can contain multiple right-hand-sides, one in each
+column.  Solve returns a matrix of the solutions, <EM>X</EM>,
+where each column of the solution corresponds to a column of
+<EM>B</EM>.
+<P>Solve uses the LAPACK subroutines DGETRF, and ZGETRF if
+<EM>A</EM> is general.
+<P>Solve uses the LAPACK subroutines DSYTRF, and ZHETRF if
+<EM>A</EM> is symmetric.
+<P>The third and optional argument, <EM>TYPE</EM> allows the user
+to overide the symmetry check, and force the solve to use
+either the general or the symmetric solver.
+<P>
+<BLOCKQUOTE>
+TYPE = "g" or "G":      The general solution is used.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+TYPE = "s" or "S":      The symmetric solution is used.
+</BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>backsub, inv, factor, lu, rcond
+<P>
+</DL>
+<H2><A NAME="ss7.92">7.92 sort </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Sort an object.
+<DT><B> Syntax </B><DD><P>sort ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>If A is a vector (either row or column): 
+<P>
+<BLOCKQUOTE>
+Then sort returns a list, containing the sorted values and
+indices. List element names are `val' and `ind'.
+</BLOCKQUOTE>
+<P>If A is a matrix (m &gt; 2):
+<P>
+<BLOCKQUOTE>
+Then sort returns a list, containing a matrix with the
+sorted columns of A, and a matrix containing the sorted
+indices of A.
+</BLOCKQUOTE>
+<P>Numerical matrices are sorted in ascending numerical value.
+Complex matrices are sorted by absolute value.
+String matrices are sorted alphabetically (using strcmp()).
+<P>The sort function uses a simplistic version of qsort.
+<P>
+</DL>
+<H2><A NAME="ss7.93">7.93 sparse </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Convert full (dense) storage to sparse storage 
+<DT><B> Syntax </B><DD><P>sparse ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>sparse converts its argument from a dense storage format to the
+sparse storage format. If the argument is already sparse, then it
+is condensed (any non-zeros are removed).  The sparse storage
+format is commonly referred to as <EM>sparse row-wise</EM>
+storage. Only the non-zero elements of the matrix are stored in a
+row-wise fashion. Row-wise storage is used for several reasons:
+<P>
+<UL>
+<LI> The matrix vector product <CODE>A*x</CODE> is a very common operation,
+efficiently performed with row-wise storage.
+</LI>
+<LI> Row-wise (and column-wise) storage is a very general storage
+scheme that works well for general non-symmetric matrices. There is
+a penalty to pay for storing symmetric matrices in this fashion,
+but it is small.
+</LI>
+</UL>
+<P>Rlab does not attempt to out-smart the user by automatically
+converting sparse matrices to dense matrices, or vice-versa. Even
+if the user explicitly fills the a sparse matrix so that the number
+of non-zeros is equal to the full size of the matrix, the sparse
+storage format is retained.
+<P>Certain operations on sparse matrices will return dense
+matrices. For instance, the cosine operation on a sparse matrix
+will create a dense matrix with ones where there used to be zeros. 
+<P>Sparse matrices are printed differently than full, or dense
+matrices. Only the non-zero elements are printed, along with their
+row and column values. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [0, 1, 0;
+>      2, 0, 0;
+>      0, 0, 3];
+> s = sparse(a)
+ (1, 2)                 1
+ (2, 1)                 2
+ (3, 3)                 3
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.94">7.94 spconvert </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Convert a full column matrix to sparse storage. 
+<DT><B> Syntax </B><DD><P>spconvert ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>spconvert converts its argument to, or from, the sparse storage
+format. If the argument is a 3 (or 4) column full matrix, the
+argument is converted to sparse storage format. The 1st two columns
+are taken as the row and column indices for the elements in the
+third column. The rows of the input matrix do not have to be in any
+particular order. If there are duplicate elements (same row and
+column number), then they are summed.
+<P>If the argument is a sparse matrix, then it is converted to a full
+matrix with 3 columns. The first two columns being the row and
+column indices of each non-zero element, and the third column in
+the element value (columns 3 and 4 if the matrix is complex).
+<P>Example:
+<P>Create a sparse matrix of zeros with 1000 rows, and 1000 columns
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> s = spconvert ([ 1000, 1000, 0 ])
+ (1000, 1000)                   0
+> show(s);
+        nr                  :   1000
+        nc                  :   1000
+        n                   :   1e+06
+        nnz                 :   1
+        class               :   num
+        type                :   real
+        storage             :   sparse
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.95">7.95 spfactor</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Factor a sparse coefficient matrix.
+<DT><B> Syntax </B><DD><P>spfactor ( <EM>A</EM>, <EM>DIAG_PIVOT</EM>,
+<EM>PERMV</EM> )
+<DT><B> Description </B><DD><P>Factor a general (non-symmetric) sparse coefficient matrix
+into L and U factors.
+<P>
+<DL>
+<DT><B><EM>DIAG_PIVOT</EM></B><DD><P>specifies the 
+diagonal-pivoting threshold. 
+<DT><B><EM>PERMV</EM></B><DD><P>is the permutation vector.
+<DT><B><EM>X</EM></B><DD><P>is the solution vector/matrix.
+</DL>
+<P>To be finished later...
+<DT><B>See Also</B><DD><P>solve, sparse, spsolve, backsub, factor
+<P>
+</DL>
+<H2><A NAME="ss7.96">7.96 sprintf </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Formatted printing to a string.
+<DT><B> Syntax </B><DD><P>sprintf ( <EM>stringvar</EM>, <EM>formatstr</EM>, <EM>VARi</EM> ... ) 
+<DT><B> Description </B><DD><P>The RLaB sprintf is a limited feature version of the
+C-language sprintf. The features are limited because RLaB
+does not support all of the data types the C-language does.
+<P>
+<DL>
+<P>
+<DT><B><EM>stringvar</EM></B><DD><P>The output of sprintf is written to this
+variable.
+<P>
+<DT><B><EM>formatstr</EM></B><DD><P>A valid sprintf format string.
+<P>
+<DT><B><EM>VARi</EM></B><DD><P>Are any number of constants or
+variables that match the format string. sprintf
+cannot print out vector, matrix, or list objects as a
+whole. Valid print objects are strings, constants, and
+scalars.
+</DL>
+<P>
+<DT><B>See Also</B><DD><P>printf, fprintf, write, read
+<P>
+</DL>
+<H2><A NAME="ss7.97">7.97 spsolve </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Solve sparse linear equations.
+<DT><B> Syntax </B><DD><P>spsolve ( <EM>A</EM>, <EM>B</EM>, <EM>DIAG_PIVOT</EM>,
+<EM>PERMV</EM> )
+<DT><B> Description </B><DD><P>Solve solves a system of sparse linear equations:
+<P>
+<BLOCKQUOTE>
+<EM>A * X = B</EM>
+</BLOCKQUOTE>
+<P>
+<DL>
+<DT><B><EM>A</EM></B><DD><P>is the coefficient matrix.
+<DT><B><EM>B</EM></B><DD><P>is the right hand side.
+<DT><B><EM>DIAG_PIVOT</EM></B><DD><P>specifies the diagonal-pivoting
+threshold. 
+<DT><B><EM>PERMV</EM></B><DD><P>is the permutation vector.
+<DT><B><EM>X</EM></B><DD><P>is the solution vector/matrix.
+</DL>
+<P>To be finished later...
+<DT><B>See Also</B><DD><P>solve, backsub, factor
+<P>
+</DL>
+<H2><A NAME="ss7.98">7.98 spwrite </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Write a sparse matrix to file.
+<DT><B> Syntax </B><DD><P>spwrite ( <EM>FILENAME</EM> , <EM>SPM</EM>  )
+<DT><B> Syntax </B><DD><P>spwrite ( <EM>FILENAME</EM> , <EM>SPM</EM> , <EM>FORMAT</EM> )
+<DT><B> Description </B><DD><P>The spwrite function takes at least two arguments. The 1st
+argument is the string that identifies the file to write to.
+The file is opened with write permission, destroying any
+pre-existing contents. The file closed after the matrix is
+written.
+<P>The default format for the sparse matrix is the internal
+storage format: compressed row-wise storage. See the Rlab
+Reference Manual for more explanation of this storage format.
+<P>A third, and optional argument, is a string specifying either
+the default, or an optional output format. The value of the
+string can be either <CODE>"sparse"</CODE> (default) or
+<CODE>"graph"</CODE>. The graph output is a file suitable for use
+with the Metis or Chaco graph partitioning/re-ordering
+software. 
+<P>
+<DT><B>See Also</B><DD><P>write
+<P>
+</DL>
+<H2><A NAME="ss7.99">7.99 sqrt </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the square root.
+<DT><B> Syntax </B><DD><P>sqrt ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Sqrt returns the square-root of it's argument. If the argument
+is a matrix, then an element-by-element square-root operation
+is performed.
+<P><CODE>sqrt(-1)</CODE> will produce <CODE>1i</CODE>.
+<P>
+</DL>
+<H2><A NAME="ss7.100">7.100 srand </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Seed the random number generator.
+<DT><B> Syntax </B><DD><P>srand ( ) 
+<P>    srand ( <EM>A</EM> )
+<P>    srand ( <EM>SEED</EM> )
+<DT><B> Description </B><DD><P>Srand sets the seed for the random number generator.
+<CODE>srand()</CODE> sets the seed to the original value (the last
+value given to srand, or the default value, 1).
+<P><CODE>srand( "clock" )</CODE>' sets the seed based upon the machines
+clock value. This provides users a way of picking a unique
+seed each time.
+<P>Srand uses the RANLIB subroutine SETALL.
+<P>
+<DT><B>See Also</B><DD><P>rand
+<P>
+</DL>
+<H2><A NAME="ss7.101">7.101 strsplt </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Split a string.
+<DT><B> Syntax </B><DD><P>strsplt ( <EM>STR</EM> )
+<P>    strsplt ( <EM>STR</EM>, <EM>FW</EM> )
+<DT><B> Description </B><DD><P>Strsplt returns a row matrix that contains a single character
+string as each element. The resulting matrix has as many
+columns as the input argument had characters.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> smat = strsplt( "string" )
+ smat =
+s  t  r  i  n  g  
+> show(smat)
+   name:      smat    
+   class:     matrix  
+   type:      string  
+     nr:      1       
+     nc:      6       
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The second, and optional, argument to strsplt, <EM>FW</EM> forces
+strsplt to split <EM>STR</EM> into <EM>FW</EM> length strings.
+<P><EM>FW</EM> can also be a string, or a string matrix, specifying
+the field separators that strsplt will use:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> str = "this;is;a;sem-colon;separated string;with numbers;1.234"
+this;is;a;sem-colon;separated string;with numbers;1.234  
+
+> strsplt(str,";")
+this              is                a                 sem-colon         
+
+separated string  with numbers      1.234             
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See also</B><DD><P>getline
+<P>
+</DL>
+<H2><A NAME="ss7.102">7.102 strtod </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>String to decimal conversion.
+<DT><B> Syntax </B><DD><P>strtod ( <EM>STR</EM> )
+<DT><B> Description </B><DD><P>The strtod functions converts its argument, <EM>STR</EM>, from
+string class to numeric class. Strtod stands for STRing TO
+Decimal.
+<P>Strtod will return a NaN (Not a Number) if it cannot recognize
+a string, or an element of a string matrix, as a number.
+<P>
+</DL>
+<H2><A NAME="ss7.103">7.103 strtol</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>String to integer conversion.
+<DT><B> Syntax </B><DD><P>strtol ( <EM>STR</EM> , <EM>BASE</EM> )
+<DT><B> Description </B><DD><P>The strtol functions converts its argument, <EM>STR</EM>, from
+string class to numeric class. Strtol stands for STRing TO
+Long-int.
+<P>The second (optional) argument <EM>BASE</EM>, specifies the
+conversion base. Valid values for <EM>BASE</EM> are between 2
+and 32. <EM>BASE</EM> defaults to 10 if not specified.
+<P>Strtol will return a NaN (Not a Number) if it cannot recognize
+a string, or an element of a string matrix, as a number.
+<P>
+</DL>
+<H2><A NAME="ss7.104">7.104 sum </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Sum the elements of a matrix.
+<DT><B> Syntax </B><DD><P>sum ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>Sum computes the sum of a matrix. The return object is a row
+matrix which contains the sum of each column of the input.
+<P>If the input is a vector (row-matrix) then the sum of the
+elements is returned. 
+<P>
+</DL>
+<H2><A NAME="ss7.105">7.105 svd </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Singular Value Decomposition
+<DT><B> Syntax </B><DD><P>svd ( <EM>A</EM> ) 
+<P>    svd ( <EM>A</EM>, <EM>TYPE</EM> )
+<DT><B> Description </B><DD><P>Computes the singular values of the input matrix <EM>A</EM>, as
+well as the right and left singular vectors in various
+forms. Where:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+A = U * diag (sigma) * Vt
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The output is a list containing the three afore-mentioned
+objects (<EM>u</EM>, <EM>sigma</EM>, <EM>vt</EM>).  Various forms of
+the right and left singular vectors can be computed, depending
+upon the value of the second, optional, string argument
+<EM>TYPE</EM>:
+<P>
+<DL>
+<P>
+<DT><B><CODE>S</CODE></B><DD><P>A minimal version of <CODE>U</CODE>, and
+<CODE>Vt</CODE> are returned.  This is the default.
+<P>
+<DT><B><CODE>A</CODE></B><DD><P>The full <CODE>U</CODE>, and <CODE>Vt</CODE> are
+returned.
+<P>
+<DT><B><CODE>N</CODE></B><DD><P><CODE>U</CODE> and <CODE>Vt</CODE> are not computed,
+empty <CODE>U</CODE> and <CODE>Vt</CODE> are returned.
+</DL>
+<P>The LAPACK subroutine DGESVD, or ZGESVD is used to perform the
+computation.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> A = [0.96, 1.72; 2.28, 0.96];
+> Asvd = svd(A)
+   sigma        u            vt
+> Asvd.vt
+ matrix columns 1 thru 2
+        -0.8        -0.6
+         0.6        -0.8
+> Asvd.u
+ matrix columns 1 thru 2
+        -0.6        -0.8
+        -0.8         0.6
+> Asvd.sigma
+ vector elements 1 thru 2
+           3           1
+> check = Asvd.u * diag(Asvd.sigma) * Asvd.vt
+ check =
+ matrix columns 1 thru 2
+        0.96        1.72
+        2.28        0.96
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+</DL>
+<H2><A NAME="ss7.106">7.106 sylv</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Solve the Sylvester matrix equation
+<DT><B> Syntax </B><DD><P>sylv ( <EM>A</EM> , <EM>B</EM> , <EM>C</EM> )
+<P>        sylv ( <EM>A</EM> , <EM>C</EM> )
+<DT><B> Description </B><DD><P>Sylv solves the Sylvester matrix equation:
+<P>
+<BLOCKQUOTE>
+        
+<EM>A*X + X*B = -C</EM>
+</BLOCKQUOTE>
+<P>or
+<P>
+<BLOCKQUOTE>
+        
+<EM>A*X + X*A' = -C</EM>   (Lyapunov equation)
+</BLOCKQUOTE>
+<P><EM>A</EM> and <EM>B</EM> must both be upper quasi-triangular (if
+real), or triangular (if complex).
+<P>If <EM>A</EM> and or <EM>B</EM> are not upper
+quasi-triangular/triangular, then it is usually easier to use
+lyap. Lyap performs a Schur decomposition on A and B before
+using sylv.
+<P>Sylv uses the LAPACK functions DTRSYL, or ZTRSYL.
+<P>
+</DL>
+<H2><A NAME="ss7.107">7.107 system </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Execute operating system commands.
+<DT><B> Syntax </B><DD><P>system ( <EM>COMMAND</EM> ) 
+<DT><B> Description </B><DD><P>The system function behaves like the the UNIX system call. The
+string argument to system, <EM>COMMAND</EM>, is passed directly
+to the bourne-shell for execution. The program waits until the
+system call is finished.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+> system( "vi test.r" )
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>will allow the user to edit (create) the file
+<CODE>test.r</CODE>. When the vi process is finished the user will
+be back at the RLaB prompt.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> rfile test
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>will then load the result of the vi process.
+<P>
+</DL>
+<H2><A NAME="ss7.108">7.108 trig </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the tangent.
+<DT><B> Syntax </B><DD><P>tan ( <EM>A</EM> ) 
+<DT><B> Description </B><DD><P>RLaB trigonometric functions are designed to take scalars, and
+matrices as arguments. The return value is the input argument
+with the trigonometric operation performed element by element.
+<P>All the trigonometric functions use the C language math
+library functions, so details about the ranges and error
+conditions can be found by examining the appropriate man pages
+on your system.
+<P>
+</DL>
+<H2><A NAME="ss7.109">7.109 tic </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Start the timer.
+<DT><B> Syntax </B><DD><P>tic ( ) 
+<DT><B> Description </B><DD><P>Tic internally marks the time at which it was invoked. To
+measure elapsed time, use tic in conjunction with toc.
+<P>Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+tic();
+a = rand(100,100);
+eig(a);
+toc()
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The above would measure the time spent generating the 100x100
+random matrix, and calculating the eigenvectors and values.
+<P>
+<DT><B>See Also</B><DD><P>toc
+<P>
+</DL>
+<H2><A NAME="ss7.110">7.110 tmpnam </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Generate temporary file name.
+<DT><B> Syntax </B><DD><P>tmpnam ( ) 
+<DT><B> Description </B><DD><P>tmpnam returns a string that is not the name of an existing
+file. tmpnam generates a different name each time it is
+called. The string tmpnam returns can be used a a filename
+with RLaB's file I/O functions.
+<P>
+<DT><B>See Also</B><DD><P>open, close, read, write, fprintf
+<P>
+</DL>
+<H2><A NAME="ss7.111">7.111 toc </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Measure time elapsed since tic.
+<DT><B> Syntax </B><DD><P>toc ( )
+<DT><B> Description </B><DD><P>Toc reports the time (in seconds) elapsed since the last call
+to tic.
+<P>See also: tic
+<P>
+</DL>
+<H2><A NAME="ss7.112">7.112 type </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Return the type of an object.
+<DT><B> Syntax </B><DD><P>type ( <EM>A</EM> )
+<DT><B> Description </B><DD><P>Type returns a string that describes the type of element
+contained in object <EM>A</EM>. The valid types for an object
+vary according to the class of the object
+<P>If a list object has a string member with name <CODE>type</CODE>,
+then the type function will report the contents of that
+member.
+<P>
+<DT><B>See Also</B><DD><P>class, show
+<P>
+</DL>
+<H2><A NAME="ss7.113">7.113 vpnorm</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Compute the vector <EM>P</EM> norm.
+<DT><B> Syntax   </B><DD><P>vpnorm ( <EM>V</EM> , <EM>P</EM> )
+<P>
+<DT><B> Description </B><DD><P><CODE>vpnorm</CODE> computes the vector P-norm of <EM>V</EM>. The
+second argument is required, and specifies the value of
+<EM>P</EM>.
+<P>A small Rlab program demonstrating the P-norm computation is
+provided below. However, <CODE>vpnorm</CODE> is implemented as a
+builtin function for maximum efficiency. 
+<P>
+<HR>
+<PRE>
+pnorm = function ( V , P )
+{
+  return (sum ( V.^P )).^(1/P);
+}
+        
+</PRE>
+<HR>
+<P>
+</DL>
+<H2><A NAME="ss7.114">7.114 write_ascii </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Write object(s) to file in ASCII format.
+<DT><B> Syntax </B><DD><P>write_ascii ( <EM>FILENAME</EM> , <EM>A</EM> , <EM>b</EM> , ... )
+<DT><B> Description </B><DD><P>The write_ascii function takes at least two arguments. The 1st
+argument is the string that identifies the file to write to.
+The file is opened with write permission, destroying any
+pre-existing contents. The file is left open so that
+subsequent writes will append to the file, and not destroy the
+contents.
+<P>The arguments after the file name are the objects that will
+be written. All objects are written in RLaB ASCII format.
+<P>Example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+write_ascii ( "filename", a , b , c );
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Will open the file named <CODE>filename</CODE> in write mode, and
+write the contents of the variables <CODE>a</CODE>, <CODE>b</CODE>, and
+<CODE>c</CODE>.
+<P>
+<DT><B>See Also</B><DD><P>close, read, read_ascii
+<P>
+</DL>
+<H2><A NAME="ss7.115">7.115 writem </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Write a matrix in ASCII format.
+<DT><B> Syntax </B><DD><P>writem ( <CODE>"filename"</CODE> , <EM>A</EM> )
+<DT><B> Description </B><DD><P>
+<P>Writem is the counterpart to readm. Writem writes the matrix
+<EM>A</EM> to the file denoted by the 1st argument in a generic format.
+<P>The format used is:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+line 1:         value[1;1]    ... value[1;ncol] \n
+line nrow:      value[nrow;1] ... value[nrow;ncol] \n
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Writem will write real and complex numeric matrices, as well
+as string matrices even though readm can only read real numeric
+matrices. Complex matrices are written as a single 2*nrow by
+ncolumn real matrix. Sparse matrices are written as triplets
+(row column value) for each element of the matrix.
+<P>Writem does not close the file after writing <EM>A</EM>. The file is
+left open for further writes if necessary. Close can be called
+to explicitly close the file.
+<P>
+<DT><B>See Also</B><DD><P>close, getline, open, readm, write
+<P>
+<P>
+</DL>
+<H2><A NAME="ss7.116">7.116 zeros </A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Create a matrix of zeros
+<DT><B> Syntax </B><DD><P>zeros ( <EM>nrow</EM>, <EM>ncol</EM> )
+<P>    zeros ( [ <EM>nrow</EM>, <EM>ncol</EM> ] )
+<DT><B> Description </B><DD><P>Zeros returns a matrix with all zero elements. If the
+arguments are two scalars, then zeros returns a matrix with
+dimensions <EM>nrow</EM>x<EM>ncol</EM>.
+<P>If the argument is a MATRIX, then zeros returns a matrix with
+dimensions m[1] by m[2].
+<P>Examples:
+<BLOCKQUOTE><CODE>
+<PRE>
+> Z = zeros( 3 , 3 );
+> A = rand([10,4]);
+> B = zeros( size(A) )
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<DT><B>See Also</B><DD><P>size
+<P>
+</DL>
+<P>
+<P>
+<HR>
+<A HREF="rlab-ref-8.html">Next</A>
+<A HREF="rlab-ref-6.html">Previous</A>
+<A HREF="rlab-ref.html#toc7">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+  findmin
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Find a minimum of a scalar function using bracketing method.
+
+
+      [1mSyntax[0m
+        findmin ([4mf[24m, /[4mp[24m/, [4mX[24m /, [4moptions[24m/ )
+
+
+
+        Arguments:
+
+        [4mf[24m [1m= funtion(x/,p/)[0m
+           function, and optionally, its parameter [4mp[24m.
+
+        [4mX[24m [1m= [xlo, xhi][0m
+           An interval over which the bracketing is to be performed.
+
+        [4moptions[24m [1m= << eabs; erel; maxi; imethod >>[0m
+           a list containing absolute and relative error bounds, [4meabs[0m
+           and [4merel[24m, respectively, maximum number of iterations [4mmaxi[24m to
+           satisfy them, and [4mimethod[24m=0 for Brent method, and 1 for
+           golden section.
+
+
+        The solver utilizes the GSL functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

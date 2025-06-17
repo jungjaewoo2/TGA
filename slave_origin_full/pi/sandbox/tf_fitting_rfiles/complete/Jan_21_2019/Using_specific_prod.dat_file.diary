@@ -1,0 +1,4 @@
+// RLaB diary file: Using_specific_prod.dat_file.diary. Opened Tue Mar 12 16:11:18 2019
+
+#for(FN in "prod\ \(6\).dat"){system("cp "+ FN +" current.prod.dat");sleep(1); SN=FN; printf("%s\n",SN);rfile stepper_twang_rev4_unfinished.r;}
+diary();

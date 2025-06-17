@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# figure out if ngspice is present
+#
+[ -n "`uname -a | grep x86_64`" ]&& CPU="64"
+dirs="/usr/lib${CPU} /usr/local/lib${CPU}"
+for dir in $dirs;
+do
+  echo $dir
+  if [ -h ${dir}/libngspice.so ]; then
+    SPICEFLAG="--with-ngspice=$dir"
+    break
+  fi
+done
+
+./configure \
+  ${SPICEFLAG} \
+  --with-arpack \
+  --with-superlu \
+  --enable-glpk \
+  --with-plplot \
+  --with-suitesparse
+
+
+
+
+make scanner

@@ -1,0 +1,66 @@
+  vpnorm
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Compute the vector [4mP[24m norm.
+
+      [1mSyntax[0m
+        vpnorm ( [4mV[24m , [4mP[24m )
+
+
+      [1mDescription[0m
+        vpnorm computes the vector P-norm of [4mV[24m. The second argument is
+        required, and specifies the value of [4mP[24m.
+
+        A small Rlab program demonstrating the P-norm computation is
+        provided below. However, vpnorm is implemented as a builtin
+        function for maximum efficiency.
+
+
+        ________________________________________________________________
+        pnorm = function ( V , P )
+        {
+          return (sum ( V.^P )).^(1/P);
+        }
+
+        ________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<sect> open 
+<p>
+<descrip>
+<tag> Synopsis </tag> Open a file for reading.
+<tag> Syntax </tag> open ( <em>FILENAME</>, <em>MODE</> ) 
+             <p>    open ( <em>FILENAME</>, <em>MODE</>, <em>BUFFSIZE</> ) 
+<tag> Description </tag>
+
+	Open will open a file or a pipe for read or write
+	operations. Open allows the user to specify the mode of
+	operation, and optionally a buffer-size for I/O. The "normal"
+	UNIX modes are:
+
+	<descrip>
+	<tag>r</tag>	read access
+	<tag>w</tag>	write access
+	<tag>a</tag>	append: open for writing at end of file, or
+			create for writing
+
+	<tag><em>BUFFSIZE</></tag> Buffersize is specified in
+		bytes. If BUFFSIZE  is not specified the system
+		defaults are used. 
+	</descrip>
+
+	Other operating systems may have different mode keys. Look at
+	the API documentation for fopen on your system to find what
+	mode values are acceptable.
+
+<tag>See Also</tag>  close, printf, fprintf, read, readb, readm, write, writeb, writem
+
+</descrip>

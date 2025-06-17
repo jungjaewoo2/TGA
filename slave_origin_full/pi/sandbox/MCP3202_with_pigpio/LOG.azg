@@ -1,0 +1,1 @@
+gcc -Wall -pthread -o rawMCP3202 rawMCP3202.c -lpigpio

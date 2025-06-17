@@ -1,0 +1,16 @@
+nomx2tics:
+
+Synopsis: Sets the minor tics on the bottom x-axis.
+
+Syntax: nomx2tics ( I )
+
+Description:
+
+	The nomx2tics() function turns off the minor tics on the 
+	top x-axis in the I:th plot-window. 
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, x2tics, noxtics, nox2tics, ytics, y2tics, ztics,
+          nomxtics, mx2tics, mytics, nomytics,
+          my2tics, nomy2tics, mztics, nomztics

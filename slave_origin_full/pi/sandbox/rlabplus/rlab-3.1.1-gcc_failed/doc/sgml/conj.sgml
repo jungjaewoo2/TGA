@@ -1,0 +1,15 @@
+<sect> conj 
+<p>
+<descrip>
+<tag> Synopsis </tag> Complex conjugate. 
+<tag> Syntax </tag> conj ( <em>A</> )
+<tag> Description </tag>
+
+	Conj returns the complex conjugate of its input argument.
+	For MATRIX arguments the conjugate is performed element by
+	element.
+
+ <tag>See Also</tag>   imag, real
+
+
+</descrip>

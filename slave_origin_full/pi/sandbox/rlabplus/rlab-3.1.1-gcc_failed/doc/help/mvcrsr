@@ -1,0 +1,66 @@
+  mvcrsr
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Positions cursor on terminal.
+
+      [1mSyntax[0m
+        mvcrsr ( [4mrow[24m, [4mcol[24m )
+
+
+      [1mDescription[0m
+
+
+         [1mmvcrsr ( [4m[22mrow[24m[1m, [4m[22mcol[24m [1m)[0m
+           positions the cursor on a terminal screen at a position [4mrow[0m
+           and [4mcol[24m. The top left corner of the terminal screen is at
+           position (1,1).
+
+
+        clrscr uses termcap library.
+
+
+     [1mSee Also[0m
+        clrscr, clrpos, colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

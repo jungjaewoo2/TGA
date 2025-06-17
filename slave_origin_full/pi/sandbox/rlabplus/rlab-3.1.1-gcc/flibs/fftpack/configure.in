@@ -1,0 +1,37 @@
+dnl configure.in for RLaB fftpack library
+dnl Process this file with autoconf to prodice a configure script
+AC_INIT(dcfftb.c)
+
+AC_WITH(cc, [CC="cc"], [nowithcc=1])
+[
+if test $nowithcc ; then
+  ] AC_PROG_CC [
+fi
+]
+
+AC_WITH(ld, [LD="$withval"], [LD="ld"])
+AC_WITH(ar, [AR="$withval"], [AR="ar"])
+AC_WITH(ranlib, [RANLIB="$withval"], [nowithranlib=1])
+[
+if test $nowithranlib ; then
+  ] AC_PROG_RANLIB [
+fi
+]
+
+AC_PROG_INSTALL
+
+case "$CC" in
+  gcc*)
+    CFLAGS="-O"
+    ;;
+  *)
+    CFLAGS="-O"
+    ;;
+esac
+
+AC_SUBST(CC)
+AC_SUBST(LD)
+AC_SUBST(AR)
+AC_SUBST(RANLIB)
+AC_SUBST(CFLAGS)
+AC_OUTPUT(Makefile)

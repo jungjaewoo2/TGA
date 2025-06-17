@@ -1,0 +1,66 @@
+  getenv
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Get an environment variable
+
+      [1mSyntax[0m
+        getenv ( [4mNAME[24m )
+
+      [1mDescription[0m
+        Getenv searches the current environment for a variable with name
+        [4mNAME[24m. The value of the environment variable is returned as a
+        string.
+
+        Exactly how getenv behaves is depends upon the underlying
+        operating system implementation. On UNIX system getenv will
+        return a NULL string if the environment variable does not exist.
+
+
+     [1mSee Also[0m
+        putenv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

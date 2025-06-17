@@ -1,0 +1,12 @@
+<sect> exp 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Exponential function.
+<tag> Syntax </tag> exp ( <em>X</> )
+<tag> Description </tag>
+
+	Exp returns the value of e (the base of natural logarithms)
+	raised to the power of <em>X</>. If the argument to exp is a
+	matrix then an element-by-element operation is performed.
+
+</descrip>

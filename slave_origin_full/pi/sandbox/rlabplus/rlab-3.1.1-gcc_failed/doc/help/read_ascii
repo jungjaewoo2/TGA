@@ -1,0 +1,66 @@
+  read_ascii
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Read ASCII data from a file.
+
+      [1mSyntax[0m
+        read_ascii ( [4mFILENAME[24m )
+
+        read_ascii ( [4mFILENAME[24m, [4mLIST[24m )
+
+      [1mDescription[0m
+        read_ascii reads the file identified by the [4mFILENAME[24m. The file
+        is opened with read access, and all of the contents are read.
+        The file identified by the 1st argument must contain data that
+        is in RLaB ASCII format.  The entities in the file are installed
+        in the global symbol table, overwriting any existing entities.
+        Upon completion the file is closed.
+
+        Example:
+
+
+
+          read_ascii ("bunch_of_data_in_a_file");
+
+
+
+
+
+     The second form of the read function allows the data in the file to
+     be read into list variable [4mLIST[24m. The global-symbol-table is
+     untouched (except for [4mLIST[24m).
+
+     Example:
+
+
+
+          read_ascii ("bunch_of_data", X);
+
+
+
+
+
+     The contents of the file bunch_of_data are read and stored in the
+     list variable X. Except for the creation/modification of the
+     variable X, the global-symbol-table is unchanged.
+
+
+     [1mSee Also[0m
+        write_ascii, FILES, close, getline, read, readm, writem
+
+
+
+
+
+
+
+
+
+
+
+
+
+

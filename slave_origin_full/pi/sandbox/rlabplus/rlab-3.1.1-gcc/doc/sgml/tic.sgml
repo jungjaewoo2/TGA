@@ -1,0 +1,24 @@
+<sect> tic 
+<p>
+<descrip>
+<tag> Synopsis </tag> Start the timer.
+<tag> Syntax </tag> tic ( ) 
+<tag> Description </tag>
+
+	Tic internally marks the time at which it was invoked. To
+	measure elapsed time, use tic in conjunction with toc.
+
+	Example:
+<tscreen><verb>
+tic();
+a = rand(100,100);
+eig(a);
+toc()
+</verb></tscreen>
+
+	The above would measure the time spent generating the 100x100
+	random matrix, and calculating the eigenvectors and values.
+
+<tag>See Also</tag> toc
+
+</descrip>

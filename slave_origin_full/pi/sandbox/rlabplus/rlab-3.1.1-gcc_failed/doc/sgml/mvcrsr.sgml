@@ -1,0 +1,23 @@
+<sect> mvcrsr
+<p>
+<descrip>
+<tag> Synopsis </tag> Positions cursor on terminal.
+<tag> Syntax </tag>
+             <p> mvcrsr ( <em>row</em>, <em>col</> )
+
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag> mvcrsr ( <em>row</em>, <em>col</em> )</tag>
+		positions the cursor on a terminal screen at a position <em>row</em>
+		and <em>col</em>. The top left corner of the terminal screen is at
+		position (1,1).
+
+	</descrip>
+		
+	clrscr uses termcap library.
+	
+	<tag>See Also</tag> clrscr, clrpos, colors.
+
+</descrip>

@@ -1,0 +1,15 @@
+pformat:
+
+Synopsis: Sets the format.
+
+Syntax: pformat ( "format-string", "axis", I )
+
+Description:
+
+	Sends a format-string to the I:th GNUPLOT-window.
+	"axis" can be "x", "y", "z", "xy", or nothing (which is the
+	same as "xy"), setting the format to, for example, "%g" or 
+	"%.2f" or "%3.0fm".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+

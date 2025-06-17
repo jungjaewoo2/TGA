@@ -1,0 +1,66 @@
+  full
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Convert sparse storage to full (dense) storage.
+
+      [1mSyntax[0m
+        full( [4mA[24m )
+
+      [1mDescription[0m
+        full converts its argument from the sparse storage format to the
+        full, or dense, storage format.
+
+        Example:
+
+
+
+          > d = [1, 1, 10;
+          >      2, 4, 20;
+          >      3, 1, 12;
+          >      5, 2, 13;
+          >      1, 4, 3];
+          > s = spconvert(d)
+           (1, 1)                10
+           (1, 4)                 3
+           (2, 4)                20
+           (3, 1)                12
+           (5, 2)                13
+          > f = full(s)
+                 10          0          0          3
+                  0          0          0         20
+                 12          0          0          0
+                  0          0          0          0
+                  0         13          0          0
+
+
+
+
+
+     [1mSee Also[0m
+        sparse, spconvert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

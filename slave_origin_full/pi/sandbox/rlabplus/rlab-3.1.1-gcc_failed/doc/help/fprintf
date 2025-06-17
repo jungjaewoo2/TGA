@@ -1,0 +1,66 @@
+  fprintf
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Formatted printing to a file.
+
+      [1mSyntax[0m
+        fprintf ( [4mfilestring[24m, [4mformatstring[24m, [4mVARi[24m ... )
+
+      [1mDescription[0m
+        The RLaB fprintf is a limited feature version of the C-language
+        fprintf. The features are limited because RLaB does not support
+        all of the data types the C-language does.
+
+
+
+        [4mfilestring[0m
+           The 1st string argument determines the file to which the
+           output is sent. If the filename starts with a | then a pipe
+           is opened to the process following the | and the output is
+           written to the pipe. For example:
+
+
+
+             > fprintf("|gnuplot"; "set term X11\n plot sin(x)\n");
+
+
+
+
+        will create the sub-process gnuplot, and pipe the command string
+        to it.
+
+
+        [4mformatstring[0m
+           A valid fprintf format string.
+
+
+        [4mVARi[0m
+           Are any number of constants or variables that match the
+           format string. fprintf cannot print out vector, matrix, or
+           list objects as a whole. Valid print objects are strings,
+           constants, and scalars.
+
+
+        Example:
+
+
+          > for (i in 1:a.n) { fprintf("stdout", "element %i: %20.10g\n", i, a[i]); }
+          element 1:          1.414213562
+          element 2:          4.242640687
+          element 3:          2.828427125
+          element 4:          5.656854249
+
+
+
+
+
+     [1mSee Also[0m
+        printf, sprintf, write, read
+
+
+
+
+

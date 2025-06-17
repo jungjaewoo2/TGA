@@ -1,0 +1,14 @@
+setterm:
+
+Synopsis: Sets the GNUPLOT terminal type.
+
+Syntax: setterm ( "term", I )
+
+Description:
+
+	The setterm function allows the user to set/reset the I:th plot's
+	term type. The argument "term" is a string that corresponds to one
+	of GNUPLOT's available term types, for example "vttek".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+

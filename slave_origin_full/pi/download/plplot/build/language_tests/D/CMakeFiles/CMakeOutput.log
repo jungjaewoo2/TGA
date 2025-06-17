@@ -1,0 +1,4 @@
+The system is: Linux - 4.9.59-v7+ - armv7l
+Determining if the D compiler is DMD succeeded with the following output:
+CMAKE_D_COMPILER-NOTFOUND
+

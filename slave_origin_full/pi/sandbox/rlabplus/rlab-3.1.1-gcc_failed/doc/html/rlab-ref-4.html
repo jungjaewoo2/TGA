@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Program Control Flow</TITLE>
+ <LINK HREF="rlab-ref-5.html" REL=next>
+ <LINK HREF="rlab-ref-3.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="rlab-ref-5.html">Next</A>
+<A HREF="rlab-ref-3.html">Previous</A>
+<A HREF="rlab-ref.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="s4">4. Program Control Flow</A></H2>
+
+<P>
+<P>This section covers the aspects of the language that control which
+program statements get executed, and in what order. Control
+statements do not evalute to a numeric value. The available control
+statements are the <EM>if-statement</EM>, the <EM>while-statement</EM>,
+and the <EM>for-statement</EM>.  A <EM>break-statement</EM> and a
+<EM>continue-statement</EM> offer program execution control from
+within the if, for, and while statements.
+<P>
+<P>
+<H2><A NAME="ss4.1">4.1 If Statement</A>
+</H2>
+
+<P>
+<P>The <EM>if-statement</EM> performs a test on the expression in
+parenthesis, <EM>expr</EM>, and executes the <EM>statements</EM>
+enclosed within braces, if the expression is true (has a non-zero
+value). The expression must evaluate to a scalar-expression,
+otherwise a run-time error will result.
+<P>
+<BLOCKQUOTE>
+if ( <EM>expr</EM> )
+{
+<EM>statements</EM>
+}
+</BLOCKQUOTE>
+<P>The user is free to insert newlines for formatting
+purposes. <EM>expr</EM> can be the simplest expression, a constant, or
+something more complex, like an assignment, function call, or
+relational test(s). Starting with a simple example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> if ( 1 ) { "TRUE" }
+TRUE
+> if ( 0 ) { "TRUE" }
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>An optional <EM>else</EM> keyword is allowed to delineate statements
+that will be executed if the expression tests false:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> if ( 0 ) { "TRUE" else "FALSE" }
+FALSE
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>An explicit else-if keyword is not available, however, the else-if
+control flow can be reproduced with nested if-statments.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> if ( 0 )
+  {
+    "true-1"
+  else if ( 0 ) {
+    "true-2"
+  else if ( 1 ) {
+    "true-3"
+  else
+    "else-part"
+  }}}
+true-3  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H2><A NAME="ss4.2">4.2 While Statement</A>
+</H2>
+
+<P>
+<P>The <EM>while-statement</EM> executes the body of <EM>statements</EM>
+until the scalar <EM>expr</EM> is false (has a zero value).
+<P>
+<BLOCKQUOTE>
+while ( <EM>expr</EM> )
+{
+<EM>statements</EM>
+}
+</BLOCKQUOTE>
+<P>The while statement is useful when the loop termination conditions
+are not know a-priori. When the loop termination condition is know
+prior to execution, a for-loop is more efficient. An often used
+example is reading a data file, line by line until the end-of-file
+is reached:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> while (length (ans = getline ("file")))
+  {
+    # Operate on the file contents...
+  }
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H2><A NAME="ss4.3">4.3 For Statement</A>
+</H2>
+
+<P>
+<P>The <EM>for-statement</EM> executes the body of <EM>statements</EM> for
+each element of <EM>vector</EM>. The first time the loop-body is
+executed <EM>var</EM> is set the value of the first element of
+<EM>vector</EM>. The loop is re-executed for each element of
+<EM>vector</EM> with <EM>var</EM> set to each subsequent value of
+<EM>vector</EM>. If <EM>vector</EM> is empty, then the loop-body is not
+executed. 
+<P>
+<BLOCKQUOTE>
+for ( <EM>var</EM> in <EM>vector</EM> )
+{
+<EM>statements</EM>
+}
+</BLOCKQUOTE>
+<P>The for-loop <EM>vector</EM> can be any type of vector: numeric,
+either real or complex, or string. Quite often the for-loop vector
+is constructed on the fly using vector notation. Some simple
+examples: 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> n = 2;
+> for ( i in 1:n ) { printf ("%i ", i); } printf("\n");
+1 2 
+> x = ["a", "sample", "string"];
+> for ( i in x ) { printf ("%s ", i); } printf("\n");
+a sample string 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The first part of the previous example shows how a for-loop vector
+is often constructed on the fly. The second part demonstrates how a
+string vector can be used in a for-loop.
+<P>
+<P>
+<P>
+<H2><A NAME="ss4.4">4.4 Break Statement</A>
+</H2>
+
+<P>
+<P>The <EM>break</EM> statement allows program execution to be transfered
+out of a while or for statement. Consequently, break statements are
+only valid within for and while loops. When the break statement is
+executed, execution of the inner-most loop terminates.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> for ( i in 1:100 ) { if (i == 3) { break } } i
+        3  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H2><A NAME="ss4.5">4.5 Continue Statement</A>
+</H2>
+
+<P>
+<P>The <EM>continue</EM> statement forces execution of the next iteration
+of the inner-most for or while loop to begin
+immediately. Consequently, continue statements are only valid within
+for or while loops.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> for ( i in 1:4 ) { if (i == 2) { continue } i }
+        1  
+        3  
+        4  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<P>
+<HR>
+<A HREF="rlab-ref-5.html">Next</A>
+<A HREF="rlab-ref-3.html">Previous</A>
+<A HREF="rlab-ref.html#toc4">Contents</A>
+</BODY>
+</HTML>

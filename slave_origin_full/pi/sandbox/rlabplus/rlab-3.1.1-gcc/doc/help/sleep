@@ -1,0 +1,66 @@
+  sleep
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Put RLaB to sleep.
+
+      [1mSyntax[0m
+        sleep ( [4msleepval[24m )
+
+      [1mDescription[0m
+        Sleep is an interface to the POSIX.1 sleep system function. The
+        argument, [4msleepval[24m specifies the time in seconds the process
+        should sleep for. Observe, non-integer values are allowed as
+        well.
+
+        The return value is either zero or the number of seconds left to
+        sleep (if the sleep has been interrupted).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

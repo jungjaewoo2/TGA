@@ -1,0 +1,14 @@
+<sect> floor 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Largest integral value not greater than <em>X</>
+<tag> Syntax </tag> floor ( <em>X</> )
+<tag> Description </tag>
+
+	Floor returns the largest integer not greater than the
+	argument. If the argument is a MATRIX then the floor operation
+	is performed on an element-by-element basis.
+
+ <tag>See Also</tag>   ceil, int
+
+</descrip>

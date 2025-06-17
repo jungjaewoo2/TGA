@@ -1,0 +1,13 @@
+xlabel:
+
+Synopsis: Set the X-axis label for the current sub-plot.
+
+Syntax: xlabel ( XLABEL )
+
+Description:
+
+	Set the x-axis label for the current sub-plot in the current
+	plot-window. If xlabel is used without any arguments, then the
+	x-axis label is set to the null-string.
+
+See Also: plptex

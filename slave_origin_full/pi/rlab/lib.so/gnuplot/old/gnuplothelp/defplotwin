@@ -1,0 +1,12 @@
+defplotwin:
+
+Synopsis: Set the default plot-window.
+
+Syntax: defplotwin ( I )
+
+Description:
+
+	Set the default plot-window to I.
+	
+	If 'I' is not specified the default plot-window is set to "0".
+

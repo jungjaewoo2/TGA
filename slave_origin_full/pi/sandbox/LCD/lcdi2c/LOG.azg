@@ -1,0 +1,10 @@
+from <http://telecnatron.com/articles/Utility-To-Control-1602-LCD-On-Raspberry-Pi-Via-A-PCF8574-I2C-Backpack-Module/index.html>
+##########################
+./lcdi2c -b 1 -l -x 2 -y 1 "Hello World"
+
+./lcdi2c -b 1 -l -x 2 -y 0 "Hello World     Hello World"
+
+# 2 lines. Do not clear the screen before writing second line:
+
+./lcdi2c -b 1 -l -x 2 -y 1 "Hello World"
+./lcdi2c -b 1    -x 2 -y 0 "Hello World"

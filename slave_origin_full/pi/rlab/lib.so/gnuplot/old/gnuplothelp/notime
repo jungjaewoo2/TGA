@@ -1,0 +1,14 @@
+notime:
+
+Synopsis: Do not insert time and date in plot-window.
+
+Syntax: notime ( I )
+
+Description:
+
+	Do not insert time and date in the I:th plot-window.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: time
+

@@ -1,0 +1,66 @@
+<sect>odebv
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		Integrate Boundary Value Problem for a System of Ordinary
+		Differential Equations.
+		It is also possible to solve a small-parameter continuation problem.
+
+	<tag>Syntax</tag> 
+     	<p>(1) <tt>odebv (<em>dimy</em>, <em>nlbc</em>, <em>f</em>,
+      <em>df</em>, /<em>p</em>/, <em>X</em>, <em>gL</em>, <em>gR</em>,
+      <em>dgL</em>, <em>dgR</em> /,<em>p</em>/, <em>options</em> )</tt>
+		<p>(2) <tt>odebv (<em>dimu</em>, <em>nlbc</em>, <em>f</em>,
+      <em>df</em>, /<em>p</em>/, <em>X</em>, <em>gL</em>, <em>gR</em>,
+      <em>dgL</em>, <em>dgR</em> /,<em>p</em>/, <em>EP</em>, <em>options</em>
+      )</tt>
+
+	<tag>Description</tag>
+   	odebv  integrates a system of N first order ordinary differential 
+   	equations of the form:
+<tscreen><verb>
+	dy/dt = f(t,y/,p/),
+	for y=y(i), i=1..N, 
+	
+	with boundary conditions:
+		gL(yL/,p/)=0,
+		gR(yR/,p/)=0.
+</verb></tscreen>
+
+
+	Arguments:
+	<descrip>
+		<tag><em>dimu</em></tag> 
+			A dimension of the ODE, N=dimu.
+		<tag><em>nlbc</em></tag> 
+			A dimension of the vector function gL(yL/,p/),
+			i.e., a number of left boundary conditions.
+		<tag><em>f</em>, <em>df</em></tag> 
+			A vector function and its jacobian. In normal mode 
+			<em>f</em>=function(x,y/,p/), while in continuation mode  
+			<em>f</em>=function(x,y/,p/,eps).
+		<tag><em>X</em></tag> 
+			A matrix which can be used to pass the integration interval,
+			<tt>X=[a,b]</tt>, initial mesh <tt>X=[x1,x2,..xK]</tt> which will be
+			improved upon, or initial mesh and the initial approximation for the
+			solution function <tt>y</tt>, <tt>X=[x1,y(x1);x2,y(x2);..;xK,y(xK)]</tt>. 
+		<tag><em>gL,gR,dgL,dgR</em></tag> 
+			The functions representing the boundary
+			conditions and their jacobians, <tt>gL = function(uL/,p/)</tt> of dimension
+			<tt>nlbc</tt>, <tt>dgL[i;j]=dgL(i)/dy(j)</tt>, and same for <tt>dgR</tt>,
+			of dimension <tt>dimy-nlbc</tt>. In continuation mode 
+			<tt>gL = function(uL/,p/,eps)</tt>, and so on.
+		<tag><em>EP</em></tag> 
+			A matrix <tt>[epmax,epmin]</tt> giving the starting
+			and ending value for continuation parameter <tt>eps</tt>.
+		<tag><em>options</em> =<< imethod;tol;stdout >></tag>
+			In normal mode <em>imethod</em>=0,..3, for integrators ACDC (0, default),  
+			mirk221 (1), mirk343 (2), mirk563 (3), coldae (4); <em>tol</em> 
+			are tolerances for each component of the solution, while only solver
+			ACDC is available in continuation mode; and, <em>stdout</em> is the
+			file/terminal where the run-time messages are posted.
+	</descrip>
+
+	This solver utilizes a number of publicly available libraries.
+
+</descrip>

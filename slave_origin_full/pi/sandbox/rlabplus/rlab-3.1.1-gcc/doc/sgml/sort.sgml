@@ -1,0 +1,29 @@
+<sect> sort 
+<p>
+<descrip>
+<tag> Synopsis </tag> Sort an object.
+<tag> Syntax </tag> sort ( <em>A</> )
+<tag> Description </tag>
+
+	If A is a vector (either row or column): 
+
+	<quote>
+	  Then sort returns a list, containing the sorted values and
+	  indices. List element names are `val' and `ind'.
+	</quote>
+
+	If A is a matrix (m &gt; 2):
+
+	<quote>
+	  Then sort returns a list, containing a matrix with the
+	  sorted columns of A, and a matrix containing the sorted
+	  indices of A.
+	</quote>
+
+	Numerical matrices are sorted in ascending numerical value.
+	Complex matrices are sorted by absolute value.
+	String matrices are sorted alphabetically (using strcmp()).
+
+	The sort function uses a simplistic version of qsort.
+
+</descrip>

@@ -1,0 +1,66 @@
+  help
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Online Help
+
+      [1mSyntax[0m
+        help
+
+        help [4mNAME[0m
+
+      [1mDescription[0m
+
+
+        [1mhelp[0m
+           Prints a list of available help files. Help first prints out
+           the help files in the default help file directory. Next, the
+           directories identified in the environment variable
+           RLAB_SEARCH_PATH are searched for files ending in `.r' --
+           rfiles. A list of each directory's rfiles is printed on the
+           standard output.
+
+
+        [1mhelp [4m[22mNAME[0m
+           Prints out the help file identified by [4mNAME[24m. If [4mNAME[24m matches
+           a file in the default help directory, that file is paged to
+           the standard output. If no match is found, the directories
+           identified in the environment variable RLAB_SEARCH_PATH are
+           searched for matches. The first match is paged to the
+           standard output. The rfile extension (`.r') is not considered
+           when checking for matches.
+
+
+        If the user's environment does not contain RLAB_SEARCH_PATH,
+        then the default search-path is used. The default is set at
+        compile time. Normally the default is ".", the current working
+        directory.
+
+        Help is a command, not an expression or statement. Therefore, it
+        must be issued on a line by itself, and cannot occur in the
+        midst of another statement or expression.
+
+
+     [1mSee Also[0m
+        rfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

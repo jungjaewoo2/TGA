@@ -1,0 +1,66 @@
+  ldexp
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Multiply floating point number by integral power of 2
+
+      [1mSyntax[0m
+        ldexp ( [4mX[24m , [4mEXP[24m )
+
+      [1mDescription[0m
+        Ldexp returns a numeric matrix which contains the value(s)
+        resulting from the operation:
+
+
+
+                          X * 2^EXP
+
+
+
+
+
+     The dimensions of [4mX[24m and [4mEXP[24m must be the same. Optionally, [4mEXP[24m can
+     be a scalar, independent of the size of [4mX[24m.
+
+
+     [1mSee Also[0m
+        frexp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

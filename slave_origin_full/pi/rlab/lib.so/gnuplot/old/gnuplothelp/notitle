@@ -1,0 +1,14 @@
+notitle:
+
+Synopsis: Unset the plot-title.
+
+Syntax: notitle ( I )
+
+Description:
+
+	Unset the plot-title in the I:th plot-window.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: title
+

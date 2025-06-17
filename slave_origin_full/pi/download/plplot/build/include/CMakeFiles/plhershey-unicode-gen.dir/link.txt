@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/plhershey-unicode-gen.dir/__/fonts/plhershey-unicode-gen.c.o  -o plhershey-unicode-gen 

@@ -1,0 +1,66 @@
+  floor
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Largest integral value not greater than [4mX[0m
+
+      [1mSyntax[0m
+        floor ( [4mX[24m )
+
+      [1mDescription[0m
+        Floor returns the largest integer not greater than the argument.
+        If the argument is a MATRIX then the floor operation is
+        performed on an element-by-element basis.
+
+
+     [1mSee Also[0m
+        ceil, int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+2001/07/06: Its not likely that I am going to do any major new work to RLaB.
+            I am just too busy with my family, and gainful employment. I will
+	    continue to use it, and make attempts to keep it available, and
+	    building on newer systems.  But, no guarantees.  Of course there
+	    never has been.
+
+	    I am leaving my old todo list below, in case anyone wants to pick
+	    up where I left off, or on the off chance that I start using and
+	    developing RLaB a lot more.
+
+Things I need to do:
+
+        PgPlot help files for printing (plprint).
+
+        Fix RLaB Primer plotting stuff...
+
+        Make RLaB Reference manual address plotting
+
+        Separate help files (plotting) into another directory.
+
+	Documentation: User-Environment (variables), clean up
+                       --enable stuff...
+
+	Add single stepping debuging capability.
+
+	Improve efficiency of msr_Eq and msc_Eq.
+	Finish msr_Ne, etc...
+
+	Finish complex sparse assignments...
+
+	Fix the text online help pages... "A" problem...
+
+	elseif keyword...
+
+	Finish msr_ElMultiply,
+	       msc_ElMultiply
+
+	.+ .- need finishing for all classes...
+
+Things people could do to help:
+
+	Java GUI
+
+	Java Plotting
+
+	Interactive class definition/creation, operator overloading...
+
+	Matlab to Rlab translator. This should translate Matlab source
+	(mfiles) to Rlab source (rfiles). I have some ideas about how
+	to approach this. *** IN PROGRESS ***
+
+	Rlab->C Compiler.
+
+	Rfiles: additions to the controls toolbox, start a signal
+	processing toolbox, statistics, etc ...

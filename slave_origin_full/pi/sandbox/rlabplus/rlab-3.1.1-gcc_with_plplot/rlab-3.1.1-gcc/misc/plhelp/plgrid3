@@ -1,0 +1,27 @@
+plgrid3:
+
+Synopsis: Set the grid type for the current 3-D sub-plot.
+
+Syntax: plgrid3 ( GRID_STY_X , GRID_STY_Y , GRID_STY_Z )
+
+Description:
+
+	Set the grid type for the current sub-plot in the curent
+	plot-window. The grid type is specified by a string. The
+	possible elements of the string are described below. The
+	string can include any combination of the following letters
+	(lower case) in any order. If plgrid3 is called without any
+	arguments, the defaults are reset. 
+
+	b	Draws axis at base, at height 
+		(z=zmin). This character must be specified
+		in order to use any of the other options.
+	i	Inverts tick marks, so they are drawn
+		downwards, rather than upwards.
+	l	Scale axis logarithmically. 
+	n	Writes numeric labels at major tick intervals.
+	s	Enables subticks between major ticks, only 
+		valid if "t" is also specified.
+	t	Draws major ticks.
+	u	If this is specified, the text label for the 
+		axis is written under the axis.

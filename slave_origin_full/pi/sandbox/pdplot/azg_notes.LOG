@@ -1,0 +1,56 @@
+virgin install creates this:
+
+#33)sudo make install
+[sudo] password for azg: 
+/bin/mv -f /usr/local/bin/pd /usr/local/bin/pd.old
+/bin/mv: cannot stat ‘/usr/local/bin/pd’: No such file or directory
+Makefile:24: recipe for target 'install' failed
+make: [install] Error 1 (ignored)
+/bin/cp pd /usr/local/bin/pd 
+/bin/mv -f /usr/local/bin/pdplot /usr/local/bin/pdplot.old
+/bin/mv: cannot stat ‘/usr/local/bin/pdplot’: No such file or directory
+Makefile:24: recipe for target 'install' failed
+make: [install] Error 1 (ignored)
+/bin/cp pdplot /usr/local/bin/pdplot
+if [ ! -d /usr/local/lib/pdplot ] ; \
+            then /bin/mkdir /usr/local/lib/pdplot || exit 1 ; \
+else \
+             exit 0 ; \
+fi
+/bin/cp SYMBOL.F NOTEDATA.F /usr/local/lib/pdplot
+if [ ! -d /usr/local/man/man1 ] ; \
+            then /bin/mkdir /usr/local/man/man1 || exit 1 ; \
+else \
+             exit 0 ; \
+fi
+/bin/cp pd.1 /usr/local/man/man1
+/bin/mkdir /var/spool/sockets
+
+
+
+##########################
+#
+first run:
+
+
+awk '
+   BEGIN {
+     print "sine wave"
+     print "xscale 1 value"
+     print "yscale 1 time"
+     for (i=0; i<=3; i+=.02) {
+        print i, sin(2*3.14159*i)
+     }
+   }
+' | pd
+pd: creating /var/spool/sockets/pdplot
+mkdir: cannot create directory ‘/var/spool/sockets/pdplot’: Permission denied
+chmod: cannot access ‘/var/spool/sockets/pdplot’: No such file or directory
+pd: creating /var/spool/sockets/pdplot/bonnie.grzegorek.com.pd.:0
+pd: starting pd daemon
+/usr/local/bin/pd: line 118: /var/spool/sockets/pdplot/bonnie.grzegorek.com.pd.:0: No such file or directory
+bonnie(azg) download/rick_walker/pdplot/pdplot-master(3)
+
+
+
+##########################

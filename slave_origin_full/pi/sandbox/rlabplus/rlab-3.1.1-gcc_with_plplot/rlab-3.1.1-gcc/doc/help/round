@@ -1,0 +1,66 @@
+  round
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Round to the nearest integer.
+
+      [1mSyntax[0m
+        round ( [4mA[24m )
+
+      [1mDescription[0m
+        Round returns the nearest integer value to its floating point
+        argument [4mX[24m as a double-precision floating point number. The
+        returned value is rounded according to the currently set machine
+        rounding mode. If round-to-nearest (the default mode) is set and
+        the difference between the function argument and the rounded
+        result is exactly 0.5, then the result will be rounded to the
+        nearest even integer.
+
+        Round uses the libm.a function rint. If your machine does not
+        have rint, then the supplied rint is used.
+
+
+     [1mSee Also[0m
+        ceil, int, floor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

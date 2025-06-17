@@ -1,0 +1,24 @@
+<sect> max 
+<p>
+<descrip>
+<tag> Synopsis </tag> Maximum function
+<tag> Syntax </tag> max ( <em>A</> ) 
+             <p>    max ( <em>A</>, <em>B</> )
+<tag> Description </tag>
+
+	Max returns the maximum value(s) contained in the matrix
+	<em>A</>. If the argument is a vector, then the largest value
+	is returned.  If <em>A</> is a MxN matrix, then a row-vector
+	of N columns is returned containing the maximum value from
+	each column of <em>A</>.
+
+	If max is used with two arguments, then max returns a matrix
+	the same size as <em>A</> and <em>B</> filled with the largest
+	elements from <em>A</> and <em>B</>.
+
+	When matrix elements are complex the absolute value is used
+	for comparison purposes.
+
+<tag>See Also</tag>  maxi, min, mini
+
+</descrip>

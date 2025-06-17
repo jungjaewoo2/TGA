@@ -1,0 +1,35 @@
+plscol0:
+
+Synopsis: Set color map 0 colors
+
+Syntax: plscol0 ( COLOR, RED, GREEN, BLUE )
+
+Description:
+
+	Set the colors in the color map. COLOR is an integer between 1
+	and 16, which idenitifies the color to be modified. RED,
+	GREEN, and BLUE are integers between 0 and 255 signifying the
+	amount of red, green and blue content in the color.
+
+	The default colors are:
+
+	  0. black (default background)
+	  1. red
+	  2. yellow
+	  3. green
+	  4. aquamarine
+	  5. pink
+	  6. wheat
+	  7. grey
+	  8. brown
+	  9. blue
+	 10. BlueViolet
+	 11. cyan
+	 12. turquoise
+	 13. magenta
+	 14. salmon
+	 15. white (default foreground)
+
+	Example:
+
+	plscol0 ( 2, 255, 255, 255) # set color 2 to white

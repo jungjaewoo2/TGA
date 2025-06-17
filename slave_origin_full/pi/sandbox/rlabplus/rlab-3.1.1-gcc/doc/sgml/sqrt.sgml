@@ -1,0 +1,14 @@
+<sect> sqrt 
+<p>
+<descrip>
+<tag> Synopsis </tag> Compute the square root.
+<tag> Syntax </tag> sqrt ( <em>A</> )
+<tag> Description </tag>
+
+	Sqrt returns the square-root of it's argument. If the argument
+	is a matrix, then an element-by-element square-root operation
+	is performed.
+
+	<tt>sqrt(-1)</> will produce <tt>1i</>.
+
+</descrip>

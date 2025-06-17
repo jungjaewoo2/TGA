@@ -1,0 +1,341 @@
+
+  There are many ways to get data and programs in and out of
+  Rlab. First we will discuss how <em>file-handles</> are specified,
+  and how they operate. Then we will cover program input, and quickly
+  move on to data input and output.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect> File-Handles
+<p>
+
+  File-handles are the mechanism through which the source of the
+  input, or the destination of the output is specified. File-handles
+  are deliberately simple; they are nothing more than strings. There
+  are three pre-defined file-handles: 
+
+  <itemize>
+  <item> <tt>"stdin"</> allows input from the standard input
+         device. Typically, the keyboard.
+  <item> <tt>"stdout"</> allows output to the standard output
+         device. Usually the terminal screen.
+  <item> <tt>"stderr"</> allows output to the standard error device,
+         usually the same as the standard output, the terminal
+         screen. 
+  </itemize>
+
+  Data can be read from or output to other devices or files by simply
+  specifying an alternate file-handle. Files are the simplest, the
+  file name is simply enclosed within double-quotes to make it a
+  string. Any string will work: a string constant, a string variable,
+  or and element of a string matrix. For example:
+
+<tscreen><verb>
+line = getline("file.input");
+</verb></tscreen>
+
+  Will read a line of the file <tt>file.input</>.
+
+  Functions that read or write data will automatically open files, so
+  an explicit open function is not usually necessary, although one
+  exists for special circumstances. Some functions will automatically
+  close files when the function has finished its task, others
+  won't. For example the function <tt>readm</> will read a single
+  matrix from a file. When <tt>readm</> is finished, it will close the
+  specified file. On the other hand, when <tt>writem</> is used it
+  will not close the file in case the user want to keep writing data. 
+
+  Input and output can be performed from processes as well as
+  files. In order to read or write from a process build a string that
+  contains the process command. Make the first character of the
+  command string a <tt>|</>. Rlab will run the command following the
+  <tt>|</> reading the command's standard output, or writing to the
+  command's standard input. The pipe to/from the process input/output
+  will remain open until it is explicitly closed via the <tt>close</>
+  function.
+
+  This is a very handy capability for communicating with other
+  programs. For example the an interface to the X-Geomview program can
+  be written entirely in an rfile using process I/O. The file handle
+  can be defined as:
+
+<tscreen><verb>
+GEOM = "|/usr/local/bin/geomview -c -";
+</verb></tscreen>
+
+  The file handle is stored in a variable so it can easily be used
+  more than once. Commands, and data can then be sent to X-Geomview
+  with a statements like:
+
+<tscreen><verb>
+fprintf (GEOM, "%i  %i\n", ML.x.n, ML.y.n);
+</verb></tscreen>
+
+  The X-Geomview process can be closed by:
+
+<tscreen><verb>
+close(GEOM);
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect> Programs
+<p>
+
+  Since Rlab offers an interactive mode of operation, programs can be
+  entered from the command line. Programs can be stored in files, and
+  loaded with either the <tt>load</> function, or the <tt>rfile</>
+  command. Additionally, programs can be read from the standard input,
+  or file names can be specified on the command line.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect> Data <label id="reading-data">
+<p>
+
+  There are several methods available for reading and writing
+  data. Detailed information is available for each function in the
+  Builtin Function section of this manual, and in the online help. To
+  summarize:
+
+  <descrip>
+  <tag><tt>write</></tag> Write Rlab binary data files. <tt>write</>
+           can write numeric and string matrices, and lists in compact
+           binary form to a file. Since the byte-ordering is recorded,
+           the file can be read on many other computers (IEEE-754
+           compliant) .
+
+  <tag><tt>read</></tag> Read Rlab binary data files. Rlab keeps track
+           of byte-ordering on IEEE-754 compliant computers, so these
+           binaries can be written, and subsequently read on different
+           machines. The double-precision matrix structure is the same
+           as Matlab's, so Rlab can read and write Matlab files
+           containing matrices.
+
+  <tag><tt>writem</></tag> Write a real-numeric matrix to a file in
+           ASCII format (human-readable). The matrix is output row at
+           a time, so that there are as many rows and column in the
+           output file as there are in the matrix. Only real matrices
+           are supported. To write a complex matrix the user must
+           first write the real, and then the imaginary parts:
+
+<tscreen><verb>
+> writem("file.output", real(z));
+> writem("file.output", imag(z));
+</verb></tscreen>
+
+  <tag><tt>readm</></tag> Read the an ASCII matrix from a
+           file. Normally reads the output from <tt>writem</>, but can
+           also read any text file that consists of white-space
+           separated columns of numbers. Each row must contain the
+           same number of columns. <tt>readm</> will take some
+           optional arguments that give it some knowledge of the input
+           file structure, and help it do a more efficient job.
+
+  <tag><tt>getline</></tag> Reads a line of input. Default behavior is
+           to read a line of input, then break the input into fields
+           containing either numbers or strings, and return the
+           fields, in a list, to the caller. <tt>getline</> behavior
+           was patterned after AWK's own getline
+           function. <tt>getline</> can also read entire lines as a
+           string, which can then be split with the <tt>strsplt</>
+           function. Often, the <tt>getline</> - <tt>strsplt</>
+           combination is more efficient than <tt>getline</> itself.
+
+  <tag><tt>fread</></tag> Read arbitrarily structured binary
+           files. This function is patterned after the C-language
+           fread. Of note is the argument that specifies the
+           byte-ordering of the input file. This argument allows users
+           to read files generated on different platforms.
+
+  <tag><tt>fprintf</></tag> Formatted ASCII output. This function is
+           patterned after the C-language fprintf.
+
+  </descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect1> Examples
+<p>
+
+  At this point some examples are probably most useful. We will focus
+  on getting data into Rlab, since that is often the most
+  troublesome.
+  
+<sect2> Readm Example
+<p>
+
+  <tt>readm</> reads blocks of white-space separated numbers in a
+  file, and is useful for reading data from outside sources. Other
+  programs may not generate data quite the way you (or <tt>readm</>)
+  would like it, fortunately there are text-processing and formatting
+  tools like AWK which are well suited to the purpose of re-arranging
+  your data. In this example we will read differently formatted ASCII
+  files. The simplest is a file formatted with the same number of
+  columns per row, like so:
+
+<code>
+1  2  3  4
+5  6  7  8
+9  10  11  12
+</code>
+
+  This file can be read, row-wise, with the statement:
+<tscreen><verb>
+> x = readm("file1.in")
+        1          2          3          4  
+        5          6          7          8  
+        9         10         11         12  
+</verb></tscreen>
+
+  That is, each row of the input file is read, and becomes a row of
+  the resulting matrix.  The same file can also be read column-wise by
+  specifying the number of rows and columns to be read:
+
+<tscreen><verb>
+> x = readm("file1.in", [3, 4])
+        1          4          7         10  
+        2          5          8         11  
+        3          6          9         12  
+> x = readm("file1.in", [4, 3])
+        1          5          9  
+        2          6         10  
+        3          7         11  
+        4          8         12  
+</verb></tscreen>
+
+  Actually, the file is still read row-wise, but the matrix is filled
+  column by column according to the row and column specification in
+  the second argument.
+
+  Now for something a little trickier. Suppose you have the following
+  file:
+<code>
+1   2   3   4
+5   6   7   8
+9  10  11 
+
+12  13  14  15
+16  17  18  19
+</code>
+
+  If you use <tt>readm</> without giving it some help, it will not
+  read all of that data.
+
+<tscreen><verb>
+> x = readm("file2.in")
+        1          2          3          4  
+        5          6          7          8  
+        9         10         11         12  
+       13         14         15         16  
+</verb></tscreen>
+
+  <tt>readm</> misses some of the data because it assumes each row of
+  the input file has the same number of columns. If you give it a
+  little help by telling it how many elements to read it will get them
+  all. 
+
+<tscreen><verb>
+> x = readm("file2.in", [1, 19])
+ matrix columns 1 thru 6
+        1          2          3          4          5          6  
+
+ matrix columns 7 thru 12
+        7          8          9         10         11         12  
+
+ matrix columns 13 thru 18
+       13         14         15         16         17         18  
+
+ matrix columns 19 thru 19
+       19  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect2> Getline Example
+<p>
+
+  <tt>getline</> is a useful tool for dealing with many types of
+  inputs. It is not always the most efficient, its strength lies in
+  ease of use. A few common uses of <tt>getline</> will be
+  show. First, the simplest usage:
+
+<tscreen><verb>
+> printf("Input something > "); ans = getline("stdin");
+Input something > a number 12.73e2
+> ans
+   1            2            3            
+> ans.[1]
+a  
+> ans.[2]
+number  
+> ans.[3]
+ 1.27e+03
+</verb></tscreen>
+
+  The <tt>printf</> statement creates the prompt: <tt>Input something
+  ></>, and the <tt>getline</> statement reads the entire line of
+  input, splitting the line into fields separated by whitespace. Each
+  field, either a number or a string is stored in the returned list,
+  <tt>ans</>. The rest of the example just exposes the contents of the
+  list. 
+
+  The next simple example shows how to use <tt>getline</> to read from
+  a file until the end-of-file (EOF) is reached.  When <tt>getline</>
+  encounters the end-of-file it returns a list with zero length. Thus
+  the <tt>while</> loop will execute until end-of-file.
+
+<tscreen><verb>
+while (length (ans = getline("file1.in"))) 
+{
+   // Do something with each line...
+}
+</verb></tscreen>
+
+  Since <tt>getline</> is operating within a loop, its return value,
+  <tt>ans</> is overwritten each time the loop is executed. If the
+  contents of the file are to be saved for later use this must be done
+  within the loop. The following example shows how this might be
+  done. Here <tt>getline</> is used with a second argument that
+  specifies that the entire line be returned as a string.
+
+<tscreen><verb>
+svec = [];
+while (class (line = getline (FN, 0)) == "string")
+{
+  svec = [svec; line];
+}
+</verb></tscreen>
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect2> Getline / Strsplt Example
+<p>
+
+  Reading in one type of data is most efficient with
+  <tt>getline(FN,LL)</> usage. That is, you tell <tt>getline</> to
+  read in the entire line as a string. Then you can use <tt>strsplt</>
+  to divide up the line most efficiently. This method is often more
+  efficient, because the combination of <tt>getline</> and
+  <tt>strsplt</> do less work because you guide them through the
+  process. If you force getline to split each line, it must examine
+  every character on the line itself. For example, you might have a
+  data file that looks like:
+
+<tscreen><verb>
+123 456 12  14 15
+1 15 15 16 22 99 22
+22 22 33 44 55 66
+</verb></tscreen>
+
+  It would be best to read this data with a small program that looked
+  like:
+
+<tscreen><verb>
+while ( class (line = getline("data", -1)) )
+{
+  x = strtod (strsplt(line, " "));
+  # Do something with the data here...
+}
+</verb></tscreen>
+
+  The key here is intelligent use of <tt>strsplt</> and
+  <tt>strtod</>. <tt>strsplt</> breaks the string into pieces using
+  field separators specified in the second argument. <tt>strtod</>
+  converts its string argument to a number.
+

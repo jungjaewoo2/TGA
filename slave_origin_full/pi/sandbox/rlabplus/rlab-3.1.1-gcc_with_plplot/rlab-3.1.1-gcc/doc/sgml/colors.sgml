@@ -1,0 +1,24 @@
+<sect> colors
+<p>
+<descrip>
+<tag> Synopsis </tag> Sets the terminal foreground and background color. 
+	Resets the terminal color scheme to default values.
+<tag> Syntax </tag>
+             <p> colors ( <em>fg</em>, <em>bg</em> )
+             <p> colors ( )
+
+<tag> Arguments </tag>
+
+	<descrip>
+	<tag> fg / bg </tag>
+		name of the color, "default", "red", "green", "yellow" or "brown",
+		"blue", "magenta", "cyan", "grey" or "white".				
+	<tag> none </tag>
+		resets the terminal to its default values.
+	</descrip>		
+
+	colors uses termcap library.
+	
+	<tag>See Also</tag> clrscr, mvcrsr, clrpos.
+
+</descrip>

@@ -1,0 +1,703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Programmer's Reference</TITLE>
+ <LINK HREF="rlab-ref-9.html" REL=next>
+ <LINK HREF="rlab-ref-7.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="rlab-ref-9.html">Next</A>
+<A HREF="rlab-ref-7.html">Previous</A>
+<A HREF="rlab-ref.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="s8">8. Programmer's Reference</A></H2>
+
+<P>
+<P>
+<P>
+<H2><A NAME="ss8.1">8.1 Introduction</A>
+</H2>
+
+<P>
+<P>Rlab2 is not at present an externally visible departure from
+Rlab1. However, internally, there are substantial, changes. It is
+not really necessary to document the changes, since no programmer's
+reference existed for Rlab1. However, documenting the inner-workings
+of Rlab2 (here-after referred to simply as Rlab) will not only
+benefit the author, but allow advanced users to modify and extend
+Rlab2.
+<P>In addition to explaining the inner architecture, some justification
+will also be provided along the way. I do this mostly so I will
+remember why I made certain choices years from now. Additionally, it
+may be of some benefit to users.
+<P>If you are interested only in writing new builtin, or dynamically
+linked functions, you can skip to Section 
+<A HREF="#dl-functions">Writing Builtin Functions</A><P>
+<P>
+<H2><A NAME="ss8.2">8.2 Interpreter Operation</A>
+</H2>
+
+<P> 
+<P>
+<H3>Overview</H3>
+
+<P>
+<P>In front of the interpreter sit the scanner and the parser. I will
+not spend any time discussing the implementation of these pieces,
+since they are constructed with fairly common tools: yacc, and
+flex. There are many excellent references that cover these
+tools.
+<P>The interpreter is a stack-based machine. The machine instructions
+are called ``op-codes''. Op-codes are to byte codes what RISC
+instructions are to CISC instructions. Each op-code is an
+integer. Operation information is <EM>not</EM> packed into
+words. Instead each op-code is an integer, and any necessary
+information occupies its own word. Although this is not space
+efficient, it is easier to work with, and usually faster, since the
+program does not have to spend any time dissassembling
+words. Instructions are aligned on double-word boundaries, further
+speeding operation on most architectures.
+<P>It is easiest to present the rest of the interpreter in terms of the
+data structures:
+<P>
+<UL>
+<LI> The stack data structure is the <CODE>Datum</CODE>. The <CODE>Datum</CODE>
+looks like:
+
+<BLOCKQUOTE><CODE>
+<PRE>
+typedef struct _datum Datum;
+
+struct _datum
+{
+  int type;
+  union
+  {
+    double val;
+    void *ptr;
+  }
+  u;
+};
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+The <CODE>type</CODE> element tells the programmer what the <CODE>Datum</CODE>
+is carrying, a <CODE>val</CODE>, or a <CODE>ptr</CODE> of some type. <CODE>val</CODE>
+is a simple double value used to hold numeric constants. <CODE>ptr</CODE>
+is a void pointer to a variable or an entity. Rlab's variables are
+contained in the <CODE>ListNode</CODE> structure, since each variable must
+be associated with some sort of list, tree, or hash-table.
+</LI>
+<LI> The <CODE>ListNode</CODE> structure is simple:
+
+<BLOCKQUOTE><CODE>
+<PRE>
+typedef struct _listNode ListNode;
+
+struct _listNode
+{
+  char *key;
+  void *ent;
+  int scope;
+  ListNode *next;
+  ListNode *prev;
+};
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+<CODE>ListNode</CODE>s only carry the bare essentials: <CODE>key</CODE> is the
+variables name, and is used for identification/lookup. <CODE>Ent</CODE> is
+the entity pointer (the thing that actually holds the
+data). <CODE>next</CODE>, and <CODE>prev</CODE> are pointers to other
+<CODE>ListNodes</CODE>; these are only used when a variable
+(<CODE>ListNode</CODE>) is actually installed in a tree or hash-table.
+</LI>
+<LI> <CODE>Ent</CODE> is short for entity. An entity can contain any
+sort of data: matrices, lists, and functions, to name a few. Each
+entity can contain only <EM>one</EM> item of data. The <CODE>Ent</CODE>
+looks like:
+
+<BLOCKQUOTE><CODE>
+<PRE>
+typedef struct _ent Ent;
+
+struct _ent
+{
+  int refc;
+  int type;
+  double d;
+  void *data;
+};
+</PRE>
+</CODE></BLOCKQUOTE>
+
+
+<CODE>refc</CODE> is the reference counter. In Rlab, any number of
+variables can point to the same entity. We need to keep track of the
+number of variables that actually point to an entitiy, so that we
+know when it is safe to delete, or change the entity. Any function
+that tries to delete an entity, should really only decrement the
+reference count. The entity should not be deleted until the
+reference count is zero.
+
+The <CODE>type</CODE> element tells functions operating on the entity,
+what type of data the entity contains.
+
+The <CODE>d</CODE> element is for storing simple numeric scalars, and may
+go away in the future.
+
+The <CODE>data</CODE> element is a pointer to the actual data. The data
+can be anything, in addition to the pre-defined data classes that
+Rlab comes with.  I will not discuss the <CODE>data</CODE> structure
+because it is arbitrary.
+</LI>
+</UL>
+<P>The overall operation of the interpreter is easily viewed with an
+outline of the steps needed to perform an operation:
+<P>
+<UL>
+<LI> The interpreter makes it way through the instruction
+array. For each defined instruction there is a
+corresponding block of code, or function that performs the
+operation. </LI>
+<LI> The operation-function pops data off the data-stack (an array of
+Datums) as needed.</LI>
+<LI> If a operation-function needs to operate on the data, it
+does so through the class-interface.</LI>
+<LI> The operation-function pushes data back on the data-stack
+as necessary.</LI>
+<LI> Interpreter execution continues to the next operation.</LI>
+</UL>
+<P>
+<H3>Scanner and Parser</H3>
+
+<P>
+<P>
+<H3>Stack Machine</H3>
+
+<P>
+<P>
+<H3>Memory Management</H3>
+
+<P>
+<P>A consverative garbage collector is used to do the bulk of memory
+managemant functions. All data structures are allocated and free'ed
+through the garbage-collector functions. Normally, one wouldn't have
+to free any objects when a garbage-collector is in use. However,
+users can create quite large data objects, and it helps the
+garbage-collector (sometimes) to free these objects when we know
+they aren't needed.
+<P>
+<H3>Class Management / Interface</H3>
+
+<P>
+<P>
+<P>
+<H2><A NAME="dl-functions"></A> <A NAME="ss8.3">8.3 Writing Builtin Functions </A>
+</H2>
+
+<P>
+<P>
+<P>
+<H3>Introduction</H3>
+
+<P>
+<P>This section describes the process for building and linking your
+own function(s) into RLaB. There are two ways to do this: 
+<P>
+<OL>
+<LI> Compile and link your function with the rlab source to
+build a new executable. 
+</LI>
+<LI> Compile your function as a separate shared-object, and
+dynamically  link it with rlab using the <CODE>dlopen</CODE>
+function. Assuming your platform properly supports runtime
+dynamic linking.</LI>
+</OL>
+<P>Either method requires that you write an interface function so that
+your function can communicate arguments and a return value with
+rlab. The interface function is the same whether you compile your
+function with rlab to make a new executable or compile your function
+as a shared object.  The end result of this process is the
+incorporation of your function into rlab as a builtin function.
+<P>This subject will be presented almost entirely with
+examples. Writing builting functions is <EM>not</EM> difficult
+<P>
+<P>
+<H3>Example 1</H3>
+
+<P>
+<P>All builtin functions are functions, which return an entity pointer,
+and have the same argument list. The following exampes is a trivial,
+but simple builtin function that multiplies its argument by 2, and
+returns the result. The basic steps in this (and most) function are:
+<P>
+<OL>
+<LI> Perform argument checking. The interpreter does not perform
+any argument checking. Argument checking is entirely up to
+the builtin function. In this example argument checking
+consists of checking the number of arguments.
+</LI>
+<LI> Extracting the required data from the arguments list.
+</LI>
+<LI> Performing the desired operations.
+</LI>
+<LI> Creating and configuring the return entity.</LI>
+</OL>
+<P>
+<HR>
+<PRE>
+  1: /* simplest.c: A simple builtin function example. */
+  2: 
+  3: /*
+  4:    Compile this file with (in this directory):
+  5:    cc -fPIC -c simplest.c -I../../ -I../../gc
+  6: */
+  7: 
+  8: /* Necessary header files. */
+  9: #include "rlab.h"
+ 10: #include "ent.h"
+ 11: #include "class.h"
+ 12: #include "mem.h"
+ 13: #include "bltin.h"
+ 14: #include "util.h"
+ 15: 
+ 16: #include &lt;stdio.h>
+ 17: #include &lt;string.h>
+ 18: 
+ 19: Ent *
+ 20: Simplest (int nargs, Datum args[])
+ 21: {
+ 22:   double dtmp;
+ 23:   Ent *e, *rent;
+ 24:   MDR *m;
+ 25: 
+ 26:   /* Check the number of arguments. */
+ 27:   if (nargs != 1)
+ 28:   {
+ 29:     rerror ("simplest: only 1 argument allowed");
+ 30:   }
+ 31: 
+ 32:   /* Get the first (only) argument. */
+ 33:   e = bltin_get_ent (args[0]);
+ 34: 
+ 35:   /* Perform the simplest operation. */
+ 36:   dtmp = 2.0 * class_double (e);
+ 37: 
+ 38:   /* Create a new matrix containing the result. */
+ 39:   m = mdr_CreateScalar (dtmp);
+ 40: 
+ 41:   /* Create the return entity. */
+ 42:   rent = ent_Create ();
+ 43: 
+ 44:   /* Set the entity's data. */
+ 45:   ent_data (rent) = m;
+ 46: 
+ 47:   /* Set the entity's data type. */
+ 48:   ent_type (rent) = MATRIX_DENSE_REAL;
+ 49: 
+ 50:   /* Clean up the argument if possible. */
+ 51:   ent_Clean (e);
+ 52: 
+ 53:   return (rent);
+ 54: }
+</PRE>
+<HR>
+<P>Now we will examine this function in more detail:
+<P>
+<DL>
+<DT><B> Lines 1-17 </B><DD><P>Comments and header files.
+<DT><B> Lines 19-24 </B><DD><P>The function and automatic variables
+declarations. <CODE>nargs</CODE> is the number of arguments the
+function was invoked with. <CODE>args</CODE> is the array of Datums
+that contains each argument.
+<DT><B> Lines 26-30</B><DD><P>Checking the function argument(s). In this
+case we merely check that the function was called with only
+one argument. In some instances you might wish to do more, or
+less. 
+<DT><B> Line 33</B><DD><P>The function argument is extraced from the array
+of Datums. <CODE>bltin_get_ent</CODE> takes a single Datum, and
+converts (reduces) it to an entity.
+<DT><B> Line 36</B><DD><P><CODE>class_double</CODE> takes a single entity as an
+argument, and returns a double value. If the argument to
+<CODE>class_double</CODE> is not recognized, and error message is
+created, and program control returns to the interpreter.
+<P>The return value from <CODE>class_double</CODE> is multiplied by 2.
+<DT><B> Line 39</B><DD><P>The return matrix is created, and its value is
+set to two.
+<DT><B> Line 42</B><DD><P>The return entity (which will carry the return
+matrix) is created.
+<DT><B> Line 45</B><DD><P>The return entity's data pointer is set to point
+at the return matrix.
+<DT><B> Line 49</B><DD><P>The return entity's data type is set. The
+available types are listed at the bottom of <CODE>rlab.h</CODE>.
+<DT><B> Line 51</B><DD><P>The argument entity is cleaned (the memory is
+free'ed) if possible.
+</DL>
+<P>The new builtin can be compiled on a Linux/ELF system like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+examples> gcc -fPIC -g -c simplest.c -I../../ -I../../gc
+examples> gcc -shared -o simplest.so  simplest.o
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>And tested like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+examples> ../../rlab -rmp
+> simplest = dlopen("./simplest.so", "Simplest")
+        &lt;bltin-function>
+> i = 0;
+> while (i &lt; 10000) { x=simplest(i); i++; }
+> i
+    1e+04  
+> x
+    2e+04  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3>Example 2, Portable Gray Map File I/O</H3>
+
+<P>
+<P>This example may be a little more meaningful than the last. The file
+<CODE>pgm.c</CODE> contains builtin functions for loading and saving
+Portable Gray May (PGM) files. The <CODE>RSavepgm</CODE> function takes a
+real matrix, and writes it to a file using the PGM
+format. <CODE>RLoadpgm</CODE> reads a PGM files, and returns a matrix of
+the pixel values. An outline of the these functions follows:
+<P>For <CODE>RSavepgm</CODE>:
+<P>
+<OL>
+<LI> Check the number of arguments. Two or three arguments allowed.
+<OL>
+<LI> Image-Matrix. The matrix of pixel values.</LI>
+<LI> File-Name. The file to write.</LI>
+<LI> Maximum-Gray-Level. </LI>
+</OL>
+</LI>
+<LI> Get each of the arguments.</LI>
+<LI> Open the specified file for binary-write.</LI>
+<LI> Use the PGM API to write the matrix as a PGM-file.</LI>
+<LI> Clean up, and return.</LI>
+</OL>
+<P>There are several sections of code that warrant explanation:
+<P>
+<DL>
+<DT><B> Lines 53-71</B><DD><P>Here is where the arguments are extracted
+from the <CODE>args</CODE> array. The function <CODE>bltin_get_ent</CODE>
+is used extensively, as before. However, this time,
+<CODE>class_matrix_rea</CODE>, and <CODE>class_char_pointer</CODE> are
+used in addition to <CODE>class_double</CODE>.
+<DT><B> Lines 73-88</B><DD><P>Here is a nice example of file I/O. The
+functions <CODE>get_file_ds</CODE>, and <CODE>close_file_ds</CODE>, are
+Rlab's interface to file I/O. In this instance a simple file
+is opened for writing. But, <CODE>get_file_ds</CODE> works equally
+well with sub-processes.
+<DT><B> Lines 146, 147</B><DD><P>It is not necessary to use the function
+<CODE>ent_clean</CODE> since Rlab uses a generational garbage
+collector. However, using <CODE>ent_clean</CODE> can help in some
+cases, so it is a good idea to use it whenever possible.
+<DT><B> Lines 152-155</B><DD><P>This is where the return-value entity is
+created, and configured. In this instance a scalar success
+value is all that is returned. 
+<DT><B> Lines 235-238</B><DD><P><CODE>RLoadpgm</CODE> returns a matrix. Note
+that the return entity configuration is similar to that in
+<CODE>RSavepgm</CODE>.
+</DL>
+<P>
+<HR>
+<PRE>
+  1: /* **************************************************************
+  2:  * pgm.c: Routines to load and save a matrix containing the pixels 
+  3:  *        of a gray scale image to or from a Portable Gray Map 
+  4:  *        file, using the libpgm library from the netpbm 
+  5:  *        distribution.
+  6:  *
+  7:  * To compile on a Linux/ELF system:
+  8:  *        gcc -g -fPIC -c pgm.c -I../../ -I../../gc
+  9:  *        gcc -shared -o pgm.so pgm.o -lpgm -lpbm 
+ 10:  * ************************************************************** */
+ 11: 
+ 12: #include "rlab.h"
+ 13: #include "ent.h"
+ 14: #include "class.h"
+ 15: #include "mem.h"
+ 16: #include "bltin.h"
+ 17: #include "rfileio.h"
+ 18: #include "util.h"
+ 19: 
+ 20: #include &lt;stdio.h>
+ 21: #include &lt;string.h>
+ 22: #include &lt;errno.h>
+ 23: #include &lt;math.h>
+ 24: 
+ 25: #include "pgm.h"
+ 26: 
+ 27: /* **************************************************************
+ 28:  * RSavepgm: Save a PGM matrix to a file.
+ 29: 
+ 30:  * savepgm ( img_matrix, file_name, maximum_gray_level )
+ 31:  * ************************************************************** */
+ 32: 
+ 33: Ent *
+ 34: RSavepgm (int nargs, Datum args[])
+ 35: {
+ 36:   int gl, max_gl = 0, i, j;
+ 37:   char *string; 
+ 38:   double dgl;
+ 39:   FILE *fn;
+ 40:   Ent *FN, *GL, *IMG, *rent;
+ 41:   MDR *img;
+ 42:   gray **new;
+ 43:   gray *row_new;
+ 44: 
+ 45:   char *kluge_argv[1];        /* we need to provide the pgm lib a dummy argv */
+ 46: 
+ 47:   kluge_argv[0]="savepgm"; /* initialize the dummy argv */
+ 48: 
+ 49:   /* Check nargs */
+ 50:   if ((nargs &lt; 2) || (nargs > 3))
+ 51:     rerror ("savepgm: requires 2 or 3 arguments");
+ 52: 
+ 53:   /* Get the image. */
+ 54:   /* First the image entity. */
+ 55:   IMG = bltin_get_ent (args[0]);
+ 56: 
+ 57:   /* Next, get the image matrix from within the entity. */
+ 58:   img = class_matrix_real (IMG);
+ 59: 
+ 60:   /* Then the filename for output. */
+ 61:   FN = bltin_get_ent (args[1]);
+ 62:   string = class_char_pointer (FN);
+ 63: 
+ 64:   /* If the third argument is present, get it for use as the maximum gray level */
+ 65:   gl = -1;
+ 66:   if (nargs == 3)
+ 67:   {
+ 68:     GL = bltin_get_ent (args[2]);
+ 69:     dgl = class_double (GL);
+ 70:     gl = dgl;
+ 71:   }
+ 72: 
+ 73:   /* Open with file for binary write. */
+ 74:   if ((fn = get_file_ds (string, "wb", 0)) == 0) 
+ 75:   {
+ 76:     fprintf (stderr, "savepgm: %s: cannot open for write\n", string);
+ 77: 
+ 78:     /* Clean up the arguments when we error out. */
+ 79:     ent_Clean (IMG);
+ 80:     ent_Clean (FN);
+ 81:     if (nargs == 3) ent_Clean (GL);
+ 82: 
+ 83:     /* Return 0 to indicate failure. */
+ 84:     rent = ent_Create ();
+ 85:     ent_data (rent) = mdr_CreateScalar (0.0);
+ 86:     ent_type (rent) = MATRIX_DENSE_REAL;
+ 87:     return (rent);
+ 88:   }
+ 89: 
+ 90:   /*
+ 91:    * First we need to call pgm_init to initialize the pgm library.  
+ 92:    * Normally this is called with argc and argv, but here we want to
+ 93:    * just dummy it up.
+ 94:    */
+ 95:   i=1;
+ 96:   pgm_init (&amp;i, kluge_argv); 
+ 97: 
+ 98:   /* Allocate a PGM image array of the correct size */
+ 99:   new = pgm_allocarray (MNC (img), MNR (img));
+100: 
+101:   /*
+102:    * Now for each row of the image we want to store the pixel values
+103:    * for each column.  Of course PGM differs from RLaB in the choice
+104:    * of column-major and row-major order.
+105:    */
+106: 
+107:   for (j = 0; j &lt; MNR (img);j++)
+108:   {
+109:     row_new = *(new+j);
+110:     for (i = 0; i &lt; MNC (img); i++)
+111:     {
+112:       *(row_new+i) = (gray) MdrV0 (img, i*MNR(img)+j);
+113: 
+114:       /* Keep track of the maximum pixel value in the image */
+115:       if(*(row_new+i) > max_gl)
+116:       {
+117:    max_gl=*(row_new+i);
+118:       }
+119:     }
+120:   } 
+121:   
+122:   /*
+123:    * If no maximum gray level was given as an argument, use the maximum
+124:    * pixel value detected above. If the detected maximum pixel value is
+125:    * greater than the one specified in argument 3, give a warning, and use
+126:    * the maximum detected value.
+127:    */
+128: 
+129:   if(gl == -1)
+130:   {
+131:     gl = max_gl;
+132:   }
+133:   else if(max_gl > gl)
+134:   {
+135:     fprintf (stderr,
+136:         "savepgm: image contains pixel values greater than specified maximum");
+137:     fprintf (stderr, "\nusing maximum pixel value instead\n");
+138:     gl = max_gl;
+139:   }
+140: 
+141:   /* Now the array new contains the PGM image, so write it out */
+142:   pgm_writepgm (fn, new, MNC (img), MNR (img),(gray)gl, 0);
+143:   pgm_freearray (new, MNR (img));
+144:   
+145:   /* Clean up before returning. */
+146:   ent_Clean (FN);
+147:   ent_Clean (IMG);
+148:   if (nargs == 3) ent_Clean (GL);
+149:   close_file_ds (string);
+150:   
+151:   /* Everything OK, return 1 to indicate success. */
+152:   rent = ent_Create ();
+153:   ent_data (rent) = mdr_CreateScalar (1.0);
+154:   ent_type (rent) = MATRIX_DENSE_REAL;
+155:   return (rent);
+156: }
+157: 
+158: /* **************************************************************
+159:  * RLavepgm: Load a PGM into a matrix.
+160: 
+161:  * loadpgm ( file_name )
+162:  * ************************************************************** */
+163: 
+164: Ent *
+165: RLoadpgm (int nargs, Datum args[])
+166: {
+167:   int i, j, rows, cols;
+168:   char *string;
+169:   FILE *fn;
+170:   Ent *FN, *rent;
+171:   MDR *img;
+172:   gray **new;
+173:   gray *row_new;
+174:   gray gl;
+175:   char *kluge_argv[1];     /* we need to provide the pgm lib a dummy argv */
+176: 
+177:   kluge_argv[0]="savepgm"; /* initialize the dummy argv */
+178: 
+179:   /* Check nargs */
+180:   if (nargs != 1)
+181:     rerror ("loadpgm: requires 1 argument");
+182: 
+183:   /* The the filename for input. */
+184:   FN = bltin_get_ent (args[0]);
+185:   string = class_char_pointer (FN);
+186: 
+187:   /* Open with file for binary read. */
+188:   if ((fn = get_file_ds (string, "rb", 0)) == 0) 
+189:   {
+190:     fprintf (stderr, "loadpgm: %s: cannot open for write\n", string);
+191: 
+192:     /* Clean up the arguments when we error out. */
+193:     ent_Clean (FN);
+194: 
+195:     /* Return 0 to indicate failure. */
+196:     rent = ent_Create ();
+197:     ent_data (rent) = mdr_CreateScalar (0.0);
+198:     ent_type (rent) = MATRIX_DENSE_REAL;
+199:     return (rent);
+200:   } 
+201: 
+202:   /*
+203:    * First we need to call pgm_init to initialize the pgm library.  
+204:    * Normally this is called with argc and argv, but here we want to
+205:    * just dummy it up.
+206:    */
+207: 
+208:   i = 1;
+209:   pgm_init (&amp;i, kluge_argv); 
+210: 
+211:   /* Allocate a PGM image array of the correct size */
+212:   new = pgm_readpgm (fn, &amp;cols, &amp;rows, &amp;gl);
+213:   img = mdr_Create (rows, cols);
+214: 
+215:   /*
+216:    * Now for each row of the image we want to store the pixel values
+217:    * for each column.  Of course PGM differs from RLaB in the choice
+218:    * of column-major and row-major order.
+219:    */
+220:   for (j = 0; j &lt; rows;j++)
+221:   {
+222:     row_new = *(new+j);
+223:     for (i = 0; i &lt; cols; i++)
+224:     {
+225:        MdrV0 (img, i*MNR(img)+j) = *(row_new+i);
+226:     }
+227:   }  
+228: 
+229:   /* Clean up before returning. */
+230:   pgm_freearray(new, MNR (img));
+231:   ent_Clean (FN);
+232:   close_file_ds (string);
+233:   
+234:   /* Everything OK, return the image. */
+235:   rent = ent_Create ();
+236:   ent_data (rent) = img;
+237:   ent_type (rent) = MATRIX_DENSE_REAL;
+238:   return (rent);
+239: }
+</PRE>
+<HR>
+<P>A simple example showing one possible usage of these two new builtin
+functions is provided. Both <CODE>savepgm</CODE>, and <CODE>loadpgm</CODE> are
+created via the <CODE>dlopen</CODE> function. The Linux logo is read in,
+and some white-noise is added to the picture. The new graphic is
+written to a file, which can then be viewed with any PGM compatible
+viewer (xv for example).
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+examples> ../../rlab -mpr
+> savepgm = dlopen("./pgm.so","RSavepgm")
+        &lt;bltin-function>
+> loadpgm = dlopen("./pgm.so","RLoadpgm")
+        &lt;bltin-function>
+> logo = loadpgm("Logo.pgm");
+> show(logo);
+        nr                  :   303
+        nc                  :   257
+        n                   :   77871
+        class               :   num
+        type                :   real
+        storage             :   dense
+> max(max(logo))
+      248  
+> min(min(logo))
+        0  
+> rand("uniform", 0,50);
+> logo = logo + rand(size(logo));
+> savepgm(logo,"Logo_noisy.pgm");
+> close("Logo_noisy.pgm");
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3>Dynamic Linking</H3>
+
+<P>
+<P><B> Not Finished Yet ! </B>
+<P>
+<P>
+<HR>
+<A HREF="rlab-ref-9.html">Next</A>
+<A HREF="rlab-ref-7.html">Previous</A>
+<A HREF="rlab-ref.html#toc8">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+  sin
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Compute the sin.
+
+      [1mSyntax[0m
+        sin ( [4mA[24m )
+
+      [1mDescription[0m
+        RLaB trigonometric functions are designed to take scalars, and
+        matrices as arguments. The return value is the input argument
+        with the trigonometric operation performed element by element.
+
+        All the trigonometric functions use the C language math library
+        functions, so details about the ranges and error conditions can
+        be found by examining the appropriate man pages on your system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

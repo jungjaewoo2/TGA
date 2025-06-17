@@ -1,0 +1,14 @@
+nomultiplot:
+
+Synopsis: Makes the current I:th plot-window leave multiplot-mode.
+
+Syntax: nomultiplot ( I )
+
+Description:
+
+	nomultiplot() allows you to leave the multiplot-mode at any time.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: multiplot, noplotyy
+

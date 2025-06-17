@@ -1,0 +1,66 @@
+  strtol
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        String to integer conversion.
+
+      [1mSyntax[0m
+        strtol ( [4mSTR[24m , [4mBASE[24m )
+
+      [1mDescription[0m
+        The strtol functions converts its argument, [4mSTR[24m, from string
+        class to numeric class. Strtol stands for STRing TO Long-int.
+
+        The second (optional) argument [4mBASE[24m, specifies the conversion
+        base. Valid values for [4mBASE[24m are between 2 and 32. [4mBASE[24m defaults
+        to 10 if not specified.
+
+        Strtol will return a NaN (Not a Number) if it cannot recognize a
+        string, or an element of a string matrix, as a number.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

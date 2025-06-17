@@ -1,0 +1,497 @@
+
+***	What's New in Version v2.1.06 (2001/07/06)
+	No new functionality.  This is merely an update. The release:
+	1) incorporates Boehm's garbage detector version 6.0alpha9
+	2) some clean ups in the configure script to build on a newer 
+	   version of Linux (Mandrake 8.0).  This mostly entails modifying
+	   configure to find and use the GNU Readline library if its 
+	   available.  You will need the "readline-devel" RPM installed.
+
+***	What's New in Version v2.1.03 (5/9/1999)
+
+        1) More controls-toolbox revisions.
+
+        2) RLaB now builds with VC++6.0.  Its not automated like the
+           Unix builds, but it works.
+
+        3) GC upgraded to version 4.14.
+
+***	What's New in Version v2.1.02 ()
+
+        1) Code cleanup for win32 release.
+
+        2) More controls-toolbox updates.
+
+        3) Increased coverage in regression test (test.r).
+
+***	What's New in Version v2.1.01 (4/24/1999)
+
+        1) Added T.S. Yang's updated control-toolbox.  This effort is
+           based upon Prof. Jeff Layton's work.
+
+        2) Updated Metis interface to Metis version 3. configure
+           option in now --enable-METIS3
+
+        3) Fixed bug in finite() It couldn't detect an -Inf
+
+        4) Updated to Karl Storck's latest gnuplot.r
+
+        5) Added a global workspace variable (list) the contains
+           information regarding the options used to build rlab.
+
+            whos(_rlab_config)
+        	Name            Class	Type	Size		NBytes
+        	garbage_collector	string	string	1	1	6
+        	graph_support  	string	string	1	1	9
+        	plot_support   	string	string	1	1	10
+        	sparse_support 	string	string	1	1	11
+
+            for (i in members (_rlab_config)) 
+            { 
+               printf ("%s    %s\n", i, _rlab_config.[i]); 
+            }
+            command_line_support : readline
+            endianess : little
+            garbage_collector : gc
+            graph_support : metis
+            logb_support : yes
+            non_linear_least_squares_support : minpack
+            plot_support : pgplot
+            sparse_support : superlu
+
+          This information (list) is writable but, by convention, users should never
+          modify it.  This way, the list can be used to determine at
+          runtime, if the particular version of rlab you are using
+          supports a particular feature.
+
+***	What's New in Version v2.1.00 ()
+
+        1) configure and installation changes:
+
+           a) --with-pgplot now requires an argument that identifies
+              the directory where Pgplot is installed.  Example:
+              --with-pgplot=/usr/local/pgplot 
+
+              Same for Plplot (untested though).
+
+           b) configure will now figure out the C -> Fortran
+              interlanguage calling convention on its own.
+
+           c) Upon installation, instead of making a symbolic link
+              from rlab2 to rlab-$(VER), a script named rlab2 is
+              installed.  This script sets up the users environment as
+              much as possible, then invokes rlab.
+
+***	What's New in Version v2.0.16 ()
+
+        1) I am now building the Fortran libs with g77.  I think g77
+           has come far enough that it can be used without fear :-).
+           And, most significantly, the g77 that comes with EGCS can
+           be built without any pain.
+
+           What does this mean to you ?  It means that RLaB's
+           configure script now just looks for libblas.a (as opposed
+           to libCblas.a), liblapack.a, libfftpack.a, libranlib.a.
+
+           It also means that I am packaging the Fortran libraries
+           with RLaB now.  Now, you get exactly the same sources I
+           use.  You can still substitue higher performance versions
+           if you like.
+
+           It also means that you should link RLaB (the final step)
+           with the Fortran driver in order to pick up the proper
+           Fortran libraries.  The Makefile is now setup this way.
+
+        2) Removed UMFPACK from configure.  I don't use this anymore,
+           its licensing is restrictive, the interface is probably out
+           of date.  Its sort of mis-representation to leave it in
+           configure when I ignore it.
+
+        3) Misc bug fixes (see ChangeLog).
+
+        Things I Have Not Done for this release:
+
+        1) Put the new Metis interface in place.  I have it
+           (contributed). I just haven't had time to get it in.  Its
+           next on my list.  I figured its better to get something
+           out, than to hold everything up for this.
+
+        2) Setup configure so that it determines the values of FCONV,
+           F_INT, F_REAL, F_DOUBLE.
+
+        3) Moved pgplot sources into flibs.
+
+***	What's New in Version v2.0.15 ()
+
+	1) Added (used to exist in RLaB-1) ASCII read/write
+	   capability.  These functions are very similar to the binary
+	   read()/write().  They are called read_ascii/write_ascii.
+
+           *** I don't expect to have these functions bug-free.  They
+           are somewhat of a kludge getting the older RLaB-1 ASCII
+           reads and writes working in the new RLaB-2.  So, I am
+           hoping for some help from those of you that have lots of
+           older RLaB-1 ASCII files out there. Please don't hesitate
+           to report bugs or problems so that I can get them fixed
+           ASAP. 
+
+           These functions are not documented yet. For those of you
+           wishing to use them, this should not be a problem, as they
+           work exactly like the RLaB-1 versions.
+
+           With the above in mind, I should mention that I plan to
+           implement more modular class read/write capability.
+           Probably named something like put/get.  This way, we will
+           maintain backward compatibility, and get the modular,
+           sensible input/output interface needed.
+
+        2) Added ldexp function.  This is similar in function to
+           Matlab's pow2.
+
+        3) Improvements to pgplot.r so that the pgplot interface will
+           work on SGI platforms.
+
+***	What's New in Version v2.0.14 ()
+
+	1) Fixed up PGplot interface. Help documentation added. Plus,
+	   lots of cleanups to pgplot.r. Added 3D meshing routines, as
+	   well as bar-chart capability.
+
+	2) Code fixups. Most won't be concerned about
+	   this. Incorporation of some win32 port pieces, and general
+	   cleanups. 
+
+***	What's New in Version v2.0.13 ()
+
+	1) Addition of PGplot interface.
+
+	2) Small mods to writem(). Now writes out string and complex
+	matrices. 
+
+	3) Bug fixes, better error checking on matrix indices during
+           assignment operations.
+
+	4) Win32 (Windows95/NT) port of RLaB. This is a native port
+           (using Microsoft Visual C++).  However, it is not complete
+           (no instructions on how to compile, etc), and the Plplot
+           graphics are not satisfactory (at least to me) yet.
+
+***	What's New in Version v2.0.12 ()
+
+	1) Bug fixes in sparse matrix operations (multiply, and index
+	addressing). 
+
+***	What's New in Version v2.0.11 ()
+
+	1) Added trapz.r.
+
+***	What's New in Version v2.0.10 ()
+
+	1) misc esoteric bug fixes...
+
+	2) Added gp-compat.r. Provides a level of compatibility
+	between Gnuplot and Plplot interfaces (Gnuplot interface can
+	perform most Plplot functions).
+
+	3) Some updates/additions to gnuplot.r (pview)
+
+***	What's New in Version v2.0.9 ()
+
+	1) TS Yang's new rbench.r
+
+	2) Returned sylv() and lyap() to existence.
+
+	3) Some mods to help rlab build and function on AIX 4.x.
+
+	4) Added J. Green's writeltx.r
+
+	5) Added sleep() builtin.
+
+	6) Returned eig() functionality by restoring the generalized
+	complex non-symmetric eigenproblem.
+
+	7) I was about to redo it, when I noticed I had already taken
+	care of it. I probably forgot to mention it here as well, so
+	I'll do it now. Added ssi.r: Some of the eigenvectors and
+	values for real-symmetric-generalized eigenvalue problem. This
+	is an iterative method well suited to large sparse problems
+	when all of the eigenvalues and vectors are not necessary.
+
+***	What's New in Version v2.0.8 (5/16/97)
+
+	1) Small change in readb() functionality. If the 2nd argument
+	is already a list, then don't destroy it, just add new members
+	to it or, overwrite existing members.
+
+***	What's New in Version v2.0.7 (5/9/97)
+
+	1) Finally! fixed ++ and -- operators to behave like true
+	postfix operators (the variable is incremented after the
+	expression is evaluated).
+
+	2) Fixed small bug in open-list-assignment (memory-leak).
+
+	3) Fixed bug in SpSolve related functions that caused a
+	core-dump on the second usage.
+
+	4) New builtin function: strtol, converts string to integer. The
+	conversion-base (2-36) can be specified.
+
+	5) New user-function hex2dec().
+
+	6) Better line numbers in run-time error messages.
+
+***	What's New in Version v2.0.6
+
+	1) Fixed bug in object-sub-list-entity creation when object is
+	instantiated within << >>.
+
+	2) Fixed bug in certain (pretty rare) for-loop constructs.
+
+***	What's New in Version v2.0.5
+
+	1) Misc. bug fixes.
+
+	2) Made pnorm a little more Matlab compatible.
+
+***	What's New in Version v2.0.3
+
+	1) Misc. bug fixes.
+
+	2) Added pgraf pointers, and configuration via configure.
+
+***	What's New in Version v2.0.2
+
+	1) Added nlleastsq if you have MINPACK (--enable-MINPACK)
+
+	2) Fixed horrible N>2 deep list(N) level bug. This bug was
+	introduced in v2.0b1. It also effects the use of arbitrary
+	object (matrices...). Both bugs are fixed. 
+
+	3) Fixed some bugs in factor/backsub for sparse matrices
+	related to improper handling of column permutation
+	vectors. This did _not_ effect solve(), only variations of
+	factor/backsub. 
+
+	4) Improvements to solve() in the area of using A'*x = b
+	solution to avoid an unnecessary copy A.
+
+***	What's New in Version v2.0.1
+
+	1) SuperLU interface is functional for sparse-complex matrices
+	now.
+
+	2) write/read work for sparse matrices.
+
+	3) With this version you MUST specify the plot interface you
+	want to use when configuring RLaB (see INSTALL).
+
+	4) The beginnings of a PlotMTV interface.
+
+***	What's New in Version v2.0 (release)
+
+        1) The SuperLU interface is functional now for real sparse
+        matrices, complex will come when SuperLU supports them.
+
+        2) Clean ups... documentation, miscellaneous installation
+        fixes. 
+
+***	What's New in Version v2.17 beta ?
+
+	1) A new version of GC (the garbage-collector).
+
+	2) An interface to the SuperLU direct sparse-matrix
+	factorization package. Actually, this was in 2.0b16, but I
+	forgot to mention it. Do: `--enable-SUPERLU' once you have
+	built and installed the SuperLU library and header files on
+	your system. See ./misc/superlu.make.linux
+
+***	What's New in Version v2.16 beta ?
+
+	1) Changed signal handling while printing objects so that
+	interrupts are processed imediately.
+
+	2) Finished off diary() functionality. Now, both the input,
+	and the output are echoed to the diary file.
+
+	3) Added interface to Metis-2.0, a graph partitioning and
+	ordering library. This will/is be used for pre-ordering sparse
+	matrices for reduced fill. If you are thinking about using
+	this, then please read the README.Metis file, since you will
+	need to build a special version for Rlab (not very
+	tough). --enable-METIS will turn on Metis functionality during
+	configure.
+
+	4) New builtin function spwrite(). Writes a sparse matrix in
+	either Metic/Chaco graph format or the internal row-wise
+	compressed storage format (default).
+
+	5) New builtin function findstr for finding one string within
+	another. 
+
+	6) Checks for integer overflow in critical places: matrix and
+	vector creation.
+
+	Bug fixes...
+
+***	What's New in Version v2.15 beta ?
+
+	1) Added inf() capability to fread(). Specifying inf() items
+	to read forces fread to read until End-Of-File.
+
+	2) Added diary() function. Writes all commands to a
+	diary-file. This does not work the same as it did in Rlab1. I
+	need to write a more sophisticated diary() if both commands,
+	and the result is to be sent to the diary file. As it is now,
+	just the commands (no results) are saved.
+
+	3) More bug fixes (what would life be life without bugs ? :-)
+
+	4) Lots of editing for consistency in rlib/*.r
+
+***	What's New in Version v2.14 beta ?
+
+	The usual  bug fixes...
+
+	1) Added toolbox/toupper, toolbox/tolower, toolbox/conv,
+	   toolbox/spfun, toolbox/optimum
+
+	2) Miscelaneous bugs, mostly portablility, and non-gc
+	functionality. 
+
+	3) New plotting capabilities:
+
+		plschr
+		plssym
+		plwin_init
+
+	  The capability to have a plot_startup_stuff() function in
+	  your .rlab file. This is useful for doing things like:
+
+                      plwin_init (0, 0, 500, 200, 275, 10);
+
+	4) fwrite().
+
+	5) read() can now handle more types of Matlab matrices.
+
+	6) Merged RISC-OS code.
+
+***	What's New in Version v2.13 beta ?
+
+	1) Added old times(2) functionality for tic()/toc() so that
+	SunOS-4.x system could build Rlab.
+
+***	What's New in Version v2.12 beta ?
+
+	1) Fixed some more stupid errors in power operations.
+
+	2) More Reference Manual work.
+
+***	What's New in Version v2.11 beta ?
+
+	1) Added a lot to the reference manual
+	
+	2) ascii.r, magic.r
+
+	3) Fixed up log(0), log10(0), and 0i^X behavior.
+
+***	What's New in Version v2.09 beta ?
+
+	1) Bug fixes...
+
+	2) Now you can do:
+
+		a[i;] = [];
+	or
+		a[;j] = [];
+
+***	What's New in Version v2.08 beta ?
+
+	1) Bug fixes...
+	   Fixed behavior and documentation for norm related functions.
+           Fixed bad handling of empty matrices by [:]
+
+***	What's New in Version v2.07 beta ?
+
+	1) New tic() and toc() thanks to T.S. Yang.
+
+	2) Put back cd() function.
+
+	3) bug fixes (mostly to sparse stuff).
+
+	4) Added capabiltity for spconvert() to read in redundant
+	specifications of a sparse matrix (the same element is
+	identified more than once). The result is summing of the
+	elements with same indices.
+
+	5) Vector partitioning and assignment work for sparse matrices
+	now.
+
+	6) sparse() will now "re-sparse" an already sparse
+	matrix. That is it will remove any explict zero elements.
+
+	7) cholsub() computes solution of A*x = b given Cholesky
+	factorization, thanks to T.S. Yang.
+
+***	What's New in Version v2.06 beta ?
+
+	1) More documentation.
+
+	2) More functionality for sparse matrices. There is an
+	interface to UMFPACK (only real matrices for now, complex
+	coming soon). Because of licensing restrictions, you must get
+	UMFPACK yourself. Once you make libumfpack.so you can
+	configure rlab2 with `--enable-UMFPACK'
+
+	3) Bug fixes...
+
+***	What's New in Version v2.03 beta ?
+
+	LOTS! Although there are not many external changes between
+	Rlab, and Rlab2, they are documented here for your safety.
+
+	1) Most, 99%, of the changes between Rlab, and Rlab2 are
+	internal. I have tried to test Rlab2 as rigorously as
+	possible, but I am sure there are still bugs. That is why it
+	is called v2.03-beta
+
+	2) Function arguments are passed by value in Rlab2. Note that
+	function arguments are _not_ copied, unless, the argument is
+	modified. Thus, if a function does not modify its arguments,
+	there will not be any copying; this is very memory efficient.
+
+	3) Rlab2 uses a garbage collector for memory management. This
+	means you can forget about memory-leaks! It also means
+	performance is better.
+
+	4) All variables can act like lists! Matrices, user-functions,
+	whatever, can have a list attached if the user wants. I am not
+	sure how useful this could be... you tell me.
+
+	5) Most all of the rfiles have been re-vamped. Not because
+	they needed it. Most (99%) of Rlab1 rfiles will run without
+	modification in Rlab2. The only Rlab1 files that won't work
+	correctly are the ones that rely upon function argument
+	pass-by-reference. My experience tells me that this is very,
+	very few rfiles.
+
+	An example of modified rfiles are show(), and who() that take
+	advantage of subtle, but new features in Rlab2.
+
+	6) read() and write() only work in binary now. They still
+	offer a good degree of Matlab compatibility. readb(), and
+	writeb() are still there, but function the same as read() and
+	write(). ASCII read and writes can still be done with readm(),
+	and writem(). If there is a demand for the old read()/write(),
+	I will restore them.
+
+	7) Sparse real and complex matrices. These are brand new. The
+	implementation is still not complete. The matrix assignment,
+	partitioning, +, -, * operations are functional. But, there is
+	still lots to do here before they are "seamlessley" integrated
+	with the rest of the classes.
+
+	8) The help directory/files have been modified. I am working
+	on the Reference Manual, and the help files, and the printed
+	manual have the same sources. I expect there to be some
+	conversion pains here.

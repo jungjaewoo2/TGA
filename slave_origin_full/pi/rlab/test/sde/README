@@ -1,0 +1,9 @@
+README:
+
+The directory rlab/test/sde contains codes to accompany the review paper
+D.J. Higham, "An Algorithmic Introduction to Numerical Simulation
+of Stochastic Differential Equations," SIAM Review 43, 525 (2001).
+
+The codes represent modified/converted author's MATLAB files.
+
+Marijan Kostrun, I-2007.

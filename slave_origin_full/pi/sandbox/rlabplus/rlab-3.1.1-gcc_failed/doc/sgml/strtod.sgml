@@ -1,0 +1,25 @@
+<sect>strtod
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>Convert string to numerical data.
+	
+	<tag>Syntax</tag> 
+		<p>x = <tt>strtod ( <em>s</em> )</tt>
+      
+
+   Arguments:
+	<descrip>
+   	<tag><em>s</em></tag>
+      	string matrix, presumably containing formated table with
+      	numerical data.
+   </descrip>
+   
+   
+   Result:
+	<descrip>	   
+	  	<tag>x</tag>
+      	numerical data extracted from the string matrix.
+  	</descrip>  
+
+</descrip>

@@ -1,0 +1,66 @@
+  clrpos
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Clears position on terminal.
+
+      [1mSyntax[0m
+        clrpos ( [4mrow[24m, [4mcol[24m )
+
+        clrpos ( [4mrow[24m )
+
+
+      [1mDescription[0m
+
+
+         [1mclrpos ( [4m[22mrow[24m[1m, [4m[22mcol[24m [1m)[0m
+           clears a position at [4mrow[24m and [4mcol[24m by printing a space there.
+
+
+         [1mclrpos ( [4m[22mrow[24m [1m)[0m
+           clears a [4mrow[24m using a code "clear line" from termcap library.
+
+
+        clrpos uses termcap library.
+
+
+     [1mSee Also[0m
+        clrscr, mvcrsr, colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

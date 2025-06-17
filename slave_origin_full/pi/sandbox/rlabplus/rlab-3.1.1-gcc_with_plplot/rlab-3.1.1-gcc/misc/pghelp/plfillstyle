@@ -1,0 +1,16 @@
+plfillstyle:
+
+Synopsis: Set the fill-area style.
+
+Syntax: plfillstyle ( FS )
+
+Description:
+
+	Set the fill area-style to either:
+
+            FS = 1 => solid (default)
+            FS = 2 => outline
+            FS = 3 => hatched
+            FS = 4 => cross-hatched
+
+        This is an interface to the PGplot function pgsfs().

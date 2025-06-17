@@ -1,0 +1,16 @@
+showplwin:
+
+Synopsis: Show the current plot window.
+
+Syntax: showplwin ( SHOW )
+
+Description:
+
+	Showplwin displays the current plot window id, and the
+	available plot window ids. If SHOW exists, then the members of
+	the plot list for the current plot window are printed to
+	screen. 
+
+See Also: getplot
+
+

@@ -1,0 +1,66 @@
+  logb
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Unbiased exponent.
+
+      [1mSyntax[0m
+        logb ( [4mA[24m )
+
+      [1mDescription[0m
+        Logb returns the unbiased exponent of its REAL argument.
+
+        This function depends upon operating system support. Logb is
+        part of the IEEE-754 standard, and should be available on most
+        machines that implement this standard in one form or another.
+
+
+     [1mSee Also[0m
+        frexp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

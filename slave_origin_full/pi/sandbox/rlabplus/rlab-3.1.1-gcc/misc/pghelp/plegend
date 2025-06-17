@@ -1,0 +1,19 @@
+plegend:
+
+Synopsis: Controls plot legend creationg for the current sub-plot.
+
+Syntax: plegend ( DESCRIPTION )
+
+Description:
+
+	Plegend allows the user to enter a descriptive string(s) for
+	the plot legend in the current sub-plot. DESCRIPTION can be a
+	vector of strings, in which case the 1st string is used as the
+	legend description for the 1st plotted column of data, the 2nd
+	string is used as the description for the 2nd plotted column
+	of data, and so-on. 
+
+	If DESCRIPTION is "default", then the string(s) "cN" are used
+	to denote from which column of the matrix the data belongs.
+
+	If DESCRIPTION is undefined, then no legend is drawn. 

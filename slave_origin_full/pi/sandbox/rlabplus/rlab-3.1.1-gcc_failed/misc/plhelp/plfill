@@ -1,0 +1,27 @@
+plfill:
+
+Synopsis: RLaB graphics interface
+
+Syntax: plfill ( A )
+
+Description:
+
+	Plot polygon A with pattern filled in the current sub-plot in 
+        the current plot-window.  A can be a matrix, in which case the 
+        columns are plotted against the 1st column representing the 
+        vertices of the polygon. 
+
+	A can also be a list, in which case each matrix in the list is 
+        plottedi.
+
+Example:
+        a = (-0.75*pi:0.75*pi:0.1)';
+        x = cos(a);
+        y = sin(a);
+        b = (-pi:pi:0.1)';
+        xb = cos(b)*0.3 - 1;
+        yb = sin(b)*0.3;
+        pltitle("Pacman");
+        plfill(<<[0,0;[x,y]];[xb,yb]>>);
+
+

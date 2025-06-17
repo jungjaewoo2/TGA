@@ -1,0 +1,66 @@
+  strsplt
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Split a string.
+
+      [1mSyntax[0m
+        strsplt ( [4mSTR[24m )
+
+        strsplt ( [4mSTR[24m, [4mFW[24m )
+
+      [1mDescription[0m
+        Strsplt returns a row matrix that contains a single character
+        string as each element. The resulting matrix has as many columns
+        as the input argument had characters.
+
+        Example:
+
+
+
+          > smat = strsplt( "string" )
+           smat =
+          s  t  r  i  n  g
+          > show(smat)
+             name:      smat
+             class:     matrix
+             type:      string
+               nr:      1
+               nc:      6
+
+
+
+
+     The second, and optional, argument to strsplt, [4mFW[24m forces strsplt to
+     split [4mSTR[24m into [4mFW[24m length strings.
+
+     [4mFW[24m can also be a string, or a string matrix, specifying the field
+     separators that strsplt will use:
+
+
+
+          > str = "this;is;a;sem-colon;separated string;with numbers;1.234"
+          this;is;a;sem-colon;separated string;with numbers;1.234
+
+          > strsplt(str,";")
+          this              is                a                 sem-colon
+
+          separated string  with numbers      1.234
+
+
+
+
+
+     [1mSee also[0m
+        getline
+
+
+
+
+
+
+
+
+

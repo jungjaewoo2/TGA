@@ -1,0 +1,14 @@
+plerry:
+
+Synopsis: 2-dimensional plot with vertical error-bars.
+
+Syntax: plerry ( X, Y, Ymin, Ymax )
+
+Description:
+
+	Plerry creates a 2-dimensional plot with X as the independent
+	variable, and Y as the dependent variable. Ymin and Ymax are
+	vectors, the same size as Y (and X) that represent the minimun
+	and maximun error bounds on the Y values.
+
+See Also: plot

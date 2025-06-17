@@ -1,0 +1,39 @@
+{
+   "checksum": "edc33ba16c85b3ccbba81a0c289ea861",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13151140784764765",
+            "id": "6",
+            "meta_info": {
+               "last_visited_desktop": "13152043259316528"
+            },
+            "name": "Using GQRX with RTL-SDR on a Raspberry Pi (Linux) - YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/watch?v=mBU7eSviy_0&feature=youtu.be"
+         } ],
+         "date_added": "13151140535889392",
+         "date_modified": "13151140784764765",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13151140535889419",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13151140535889428",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

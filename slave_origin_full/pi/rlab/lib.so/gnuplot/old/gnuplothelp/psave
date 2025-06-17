@@ -1,0 +1,15 @@
+psave:
+
+Synopsis: Save the plot as data-file.
+
+Syntax: psave ( "file_name", A )
+
+Description:
+
+	The psave() saves the usual temporary file to a specific, 
+	non-temporary file named "file_name". psave() is for 2D-plots
+	of matrix A. 
+	This is useful if you wish to save session-output in a 
+	GNUPLOT-way.
+	
+

@@ -1,0 +1,37 @@
+<sect> class 
+<p>
+<descrip>
+<tag> Synopsis </tag> Identify the class of an object. 
+<tag> Syntax </tag> class ( <em>A</> ) 
+<tag> Description </tag>
+
+	Class returns a string which identifies the type of the object
+	that <em>A</> represents. Valid classes are:
+
+	<itemize>
+        <item> 	num
+      	<item>	string
+      	<item> 	list
+      	<item>	function
+	</itemize>
+
+	It is often useful to:
+
+<tscreen><verb>
+if(class(m) == "num") 
+{
+  # Perform numerical computation on m
+}
+</verb></tscreen>
+
+	The class of a variable can also be determined by using the
+	class member reference (except for LISTs), like:
+
+<tscreen><verb>
+> zeros.class
+function
+</verb></tscreen>
+
+ <tag>See Also</tag>   show, type
+
+</descrip>

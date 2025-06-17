@@ -1,0 +1,66 @@
+  class
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Identify the class of an object.
+
+      [1mSyntax[0m
+        class ( [4mA[24m )
+
+      [1mDescription[0m
+        Class returns a string which identifies the type of the object
+        that [4mA[24m represents. Valid classes are:
+
+
+     +o  num
+
+     +o  string
+
+     +o  list
+
+     +o  function
+
+        It is often useful to:
+
+
+
+          if(class(m) == "num")
+          {
+            # Perform numerical computation on m
+          }
+
+
+
+
+     The class of a variable can also be determined by using the class
+     member reference (except for LISTs), like:
+
+
+
+          > zeros.class
+          function
+
+
+
+
+
+     [1mSee Also[0m
+        show, type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

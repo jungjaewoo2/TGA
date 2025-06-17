@@ -1,0 +1,138 @@
+        INTRO           abs          acos           all           any 
+         asin          atan         atan2       backsub       balance 
+         ceil          chol         class         clear         close 
+       clrpos        clrscr        colors    conditions          conj 
+          cos       cumprod        cumsum           det          diag 
+        diary        dlopen           eig       entinfo         error 
+         eval         exist           exp        factor           fft 
+       filter          find       findmin        finite         floor 
+       format       fprintf         fread         frexp         fseek 
+         full        fwrite        getenv       getline       getplot 
+         gsub          help          hess          ifft          imag 
+          inf           int         invlt         irand          irng 
+        isinf         isnan        issymm         ldexp        length 
+         load         loess           log         log10          logb 
+          max          maxi       members           min          mini 
+        mnorm           mod        mvcrsr           nan        nintlt 
+        odebv         odeiv          ones          open      plaspect 
+       plaxis         plbar       plclose       plcolor        plcont 
+       plcopy       plegend         plend   plfillstyle        plfont 
+       plgrid        plhist        plimag       plimits        plline 
+        plln3        plmesh          plot       plpoint        plptex 
+      plstart       plstyle       pltitle         plwid         plwin 
+      polyfit        printf          prod        putenv            qr 
+         quit          rand         rcond          read    read_ascii 
+        readm         reads          real       require       reshape 
+        rfile        rmdbls        rmrows           rng         round 
+        schur            sf     showplwin          sign           sin 
+         size        sizeof         sleep         solve          sort 
+       sparse     spconvert      spfactor       sprintf       spsolve 
+      spwrite          sqrt         srand          stft      strindex 
+      strsplt        strtod        strtol       subplot        substr 
+          sum           svd          sylv        system           tan 
+          tic        tmpnam           toc       tolower       toupper 
+         type       urandom        vpnorm      warranty        window 
+        write   write_ascii        writem        xlabel        ylabel 
+        zeros 
+
+/usr/lib/lib/rlab2/rlib :
+      charpoly       clearall         compan          cross           diff  
+          disp            dot            eye            fix            inv  
+        isreal         libdsp     libgeneral     libgnuplot   libhistogram  
+       liblist        liblock      libsignal      libsprann        libstat  
+      libstdio      libsystem        libtime     libxmgrace       linspace  
+      logspace             lu           lyap           norm          pause  
+          plot           quot           save         setstr           show  
+          symm          trace           tril           triu           what  
+           who           whos 
+
+/home/pi/rlab/lib.r :
+        ap2     dec2hex        exp2         huh     int2bin        log2  
+  write_vcd 
+
+/home/pi/rlab/lib.so :
+  libgnuplot.so      libgpib.so 
+
+. :
+                             ResRise                                angle  
+                                 ap5   azg_data_to_2ndO_transfer_function  
+                                damp                                 expm  
+                    freqresp_peaking                                lsim2  
+                           overshoot                                  rem  
+                              tfeval 
+
+/usr/lib/lib/rlab2/rlib :
+      charpoly       clearall         compan          cross           diff  
+          disp            dot            eye            fix            inv  
+        isreal         libdsp     libgeneral     libgnuplot   libhistogram  
+       liblist        liblock      libsignal      libsprann        libstat  
+      libstdio      libsystem        libtime     libxmgrace       linspace  
+      logspace             lu           lyap           norm          pause  
+          plot           quot           save         setstr           show  
+          symm          trace           tril           triu           what  
+           who           whos 
+
+/usr/lib/lib/rlab2/toolbox :
+           anc       autospec       avsmooth        bandred        cholsub  
+          corr       crosspec            czt        dec2hex        detrend  
+         faxis       fraction           funm           geom         h5util  
+        hankel        hex2dec          house   libfread_isf         libooo  
+      lininsrt           logm          magic       mdsmooth        ngspice  
+          pinv       printmat          qmult        randsvd           rank  
+    ratpolyfit         rbench       sparsify        spdiags          speye  
+         spfun         sprand            spy        spzeros            ssi  
+        surspl       toeplitz       writeltx         zodiac 
+
+/usr/lib/lib/rlab2/controls-toolbox :
+       Test_new         abcdchk           acker       ackertest  
+         append      appendtest             are            are2  
+       are2test          aremsf      aremsftest         aretest  
+       augstate    augstatetest         balreal          banner  
+           bode       bode_plot       bode_test             c2d  
+           c2dm        c2dm_new        c2dmtest            c2dt  
+        c2dtest           canon       canontest            chop  
+          cloop       cloop_new       clooptest         clxbode  
+        connect           covar         covtest        cplxpair  
+           ctrb           ctrbf        ctrbtest        ctrldemo  
+            d2c            d2cm            damp        damptest  
+          dare2       dare2test     daremsftest        dbalreal  
+          dbode      dbode_plot          dcgain      dcgaintest  
+         dcovar      dcovartest           ddamp       ddamptest  
+        ddcgain          destim         dfrqint        dfrqint2  
+          dgram       dgramtest        dimpulse   dimpulse_plot  
+       dinitial    dinitialtest        diskdemo    displaypoles  
+         distsl            dlqe           dlqew            dlqr  
+          dlqr2        dlqrtest           dlqry           dlsim  
+      dlsimtest      dlsimtest2           dlyap         dmodred  
+           dreg            dric         drmodel           dsort  
+          dstep       dsteptest         dtimvec           eignm  
+         eigsen         eigsen2         eigtest           esort  
+          estim        feedback         freqint        freqint2  
+         freqrc        freqresp          givens            glqe  
+           glqr           glqry            gram            gric  
+          housh         impulse        impulse2     impulsetest  
+        initial     initialtest         isempty           isstr  
+          isvec         jetdemo           jpinv        kalmdemo  
+        lab2str           logm2             lqe          lqemsf  
+           lqew             lqr            lqr2          lqrmsf  
+        lqrtest            lqry         lqrymsf            lsim  
+       lsimtest       lsimtest2           ltifr           ltitr  
+          lyap2       lyapcheck        lyaptest          margin  
+        minreal          modred         mulresp         nargchk  
+        nyquist            obsv           obsvf            ord2  
+           orth        parallel          perpxy           place  
+       poly2str        printsys           pzmap             reg  
+            ric        rlocfind          rlocus     rlocus_plot  
+    rlocus_test          rmodel           roots         rsf2csf  
+         schord          series           sigma          sigma2  
+     sigma_plot         simdata         singsen           ss2ss  
+          ss2tf           ss2zp        ssdelete        ssselect  
+   ssselecttest          stairs            step         stepfun  
+       steptest          strcom               t           tf2ss  
+      tf2ss_new           tf2zp           tfchk        timeplot  
+         timvec           tzero          tzero2        tzreduce  
+         unwrap           vsort            xc12           xg123  
+         xgpart          xhpart             xsi           xsopt  
+         xvcost           zgrid           zp2ss           zp2tf  
+
+

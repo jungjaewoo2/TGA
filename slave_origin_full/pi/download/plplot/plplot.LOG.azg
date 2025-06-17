@@ -1,0 +1,11 @@
+tar zxvf plplot-5.13.0.tar.gz 
+mkdir build
+cd build
+# export PL_VERSION=5.13.0
+export PL_VERSION=5.10.0
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/pi/plplot/install_directory ../plplot-$PL_VERSION >& cmake.out
+make VERBOSE=1 >& make.out
+make VERBOSE=1 install >& make_install.out
+sudo  ldconfig /home/pi/plplot/install_directory/lib
+export PKG_CONFIG_PATH=/home/pi/plplot/install_directory/share/plplot5.13.0/../../lib/pkgconfig/
+

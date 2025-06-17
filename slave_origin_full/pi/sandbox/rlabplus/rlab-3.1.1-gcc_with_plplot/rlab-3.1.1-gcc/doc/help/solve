@@ -1,0 +1,66 @@
+  solve
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Solve linear equations.
+
+      [1mSyntax[0m
+        solve ( [4mA[24m, [4mB[24m )
+
+        solve ( [4mA[24m, [4mB[24m, [4mTYPE[24m )
+
+      [1mDescription[0m
+        Solve solves a system of linear equations:
+
+
+          [4mA[24m [4m*[24m [4mX[24m [4m=[24m [4mB[0m
+
+
+
+        [4mA[24m  is the coefficient matrix.
+
+        [4mB[24m  is the right hand side.
+
+        [4mX[24m  is the solution.
+
+     [4mB[24m can contain multiple right-hand-sides, one in each column.  Solve
+     returns a matrix of the solutions, [4mX[24m, where each column of the
+     solution corresponds to a column of [4mB[24m.
+
+     Solve uses the LAPACK subroutines DGETRF, and ZGETRF if [4mA[24m is
+     general.
+
+     Solve uses the LAPACK subroutines DSYTRF, and ZHETRF if [4mA[24m is
+     symmetric.
+
+     The third and optional argument, [4mTYPE[24m allows the user to overide
+     the symmetry check, and force the solve to use either the general
+     or the symmetric solver.
+
+
+          TYPE = "g" or "G":      The general solution is used.
+
+
+
+          TYPE = "s" or "S":      The symmetric solution is used.
+
+
+
+     [1mSee Also[0m
+        backsub, inv, factor, lu, rcond
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+  balance
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Balance a matrix for equal row and column norms.
+
+      [1mSyntax[0m
+        balance ( [4mA[24m )
+
+      [1mDescription[0m
+        Balance uses the LAPACK subroutines DGEBAL and ZGEBAL to balance
+        the input matrix so that the row and column norms are
+        approximately equal.
+
+        balance returns a list with elements [4mt[24m and [4mab[24m.
+
+        Example:
+
+
+          > a
+                  0          0          1          0
+                  0          0          0          1
+                 11         10          0          0
+                 10         11          0          0
+          > </ ab ; t /> = balance(a);
+          > inv(t)*a*t - ab
+                  0          0          0          0
+                  0          0          0          0
+                  0          0          0          0
+                  0          0          0          0
+
+
+
+
+     Only square matrices are allowed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

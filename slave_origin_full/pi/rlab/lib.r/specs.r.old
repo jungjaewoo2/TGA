@@ -1,0 +1,20 @@
+# DEBUG2=1; // Testing at home without lasers 
+DEBUG2=0; // Testing at home without lasers 
+UNDER = 12;
+OVER = -4;
+RCAL=0; // correction done vy master
+RDCMAX=15.5;
+RDCMIN=13.5;
+TAUmin=2.3;
+TAUmax=5.9;
+FMAX=67;
+FMIN=37;
+RESRISEmin = -1.2;
+RESRISEmax = 2.8;
+TADDR1="28-02131ace25aa"; 
+pBEMF=[ 0.0125878015,    66.0631507,   -49.5951728,   0.949007968,  -0.00271724756  ]';
+pLASER=[ 0.0125878015,    66.0631507,   -49.5951728,   0.949007968,  -0.00271724756  ]';
+p=[ 0.0125878015,    66.0631507,   -49.5951728,   0.949007968,  -0.00271724756  ]';
+TRAVELmin=1200;
+GAINmin=3.5;
+

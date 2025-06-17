@@ -1,0 +1,649 @@
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+   Rlab stands for ``our'' lab. It is available to almost everyone who
+   needs a computational tool for scientific and engineering
+   applications, because it is freely available, and it runs on many
+   platforms.
+
+   For many years scientists and engineers have developed and
+   implemented programs in low-level programming languages such as
+   Algol, Fortran, Pascal, and C. As computers get faster, and more
+   people program them, high level languages have become more
+   popular. Most high level languages are tailored towards a
+   particular task, or class of tasks, this is not a shortcoming, but
+   a direct consequence of the high level nature of a language. If a
+   language is supposed to be easy, convenient, for a particular set
+   of tasks, some assumptions about those tasks must be made. There is
+   a cost associated with the assumptions made with any high level
+   language. In the realm of scientific languages the price is usually
+   slower program execution time. However, as tasks become more
+   complex, and computers get faster, the penalty for slower execution
+   time is less. Often the slower execution time is more than
+   compensated for by the significantly reduced development time.
+
+   Rlab, a high level language for engineers and scientists makes
+   several assumptions:
+
+   <itemize>
+
+   <item> The user is interested in computational exercises. Rlab
+         offers little if any convenience for those who need help with
+         symbolic programming.
+   
+   <item> The operations, and conventions of linear algebra are useful
+         in accomplishing most tasks. Rlab offers simple access to the
+         most popular linear algebra libraries, BLAS, and
+         LAPACK. Furthermore, Rlab's basic data structures are matrix
+         oriented, with the vector dot-product an integral part of
+         the built-in operations.
+
+         Due to the array oriented operations, and the high-level
+         interface to FFTPACK, and a discrete IIR filtering function,
+         Rlab servers well as an environment for signal analysis and
+         exploration. 
+
+   <item> The language should be simple, yet predictable, with its
+         origins in popular scientific languages that most
+         engineers/scientists are likely to already be familiar
+         with. Thus, Rlab takes after the C and Fortran programming
+         languages, and to some extent Matlab, a popular (commercial)
+         high level matrix language.
+
+   </itemize>
+
+   I hope you find it useful ...
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Background
+<p>
+
+  I started working with high level languages when I realized I was
+  spending far too much time writing Fortran and C language programs
+  as a part of engineering analyses, test data reduction, and
+  continuing education. I searched for a better engineering
+  programming tool; except for Matlab, and some Matlab-like programs
+  (all commercial), I came up empty-handed (this was in 1989).  I did
+  not feel Matlab's language design was powerful enough, but I would
+  have used it had it been lower in cost and available on more
+  platforms. I diverted my ``off-hour'' studies to interpreter
+  construction, and started prototyping Rlab.  Within a year, I
+  released version 0.10 to the Internet for comment. Now, almost five
+  years later, Rlab has undergone significant changes and improvements
+  primarily due to excellent assistance from users around the world.
+
+  Rlab does not try to be a Matlab clone. Instead, it borrows what I
+  believe are the best features of the Matlab language and provides
+  improved language syntax and semantics. The syntax has been improved
+  to allow users more expression and reduce ambiguities. The variable
+  scoping rules have been improved to facilitate creation of larger
+  programs and program libraries. A heterogeneous associative array
+  has been added to allow users to create and operate on arbitrary
+  data structures.
+
+  This manual is intended to provide everything someone would need to
+  know to use Rlab. Sometimes this document may be terse, and
+  sometimes verbose. Instead of providing formal definitions of the
+  syntax and semantics of the language the program will be described
+  via discussion and examples. While this is likely to take more space
+  than a precise description of the language, it will be more useful
+  to most users. With that in mind, some might ask ``why not call it
+  the Rlab User's Manual''? Well, there probably should be two
+  manuals, but I am only one person and do not have the time or the
+  patience for both.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Installation
+<p>
+
+<sect1> Overview
+<p>
+
+  Rlab has been ported to <em>many</> platforms, so it should not be
+  too difficult to get it to compile on your particular computer.  At
+  one time or another Rlab has been ported to the following platforms:
+
+  <enum>
+  <item> SCO Unix
+  <item> UnixWare
+  <item> Linux, both a.out and ELF
+  <item> SunOS-4.1.x
+  <item> Solaris 2.x
+  <item> SGI Irix
+  <item> HP-UX 9.0x
+  <item> AIX 3.2.x
+  <item> DEC Ultrix 4.x
+  <item> Digital Unix (OSF v2.x on an Alpha)
+  <item> Acorn RISC-OS
+  <item> DOS (DJGPP)
+  <item> OS/2 
+  <item> Mac-OS
+  </enum>
+
+  Although Rlab(2) is not currently ported to all the mentioned
+  platforms, the code is still fairly portable. The basic code is
+  ANSI-C, so any platform with an ANSI-C compiler and library should
+  be able to run the most basic part of Rlab: the interpreter, and
+  numerical functions. The biggest portability problems arise when
+  trying to get the data-visualization (graphics) working. Gnuplot is
+  probably the most portable. Additionally, there are PlotMTV, Plplot,
+  and PGraf graphics capabilities.
+
+<sect1> Quick Install
+<p>
+
+  This section will present the most basic of Rlab installations, as
+  briefly as possible. The assumptions are that everything will be
+  installed in <tt>/usr/local</>, you have an ANSI-C compiler, a
+  Fortran-77 compiler, and are not interested in graphics (yet).
+
+  <em> Don't let the requirement for a Fortran-77 compiler bother
+  you.  A decent Fortran-77 (f77) compiler can be easily acquired as
+  part of the EGCS compiler suite.
+   See <url url="http://egcs.cygnus.com/" 
+           name="http://egcs.cygnus.com/"> </em>
+
+  <enum>
+
+  <item> Download the necessary files:
+
+    <enum>
+    <item> The Rlab source code: 
+       <url url="http://rlab.sourceforge.net" 
+           name="http://rlab.sourceforge.net">
+    </enum>
+    <p>
+
+  <item> Build Rlab, do:
+    <enum>
+    <item> <tt>gunzip rlab.tgz</>
+    <item> <tt>tar -xvf rlab.tar</>
+    <item> <tt>./configure</>
+    <item> <tt>make</>
+    <item> <tt>make check</>
+    <item> <tt>make install</>
+    </enum>
+  </enum>
+
+  At this point you should have Rlab installed and ready to run. Of
+  course there are many opportunities for trouble. If you do run into
+  trouble you should try reading the Detailed Installation section, or
+  check the <tt>PROBLEMS</> file contained in the Rlab source
+  distribution. 
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Detailed Installation
+<p>
+
+  This section provides significantly more detail and discussion than
+  the Quick Installation Section. First a note about installation and
+  packaging philosophy. Rlab is now bundled together with the sources
+  for every required package that it uses.  Package size is not the
+  problem it was when I first started distributing Rlab (1989).
+  Moreover, some of the required packages (like FFTPACK) are special
+  double precision versions that many people have trouble finding.
+  The last obstacle to bundling the required packages was the poor
+  availability of Fortran-77 compilers; with the advent of the EGCS
+  compiler suites (including g77), this is no longer a problem.  So,
+  from version 2.1.00 on Rlab comes with the required Fortran
+  libraries, and the configure and Makefile support to build them
+  automatically.
+
+  With an ANSI-C and Fortran-77 compilers available, the
+  configuration, build, and installation of Rlab is almost completely
+  automatic.  The one area that cannot be automated (if you know
+  otherwise please contact me: <tt>searleir@yahoo.com</>) is
+  determination of the C-language to Fortran-77 type mapping. Type
+  sizes in C can (and are) determined automatically but, there is no
+  equivalent to the C-language <tt>sizeof()</> in Fortran-77.  Thus,
+  the one place a user might have to intervene is to edit the
+  <tt>typedef</> statements at the bottom of <tt>fi.h</>.  To
+  successfully edit this file you need to know the byte sizes of
+  Fortran's <tt>INTEGER</>, <tt>REAL</>, and <tt>DOUBLE</>
+  types. Building Rlab on most modern (i.e. 32 bit flat memory)
+  systems will not require editing <tt>fi.h</>.
+
+  Rlab consists of a core set of source code, certain required Fortran
+  libraries, and a set of optional libraries and programs:
+
+  <descrip>
+
+  <tag>core sources</tag> RLaB scanner, parser, compiler, virtual
+       machine, and object interfaces.
+
+  <tag>required Fortran libraries</tag> 
+  
+       <descrip>
+       <tag>BLAS:</tag> basic linear algebra subroutines.
+       <tag>LAPACK</tag> linear algebra package
+       <tag>FFTPACK</tag> Fast Fourier Transform package.
+       <tag>RANLIB</tag> Random number and distribution library.
+       <tag>MINPACK</tag> Package for solving nonlinear equations and
+           nonlinear least squares problems.
+       </descrip>
+
+  </descrip>
+
+  A fully functional Rlab installation can consist of many parts. So,
+  we will descri
+  it is good to be patient, and take the build one step at a time.
+  Rlab is developed on a Unix platform (Linux), and these installation
+  steps are geared towards building it on Unix-like systems.  The
+  first step to building RLab is to decide what configuration you
+  would like to build. Most of the options are:
+
+  <descrip>
+
+  <tag>Graphics</tag> Rlab can use Plplot or Gnuplot to handle the
+       data visualization chores. Plplot is a library that Rlab can
+       link to. Gnuplot is a stand-alone program that Rlab can use via
+       its I/O capabilities to interactively plot/visualize data.
+
+  <tag>Dynamic-Linking</tag> If your computer's operating system
+       supports dynamic linking (shared objects) well, then you can
+       use this feature within Rlab to load functions at runtime.
+
+  <tag>SuperLU</tag> The SuperLU package is a library for direct
+       factorization of large sparse matrices using a supernodal
+       technique. <em>not implemented yet</>
+
+  <tag>UMFPACK</tag> The UMFPACK library contains routines for
+       performing direct factorization of large sparse matrices. The
+       license on this package is pretty restrictive (research and
+       educational only).
+
+  <tag>Metis</tag> Metis is a package for partitioning and ordering
+       graphs. This library can be used by Rlab to compute fill
+       reducing permutation vectors for sparse matrices.
+
+  <tag>Garbage-Collection (GC)</tag> Rlab-2 is designed to use Boehm's
+       generational garbage collector. The code for the collector
+       comes with Rlab, The configure/build process will try to use GC
+       by default. If you absolutely can't get GC to build, then you
+       can disable it.
+
+  <tag>Using a Fortran Compiler</tag> A Fortran-77 compiler can be
+       used for most of the supporting numerical analyses libraries
+       (BLAS, LAPACK, FFTPACK, and RANLIB). Sometime using a Fortran
+       compiler will produce libraries with better performance
+       (speed). Sometimes the difference is large, and sometimes
+       not. It really depends upon the computer architecture and the
+       compilers. 
+
+       One of the drawbacks to using a Fortran compiler is the almost
+       total lack of standardization of consistent conventions from
+       vendor to vendor. This makes the task of auto-configuring for
+       Fortran compilation too difficult. If you want to compile the
+       libraries with a Fortran compiler there are examples and
+       guidelines for some of the more popular platforms. If you have
+       never attempted this before, you should consider building Rlab
+       entirely with a C-compiler first, so that you have a working
+       version while you get the Fortran libraries built.
+
+  </descrip>
+
+  Enabling any of the above options requires that you have built and
+  installed some sort of program or library on your system. 
+
+  Rlab uses GNU autoconfigure to automatically detect operating system
+  features and installed programs. Under the luckiest of circumstances
+  you can configure Rlab by simply typing <tt>./configure</>. Under
+  more normal circumstances you may need to give configure some help
+  finding libraries, etc. Some of the most commonly used configure
+  options are:
+
+  <descrip>
+
+  <tag>--prefix=dir</tag> <tt>dir</> is the root directory where Rlab,
+       and its support files will be installed. Without user
+       intervention <tt>dir</> defaults to <tt>/usr/local/lib</>.
+
+  <tag>--with-LIBS=dir</tag> <tt>dir</> is a directory where configure
+       should look for libraries. This could be <tt>/usr/local/lib</>
+       on many systems.
+
+  <tag>--with-NALIBS=dir</tag> <tt>dir</> is a directory where
+       configure should look for numerical analysis
+       libraries. Specifically, configure looks for <tt>libClapack</>,
+       <tt>libCblas</>, <tt>libCfftpack</>, and
+       <tt>libCfftpack</>. These libraries can be static, or shared
+       libraries. Configure tries to compile, and link a simple
+       program with each library. If configure can do this
+       successfully, then it adds the library name to the list of
+       "found" libraries.
+
+  <tag>--with-FLIBS=dir</tag> <tt>dir</> is the directory where the
+       f2c libraries can be found. The f2c libraries are necessary to
+       resolve undefined externals in the translated Fortran sources
+       for the libraries. 
+
+  </descrip>
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Getting Started
+<p>
+
+  This section provides a quick-start so the reader can run rlab
+  and try the examples, and ideas presented herein. It is assumed that
+  the user will run rlab from the command-line on some sort of
+  Unix-like system. Although Rlab runs on DOS, OS/2, Apple, and other
+  operating systems, only Unix systems will be covered in this
+  manual. 
+
+  To run rlab type:
+
+<tscreen><verb>
+$ rlab
+Welcome to RLaB. New users type `help INTRO'
+RLaB version 2.0b1b Copyright (C) 1992-95 Ian Searle
+RLaB comes with ABSOLUTELY NO WARRANTY; for details type `help WARRANTY'
+This is free software, and you are welcome to redistribute it under
+certain conditions; type `help CONDITIONS' for details
+> 
+</verb></tscreen>
+
+  The <tt>></tt> displayed after the startup message is the rlab
+  prompt. At this point rlab is waiting for input. The expected input
+  is a program. The simplest and most often used introductory program
+  is:
+
+<tscreen><verb>
+> "Hello World"
+Hello World
+</verb></tscreen>
+
+  Rlab echoes its input, unless it is directed not to. To silence Rlab
+  end each statement with a <tt>;</tt>
+
+  Rlab provides an <em>environment</em>. The environment consists of a
+  <em>global workspace</em> occupied by variables. <em>Local workspaces</em>
+  are created on demand by functions. When executing commands/programs
+  interactively from the command line the programs execute within the
+  global workspace. Those familiar with Fortran or the C-language can
+  think of the global workspace as the main program.
+
+  Any program that can be executed interactively, can also be executed
+  in <em>batch mode</em> by typing the program in a file, and executing
+  Rlab with the filename as an argument.
+
+<tscreen><verb>
+% cat > file.r
+1 + 2 * ( 3 - 4 )
+% rlab file.r
+       -1
+</verb></tscreen>
+
+  To exit Rlab type: <tt>quit</tt> or <tt>Ctrl-d</tt> at the prompt.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> On-Line Help
+<p>
+
+  On-line help offers condensed versions of the reference pages for
+  each function, and brief discussion of the major concepts needed to
+  run rlab. A listing of the available help topics is obtained by
+  typing: <tt>help</tt> at the prompt. If, for example, you want help
+  with the <tt>eig</tt> function, you would type: <tt>help eig</tt>.
+
+  The help system is simple by design. Each help topic or subject is
+  merely a text file, which is displayed to the terminal when
+  requested. This simplicity makes it correspondingly easy for users
+  to add to or modify the help system. If you find something in
+  particular that is missing, or is peculiar to your installation of
+  rlab, you can easily add to the help by creating a file, and placing
+  it in the rlab help directory.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Error Messages
+<p>
+
+  Two types of error messages occur when executing rlab programs: <em>
+  syntax</em> errors, and <em>run-time</em> errors. Syntax errors are a
+  result of the parser's inability to make sense out of the
+  input. When a syntax error occurs, rlab will issue an error message,
+  and identify the syntax error.
+
+<tscreen><verb>
+> (1 + 2))
+syntax error
+(1 + 2))
+      ^
+</verb></tscreen>
+
+  In the previous example, the error message identifies the extra
+  right parentheses as the offending character. Sometimes that syntax
+  error does not appear to make sense, for example:
+
+<tscreen><verb>
+> ((1 + 2)
+syntax error
+((1 + 2)
+       ^
+</verb></tscreen>
+
+  The error message identifies the right parentheses as the
+  error. But, most of us would think one of the left-parentheses is
+  the error. Actually, it is the lack of a second right-parentheses
+  that is the error. Rlab has a very precise definition of the
+  language syntax and semantics that do not always make sense to the
+  user.
+
+  Run-time errors occur when a program, with legal syntax, tries to
+  perform an illegal operation. For example:
+
+<tscreen><verb>
+> a + 2
+Entity types: Undefined and Matrix_Dense_Real
+ERROR: rlab2: addition operation not supported
+</verb></tscreen>
+
+  This expression is valid, except in this context <tt>a</tt> is
+  undefined. The error message tries to tell us this by saying that
+  the addition cannot operate on <tt>Undefined</tt> and
+  <tt>Matrix_Dense_Real</tt> types.
+
+  With either type of error execution will halt. If you are running
+  Rlab interactively, execution will return to the prompt. If Rlab is
+  running batch, then the process will terminate.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Command Line Options and Environment
+<p>
+
+<sect1> Running Rlab2
+<p>
+
+   Rlab is typcially invoked (the biggest exception is the Apple
+   Macintosh version) from the command line with the following syntax:
+
+<tscreen><verb>
+rlab2 [-Vdhlmnpqr] [file(s)] [-]
+</verb></tscreen>
+
+<sect1> Command Line Options
+<p>
+
+   <descrip>
+   <tag>-V</tag> Prints the version number to stderr and exits.
+   <tag>-d</tag> Causes a readable form of the internal stack
+                 machine's compiled program to be output to
+                 stderr. This option should be used in conjunction
+                 with <tt>-qln</> options. This option is not intended
+                 for general use.
+   <tag>-h</tag> Prints the usage message to the screen and exits.
+   <tag>-l</tag> Prevents loading of the rlab library of rfiles.
+   <tag>-m</tag> Prevents printing of the greeting message.
+   <tag>-n</tag> Prevents line number and file name information from
+                 being used in the internal stack machine codes. This
+                 option should only be used with the
+                 <tt>-dlnq</>. This option is not intended for general
+                 use.
+   <tag>-p</tag> Prevents rlab from using the specified pager for all
+                 output. 
+   <tag>-q</tag> Prevents loading of the startup file.
+   <tag>-r</tag> Prevents usage of the GNU readline library for
+                 command line editing.  
+   <tag>file(s)</tag> are loaded and executed by rlab after the `.rlab'
+                 file, and after the library files.
+   <tag>-</tag>     Forces rlab to go interactive after all the files on
+                 the command line have been executed. 
+   </descrip>
+
+<sect1> Rlab Environment
+<p>
+
+    Typically, when Rlab is built (compiled) knowledge of the
+    installation directory paths is built-in to the
+    executable. However, these default settings can be supplanted with
+    alternate definitions via the following environment variables.
+
+   <descrip>
+   <tag>RLAB2_RC0</tag> The startup file.
+   <tag>RLAB2_HELP_DIR</tag> The principle directory of help files. 
+   <tag>RLAB2_LIB_DIR</tag> The directory of rfiles to load on
+                 startup. 
+   <tag>RLAB2_PAGER</tag> The screen/terminal pager to use.
+   <tag>RLAB2_PATH</tag> A colon separated list of directories to
+                 search when attempting to load rfiles. This directory
+                 list should contain the <tt>RLAB2_LIB_DIR</> and the
+                 Rlab toolbox directory.
+   <tag>RLAB_HISTFILE</tag> The name of the file to store the command
+                 history in. The default is <tt>.rlab_history</>.
+   <tag>RLAB_HISTSIZE</tag> The length of the command history. The
+                 default is 128.
+   </descrip>
+
+   Overriding the compiled-in definitions can happen at the system
+   level (for all users), or on a user-by-user basis, to accomodate
+   individual customizations. A good example is the Bourne-shell
+   script (normally contained in ./misc/rlab) that sets each
+   environment variable so that a pre-compiled binary can be used on a
+   system with a different installation directory.
+
+<code>
+#includecode "../misc/rlab"
+</code>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Migrating From Rlab1 to Rlab2
+<p>
+
+   Moving from Rlab1 to Rlab2 is not very difficult. Most of the
+   changes between the two versions are internal to facilitate
+   simpler addition of new data-objects, and better memory
+   management. However, there are a few noteworthy changes made. These
+   changes make programming safer for all levels of users, and are a
+   result of extensive user feedback.
+
+   <enum>
+
+   <item> So that users may keep Rlab1 installed on their computer,
+   Rlab2 is called <tt>rlab2</>, and the rfiles, help-files, etc are
+   kept in a separate directory hierarchy. A separate path environment
+   variable is required to make this work. <tt>RLAB2_PATH</> replaces
+   <tt>RLAB_SEARCH_PATH</>. You should keep both variables in your
+   environment if you have both Rlab1 and Rlab2 installed.
+
+   <item> The most significant change is with the way function
+   arguments are handled by the interpreter. In Rlab-1 function
+   arguments were passed by reference. In Rlab-2 function arguments
+   are passed by value. 
+
+   One of the reasons I used pass by reference in Rlab-1 was
+   efficiency. Many pass by value schemes copy a function's arguments
+   prior to passing execution to the function body. If the function
+   does not modify the arguments, then the copy was un-necessary. The
+   internal design of Rlab-2 allows function arguments to be passed by
+   value without un-necessary copies. If the function does not modify
+   an argument, then the argument is <em>not</> copied. Only arguments
+   that are modified are copied.
+
+   My experience with many users is that very few actually take
+   advantage of pass by reference, and a great many are ``safer'' if
+   pass by value is the default.  Rlab-1 programs that don't take
+   special advantage of pass by reference (the great majority) will
+   work fine with Rlab-2.  
+
+   <item> Rlab2 uses a garbage collector for memory management. This
+   means you can forget about memory-leaks! It also means performance
+   is better.
+
+   <item> Most all of the rfiles have been re-vamped. Not because they
+   needed it. Most (99%) of Rlab1 rfiles will run without modification
+   in Rlab2. The only Rlab1 files that won't work correctly are the
+   ones that rely upon function argument pass-by-reference. My
+   experience tells me that this is very, very few rfiles.
+
+   An example of modified rfiles are show(), and who() that take
+   advantage of subtle, but new features in Rlab2.
+
+   <item> read() and write() only work in binary now. They still
+   offer a good degree of Matlab compatibility. readb(), and
+   writeb() are still there, but function the same as read() and
+   write(). ASCII read and writes can still be done with readm(),
+   and writem(). If there is a demand for the old ASCII read()/write(),
+   I will restore them. 
+
+   <item> Sparse real and complex matrices. These are brand new. The
+   implementation is still not complete. The matrix assignment,
+   partitioning, <tt> +, -, *</> operations are functional. But, there
+   is still lots to do here before they are "seamlessly" integrated
+   with the rest of the classes.
+
+   <item>  The help directory/files have been modified. This manual,
+   and the online help files originate from the same SGML
+   sources. There is also an HTML version of this manual for those who
+   want to get at online help that way.
+
+  </enum>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Document reproduction and errors
+<p>
+
+<!-- PERMISSIONS -->
+
+  The Rlab Reference Manual is freely available. Permission is granted
+  to reproduce the document in any way providing that it is
+  distributed for free, except for any reasonable charges for
+  printing, distribution, staff time, etc. Direct commercial
+  exploitation is not permitted.  Extracts may be made from this
+  document providing an acknowledgment of the original SGML source is
+  maintained.
+
+<!-- SUGGESTIONS -->
+
+  Reports of errors and suggestions for improvement in this document
+  in Rlab itself are welcome.  Please mail these to
+  <tt>searleir@yahoo.com</>.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Acknowledgments
+<p>
+
+  The availability of ``free'' software, such as GNU Emacs, GNU gcc,
+  gdb, gnuplot, Plplot, and last, but certainly not least, the Netlib
+  archives has made this project possible.  The Rlab author thanks
+  both the authors and sponsors of the GNU, LAPACK, RANLIB, FFTPACK,
+  and Plplot projects.
+
+  Many individuals have contributed to Rlab in various ways. A list of
+  contributors can be found in the source distribution file
+  <tt>ACKNOWLEDGMENT</>. A special thanks to Phillip Musumeci who has
+  tirelessly provided a ftp-site for many years, and co-authored the
+  original RLaB Primer. Matthew Wette who has also provided ftp-sites
+  so that Rlab is available in the U.S.A. Special thanks are also due
+  to Tzong-Shuoh Yang who did the original Macintosh port, and has
+  provided many rfiles, and to Maurizio Ferrari who has ported Rlab to
+  the RISC-OS (Acorn) platform, and to Karl Storck for improving and
+  maintaining the Gnuplot interface.

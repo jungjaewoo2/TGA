@@ -1,0 +1,66 @@
+  sprintf
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Formatted printing to a string.
+
+      [1mSyntax[0m
+        sprintf ( [4mstringvar[24m, [4mformatstr[24m, [4mVARi[24m ... )
+
+      [1mDescription[0m
+        The RLaB sprintf is a limited feature version of the C-language
+        sprintf. The features are limited because RLaB does not support
+        all of the data types the C-language does.
+
+
+
+        [4mstringvar[0m
+           The output of sprintf is written to this variable.
+
+
+        [4mformatstr[0m
+           A valid sprintf format string.
+
+
+        [4mVARi[0m
+           Are any number of constants or variables that match the
+           format string. sprintf cannot print out vector, matrix, or
+           list objects as a whole. Valid print objects are strings,
+           constants, and scalars.
+
+
+     [1mSee Also[0m
+        printf, fprintf, write, read
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

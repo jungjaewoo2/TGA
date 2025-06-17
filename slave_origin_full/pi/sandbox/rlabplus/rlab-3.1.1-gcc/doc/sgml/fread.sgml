@@ -1,0 +1,70 @@
+<sect> fread 
+<p>
+<descrip>
+<tag> Synopsis </tag> Binary stream input.
+<tag> Syntax </tag> fread ( <em>FILENAME</>, <em>NITEMS</>, <em>TYPE</>, <em>SWAPB</> )
+<tag> Description </tag>
+
+	fread reads <em>NITEMS</> of type <em>TYPE</> from
+	<em>FILENAME</> (a string) and returns the result in a numeric
+	matrix.
+
+	Allowable arguments are:
+	<descrip>
+
+	<tag><em>NITEMS</></tag> Number of objects of type <em>TYPE</>
+	to read from <em>FILENAME</>. If <em>NITEMS</> is inf(), then
+	fread will read from <em>FILENAME</> until end-of-file is
+	reached. 
+
+	<tag><em>TYPE</></tag>
+
+	<quote>
+	"char"
+	</quote>
+
+	<quote>
+	"unsigned char"
+	</quote>
+
+	<quote>
+	"short int"
+	</quote>
+
+	<quote>
+	"unsigned int"
+	</quote>
+
+	<quote>
+	"int"
+	</quote>
+
+	<quote>
+	"float"
+	</quote>
+
+	<quote>
+	"double"
+	</quote>
+
+	<tag><em>SWAPB</></tag>
+	<quote>
+	0	Do not swap bytes in a word (default).
+	</quote>
+
+	<quote>
+	1	Do swap the bytes in each word.
+	</quote>
+
+	</descrip>
+
+<tag>See Also</tag>   FILES, fseek, fwrite, close, open, write
+
+</descrip>
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<sect> spfactor
+<p>
+<descrip>
+<tag> Synopsis </tag> Factor a sparse coefficient matrix.
+<tag> Syntax </tag> spfactor ( <em>A</>, <em>DIAG_PIVOT</>,
+                              <em>PERMV</> )
+<tag> Description </tag>
+
+	Factor a general (non-symmetric) sparse coefficient matrix
+	into L and U factors.
+
+	<descrip>
+	<tag><em>DIAG_PIVOT</></tag>  specifies the 
+                 diagonal-pivoting threshold. 
+        <tag><em>PERMV</></tag> is the permutation vector.
+	<tag><em>X</></tag>  is the solution vector/matrix.
+	</descrip>
+
+        To be finished later...
+<tag>See Also</tag>   solve, sparse, spsolve, backsub, factor
+
+</descrip>

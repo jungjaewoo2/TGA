@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/parity_bit_check.dir/parity_bit_check.c.o  -o parity_bit_check 

@@ -1,0 +1,66 @@
+  max
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Maximum function
+
+      [1mSyntax[0m
+        max ( [4mA[24m )
+
+        max ( [4mA[24m, [4mB[24m )
+
+      [1mDescription[0m
+        Max returns the maximum value(s) contained in the matrix [4mA[24m. If
+        the argument is a vector, then the largest value is returned.
+        If [4mA[24m is a MxN matrix, then a row-vector of N columns is returned
+        containing the maximum value from each column of [4mA[24m.
+
+        If max is used with two arguments, then max returns a matrix the
+        same size as [4mA[24m and [4mB[24m filled with the largest elements from [4mA[24m and
+        [4mB[24m.
+
+        When matrix elements are complex the absolute value is used for
+        comparison purposes.
+
+
+     [1mSee Also[0m
+        maxi, min, mini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

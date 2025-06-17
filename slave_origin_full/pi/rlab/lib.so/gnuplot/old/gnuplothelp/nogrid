@@ -1,0 +1,15 @@
+nogrid:
+
+Synopsis: Turns grid on.
+
+Syntax: nogrid ( I )
+
+Description:
+
+	Turns grid on in the I:th plot-window.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+
+See Also: grid
+

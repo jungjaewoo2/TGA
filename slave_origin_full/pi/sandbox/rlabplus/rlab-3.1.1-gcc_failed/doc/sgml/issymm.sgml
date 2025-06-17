@@ -1,0 +1,12 @@
+<sect> issymm 
+<p>
+<descrip>
+<tag> Synopsis </tag> Test matrix for symmetry
+<tag> Syntax </tag> issymm ( <em>A</> )
+<tag> Description </tag>
+
+	Issymm returns TRUE (1) if the argument <em>A</> is a
+	symmetric (or Hermitian) matrix, and FALSE (0) if <em>A</> is
+	not symmetric (Hermitian).
+
+</descrip>

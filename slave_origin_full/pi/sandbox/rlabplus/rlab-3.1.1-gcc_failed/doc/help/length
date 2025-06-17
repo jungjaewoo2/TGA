@@ -1,0 +1,66 @@
+  length
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return the length of an object.
+
+      [1mSyntax[0m
+        length ( [4mA[24m )
+
+      [1mDescription[0m
+        The length function returns the length of a vector [4mA[24m. It is
+        equivalent to max (size (A)).
+
+        To summarize:
+
+
+
+        [1mMATRIX or VECTOR:[0m
+           max (size (A))
+
+
+        [1mLIST:[0m
+           number of elements in list.
+
+
+
+     [1mSee Also[0m
+        show, size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

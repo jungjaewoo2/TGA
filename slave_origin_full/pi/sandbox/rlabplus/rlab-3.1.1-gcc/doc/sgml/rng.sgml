@@ -1,0 +1,199 @@
+<sect> rng
+<p>
+<descrip>
+	<tag> Synopsis </tag> 
+	Configures continuous random number generators.
+
+	<tag> Syntax </tag>
+   <p>    rng ( <em>idx</em>, <em>PDF</em>, <em>p</em>, <em>jdx</em> )
+   <p>    rng ( <em>idx</em> )
+   <p>    rng (  )
+             
+	<tag> Background </tag>
+	Since rlab-2.2.9, there are 64 continuous random number generators available
+	within the rlab, all of which are configurable by user, but the user can
+	sample only from generators 1..32. 
+	Generators 33 .. 64 are reserved for sampling by the built-in functions.
+	For each continuous random number generators the following is
+	configurable by user: index of the generator, its probability
+	density function together with its parameters, and the integer random
+	number generator which is used to drive the continuous one.
+          
+	<tag> Description </tag>
+
+	<descrip>
+
+	<tag>rng ( <em>idx</em> , <em>PDF</em> , <em>p</em> , <em>jdx</em> )</tag>
+		sets the generator No. <em>idx</em> to generate continuous random
+		variate distributed according to the probability density function
+		<em>PDF</em>.
+		The parameters of distribution are given as an array <em>p</em>,
+		and, optionally, the index of underlying integer number generator
+		can be given as <em>jdx</em>.
+		If <em>jdx</em> is not given then the generator relies on default
+		integer number generator.
+		If <em>idx</em> is in the range 1-32, then this becomes a default
+		continuous random number generator, and can be sampled using
+		
+		<tt>rand( .. )</tt>
+
+	<tag>rng ( <em>idx</em> )</tag>
+		sets the generator No. <em>idx</em> in the range 1-32 as a default
+		continuous random number generator.
+
+	<tag>rng ( )</tag>
+		prints the information about the currently defined continuous random
+		generators in the main rlab console.
+
+	</descrip>
+
+	
+	Probability density functions <em>PDF</em> and
+	their parameters <em>p</em>:
+	
+	<descrip>
+
+	<tag><tt>rng ( .., `normal', [ mu , sigma ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Gaussian
+		distribution with mean <em>mu</em> and standard deviation
+		<em>sigma</em>.
+
+	
+	<tag><tt>rng ( .. ,`normaltail', [ mu, sigma, a ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the upper tail
+		of the Gaussian distribution with mean <em>mu</em> and standard deviation
+		<em>sigma</em>, and where returned values are larger than the lower
+		limit <em>a</em>, <tt>a > mu</tt>.
+
+	<tag><tt>rng ( .. ,`exp', mu, .. )</tt></tag>
+		Sets the generator to return a random deviate from the exponential
+		distribution with mean <em>mu</em>.
+
+	<tag><tt>rng ( .. ,`laplace', [ mu, a ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Laplace
+		distribution with mean <em>mu</em> and width <em>a</em>.
+
+	<tag><tt>rng ( .. ,`exppow', [ mu, a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the exponential
+		power distribution with mean <em>mu</em>, scale parameter <em>a</em>
+		and exponent <em>b</em>.
+
+	<tag><tt>rng ( .. ,`cauchy', [ mu, a ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Cauchy (Lorentz)
+		distribution with mean <em>mu</em> and scale parameter <em>a</em>.
+
+	<tag><tt>rng ( .. ,`rayleigh', sigma, .. )</tt></tag>
+		Sets the generator to return a random deviate from the Rayleigh
+		distribution with scale parameter <em>sigma</em>.
+
+	<tag><tt>rng ( .. ,`rayleightail', [ sigma, a ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Rayleigh
+		distribution with scale parameter <em>sigma</em> and the lower
+		limit <em>a</em>.
+
+	<tag><tt>rng ( .. ,`levy', [ mu, c, alpha ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Levy symmetric
+		stable distribution with mean <em>mu</em>, scale <em>c</em> and
+		exponent <em>alpha</em>, <tt>0 <= alpha <= 2</tt>.
+
+	<tag><tt>rng ( .. ,`levyskew', [ mu, c, alpha, beta ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Levy symmetric
+		stable distribution with mean <em>mu</em>, scale <em>c</em> and
+		exponent <em>alpha</em>, <tt>0 <= alpha <= 2</tt>, and skewness
+		<em>beta</em>.
+
+	<tag><tt>rng ( .. ,`gamma', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Gamma
+		distribution with exponent <em>a</em> and scale <em>b</em>.
+
+	<tag><tt>rng ( .. ,`uniform', [ xlo, xhi ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the uniform
+		distribution in range <em>xlo</em>, <em>xhi</em>.
+
+	<tag><tt>rng ( .. ,`lognormal', [ zeta, sigma ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the lognormal
+		distribution with log-mean <em>zeta</em> and standard deviation
+		<em>sigma</em>.
+
+	<tag><tt>rng ( .. ,`chisq', [ nu ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the chi-squared
+		distribution with <em>nu</em> degrees of freedom.
+
+	<tag><tt>rng ( .. ,`F', [ nu1, nu2 ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the F-distribution
+		with <em>nu1</em> and <em>nu2</em> degrees of freedom.
+
+	<tag><tt>rng ( .. ,`t', nu, .. )</tt></tag>
+		Sets the generator to return a random deviate from the t-distribution
+		with <em>nu</em> degrees of freedom.
+
+	<tag><tt>rng ( .. ,`beta', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the beta
+		distribution with parameters <em>a</em> and <em>b</em>.
+
+	<tag><tt>rng ( .. ,`logistic', [ mu, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the logistic
+		distribution with mean <em>mu</em> and scale <em>b</em>.
+
+	<tag><tt>rng ( .. ,`pareto', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Pareto
+		distribution of order <em>a</em>, where <em>b</em> is the
+		lower limit of the deviates.
+
+	<tag><tt>rng ( .. ,`weibul', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Weibul
+		distribution with scale <em>a</em> and exponent <em>b</em>.
+
+	<tag><tt>rng ( .. ,`gumbel1', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Gumbel
+		distribution of type-1 with scale <em>a</em> and exponent scale
+		<em>b</em>.
+
+	<tag><tt>rng ( .. ,`gumbel2', [ a, b ], .. )</tt></tag>
+		Sets the generator to return a random deviate from the Gumbel
+		distribution of type-2 with scale <em>a</em> and exponent scale
+		<em>b</em>.
+
+	<tag><tt>rng ( .. ,`poisson', mu, .. )</tt></tag>
+		Sets the generator to return a random integer deviate from the Poisson
+		distribution with mean <em>mu</em>.
+
+	<tag><tt>rng ( .. ,`binomial', [ p, n ], .. )</tt></tag>
+		Sets the generator to return a random integer deviate from the binomial
+		distribution with with a trial probability <em>p</em> and <em>n</em>
+		being the total number of trials.
+
+	<tag><tt>rng ( .. ,`negbinomial', [ p, n ], .. )</tt></tag>
+		Sets the generator to return a random integer deviate from the
+		negative binomial distribution for number of failures  occuring before
+		<em>n</em> successes, where <em>p</em> is the probability of
+		success.
+
+	<tag><tt>rng ( .. ,`geometric', p, .. )</tt></tag>
+		Sets the generator to return a random integer deviate from the geometric
+		distribution, for number of trials with probability <em>p</em> until
+		the first success.
+
+	<tag><tt>rng ( .. ,`hypergeometric', [ n1, n2, t ], .. )</tt></tag>
+	 	Sets the generator to return a random integer deviate from the hypergeometric
+		distribution, for getting a number of successes from the first batch
+		with <em>n1</em> elements, and the rest from the second batch with
+		<em>n2</em> elements to a number of draws given as
+		<tt>max(t,t-n2,n1)</tt>.
+
+	<tag><tt>rng ( .. ,`log', p, .. )</tt></tag>
+  	  	Sets the generator to return a random integer deviate from the logarithmic
+		distribution, with probability <em>p</em>.
+
+	<tag><tt>rng ( .. , `default', .. )</tt></tag>
+	   Resets the random number generator to the default generator,
+   	which generates a distributed random variable in the interval
+	   &lt; 0, 1 &gt;.
+
+	</descrip>
+
+	rng uses the GSL library.
+
+	<tag>See Also</tag>   rand, irng, irand, iseed, drng, drand, urandom.
+
+</descrip>

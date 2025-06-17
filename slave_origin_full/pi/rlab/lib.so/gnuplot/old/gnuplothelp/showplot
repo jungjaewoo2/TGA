@@ -1,0 +1,14 @@
+showplot:
+
+Synopsis: Prints the contents of the I:th plot.
+
+Syntax: showplot ( I )
+
+Description:
+
+	The showplot function prints the contents of the I:th plot list to
+	stdout.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: showpwin

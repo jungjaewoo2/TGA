@@ -1,0 +1,13 @@
+psize:
+
+Synopsis: Set the plot size.
+
+Syntax: psize ( x-value, y-value, I )
+
+Description:
+
+	Set the plot size.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: origin

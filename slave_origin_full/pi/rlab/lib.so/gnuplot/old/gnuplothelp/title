@@ -1,0 +1,14 @@
+title:
+
+Synopsis: Set the plot-title.
+
+Syntax: title ( "title_name", I )
+
+Description:
+
+	Set the plot-title for the I:th plot-window.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: notitle
+

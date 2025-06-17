@@ -1,0 +1,66 @@
+  real
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return the real part of a matrix.
+
+      [1mSyntax[0m
+        real ( [4mA[24m )
+
+      [1mDescription[0m
+        Real returns the REAL part of an object.
+
+
+     [1mSee Also[0m
+        imag, conj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

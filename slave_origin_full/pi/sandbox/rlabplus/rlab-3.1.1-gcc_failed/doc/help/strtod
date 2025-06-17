@@ -1,0 +1,66 @@
+  strtod
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Convert string to numerical data.
+
+
+     [1mSyntax[0m
+        x = strtod ( [4ms[24m )
+
+
+        Arguments:
+
+        [4ms[24m  string matrix, presumably containing formated table with
+           numerical data.
+
+
+        Result:
+
+        [1mx  [22mnumerical data extracted from the string matrix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

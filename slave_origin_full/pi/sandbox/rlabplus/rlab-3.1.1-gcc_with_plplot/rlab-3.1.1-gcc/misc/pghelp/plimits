@@ -1,0 +1,11 @@
+plimits:
+
+Synopsis: Set the current sub-plot scale limits.
+
+Syntax: plimits ( XMIN , XMAX , YMIN , YMAX , ZMIN , ZMAX )
+
+Description:
+
+	Set the scale limits of the current sub-plot in the current
+	plot-window. If any of the arguments are omitted, the
+	corresponding scale limit is determined from the data.

@@ -1,0 +1,16 @@
+#!/bin/bash
+# rmake for rlabplus: gpib
+# (c) Marijan Kostrun, 2006
+
+# rlab source location
+RLAB_SDK=/scratch/rlabplus/rlab32-suse9.3/rlab-2.2.9
+
+# garbage collector include directory. part of the rlab source tree.
+GC_RLAB=$RLAB_SDK/gc/include
+
+# create so
+# note: CFLAGS have to be the same as those used in building the rlab
+#gcc $CFLAGS -fPIC -c gnuplot_i.c -I$RLAB_SDK -I$GC_RLAB 2>&1
+gcc $CFLAGS -fPIC -c rlabplus_gnuplot.c -I$RLAB_SDK -I$GC_RLAB 2>&1
+#gcc -static -shared -fPIC -o rlabplus_libgnuplot.so gnuplot_i.o rlabplus_gnuplot.o
+gcc -static -shared -fPIC -o rlabplus_libgnuplot.so rlabplus_gnuplot.o

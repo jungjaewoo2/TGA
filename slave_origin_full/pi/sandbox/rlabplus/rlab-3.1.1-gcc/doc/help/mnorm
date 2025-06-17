@@ -1,0 +1,132 @@
+  mnorm
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Compute the matrix norm.
+
+      [1mSyntax[0m
+        mnorm ( [4mA[24m )
+
+        mnorm ( [4mA[24m , [4mTYPE[24m )
+
+
+      [1mDescription[0m
+        The first form defaults to computing the 1-norm of the input
+        matrix. The second form allows the user to specify the desired
+        type of matrix norm with a string argument.
+
+
+
+        M or m
+           returns max(abs( [4mA[24m ))
+
+
+         1, O or o
+           return the 1-norm (default), the largest column sum
+           (max(sum(abs(A)))).
+
+
+         2 returns the matrix 2-norm (largest singular value)
+
+
+         I or i
+           returns the infinity-norm, the largest row sum
+           (max(sum(abs(A')))).
+
+
+         F, f, E or e
+           returns the Frobenius norm.
+
+
+        LAPACK subroutines DLANGE and ZLANGE are used to compute all
+        norms, except the 2-norm.
+
+        [1mObscure feature: [22mIf [4mTYPE[24m is Inf (the output from inf(), for
+        example), then norm will compute the Infinity norm of the matrix
+        [4mA[24m.
+
+        Example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     > a = magic(4)
+            16          2          3         13
+             5         11         10          8
+             9          7          6         12
+             4         14         15          1
+     > mnorm ( a )
+            34
+     > mnorm ( a , "m" )
+            16
+     > mnorm ( a , "1" )
+            34
+     > mnorm ( a , "2" )
+            34
+     > mnorm ( a , "i" )
+            34
+     > mnorm ( a , inf() )
+            34
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

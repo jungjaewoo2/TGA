@@ -1,0 +1,12 @@
+pltitle:
+
+Synopsis: Set the title for the current sub-plot.
+
+Syntax: pltitle ( PTITLE )
+
+Description:
+
+	Set the title for the current sub-plot in the current
+	plot-window.
+
+See Also: plptex

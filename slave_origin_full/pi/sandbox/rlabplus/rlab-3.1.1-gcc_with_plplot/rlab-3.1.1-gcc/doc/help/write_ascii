@@ -1,0 +1,66 @@
+  write_ascii
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Write object(s) to file in ASCII format.
+
+      [1mSyntax[0m
+        write_ascii ( [4mFILENAME[24m , [4mA[24m , [4mb[24m , ... )
+
+      [1mDescription[0m
+        The write_ascii function takes at least two arguments. The 1st
+        argument is the string that identifies the file to write to.
+        The file is opened with write permission, destroying any pre-
+        existing contents. The file is left open so that subsequent
+        writes will append to the file, and not destroy the contents.
+
+        The arguments after the file name are the objects that will be
+        written. All objects are written in RLaB ASCII format.
+
+        Example:
+
+
+
+          write_ascii ( "filename", a , b , c );
+
+
+
+
+     Will open the file named filename in write mode, and write the
+     contents of the variables a, b, and c.
+
+
+     [1mSee Also[0m
+        close, read, read_ascii
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

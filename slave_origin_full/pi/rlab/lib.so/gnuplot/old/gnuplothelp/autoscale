@@ -1,0 +1,14 @@
+autoscale:
+
+Synopsis: Sets autoscaling on axis.
+
+Syntax: autoscale ( "axis", I )
+
+Description:
+
+	Sets autoscaling on selected axis in the I:th plot-window. 
+	"axis" can be, for example, "x", "xy" "x2" or alike.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: noautoscale

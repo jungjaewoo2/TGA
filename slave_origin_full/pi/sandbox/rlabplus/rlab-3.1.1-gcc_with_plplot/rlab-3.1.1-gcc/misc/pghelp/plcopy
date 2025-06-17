@@ -1,0 +1,24 @@
+plcopy:
+
+Synopsis: Copy the a specified plot-window's attributes to a new
+          plot-window. 
+
+Syntax: plcopy ( ID , DEV )
+
+Description:
+
+        plcopy copies the attributes of the specified plot-window
+	(default for ID is 1) to a new plot-window, with possibly a
+	new device for output.  The most common use of plcopy is to
+	replicate the displayed plot for hardcopy output. For example:
+
+        t = (0:10:.1)';
+        pltitle ("Demonstration Plot");
+	xlabel ("X-axis label");
+	ylabel ("Y-axis label");
+	plot ([ t, sin(2*pi*t) ]);    // Display the plot
+
+        plcopy (1, "/CPS");
+	plot ([ t, sin(2*pi*t) ]);    // Create file pgplot.ps with
+                                      // the displayed plot
+        

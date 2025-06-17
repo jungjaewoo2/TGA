@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+#
+# figure out 32/64 bit
+#
+HOSTTYPE=`uname -i`
+if [ "$HOSTTYPE" = "x86_64" ]; then
+  CPUINFO="64";
+else
+  CPUINFO="";
+fi
+
+./configure \
+  $* \
+  --with-ngspice \
+  --with-arpack \
+  --with-superlu \
+  --with-im \
+  --with-gphoto2 \
+  --with-plplot \
+  --enable-python \
+  --enable-glpk \
+  --with-suitesparse \
+  --with-flex \
+  --with-bison \
+
+
+make scanner

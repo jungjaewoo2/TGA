@@ -1,0 +1,64 @@
+0.4.0
+Released  11/6/2016
+
+* Support for PI zero revision 1.3 (with camera connector)
+* Two new transaction functions
+  o librpipTransactionConfigRead - returns the current state of a transaction
+  o librpipTransactionReadSize - returns the number of bytes to hold the next read
+* Separated error severity from description
+* One new error function
+  o librpipErrorGetSeverity - returns the error severity.
+* Added new constants for error severity
+  o LIBRPIP_ERROR_MSG_INFO
+  o LIBRPIP_ERROR_MSG_WARNING
+  o LIBRPIP_ERROR_MSG_ERROR
+* Added new constant LIBRPIP_API_VERSION so clients can detect available API functions
+* minor cleanups of the examples
+
+
+0.3.2
+Released  2/3/2016
+
+* PI3 support II
+* Fixed SPI0 cs pin detection error with non gpio configurable cs pins. 
+
+
+0.3.1
+Released  1/3/2016
+
+* PI3 support 
+
+
+0.3.0
+Released  26/2/2016
+
+* SPI1 support
+* Detection of allocation GPIO pins via device tree 
+* Better MCP3202 and MCP3002 examples 
+
+
+0.2.1
+Released  19/2/2016
+
+* Fixed support for UART1 (/dev/ttyS0)
+* Better uart example. 
+* Minor grammatical fixes to some error messages. 
+
+
+0.2.0
+Released  13/2/2016
+
+* Support for Arch linux Arm (v7) on Raspberry Pi 2 B
+* Better error messages when PWM module is not running or PWM is running but not enabled for users.
+
+
+0.1.1
+Released  9/2/2016
+
+* Added i2c-lcd example for a Midas MCCOG22005A
+
+
+0.1.0
+Released  6/2/2016
+
+* Initial release

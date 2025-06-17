@@ -1,0 +1,28 @@
+# Psilocybe semilanceata is a fungus whose mushrooms, known as liberty caps,
+# are also called magic mushrooms for their psychedelic properties.
+# They are the most common of the psilocybin mushrooms, and among the most potent.
+# They have a distinctive conical or bell-shaped cap, up to 2.5 cm (1.0 in) wide,
+# with a small nipple-like protrusion on the top. Yellow to brown in color and fading
+# to a lighter color as they mature, they feed off decaying grass roots in fields,
+# grassy meadows, and similar habitats, particularly in wet fields that are
+# well-fertilized by sheep and cattle manure. The mushroom is widely distributed in
+# the cool temperate and subarctic regions of the Northern Hemisphere, particularly
+# in Europe, and has been reported occasionally in India, South America, and Australasia.
+START DATA
+00,06,02/*60/60*/,52,15.4,0
+00,11,01/*60/60*/,51,15.6,0
+01,11,01/*60/60*/,54,14.8,0
+01,16,02/*60/60*/,55,14.6,0
+01,21,01/*60/60*/,54,14.8,0
+END DATA
+# The earliest reliable history of P. semilanceata intoxication dates back to 1799 in London.
+# In the 1960s the mushroom was the first European species confirmed to contain psilocybin;
+# it was later found to contain the psychoactive compounds phenylethylamine and baeocystin
+# as well. The possession or sale of psilocybin mushrooms is illegal in many countries.
+START DATA
+01,26,01/*60/60*/,54,14.7,0
+01,31,01/*60/60*/,56,14.6,0
+01,36,02/*60/60*/,55,14.6,0
+01,41,01/*60/60*/,54,14.8,0
+03,21,02/*60/60*/,58,13.7,0
+END DATA

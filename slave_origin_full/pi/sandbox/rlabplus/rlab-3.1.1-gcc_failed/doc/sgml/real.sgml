@@ -1,0 +1,12 @@
+<sect> real 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the real part of a matrix.
+<tag> Syntax </tag> real ( <em>A</> )
+<tag> Description </tag>
+
+	Real returns the REAL part of an object.
+
+<tag>See Also</tag> imag, conj
+
+</descrip>

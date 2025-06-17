@@ -1,0 +1,66 @@
+  int
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Returns a matrix of the type integer (New internal type
+        introduced in RLaB2 Rel.2)
+
+      [1mSyntax[0m
+        int ( [4mA[24m )
+
+      [1mDescription[0m
+        Int returns its argument after it has been "cast" to an integer.
+        If the argument is a MATRIX then the int operation is performed
+        on an element-by-element basis.
+
+        int has the effect of truncating the input, for example:
+
+
+          >> int(1.1)
+                     1
+          >> x=int(1.9)
+                     1
+          >> type(x)
+          real
+          >> x.type
+          int
+
+
+
+
+
+     [1mSee Also[0m
+        ceil, floor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

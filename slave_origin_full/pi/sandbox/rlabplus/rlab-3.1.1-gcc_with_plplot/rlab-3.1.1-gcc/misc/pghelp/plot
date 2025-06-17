@@ -1,0 +1,102 @@
+plot:
+
+Synopsis: RLaB graphics interface to PGplot library.
+
+Syntax: plot ( A )
+
+Description:
+
+	Plot A in the current sub-plot in the current plot-window.  A
+	can be a matrix, in which case the columns are plotted against
+	the 1st column. If A is a column vector, then the column is
+	plotted versus the row values. A can also be a list, in which
+	case each matrix in the list is plotted (this is a good way to
+	plot data with different scales). If A is a list the elements
+	of the list with names that can be converted to decimal are
+	plotted first, in ascending numerical order. the list elements
+	with names that cannot be converted to decimal are plotted
+	last, in ascending string order.
+
+	The plot interface operation is based upon two important
+	concepts: the current plot-window, and the current sub-plot.
+
+	The current plot-window is a valid concept only if selected
+	output device supports multiple windows (X-windows for
+	example).
+
+	The current sub-plot should be available for all devices,
+	since sub-plots are individual plots that co-exist on the same
+	page, or display.
+
+	Invoking plstart() will create a plot-window. The newly created
+	plot-window will be the current plot-window. If more than one
+	plot-window has been created, then the current window can be
+	selected with the plwin() function. The current plot-window can
+	be closed with plclose(). All of the plot-windows can be closed
+	with pend().
+
+	Each plot-window can be divided up into more than 1 sub-plot
+	(the default). The number and arrangement of the sub-plots is
+	specified by the user when plstart() is invoked. All plot
+	manipulation functions, such as plstyle(), plgrid(), xlabel(),
+	etc... work on the current sub-plot. When plot() is used the
+	current sub-plot is created, after which the current sub-plot
+	is incremented. The sub-plots are incremented to the right,
+	and down (the same way you read an English language book).
+
+	The following is a list of the plot related functions. More
+	detailed help is available for each function list below.
+
+	Plot Window Manipulation:
+	  plstart ( NCOL, NROW, DEVICE )
+	  plwin ( NWIN )
+	  showplwin ( )
+	  pclose ( )
+	  plend ( )
+
+	Plot Creation:
+	  plot ( DATA )
+	  xlabel ( XLABEL )
+	  ylabel ( YLABEL )
+	  pltitle ( PTITLE )
+	  plimits ( XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX )
+	  plaxis ( X_STR, Y_STR )
+	  plstyle ( PSTYLE )
+	  plaspect ( ASPECT )
+	  subplot ( N )
+
+	Miscellaneous:
+	  plfont ( FONT )
+	  plwid ( WIDTH )
+	  plptex ( TEXT, X, Y, DX, DY, JUST )
+	  plegend ( DESCRIPTION )
+	
+	The high-level plot functions are implemented in RLaB. The
+	low-level plot functions mimic the PGplot application
+	programming interface (API). This particular method of
+	implementation was chosen to allow users maximum flexibility
+	when adding new or improved plot features.
+
+        PGplot low-level interface functions begin with the letters
+	`pg', Example: pgsls(), pgtext().
+
+Supported Graphics Devices:
+
+        Since each installation can determine what graphics devices to
+	support, it is impossible to predetermine, and document, the
+	available devices.  However, PGplot, built for most Unix
+	platforms should support at least the following:
+
+        Interactive devices:
+           /XWINDOW   (X window window@node:display.screen/xw)
+           /XSERVE    (A /XWINDOW window that persists for re-use)
+
+        Non-interactive file formats:
+           /NULL      (Null device, no output)
+           /PS        (PostScript file, landscape orientation)
+           /VPS       (PostScript file, portrait orientation)
+           /CPS       (Colour PostScript file, landscape orientation)
+           /VCPS      (Colour PostScript file, portrait orientation)
+
+        To see  a list of available devices at your particular
+	installation do `plstart(,,"?");'

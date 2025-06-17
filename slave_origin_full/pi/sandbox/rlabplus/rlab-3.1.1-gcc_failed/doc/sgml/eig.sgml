@@ -1,0 +1,35 @@
+<sect> eig 
+<p>
+<descrip>
+<tag> Synopsis </tag> Eigensolver. 
+<tag> Syntax </tag> eig ( <em>A</em>/,flag/ ), eig( <em>A</em>, <em>B</em>/,flag/ )
+<tag> Description </tag>
+
+	<descrip>
+	<tag>eig ( <em>A</em> /,flag/ )</tag>
+
+		Computes the eigenvectors, and values of matrix
+		<em>A</em>. eig() returns a LIST with elements `val' and
+		`vec' which are the eigenvalues and eigenvectors. Eig
+		checks for symmetry in <em>A</em>, and uses the
+		appropriate solver.
+		Optional <em>flag</em> can be `G' for general non-symmetric,
+		and `S' for symmetric matrix <em>A</em>.
+
+	<tag>eig ( <em>A</em> , <em>B</em> /,flag/ )</tag>
+
+		Computes the eigenvectors, and values of <em>A</>, and
+		<em>B</>.  Where <tt>A*x = lambda*B*x</tt>. The values
+		and vectors are returned in a list with element names
+		<em>val</> and <em>vec</>.
+		Optional <em>flag</em> can be `SP' if matrix <em>A</em> is known
+		to be symmetric and matrix <em>B</em> is positive-definite.
+
+	</descrip>
+
+	Uses the LAPACK subroutines DSYEV/ZHEEV or DGEEV/ZGEEV.
+
+
+<tag>See Also</tag>   eigs, svd, schur
+
+</descrip>

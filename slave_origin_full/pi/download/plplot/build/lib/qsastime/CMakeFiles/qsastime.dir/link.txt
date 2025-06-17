@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libqsastime.so.0 -o libqsastime.so.0.0.1 CMakeFiles/qsastime.dir/qsastime.c.o CMakeFiles/qsastime.dir/dsplint.c.o /usr/lib/arm-linux-gnueabihf/libm.so 

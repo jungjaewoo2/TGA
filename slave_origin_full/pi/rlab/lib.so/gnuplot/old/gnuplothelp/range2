@@ -1,0 +1,17 @@
+range2:
+
+Synopsis: Sets the plot range in x, y and z. Right y-axis and top x-axis.
+
+Syntax: range2 ( x-start, x-end, y-start, y-end, z-start, z-end, I )
+
+Description:
+
+	Sets the plot range in x, y and z in the I:th plot-window. 
+	range2() uses the right y-axis and the top x-axis.
+	The x-axis will start at "x-start" and end at "x-end".
+	The y-axis will start at "y-start" and end at "y-end".
+	The z-axis will start at "z-start" and end at "z-end".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: range, xrange, x2range, yrange, y2range, zrange

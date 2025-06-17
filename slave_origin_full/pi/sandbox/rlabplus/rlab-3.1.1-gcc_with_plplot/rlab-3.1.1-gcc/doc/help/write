@@ -1,0 +1,66 @@
+  write
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Write object(s) to file.
+
+      [1mSyntax[0m
+        write ( [4mFILENAME[24m , [4mA[24m , [4mb[24m , ... )
+
+      [1mDescription[0m
+        The write function takes at least two arguments. The 1st
+        argument is the string that identifies the file to write to.
+        The file is opened with write permission, destroying any pre-
+        existing contents. The file is left open so that subsequent
+        writes will append to the file, and not destroy the contents.
+
+        The arguments after the file name are the objects that will be
+        written. All objects are written in RLaB binary format.
+
+        Example:
+
+
+
+          writeb ( "filename", a , b , c );
+
+
+
+
+     Will open the file named filename in write mode, and write the
+     contents of the variables a, b, and c.
+
+     The matrix format that write uses is compatible with MATLAB's
+     matrix format. As long as the file only contains matrices, MATLAB
+     should be able to read RLaB binary output.
+
+
+     [1mSee Also[0m
+        close, readb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

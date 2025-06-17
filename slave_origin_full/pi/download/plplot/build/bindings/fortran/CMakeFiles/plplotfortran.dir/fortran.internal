@@ -1,0 +1,9 @@
+# The fortran modules provided by this target.
+provides
+ plplot
+ plplot_double
+ plplot_graphics
+ plplot_private_exposed
+ plplot_private_utilities
+ plplot_single
+ plplot_types

@@ -1,0 +1,35 @@
+<sect> qr 
+<p>
+<descrip>
+<tag> Synopsis </tag> QR decomposition
+<tag> Syntax </tag> qr ( <em>A</> )
+             <p>    qr ( <em>A</>, <tt>"p"</> )
+<tag> Description </tag>
+
+
+	Qr computes the QR decomposition of the input matrix A such
+	that: 
+
+	<quote>
+	A = Q * R
+	</quote>
+
+	or
+
+	<quote>
+	A*p = Q * R
+	</quote>
+
+	Qr returns a list containing elements <em>q</> and
+	<em>r</>. Optionally, qr can take a second argument,
+	<tt>"p"</> which tells qr to perform column pivoting when
+	computing <em>q</> and <em>r</>. The permutation matrix
+	<em>p</> is returned in the same list as <em>q</> and
+	<em>r</>.
+
+	Qr utilizes LAPACK subroutines DGEQRF and DORGQR for REAL
+	inputs, and ZGEQRF and ZUNGQR for COMPLEX inputs. When column
+	pivoting is requested the LAPACK subroutines DGEQPF, and
+	ZGEQPF are used.
+
+</descrip>

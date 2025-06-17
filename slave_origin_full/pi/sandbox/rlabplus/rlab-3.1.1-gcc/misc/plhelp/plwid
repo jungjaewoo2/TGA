@@ -1,0 +1,10 @@
+plwid:
+
+Synopsis: Change the plot pen width for the current sub-plot.
+
+Syntax: plwid ( WIDTH )
+
+Description:
+
+	Change the pen width to WIDTH. The result is device dependent.
+	For some devices, such as postscipt, WIDTH must be > 0 and <= 10.

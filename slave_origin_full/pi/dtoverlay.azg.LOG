@@ -1,0 +1,12 @@
+dtc -@ -I dts -O dtb -o mygpio-overlay.dtb mygpio-overlay.dts
+cp mygpio-overlay.dtb mygpio-overlay.dtbo
+sudo cp mygpio-overlay.dtbo /boot/overlays/mygpio-overlay.dtbo
+sudo dtoverlay mygpio-overlay
+dtoverlay -l
+	Overlays (in load order):
+	0:  mygpio-overlay
+
+####################################
+# Debugging:
+sudo vcdbg log msg
+

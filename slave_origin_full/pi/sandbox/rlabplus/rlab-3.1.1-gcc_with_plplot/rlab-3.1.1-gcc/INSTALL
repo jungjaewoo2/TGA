@@ -1,0 +1,215 @@
+
+***RLaB2 Rel.2 Installation Instructions:
+
+***Quick Install:
+      0) untar the archive, 
+        tar xvfz rlab-2.2.2-*.src.tgz
+        cd rlab-2.2.2
+      1) ./configure --with-pgplot=pgplot/
+      2) (su) make install
+
+   This will build RLaB and install it in /usr/local.
+   
+   Please read README.rlabplus for more details.
+   Please read clibs/README for more details how to rebuild RLaB2 Rel. 2.		
+
+***Standard Build (default configuration), The Details:
+
+      The core RLaB program (parser, compiler, virtual-machine) is
+      written in ANSI-C.  The bulk of RLaB's linear algebra
+      functionality comes from well established/tested Fortran
+      libraries (BLAS, LAPACK, FFTPACK, and Ranlib).
+
+      It used to be that access to Fortran compilers required a lot of
+      money, or access to someone else's computer (a University's for
+      example). Then, the default for building RLaB was a C compiler
+      and f2c (the AT&T Fortran to C converter) Nowadays the GNU
+      compiler suite includes a Fortran compiler.  Building both C and
+      Fortran compilers is quite simple these days, especially if you
+      are using the EGCS (www.cygnus.com) compiler suite (derived from
+      GNU sources).
+
+      So, to make a long story short, the default for building RLaB is
+      no longer C/f2c.  The new default is to assume the builder has C
+      and Fortran (f77) compilers.  The required Fortran libraries are
+      contained in ./flibs and the Makefiles therein are configured
+      when RLaB's configure is executed.
+
+      Plotting is considered optional.  I suggest the first time you
+      build RLaB you do so without plotting.  This way, you can get
+      something accomplished before wadding into the plotting
+      quagmire.
+
+      So, to build RLaB (default/standard configuration) do:
+
+         ./configure --prefix=<the_root_of_the_installation>
+         Edit fi.h ** (see below)
+         make
+         make check
+         make install
+
+      You may (probably?) need GNU make.  
+
+      These instructions assume that everything goes smoothly.  If you
+      have trouble, see the PROBLEMS file.
+
+      Read WHATS.NEW if you are already a RLaB user.
+
+      ** The file fi.h contains the mapping of C-language types to
+         Fortran's INTEGER (F_INT), REAL (F_REAL), and DOUBLE
+         (F_DOUBLE) types.  The default is:
+
+         typedef long int  F_INT;
+         typedef float     F_REAL;
+         typedef double    F_DOUBLE;
+
+         If your pair of compilers (cc/f77) has a different mapping
+         (most common on 64bit architectures) then you will need to
+         edit these typedef statements in fi.h.  If you know a way
+         configure can determine this mapping automatically, please
+         send instructions/hints/whatever to searleir@yahoo.com.  
+
+***Optional RLaB Components:
+
+        SuperLU              Sparse LU decomposition
+        Metis                Sparse Matrix Re-Ordering, Graph Partitioning
+        pgplot 5.2           plotting
+	plplot4p99i          plotting
+        gnuplot              plotting
+	plotmtv-1.4.1        plotting
+	pgraf                plotting
+	pgplot               plotting
+ 
+***Configure options:
+
+        Configure will recognize certain "with" options:
+
+	--prefix=dir		Use dir as the root of the software
+				installation tree.
+
+	--with-cc		Use the cc compiler
+
+	--with-gcc		Use the GNU C compiler
+
+	--with-LIBS=dir		Look for all libraries in dir 1st. If
+				the bulk of your libraries are not in
+				/usr/local/lib, then this is a good
+				option to use.
+
+	--with-NALIBS=dir	Look for numerical analysis 
+				libraries in dir.
+
+	--with-includes=dir	Look for X-windows include files in
+				dir.
+
+	--with-libraries=dir	Look for X-windows libraries in dir.
+
+	--disable-GC		Disable the use of the
+				Garbage-Collector. This is not
+				recommended. But, if you can't get gc 
+				to work, then you might want to do this.
+
+	--disable-fpe		Do not try and set floating point
+				exception handling. Use whatever the
+				system supplies.
+
+	--enable-SUPERLU	Enable the use of the SuperLU sparse solver.
+
+	--enable-METIS3		Enable the use of the Metis graph partitioning
+				library.
+
+	--with-gnuplot		Use Gnuplot interface.
+
+	--with-plplot=<pdir>	Use PLplot interface. Pgplot installed in pdir.
+
+	--with-pgplot=<pdir>	Use PGplot interface. Plplot installed in pdir.
+
+	--with-plotmtv		Use PlotMTV interface.
+
+	--with-pgraf		Use Pgraf interface.
+
+
+***In Case of Trouble:
+
+   Send bug reports to searleir@yahoo.com
+
+   IN CASE OF EMERGENCY: If the make does not proceed through
+   installation without problems, then human intervention will be
+   required. The files created by configure (Makefile and config.h)
+   can be created from Makefile.in and config.h.in and edited by hand.
+   These files are supposed to have enough comments to allow
+   installers to figure out the correct options.
+
+   See the file PROBLEMS for solutions to some commonly encountered
+   difficulties.
+
+   Please send report(s) of any compilation or installation
+   difficulties to searleir@yahoo.com. 
+
+***Miscellaneous
+
+   NOTES:
+
+   F2C Usage:
+
+   You may not have a Fortran compiler.  If that is the case, then you
+   can use the AT&T Fortran to C translator (f2c). f2c is available at
+   ftp://netlib.bell-labs.com/netlib/f2c. If you use f2c you will have
+   to modify the generated Makefile by hand.  The things you will need
+   to change are marked in the Makefile.
+
+   You will also need to use f2c to convert all the Fortran sources
+   (*.f) in the flibs subdirectory into C-language sources.  This is
+   not very difficult; the procedure goes like:
+
+       1) Use f2c to convert all the Fortran source files to C source
+          files.
+
+       2) Modify the configure generated Makefiles in each directory
+          to use the C compiler instead of the Fortran compiler.
+          Replace the .f.o rule with a .c.o rule.
+
+   RLaB, prior to version 2.0.16 used f2c as the default method for
+   building the Fortran libraries.  Older version's makefiles, and
+   such can be consulted for examples.
+
+
+   Plotting:
+
+   RLaB can use one of several plotting programs/libraries for data
+   visualization. The most common are: Plplot, PgPlot, Gnuplot, and
+   PlotMTV. You must select the particular plot interface you wish to
+   use when you run RLaB's configure program (see above).
+
+   Plplot used to be the most widely used/supported plotting interface
+   for RLaB.  Lately support for Plplot's graphics drivers has
+   deteriorated.  Especially with respect to the Tcl/Tk driver.
+   Nowadays I prefer to use the PgPlot graphics library; its
+   functionality and appearance is nearly identical, and the X-windows
+   driver architecture is more suitable for interactive use with RLaB.
+
+   RLaB can use the PLPLOT library to provide data plotting
+   services. PLPLOT is freely available. You can get PLPLOT from
+   dino.ph.utexas.edu in the directory plplot. If you have a double
+   precision version of the PLPLOT library configure may find it and
+   turn on the plotting capability. At present configure searches for
+   libplplotdX.a and libplplotdtk.a. If you have a PLPLOT library
+   under some other name, then edit the Makefile variable PLIBS and
+   PLIB_DIR to reflect the correct library, and then edit config.h so
+   that HAVE_RLAB_PLPLOT is defined. The RLaB Primer and the examples
+   directory both contain plot usage examples.
+
+   As an alternative to PLPLOT RLaB can use its built-in piping and
+   file I/O capabilities to get data to most plot programs fairly
+   easy. There is a sample Rlab program in a file called
+   toolbox/gnuplot.r that uses these capabilities to interactively
+   make plots by running GNUPLOT as a sub-process. To use this
+   function (plot()), you must have the GNUPLOT program somewhere in
+   your PATH.  If you don't have GNUPLOT, or wish to use some other
+   plotting program feel free to modify the plot() interface to suit
+   your needs.
+
+   I recommend that you use GNUPLOT version 3.2 or higher. Versions
+   before 3.2 tend to break the input stream when an input error
+   occurs, thus making plotting intolerant of user errors.
+

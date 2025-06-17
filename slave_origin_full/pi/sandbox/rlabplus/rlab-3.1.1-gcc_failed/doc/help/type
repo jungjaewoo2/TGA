@@ -1,0 +1,66 @@
+  type
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return the type of an object.
+
+      [1mSyntax[0m
+        type ( [4mA[24m )
+
+      [1mDescription[0m
+        Type returns a string that describes the type of element
+        contained in object [4mA[24m. The valid types for an object vary
+        according to the class of the object
+
+        If a list object has a string member with name type, then the
+        type function will report the contents of that member.
+
+
+     [1mSee Also[0m
+        class, show
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

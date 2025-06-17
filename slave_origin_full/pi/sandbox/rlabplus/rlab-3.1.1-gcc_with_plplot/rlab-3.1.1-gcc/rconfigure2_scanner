@@ -1,0 +1,43 @@
+#!/bin/sh
+
+
+#
+# figure out 32/64 bit
+#
+HOSTTYPE=`uname -i`
+if [ "$HOSTTYPE" = "x86_64" ]; then
+  CPUINFO="64";
+else
+  CPUINFO="";
+fi
+
+#
+# figure out if ngspice is present
+#
+dirs="/usr/lib${CPUINFO} /usr/local/lib${CPUINFO}"
+for dir in $dirs;
+do
+	if [ -h ${dir}/libngspice.so ]; then
+		SPICEFLAG="--with-ngspice=$dir"
+		break
+	fi
+done
+
+./configure \
+  $* \
+  ${SPICEFLAG} \
+  --rlab2 \
+  --with-arpack \
+  --with-superlu \
+  --with-im \
+  --with-gphoto2 \
+  --with-plplot \
+  --enable-python \
+  --enable-glpk \
+  --with-suitesparse \
+  --with-flex \
+  --with-bison \
+
+
+make scanner
+

@@ -1,0 +1,36 @@
+<sect> urandom
+<p>
+<descrip>
+<tag> Synopsis </tag> Uniform random number generator in range 0 to 1.
+<tag> Syntax </tag>
+             <p> urandom (  )
+             <p> urandom ( <em>A</em> )
+             <p> urandom ( <em>nrow</em>, <em>ncol</> )
+
+<tag> Background </tag>
+	Since rlab-2.2.11 urandom is a dedicated uniform random number
+	generator that uses system integer number generator No. 64, and
+	is sampled from the system continuous random number generator
+	No. 64.	
+
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag>urandom ( )</tag> 
+		samples a random scalar.
+
+	<tag>urandom ( <em>A</em> ), urandom( <em>nrow</em>, <em>ncol</em> )</tag>
+	   samples a randomly generated matrix of size of the
+		matrix <em>A</em>, or using the row dimension <em>nrow</em>, and
+		column dimension <em>ncol</em>.
+
+	</descrip>
+
+	
+	urandom uses the GSL library.
+
+	
+	<tag>See Also</tag>   rng, rand, irng, irand, iseed, drng, drand.
+
+</descrip>

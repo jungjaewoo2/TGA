@@ -1,0 +1,24 @@
+ztics:
+
+Synopsis: Sets the major tics on the z-axis.
+
+Syntax: ztics ( start, incr, end, I )
+        ztics ( vector, I )
+        ztics ( I )
+
+Description:
+
+	The ztics() function sets the major tics on the z-axis 
+	in the I:th plot-window. 
+	If it is used as ztics(start,incr,end,I), the tics will be set 
+	for plot-window I, starting from "start", ending at "end", 
+	with an increment of "incr". 
+	If, however, it is used as ztics([a,b,c,d],I), the tics will 
+	set at "a", "b", "c" and "d" in plot-window I. 
+	The command ztics(I) will reset the tics in plot-window I.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, noxtics, x2tics, nox2tics, ytics, noytics, y2tics, noy2tics,
+          noztics, mxtics, nomxtics, mx2tics, nomx2tics, mytics, nomytics, 
+          my2tics, nomy2tics, mztics, nomztics

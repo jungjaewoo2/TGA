@@ -1,0 +1,66 @@
+  eig
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Eigensolver.
+
+      [1mSyntax[0m
+        eig ( [4mA[24m/,flag/ ), eig( [4mA[24m, [4mB[24m/,flag/ )
+
+      [1mDescription[0m
+
+        [1meig ( [4m[22mA[24m [1m/,flag/ )[0m
+           Computes the eigenvectors, and values of matrix [4mA[24m. eig()
+           returns a LIST with elements `val' and `vec' which are the
+           eigenvalues and eigenvectors. Eig checks for symmetry in [4mA[24m,
+           and uses the appropriate solver.  Optional [4mflag[24m can be `G'
+           for general non-symmetric, and `S' for symmetric matrix [4mA[24m.
+
+
+        [1meig ( [4m[22mA[24m [1m, [4m[22mB[24m [1m/,flag/ )[0m
+           Computes the eigenvectors, and values of [4mA[24m, and [4mB[24m.  Where A*x
+           = lambda*B*x. The values and vectors are returned in a list
+           with element names [4mval[24m and [4mvec[24m.  Optional [4mflag[24m can be `SP' if
+           matrix [4mA[24m is known to be symmetric and matrix [4mB[24m is positive-
+           definite.
+
+
+        Uses the LAPACK subroutines DSYEV/ZHEEV or DGEEV/ZGEEV.
+
+
+
+     [1mSee Also[0m
+        eigs, svd, schur
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

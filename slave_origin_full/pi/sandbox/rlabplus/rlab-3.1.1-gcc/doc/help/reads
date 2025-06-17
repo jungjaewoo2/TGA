@@ -1,0 +1,66 @@
+  reads
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Read a data stream into a string
+
+      [1mSyntax[0m
+        reads ( )
+
+        reads ( [4mfilename[24m )
+
+      [1mDescription[0m
+        reads( ) reads input from keyboard until `return' is pressed.
+        reads( [4mfilename[24m ) reads the content of the file in a single
+        column string vector. If the [4mfilename[24m  begins with `|' then the
+        reading is performed from the pipe. The latter is the modus
+        operandi of many functions in RLaB2 Rel. 2 that communicate with
+        shell, e.g., see dir, ls, email, md5sum etc. For example,
+
+
+          ys = reads  (`my_file_with_lots_of_data');
+          y  = strtod (ys);
+
+
+
+
+     Or, another example where a pipe to shell command is used,
+
+
+          fns = reads  (`| ls -1A');
+          for (fn in fns)
+          {
+            printf (`Found file: ');
+            printf (`%s', fn);
+          }
+
+
+
+
+
+
+     [1mSee Also[0m
+        FILES, close, getline, read, readm, writem, strtod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

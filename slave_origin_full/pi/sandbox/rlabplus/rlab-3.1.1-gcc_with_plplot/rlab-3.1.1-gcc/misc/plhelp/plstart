@@ -1,0 +1,16 @@
+plstart:
+
+Synopsis: Create a plot-window.
+
+Syntax: plstart ( NCOL , NROW , DEVICE )
+
+Description:
+
+	Create a plot-window. The newly created plot-window becomes
+	the current plot-window with NCOLxNROW sub-plots. DEVICE
+	specifies the output device type. If DEVICE is not specified,
+	then the user is provided with a menu of options. All
+	arguments are optional. his function MUST be used before any
+	plotting can occur. If you do not use plstart() before
+	attempting to plot, then you will be prompted for the device
+	type.

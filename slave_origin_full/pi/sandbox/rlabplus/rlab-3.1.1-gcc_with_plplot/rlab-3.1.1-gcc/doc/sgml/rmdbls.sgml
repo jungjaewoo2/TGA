@@ -1,0 +1,40 @@
+<author>
+<sect> rmdbls
+<p>
+<descrip>
+<tag> Synopsis </tag> Remove row-wise double entries from a data matrix.
+<tag> Syntax </tag> rmdbls ( <em>A</em>, /idx/, /sidx/, /widx/ ) 
+<tag> Description </tag>
+rmdbls removes multiple row-wise entries from a data matrix with respect to the
+column index <em>idx</em>, if given, otherwise <tt>idx=1</tt> is
+assumed. Arrays <em>sidx</em> and <em>widx</em>, if given, are each two-column
+matrices of indices in the form <tt>sidx=[ix1,isx1;..]</tt> or
+<tt>widx=[ix1,iwx1;..]</tt>, containing values and their respective standard
+deviations or their weights. This allows removal of data points with same value
+of <tt>A[;idx]</tt> and replacing it with the weighted average in column
+<tt>ix1</tt> and with weighted standard deviation in column <tt>isx1</tt>, or
+with weighted weight in column <tt>iwx1</tt>. If <tt>sidx</tt> and
+<tt>widx</tt> are not given then all double entries are replaced by their
+means.
+
+<tag>Note:</tag>
+rmdbls assumes that the data is sorted with respect to the column <tt>idx</tt>
+with respect to which the removal of the doubles is going to be performed.
+
+<tag>Example:</tag>
+<tscreen><verb>
+>> a
+           1             2             2  0.0840348878
+           1             2             2   0.392340196
+           1             3             3   0.910674292
+           1             4             4   0.728253898
+>>  rmdbls(a,1,[2,4])
+           1    2.03291719          2.75  0.0813267651
+>>  rmdbls(a,1,,[3,4])
+           1          2.75    3.11907456    2.11530327
+>>  rmdbls(a,1,[2,4;3,4])
+           1    2.03291719    2.03291719  0.0813267651
+>>         
+</verb></tscreen>
+
+</descrip>

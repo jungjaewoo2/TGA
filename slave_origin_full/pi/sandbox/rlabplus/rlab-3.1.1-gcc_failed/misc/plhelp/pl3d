@@ -1,0 +1,26 @@
+pl3d:
+
+Synopsis: Draw 3-dimensional lines.
+
+Syntax: pl3d ( X, Y, Z, BR )
+
+Description:
+
+	pl3d draws lines in a 3-dimensional plot. The arguments X, Y,
+	and Z contain the coordinates of the endpoints of the line.
+
+	Example:
+
+		# Draw a single line in 3-D
+		pl3d ([x1; x2], [y1; y2], [z1; z2])
+
+	The X, Y, and Z arguments can contain more 2 elements, in
+	which case N-1 (N is the dimension of X, Y, and Z) lines will
+	be drawn.
+
+        The last argument, BR (optional), specifies BReakpoints in the
+	line. Without BR, the line conects all specified
+	coordinates. When BR is specified, the line is broken every N
+	points. 
+
+See Also: 

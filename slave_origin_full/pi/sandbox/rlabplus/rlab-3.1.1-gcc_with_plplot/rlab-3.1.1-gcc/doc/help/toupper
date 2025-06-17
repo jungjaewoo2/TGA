@@ -1,0 +1,66 @@
+  toupper
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Convert alphabet characters of a string to uppercase.
+
+
+     [1mSyntax[0m
+        t = toupper ( [4ms[24m )
+
+
+        Arguments:
+
+        [4ms[24m  string matrix.
+
+
+        Result:
+
+        [1mt  [22mstring matrix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

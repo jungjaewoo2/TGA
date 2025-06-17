@@ -1,0 +1,13 @@
+<sect> sizeof 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the size of an object in bytes.
+<tag> Syntax </tag> sizeof ( <em>A</> ) 
+<tag> Description </tag>
+
+	The sizeof function returns the number of bytes of data in the
+	argument <em>A</>.
+
+<tag>See Also</tag>  size, who, whos
+
+</descrip>

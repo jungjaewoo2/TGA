@@ -1,0 +1,20 @@
+set3d:
+
+Synopsis: Set the 3-D plot window parameters.
+
+Syntax: set3d ( BASE_X, BASE_Y, HEIGHT )
+
+Description:
+
+	Set3d allows the user to change the default 3-D plot mapping
+	parameters. If any of the arguments are not supplied by the
+	user, that parameter is reset to the default value:
+
+		Defaults:	BASE_X	2
+				BASE_Y	2
+				HEIGHT	4
+
+	See the Plplot documentation for a thorough explanation of the
+	3-D plot parameters.
+
+See Also: plot3d

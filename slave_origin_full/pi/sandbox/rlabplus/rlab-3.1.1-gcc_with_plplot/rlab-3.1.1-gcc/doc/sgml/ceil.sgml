@@ -1,0 +1,14 @@
+<sect> ceil 
+<p>
+<descrip>
+<tag> Synopsis </tag> Smallest integer not less than argument. 
+<tag> Syntax </tag> ceil ( <em>a</> )
+<tag> Description </tag>
+
+	Ceil returns the smallest integer not less than the argument.
+	If the argument is a MATRIX then the ceil operation is
+	performed on an element-by-element basis.
+
+ <tag>See Also</tag>   floor, int
+
+</descrip>

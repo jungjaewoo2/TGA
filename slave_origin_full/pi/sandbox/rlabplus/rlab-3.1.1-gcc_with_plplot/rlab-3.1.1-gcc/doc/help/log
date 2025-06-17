@@ -1,0 +1,66 @@
+  log
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Logarithmic function.
+
+      [1mSyntax[0m
+        log ( [4mA[24m )
+
+      [1mDescription[0m
+        Log returns the natural logarithm of it's argument. If the
+        argument is a VECTOR or MATRIX an element-by-element log
+        operation is performed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

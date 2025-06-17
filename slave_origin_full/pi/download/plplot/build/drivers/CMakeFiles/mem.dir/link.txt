@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared  -o mem.so CMakeFiles/mem.dir/mem.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 

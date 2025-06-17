@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# test GPIO 18 as input
+# 
+# some errors (need root permission?) but works fine
+# GPIO configured previously
+# [azg] Fri Sep 29 17:34:55 -07 2017
+#
+####################################
+
+echo "18" > /sys/class/gpio/export
+echo "in" > /sys/class/gpio/gpio18/direction
+
+while true
+do
+# echo 1 > /sys/class/gpio/gpio4/value
+# echo 0 > /sys/class/gpio/gpio4/value
+cat /sys/class/gpio/gpio18/value
+sleep 1
+done

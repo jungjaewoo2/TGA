@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dsplint.c
+dsplint.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dsplint.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dsplint.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastime.c
+ctype.h
+-
+math.h
+-
+qsastimeP.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastimeP.h
+tai-utc.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/tai-utc.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastime.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+qsastimedll.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastimedll.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastimedll.h
+
+lib/qsastime/qsastimeP.h
+qsastime.h
+lib/qsastime/qsastime.h
+
+lib/qsastime/tai-utc.h
+

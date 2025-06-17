@@ -1,0 +1,66 @@
+  size
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return the size of an object.
+
+      [1mSyntax[0m
+        size ( [4mA[24m )
+
+      [1mDescription[0m
+        The size function returns the size of the argument.
+
+
+
+        [1mNUMERIC[0m
+           size returns a matrix whose 1st element is the number of
+           rows, and whose 2nd element is the number of columns.
+
+
+        [1mSTRING[0m
+           size returns a matrix whose 1st element is the number of
+           rows, and whose 2nd element is the number of columns. If the
+           length of a particular string is desired, then the length
+           function must be used.
+
+
+        [1mLIST[0m
+           size returns the number of elements in the list.
+
+
+
+     [1mSee Also[0m
+        length, show
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

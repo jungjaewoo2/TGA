@@ -1,0 +1,760 @@
+/usr/bin/cmake -H/home/pi/download/plplot/plplot-5.13.0 -B/home/pi/download/plplot/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/pi/download/plplot/build/CMakeFiles /home/pi/download/plplot/build/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/pi/download/plplot/build'
+make -f lib/csa/CMakeFiles/csirocsa.dir/build.make lib/csa/CMakeFiles/csirocsa.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/csa /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/csa /home/pi/download/plplot/build/lib/csa/CMakeFiles/csirocsa.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/csa/CMakeFiles/csirocsa.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/csa/CMakeFiles/csirocsa.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/csa/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/csa/CMakeFiles/csirocsa.dir/depend.internal".
+Scanning dependencies of target csirocsa
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/csa/CMakeFiles/csirocsa.dir/build.make lib/csa/CMakeFiles/csirocsa.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[  1%] Building C object lib/csa/CMakeFiles/csirocsa.dir/csa.c.o
+cd /home/pi/download/plplot/build/lib/csa && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsirocsa_EXPORTS  -fPIC   -o CMakeFiles/csirocsa.dir/csa.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/csa/csa.c
+[  2%] Linking C shared library libcsirocsa.so
+cd /home/pi/download/plplot/build/lib/csa && /usr/bin/cmake -E cmake_link_script CMakeFiles/csirocsa.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libcsirocsa.so.0 -o libcsirocsa.so.0.0.1 CMakeFiles/csirocsa.dir/csa.c.o /usr/lib/arm-linux-gnueabihf/libm.so 
+cd /home/pi/download/plplot/build/lib/csa && /usr/bin/cmake -E cmake_symlink_library libcsirocsa.so.0.0.1 libcsirocsa.so.0 libcsirocsa.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[  2%] Built target csirocsa
+make -f lib/nn/CMakeFiles/csironn.dir/build.make lib/nn/CMakeFiles/csironn.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/nn /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/nn /home/pi/download/plplot/build/lib/nn/CMakeFiles/csironn.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/nn/CMakeFiles/csironn.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/nn/CMakeFiles/csironn.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/nn/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/nn/CMakeFiles/csironn.dir/depend.internal".
+Scanning dependencies of target csironn
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/nn/CMakeFiles/csironn.dir/build.make lib/nn/CMakeFiles/csironn.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/delaunay.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/delaunay.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/delaunay.c
+[  4%] Building C object lib/nn/CMakeFiles/csironn.dir/hash.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/hash.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/hash.c
+[  5%] Building C object lib/nn/CMakeFiles/csironn.dir/istack.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/istack.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/istack.c
+[  7%] Building C object lib/nn/CMakeFiles/csironn.dir/lpi.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/lpi.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/lpi.c
+[  7%] Building C object lib/nn/CMakeFiles/csironn.dir/nnai.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/nnai.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/nnai.c
+[  8%] Building C object lib/nn/CMakeFiles/csironn.dir/nnpi.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/nnpi.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/nnpi.c
+[ 10%] Building C object lib/nn/CMakeFiles/csironn.dir/nncommon.c.o
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dcsironn_EXPORTS  -fPIC   -I/usr/include -o CMakeFiles/csironn.dir/nncommon.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/nn/nncommon.c
+[ 11%] Linking C shared library libcsironn.so
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cmake -E cmake_link_script CMakeFiles/csironn.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libcsironn.so.0 -o libcsironn.so.0.0.2 CMakeFiles/csironn.dir/delaunay.c.o CMakeFiles/csironn.dir/hash.c.o CMakeFiles/csironn.dir/istack.c.o CMakeFiles/csironn.dir/lpi.c.o CMakeFiles/csironn.dir/nnai.c.o CMakeFiles/csironn.dir/nnpi.c.o CMakeFiles/csironn.dir/nncommon.c.o /usr/lib/arm-linux-gnueabihf/libqhull.so /usr/lib/arm-linux-gnueabihf/libm.so 
+cd /home/pi/download/plplot/build/lib/nn && /usr/bin/cmake -E cmake_symlink_library libcsironn.so.0.0.2 libcsironn.so.0 libcsironn.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 11%] Built target csironn
+make -f lib/qsastime/CMakeFiles/deltaT-gen.dir/build.make lib/qsastime/CMakeFiles/deltaT-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT-gen.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT-gen.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT-gen.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT-gen.dir/depend.internal".
+Scanning dependencies of target deltaT-gen
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/deltaT-gen.dir/build.make lib/qsastime/CMakeFiles/deltaT-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 11%] Building C object lib/qsastime/CMakeFiles/deltaT-gen.dir/deltaT-gen.c.o
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build/lib/qsastime   -o CMakeFiles/deltaT-gen.dir/deltaT-gen.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/deltaT-gen.c
+[ 12%] Building C object lib/qsastime/CMakeFiles/deltaT-gen.dir/dspline.c.o
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build/lib/qsastime   -o CMakeFiles/deltaT-gen.dir/dspline.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dspline.c
+[ 14%] Linking C executable deltaT-gen
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cmake -E cmake_link_script CMakeFiles/deltaT-gen.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/deltaT-gen.dir/deltaT-gen.c.o CMakeFiles/deltaT-gen.dir/dspline.c.o  -o deltaT-gen 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 14%] Built target deltaT-gen
+make -f lib/qsastime/CMakeFiles/deltaT.h_built.dir/build.make lib/qsastime/CMakeFiles/deltaT.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT.h_built.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT.h_built.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT.h_built.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT.h_built.dir/depend.internal".
+Scanning dependencies of target deltaT.h_built
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/deltaT.h_built.dir/build.make lib/qsastime/CMakeFiles/deltaT.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 15%] Generating deltaT.h
+cd /home/pi/download/plplot/build/lib/qsastime && ./deltaT-gen /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/deltaT.dat /home/pi/download/plplot/build/lib/qsastime/deltaT.h
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 15%] Built target deltaT.h_built
+make -f lib/qsastime/CMakeFiles/tai-utc-gen.dir/build.make lib/qsastime/CMakeFiles/tai-utc-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc-gen.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc-gen.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc-gen.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc-gen.dir/depend.internal".
+Scanning dependencies of target tai-utc-gen
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/tai-utc-gen.dir/build.make lib/qsastime/CMakeFiles/tai-utc-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 17%] Building C object lib/qsastime/CMakeFiles/tai-utc-gen.dir/tai-utc-gen.c.o
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build/lib/qsastime   -o CMakeFiles/tai-utc-gen.dir/tai-utc-gen.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/tai-utc-gen.c
+[ 18%] Linking C executable tai-utc-gen
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cmake -E cmake_link_script CMakeFiles/tai-utc-gen.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/tai-utc-gen.dir/tai-utc-gen.c.o  -o tai-utc-gen /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 18%] Built target tai-utc-gen
+make -f lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build.make lib/qsastime/CMakeFiles/tai-utc.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc.h_built.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc.h_built.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc.h_built.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc.h_built.dir/depend.internal".
+Scanning dependencies of target tai-utc.h_built
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build.make lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 20%] Generating tai-utc.h
+cd /home/pi/download/plplot/build/lib/qsastime && ./tai-utc-gen /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/tai-utc.dat /home/pi/download/plplot/build/lib/qsastime/tai-utc.h
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 20%] Built target tai-utc.h_built
+make -f lib/qsastime/CMakeFiles/qsastime.dir/build.make lib/qsastime/CMakeFiles/qsastime.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/qsastime.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/qsastime.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/qsastime.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/lib/qsastime/CMakeFiles/qsastime.dir/depend.internal".
+Scanning dependencies of target qsastime
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/qsastime.dir/build.make lib/qsastime/CMakeFiles/qsastime.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 21%] Building C object lib/qsastime/CMakeFiles/qsastime.dir/qsastime.c.o
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dqsastime_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build/lib/qsastime  -fPIC   -o CMakeFiles/qsastime.dir/qsastime.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/qsastime.c
+[ 21%] Building C object lib/qsastime/CMakeFiles/qsastime.dir/dsplint.c.o
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dqsastime_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build/lib/qsastime  -fPIC   -o CMakeFiles/qsastime.dir/dsplint.c.o   -c /home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dsplint.c
+[ 22%] Linking C shared library libqsastime.so
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cmake -E cmake_link_script CMakeFiles/qsastime.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libqsastime.so.0 -o libqsastime.so.0.0.1 CMakeFiles/qsastime.dir/qsastime.c.o CMakeFiles/qsastime.dir/dsplint.c.o /usr/lib/arm-linux-gnueabihf/libm.so 
+cd /home/pi/download/plplot/build/lib/qsastime && /usr/bin/cmake -E cmake_symlink_library libqsastime.so.0.0.1 libqsastime.so.0 libqsastime.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 22%] Built target qsastime
+make -f include/CMakeFiles/plhershey-unicode-gen.dir/build.make include/CMakeFiles/plhershey-unicode-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/include /home/pi/download/plplot/build /home/pi/download/plplot/build/include /home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode-gen.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode-gen.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode-gen.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/include/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode-gen.dir/depend.internal".
+Scanning dependencies of target plhershey-unicode-gen
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f include/CMakeFiles/plhershey-unicode-gen.dir/build.make include/CMakeFiles/plhershey-unicode-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 24%] Building C object include/CMakeFiles/plhershey-unicode-gen.dir/__/fonts/plhershey-unicode-gen.c.o
+cd /home/pi/download/plplot/build/include && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H   -o CMakeFiles/plhershey-unicode-gen.dir/__/fonts/plhershey-unicode-gen.c.o   -c /home/pi/download/plplot/plplot-5.13.0/fonts/plhershey-unicode-gen.c
+[ 25%] Linking C executable plhershey-unicode-gen
+cd /home/pi/download/plplot/build/include && /usr/bin/cmake -E cmake_link_script CMakeFiles/plhershey-unicode-gen.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/plhershey-unicode-gen.dir/__/fonts/plhershey-unicode-gen.c.o  -o plhershey-unicode-gen 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 25%] Built target plhershey-unicode-gen
+make -f include/CMakeFiles/plhershey-unicode.h_built.dir/build.make include/CMakeFiles/plhershey-unicode.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/include /home/pi/download/plplot/build /home/pi/download/plplot/build/include /home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode.h_built.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode.h_built.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode.h_built.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/include/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode.h_built.dir/depend.internal".
+Scanning dependencies of target plhershey-unicode.h_built
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f include/CMakeFiles/plhershey-unicode.h_built.dir/build.make include/CMakeFiles/plhershey-unicode.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 27%] Generating plhershey-unicode.h
+cd /home/pi/download/plplot/build/include && ./plhershey-unicode-gen /home/pi/download/plplot/plplot-5.13.0/fonts/plhershey-unicode.csv /home/pi/download/plplot/build/include/plhershey-unicode.h
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 27%] Built target plhershey-unicode.h_built
+make -f src/CMakeFiles/plplot.dir/build.make src/CMakeFiles/plplot.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/src /home/pi/download/plplot/build /home/pi/download/plplot/build/src /home/pi/download/plplot/build/src/CMakeFiles/plplot.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/src/CMakeFiles/plplot.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/src/CMakeFiles/plplot.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/src/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/src/CMakeFiles/plplot.dir/depend.internal".
+Scanning dependencies of target plplot
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f src/CMakeFiles/plplot.dir/build.make src/CMakeFiles/plplot.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 27%] Building C object src/CMakeFiles/plplot.dir/pdfutils.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/pdfutils.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/pdfutils.c
+[ 28%] Building C object src/CMakeFiles/plplot.dir/plmem.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plmem.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plmem.c
+[ 30%] Building C object src/CMakeFiles/plplot.dir/plaffine.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plaffine.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plaffine.c
+[ 30%] Building C object src/CMakeFiles/plplot.dir/plarc.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plarc.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plarc.c
+[ 31%] Building C object src/CMakeFiles/plplot.dir/plargs.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plargs.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plargs.c
+[ 32%] Building C object src/CMakeFiles/plplot.dir/plbox.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plbox.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plbox.c
+[ 34%] Building C object src/CMakeFiles/plplot.dir/plcont.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plcont.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plcont.c
+[ 34%] Building C object src/CMakeFiles/plplot.dir/plcore.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC    -I/usr/include -o CMakeFiles/plplot.dir/plcore.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plcore.c
+[ 35%] Building C object src/CMakeFiles/plplot.dir/plctrl.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plctrl.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plctrl.c
+[ 37%] Building C object src/CMakeFiles/plplot.dir/plcvt.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plcvt.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plcvt.c
+[ 38%] Building C object src/CMakeFiles/plplot.dir/pldtik.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/pldtik.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/pldtik.c
+[ 38%] Building C object src/CMakeFiles/plplot.dir/plf2ops.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plf2ops.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plf2ops.c
+[ 40%] Building C object src/CMakeFiles/plplot.dir/plfill.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plfill.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plfill.c
+[ 41%] Building C object src/CMakeFiles/plplot.dir/plfreetype.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC    -I/usr/include/freetype2 -o CMakeFiles/plplot.dir/plfreetype.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plfreetype.c
+[ 42%] Building C object src/CMakeFiles/plplot.dir/plgradient.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plgradient.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plgradient.c
+[ 42%] Building C object src/CMakeFiles/plplot.dir/plhist.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plhist.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plhist.c
+[ 44%] Building C object src/CMakeFiles/plplot.dir/plimage.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plimage.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plimage.c
+[ 45%] Building C object src/CMakeFiles/plplot.dir/plline.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plline.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plline.c
+[ 45%] Building C object src/CMakeFiles/plplot.dir/plmetafile.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plmetafile.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plmetafile.c
+[ 47%] Building C object src/CMakeFiles/plplot.dir/plot3d.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plot3d.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plot3d.c
+[ 48%] Building C object src/CMakeFiles/plplot.dir/plpage.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plpage.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plpage.c
+[ 50%] Building C object src/CMakeFiles/plplot.dir/plsdef.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plsdef.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plsdef.c
+[ 50%] Building C object src/CMakeFiles/plplot.dir/plshade.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plshade.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plshade.c
+[ 51%] Building C object src/CMakeFiles/plplot.dir/plstdio.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plstdio.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plstdio.c
+[ 52%] Building C object src/CMakeFiles/plplot.dir/plstripc.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plstripc.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plstripc.c
+[ 54%] Building C object src/CMakeFiles/plplot.dir/plsym.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plsym.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plsym.c
+[ 54%] Building C object src/CMakeFiles/plplot.dir/pltick.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/pltick.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/pltick.c
+[ 55%] Building C object src/CMakeFiles/plplot.dir/plvpor.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plvpor.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plvpor.c
+[ 57%] Building C object src/CMakeFiles/plplot.dir/plwind.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plwind.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plwind.c
+[ 58%] Building C object src/CMakeFiles/plplot.dir/plbuf.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plbuf.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plbuf.c
+[ 58%] Building C object src/CMakeFiles/plplot.dir/plgridd.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plgridd.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plgridd.c
+[ 60%] Building C object src/CMakeFiles/plplot.dir/plvect.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plvect.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plvect.c
+[ 61%] Building C object src/CMakeFiles/plplot.dir/mt19937ar.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/mt19937ar.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/mt19937ar.c
+[ 62%] Building C object src/CMakeFiles/plplot.dir/pltime.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/pltime.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/pltime.c
+[ 62%] Building C object src/CMakeFiles/plplot.dir/pllegend.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/pllegend.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/pllegend.c
+[ 64%] Building C object src/CMakeFiles/plplot.dir/plmap.c.o
+cd /home/pi/download/plplot/build/src && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplot_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplot.dir/plmap.c.o   -c /home/pi/download/plplot/plplot-5.13.0/src/plmap.c
+[ 65%] Linking C shared library libplplot.so
+cd /home/pi/download/plplot/build/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/plplot.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libplplot.so.15 -o libplplot.so.15.0.0 CMakeFiles/plplot.dir/pdfutils.c.o CMakeFiles/plplot.dir/plmem.c.o CMakeFiles/plplot.dir/plaffine.c.o CMakeFiles/plplot.dir/plarc.c.o CMakeFiles/plplot.dir/plargs.c.o CMakeFiles/plplot.dir/plbox.c.o CMakeFiles/plplot.dir/plcont.c.o CMakeFiles/plplot.dir/plcore.c.o CMakeFiles/plplot.dir/plctrl.c.o CMakeFiles/plplot.dir/plcvt.c.o CMakeFiles/plplot.dir/pldtik.c.o CMakeFiles/plplot.dir/plf2ops.c.o CMakeFiles/plplot.dir/plfill.c.o CMakeFiles/plplot.dir/plfreetype.c.o CMakeFiles/plplot.dir/plgradient.c.o CMakeFiles/plplot.dir/plhist.c.o CMakeFiles/plplot.dir/plimage.c.o CMakeFiles/plplot.dir/plline.c.o CMakeFiles/plplot.dir/plmetafile.c.o CMakeFiles/plplot.dir/plot3d.c.o CMakeFiles/plplot.dir/plpage.c.o CMakeFiles/plplot.dir/plsdef.c.o CMakeFiles/plplot.dir/plshade.c.o CMakeFiles/plplot.dir/plstdio.c.o CMakeFiles/plplot.dir/plstripc.c.o CMakeFiles/plplot.dir/plsym.c.o CMakeFiles/plplot.dir/pltick.c.o CMakeFiles/plplot.dir/plvpor.c.o CMakeFiles/plplot.dir/plwind.c.o CMakeFiles/plplot.dir/plbuf.c.o CMakeFiles/plplot.dir/plgridd.c.o CMakeFiles/plplot.dir/plvect.c.o CMakeFiles/plplot.dir/mt19937ar.c.o CMakeFiles/plplot.dir/pltime.c.o CMakeFiles/plplot.dir/pllegend.c.o CMakeFiles/plplot.dir/plmap.c.o -Wl,-rpath,/home/pi/download/plplot/build/lib/csa:/home/pi/download/plplot/build/lib/nn:/home/pi/download/plplot/build/lib/qsastime: /usr/lib/arm-linux-gnueabihf/libltdl.so /usr/lib/arm-linux-gnueabihf/libm.so /usr/lib/arm-linux-gnueabihf/libfreetype.so ../lib/csa/libcsirocsa.so.0.0.1 ../lib/nn/libcsironn.so.0.0.2 ../lib/qsastime/libqsastime.so.0.0.1 
+cd /home/pi/download/plplot/build/src && /usr/bin/cmake -E cmake_symlink_library libplplot.so.15.0.0 libplplot.so.15 libplplot.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 65%] Built target plplot
+make -f bindings/c++/CMakeFiles/plplotcxx.dir/build.make bindings/c++/CMakeFiles/plplotcxx.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/bindings/c++ /home/pi/download/plplot/build /home/pi/download/plplot/build/bindings/c++ /home/pi/download/plplot/build/bindings/c++/CMakeFiles/plplotcxx.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/bindings/c++/CMakeFiles/plplotcxx.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/bindings/c++/CMakeFiles/plplotcxx.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/bindings/c++/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/bindings/c++/CMakeFiles/plplotcxx.dir/depend.internal".
+Scanning dependencies of target plplotcxx
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/c++/CMakeFiles/plplotcxx.dir/build.make bindings/c++/CMakeFiles/plplotcxx.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 65%] Building CXX object bindings/c++/CMakeFiles/plplotcxx.dir/plstream.cc.o
+cd /home/pi/download/plplot/build/bindings/c++ && /usr/bin/c++   -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplotcxx_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/plplotcxx.dir/plstream.cc.o -c /home/pi/download/plplot/plplot-5.13.0/bindings/c++/plstream.cc
+[ 67%] Linking CXX shared library libplplotcxx.so
+cd /home/pi/download/plplot/build/bindings/c++ && /usr/bin/cmake -E cmake_link_script CMakeFiles/plplotcxx.dir/link.txt --verbose=1
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libplplotcxx.so.13 -o libplplotcxx.so.13.0.0 CMakeFiles/plplotcxx.dir/plstream.cc.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../../src/libplplot.so.15.0.0 
+cd /home/pi/download/plplot/build/bindings/c++ && /usr/bin/cmake -E cmake_symlink_library libplplotcxx.so.13.0.0 libplplotcxx.so.13 libplplotcxx.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 67%] Built target plplotcxx
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/bindings/fortran /home/pi/download/plplot/build /home/pi/download/plplot/build/bindings/fortran /home/pi/download/plplot/build/bindings/fortran/CMakeFiles/plplotfortran.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/bindings/fortran/CMakeFiles/plplotfortran.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/bindings/fortran/CMakeFiles/plplotfortran.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/bindings/fortran/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/bindings/fortran/CMakeFiles/plplotfortran.dir/depend.internal".
+Scanning dependencies of target plplotfortran
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/requires
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+[ 68%] Building Fortran object bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/gfortran  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplotfortran_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include -I/home/pi/download/plplot/plplot-5.13.0/bindings/fortran -I/home/pi/download/plplot/build/bindings/fortran  -fPIC   -c /home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_small_modules.f90 -o CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_graphics bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_graphics.mod.stamp GNU
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_private_exposed bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_private_exposed.mod.stamp GNU
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_private_utilities bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_private_utilities.mod.stamp GNU
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_types bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_types.mod.stamp GNU
+/usr/bin/cmake -E touch bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o.provides.build
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+[ 68%] Building Fortran object bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.f90.o
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/gfortran  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplotfortran_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include -I/home/pi/download/plplot/plplot-5.13.0/bindings/fortran -I/home/pi/download/plplot/build/bindings/fortran  -fPIC   -c /home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90 -o CMakeFiles/plplotfortran.dir/plplot_double.f90.o
+included_plplot_real_interfaces.f90:109:35:
+
+Warning: Symbol ‘interface_plcont’ at (1) is marked PRIVATE but has been given the binding label ‘c_plcont’
+included_plplot_real_interfaces.f90:133:8:
+
+Warning: Symbol ‘interface_plf2evalr’ at (1) is marked PRIVATE but has been given the binding label ‘plf2evalr’
+included_plplot_real_interfaces.f90:145:36:
+
+Warning: Symbol ‘interface_plfcont’ at (1) is marked PRIVATE but has been given the binding label ‘plfcont’
+included_plplot_real_interfaces.f90:179:35:
+
+Warning: Symbol ‘interface_plfill’ at (1) is marked PRIVATE but has been given the binding label ‘c_plfill’
+included_plplot_real_interfaces.f90:189:36:
+
+Warning: Symbol ‘interface_plfvect’ at (1) is marked PRIVATE but has been given the binding label ‘plfvect’
+included_plplot_real_interfaces.f90:222:38:
+
+Warning: Symbol ‘interface_plimagefr’ at (1) is marked PRIVATE but has been given the binding label ‘c_plimagefr’
+included_plplot_real_interfaces.f90:247:43:
+
+Warning: Symbol ‘interface_plimagefr_null’ at (1) is marked PRIVATE but has been given the binding label ‘plimagefr_null’
+included_plplot_real_interfaces.f90:261:34:
+
+Warning: Symbol ‘interface_plmap’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmap’
+included_plplot_real_interfaces.f90:273:38:
+
+Warning: Symbol ‘interface_plmapfill’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapfill’
+included_plplot_real_interfaces.f90:287:38:
+
+Warning: Symbol ‘interface_plmapline’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapline’
+included_plplot_real_interfaces.f90:301:40:
+
+Warning: Symbol ‘interface_plmapstring’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapstring’
+included_plplot_real_interfaces.f90:315:37:
+
+Warning: Symbol ‘interface_plmaptex’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmaptex’
+included_plplot_real_interfaces.f90:328:40:
+
+Warning: Symbol ‘interface_plmeridians’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmeridians’
+included_plplot_real_interfaces.f90:339:36:
+
+Warning: Symbol ‘interface_plshade’ at (1) is marked PRIVATE but has been given the binding label ‘c_plshade’
+included_plplot_real_interfaces.f90:376:41:
+
+Warning: Symbol ‘interface_plshade_null’ at (1) is marked PRIVATE but has been given the binding label ‘plshade_null’
+included_plplot_real_interfaces.f90:402:37:
+
+Warning: Symbol ‘interface_plshades’ at (1) is marked PRIVATE but has been given the binding label ‘c_plshades’
+included_plplot_real_interfaces.f90:438:42:
+
+Warning: Symbol ‘interface_plshades_null’ at (1) is marked PRIVATE but has been given the binding label ‘plshades_null’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:60:41:
+
+         subroutine interface_plslabelfunc( proc, data ) bind(c, name = 'c_plslabelfunc' )
+                                         1
+Warning: Symbol ‘interface_plslabelfunc’ at (1) is marked PRIVATE but has been given the binding label ‘c_plslabelfunc’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:69:41:
+
+         subroutine interface_plstransform( proc, data ) bind(c, name = 'c_plstransform' )
+                                         1
+Warning: Symbol ‘interface_plstransform’ at (1) is marked PRIVATE but has been given the binding label ‘c_plstransform’
+included_plplot_real_interfaces.f90:463:34:
+
+Warning: Symbol ‘interface_pltr0’ at (1) is marked PRIVATE but has been given the binding label ‘pltr0’
+included_plplot_real_interfaces.f90:474:34:
+
+Warning: Symbol ‘interface_pltr1’ at (1) is marked PRIVATE but has been given the binding label ‘pltr1’
+included_plplot_real_interfaces.f90:485:35:
+
+Warning: Symbol ‘interface_pltr2f’ at (1) is marked PRIVATE but has been given the binding label ‘pltr2f’
+included_plplot_real_interfaces.f90:497:35:
+
+Warning: Symbol ‘interface_plvect’ at (1) is marked PRIVATE but has been given the binding label ‘c_plvect’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:202:27:
+
+     subroutine pllabelerf2c( axis, value, label, length, data ) bind(c, name = 'plplot_double_private_pllabelerf2c')
+                           1
+Warning: Symbol ‘pllabelerf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_double_private_pllabelerf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:223:32:
+
+     subroutine pllabelerf2c_data( axis, value, label, length, data ) bind(c, name = 'plplot_double_private_pllabelerf2c_data')
+                                1
+Warning: Symbol ‘pllabelerf2c_data’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_double_private_pllabelerf2c_data’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:186:27:
+
+     subroutine plmapformf2c( n, x, y ) bind(c, name = 'plplot_double_private_plmapformf2c')
+                           1
+Warning: Symbol ‘plmapformf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_double_private_plmapformf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:239:29:
+
+     subroutine pltransformf2c( x, y, tx, ty, data ) bind(c, name = 'plplot_double_private_pltransformf2c')
+                             1
+Warning: Symbol ‘pltransformf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_double_private_pltransformf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_double.f90:256:34:
+
+     subroutine pltransformf2c_data( x, y, tx, ty, data ) bind(c, name = 'plplot_double_private_pltransformf2c_data')
+                                  1
+Warning: Symbol ‘pltransformf2c_data’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_double_private_pltransformf2c_data’
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_double bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.mod.stamp GNU
+/usr/bin/cmake -E touch bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.f90.o.provides.build
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+[ 70%] Building Fortran object bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.f90.o
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/gfortran  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplotfortran_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include -I/home/pi/download/plplot/plplot-5.13.0/bindings/fortran -I/home/pi/download/plplot/build/bindings/fortran  -fPIC   -c /home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90 -o CMakeFiles/plplotfortran.dir/plplot_single.f90.o
+included_plplot_real_interfaces.f90:109:35:
+
+Warning: Symbol ‘interface_plcont’ at (1) is marked PRIVATE but has been given the binding label ‘c_plcont’
+included_plplot_real_interfaces.f90:133:8:
+
+Warning: Symbol ‘interface_plf2evalr’ at (1) is marked PRIVATE but has been given the binding label ‘plf2evalr’
+included_plplot_real_interfaces.f90:145:36:
+
+Warning: Symbol ‘interface_plfcont’ at (1) is marked PRIVATE but has been given the binding label ‘plfcont’
+included_plplot_real_interfaces.f90:179:35:
+
+Warning: Symbol ‘interface_plfill’ at (1) is marked PRIVATE but has been given the binding label ‘c_plfill’
+included_plplot_real_interfaces.f90:189:36:
+
+Warning: Symbol ‘interface_plfvect’ at (1) is marked PRIVATE but has been given the binding label ‘plfvect’
+included_plplot_real_interfaces.f90:222:38:
+
+Warning: Symbol ‘interface_plimagefr’ at (1) is marked PRIVATE but has been given the binding label ‘c_plimagefr’
+included_plplot_real_interfaces.f90:247:43:
+
+Warning: Symbol ‘interface_plimagefr_null’ at (1) is marked PRIVATE but has been given the binding label ‘plimagefr_null’
+included_plplot_real_interfaces.f90:261:34:
+
+Warning: Symbol ‘interface_plmap’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmap’
+included_plplot_real_interfaces.f90:273:38:
+
+Warning: Symbol ‘interface_plmapfill’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapfill’
+included_plplot_real_interfaces.f90:287:38:
+
+Warning: Symbol ‘interface_plmapline’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapline’
+included_plplot_real_interfaces.f90:301:40:
+
+Warning: Symbol ‘interface_plmapstring’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmapstring’
+included_plplot_real_interfaces.f90:315:37:
+
+Warning: Symbol ‘interface_plmaptex’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmaptex’
+included_plplot_real_interfaces.f90:328:40:
+
+Warning: Symbol ‘interface_plmeridians’ at (1) is marked PRIVATE but has been given the binding label ‘c_plmeridians’
+included_plplot_real_interfaces.f90:339:36:
+
+Warning: Symbol ‘interface_plshade’ at (1) is marked PRIVATE but has been given the binding label ‘c_plshade’
+included_plplot_real_interfaces.f90:376:41:
+
+Warning: Symbol ‘interface_plshade_null’ at (1) is marked PRIVATE but has been given the binding label ‘plshade_null’
+included_plplot_real_interfaces.f90:402:37:
+
+Warning: Symbol ‘interface_plshades’ at (1) is marked PRIVATE but has been given the binding label ‘c_plshades’
+included_plplot_real_interfaces.f90:438:42:
+
+Warning: Symbol ‘interface_plshades_null’ at (1) is marked PRIVATE but has been given the binding label ‘plshades_null’
+included_plplot_real_interfaces.f90:463:34:
+
+Warning: Symbol ‘interface_pltr0’ at (1) is marked PRIVATE but has been given the binding label ‘pltr0’
+included_plplot_real_interfaces.f90:474:34:
+
+Warning: Symbol ‘interface_pltr1’ at (1) is marked PRIVATE but has been given the binding label ‘pltr1’
+included_plplot_real_interfaces.f90:485:35:
+
+Warning: Symbol ‘interface_pltr2f’ at (1) is marked PRIVATE but has been given the binding label ‘pltr2f’
+included_plplot_real_interfaces.f90:497:35:
+
+Warning: Symbol ‘interface_plvect’ at (1) is marked PRIVATE but has been given the binding label ‘c_plvect’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90:65:27:
+
+     subroutine pllabelerf2c( axis, value, label, length, data ) bind(c, name = 'plplot_single_private_pllabelerf2c')
+                           1
+Warning: Symbol ‘pllabelerf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_single_private_pllabelerf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90:86:32:
+
+     subroutine pllabelerf2c_data( axis, value, label, length, data ) bind(c, name = 'plplot_single_private_pllabelerf2c_data')
+                                1
+Warning: Symbol ‘pllabelerf2c_data’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_single_private_pllabelerf2c_data’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90:49:27:
+
+     subroutine plmapformf2c( n, x, y ) bind(c, name = 'plplot_single_private_plmapformf2c')
+                           1
+Warning: Symbol ‘plmapformf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_single_private_plmapformf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90:102:29:
+
+     subroutine pltransformf2c( x, y, tx, ty, data ) bind(c, name = 'plplot_single_private_pltransformf2c')
+                             1
+Warning: Symbol ‘pltransformf2c’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_single_private_pltransformf2c’
+/home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot_single.f90:119:34:
+
+     subroutine pltransformf2c_data( x, y, tx, ty, data ) bind(c, name = 'plplot_single_private_pltransformf2c_data')
+                                  1
+Warning: Symbol ‘pltransformf2c_data’ at (1) is marked PRIVATE but has been given the binding label ‘plplot_single_private_pltransformf2c_data’
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot_single bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.mod.stamp GNU
+/usr/bin/cmake -E touch bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.f90.o.provides.build
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 71%] Building Fortran object bindings/fortran/CMakeFiles/plplotfortran.dir/plplot.f90.o
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/gfortran  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dplplotfortran_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include -I/home/pi/download/plplot/plplot-5.13.0/bindings/fortran -I/home/pi/download/plplot/build/bindings/fortran  -fPIC   -c /home/pi/download/plplot/plplot-5.13.0/bindings/fortran/plplot.f90 -o CMakeFiles/plplotfortran.dir/plplot.f90.o
+/usr/bin/cmake -E cmake_copy_f90_mod bindings/fortran/plplot bindings/fortran/CMakeFiles/plplotfortran.dir/plplot.mod.stamp GNU
+/usr/bin/cmake -E touch bindings/fortran/CMakeFiles/plplotfortran.dir/plplot.f90.o.provides.build
+[ 72%] Linking Fortran shared library libplplotfortran.so
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/cmake -E cmake_link_script CMakeFiles/plplotfortran.dir/link.txt --verbose=1
+/usr/bin/gfortran  -fPIC   -shared -Wl,-soname,libplplotfortran.so.0 -o libplplotfortran.so.0.0.0 CMakeFiles/plplotfortran.dir/plplot.f90.o CMakeFiles/plplotfortran.dir/plplot_single.f90.o CMakeFiles/plplotfortran.dir/plplot_double.f90.o CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../../src/libplplot.so.15.0.0 
+cd /home/pi/download/plplot/build/bindings/fortran && /usr/bin/cmake -E cmake_symlink_library libplplotfortran.so.0.0.0 libplplotfortran.so.0 libplplotfortran.so
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 72%] Built target plplotfortran
+make -f drivers/CMakeFiles/ps.dir/build.make drivers/CMakeFiles/ps.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/ps.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/ps.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/ps.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/ps.dir/depend.internal".
+Scanning dependencies of target ps
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/ps.dir/build.make drivers/CMakeFiles/ps.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 74%] Building C object drivers/CMakeFiles/ps.dir/ps.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dps_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/ps.dir/ps.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/ps.c
+[ 75%] Linking C shared module ps.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/ps.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o ps.so CMakeFiles/ps.dir/ps.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 75%] Built target ps
+make -f drivers/CMakeFiles/test-drv-info.dir/build.make drivers/CMakeFiles/test-drv-info.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test-drv-info.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test-drv-info.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test-drv-info.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test-drv-info.dir/depend.internal".
+Scanning dependencies of target test-drv-info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test-drv-info.dir/build.make drivers/CMakeFiles/test-drv-info.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 75%] Building C object drivers/CMakeFiles/test-drv-info.dir/test-drv-info.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include   -I/usr/include -o CMakeFiles/test-drv-info.dir/test-drv-info.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/test-drv-info.c
+[ 77%] Linking C executable test-drv-info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-drv-info.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/test-drv-info.dir/test-drv-info.c.o  -o test-drv-info -Wl,-rpath,/home/pi/download/plplot/build/drivers:/home/pi/download/plplot/build/src:/home/pi/download/plplot/build/lib/csa:/home/pi/download/plplot/build/lib/nn:/home/pi/download/plplot/build/lib/qsastime ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libltdl.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 77%] Built target test-drv-info
+make -f drivers/CMakeFiles/test_ps_dyndriver.dir/build.make drivers/CMakeFiles/test_ps_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_ps_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_ps_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_ps_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_ps_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_ps_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_ps_dyndriver.dir/build.make drivers/CMakeFiles/test_ps_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 77%] Generating test_dyndrivers_dir/ps.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info ps > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/ps.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/ps.driver_info /home/pi/download/plplot/build/drivers/ps.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 77%] Built target test_ps_dyndriver
+make -f drivers/CMakeFiles/xwin.dir/build.make drivers/CMakeFiles/xwin.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/xwin.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/xwin.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/xwin.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/xwin.dir/depend.internal".
+Scanning dependencies of target xwin
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/xwin.dir/build.make drivers/CMakeFiles/xwin.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 78%] Building C object drivers/CMakeFiles/xwin.dir/xwin.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dxwin_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -I/usr/include -o CMakeFiles/xwin.dir/xwin.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/xwin.c
+[ 80%] Linking C shared module xwin.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/xwin.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o xwin.so CMakeFiles/xwin.dir/xwin.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so /usr/lib/arm-linux-gnueabihf/libSM.so /usr/lib/arm-linux-gnueabihf/libICE.so /usr/lib/arm-linux-gnueabihf/libX11.so /usr/lib/arm-linux-gnueabihf/libXext.so -lpthread 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 80%] Built target xwin
+make -f drivers/CMakeFiles/test_xwin_dyndriver.dir/build.make drivers/CMakeFiles/test_xwin_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_xwin_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xwin_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xwin_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xwin_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_xwin_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_xwin_dyndriver.dir/build.make drivers/CMakeFiles/test_xwin_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 81%] Generating test_dyndrivers_dir/xwin.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info xwin > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/xwin.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/xwin.driver_info /home/pi/download/plplot/build/drivers/xwin.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 81%] Built target test_xwin_dyndriver
+make -f drivers/CMakeFiles/mem.dir/build.make drivers/CMakeFiles/mem.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/mem.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/mem.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/mem.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/mem.dir/depend.internal".
+Scanning dependencies of target mem
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/mem.dir/build.make drivers/CMakeFiles/mem.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 82%] Building C object drivers/CMakeFiles/mem.dir/mem.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dmem_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/mem.dir/mem.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/mem.c
+[ 84%] Linking C shared module mem.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/mem.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o mem.so CMakeFiles/mem.dir/mem.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 84%] Built target mem
+make -f drivers/CMakeFiles/test_mem_dyndriver.dir/build.make drivers/CMakeFiles/test_mem_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_mem_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_mem_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_mem_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_mem_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_mem_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_mem_dyndriver.dir/build.make drivers/CMakeFiles/test_mem_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 85%] Generating test_dyndrivers_dir/mem.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info mem > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/mem.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/mem.driver_info /home/pi/download/plplot/build/drivers/mem.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 85%] Built target test_mem_dyndriver
+make -f drivers/CMakeFiles/xfig.dir/build.make drivers/CMakeFiles/xfig.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/xfig.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/xfig.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/xfig.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/xfig.dir/depend.internal".
+Scanning dependencies of target xfig
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/xfig.dir/build.make drivers/CMakeFiles/xfig.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 85%] Building C object drivers/CMakeFiles/xfig.dir/xfig.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dxfig_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/xfig.dir/xfig.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/xfig.c
+[ 87%] Linking C shared module xfig.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/xfig.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o xfig.so CMakeFiles/xfig.dir/xfig.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 87%] Built target xfig
+make -f drivers/CMakeFiles/test_xfig_dyndriver.dir/build.make drivers/CMakeFiles/test_xfig_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_xfig_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xfig_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xfig_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_xfig_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_xfig_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_xfig_dyndriver.dir/build.make drivers/CMakeFiles/test_xfig_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 88%] Generating test_dyndrivers_dir/xfig.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info xfig > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/xfig.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/xfig.driver_info /home/pi/download/plplot/build/drivers/xfig.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 88%] Built target test_xfig_dyndriver
+make -f drivers/CMakeFiles/null.dir/build.make drivers/CMakeFiles/null.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/null.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/null.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/null.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/null.dir/depend.internal".
+Scanning dependencies of target null
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/null.dir/build.make drivers/CMakeFiles/null.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 90%] Building C object drivers/CMakeFiles/null.dir/null.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dnull_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/null.dir/null.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/null.c
+[ 90%] Linking C shared module null.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/null.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o null.so CMakeFiles/null.dir/null.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 90%] Built target null
+make -f drivers/CMakeFiles/test_null_dyndriver.dir/build.make drivers/CMakeFiles/test_null_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_null_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_null_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_null_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_null_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_null_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_null_dyndriver.dir/build.make drivers/CMakeFiles/test_null_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 91%] Generating test_dyndrivers_dir/null.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info null > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/null.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/null.driver_info /home/pi/download/plplot/build/drivers/null.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 91%] Built target test_null_dyndriver
+make -f drivers/CMakeFiles/svg.dir/build.make drivers/CMakeFiles/svg.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/svg.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/svg.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/svg.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/svg.dir/depend.internal".
+Scanning dependencies of target svg
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/svg.dir/build.make drivers/CMakeFiles/svg.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 92%] Building C object drivers/CMakeFiles/svg.dir/svg.c.o
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -Dsvg_EXPORTS -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/plplot-5.13.0/lib/nistcd -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include  -fPIC   -o CMakeFiles/svg.dir/svg.c.o   -c /home/pi/download/plplot/plplot-5.13.0/drivers/svg.c
+[ 92%] Linking C shared module svg.so
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E cmake_link_script CMakeFiles/svg.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC   -shared  -o svg.so CMakeFiles/svg.dir/svg.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 92%] Built target svg
+make -f drivers/CMakeFiles/test_svg_dyndriver.dir/build.make drivers/CMakeFiles/test_svg_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_svg_dyndriver.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_svg_dyndriver.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_svg_dyndriver.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_svg_dyndriver.dir/depend.internal".
+Scanning dependencies of target test_svg_dyndriver
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_svg_dyndriver.dir/build.make drivers/CMakeFiles/test_svg_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 94%] Generating test_dyndrivers_dir/svg.driver_info
+cd /home/pi/download/plplot/build/drivers && ./test-drv-info svg > /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/svg.driver_info
+cd /home/pi/download/plplot/build/drivers && /usr/bin/cmake -E compare_files /home/pi/download/plplot/build/drivers/test_dyndrivers_dir/svg.driver_info /home/pi/download/plplot/build/drivers/svg.driver_info
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 94%] Built target test_svg_dyndriver
+make -f drivers/CMakeFiles/test_dyndrivers.dir/build.make drivers/CMakeFiles/test_dyndrivers.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_dyndrivers.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/test_dyndrivers.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_dyndrivers.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/drivers/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/drivers/CMakeFiles/test_dyndrivers.dir/depend.internal".
+Scanning dependencies of target test_dyndrivers
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_dyndrivers.dir/build.make drivers/CMakeFiles/test_dyndrivers.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_dyndrivers.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 94%] Built target test_dyndrivers
+make -f utils/CMakeFiles/pltek.dir/build.make utils/CMakeFiles/pltek.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/utils /home/pi/download/plplot/build /home/pi/download/plplot/build/utils /home/pi/download/plplot/build/utils/CMakeFiles/pltek.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/utils/CMakeFiles/pltek.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/utils/CMakeFiles/pltek.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/utils/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/utils/CMakeFiles/pltek.dir/depend.internal".
+Scanning dependencies of target pltek
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f utils/CMakeFiles/pltek.dir/build.make utils/CMakeFiles/pltek.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 95%] Building C object utils/CMakeFiles/pltek.dir/pltek.c.o
+cd /home/pi/download/plplot/build/utils && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -DUSINGDLL -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include   -o CMakeFiles/pltek.dir/pltek.c.o   -c /home/pi/download/plplot/plplot-5.13.0/utils/pltek.c
+[ 95%] Linking C executable pltek
+cd /home/pi/download/plplot/build/utils && /usr/bin/cmake -E cmake_link_script CMakeFiles/pltek.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/pltek.dir/pltek.c.o  -o pltek -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 95%] Built target pltek
+make -f utils/CMakeFiles/parity_bit_check.dir/build.make utils/CMakeFiles/parity_bit_check.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/utils /home/pi/download/plplot/build /home/pi/download/plplot/build/utils /home/pi/download/plplot/build/utils/CMakeFiles/parity_bit_check.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/utils/CMakeFiles/parity_bit_check.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/utils/CMakeFiles/parity_bit_check.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/utils/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/utils/CMakeFiles/parity_bit_check.dir/depend.internal".
+Scanning dependencies of target parity_bit_check
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f utils/CMakeFiles/parity_bit_check.dir/build.make utils/CMakeFiles/parity_bit_check.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[ 97%] Building C object utils/CMakeFiles/parity_bit_check.dir/parity_bit_check.c.o
+cd /home/pi/download/plplot/build/utils && /usr/bin/cc  -DPLPLOT_HAVE_CONFIG_H -I/home/pi/download/plplot/plplot-5.13.0/include -I/home/pi/download/plplot/plplot-5.13.0/lib/qsastime -I/home/pi/download/plplot/build -I/home/pi/download/plplot/build/include   -o CMakeFiles/parity_bit_check.dir/parity_bit_check.c.o   -c /home/pi/download/plplot/plplot-5.13.0/utils/parity_bit_check.c
+[ 98%] Linking C executable parity_bit_check
+cd /home/pi/download/plplot/build/utils && /usr/bin/cmake -E cmake_link_script CMakeFiles/parity_bit_check.dir/link.txt --verbose=1
+/usr/bin/cc     CMakeFiles/parity_bit_check.dir/parity_bit_check.c.o  -o parity_bit_check 
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 98%] Built target parity_bit_check
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/examples/fortran /home/pi/download/plplot/build /home/pi/download/plplot/build/examples/fortran /home/pi/download/plplot/build/examples/fortran/CMakeFiles/plfortrandemolib.dir/DependInfo.cmake --color=
+Dependee "/home/pi/download/plplot/build/examples/fortran/CMakeFiles/plfortrandemolib.dir/DependInfo.cmake" is newer than depender "/home/pi/download/plplot/build/examples/fortran/CMakeFiles/plfortrandemolib.dir/depend.internal".
+Dependee "/home/pi/download/plplot/build/examples/fortran/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/pi/download/plplot/build/examples/fortran/CMakeFiles/plfortrandemolib.dir/depend.internal".
+Scanning dependencies of target plfortrandemolib
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/requires
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'examples/fortran/CMakeFiles/plfortrandemolib.dir/requires'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+[100%] Building Fortran object examples/fortran/CMakeFiles/plfortrandemolib.dir/plfortrandemolib.f90.o
+cd /home/pi/download/plplot/build/examples/fortran && /usr/bin/gfortran  -DPLPLOT_HAVE_CONFIG_H -I/home/pi/download/plplot/build/bindings/fortran -I/home/pi/download/plplot/build/examples/fortran   -c /home/pi/download/plplot/plplot-5.13.0/examples/fortran/plfortrandemolib.f90 -o CMakeFiles/plfortrandemolib.dir/plfortrandemolib.f90.o
+/usr/bin/cmake -E cmake_copy_f90_mod examples/fortran/plfortrandemolib examples/fortran/CMakeFiles/plfortrandemolib.dir/plfortrandemolib.mod.stamp GNU
+/usr/bin/cmake -E touch examples/fortran/CMakeFiles/plfortrandemolib.dir/plfortrandemolib.f90.o.provides.build
+[100%] Linking Fortran static library libplfortrandemolib.a
+cd /home/pi/download/plplot/build/examples/fortran && /usr/bin/cmake -P CMakeFiles/plfortrandemolib.dir/cmake_clean_target.cmake
+cd /home/pi/download/plplot/build/examples/fortran && /usr/bin/cmake -E cmake_link_script CMakeFiles/plfortrandemolib.dir/link.txt --verbose=1
+/usr/bin/ar qc libplfortrandemolib.a  CMakeFiles/plfortrandemolib.dir/plfortrandemolib.f90.o
+/usr/bin/ranlib libplfortrandemolib.a
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[100%] Built target plfortrandemolib
+make[1]: Leaving directory '/home/pi/download/plplot/build'
+/usr/bin/cmake -E cmake_progress_start /home/pi/download/plplot/build/CMakeFiles 0

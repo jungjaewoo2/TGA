@@ -1,0 +1,920 @@
+1999-12-05  Ian R. Searle  <ians@localhost.localdomain>
+
+	* print.c (SPrintf): Fix ref counting problem in sprintf()
+
+1999-05-05    <ians@WALLACE>
+
+	* util.c (get_progname): New function.
+
+1999-04-28  Ian Searle  <ians@espresso.org>
+
+	* util.c (array_union): GC_FREE (tmp) to plug memory leak.
+
+	* rlab.y: removed .+ and .- operators.
+
+	* scan.l: removed .+ and .- operators.
+
+1999-04-24  Ian Searle  <ians@espresso.org>
+
+	* init.c (init_symbol_table): Add definition and initialization of
+	_rlab_config list.
+
+1998-12-26  Ian Searle  <ians@espresso.org>
+
+	* msrf1.c (msr_Sum_BF): Fixed goof in temporary sparse matrix
+	access (thanks Vinay).
+
+	* mdcf2.c (mdc_SolveEq_GE): Fixed incorrect declaration and use of
+	work (thanks to TSY).
+
+1998-01-11  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mdrf1.c (mdr_Ldexp_BF): Handle conditions where second argument
+	is a scalar.
+
+1998-01-04  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (get_file_ds_name): New function.
+
+1997-12-05  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* odei.c: Change stime variable to mstime to avoid conflict with
+	stime declared in some platform header files.
+
+1997-11-26  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mathl.c (init_inf_nan): New function.
+
+1997-11-15  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (WriteM): Write 1 for sucess on exit.
+
+1997-11-08  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rdl.c (DLopen): More mods for HP port.
+
+	* main.c (rpclose): Additions for win32 port.
+
+	* fpe.c (setup_fpe_handling): Add win32 stuff.
+
+	* mds.c (mds_MatrixAssign): Better error checking of indices.
+	(mds_MatrixAssignR): Same.
+	(mds_MatrixAssignC): Same.
+	(mds_VectorAssign): Same.
+
+	* mdc.c (mdc_MatrixAssignR): Better error checking of indices.
+	(mdc_MatrixAssign): Same.
+	(mdc_MatrixAssignC): Same.
+
+	* mdr.c (mdr_VectorAssign): Better error checking of indices.
+	(mdr_MatrixAssign): Same.
+	(mdr_MatrixAssignR): Same.
+	(mdr_MatrixAssignC): Same.
+
+	* mdc.c (mdc_VectorAssign): Better error checking of indices.
+
+1997-10-29  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mdc.c (mdc_WriteGeneric): New function.
+
+	* mds.c (mds_WriteGeneric): New function.
+
+1997-10-19  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* init.c: Added TSY plot functions.
+
+1997-10-12  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* class.c (class_matrix_string): New function.
+
+1997-10-11  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (Fread): Make fread() return NaN when EOF, or error is
+	encountered. 
+
+Sun Sep 21 09:23:03 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mscf1.c (msc_Multiply): Nasty bug in selecting the size of the
+	matrix product result.
+
+	* msrf1.c (msr_Multiply): Nasty bug in selecting the size of the
+	matrix product result.
+
+Sat Sep 20 17:45:34 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* msc.c (msc_GetEl): Check indices against matrix bounds.
+	(msc_Ne): New function.
+	(mdc_msc_Ne): New function.
+	(msc_mdc_Ne): New function.
+
+	* msr.c (msr_GetEl): Check indices against matrix bounds.
+
+Tue Sep  2 22:40:37 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* misc/gnuplot.r (psplot): Adjust default value of mode.
+	(epsplot): Same as above.
+
+Mon Sep  1 17:09:35 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mathl.c: Removed #define for R_INF.
+
+	* configure.in: Added F77 configuration stuff for IRIX64.
+
+	* main.c (init_misc): We now compute R_NAN and R_INF.
+
+Sat Aug 30 08:35:03 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* msr.c: Removed usage of raise(), and replaced with fprintf(),
+	rerror() use.
+	(msr_Check): Removed usage of raise, and replaced with fprintf(),
+	and rerror() usage. Also put msr_Check back in use.
+
+Fri Aug 22 14:49:18 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (Fread): Return empty matrix on fread error.
+
+Tue Aug  5 17:48:12 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (Fread): Add "unsigned short int" to types for
+	fread(). 
+
+Tue Jul 29 21:51:23 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* misc/plplot.r (list_scales): Fix stupid typo/error using
+	error(). Also, check for empty matrices in list_scales, and ignore
+	empty matrices.
+
+Tue Jul 22 12:31:50 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* fpe.c (setup_fpe_handling): Don't trap overflow.
+
+Sun Jul  6 11:34:18 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* listnode.c (listNode_DestroyLoner): Check for non-zero ent. Use
+	the ent pointer value as a clue to whether the variable has
+	already been destroyed.
+
+Sat Jul  5 11:57:10 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (inc): Fixed problem (was ignoring reference counts).
+	(dec): Same as inc.
+
+Fri Jul  4 16:02:30 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* btree.c (btree_add_node): Added call to listNode_SetOwned. Don't
+	like to do this here, but this is probably the most robust place
+	to do it.
+
+Mon Jun 30 23:01:26 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* listnode.c (listNode_DestroyLoner): New function.
+
+Sun Jun 29 19:43:20 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* bltin3.c: Don't return entities containing DOUBLEs.
+
+	* bltin.c: Don't return entities containing DOUBLEs.
+
+	* rfileio.c: Don't return entities containing DOUBLEs.
+
+	* print.c: Don't return entities containing DOUBLEs.
+
+Tue Jun 24 22:50:30 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* getline.c (Getline): Make getline() return matrix-dense-real
+	instead of doubles.
+
+Mon Jun 16 08:17:26 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mdcf2.c (mdc_EigG_SYM): New function.
+
+	* toolbox/printmat.r (printmat): Switch int2str to num2str.
+
+Sun Jun 15 10:31:32 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* bltin1.c (Sleep): New function.
+
+	* configure.in: Add yet another platform variant. This time AIX 4.x
+	
+	* main.c (main): New main() to handle GC_stackbottom.
+
+	* test.r: Added test for lyap and sylv.
+
+	* mdcf2.c (mdc_Sylv): New function.
+
+	* mdrf2.c (mdr_Sylv): New function.
+
+	* bltin2.c (Sylv): New function.
+
+	* mdc.h (MDC_nrow): New definitions.
+
+Sat May 31 16:33:47 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* print.c (do_printf): Add capability to handle X and x formats
+	(hex conversions).
+
+Wed May 28 21:57:13 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* misc/gnuplot.r: Changes to make work with the latest version of
+	gnuplot. Mostly involved with axes usage.
+
+Thu May 22 10:23:04 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mdrf1.c (mdr_CreateNan): New function.
+
+Sun May 11 08:04:52 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (ReadB): Fix read() so that if the the second argument
+	is a list, new members are added or overwritten. If the 2nd arg is
+	not a list, then behave as before.
+
+Thu May  8 20:39:25 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rlab.y: Only generate line number op-codes after expressions. 
+
+	* code.c (find_lineno): Look forward for line numbers.
+
+Wed May  7 15:03:47 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* bltin1.c (Strtol): New function.
+
+	* mdsf1.c (mds_Strtol_BF): New function.
+
+Tue May  6 15:50:28 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rlab.y: Remove redundant (hopefully) addition of line-number
+	op-codes. 
+
+	* mscf2.c (msc_SpSolve): Same as below...
+
+	* msrf2.c (msr_SpSolve): Added extra calls to StatInit() to make
+	things behave properly.
+
+Mon May  5 21:25:13 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (olist_assign): Decrement the rhs if it is an entity
+	coming off of the stack.
+
+Sun May  4 19:45:46 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (inc): Fix it so ++ is really a postfix operator.
+	(dec): Save as inc().
+
+Sun Apr 27 10:43:08 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (execute): Changed the way for-loop lists are
+	tracked. Instead of doing them with a static list, use a pointer
+	in the funtion frame struct. This allows us to return out of
+	nested loops, etc without hosing up the for-loop stack.
+	(ret_from_func): Add in the code to walk the singly-linked list,
+	and free up the ForLoop structs.
+
+Fri Apr 18 10:01:16 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (list_el_create): Hopefully last fix in list-entity mess.
+
+Sun Apr 13 12:31:19 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* Makefile.in (mscf2.o): Add special rule for this, so we can pick
+	up the SuperLU include directory if necessary.
+
+Sat Apr 12 22:04:58 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* mdrf2.c (mdr_PNorm): Add ability to deal with Inf() p-value.
+
+Fri Apr 11 17:38:16 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (ret_from_func): Add code to clean up a function's local
+	and argument variable's list-entities.
+	(function_default_return): More of the same... clean up local
+	variables and argument's list-entities (if they exist).
+
+Tue Apr  8 09:16:47 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* bltin.c (EntInfo): Check for UNDEF argument, handle properly.
+
+Sat Apr  5 14:23:57 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* rfileio.c (ReadM): Don't close file after reading, just in case
+	there is more.
+
+Tue Apr  1 21:10:23 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* code.c (assign): Delete the LHS listent if it exists.
+
+	* bltin1.c (Clear): Also clear the listentity...
+
+	* msr.c (msr_PatternUnion): Handle special cases where array
+	unions might be the null-set.
+
+Sun Mar 30 22:37:28 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* class.c (class_sizeof): Fix longstanding sizeof() bug.
+
+Sat Mar 29 13:49:00 1997  Red Hat Linux User  <ians@demitasse.ds.boeing.com>
+
+	* New msrf2.c, mscf2.c from TSY to fix some bugs in
+	factor/backsub, and improve performance buy making use of A'*x=b
+	solution capability of SuperLU.
+
+	* code.c (list_member): Still trying to get list reference counts
+	correct. 
+
+Thu Mar 27 16:09:38 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* code.c (userf): Change in list-argument variable handling.
+
+Wed Mar 26 17:29:51 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* Major changes to the design of object-lists. The lists that can
+	hang off of any object.
+
+	* btree.c (btree_copy): Fix this so that is copies all sub-btree
+	entities. 
+
+	* code.c (assign): Copy the list/btree structure during an
+	assign. 
+
+Tue Mar 25 21:51:16 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* diss.c (diss_assemble): Fix list_assign diss-assembling.
+
+Sun Mar 23 12:37:44 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* test.r: Modify sparse-complex-matrix-multiply to account for
+	possible roundoff error inherent in complex operations.
+
+
+Thu Mar  6 17:11:37 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* msrf1.c (indexswap): New function.
+	(insertsort): New function.
+	(srqsort): New function.
+	(mdr_real_spconvert): Modified to use new functions for sorting
+	input argument. Thus avoiding the double transpose operation, and
+	saving considerable space.
+	(mdr_complex_spconvert): Same as above.
+
+Sat Mar  1 20:11:49 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* msrf2.c (SpFactor_BF): New function.
+
+	* main.c (print_greeting): Update copyright notice.
+
+Sun Feb 23 10:31:09 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* msr.c (msr_PatternUnion): New function.
+
+	* util.c (array_union): New function.
+
+	* sort.c (i_qsort): New function.
+
+	* test.r: Beef up sparse complex basic tests.
+
+	* msc.c (msc_Eq): New function.
+
+Sat Feb 22 08:53:38 1997  Ian Searle  <ians@demitasse.ds.boeing.com>
+
+	* msr.c (msr_WriteSparseBinary): New function.
+
+	* rfileio.c (class_io_init): Add msc_WriteGeneric to array.
+
+Sun Feb  9 11:55:33 1997  Ian Searle  <ians@localhost>
+
+	* msrf2.c (msr_super_fact): Added second parameter to StatInit()
+	calls. 
+
+	* mscf2.c (msc_Factor): Make sure to use msc_NcTranspose.
+	(msc_super_fact): Added second parameter to StatInit() calls (new
+	with SuperLU-1.0).
+
+	* toolbox/spy.r (spy): Convert sparse-complex to sparse-real, if
+	necessary. 
+
+	* msrf1.c (msr_Min1): New function.
+
+	* mscf1.c (msc_Min1): New function.
+
+	* test.r: Add tests for sparse matrix max().
+
+	* mscf1.c (msc_Max1): New Function.
+
+	* msrf1.c (msr_Max1): New function.
+
+Sat Feb  8 18:06:30 1997  Ian Searle  <ians@localhost>
+
+	* msrf2.c (super_fact): Fix calling arguments for superlu-1.0.
+
+Sun Feb  2 22:07:41 1997  Ian Searle  <ians@localhost>
+
+	* test.r: Add tests for sparse norm().
+
+	* mscf1.c (msc_Detect_Inf): New function.
+	(msc_Detect_NaN): New function.
+
+	* msrf1.c (msr_Norm): Clean ups...
+
+Tue Jan 21 23:12:20 1997  Ian Searle  <ians@localhost>
+
+	* msrf2.c (SpSolve_BF): New function.
+
+Sun Jan 19 21:11:07 1997  Ian Searle  <ians@localhost>
+
+	* msrf1.c (msr_Sum_BF): New function.
+	(msr_Norm): New function.
+
+	* mscf1.c (msc_Sum_BF): New function.
+
+Sat Jan 18 09:50:14 1997  Ian Searle  <ians@espresso.org>
+
+	* doc/help-source/ode.sgml (elapse): Fixed documentation (example)
+	for ode().
+
+Fri Nov 29 13:40:34 1996  Ian Searle  <ians@demitasse>
+
+	* configure.in: Made changes to handle newer Plplot snapshots that
+	use libMatrix.a. Also added stuff for SuperLU library usage.
+
+Sun Nov 10 18:12:34 1996  Ian Searle  <ians@demitasse>
+
+	* mdr.c (mdr_CreateVector): New Function.
+
+Sat Nov  2 07:54:55 1996  Ian Searle  <ians@espresso.org>
+
+	* msrf2.c (adjacency): New function (T.S.Y.)
+
+Thu Oct 31 19:15:57 1996  Ian Searle  <ians@demitasse>
+
+	* code.c (program_Destroy): Remove free logic for string-literals
+	because code jump values can be mistaken for op-codes, especially
+	op-push-string. 
+
+	* mdr.c (mdr_Create): Added check for integer overflow.
+	(mdr_vector_create): Check for integer overflow.
+
+	* mdc.c (mdc_Create): Added check for integer overflow.
+
+Sat Oct 26 18:09:20 1996  Ian Searle  <ians@espresso.org>
+
+	* class.c (class_print): Modify to handle writing output to diary
+	stream. 
+
+Fri Oct 25 19:02:19 1996  Ian Searle  <ians@espresso.org>
+
+	* class.c (class_print): Fix signal handling while printing.
+
+Mon Oct 21 21:09:31 1996  Ian Searle  <ians@demitasse>
+
+	* msr.c (msr_WriteSparse): New Function.
+	(msr_WriteGraph): New Function.
+
+Sat Oct 19 10:55:59 1996  Ian Searle  <ians@demitasse>
+
+	* msrf2.c (msr_Solve): TSY suggested change with job setting.
+
+Sun Oct 13 18:32:23 1996  Ian Searle  <ians@demitasse>
+
+	* getline.c (Findstr): New function.
+
+Sun Sep 29 12:51:49 1996  Ian Searle  <ians@espresso.org>
+
+	* opmat.c (matrix_sub_1): Add better checking of operand.
+
+Tue Sep 10 22:08:00 1996  Ian Searle  <ians@demitasse>
+
+	* bltin.c (Diary): New function.
+
+Sun Sep  8 20:19:23 1996  Ian Searle  <ians@demitasse>
+
+	* config.h.in: Added #undef winnt for WinNT port. For NT, both
+	unix, and winnt should be defined.
+
+	* bltin1.c (System): Added this option for Windows-NT port's
+	broken system().
+
+Sat Sep  7 13:43:32 1996  Ian Searle  <ians@demitasse>
+
+	* rfileio.c (Fread): Preparation for allowing nitems = inf().
+
+Sat Sep  7 10:02:19 1996  Ian Searle  <ians@espresso.org>
+
+	* test.r: Add tests for fwrite/fread.
+
+Fri Sep  6 16:59:34 1996  Ian Searle  <ians@demitasse>
+
+	* rfileio.c (matrix_ReadB): Better error checking for unsupported
+	matlab matrices.
+
+Thu Sep  5 20:52:54 1996  Ian Searle  <ians@demitasse>
+
+	* rfileio.c (ReadB): Close file on error in case user tries
+	again. 
+
+	* mdcf1.c (mdc_Max2): Add error checking for arguments of
+	different sizes.
+
+Tue Sep  3 22:15:49 1996  Ian Searle  <ians@espresso.org>
+
+	* rfileio.c: Add temporary message/stopping point if configure
+	can't find a four-byte data type.
+
+Sun Sep  1 08:46:03 1996  Ian Searle  <ians@espresso.org>
+
+	* bltin1.c (Getenv): Check return value from getenv().
+
+Sat Aug 31 07:01:13 1996  Ian Searle  <ians@espresso.org>
+
+	* init.c (rlab_bltin): Check for HAVE_PUTENV
+
+Thu Aug 29 19:43:06 1996  Ian Searle  <ians@demitasse>
+
+	* code.c (olist_assign): Make sure to check RHS to see if it is a
+	list. 
+
+Sat Aug 24 09:23:04 1996  Ian Searle  <ians@espresso.org>
+
+	* configure.in (LIBS): Fix Linux linker options.
+
+	* rfile.c: Incorportate risc-os mods.
+
+	* sort.c: Incorportate risc-os mods.
+
+	* main.c (print_greeting): Incorportate risc-os mods.
+
+	* r_plot.c (_plot_plprint): Incorportate risc-os mods.
+
+	* bltin2.c (class_bltin2_init): Incorportate risc-os mods.
+
+	* bltin1.c: Incorporate risc-os mods...
+
+	* test.r (a): Add power operation tests...
+
+	* mdc.c (mdc_elpower2): Yet another power operation fixup...
+
+	* msrf2.c (msr_Factor): Convert sparse to dense when a sparse
+	factorization is not available.
+
+Wed Aug 21 19:01:16 1996  Ian Searle  <ians@demitasse>
+
+	* msrf2.c (msr_Backsub): Fix some memory goofs, and check number
+	of lhs and rhs rows.
+
+Mon Jul 29 13:31:40 1996  Ian Searle  <ians@demitasse>
+
+	* mdr.c (mdr_elpower3): Yet another 0.^X power test.
+
+	* r_plot.c (_plot_plssym): New function.
+
+Sat Jul 27 22:25:27 1996  Ian Searle  <ians@demitasse>
+
+	* misc/plplot.r (plwin_init): New function.
+
+	* r_plot.c (_plot_plschar): New function.
+
+Thu Jul 11 20:10:29 1996  Ian Searle  <ians@demitasse>
+
+	* bltin1.c (Toc): Put back old code for times(2) usage. We still
+	need this for SunOS-4.x
+
+Thu Jun 27 09:25:41 1996  Ian Searle  <ians@demitasse>
+
+	* mdr.c (mdr_elpower1): Handle 0^X
+
+Wed Jun 26 09:00:08 1996  Ian Searle  <ians@demitasse>
+
+	* mdrf1.c (mdr_Log): Handle log(0).
+	(mdr_Log10): Handle log10(0).
+
+	* mdc.c (mdc_elpower3): Add special case for (0i)^X
+
+	* complex.c (complex_pow): Added another errcheck call around
+	log. 
+
+Mon Jun 17 11:26:57 1996  Ian Searle  <ians@demitasse>
+
+	* bltin1.c (Reshape): Fixed class_double casting.
+
+Sun Jun  9 10:19:42 1996  Ian Searle  <ians@demitasse>
+
+	* msr.c (msr_mdr_Eq): New function.
+
+Mon Jun  3 20:40:58 1996  Ian Searle  <ians@demitasse>
+
+	* mdr.c (mdr_MatrixAssignC): Added Matlab-like capability to do:
+	a[i;] = []; and have rows (or columns) removed from a.
+
+	* util.c (remove_duplicates): New function.
+
+Sun Jun  2 12:16:06 1996  Ian Searle  <ians@localhost>
+
+	* function.c (function_setup1): Use set_progoff to set the program
+	offset corectly for the FIRST instruction. I think this is only
+	critical if a function starts with a while loop as the very first
+	statement. 
+	(function_setup2): Same here, re-set the program offset upon
+	finishing up function creation
+
+	* code.c (set_progoff): New function.
+
+Sat Jun  1 13:50:20 1996  Ian Searle  <ians@localhost>
+
+	* mds.c (mds_Reshape): Handle empty matrices.
+
+	* mdc.c (mdc_Copy): Handle empty matrices.
+	(mdc_Reshape): Handle empty matrices.
+
+	* mdr.c (mdr_Reshape): Handle empty matrices.
+	(mdr_Copy): Handle empty matrices.
+
+Sun May 19 21:23:32 1996  Ian Searle  <ians@demitasse>
+
+	* rlib/triu.r (triu): Account for sparse storage.
+
+Mon May 13 22:22:38 1996  Ian Searle  <ians@demitasse>
+
+	* rfileio.c (mdr_ReadGeneric): Handle empty files.
+
+Mon May 13 21:50:41 1996  Ian Searle  <ians@localhost>
+
+	* init.c (rlab_bltin): Don't use dlopen if HAVE_SO is not def'ed.
+
+Mon May 13 15:38:06 1996  Ian Searle  <ians@demitasse>
+
+	* misc/plplot.r (z_scales): Fix up scale computations, use real()
+	around user settings...
+
+	* mdr_mdc.c (mdc_Ne): Fix logic goof...
+
+Mon May  6 20:29:23 1996  Ian Searle  <ians@demitasse>
+
+	* msr.c (msr_Setup): Check for nnz > 0.
+	(msr_VectorAssign): One to many destroys of the left-hand-side. 
+	(msr_MemberRef): n element must be calculated with double
+	precision since sparse matrices can be large.
+
+Sat May  4 13:54:04 1996  Ian Searle  <ians@localhost>
+
+	* msrf1.c (mdr_real_spconvert): Set nnz in new struct properly.
+
+	* msr.c (msr_ReSparse): Fix small bug...
+
+Fri May  3 23:09:52 1996  Ian Searle  <ians@demitasse>
+
+	* msrf1.c (mdr_real_spconvert): Finally, fixed this so it handles
+	out of order, and duplicate elements.
+
+Wed May  1 19:02:00 1996  Ian Searle  <ians@localhost>
+
+	* bltin1.c (Cd): New function.
+	(Toc): Added tic() and toc() code from T.S. Yang...
+
+Wed May  1 07:47:21 1996  Ian Searle  <ians@demitasse>
+
+	* msrf1.c (mdr_complex_spconvert): Add ms?_ReSparse calls at end
+	to get rid of unwanted zeros.
+	(mdr_real_spconvert2): I think I finally got it! a spconvert that
+	takes care of duplicate entries!
+
+Tue Apr 30 09:39:56 1996  Ian Searle  <ians@demitasse>
+
+	* msr.c (msr_ReSparse): Finally fill this function in!
+
+Mon Apr 29 14:08:42 1996  Ian Searle  <ians@demitasse>
+
+	* msr.c (msr_VectorSub): New function.
+
+Wed Apr 24 21:10:08 1996  Ian Searle  <ians@demitasse>
+
+	* rfileio.c (mdr_ReadGeneric): Handle tab characters better.
+
+Mon Apr 22 22:59:57 1996  Ian Searle  <ians@demitasse>
+
+	* bltin1.c (class_bltin1_init): Added msc_Find and msr_Find.
+
+Sat Apr 20 12:15:18 1996  Ian Searle  <ians@demitasse>
+
+	* getline.c (Getline): Force creation of a null string.
+
+Sat Apr 20 08:37:58 1996  Ian Searle  <ians@localhost>
+
+	* msrf2.h (msr_Backsub): Remove #ifdef UMFPACK.
+
+Fri Apr 19 08:40:25 1996  Ian Searle  <ians@demitasse>
+
+	* umfpack.f: New file.
+
+	* random.c (rrand): Finally! fix GENNF typo/bug.
+
+	* msrf2.c (msr_Backsub): New function.
+
+Mon Apr 15 12:04:20 1996  Ian Searle  <ians@demitasse>
+
+	* msrf2.c: New file. Moved the UMFPACK related stuff in here.
+
+	* Makefile.in: Added msrf2.c
+
+Sun Apr 14 11:18:37 1996  Ian Searle  <ians@demitasse>
+
+	* msrf1.c (msr_Solve): Added ability to handle multiple right hand
+	sides.
+
+Sat Apr 13 12:02:22 1996  Ian Searle  <ians@demitasse>
+
+	* msrf1.c (msr_mdc_Multiply): New function.
+
+	* mscf1.c (msc_IsSymmetric): New function.
+
+Fri Apr 12 21:27:30 1996  Ian Searle  <ians@demitasse>
+
+	* class.c (class_el_rdivide): Pass rtype to the method so that the
+	return type can be known.
+
+	* msrf1.c (msr_mdr_Rdivide): Add sparse-real matrix right divide
+	(/) functions.
+	(msr_mdr_ElRdivide): New functions for sparse-real matrix element
+	right divide (./)
+	(msr_IsSymmetric): New function.
+
+Thu Apr 11 23:28:58 1996  Ian Searle  <ians@demitasse>
+
+	* msrf1.c (msr_Diag): New function.
+
+Tue Apr  9 23:16:18 1996  Ian Searle  <ians@espresso>
+
+	* msr.c (msr_RowPartition): Add check for case where M has no
+	non-zeros. 
+
+Thu Apr  4 13:29:18 1996  Ian Searle  <ians@demitasse>
+
+	* rstring.c: Remove #include <ansidecl.h>
+
+	* mdc.c (mdc_ElMultiply): Fix screw-ups in row-wise and
+	column-wise operations.
+
+	* test.r (zb): Added matrix row-wise and column-wise divide tests.
+
+Wed Apr  3 16:27:58 1996  Ian Searle  <ians@demitasse>
+
+	* mdr.c (mdr_ElRdivide): Add matrix-vector element right divide.
+
+	* configure.in (LIBS): Add " to EXFLAGS for SunOS.
+
+	* misc/plplot.r (plptex): Add call to _plflush().
+
+Tue Apr  2 21:41:45 1996  Ian Searle  <ians@demitasse>
+
+	* getline.c (Strsplt): Add cpstr() to prevent destruction of
+	argument. 
+
+	* mdr_mds.c (mdr_mds_Ne): Same sort of changes as to mdr_Eq...
+
+	* mdr_mdc.c (mdc_Eq): Same sort of changes as to mdr_Eq...
+
+	* mdr.c (mdr_Eq): Fix [] == [] so the result is TRUE (like
+	rlab1). 
+
+Sat Feb 10 20:50:05 1996  Ian Searle  <ians@espresso.org>
+
+	* rlab.y: New list syntax. Fixes up shortcuts I took along time
+	ago. Thanks to Frank Muennemann.
+
+Sun Jan  7 13:17:05 1996  Ian Searle  <ians@espresso.org>
+
+	* code.c (list_member): Try and free expression in list member
+	reference. 
+
+Sat Jan  6 17:04:16 1996  Ian Searle  <ians@espresso.org>
+
+	* I tagged everything with "save-1". And am adding sublist
+	capability to some objects, mostly making sure the interpreter can
+	support it.
+
+Sat Dec 30 16:51:49 1995  Ian Searle  <ians@espresso.org>
+
+	* rfileio.c (btree_ReadB): Must inc ref count when manualy adding
+	new entity...
+	(ReadB): Same...
+
+	* util.c (convert_datum_to_ent): Add iDOUBLE in switch.
+
+Sun Dec 17 10:45:28 1995  Ian Searle  <ians@espresso.org>
+
+	* class.c (class_init): Allow STRING[;j] = [STRING]
+
+	* mdrf1.c (mdr_Prod_BF): subscript should have been 1...
+
+Sat Dec 16 16:49:01 1995  Ian Searle  <ians@espresso.org>
+
+	* bltin1.c (Sizeof): Force conversion of doubles...
+
+	* rfileio.c (WriteB): Force conversion of doubles to MDRs with
+	convert_datume_to_ent().
+
+Sun Dec 10 13:05:43 1995  Ian Searle  <ians@espresso.org>
+
+	* main.c (init_environment): Add readline history stuff.
+
+Wed Nov 29 19:04:58 1995  Ian Searle  <ians@espresso.org>
+
+	* mdr.c (mdr_CharPointer): Add some safety...
+
+Thu Nov 23 09:28:47 1995  Ian Searle  <ians@espresso.org>
+
+	* mdr.c (mdr_VectorAssign): Fix it so that we can do: a[i] = a;
+	(mdr_Extend): Use memcpy, its faster.
+	(mdr_Copy): Change over to memcpy.
+
+Tue Nov 21 18:37:06 1995  Ian Searle  <ians@espresso.org>
+
+	* code.c (list_assign): Make sure we actually create a new list in
+	certain cases.
+
+Tue Nov 14 20:03:34 1995  Ian Searle  <ians@espresso.org>
+
+	* mdcf1.c (mdc_All): New function.
+	(mdc_Any): New function.
+
+Mon Nov 13 23:17:47 1995  Ian Searle  <ians@espresso.org>
+
+	* code.c (get_function_locallist): Fix fp->sp
+	references.. fp->esp. 
+
+Sun Nov 12 20:50:50 1995  Ian Searle  <ians@espresso.org>
+
+	* mdr.c (mdr_ElMultiply): Same as below.
+
+	* mdc.c (mdc_ElMultiply): Stupid error in sizing new matrix.
+
+	* bltin1.c (System): New function.
+	(CumProd): New function.
+	(Prod): New function.
+
+Sat Nov 11 13:37:32 1995  Ian Searle  <ians@espresso.org>
+
+	* mdr.c (mdr_Subtract): Get size computation right.
+
+	* r_plot.c (convert_matrix_to_array): Must use GC_MALLOC for
+	pointers. 
+
+Thu Nov  9 23:31:17 1995  Ian Searle  <ians@espresso.org>
+
+	* rfft.c (Filter): New function.
+
+Tue Nov  7 19:58:04 1995  Ian Searle  <ians@espresso.org>
+
+	* mdcf1.c (mdc_IsSymmetric): Make it really check for Hermitian. 
+
+Mon Nov  6 20:14:19 1995  Ian Searle  <ians@espresso.org>
+
+	* bltin2.c (Solve): New function.
+
+Sun Nov  5 17:50:28 1995  Ian Searle  <ians@espresso.org>
+
+	* mds.c (mds_Destroy): Don't free NULL string pointers.
+	(mds_Copy): Don't copy NULL string pointers.
+	(mds_Extend): Don't copy/free NULL string pointers.
+	(mds_Destroy): Be sure not to GC_FREE(m->s) until we know that
+	m->s != 0.
+
+	* mdr_mds.c: Check for NULL string-matrix elements.
+
+	* main.c (init_environment): Change environment variable names so
+	that they don't confict with rlab-1.
+
+	* mdr.c (mdr_Ldivide): Same as below. I am doing this for two
+	reasons. One: I think there may be a bug in the Lapack routines
+	(fairly obscure, hard to uncover). Two: x = A\b should be general,
+	and as robust as possible. If the user wants speed, factor(), or
+	solve() should be used.
+
+	* mdc.c (mdc_Ldivide): Force use of the Generalized solution for
+	solutions of systems of equations.
+
+	* I have not been making entries for quite some time. Now that
+	rlab2 is getting functional, it is time to start again...
+
+Sun Aug 13 17:08:08 1995  Ian Searle  <ians@espresso.org>
+
+	* symbol.c (fix_symbol_table): New function...
+
+Sun Jul 23 11:30:16 1995  Ian Searle  <ian@espresso>
+
+	* code.c (list_member): This function had to be modified to
+ 	produce a variable (ListNode) when list-member references are
+ 	made. Otherwise, functions like list_assign() could not deal with
+ 	nested list-member assignments, like: a.b.c = 1:4; Similar mods
+ 	had to be made to class_member_ref, so that it could return either
+ 	an Entity, or a Variable.
+
+	(pop): Modified to clean the pointer off of the stack, as we pop
+	them. 
+
+	(datum_stack_clean): New function. This function goes back, and
+	cleans up the data-stack after an error.
+
+Sun Jul  2 16:57:50 1995  Ian Searle  <ian@espresso>
+
+	*  I have been working on rlab2, or rukus, for a couple of weeks
+	now. Progress is slow...
+	
+

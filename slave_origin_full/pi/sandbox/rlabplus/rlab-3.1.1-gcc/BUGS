@@ -1,0 +1,8 @@
+
+	Rlab-2.0.x, 6/29/97: User functions cannot create and return
+	variables that have list-elements attached.
+
+          x = function ( ) { a=rand(3,3); a.id="label"; return a; }
+
+        will only return a variable with a 3x3 random matrix. The
+	element "id" will  be lost.

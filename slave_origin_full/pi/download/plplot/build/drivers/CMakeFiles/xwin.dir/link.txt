@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared  -o xwin.so CMakeFiles/xwin.dir/xwin.c.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libm.so /usr/lib/arm-linux-gnueabihf/libSM.so /usr/lib/arm-linux-gnueabihf/libICE.so /usr/lib/arm-linux-gnueabihf/libX11.so /usr/lib/arm-linux-gnueabihf/libXext.so -lpthread 

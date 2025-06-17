@@ -1,0 +1,86 @@
+<sect> odeiv
+<p>
+<descrip>
+	<tag> Synopsis </tag> 
+		
+		<p>Integrates an initial value problem for a system of the first
+		order ordinary differential equations (ODE).
+	
+	<tag> Syntax </tag> 
+        
+		<p>(1) w = <tt>odeiv ( <em>f</em>, /<em>p</em>/, <em>T</em>, <em>ystart</em>,
+		<em>options</em> )</tt>
+		<p>(2) w = <tt>odeiv ( <em>f</em>, <em>dfdyt</em>, /<em>p</em>/, <em>T</em>,
+		<em>ystart</em>, <em>options</em> )</tt>
+
+      
+      Arguments:
+		<descrip>
+      <tag><em>f</em>, <em>p</em></tag> 
+			A vector function and its parameter (a RLaB variable passed directly 
+			to the function), that evaluates <tt>dy(i)/dt</tt> at time <tt>t</tt>. 
+			For example,
+<tscreen><verb>
+vdpol = function ( t, y, p ) 
+{
+  yp = zeros(2,1);
+  yp[1] = p[1] * y[1] * (1 - p[2] * y[2]^2) - ...
+    p[3] * y[2];
+  yp[2] = y[1];
+  return yp;
+};
+</verb></tscreen>	
+      <tag><em>dfdyt</em></tag> 
+			A function that calculates the full jacobian of the function 
+			<em>f</em> with respect to the functions <em>y(i),i=1..N</em> and 
+			independent variable <em>t</em>.  It evaluates a matrix  
+			<tt>dfdyt[i;j] = df(i)/dy(j)</tt> at time <tt>t</tt>. 
+			Compared to jacobian, <em>dfdyt</em> has an additional column 
+			<tt>dfdyt[i;N+1] = df(i)/dt</tt>, containing partial derivatives of
+			<em>f</em> with respect to the independent variable
+			<em>t</em>. For example,
+<tscreen><verb>
+dvdpol = function ( t, y, p ) 
+{
+  yp = zeros(2,3);
+  yp[1;] = [ p[1] * (1 - p[2] * y[2]^2), ...
+    - 2 * p[1] * y[1] * p[2] * y[2] - p[3], ...
+    0];
+  yp[2;] = y[1];
+  return yp;
+};
+</verb></tscreen>
+		<tag><em>T</em></tag> 
+			An array of time points, <tt>T=[t1,t2,...tK]</tt>,
+			at which the values of <em>y(i), i=1..N</em> are to be returned to
+			user.
+		<tag><em>ystart</em></tag> 
+			An initial value of the vector function <em>ystart = y(t1)</em>. 
+		<tag><em>options</em> =<< imethod;ady;adydt;eabs;erel;step;stdout;phase_space >></tag>
+			For solver that do not require <em>dfdyt</em>, <em></em>imethod=0,..9
+			for the integrators adams (0, default),  rk2 (1), rk4 (2), rkf45 (3),
+			rkck45 (4), rk8pd (5), rk2imp (6), rk4imp (7), gear1 (8), gear2 (9),
+			while for solver that do require <em>dfdyt</em>, <em>imethod</em>=0..2
+			for integrators PVODE (0,default), BIM (1) and bsimp (2);
+			<em>ady</em>, <em>adydt</em> determine the step size criterion;
+			<em>eabs</em> and <em>erel</em> are the absolute and relative error;
+			<em>step</em> is the initial step size; and, <em>stdout</em> is the
+			file/terminal where the run-time messages are posted.
+      </descrip>
+      
+
+      Result:
+      <descrip>
+      	Depending whether <em>phase_space</em>=0 or 1, in <em>options</em>
+      	above, the solver returns
+      	<p> <em>w</em> = [t, y(t)], or
+      	<p> <em>w</em> = [t, y(t), y'(t)], respectively.
+      </descrip>
+
+		
+		The solver is built upon the Gnu Science Library (solvers rk2, rk4, rkf45, rkck45,
+		rk8pd, rk2imp, rk4imp, gear1, gear2, bsimp), fortran solver ODE.F (adams'),
+		fortran library DVODE and a fortran solver BiM. 
+		Please see the references in the rlabplus manual.
+
+</descrip>

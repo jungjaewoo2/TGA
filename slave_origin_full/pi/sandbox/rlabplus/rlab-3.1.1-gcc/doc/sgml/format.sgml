@@ -1,0 +1,62 @@
+<sect> format 
+<p>
+<descrip>
+<tag> Synopsis </tag> Set the printing format.
+<tag> Syntax </tag> format ( ) 
+             <p>    format ( <em>PRECISION</> )
+             <p>    format ( <em>WIDTH</>, <em>PRECISION</> )
+             <p>    format ( &lsqb; <em>WIDTH</>, <em>PRECISION</> &rsqb; )
+<tag> Description </tag>
+
+	Format sets the output print format for all numeric output. If
+	no arguments are supplied, then the output print formats are
+	reset to the default values.
+
+        <descrip>
+
+	<tag><em>PRECISION</></tag> represents the precision with
+	which numbers will be printed. For instance, if
+	<em>PRECISION</> has a value of 4, then 4 significant digits
+	will be printed for numeric values.
+
+	<tag><em>WIDTH</></tag> represents the minimum field width of
+	the formatted output.
+
+	</descrip>
+
+	Format returns a 2-element matrix contains the previous width
+	and precision values. Subsequently, this matrix can be used to
+	reset format.
+
+	Example:
+
+<tscreen><verb>
+> 123456789.123456789
+ 1.235e+08
+> format(10);
+> 123456789.123456789
+123456789.1
+> format();
+> a = rand(3,3)
+ a =
+ matrix columns 1 thru 3
+         1      0.3331      0.6646  
+    0.9745     0.03694     0.08467  
+    0.6475      0.1617      0.2041  
+> format(10);
+> a
+ a =
+ matrix columns 1 thru 3
+0.9999996424  0.3330855668  0.6646450162  
+0.9745196104  0.03694454208  0.08467286825  
+0.6474838853  0.1617118716  0.2041363865  
+> format(15,10);
+> a
+ a =
+ matrix columns 1 thru 3
+   0.9999996424     0.3330855668     0.6646450162  
+   0.9745196104    0.03694454208    0.08467286825  
+   0.6474838853     0.1617118716     0.2041363865  
+</verb></tscreen>
+
+</descrip>

@@ -1,0 +1,31 @@
+<sect> isnan 
+<p>
+<descrip>
+<tag> Synopsis </tag> Test for NaN values.
+<tag> Syntax </tag> 
+<p>isnan ( <em>A</> )
+<tag> Description </tag>
+
+	isnan returns TRUE (1) if <em>A</> is a NaN (Not A Number). If
+	<em>A</> is a vector or a matrix the test is performed
+	element-by-element, and a matrix the same size as <em>A</> is
+	returned.
+
+	NaNs can be created by the 0/0 operation on most computers.
+
+	Example:
+<tscreen><verb>
+> a = [1, 2, 3; 4, 5, nan(); 7, 8, 9]
+ a =
+        1          2          3  
+        4          5         nan  
+        7          8          9  
+> isnan (a)
+        0          0          0  
+        0          0          1  
+        0          0          0  
+</verb></tscreen>
+
+<tag>See Also</tag>   inf, isinf, finite, nan
+
+</descrip>

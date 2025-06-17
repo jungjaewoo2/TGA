@@ -1,0 +1,13 @@
+plhold_off:
+
+Synopsis: Turn incremental plot generation off after using plhold.
+
+Syntax: plhold_off ( )
+
+Description:
+
+	This function must be used after plhold has been used, and
+	before any of the other plot functions (plot, plhist, plot3,
+	plmesh) can be used.
+
+See Also: plhold

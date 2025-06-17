@@ -1,0 +1,22 @@
+cont:
+
+Synopsis: Create a 2-dimensional contour plot.
+
+Syntax: cont ( X, Y, Z, KeyTitles, I )
+
+Description:
+
+	cont() makes a 2D-contour plot. This is in GNUPLOT a 3D-plot with no 
+	surface.
+	The KeyTitles is a string-vector containing the titles to be plotted as keys.
+	They are chosen beginning at KeyTitles[1] and so on.
+
+	cont ( X, Y, Z )		splots the contents of matrix Z
+					as a 2D-contour-plot
+	cont ( Z )			splots the contents of matrix Z
+					versus rows and columns
+	cont ( X, Y, [Z1,Z2] )		splots Z1, and Z2 on the same graph
+					as a 2D-contour-plot
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+

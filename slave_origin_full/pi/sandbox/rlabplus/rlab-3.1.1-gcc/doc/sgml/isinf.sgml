@@ -1,0 +1,32 @@
+<sect> isinf 
+<p>
+<descrip>
+<tag> Synopsis </tag> Test for values of infinity.
+<tag> Syntax </tag> isinf ( <em>A</> )
+<tag> Description </tag>
+
+isinf returns TRUE (1) if <em>A</> is Infinity (according to
+IEEE-754). If <em>A</> is a vector or a matrix the test is
+performed element-by-element, and a matrix the same size as
+<em>A</> is returned.
+
+Infs can usually be created by attempting to divide by zero,
+or using the builtin inf function.
+
+	Example:
+<tscreen><verb>
+> a = [1, 2, 3; 4, 5, inf(); 7, 8, 9]
+ a =
+        1          2          3  
+        4          5        inf  
+        7          8          9  
+> isinf (a)
+        0          0          0  
+        0          0          1  
+        0          0          0  
+</verb></tscreen>
+
+
+<tag>See Also</tag> isnan, finite
+
+</descrip>

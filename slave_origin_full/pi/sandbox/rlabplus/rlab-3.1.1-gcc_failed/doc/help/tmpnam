@@ -1,0 +1,66 @@
+  tmpnam
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Generate temporary file name.
+
+      [1mSyntax[0m
+        tmpnam ( )
+
+      [1mDescription[0m
+        tmpnam returns a string that is not the name of an existing
+        file. tmpnam generates a different name each time it is called.
+        The string tmpnam returns can be used a a filename with RLaB's
+        file I/O functions.
+
+
+     [1mSee Also[0m
+        open, close, read, write, fprintf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

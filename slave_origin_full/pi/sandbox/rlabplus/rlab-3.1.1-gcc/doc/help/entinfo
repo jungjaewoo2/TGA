@@ -1,0 +1,66 @@
+  entinfo
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return entity information.
+
+      [1mSyntax[0m
+        entinfo ( [4mVAR[24m )
+
+      [1mDescription[0m
+        Entinfo returns the internal address, and reference count of
+        [4mVAR[24m. This function is not intended for general use... so no
+        explanation of the function's purpose, or guarentees regarding
+        its future availability will be made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

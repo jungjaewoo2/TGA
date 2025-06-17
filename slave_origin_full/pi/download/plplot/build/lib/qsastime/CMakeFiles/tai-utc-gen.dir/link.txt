@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/tai-utc-gen.dir/tai-utc-gen.c.o  -o tai-utc-gen /usr/lib/arm-linux-gnueabihf/libm.so 

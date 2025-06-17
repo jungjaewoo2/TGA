@@ -1,0 +1,60 @@
+<sect> fwrite
+<p>
+<descrip>
+<tag> Synopsis </tag> Binary stream output.
+<tag> Syntax </tag> fwrite ( <em>FILENAME</>, <em>TYPE</>, <em>DATA</> )
+<tag> Description </tag>
+
+	fwrite writes <em>DATA</> to the file identified by
+        <em>FILENAME</>. <em>DATA</> is cast, or converted to the data
+        type identified in <em>TYPE</>. fwrite roughly mimincs the C
+        programming language's fwrite library function.
+
+	<em>DATA</> can either be a dense numeric matrix, or a string
+	matrix. The size of the matrix does not need to be specified
+	because the entire matrix is written.
+
+	If <em>DATA</> is a string matrix, then the first character of
+	each element is written to <em>FILENAME</>, after being
+	coerced to type <em>TYPE</>. 
+
+	Allowable arguments are:
+	<descrip>
+
+	<tag><em>TYPE</></tag>
+
+	<quote>
+	"char"
+	</quote>
+
+	<quote>
+	"unsigned char"
+	</quote>
+
+	<quote>
+	"short int"
+	</quote>
+
+	<quote>
+	"unsigned int"
+	</quote>
+
+	<quote>
+	"int"
+	</quote>
+
+	<quote>
+	"float"
+	</quote>
+
+	<quote>
+	"double"
+	</quote>
+
+	</descrip>
+
+<tag>See Also</tag>   FILES, fread, fseek, close, open, write
+
+</descrip>
+
+

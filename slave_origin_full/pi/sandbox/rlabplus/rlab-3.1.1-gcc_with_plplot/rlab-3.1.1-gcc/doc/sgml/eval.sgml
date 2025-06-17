@@ -1,0 +1,100 @@
+<sect> eval 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Evaluate expressions.
+<tag> Syntax </tag> eval ( <em>S</> ) 
+<tag> Description </tag>
+
+	The eval function evaluates the statement contained in the
+	string argument <em>S</>. eval returns the result of the
+	statement in <em>S</>. eval can be used within functions and
+	can distinguish local and argument variables from global.
+
+	Before we go any further, we should note that eval is not
+	really a necessary part of RLaB. Users should defintely not
+	use it a a crutch as with some other matrix programming
+	languages. The RLaB concept of variables, and the list class
+	are more efficient ways of dealing with function evaluations
+	and variable variable names than eval.
+
+	Examples:
+
+<tscreen><verb>
+> // Evaluate a simple string.
+> // Demonstrate the ability to work with function
+> // arguments.
+>
+> x=function(s,a){return eval(s);}
+	<user-function>
+> str = "yy = 2 + x(\"2*a\", 3.5)"
+ str =
+yy = 2 + x("2*a", 3.5)
+> z = eval(str)
+ z =
+        9
+> whos();
+	Name            Class	Type	Size		NBytes
+	eps            	num	real	1	1	16
+	pi             	num	real	1	1	16
+	str            	string	string	1	1	22
+	yy             	num	real	1	1	16
+	z              	num	real	1	1	16
+Total MBytes = 0.129062
+> // First create a function that will eval a matrix.
+>
+> evalm = function ( m )
+> {
+>   local (mnew, i)
+>	
+>   mnew = zeros (size (m));
+>    for (i in 1:m.n)
+>   {
+>     mnew[i] = eval (m[i]);
+>   }
+>	
+>   return mnew;
+> };
+>
+> // Then create a string matrix...
+>
+> mstr = ["x + 1",    "x + sqrt(x)" ;
+>         "cos(2*x)", "sin(sqrt(x))" ]
+	> x = 2
+ x =
+        2
+>
+> m = evalm(mstr)
+ m =
+        3       3.41  
+   -0.654      0.988  
+>
+> // Define a second function that does eval twice
+> 
+> eval2m = function ( m )
+> {
+>   local (mnew, i)
+> 
+>   mnew = zeros (size (m));
+>   for (i in 1:m.n)
+>   {
+>     mnew[i] = eval (eval (m[i]));
+>   }
+> 
+>   return mnew;
+> };
+> 
+> mstr = [ "E1", "E2" ;
+>          "E2", "E3" ]
+ mstr =
+E1  E2  
+E2  E3  
+> E1 = "cos(2*x) + 3";
+> E2 = "tan(x)";
+> E3 = "exp(x)";
+> m = eval2m(mstr)
+ m =
+     2.35      -2.19  
+    -2.19       7.39  
+</verb></tscreen>
+
+</descrip>

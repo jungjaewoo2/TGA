@@ -1,0 +1,66 @@
+  chol
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Cholesky factorization.
+
+      [1mSyntax[0m
+        chol( [4mA[24m )
+
+      [1mDescription[0m
+        Chol computes the Cholesky factorization of the input matrix.
+        The input matrix must be real symmetric positive definite, or
+        complex Hermitian positive definite.  chol() produces an upper
+        triangular matrix [4mU[24m, such that U'*U and [4mA[24m (the input) are equal.
+
+        chol use the LAPACK subroutine DPOTRF and ZPOTRF.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

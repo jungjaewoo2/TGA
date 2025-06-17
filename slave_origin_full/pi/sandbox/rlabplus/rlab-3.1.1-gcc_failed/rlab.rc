@@ -1,0 +1,30 @@
+#
+# .rlab: Rlab startup script.
+# Put whatever you like in here, and it will be run
+# automatically when you start Rlab.
+#
+
+# Calculate pi
+
+pi = atan(1.0)*4.0;
+
+# Calculate machine epsilon
+
+epsilon = function() 
+{
+  eps = 1.0;
+  while((eps + 1.0) != 1.0) 
+  {
+    eps = eps/2.0;
+  }
+  return 2*eps;
+};
+
+eps = epsilon();
+
+#
+# Rlab2 doesn't have read/write, so make up for it:
+#
+
+read = readb;
+write = writeb;

@@ -1,0 +1,33 @@
+<sect> load 
+<p>
+<descrip>
+<tag> Synopsis </tag> Load / execute the instructions in a file.
+<tag> Syntax </tag> load( <em>filename</> ) 
+<tag> Description </tag>
+
+	Load opens the file named <em>filename</> and reads its
+	contents as though a user were typing the contents at the
+	command line. Thus a user can use load to enter data,
+	user-functions, or execute repetitive commands saved in a
+	file. there is no limit to the number of functions, or regular
+	statements that can exist in a file called by load.
+
+	Immediately after the the input is read, load closes the
+	file, so that subsequent calls to load will re-open the
+	file.
+
+	Load requires that a complete file specification be provided.
+	If the file is in the present working directory, then only the
+	filename is necessary otherwise, a complete path is required.
+
+	In most cases the rfile command is simpler to use.
+
+	Example:
+<tscreen><verb>
+// load the roots() function into memory
+> load( "roots.r" )
+</verb></tscreen>
+
+<tag>See Also</tag> rfile
+
+</descrip>

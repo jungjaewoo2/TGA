@@ -1,0 +1,20 @@
+<sect> dlopen 
+<p>
+<descrip>
+<tag> Synopsis </tag> Dynamically link a function. 
+<tag> Syntax </tag> dlopen ( <em>FILENAME</> , <em>FUNCTION_NAME</> )
+<tag> Description </tag>
+
+	dlopen opens a shared object, <em>FILENAME</>, and creates a
+	builtin function that points to <em>FUNCTION_NAME</>. dlopen
+	returns the newly created builtin function.
+
+	For information on how to write and compile functions that can
+	be linked with dlopen, consult the RLaB Programmer's Guide and
+	Reference Manual.
+
+	dlopen only exists for those platforms that support dynamic
+	linking. As of this writing support exists for Solaris 2.x and
+	Linux/ELF platforms.
+
+</descrip>

@@ -1,0 +1,24 @@
+plwin_init:
+
+Synopsis: Change the default startup settings for plot windows.
+
+Syntax: plwin_init ( XP, YP, XLENG, YLENG, XOFF, YOFF )
+
+Description:
+
+	Set the default initial (startup) behavior for plot
+	windows. If you have a particular configuration you like to
+	use, it is customary to put a call to plwin_init() in your
+	.rlabrc startup file.
+
+	XP: The number of X-pixels (default: 0).
+
+	YP: The number of Y-pixels (default: 0).
+
+	XLENG: The X (width) page length dimension (default: 400).
+
+	YLENG: The Y (height) page length dimension (default: 300).
+
+	XOFF: The X offset (screen coordinate) (default: 200);
+
+	YOFF: The Y offset (screen coordinate) (default: 200);

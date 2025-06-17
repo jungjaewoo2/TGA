@@ -1,0 +1,25 @@
+<sect> ones 
+<p>
+<descrip>
+<tag> Synopsis </tag> Create a matrix filled with ones.
+<tag> Syntax </tag> 
+<p>ones ( nrow , ncol ) 
+<p>ones ( A )
+<tag> Description </tag>
+
+Create a matrix of ones. If the input is two scalars, then
+create a matrix of 1s with dimensions 
+<em>nrow</em>-by-<em>ncol</em>. If the input is a matrix <em>A</em>, 
+then it creates a matrix with row and column dimensions equal to
+that of <em>A</em>.
+
+<tscreen><verb>
+X = rand(3,2);
+ones( X )
+</verb></tscreen>
+
+will return a matrix of ones the same size as <tt>X</>.
+
+<tag>See Also</tag>   zeros
+
+</descrip>

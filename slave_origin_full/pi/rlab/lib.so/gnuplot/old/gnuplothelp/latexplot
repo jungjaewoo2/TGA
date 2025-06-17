@@ -1,0 +1,23 @@
+latexplot:
+
+Synopsis: Generates a LaTeX file.
+
+Syntax: latexplot ( "file_name", "mode", I )
+
+Description:
+
+	The latexplot() function generates a LaTeX file named "file_name" 
+	of the current I:th plot. "mode" is further LaTeX definitions to 
+	GNUPLOT if needed.
+	The LaTeX plot is saved in a file for printing, or whatever. 
+	Immediately after calling latexplot(), the GNUPLOT variables
+	term, and output are reset to there former values.
+	
+	latexplot() will not work with multiplot() or plotyy().
+	If a LaTeX hardcopy is wanted in multiplot- or plotyy-mode, 
+	change the terminaltype before and after leaving these modes.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: printplot, postplot, setterm
+

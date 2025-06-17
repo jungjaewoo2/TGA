@@ -1,0 +1,53 @@
+
+   -------------------------------------------------------------------
+
+   This is a binary distribution of RLaB for Linux.  This distribution
+   is not packaged with one of the more popular distribution's package
+   system because: a) all the distributions do not use the same
+   packaging system, b) I release binary distributions on other
+   platforms, and do not have the bandwidth to learn packaging systems
+   for every OS/Platform.
+
+   Instead, this pre-built release is a simple tar'ed and compressed
+   archive that contains everything necessary to run Rlab on most
+   Linux systems.  This package can be unpacked somewhere, and by
+   editing a simple script, can be used fairly quickly.
+
+   -------------------------------------------------------------------
+
+   TO INSTALL:
+
+     1) Unpack this distribution wherever you wish.
+
+     2) Edit the file ./bin/rlab2 to reflect the proper installation
+        directory.  To do this, change the line that looks like:
+
+        RROOT="/tmp/rlab-2.1.05"      # Where the rlab directory is.
+
+        Change the value of RROOT to reflect the location you unpacked
+        Rlab into.
+
+     3) Put the location of bin/rlab2 in your PATH environment variable,
+        or execute rlab by typing in the full pathname to ./bin/rlab2.
+
+   -------------------------------------------------------------------
+
+   PLOTTING:
+
+   This binary distribution was built to use the RLaB/PGplot
+   interface. The PGplot interface is very versatile, and many
+   improvements can be made by simply enhancing pgplot.r.  See
+   examples/plot_test_pgplot.r if you want to see some of the plotting
+   capabilities.
+
+   If you wish to use the low-level/direct-pgplot interface routines
+   (they all start with the letters "pg"), you can get the PGplot
+   distribution, and read the documentation therein.
+
+   The other plotting options: PlotMTV, GNUPLOT, PGraf, and PLplot can
+   be used if you re-compile the sources.
+
+   -------------------------------------------------------------------
+   05/13/2000
+   Ian Searle
+   searleir@yahoo.com

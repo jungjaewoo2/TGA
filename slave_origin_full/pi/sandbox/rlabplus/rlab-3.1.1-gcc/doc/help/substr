@@ -1,0 +1,66 @@
+  substr
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Extract a substring inside entries of a larger string matrix.
+
+
+     [1mSyntax[0m
+        t = substr ( [4ms[24m , [4mi[24m )
+
+
+     [1mDescription[0m
+        Create a new string from entries of a string matrix [4ms[24m, that
+        consists of the characters which positions are given in integer
+        vector [4mi[24m.
+
+
+        Arguments:
+
+        [4ms[24m  string matrix.
+
+        [4mi[24m  integer vector, indices of the characters to be incorporated
+           into a new substring.
+
+
+        Result:
+
+        [1mt  [22mstring matrix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

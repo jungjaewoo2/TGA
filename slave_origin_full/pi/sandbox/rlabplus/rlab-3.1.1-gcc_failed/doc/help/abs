@@ -1,0 +1,66 @@
+  abs
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Compute the absolute value.
+
+      [1mSyntax[0m
+        abs (  [4mA[24m  )
+
+      [1mDescription[0m
+        abs returns the absolute value of it's input, [4mA[24m. abs is a scalar
+        function.
+
+        For complex values abs returns the square root of the sum of the
+        squares of the real and imaginary parts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+plbar:
+
+Synopsis: RLaB graphics interface
+
+Syntax: plbar ( y  )
+	plbar ( [x,y] )
+
+Description:
+
+	Plot bar chart. Both x and y are column vector.
+
+Examples:
+        y = [1,3,4,1,7,8,3,5]';
+        plbar(y);
+
+        pltitle("Bar Chart");
+        xlabel("Time");
+        ylabel("Output");
+        x = (10:80:10)';
+        y = rand(8,1)*10;
+        plbar([x,y]);
+

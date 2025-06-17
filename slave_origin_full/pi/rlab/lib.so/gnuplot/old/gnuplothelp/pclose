@@ -1,0 +1,14 @@
+pclose:
+
+Synopsis: Close the I:th plot window
+
+Syntax: pclose ( I )
+
+Desription:
+
+	The pclose() function closes (destroys) the I-th GNUPLOT
+	subprocess. If I = "all", all GNUPLOT subprocess are closed.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See also: pend

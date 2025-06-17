@@ -1,0 +1,16 @@
+plcolor:
+
+Synopsis: Control the plot line color
+
+Syntax: plcolor ( CVEC )
+
+Description:
+
+	Plcolor allows the user to control the line color used for each
+	line in a 2-D plot. The single argument, CVEC is an integer
+	vector containing the color index values for each line. Values
+	of 0:15 are the color values, while 16:99 are shades of gray.
+
+		[ 1, 2, 3, 4, 5 ]
+
+See Also: plpoint

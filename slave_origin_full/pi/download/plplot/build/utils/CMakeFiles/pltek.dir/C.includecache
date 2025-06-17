@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/download/plplot/plplot-5.13.0/utils/pltek.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+ctype.h
+-
+

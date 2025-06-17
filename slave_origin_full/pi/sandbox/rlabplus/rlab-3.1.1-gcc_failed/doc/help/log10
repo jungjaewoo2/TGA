@@ -1,0 +1,66 @@
+  log10
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Base-10 logarithm.
+
+      [1mSyntax[0m
+        log10 ( [4mA[24m )
+
+      [1mDescription[0m
+        Log10 returns the base-10 logarithm of it's argument. If the
+        argument is a MATRIX, an element-by-element log10 operation is
+        performed.
+
+        log10 is not implemented yet for COMPLEX data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

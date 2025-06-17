@@ -1,0 +1,6 @@
+for(k in [1:200]){plot(sin(k/10*[1:15:0.1])}
+for(k in [1:200]){plot(sin(k/10*[1:15:0.1]'))}
+quit
+exit
+bye
+Quit

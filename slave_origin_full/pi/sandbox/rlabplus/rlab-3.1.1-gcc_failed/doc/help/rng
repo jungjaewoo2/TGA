@@ -1,0 +1,264 @@
+  rng
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Configures continuous random number generators.
+
+
+      [1mSyntax[0m
+        rng ( [4midx[24m, [4mPDF[24m, [4mp[24m, [4mjdx[24m )
+
+        rng ( [4midx[24m )
+
+        rng (  )
+
+
+      [1mBackground[0m
+        Since rlab-2.2.9, there are 64 continuous random number
+        generators available within the rlab, all of which are
+        configurable by user, but the user can sample only from
+        generators 1..32.  Generators 33 .. 64 are reserved for sampling
+        by the built-in functions.  For each continuous random number
+        generators the following is configurable by user: index of the
+        generator, its probability density function together with its
+        parameters, and the integer random number generator which is
+        used to drive the continuous one.
+
+
+      [1mDescription[0m
+
+
+        [1mrng ( [4m[22midx[24m [1m, [4m[22mPDF[24m [1m, [4m[22mp[24m [1m, [4m[22mjdx[24m [1m)[0m
+           sets the generator No. [4midx[24m to generate continuous random
+           variate distributed according to the probability density
+           function [4mPDF[24m.  The parameters of distribution are given as an
+           array [4mp[24m, and, optionally, the index of underlying integer
+           number generator can be given as [4mjdx[24m.  If [4mjdx[24m is not given
+           then the generator relies on default integer number
+           generator.  If [4midx[24m is in the range 1-32, then this becomes a
+           default continuous random number generator, and can be
+           sampled using
+
+           rand( .. )
+
+
+        [1mrng ( [4m[22midx[24m [1m)[0m
+           sets the generator No. [4midx[24m in the range 1-32 as a default
+           continuous random number generator.
+
+
+        [1mrng ( )[0m
+           prints the information about the currently defined continuous
+           random generators in the main rlab console.
+
+
+
+        Probability density functions [4mPDF[24m and their parameters [4mp[24m:
+
+
+
+        rng ( .., `normal', [ mu , sigma ], .. )
+           Sets the generator to return a random deviate from the
+           Gaussian distribution with mean [4mmu[24m and standard deviation
+           [4msigma[24m.
+
+        rng ( .. ,`normaltail', [ mu, sigma, a ], .. )
+           Sets the generator to return a random deviate from the upper
+           tail of the Gaussian distribution with mean [4mmu[24m and standard
+           deviation [4msigma[24m, and where returned values are larger than
+           the lower limit [4ma[24m, a > mu.
+
+
+        rng ( .. ,`exp', mu, .. )
+           Sets the generator to return a random deviate from the
+           exponential distribution with mean [4mmu[24m.
+
+
+        rng ( .. ,`laplace', [ mu, a ], .. )
+           Sets the generator to return a random deviate from the
+           Laplace distribution with mean [4mmu[24m and width [4ma[24m.
+
+
+        rng ( .. ,`exppow', [ mu, a, b ], .. )
+           Sets the generator to return a random deviate from the
+           exponential power distribution with mean [4mmu[24m, scale parameter
+           [4ma[24m and exponent [4mb[24m.
+
+
+        rng ( .. ,`cauchy', [ mu, a ], .. )
+           Sets the generator to return a random deviate from the Cauchy
+           (Lorentz) distribution with mean [4mmu[24m and scale parameter [4ma[24m.
+
+
+        rng ( .. ,`rayleigh', sigma, .. )
+           Sets the generator to return a random deviate from the
+           Rayleigh distribution with scale parameter [4msigma[24m.
+
+
+        rng ( .. ,`rayleightail', [ sigma, a ], .. )
+           Sets the generator to return a random deviate from the
+           Rayleigh distribution with scale parameter [4msigma[24m and the
+           lower limit [4ma[24m.
+
+
+        rng ( .. ,`levy', [ mu, c, alpha ], .. )
+           Sets the generator to return a random deviate from the Levy
+           symmetric stable distribution with mean [4mmu[24m, scale [4mc[24m and
+           exponent [4malpha[24m, 0 <= alpha <= 2.
+
+
+        rng ( .. ,`levyskew', [ mu, c, alpha, beta ], .. )
+           Sets the generator to return a random deviate from the Levy
+           symmetric stable distribution with mean [4mmu[24m, scale [4mc[24m and
+           exponent [4malpha[24m, 0 <= alpha <= 2, and skewness [4mbeta[24m.
+
+
+        rng ( .. ,`gamma', [ a, b ], .. )
+           Sets the generator to return a random deviate from the Gamma
+           distribution with exponent [4ma[24m and scale [4mb[24m.
+
+
+        rng ( .. ,`uniform', [ xlo, xhi ], .. )
+           Sets the generator to return a random deviate from the
+           uniform distribution in range [4mxlo[24m, [4mxhi[24m.
+
+
+        rng ( .. ,`lognormal', [ zeta, sigma ], .. )
+           Sets the generator to return a random deviate from the
+           lognormal distribution with log-mean [4mzeta[24m and standard
+           deviation [4msigma[24m.
+
+        rng ( .. ,`chisq', [ nu ], .. )
+           Sets the generator to return a random deviate from the chi-
+           squared distribution with [4mnu[24m degrees of freedom.
+
+
+        rng ( .. ,`F', [ nu1, nu2 ], .. )
+           Sets the generator to return a random deviate from the F-
+           distribution with [4mnu1[24m and [4mnu2[24m degrees of freedom.
+
+
+        rng ( .. ,`t', nu, .. )
+           Sets the generator to return a random deviate from the t-
+           distribution with [4mnu[24m degrees of freedom.
+
+
+        rng ( .. ,`beta', [ a, b ], .. )
+           Sets the generator to return a random deviate from the beta
+           distribution with parameters [4ma[24m and [4mb[24m.
+
+
+        rng ( .. ,`logistic', [ mu, b ], .. )
+           Sets the generator to return a random deviate from the
+           logistic distribution with mean [4mmu[24m and scale [4mb[24m.
+
+
+        rng ( .. ,`pareto', [ a, b ], .. )
+           Sets the generator to return a random deviate from the Pareto
+           distribution of order [4ma[24m, where [4mb[24m is the lower limit of the
+           deviates.
+
+
+        rng ( .. ,`weibul', [ a, b ], .. )
+           Sets the generator to return a random deviate from the Weibul
+           distribution with scale [4ma[24m and exponent [4mb[24m.
+
+
+        rng ( .. ,`gumbel1', [ a, b ], .. )
+           Sets the generator to return a random deviate from the Gumbel
+           distribution of type-1 with scale [4ma[24m and exponent scale [4mb[24m.
+
+
+        rng ( .. ,`gumbel2', [ a, b ], .. )
+           Sets the generator to return a random deviate from the Gumbel
+           distribution of type-2 with scale [4ma[24m and exponent scale [4mb[24m.
+
+
+        rng ( .. ,`poisson', mu, .. )
+           Sets the generator to return a random integer deviate from
+           the Poisson distribution with mean [4mmu[24m.
+
+
+        rng ( .. ,`binomial', [ p, n ], .. )
+           Sets the generator to return a random integer deviate from
+           the binomial distribution with with a trial probability [4mp[24m and
+           [4mn[24m being the total number of trials.
+
+
+        rng ( .. ,`negbinomial', [ p, n ], .. )
+           Sets the generator to return a random integer deviate from
+           the negative binomial distribution for number of failures
+           occuring before [4mn[24m successes, where [4mp[24m is the probability of
+           success.
+
+
+        rng ( .. ,`geometric', p, .. )
+           Sets the generator to return a random integer deviate from
+           the geometric distribution, for number of trials with
+           probability [4mp[24m until the first success.
+
+
+        rng ( .. ,`hypergeometric', [ n1, n2, t ], .. )
+           Sets the generator to return a random integer deviate from
+           the hypergeometric distribution, for getting a number of
+           successes from the first batch with [4mn1[24m elements, and the rest
+           from the second batch with [4mn2[24m elements to a number of draws
+           given as max(t,t-n2,n1).
+
+
+        rng ( .. ,`log', p, .. )
+           Sets the generator to return a random integer deviate from
+           the logarithmic distribution, with probability [4mp[24m.
+
+
+        rng ( .. , `default', .. )
+           Resets the random number generator to the default generator,
+           which generates a distributed random variable in the interval
+           < 0, 1 >.
+
+
+        rng uses the GSL library.
+
+
+     [1mSee Also[0m
+        rand, irng, irand, iseed, drng, drand, urandom.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

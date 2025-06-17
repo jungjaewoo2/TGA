@@ -1,0 +1,66 @@
+  inf
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Create a variable or a matrix with value of infinity.
+
+      [1mSyntax[0m
+        inf ( )
+
+        inf (nrow, ncol)
+
+        inf (A)
+
+      [1mDescription[0m
+        Inf returns a scalar whose value is infinity, or a matrix of
+        inf's of size [4mnrow[24m-by-[4mncol[24m, or a matrix of inf's of the same
+        size as the matrix [4mA[24m. Inf value is according to IEEE-754.
+        Unlike NaN, inf == inf should return TRUE (1).
+
+
+     [1mSee Also[0m
+        nan, isinf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

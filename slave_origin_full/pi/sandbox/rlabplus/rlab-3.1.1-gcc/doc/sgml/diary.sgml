@@ -1,0 +1,17 @@
+<sect> diary
+<p>
+<descrip>
+<tag> Synopsis </tag> Log commands (program statements) to a file.
+<tag> Syntax </tag> diary ( ) </>  <p>
+                    diary ( <em>FILENAME</> )
+<tag> Description </tag>
+
+	The diary function echoes all input commands and Rlab output
+	to a diary file. If <em>FILENAME</> is not specified, then a
+	file named: <tt>DIARY</> is opened.
+
+	The diary, used without any arguments will turn on statement
+	logging, or turn off statement logging if a diary file is
+	already open.
+
+</descrip>

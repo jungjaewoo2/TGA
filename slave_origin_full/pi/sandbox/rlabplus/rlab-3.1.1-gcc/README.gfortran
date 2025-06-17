@@ -1,0 +1,10 @@
+2007/8/6:
+
+1. rlabplus does not compile well on gfortran: gfortran cannot yet build pgplot package,
+because the compiler does not handle %VAL and such statements. For that reason, the rlab
+has to be built without pgplot interface:
+  > rm config.cache
+  > ./configure --without-pgplot
+Please note, all the fortran libraries have already been built with gfortran. This is easily
+verified by checking their makefile's.
+

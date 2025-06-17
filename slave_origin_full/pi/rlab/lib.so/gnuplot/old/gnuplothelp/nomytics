@@ -1,0 +1,16 @@
+nomytics:
+
+Synopsis: Sets the minor tics on the bottom x-axis.
+
+Syntax: nomytics ( I )
+
+Description:
+
+	The nomytics() function turns off the minor tics on the 
+	left y-axis in the I:th plot-window. 
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, noxtics, x2tics, nox2tics, ytics, noytics, y2tics, noy2tics,
+          ztics, noztics, mxtics, nomxtics, mx2tics, nomx2tics, mytics, 
+          my2tics, nomy2tics, mztics, nomztics

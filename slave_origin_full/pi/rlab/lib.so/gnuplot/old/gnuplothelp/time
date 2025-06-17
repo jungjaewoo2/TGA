@@ -1,0 +1,14 @@
+time:
+
+Synopsis: Insert time and date in plot-window.
+
+Syntax: time ( I )
+
+Description:
+
+	Insert time and date in the I:th plot-window.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: notime
+

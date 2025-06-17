@@ -1,0 +1,16 @@
+noytics:
+
+Synopsis: Sets the major tics on the left y-axis.
+
+Syntax: noytics ( I )
+
+Description:
+
+	The noytics() function turns off the major tics on the 
+	left y-axis in the I:th plot-window. 
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, noxtics, x2tics, nox2tics, ytics, y2tics, noy2tics,
+          ztics, noztics, mxtics, nomxtics, mx2tics, nomx2tics, mytics, nomytics, 
+          my2tics, nomy2tics, mztics, nomztics

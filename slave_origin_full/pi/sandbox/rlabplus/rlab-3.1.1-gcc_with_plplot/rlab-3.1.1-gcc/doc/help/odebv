@@ -1,0 +1,132 @@
+  odebv
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Integrate Boundary Value Problem for a System of Ordinary
+        Differential Equations.  It is also possible to solve a small-
+        parameter continuation problem.
+
+
+     [1mSyntax[0m
+        (1) odebv ([4mdimy[24m, [4mnlbc[24m, [4mf[24m, [4mdf[24m, /[4mp[24m/, [4mX[24m, [4mgL[24m, [4mgR[24m, [4mdgL[24m, [4mdgR[24m /,[4mp[24m/,
+        [4moptions[24m )
+
+        (2) odebv ([4mdimu[24m, [4mnlbc[24m, [4mf[24m, [4mdf[24m, /[4mp[24m/, [4mX[24m, [4mgL[24m, [4mgR[24m, [4mdgL[24m, [4mdgR[24m /,[4mp[24m/, [4mEP[24m,
+        [4moptions[24m )
+
+
+     [1mDescription[0m
+        odebv  integrates a system of N first order ordinary
+        differential equations of the form:
+
+
+                  dy/dt = f(t,y/,p/),
+                  for y=y(i), i=1..N,
+
+                  with boundary conditions:
+                          gL(yL/,p/)=0,
+                          gR(yR/,p/)=0.
+
+
+
+
+
+     Arguments:
+
+        [4mdimu[0m
+           A dimension of the ODE, N=dimu.
+
+        [4mnlbc[0m
+           A dimension of the vector function gL(yL/,p/), i.e., a number
+           of left boundary conditions.
+
+        [4mf[24m[1m, [4m[22mdf[0m
+           A vector function and its jacobian. In normal mode
+           [4mf[24m=function(x,y/,p/), while in continuation mode
+           [4mf[24m=function(x,y/,p/,eps).
+
+        [4mX[24m  A matrix which can be used to pass the integration interval,
+           X=[a,b], initial mesh X=[x1,x2,..xK] which will be improved
+           upon, or initial mesh and the initial approximation for the
+           solution function y, X=[x1,y(x1);x2,y(x2);..;xK,y(xK)].
+
+        [4mgL,gR,dgL,dgR[0m
+           The functions representing the boundary conditions and their
+           jacobians, gL = function(uL/,p/) of dimension nlbc,
+           dgL[i;j]=dgL(i)/dy(j), and same for dgR, of dimension dimy-
+           nlbc. In continuation mode gL = function(uL/,p/,eps), and so
+           on.
+
+        [4mEP[24m A matrix [epmax,epmin] giving the starting and ending value
+           for continuation parameter eps.
+
+        [4moptions[24m [1m=<< imethod;tol;stdout >>[0m
+           In normal mode [4mimethod[24m=0,..3, for integrators ACDC (0,
+           default), mirk221 (1), mirk343 (2), mirk563 (3), coldae (4);
+           [4mtol[24m are tolerances for each component of the solution, while
+           only solver ACDC is available in continuation mode; and,
+           [4mstdout[24m is the file/terminal where the run-time messages are
+           posted.
+
+     This solver utilizes a number of publicly available libraries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

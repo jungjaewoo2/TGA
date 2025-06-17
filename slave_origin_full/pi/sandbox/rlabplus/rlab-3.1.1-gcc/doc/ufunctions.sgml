@@ -1,0 +1,479 @@
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+  Functions are almost first class variables in Rlab. Functions are
+  stored as ordinary variables in the symbol-table; this explains the
+  unusual syntax for creating and storing a function. User written
+  functions are a key feature in any high level language. Mastering
+  their usage is key to getting the most out of Rlab.
+
+  User functions are created within the Rlab programming
+  environment... that is the major distinction between user and
+  builtin functions. Otherwise, there is no difference in the usage of
+  builtin and user-written functions.
+
+  The argument passing and function scoping rules are fairly
+  straightforward and simple. The primary objective is ease of use,
+  and safety, without compromising capability or efficiency.
+
+  The two inter-related concepts important to understanding functions
+  are <em>execution-environments</>, and <em>variable-scopes</>.  An
+  <em>execution-environment</> consists of the variables available to
+  the currently executing statements. A variable's scope refers to the
+  environment that variable is bound to. For instance statements
+  executed from the command line are always executed in the
+  global-environment. The global environment consists of all variables
+  and functions created within that environment. Thus, a statement
+  executed in the global environment only has access to global
+  variables.
+
+  All function arguments, and variables created within functions are
+  visible only within the function's environment, or
+  <em>local-scope</>. Conversely, function statements do not have
+  access to variables in the global-scope (unless certain steps are
+  taken).
+
+  Furthermore, function arguments can be considered local variables
+  (in simplistic sense). Any modifications to a function's arguments
+  are only visible within the function's environment. This is commonly
+  referred to as "pass by value" (as opposed to "pass by
+  reference"). Pass by value means that a variable's value (as opposed
+  to the variable itself) is passed to the function's
+  environment. Thus, when a function argument is modified, only a copy
+  of its value is affected, and not the original variable.
+
+  This separation of environments, or scopes, ensures a "safe"
+  programming environment. Function writers will not accidentally
+  clobber a global variable with a function statement, and users will
+  not accidentally impair the operation of a function with global
+  statements. 
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Function Syntax
+<p>
+
+  The function definition syntax is:
+
+  <quote>
+  function ( <em>arg1</> , <em>arg2</> , ... <em>argN</> )
+  {
+    <em>statements</>
+  }
+  </quote>
+
+  Of course, the function must be assigned to a variable in order for
+  it to be usable:
+
+  <quote>
+  <em>var</> = function ( <em>arg1</> , <em>arg2</> , ... <em>argN</> )
+  {
+    <em>statements</>
+  }
+  </quote>
+
+  The number of arguments, and their names are arbitrary (actually
+  there is a 32 argument limit. If anyone ever hits that limit, it can
+  be easily increased). The function can be used with fewer arguments
+  than specified, but not more.
+
+  The function <em>statements</> are any valid Rlab statements, with
+  the exception of other function definitions. The optional
+  <em>return-statement</> is peculiar to functions, and allows the
+  program to return data to the calling environment.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Using Functions
+<p>
+
+  Every invocation of a function returns a value. Normally the user
+  determines the return-value of a function. However, if a return
+  statement does not exist, the function return value will default to
+  zero. Since function invocations are expressions, many syntactical
+  shortcuts can be taken. For example, if a function returns a list,
+  like the <tt>eig</> function:
+
+<tscreen><verb>
+> eig(a)
+   val          vec          
+> eig(a).val
+   -0.677      0.469       1.44  
+</verb></tscreen>
+
+  <tt>eig</> returns a list containing the elements <tt>val</> and
+  <tt>vec</>; if we just want to get at one of the list elements, such
+  as <tt>val</>, we can extract it directly. The same sort of shortcut
+  can be used when a function returns matrices:
+
+<tscreen><verb>
+> size(rand(20,30))
+       20         30  
+> size(rand(20,30))[2]
+       30  
+</verb></tscreen>
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Function Arguments
+<p>
+
+  As mentioned earlier, functions can have an arbitrary number of
+  arguments. When program execution is passed to a user-function, all
+  or some, or none of the arguments can be specified. Arguments that
+  are not specified are replaced with UNDEFINED objects. How well the
+  user-functions behaves when invoked with varying argument lists is
+  entirely up to the user/programmer. If you don't want to specify the
+  last N arguments to a function, just truncate the argument list. If
+  you don't want to specify arguments that are in the beginning, or
+  middle of the complete list of arguments, use commas. For example, a
+  user-function defined like:
+
+<tscreen><verb>
+> x = function ( arg1 , arg2 , arg3 , arg4 )
+  {
+    if (exist (arg1)) { arg1 }
+    if (exist (arg2)) { arg2 }
+    if (exist (arg3)) { arg3 }
+    if (exist (arg4)) { arg4 }
+  }
+	<user-function>
+</verb></tscreen>
+
+  Can be used as follows:
+
+<tscreen><verb>
+> x ( );
+> x ( pi );
+     3.14  
+> x ( pi, 2*pi );
+     3.14  
+     6.28  
+> x ( , , , 4*pi );
+     12.6  
+</verb></tscreen>
+
+  In the first instance, no arguments are specified, and the function
+  does nothing. In the second instance, only the first argument is
+  specified, and it is echoed to the screen. In the third instance,
+  the first and second arguments are specified, and are properly
+  echoed. In the last case, only the fourth argument is specified.
+
+  Each function has a local variable named <tt>nargs</>
+  available. <tt>nargs</> is automatically set to the number of
+  arguments passed to a function for each invocation. For example:
+
+<tscreen><verb>
+> x = function ( a, b, c, d, e, f, g ) { return nargs; }
+	<user-function>
+> x(1,2,3)
+        3
+> x(1,,2)
+        3
+</verb></tscreen>
+
+  This simple one-line function demonstrates how the <tt>nargs</>
+  variable is initialized. Notice that while nargs correctly reports
+  the number of arguments in the first instance, the results from the
+  second trial may seem a little confusing. The variable <tt>nargs</>
+  is intended to provide programmers with the number of arguments
+  passed to a user-function, and to provide some degree of
+  compatibility with other popular very high-level languages. However,
+  the existence of the variable <tt>nargs</> and the ability to
+  <em>skip</> arguments conflict and make the meaning of <tt>nargs</>
+  ambiguous. The bottom line is: <tt>nargs</> has the value of the
+  argument number of the last <em>specified</> argument.
+
+  A better method of determining which arguments were explicitly
+  specified, and where were not is the use the builtin function
+  <tt>exist</>. For example:
+
+<tscreen><verb>
+> x = function ( a , b, c, d, e, f, g )
+  {
+    if (exist (a)) { "1st argument was specified" }
+    if (!exist (a)) { "1st argument was not specified" }
+  }
+	<user-function>
+> x(2);
+1st argument was specified  
+> x(,3);
+1st argument was not specified  
+</verb></tscreen>
+
+  This method is often used to decide if an argument's default value
+  needs to be used. Another example:
+
+<tscreen><verb>
+> # compute a partial sum of a vector...
+> psum = function ( v , n )
+  {
+    if (!exist (n)) { n = length (v); }
+    return sum (v[1:n]);
+  }
+	<user-function>
+> v = rand(1024,1);
+> psum(v)
+      497  
+> psum(v,5)
+     2.99  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Function Variable Scoping Rules
+<p>
+
+  Although the subject of function variable scoping has already been
+  addressed, it deserves more attention. Rlab utilizes a pass by value
+  scheme for all function arguments. In many interpretive languages,
+  this means a copy of the function arguments is made prior to
+  function execution. This practice can be very time and memory
+  inefficient, especially when large matrices or list-structures are
+  function arguments. Rlab does <em>not</> copy function arguments,
+  unless the function modifies the arguments.
+
+<tscreen><verb>
+> x = function ( a ) { global(A) a = 2*a; A ? return a; }
+	<user-function>
+> A = 2*pi
+     6.28  
+> x(A)
+     6.28  
+     12.6  
+> A
+     6.28  
+</verb></tscreen>
+
+  In the above example the function <tt>x</> modifies its argument
+  <tt>a</>. Before modifying its argument, the function prints the
+  value of the global variable <tt>A</>. <tt>A</> is assigned the
+  value of <tt>2*pi</>, and <tt>x</> is called with argument
+  <tt>A</>. After <tt>x</> modifies its argument, <tt>A</> is
+  printed; note that the value of <tt>A</> is not changed. Printing
+  the value of <tt>A</> afterwards verifies that its value has not
+  changed. 
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Function Recursion
+<p>
+
+  Functions can be used recursively. Each invocation of a function
+  creates a unique environment. Probably the most popular example for
+  displaying this type of behavior is the factorial function:
+
+<code>
+#include "examples/fac.r"
+</code>
+
+  The special syntax: <tt>&dollar;self</> can be used within recursive
+  functions to protect against the possibility of the function being
+  renamed. 
+
+<tscreen><verb>
+> fac(4)
+       24  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Loading Functions and Function Dependencies
+<p>
+
+  Functions definitions are treated just like any other valid
+  statements. Since function definitions are mostly stored in files
+  for re-use, you will need to know how to load the program statements
+  within a file into Rlab's workspace. There are three main methods
+  for performing this task:
+
+  <itemize>
+  <item> The <tt>load</> function reads the argument (a string), and
+         reads that file, interpreting the file's contents as Rlab
+         program(s). The file is read, and interpreted, regardless of
+         file modification or access times.
+
+  <item> the <tt>rfile</> statement is a short-cut to the <tt>load</>
+         statement. Additionally, <tt>rfile</> searches a pre-defined
+         path of directories to files (ending in <tt>.r</>) to
+         load. The file is read, and interpreted, regardless of file
+         modification or access times.
+
+  <item> The <tt>require</> statement, is similar to the <tt>rfile</>
+         statement, except it only loads the specified file
+         once. <tt>require</> looks for a user-function with the same
+         name as the argument to <tt>require</>, loading the file if,
+         and only if, a user-function of the same name cannot be
+         found. File access and/or modification times are not
+         considered. 
+  </itemize>
+
+<sect1> How a function is Loaded
+<p>
+
+  Some discussion of the "behind the scenes work" that occurs when a
+  function is loaded is warranted. Although not absolutely necessary,
+  understanding this process will help the reader write more
+  complicated programs efficiently.
+
+  <itemize>
+  <item> The file is opened, and its contents are read.
+
+  <item> As the program statements are read, they are compiled and
+         executed. Thus, as Rlab encounters global program statements,
+         they are executed. Function definitions (assignments) are
+         global program statements. So... function definitions get
+         compiled, and stored as they are read.
+
+  <item> Variable (this includes) functions references are resolved
+         at compile-time. A variable can be UNDEFINED as long as it is
+         resolved before statement execution. Thus a function can
+         reference other functions, that have not been previously
+         defined; as long as these references are resolved before the
+         function is executed.
+
+  <item> When the file's end mark (EOF) is encountered, the file is
+         closed, and execution returns to its previous environment. 
+  </itemize>
+
+  Some examples will make the previous remarks more meaningful.
+
+<sect2> Example-1
+<p>
+
+  The following file contains a trivial function
+  definition/assignment. Note that the variable (function) <tt>y</> is
+  undefined.
+
+<code>
+#include "examples/ex-1.r"
+</code>
+
+  Now, we will load the file (<tt>ex-1.r</>). Note that there are no
+  apparent problems until the function is actually executed.
+
+<tscreen><verb>
+> load("./ex-1.r");
+> x(3)
+cannot use an undefined variable as a function
+ERROR: ../rlab: function undefined
+	near line 3, file: ./ex-1.r
+</verb></tscreen>
+
+  Now, we can define <tt>y</> to be a function, and <tt>x</> will
+  execute as expected.
+
+<tscreen><verb>
+> y = function ( A ) { return 3*A; };
+> x(3)
+        9  
+</verb></tscreen>
+
+<sect2> Example-2
+<p>
+
+  Understanding how files are loaded will help the efficiency of your
+  functions. For example, functions are often written which depend
+  upon other functions. Resolving the dependencies within the file
+  that contains the function is common, for example, lets use the
+  previous file (<tt>ex-1.r</>). We know that the function <tt>x</>
+  depends upon the function <tt>y</>, so we will put a <tt>rfile</>
+  statement within the file <tt>ex-1.r</>, which we will now call
+  <tt>ex-2.r</>. 
+
+<code>
+#include "examples/ex-2.r"
+</code>
+
+  Note that the <tt>rfile</> statement is exterior to the function; it
+  is a global program statement. Thus, the file <tt>y.r</> will get
+  loaded once, and only once when the file <tt>ex-2.r</> is loaded.
+
+<tscreen><verb>
+> rfile ex-2
+> x(4)
+       12  
+</verb></tscreen>
+
+  We could have put the <tt>rfile</> or <tt>load</> statement within
+  the function definition. But, then the file <tt>y.r</> would get
+  loaded every time the function <tt>x</> was executed! Performance
+  would be worse than if the <tt>rfile</> statement was a global
+  statement, especially if the function was used within a for-loop!
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Restrictions
+
+<p>
+
+  Although there has been no reason for the user to infer that there
+  are limitations on the number of functions per file, or the way
+  function comments must be formatted, the fact that there are no
+  restrictions in these matters must be explicitly stated because
+  other interpreted languages often make such restrictions.
+
+  <itemize>
+
+  <item> There are no restrictions on the number of function definitions
+         within a single file.
+
+  <item> There are no restrictions on how a functions comments must be
+         formatted to work with the online help system. When the help
+         command is used, the <em>entire</> contents of the named file
+         are displayed on the screen (usually via a pager). The user
+         can view comments at the top of the file, or look at the
+         entire function.
+
+  <item> There are no restrictions on the type of programs stored in
+         files. Simple user-functions can be stored, as well as global
+         program statements, or any mixture of the two.
+
+  </itemize>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Static Variables
+<p>
+
+  Static variables, or file-static variables are variables that are
+  only visible within the file in which they are declared. The syntax
+  for the static-declaration is:
+
+  <quote>
+  static ( <em>var1</>, <em>var2</>, ... <em>varN</> )
+  </quote>
+
+  File-static variables are accessible by all program statements after
+  the static declaration. All functions have access to file-static
+  variables as if they were local variables, no special declarations
+  are necessary.
+
+  Since functions are variables, functions can be hidden within a file
+  with the static declaration. These functions are only accessible to
+  program statements within that particular file. This technique is
+  very useful for writing function toolboxes or libraries, since it
+  eliminates the problem of global variables accidentally colliding
+  with toolbox variables.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Help for User Functions
+<p>
+
+  Although help for user-functions has already been eluded to, it is
+  worth covering in detail. By convention, all the documentation
+  necessary to use a function, or a library of functions is included
+  within the same file, in the form of comments. This practice is very
+  convenient since your function is never without
+  documentation. Rlab's online help system is very simple. when a user
+  types <tt>help eig</> (for example) Rlab looks for a help file named
+  <tt>eig</> in the designated help directory. If the file <tt>eig</>
+  cannot be found, the rfile search path is checked for files named
+  <tt>eig.r</>. If a file named <tt>eig.r</> is found, its entire
+  contents are displayed in the terminal window. Normally some sort of
+  paging program is used, such as <tt>more(1)</>, which allows the
+  user to terminate viewing the file at any time.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

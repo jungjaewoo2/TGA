@@ -1,0 +1,19 @@
+<sect> getenv 
+<p>
+<descrip>
+<tag> Synopsis </tag> Get an environment variable
+<tag> Syntax </tag> getenv ( <em>NAME</> )
+<tag> Description </tag>
+
+	Getenv searches the current environment for a variable with
+	name <em>NAME</>. The value of the environment variable is
+	returned as a string.
+
+	Exactly how getenv behaves is depends upon the underlying
+	operating system implementation. On UNIX system getenv will
+	return a NULL string if the environment variable does not
+	exist. 
+
+<tag>See Also</tag>   putenv
+
+</descrip>

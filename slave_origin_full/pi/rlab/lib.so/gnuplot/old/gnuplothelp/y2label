@@ -1,0 +1,16 @@
+y2label:
+
+Synopsis: Set the y-axis text label for the right y-axis.
+
+Syntax: ylabel ( "string", I )
+
+Description:
+
+	Set the y-axis label for the I:th plot-window. 
+	y2label() uses the right y-axis.
+	If y2label() is used without any arguments, then the
+	y-axis label is set to the null-string. 
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: xlabel, x2label, ylabel, zlabel, label, title

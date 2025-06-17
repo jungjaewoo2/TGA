@@ -1,0 +1,32 @@
+[    85.047] 
+X.Org X Server 1.19.2
+Release Date: 2017-03-02
+[    85.048] X Protocol Version 11, Revision 0
+[    85.048] Build Operating System: Linux 4.9.41-v7+ armv7l Raspbian
+[    85.048] Current Operating System: Linux raspberrypi 4.9.59-v7+ #1047 SMP Sun Oct 29 12:19:23 GMT 2017 armv7l
+[    85.049] Kernel command line: 8250.nr_uarts=0 bcm2708_fb.fbwidth=1024 bcm2708_fb.fbheight=600 bcm2708_fb.fbswap=1 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  dwc_otg.lpm_enable=0 console=ttyS0,115200 console=tty1 root=PARTUUID=4b96e192-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
+[    85.050] Build Date: 18 October 2017  04:55:30PM
+[    85.050] xorg-server 2:1.19.2-1+rpt1+deb9u2 (https://www.debian.org/support) 
+[    85.051] Current version of pixman: 0.34.0
+[    85.051] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[    85.051] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[    85.057] (==) Log file: "/home/pi/.local/share/xorg/Xorg.0.log", Time: Sun Feb 11 21:35:48 2018
+[    85.063] (==) Using config directory: "/etc/X11/xorg.conf.d"
+[    85.067] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[    85.073] Parse error on line 15 of section InputClass in file /etc/X11/xorg.conf.d/40-libinput.conf
+	"u" is not a valid keyword in this section.
+[    85.078] (EE) Problem parsing the config file
+[    85.078] (EE) Error parsing the config file
+[    85.078] (EE) 
+Fatal server error:
+[    85.088] (EE) no screens found(EE) 
+[    85.093] (EE) 
+Please consult the The X.Org Foundation support 
+	 at http://wiki.x.org
+ for help. 
+[    85.106] (EE) Please also check the log file at "/home/pi/.local/share/xorg/Xorg.0.log" for additional information.
+[    85.108] (EE) 
+[    85.111] (EE) Server terminated with error (1). Closing log file.

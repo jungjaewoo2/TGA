@@ -1,0 +1,2 @@
+/usr/bin/ar qc libplfortrandemolib.a  CMakeFiles/plfortrandemolib.dir/plfortrandemolib.f90.o
+/usr/bin/ranlib libplfortrandemolib.a
