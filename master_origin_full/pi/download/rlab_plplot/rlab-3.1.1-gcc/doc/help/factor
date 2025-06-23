@@ -1,0 +1,66 @@
+  factor
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Factor a square matrix.
+
+      [1mSyntax[0m
+        factor ( [4mA[24m )
+
+      [1mDescription[0m
+        The factor function computes the LU factorization of the input
+        matrix [4mA[24m. Factor returns a list with 3 elements:
+
+         [1mif [4m[22mA[24m [1mis a general matrix:[0m
+
+        [4mlu[24m a matrix containing the LU factors
+
+        [4mpvt[0m
+           a vector containing the pivot indices
+
+        [4mrcond[0m
+           the inverse of the condition estimate
+
+        Factor utilizes the LAPACK subroutines DGETRF, DGECON or ZGETRF,
+        ZGECON.
+
+         [1mif [4m[22mA[24m [1mis a symmetric matrix:[0m
+
+        [4mldl[0m
+           a matrix containing the block diagonal matrix D, and the
+           multipliers used to obtain L.
+
+        [4mpvt[0m
+           a vector containing the pivot indices
+
+        [4mrcond[0m
+           the inverse of the condition estimate
+
+        Factor utilizes the LAPACK subroutines DSYTRF, DSYCON or ZHETRF,
+        ZHECON.
+
+        The user can overide factor's choice of solution type with the
+        optional argument TYPE.
+
+
+          TYPE = "g" or "G"       The general solution is used.
+
+
+
+          TYPE = "s" or "S"       the symmetric solution is used.
+
+
+     Factor returns the results in the above format, so that they may be
+     conveniently used with backsub for repetitive solutions. The user-
+     function lu will separate the results from factor into separate L
+     and U matrices.
+
+
+     [1mSee Also[0m
+        backsub, inv, lu, solve
+
+
+
+

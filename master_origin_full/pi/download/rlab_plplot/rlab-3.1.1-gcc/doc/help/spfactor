@@ -1,0 +1,66 @@
+  spfactor
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Factor a sparse coefficient matrix.
+
+      [1mSyntax[0m
+        spfactor ( [4mA[24m, [4mDIAG_PIVOT[24m, [4mPERMV[24m )
+
+      [1mDescription[0m
+        Factor a general (non-symmetric) sparse coefficient matrix into
+        L and U factors.
+
+
+        [4mDIAG_PIVOT[0m
+           specifies the diagonal-pivoting threshold.
+
+        [4mPERMV[0m
+           is the permutation vector.
+
+        [4mX[24m  is the solution vector/matrix.
+
+        To be finished later...
+
+     [1mSee Also[0m
+        solve, sparse, spsolve, backsub, factor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

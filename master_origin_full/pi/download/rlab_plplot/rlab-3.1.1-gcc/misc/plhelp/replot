@@ -1,0 +1,9 @@
+replot:
+
+Synopsis: Re-draw the current plot-window.
+
+Syntax: replot ( )
+
+Description:
+
+	Re-draws the current plot-window.

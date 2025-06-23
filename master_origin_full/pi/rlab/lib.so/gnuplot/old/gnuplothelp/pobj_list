@@ -1,0 +1,12 @@
+pobj_list:
+
+Synopsis: Get the specified plot object.
+
+Syntax: pobj_list ( N )
+
+Description:
+
+	Return a list containing the attributes necessary to control
+	plotting via the Gnuplot interface. This function servers no
+	specific purpose other than providing information; mostly used
+	for debugging purposes.

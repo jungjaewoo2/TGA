@@ -1,0 +1,509 @@
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+  Now that you have seen how to start Rlab, run a program, get help,
+  and interpret error messages, you should be ready to try out some
+  elementary operations. These simple examples are here to help you
+  ``get your feet wet''. Please read this section in front of a
+  computer, and try the examples as you read each one.
+
+  Since this is a tutorial, every detail and nuance of each example
+  may not be fully explained. As you work through this section you may
+  have to take some ideas ``on faith''. However, everything should be
+  fully explained in subsequent sections of this manual. If you find
+  something that is not explained, please bring it to the author's
+  attention.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Fundamental Operations
+<p>
+
+  Rlab does not require definition of variable types and size, Unlike
+  more conventional languages such as: Fortran, Pascal, and C. This
+  approach may seem daring at first, but practice has shown that it is
+  most often a much more productive environment for rapid development
+  of programs than strictly typed languages.
+
+<sect1> Creating Matrices / Arrays
+<p>
+
+  For starters we will introduce the reader to basic operations that
+  are used in many applications. The first is to create a matrix or
+  array of data so that operations can be demonstrated. The matrix
+  elements are entered at the command line (or in a file). The commas
+  separate the elements of a row, and the semi-colons separate one row
+  from the next.
+
+<tscreen><verb>
+> a = [1,2,3; 4,5,6; 7,8,9]
+        1          2          3  
+        4          5          6  
+        7          8          9  
+</verb></tscreen>
+
+  The commas are <em>required</> so that there are no ambiguities when
+  more complex expressions are used to create a matrix. For an
+  example, lets create the Attitude matrix for a 3-2-3 Euler angle
+  rotation. The variables <tt>th</>, <tt>ph</>, and <tt>ps</>
+  represent the three Euler angles. To make the notation more concise,
+  we will make the variables <tt>c</> and <tt>s</> copies of the
+  builtin functions <tt>sin</> and <tt>cos</>. Next the matrix is
+  entered, with the result displayed upon completion.
+
+<tscreen><verb>
+> th = pi/8; ph = pi/4; ps = pi/16;
+> c = cos; s = sin;
+> A = [ c(ps)*c(th)*c(ph)-s(ps)*s(ph), c(ps)*c(th)*s(ph)+s(ps)*c(ph), -c(ps)*s(th);
+>      -s(ps)*c(th)*c(ph)-c(ps)*s(ph),-s(ps)*c(th)*s(ph)+c(ps)*c(ph),  s(ps)*s(th);
+>       s(th)*c(ph),                   s(th)*s(ph),                    c(th) ]
+    0.503      0.779     -0.375  
+   -0.821      0.566     0.0747  
+    0.271      0.271      0.924  
+</verb></tscreen>
+
+  The matrices we have created thus far: <tt>a</>, and <tt>A</> are
+  two-dimensional; they have row and column dimensions. Actually, all
+  arrays are two-dimensional. Row and column vectors merely have one
+  dimension equal to one, and scalar values have both dimensions equal
+  to one.
+
+  The <tt>show</> function displays information about its argument. In
+  the following example, we see that the entire array <tt>a</> is a
+  3-by-3 matrix, from the numeric class, data type real, and uses
+  dense storage. Note that the scalar value <tt>a[1]</> is also the
+  same kind of object, just with different dimensions.
+
+<tscreen><verb>
+> show(a);
+	nr                  :	3
+	nc                  :	3
+	n                   :	9
+	class               :	num
+	type                :	real
+	storage             :	dense
+> show(a[1]);
+	nr                  :	1
+	nc                  :	1
+	n                   :	1
+	class               :	num
+	type                :	real
+	storage             :	dense
+</verb></tscreen>
+
+<sect1> Reading Data From a File
+<p>
+
+  Numeric data can also be easily read from a file with the buitin
+  functions (see Section <ref id="reading-data" name="Data">). For
+  this example we will read a matrix stored in a text file. The
+  <tt>readm</> function will read a text file that contains columns of
+  numbers. In this instance the file looks like:
+
+<code>
+        17        24         1         8        15
+        23         5         7        14        16
+         4         6        13        20        22
+        10        12        19        21         3
+        11        18        25         2         9
+</code>
+
+  The matrix can be read with the following statement.
+
+<tscreen><verb>
+> m = readm("magic.dat");
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Basic Math Operations
+<p>
+
+  The basic mathematical operators: <tt>+,-,*,/</> work on numeric
+  objects of any dimension. If the operands are scalars, then the
+  operations are performed as expected:
+
+<tscreen><verb>
+> 2 + 3
+        5  
+> 2 - 3
+       -1  
+> 2 * 3
+        6  
+> 2 / 3
+    0.667  
+</verb></tscreen>
+
+  If either of the operands have dimensions higher than one, then
+  array or matrix operations are performed. Array operations act in an
+  element-by-element sense. That is, the scalar value is used
+  repeatedley to perform the operation on each element of the
+  array. For example:
+
+<tscreen><verb>
+> a+2
+        3          4          5  
+        6          7          8  
+        9         10         11  
+> 2*a
+        2          4          6  
+        8         10         12  
+       14         16         18  
+</verb></tscreen>
+
+  When both operands are matrices, then matrix operations are
+  performed, provided the dimensions of the operands are
+  appropriate. For example:
+
+<tscreen><verb>
+> a+a
+        2          4          6  
+        8         10         12  
+       14         16         18  
+> a*a
+       30         36         42  
+       66         81         96  
+      102        126        150  
+> [1,2,3] * a
+       30         36         42  
+> a * [1;2;3]
+       14  
+       32  
+       50  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Basic Tools
+<p>
+
+  In addition to the basic mathematical operators, there are many
+  functions designed to operate efficiently on arrays. Most of the
+  functionality these functions provide could be performed with fairly
+  simple algorithms written in the Rlab language. However, these
+  functions are written in the C-language (a compiled language), and
+  are optimized for operations on arrays. Generally, using these
+  functions will produce programs with good performance, and a minimum
+  of effort. Generally, there are three types of functions: scalar,
+  vector, and matrix.
+
+  <descrip>
+  <tag>Scalar Functions:</tag> These functions operate on scalar
+       values, and treat arrays (matrices) in an element-by-element
+       fashion. For example, the function <tt>abs</> will return the
+       absolute value of an object (provided it is a numeric
+       object). If the object is scalar in size, the result is
+       scalar. If the object is an array, either a vector or a matrix,
+       then the result is an array of the same size, with each
+       element representing the absolute value of the corresponding
+       element of the input array.
+
+  <tag>Vector Functions:</tag> These functions operate on either row
+       (1-by-N), or column (N-by-1) vectors. If the argument is an
+       array with dimensions N-by-M, then the operation is performed
+       on the M columns of the input.
+
+  <tag>Matrix Functions:</tag> These function operate on matrices as a
+       single entity. These functions may return a scalar, a vector,
+       another matrix, or any combination. For example, the function
+       <tt>det</> returns a scalar value, while <tt>eig</> returns a
+       matrix (the eigenvectors), and a vector (the eigenvalues).
+  </descrip>
+
+  Using the matrices created in the previous section we will
+  demonstrate some of the most frequently used functions.
+
+  The matrix <tt>m</> has been termed a "magic square" matrix by
+  some. The name is due to the properties of the matrix. First of all,
+  its elements are integers from 1 to N squared (N is the dimension of
+  the matrix). The sum of each row, the sum of each column, and the
+  sum of the diagonal elements are all the same. These properties can
+  be displayed very simply with the help of some functions.
+
+<tscreen><verb>
+> sum(m)
+       65         65         65         65         65  
+> sum(m')
+       65         65         65         65         65  
+> sum(diag(m))
+       65  
+</verb></tscreen>
+
+  
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<sect2> Linear Algebra
+<p>
+
+  Rlab contains a high-level interfaces to the LAPACK (Linear Algebra
+  PACKage), the FFTPACK (Fast Fourier Transform PACKage), and the
+  RANLIB (RANdom number LIBrary) libraries. These interfaces can
+  simplify many, otherwise difficult programming tasks. For example,
+  we might be interested in solving a system of equations. Using the
+  magic-square matrix once again
+
+<tscreen><verb>
+> 1/rcond(m)
+      6.7  
+> x = solve(m, ones(5,1))
+   0.0154  
+   0.0154  
+   0.0154  
+   0.0154  
+   0.0154  
+> m*x - ones(5,1)
+        0  
+        0  
+        0  
+        0  
+        0  
+</verb></tscreen>
+
+  The function <tt>rcond</> estimates the reciprocal of the matrix
+  condition number. A value of 6.7 indicates that the magic-square
+  matrix is reasonably well conditioned (full-rank). Next, we use the
+  <tt>solve</> function, to get the solution to the system of
+  equations with coefficients of the magic-square, and right-hand
+  sides of unity. Lastly, we check the result by mulitplying the
+  coefficient matrix by the solution vector (<tt>m*x</>) and
+  subtracting the right-hand side. The result should be a zero-vector
+  (and it is).
+
+  Note that there are other ways to solve a system of equations. The
+  <tt>&bsol;</> operator (see Section <ref id="arithmetic-ops"
+  name="Arithmetic Operations">) could be used like:
+
+<tscreen><verb>
+> x = m\ones(5,1)
+</verb></tscreen>
+ 
+  Or, the <tt>inv</> function could be used. However, using <tt>inv</>
+  is usually a bad idea.
+
+  In addition to the linear-algebra functions supplied to solve
+  systems of equations, there are numerous others such as <tt>eig</>
+  for solving eigenvalue problems, and <tt>qr</> for performing QR
+  decomposition, and <tt>svd</> for performing the singular value
+  decomposition. 
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Computing the Mean
+<p>
+
+  This example is fairly long, but it does cover allot of ground.  For
+  this example it is assumed that there exist data in a file, for
+  which you want to know some statistics. In this case, the mean or
+  average, and the standard deviation. The file looks like:
+
+<tscreen><verb>
+1        90
+2        86
+3        55
+4        92
+5        73
+6        30
+</verb></tscreen>  
+
+  The students are identified with an integer (the first column). To
+  read this data, and compute the mean or average test score is
+  simple. The <tt>readm</tt> function is used to get the data from the
+  file. The contents of the file are read, and assigned to the matrix
+  <tt>grades</tt>.
+
+<tscreen><verb>
+> grades = readm("jnk");
+> sum(grades)
+       21        426  
+> sum(grades[;2])/grades.nr
+       71  
+</verb></tscreen>  
+
+  The function <tt>sum</tt> sums the column of a matrix, and is used
+  here to look at the sums of both columns. However, only the average
+  of the second column is desired. The following statement singles out
+  the second column of <tt>grades</tt>, uses it as an argument to
+  <tt>sum</tt>, and divides the result by the number of rows in
+  <tt>grades</tt>. 
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Computing the Mean Again
+<p>
+
+  A more complicated version (only at first glance) of the 
+  problems is created when the professor wants to eliminate numeric
+  identification of each student and use their names instead. This
+  file consists of student's names in the first column, and grades in
+  the second column.
+
+<tscreen><verb>
+Jeanne       90
+John         86
+Fred         55
+David        92
+Alice        73
+Dork         30
+</verb></tscreen>  
+
+  Although the file format is simple, many programs/languages would
+  have difficulty handling the mixture of string and numeric
+  data. Rlab has a list-object which allows for convenient association
+  of numeric and string data. Lists are N-dimensional arrays that are
+  indexed associatively. With the list we can create elements that are
+  indexed with the student's name. Each element will then contain the
+  student's grade. For example: <tt>grade.Alice</tt> will contain
+  Alice's grade of 73. First the data must be read and the array
+  <tt>grade</tt> created.
+
+<tscreen><verb>
+> while((length(line = getline("mean_std.ex"))) != 0)
+  {
+    grade.[line.[1]] = line.[2];
+  }
+</verb></tscreen>  
+
+  The previous four lines of code may look at little complex, but is
+  really quite simple, taken one step at a time. Starting with the
+  getline function call: 
+
+<tscreen><verb>
+line = getline("mean_std.ex")
+</verb></tscreen>  
+
+  The <tt>getline</tt> function takes a filename as argument, reads one
+  line, and splits it into numbers and strings. The data are returned
+  as a list, with the first element containing the data in the first
+  field, the second element containing the data in the second field
+  and so on. When <tt>getline</tt> can't read anymore information from
+  the file it returns a list with zero length. To read from a file,
+  until the end we use:
+
+<tscreen><verb>
+length(line = getline("mean_std.ex")) != 0
+</verb></tscreen>  
+
+  inside a <tt>while</tt> statement. The <tt>while</tt> statement executes
+  until the condition is false (zero). Thus, when the end-of-file is
+  reached, and <tt>getline</tt> returns a zero-length list, the
+  while-loop will terminate. The statement inside the while-loop:
+
+<tscreen><verb>
+    grade.[line.[1]] = line.[2];
+</verb></tscreen>  
+
+  creates a list-variable named <tt>grade</tt>. Each element of grade
+  is a student's grade. These elements are indexed with the student's
+  name. Remember, <tt>getline</tt> returns a list containing the
+  whitespace separated fields of each line, so: <tt>line.[1]</tt> is the
+  first field, or the student's name in each line, and <tt>line.[2]</tt>
+  is the second field, or the student's grade in each line. The result
+  is a list. We can see the list indices by typing the list-variable's
+  name at the prompt, and we can see the contents of a list element by
+  using the appropriate list index.
+
+<tscreen><verb>
+> grade
+   Alice        David        Dork         Fred         Jeanne       
+   John         
+> grade.Alice
+       73
+</verb></tscreen>  
+
+  To compute the mean value of the students grades, a simple for-loop
+  is used to sum up the grades, prior to dividing the total by the
+  number of students.
+
+<tscreen><verb>
+> total = 0;
+> for (i in members (grade))
+  {
+    total = total + grade.[i];
+  }
+> mean = total / length(grade)
+       71  
+</verb></tscreen>  
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Fitting a Curve
+<p>
+
+  It is often necessary to fit a curve to some experimental data. This
+  is a simple matter with a high-level language. We will start by
+  generating our own "experimental" data.
+
+  First, set the random number generator to generate numbers from a
+  uniform distribution, with a lower bound of -2, and an upper bound
+  of 5.
+
+<tscreen><verb>
+> rand("uniform",-2, 5);
+</verb></tscreen>
+
+  Next, generate random data with a linearly varying component.  The
+  linearly varying component is formed, and stored in <tt>off</>. The
+  simulated, measured data is stored in <tt>b</>.
+
+<tscreen><verb>
+> off = 0:-20:-.2;
+> b = ((off + 22) + rand( size(off) ));
+</verb></tscreen>
+
+  Next, generate the Data matrix, <tt>A</>.
+
+<tscreen><verb>
+> m = b.n;
+> t = (1:m)/m;
+> A = [ ones(m,1), t', (t.^2)' ];
+</verb></tscreen>
+
+  Now use left division (least squares) to solve for <tt>x</>.
+
+<tscreen><verb>
+> x = A\b';
+</verb></tscreen>
+
+  Now, create a simple function that uses the computed parameters to
+  make predictions. 
+
+<code>
+ls = function(t)
+{
+  global (x)
+  return x[1] + x[2]*t + x[3]*t.^2;
+}
+</code>
+
+  Last, plot a comparison of the original data, and the computed
+  values. 
+
+<tscreen><verb>
+> plgrid ();
+> pltitle ( "RLaB Least Squares Example" );
+> xlabel ( "Indeplendent Variable" );
+> ylabel ( "Deplendent Variable" );
+> plot( [ t; b; ls( t ) ]' );
+</verb></tscreen>
+
+  Figure XX shows the
+<!-- <ref id="lsq-ex" name="Least-Squares Example"> -->
+  output from the previous plot commands. The plot command is very
+  simple, but a little mystifying at first. For the time being, you
+  can ignore the <tt>plgrid</>, <tt>pltitle</>, <tt>xlabel</>, and
+  <tt>ylabel</> statements; they merely server to add window dressing
+  to the displayed plot. The <tt>plot</> takes a matrix as an
+  argument, and plots columns two through the last versus the first
+  column. So, the first column is <tt>t</>, the independent variable,
+  The second column is <tt>b</>, the experimental data, and the last
+  column is the result of the least-squares fit of the data. The
+  matrix is formed by stacking the three individual row-vectors on top
+  of one another, then transposing the entire matrix so that in the
+  end it is a three column matrix.
+
+<!-- <figure><eps file="ls" width="8cm" angle="0">  -->
+<!-- <img src="ls.gif"> -->
+<!-- <caption>Least Squares Example</caption> -->
+<!-- <label id="lsq-ex"> </figure> -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

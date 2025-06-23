@@ -1,0 +1,1 @@
+GNAT_EXECUTABLE_BUILDER-NOTFOUND   testadacompiler.adb -cargs  -largs 

@@ -1,0 +1,19 @@
+replot:
+
+Synopsis: Re-draw the current plot-window.
+
+Syntax: replot ( I ) or replot ( A, KeyTitles, I ) or replot ( X, Y, I )
+
+Description:
+
+	Re-draws the I:th plot-window. It can also be
+	used to superinpose a new plot on an old plot.
+	replot() uses the left y-axis.
+
+	replot ( I );			replot the I-th plot-window
+	replot ( A, KeyTitles, I );	superinpose new plot on the I-th plot-window
+	replot ( X, Y, I );		superinpose new plot on the I-th plot-window
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: plot, plot2, replot2

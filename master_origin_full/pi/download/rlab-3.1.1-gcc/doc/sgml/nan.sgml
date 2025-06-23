@@ -1,0 +1,26 @@
+<sect> nan 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return a variable or a scalar with value
+ NaN (Not a Number)
+<tag> Syntax </tag>
+<p>nan ( ) 
+<p>nan (nrow,ncol)
+<p>nan (A)
+<tag> Description </tag>
+
+Nan returns a NaN (Not a Number) scalar, matrix of NaN's of size
+<em>nrow</em>-by-<em>ncol</em>, or of the same size as the matrix
+<em>A</em>. NaN value is according to IEEE-754. 
+One way to determine if a variable contains a NaN is to test it 
+against itself.
+
+<quote>
+NaN == NaN
+</quote>
+
+Should always return FALSE (0).
+
+<tag>See Also</tag>  inf, isnan
+
+</descrip>

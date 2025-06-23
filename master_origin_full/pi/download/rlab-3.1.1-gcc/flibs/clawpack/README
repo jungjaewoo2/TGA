@@ -1,0 +1,17 @@
+CLAWPACK Notes for rlabplus
+
+This is a modified version of CLAWPACK Version 4.1 by Randall J. LeVeque. The original
+code can be downloaded from the author's web site http://www.amath.washington.edu/~claw/.
+Changes:
+
+1. All the files but ones in 1d/lib, 2d/lib and 3d/lib are removed.
+
+2. For claw1 the following functions are in c instead of in FORTRAN, and are located
+in file claw1.c (see also clawpack.h): b4step1, bc1right, bc1left, claw1r and src1.
+
+3. There is a file  claw1rl.f  which contains the following functions which were
+originally in 1d/lib: claw1rl and rp1.
+
+Please report any bugs, problems, comments to kostrun@phys.uconn.edu.
+
+Marijan Kostrun, I-2006

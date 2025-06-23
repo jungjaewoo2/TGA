@@ -1,0 +1,66 @@
+  sqrt
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Compute the square root.
+
+      [1mSyntax[0m
+        sqrt ( [4mA[24m )
+
+      [1mDescription[0m
+        Sqrt returns the square-root of it's argument. If the argument
+        is a matrix, then an element-by-element square-root operation is
+        performed.
+
+        sqrt(-1) will produce 1i.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

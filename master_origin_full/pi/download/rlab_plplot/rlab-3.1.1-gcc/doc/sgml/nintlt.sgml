@@ -1,0 +1,36 @@
+<sect>nintlt
+<p>
+<descrip>
+<tag> Synopsis </tag> Laplace transform of a real scalar
+function of a real scalar variable.
+
+<tag> Syntax </tag> 
+	<p>(1) <tt>nintlt ( <em>s</em>, <em>k</em>, <em>f</em>, /<em>p</em>/, 
+	<em>x</em>, /<em>options</em>/ )</tt>,
+	<p>(2) <tt>nintlt ( <em>s</em>, <em>f</em>, /<em>p</em>/, 
+	/<em>x</em>/, /<em>options</em>/ )</tt>.	
+
+	
+	
+	The arguments:
+	<descrip>
+	<tag><em>s</em></tag> 
+		real vector, range of values for which the Laplace transform is sought.
+	<tag><em>k</em></tag>
+		integer vector, range of values for which the Laplace transform is sought.
+	<tag><em>f</em>=function(t,/,p/)</tag> 
+		complex scalar function of a complex scalar variable, with a
+		parameter <em>p</em>.
+	<tag><em>x</em>=[x1, x2 ... ]</tag> 
+		real vector containing the end points of integration intervals representing
+		the integration domain.
+	<tag><em>options</em> = << eabs; erel; maxi; ikey >></tag>
+  		list of options for the solver, where <em>eabs</em> and <em>erel</em>
+  		are the absolute and the relative error, <em>maxi</em> is the maximum number of subdivision
+  		of the integration interval to reach the desired tolerance, while 
+  		<em>ikey</em> is the choice of integration method.
+	</descrip>
+	
+	
+	See also: nintegrate, nintegrates.
+</descrip>

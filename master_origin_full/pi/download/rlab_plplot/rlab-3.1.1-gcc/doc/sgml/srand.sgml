@@ -1,0 +1,22 @@
+<sect> srand 
+<p>
+<descrip>
+<tag> Synopsis </tag> Seed the random number generator.
+<tag> Syntax </tag> srand ( ) 
+             <p>    srand ( <em>A</> )
+             <p>    srand ( <em>SEED</> )
+<tag> Description </tag>
+
+	Srand sets the seed for the random number generator.
+	<tt>srand()</> sets the seed to the original value (the last
+	value given to srand, or the default value, 1).
+
+	<tt>srand( "clock" )</>' sets the seed based upon the machines
+	clock value. This provides users a way of picking a unique
+	seed each time.
+
+	Srand uses the RANLIB subroutine SETALL.
+
+<tag>See Also</tag>   rand
+
+</descrip>

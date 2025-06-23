@@ -1,0 +1,2023 @@
+// Copyright (C) 2003-2004 Marijan Kostrun
+//   part of rlab+4linux project on rlabplus.sourceforge.net
+//
+// GSL Science Library - Special Functions
+// Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002 Gerard Jungman
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or (at
+// your option) any later version.
+//
+// This program is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+//
+
+// rlab headers, located in variable $RLAB_SDK
+#include "complex.h"
+#include "rlab.h"
+#include "ent.h"
+#include "class.h"
+#include "mem.h"
+#include "bltin.h"
+#include "util.h"
+#include "mdr.h"
+#include "mdc.h"
+#include "mdcf1.h"
+#include "mdcf2.h"
+#include "mathl.h"
+
+// gsl headers
+// shared object
+#include <gsl/gsl_version.h>
+#include <gsl/gsl_mode.h>
+#include <gsl/gsl_precision.h>
+#include <gsl/gsl_sf.h>
+#include <gsl/gsl_math.h>
+#include <gsl/gsl_errno.h>
+#include <gsl/gsl_machine.h>
+#include <gsl/gsl_sf_result.h>
+#include <gsl/gsl_const_num.h>
+
+
+// include: standard C headers
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <math.h>
+
+#define PI M_PI
+#define GSL_WARNINGS_OFF
+
+#include "rfileio.h"
+#include "rlab_macros.h"
+#include "rlab_solver_parameters_names.h"
+
+//
+// AIRY FUNCTIONS
+//
+
+//
+// AiryAi
+//
+RLABENT_CALL_D_FUNC_D_C("AiryAi", gsl_sf_airy_Ai, "Airy function Ai\n", "AiryAi(x)\n", GSL_PREC_DOUBLE);
+
+//
+// AiryBi
+//
+RLABENT_CALL_D_FUNC_D_C("AiryBi", gsl_sf_airy_Bi, "Airy function Bi\n", "AiryBi(x)\n", GSL_PREC_DOUBLE);
+
+
+//
+// AirydAi
+//
+RLABENT_CALL_D_FUNC_D_C("AirydAi", gsl_sf_airy_Ai_deriv,
+                        "Derivative of Airy function Ai\n", "AirydAi(x)\n", GSL_PREC_DOUBLE);
+
+//
+// AirydBi
+//
+RLABENT_CALL_D_FUNC_D_C("AirydBi", gsl_sf_airy_Bi_deriv,
+                        "Derivative of Airy function Bi\n", "AirydBi(x)\n", GSL_PREC_DOUBLE);
+//
+// AiryZeroAi
+//
+RLABENT_CALL_D_FUNC_D("AiryZeroAi",gsl_sf_airy_zero_Ai,
+                      "Zero of Airy function Ai\n", "AiryZeroAi(i)\n");
+
+//
+// AiryZerodAi
+//
+RLABENT_CALL_D_FUNC_D("AiryZerodAi",gsl_sf_airy_zero_Ai_deriv,
+                      "Zero of first derivative of Airy function Ai\n", "AiryZerodAi(i)\n");
+
+//
+// Airyzerobi
+//
+RLABENT_CALL_D_FUNC_D("AiryZeroBi",gsl_sf_airy_zero_Bi,
+                      "Zero of Airy function Bi\n", "AiryZeroBi(i)\n");
+//
+// AiryZerodBi
+//
+RLABENT_CALL_D_FUNC_D("AiryZerodBi",gsl_sf_airy_zero_Bi_deriv,
+                      "Zero of first derivative of Airy function Bi\n", "AiryZerodBi(i)\n");
+
+
+//
+// BESSEL FUNCTIONS
+//
+
+
+//
+// BesselI
+//
+static inline double gsl_sf_bessel_I(double n, double x)
+{
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_I0 (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_I1 (x);
+  }
+  else if (n > 1)
+  {
+    if (n == (int) n)
+      rval = gsl_sf_bessel_In (n, x);
+    else
+      rval = gsl_sf_bessel_Inu (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("BesselI",gsl_sf_bessel_I,
+                        "Regular modified cylindrical Bessel function of order n\n",
+                        "BesselI(n,x) or BesselI([n,x])\n");
+
+//
+// BesselJ
+//
+static inline double gsl_sf_bessel_J(double n, double x)
+{
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_J0 (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_J1 (x);
+  }
+  else if (n > 1)
+  {
+    if (n == (int) n)
+      rval = gsl_sf_bessel_Jn (n, x);
+    else
+      rval = gsl_sf_bessel_Jnu (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("BesselJ",gsl_sf_bessel_J,
+                        "Regular cylindrical Bessel function of order n\n",
+                        "BesselJ(n,x) or BesselJ([n,x])\n");
+
+//
+// BesselK
+//
+static inline double gsl_sf_bessel_K(double n, double x)
+{
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_K0 (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_K1 (x);
+  }
+  else if (n > 1)
+  {
+    if (n == (int) n)
+      rval = gsl_sf_bessel_Kn (n, x);
+    else
+      rval = gsl_sf_bessel_Knu (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("BesselK",gsl_sf_bessel_K,
+                        "Irregular modified cylindrical Bessel function of n\n",
+                        "BesselK(n,x) or BesselK([n,x])\n");
+//
+// BesselY
+//
+static inline double gsl_sf_bessel_Y(double n, double x)
+{
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_Y0 (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_Y1 (x);
+  }
+  else if (n > 1)
+  {
+    if (n == (int) n)
+      rval = gsl_sf_bessel_Yn (n, x);
+    else
+      rval = gsl_sf_bessel_Ynu (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("BesselY",gsl_sf_bessel_Y,
+                        "Irregular cylindrical Bessel function of order n\n",
+                        "BesselY(n,x) or BesselY([n,x])\n");
+
+//
+// Besseli
+//
+static inline double gsl_sf_bessel_i(double dn, double x)
+{
+  int n=dn;
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_i0_scaled (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_i1_scaled (x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_bessel_i2_scaled (x);
+  }
+  else if (n > 2)
+  {
+    rval = gsl_sf_bessel_il_scaled (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("Besseli",gsl_sf_bessel_i,
+                        "regular modified spherical Bessel function of integer order n\n",
+                        "Besseli(n,x) or Besseli([n,x])\n");
+
+//
+// Besselj
+//
+static inline double gsl_sf_bessel_j(double dn, double x)
+{
+  int n=dn;
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_j0(x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_j1(x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_bessel_j2(x);
+  }
+  else if (n > 2)
+  {
+    rval = gsl_sf_bessel_jl(n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("Besselj",gsl_sf_bessel_j,
+                        "regular spherical Bessel function of integer order n\n",
+                        "Besselj(n,x) or Besselj([n,x])\n");
+
+//
+// Besselk
+//
+static inline double gsl_sf_bessel_k(double dn, double x)
+{
+  int n=dn;
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_k0_scaled (x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_k1_scaled (x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_bessel_k2_scaled (x);
+  }
+  else if (n > 2)
+  {
+    rval = gsl_sf_bessel_kl_scaled (n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("Besselk",gsl_sf_bessel_k,
+                        "irregular modified spherical Bessel function of integer order n\n",
+                        "Besselk(n,x) or Besselk([n,x])\n");
+
+//
+// Bessely
+//
+static inline double gsl_sf_bessel_y(double dn, double x)
+{
+  int n=dn;
+  double rval = create_nan();
+
+  if (n == 0)
+  {
+    rval = gsl_sf_bessel_y0(x);
+  }
+  else if (n == 1)
+  {
+    rval = gsl_sf_bessel_y1(x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_bessel_y2(x);
+  }
+  else if (n > 2)
+  {
+    rval = gsl_sf_bessel_yl(n, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("Bessely",gsl_sf_bessel_y,
+                        "irregular spherical Bessel function of integer order n\n",
+                        "Bessely(n,x) or Bessely([n,x])\n");
+
+//
+// BesselZeroJ
+//
+Ent *
+ent_gsl_sf_bessel_zeroJ (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nc, nr1, nc1, nr2, nc2, i, j, id, jd;
+  int x;
+  double n;
+  MDR *x1, *x2;
+  MDR *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf
+      ("BesselZeroJ: zeros of regular cylindrical Bessel function of order 'n'.\n");
+    printf ("BesselZeroJ: Format:\n");
+    printf ("BesselZeroJ:   BesselZeroJ(i,n)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("BesselZeroJ: argument 'i' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr1 = MNR (x1);
+  nc1 = MNC (x1);
+  nr = nr1;
+  nc = nc1;
+  if (nr1 * nc1 == 0)
+    rerror ("BesselZeroJ: argument 'i' has to be MATRIX-DENSE-REAL");
+  // get n
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror ("BesselZeroJ: argument 'n' has to be MATRIX-DENSE-REAL");
+  x2 = class_matrix_real (e2);
+  nr2 = MNR (x2);
+  nc2 = MNC (x2);
+  if (nr2 * nc2 == 0)
+    rerror ("BesselZeroJ: argument 'n' has to be MATRIX-DENSE-REAL");
+  // figure out the size of output matrix
+  if (nc < nc2)
+    nc = nc2;
+  if (nr < nr2)
+    nr = nr2;
+  w = mdr_Create (nr, nc);
+  // calculate
+  for (i = 1; i <= nr; i++)
+    for (j = 1; j <= nc; j++)
+    {
+      id = i;
+      jd = j;
+      if (id > nr1)
+        id = nr1;
+      if (jd > nc1)
+        jd = nc1;
+      x = Mdr1 (x1, id, jd);
+      id = i;
+      jd = j;
+      if (id > nr2)
+        id = nr2;
+      if (jd > nc2)
+        jd = nc2;
+      n = Mdr1 (x2, id, jd);
+      if (n == 0)
+      {
+        Mdr1 (w, i, j) = gsl_sf_bessel_zero_J0 (x);
+        continue;
+      }
+      if (n == 1)
+      {
+        Mdr1 (w, i, j) = gsl_sf_bessel_zero_J1 (x);
+        continue;
+      }
+      Mdr1 (w, i, j) = gsl_sf_bessel_zero_Jnu (n, x);
+    }
+    ent_Clean (e1);
+    ent_Clean (e2);
+
+    return ent_Assign_Rlab_MDR(w);
+
+}
+
+
+//
+// Clausen function
+//
+RLABENT_CALL_D_FUNC_D("clausen",gsl_sf_clausen,
+                      "Clausen function\n", "clausen(i)\n");
+
+//
+// Hydrogen
+//
+RLAB_MDR_CALL_4ARGS_FUNC("Hydrogen",gsl_sf_hydrogenicR,
+                         "Normalized radial wave function for the Hydrogen bound state\n",
+                         "Hydrogen([n,l,Z,r]) or Hydrogen(n,l,Z,r)\n");
+//
+// Dawson
+//
+RLABENT_CALL_D_FUNC_D ("Dawson",gsl_sf_dawson,"Dawson function\n", "Dawson(x)\n");
+
+//
+// Debye functions of the order 1 through 6
+//
+static double gsl_sf_debye(int n, double x)
+{
+  double rval = create_nan();
+
+  switch(n)
+  {
+    case 1:
+      rval=gsl_sf_debye_1 (x);
+      break;
+
+    case 2:
+      rval=gsl_sf_debye_2 (x);
+      break;
+
+    case 3:
+      rval=gsl_sf_debye_3 (x);
+      break;
+
+    case 4:
+      rval=gsl_sf_debye_4 (x);
+      break;
+
+    case 5:
+      rval=gsl_sf_debye_5 (x);
+      break;
+
+    case 6:
+      rval=gsl_sf_debye_6 (x);
+      break;
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_I_D("Debye",gsl_sf_debye,"Debye Function\n",
+                        "Debye([n,x]) or Debye(n,x) with n=1,2,3,4,5,6\n");
+
+//
+// EllipticE
+//
+Ent *
+ent_gsl_sf_elliptic_E (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nc, nr1, nc1, nr2, nc2, i, j, id, jd;
+  double k, fi;
+  MDR *x1, *x2;
+  MDR *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("EllipticE: Elliptic function E of order 'k'.\n");
+    printf ("EllipticE: (1) Format:\n");
+    printf ("EllipticE:   EllipticE(k)\n");
+    printf ("EllipticE: (2) Format:\n");
+    printf ("EllipticE:   EllipticE(k,fi)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get e1
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("EllipticE: argument 'k' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr1 = MNR (x1);
+  nc1 = MNC (x1);
+  nr = nr1;
+  nc = nc1;
+  if (nr1 * nc1 == 0)
+    rerror ("EllipticE: argument 'k' has to be MATRIX-DENSE-REAL");
+  if (nargs == 2)
+  {
+    // get e2
+    e2 = bltin_get_ent (args[1]);
+    if (ent_type (e2) != MATRIX_DENSE_REAL)
+      rerror ("EllipticE: argument 'fi' has to be MATRIX-DENSE-REAL");
+    x2 = class_matrix_real (e2);
+    nr2 = MNR (x2);
+    nc2 = MNC (x2);
+    if (nr2 * nc2 == 0)
+      rerror ("EllipticE: argument 'fi' has to be MATRIX-DENSE-REAL");
+    // figure out the size of output matrix
+    if (nc < nc2)
+      nc = nc2;
+    if (nr < nr2)
+      nr = nr2;
+  }
+  w = mdr_Create (nr, nc);
+  // calculate
+  if (nargs == 1)
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        k = Mdr1 (x1, id, jd);
+        MdrV0 (w, i) = gsl_sf_ellint_Ecomp (k, GSL_PREC_DOUBLE);
+      }
+  if (nargs == 2)
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        k = Mdr1 (x1, id, jd);
+        id = i;
+        jd = j;
+        if (id > nr2)
+          id = nr2;
+        if (jd > nc2)
+          jd = nc2;
+        fi = Mdr1 (x2, id, jd);
+        MdrV0 (w, i) = gsl_sf_ellint_E (fi, k, GSL_PREC_DOUBLE);
+      }
+      ent_Clean (e1);
+      ent_Clean (e2);
+
+      return ent_Assign_Rlab_MDR(w);
+
+}
+
+//
+// EllipticF
+//
+RLABENT_CALL_D_FUNC_D_D_C("EllipticF",gsl_sf_ellint_F,
+                          "Elliptic function F of order k\n",
+                          "EllipticF(k,fi) or EllipticF([k,fi]\n)",
+                          GSL_PREC_DOUBLE);
+//
+// EllipticK
+//
+RLABENT_CALL_D_FUNC_D_C("EllipticK",gsl_sf_ellint_Kcomp,
+                        "Elliptic function K of order k\n",
+                        "EllipticK(k)\n)",
+                        GSL_PREC_DOUBLE);
+//
+// EllipticP
+//
+RLABENT_CALL_D_FUNC_D_D_D_C("EllipticP",gsl_sf_ellint_P,
+                        "Incomplete elliptic P integral\n",
+                        "EllipticP(k,fi,n) or EllipticP([k,fi,n])\n)",
+                        GSL_PREC_DOUBLE);
+
+//
+// EllipticD
+//
+#if ((GSL_MAJOR_VERSION == 1) && (GSL_MINOR_VERSION <= 16))
+RLABENT_CALL_D_FUNC_D_D_D_C("EllipticD",gsl_sf_ellint_D,
+                          "Incomplete elliptic D integral\n",
+                          "EllipticD(phi,k,n) or EllipticD([phi,k,n])\n)",
+                          GSL_PREC_DOUBLE);
+#else
+RLABENT_CALL_D_FUNC_D_D_C("EllipticD",gsl_sf_ellint_D,
+                          "Incomplete elliptic D integral\n",
+                          "EllipticD(phi,k) or EllipticD([phi,k])\n)",
+                          GSL_PREC_DOUBLE);
+#endif
+
+//
+// EllipticRC
+//
+RLABENT_CALL_D_FUNC_D_D_C("EllipticRC",gsl_sf_ellint_RC,
+                          "Carlson form of incomplete elliptic integral RC\n",
+                          "EllipticRC(x,y) or EllipticRC([x,y])\n",
+                          GSL_PREC_DOUBLE);
+
+//
+// EllipticRD
+//
+RLABENT_CALL_D_FUNC_D_D_D_C("EllipticRD",gsl_sf_ellint_RD,
+                            "Carlson form of incomplete elliptic integral RD\n",
+                            "EllipticRD(x,y,z) or EllipticRD([x,y,z])\n",
+                            GSL_PREC_DOUBLE);
+
+//
+// EllipticRF
+//
+RLABENT_CALL_D_FUNC_D_D_D_C("EllipticRF",gsl_sf_ellint_RF,
+                            "Carlson form of incomplete elliptic integral RF\n",
+                            "EllipticRF(x,y,z) or EllipticRF([x,y,z])\n",
+                            GSL_PREC_DOUBLE);
+
+//
+// EllipticRJ
+//
+RLABENT_CALL_D_FUNC_D_D_D_D_C("EllipticRJ",gsl_sf_ellint_RJ,
+                              "Carlson form of incomplete elliptic integral RJ\n",
+                              "EllipticRJ([x,y,z,p]) or EllipticRJ(x,y,z,p)\n",
+                              GSL_PREC_DOUBLE);
+
+//
+// EllipticJacobi
+//
+Ent *
+ent_gsl_sf_elliptic_jacobi (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nr1, nc1, nr2, nc2, i, id;
+
+  double u, m, sn, cn, dn;
+
+  MDR *x1, *x2;
+  MDR *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf
+      ("EllipticJacobi: Jacobian elliptic functions [sn, cn, dn](u|m). Format:\n");
+    printf ("EllipticJacobi:   EllipticJacobi(u,m)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get e1
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("EllipticJacobi: argument 'u' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr1 = MNR (x1);
+  nc1 = MNC (x1);
+  nr = nr1;
+  if (nr1 * nc1 == 0)
+    rerror ("EllipticJacobi: argument 'u' has to be MATRIX-DENSE-REAL");
+  if (nc1 != 1)
+    rerror ("EllipticJacobi: argument 'u' has to be a single column");
+  //
+  // get e2
+  //
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror ("EllipticJacobi: argument 'm' has to be MATRIX-DENSE-REAL");
+  x2 = class_matrix_real (e2);
+  nr2 = MNR (x2);
+  nc2 = MNC (x2);
+  if (nr2 * nc2 == 0)
+    rerror ("EllipticJacobi: argument 'm' has to be MATRIX-DENSE-REAL");
+  if (nc2 != 1)
+    rerror ("EllipticJacobi: argument 'm' has to be a single column");
+  if (nr1 < nr2)
+    nr = nr2;
+  w = mdr_Create (nr, 3);
+  // calculate
+  for (i = 1; i <= nr; i++)
+  {
+    id = i;
+    if (id > nr1)
+      id = nr1;
+    u = Mdr1 (x1, id, 1);
+    id = i;
+    if (id > nr2)
+      id = nr2;
+    m = Mdr1 (x2, id, 1);
+    gsl_sf_elljac_e (u, m, &sn, &cn, &dn);
+    Mdr1 (w, i, 1) = sn;
+    Mdr1 (w, i, 2) = cn;
+    Mdr1 (w, i, 3) = dn;
+  }
+  ent_Clean (e1);
+  ent_Clean (e2);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+
+//
+// Erf
+//
+Ent *
+ent_gsl_sf_erf (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  MDR *x1, *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("Erf: Error function. Format:\n");
+    printf ("Erf:   Erf(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("Erf: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("Erf: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)      MdrV0 (w, i) = gsl_sf_erf (mdrV0 (x1, i));
+  ent_Clean (e1);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// Erfc
+//
+Ent *
+ent_gsl_sf_erfc (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  MDR *x1, *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("Erfc: Complementary error function. Format:\n");
+    printf ("Erfc:   Erfc(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("Erfc: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("Erfc: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)      MdrV0 (w, i) = gsl_sf_erfc (mdrV0 (x1, i));
+  ent_Clean (e1);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// ErfZ
+//
+Ent *
+ent_gsl_sf_erfz (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  MDR *x1, *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("ErfZ: Gaussian probability. Format:\n");
+    printf ("ErfZ:   ErfZ(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ErfZ: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("ErfZ: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)      MdrV0 (w, i) = gsl_sf_erf_Z (mdrV0 (x1, i));
+  ent_Clean (e1);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// ErfQ
+//
+Ent *
+ent_gsl_sf_erfq (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  MDR *x1, *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("ErfQ: Upper tail of Gaussian probability function. Format:\n");
+    printf ("ErfQ:   ErfQ(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ErfQ: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("ErfQ: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)      MdrV0 (w, i) = gsl_sf_erf_Q (mdrV0 (x1, i));
+ ent_Clean (e1);
+
+ return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// Exponential Integral
+//
+Ent *
+ent_gsl_sf_expint (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nc, i;
+
+  int n;
+  MDR *x1=0, *w=0;
+
+  gsl_set_error_handler_off ();
+
+  if (nargs == 0)
+  {
+    printf ("ExpIntegralE: The Exponential Integral of order n=1,2. Format:\n");
+    printf ("ExpIntegralE:   ExpIntegralE(x,n)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ExpIntegralE: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("ExpIntegralE: argument 'x' has to be MATRIX-DENSE-REAL");
+  //
+  // get n
+  //
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror ("ExpIntegralE: argument 'n' has to an integer 1,2");
+  n = class_double (e2);
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)    {
+      MdrV0 (w, i) = GSL_NAN;
+      if (n == 1)
+        MdrV0 (w, i) = gsl_sf_expint_E1 (mdrV0 (x1, i));
+      if (n == 2)
+        MdrV0 (w, i) = gsl_sf_expint_E2 (mdrV0 (x1, i));
+    }
+  ent_Clean (e1);
+  ent_Clean (e2);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// ExpIntegralEi
+//
+Ent *
+ent_gsl_sf_expint_ei (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  MDR *x1, *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("ExpIntegralEi: Exponential Integral Ei. Format:\n");
+    printf ("ExpIntegralEi:   ExpIntegralEi(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ExpIntegralEi: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("ExpIntegralEi: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  //
+  // calculate
+  //
+for (i = 0; i < nr*nc; i++)      MdrV0 (w, i) = gsl_sf_expint_Ei (mdrV0 (x1, i));
+  ent_Clean (e1);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// SinhIntegral
+//
+RLABENT_CALL_D_FUNC_D("SinhIntegral",gsl_sf_Shi,"Sinh Integral\n", "SinhIntegral(x)\n");
+
+//
+// CoshIntegral
+//
+RLABENT_CALL_D_FUNC_D("CoshIntegral",gsl_sf_Chi,"Cosh Integral\n", "CoshIntegral(x)\n");
+
+//
+// SinIntegral
+//
+RLABENT_CALL_D_FUNC_D("SinIntegral",gsl_sf_Si,"Sin Integral\n", "SinIntegral(x)\n");
+
+//
+// CosIntegral
+//
+RLABENT_CALL_D_FUNC_D("CosIntegral",gsl_sf_Ci,"Cos Integral\n", "CosIntegral(x)\n");
+
+//
+// AtanIntegral
+//
+RLABENT_CALL_D_FUNC_D("AtanIntegral",gsl_sf_atanint,"Atan Integral\n", "Integral(x)\n");
+
+
+//
+// FermiDiracIntegral
+//
+Ent *
+ent_gsl_sf_fermidiracint (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nc, i;
+
+  int n;
+  MDR *x1=0, *w;
+
+  gsl_set_error_handler_off ();
+
+  if (nargs == 0)
+  {
+    printf ("FermiDiracIntegral: The Complete Fermi-Dirac integral of order\n");
+    printf ("FermiDiracIntegral: n= -1/2, 0, 1/2, 1, 3/2. Format:\n");
+    printf ("FermiDiracIntegral:   FermiDiracIntegral(x,n)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("FermiDiracIntegral: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("FermiDiracIntegral: argument 'x' has to be MATRIX-DENSE-REAL");
+  //
+  // get n
+  //
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror
+      ("FermiDiracIntegral: argument 'n' has to be -1/2, 0, 1/2, 1 or 3/2");
+  n = class_double (e2);
+  w = mdr_Create (nr, nc);
+
+  //
+  // calculate
+  //
+  switch (2*n)
+  {
+    case -2:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_m1 (mdrV0 (x1, i));
+      break;
+
+    case -1:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_mhalf (mdrV0 (x1, i));
+      break;
+
+    case 0:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_0 (mdrV0 (x1, i));
+      break;
+
+    case 1:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_half (mdrV0 (x1, i));
+      break;
+
+    case 2:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_1 (mdrV0 (x1, i));
+      break;
+
+    case 3:
+      for (i=0; i<nr*nc; i++)
+        MdrV0 (w, i) = gsl_sf_fermi_dirac_3half (mdrV0 (x1, i));
+
+    default:
+      break;
+  }
+
+  ent_Clean (e1);
+  ent_Clean (e2);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+
+//
+// LogGamma
+//
+Ent *
+ent_gsl_sf_loggamma (int nargs, Datum args[])
+{
+  Ent *e1 = 0;
+  int nr, nc, i;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("LogGamma: Analytic logarithm of Gamma function. Format:\n");
+    printf ("LogGamma:   LogGamma(x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL
+      && ent_type (e1) != MATRIX_DENSE_COMPLEX)
+    rerror ("LogGamma: argument 'x' has to be real or complex matrix");
+
+  if (ent_type (e1) == MATRIX_DENSE_REAL)
+  {
+    //
+    // real argument
+    //
+    MDR *x1 = class_matrix_real (e1);
+    nr = MNR (x1);
+    nc = MNC (x1);
+    if (nr * nc == 0)
+      rerror ("LogGamma: 'x' not defined.");
+    MDR *w = mdr_Create (nr, nc);
+
+    //
+    // calculate
+    //
+    for (i = 0; i < nr*nc; i++)
+      MdrV0 (w, i) = gsl_sf_lngamma (mdrV0 (x1, i));
+
+    ent_Clean (e1);
+
+    return ent_Assign_Rlab_MDR(w);
+  }
+
+  //
+  // complex argument
+  //
+  MDR *x1 = ent_data (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("LogGamma: 'x' not defined.");
+  MDC *w = mdc_Create (nr, nc);
+
+  //
+  // calculate
+  //
+  gsl_sf_result zlnr, zarg;
+  for (i = 0; i < nr*nc; i++)
+  {
+    gsl_sf_lngamma_complex_e (MdcV0r (x1, i), MdcV0i (x1, i), &zlnr,
+                              &zarg);
+    MdcV0r (w, i) = zlnr.val * cos (zarg.val);
+    MdcV0i (w, i) = zlnr.val * sin (zarg.val);
+  }
+
+  ent_Clean (e1);
+
+  return ent_Assign_Rlab_MDC(w);
+}
+
+//
+// Gamma
+//
+RLABENT_CALL_D_FUNC_D("Gamma",gsl_sf_gamma,"Gamma function\n","Gamma(x)\n");
+
+//
+// GammaRegularized
+//
+RLABENT_CALL_D_FUNC_D_D("GammaRegularized",gsl_sf_gamma_inc_Q,
+                        "Regularized (normalized) incomplete Gamma function\n",
+                        "GammaRegularized(a,x) or GammaRegularized([a,x])\n");
+
+//
+// GammaRegularizedC
+//
+RLABENT_CALL_D_FUNC_D_D("GammaRegularizedC",gsl_sf_gamma_inc_P,
+                        "Complement of Regularized (normalized) incomplete Gamma function\n",
+                        "GammaRegularizedC(a,x) or GammaRegularizedC([a,x])\n");
+
+//
+// Beta
+//
+RLABENT_CALL_D_FUNC_D_D("Beta",gsl_sf_beta,"Beta function\n","Beta(a,b) or Beta([a,b])\n");
+
+//
+// LogBeta
+//
+RLABENT_CALL_D_FUNC_D_D("LogBeta",gsl_sf_lnbeta,"Logarithm of Beta function\n",
+                        "LogBeta(a,b) or LogBeta([a,b])\n");
+
+//
+// BetaRegularized
+//
+RLABENT_CALL_D_FUNC_D_D_D("BetaRegularized",gsl_sf_beta_inc,
+                          "Regularized (normalized) incomplete Beta function\n",
+                          "BetaRegularized(a,b) or BetaRegularized([a,b])\n");
+
+//
+// RecGamma
+//
+RLABENT_CALL_D_FUNC_D("RcpGamma",gsl_sf_gammainv,"Reciprocal of Gamma function\n","RcpGamma(x)\n");
+
+//
+// Pochhammer
+//
+RLABENT_CALL_D_FUNC_D_D("Pochhammer",gsl_sf_poch,"Pochhammer (Apell) symbox (a)_x\n",
+                        "Pochhammer(a,x) or Pochhammer([a,x])\n");
+
+//
+// GegenbauerC
+//
+static inline double gsl_sf_gegenpoly(double dn, double lambda, double x)
+{
+  int n=dn;
+  double rval = create_nan();
+
+  if (n == 1)
+  {
+    rval = gsl_sf_gegenpoly_1 (lambda, x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_gegenpoly_2 (lambda, x);
+  }
+  else if (n == 3)
+  {
+    rval = gsl_sf_gegenpoly_3 (lambda, x);
+  }
+  else if (n>3)
+    rval = gsl_sf_gegenpoly_n (n, lambda, x);
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("GegenbauerC",gsl_sf_gegenpoly,
+                          "Gegenbauer (Ultraspherical) polynomials of order n.\n",
+                          "GegenbauerC(n,lambda,x) or GegenbauerC([n,lambda,x])\n");
+
+//
+// Hypergeometric0F1
+//
+RLABENT_CALL_D_FUNC_D_D("Hypergeometric0F1",gsl_sf_hyperg_0F1,
+                        "Hypergeometric funtion 0F1\n",
+                        "Hypergeometric0F1(c,x) or Hypergeometric0F1([c,x])\n");
+
+//
+// Hypergeometric1F1
+//
+static inline double gsl_sf_hypergeom_1F1(double da, double db, double x)
+{
+  double rval = create_nan();
+
+  if ((da == (int) da)&&(db == (int) db))
+  {
+    rval = gsl_sf_hyperg_1F1_int ((int) da, (int) db, x);
+  }
+  else
+  {
+    rval = gsl_sf_hyperg_1F1 (da, db, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("Hypergeometric1F1",gsl_sf_hypergeom_1F1,
+                          "Hypergeometric function 1F1\n",
+                          "Hypergeometric1F1(a,b,x) or Hypergeometric1F1([a,b,x])\n");
+
+//
+// HypergeometricU
+//
+static inline double gsl_sf_hypergeom_U(double da, double db, double x)
+{
+  double rval = create_nan();
+
+  if ((da == (int) da)&&(db == (int) db))
+  {
+    rval = gsl_sf_hyperg_U_int ((int) da, (int) db, x);
+  }
+  else
+  {
+    rval = gsl_sf_hyperg_U (da, db, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("HypergeometricU",gsl_sf_hypergeom_U,
+                          "Confluent hypergeometric function U\n",
+                          "HypergeometricU(a,b,x) or HypergeometricU([a,b,x])\n");
+//
+// Hypergeometric2F0
+//
+RLABENT_CALL_D_FUNC_D_D_D("Hypergeometric2F0",gsl_sf_hyperg_2F0,
+                          "Hypergeometric function 2F0\n",
+                          "Hypergeometric2F0(a,b,x) or Hypergeometric2F0([a,b,x])\n");
+//
+// Hypergeometric2F1
+//
+RLABENT_CALL_D_FUNC_D_D_D_D("Hypergeometric2F1",gsl_sf_hyperg_2F1,
+                          "Hypergeometric function 2F1\n",
+                          "Hypergeometric2F1(a,b,c,x) or Hypergeometric2F1([a,b,c,x])\n");
+
+//
+// LaguerreL
+//
+static inline double gsl_sf_laguerre(double dn, double a, double x)
+{
+  double rval = create_nan();
+  int n=dn;
+
+  if (n == 1)
+  {
+    rval = gsl_sf_laguerre_1 (a, x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_laguerre_2 (a, x);
+  }
+  else if (n == 3)
+  {
+    rval = gsl_sf_laguerre_3 (a, x);
+  }
+  else if (n > 3)
+  {
+    rval = gsl_sf_laguerre_n (n, a, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("LaguerreL",gsl_sf_laguerre,
+                          "Generalized Laguerre polynomials of order n\n",
+                          "LaguerreL(n,a,x) or LaguerreL([n,a,x])\n");
+//
+// ProductLog
+//
+Ent *
+ent_gsl_sf_lambert_W0 (int nargs, Datum args[])
+{
+  Ent *e1=0, *e2=0;
+  int nr, nc, i, j;
+  MDR *x1=0, *w, *x2=0;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("ProductLog: Lambert's W function. Format:\n");
+    printf ("ProductLog:   ProductLog(x/,m/)\n");
+    printf
+      ("ProductLog: where m=0 (default),-1 is the branch of the solution.\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get x
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ProductLog: argument 'x' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr = MNR (x1);
+  nc = MNC (x1);
+  if (nr * nc == 0)
+    rerror ("ProductLog: argument 'x' has to be MATRIX-DENSE-REAL");
+  w = mdr_Create (nr, nc);
+  if (nargs >= 2)
+  {
+    e2 = bltin_get_ent (args[1]);
+    if (ent_type (e2) == MATRIX_DENSE_REAL)
+      x2 = class_matrix_real (e2);
+  }
+  else
+    x2 = mdr_CreateScalar (0.0);
+
+  //
+    // calculate
+    //
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        if (Mdr1 (x2, MIN(i, MNR (x2)), MIN(j, MNC (x2))) == -1)
+          Mdr1 (w, i, j) = gsl_sf_lambert_Wm1 (Mdr1 (x1, i, j));
+        else
+          Mdr1 (w, i, j) = gsl_sf_lambert_W0 (Mdr1 (x1, i, j));
+      }
+
+  //
+  // clean
+  //
+  ent_Clean (e1);
+
+  if (!e2)
+    mdr_Destroy(x2);
+
+  ent_Clean (e2);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+
+//
+// LegendreP
+//
+Ent *
+ent_gsl_sf_legendreP (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0, *e3 = 0;
+  int nr, nc, nr1, nc1, nr2, nc2, nr3, nc3, i, j, id, jd;
+  double x;
+  int l, m;
+  MDR *x1, *x2, *x3, *w=0;
+
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("LegendreP: (Generalized) Legendre polynomials P of order 'l'.\n");
+    printf ("LegendreP: (1) Format:\n");
+    printf ("LegendreP:   LegendreP(l,x)\n");
+    printf ("LegendreP: (2) Format:\n");
+    printf ("LegendreP:   LegendreP(l,m,x)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get l
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("LegendreP: argument 'l' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr1 = MNR (x1);
+  nc1 = MNC (x1);
+  nr = nr1;
+  nc = nc1;
+  if (nr1 * nc1 == 0)
+    rerror ("LegendreP: argument 'l' has to be MATRIX-DENSE-REAL");
+  //
+  // get m or x
+  //
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror ("LegendreP: argument 'x' ('m') has to be MATRIX-DENSE-REAL");
+  x2 = class_matrix_real (e2);
+  nr2 = MNR (x2);
+  nc2 = MNC (x2);
+  if (nr2 * nc2 == 0)
+    rerror ("LegendreP: argument 'x' ('m') has to be MATRIX-DENSE-REAL");
+  if (nr < nr2)
+    nr = nr2;
+  if (nc < nc2)
+    nc = nc2;
+  if (nargs == 2)
+  {
+    w = mdr_Create (nr, nc);
+    //
+    // calculate
+    //
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        l = Mdr1 (x1, id, jd);
+        id = i;
+        jd = j;
+        if (id > nr2)
+          id = nr2;
+        if (jd > nc2)
+          jd = nc2;
+        x = Mdr1 (x2, id, jd);
+        if (l == 1)
+          MdrV0 (w, i) = gsl_sf_legendre_P1 (x);
+        else if (l == 2)
+          MdrV0 (w, i) = gsl_sf_legendre_P2 (x);
+        else if (l == 3)
+          MdrV0 (w, i) = gsl_sf_legendre_P3 (x);
+        else
+          MdrV0 (w, i) = gsl_sf_legendre_Pl (l, x);
+      }
+  }
+  if (nargs == 3)
+  {
+    //
+    // get x
+    //
+    e3 = bltin_get_ent (args[2]);
+    if (ent_type (e3) != MATRIX_DENSE_REAL)
+      rerror ("LegendreP: argument 'x' has to be MATRIX-DENSE-REAL");
+    x3 = class_matrix_real (e3);
+    nr3 = MNR (x3);
+    nc3 = MNC (x3);
+    if (nr3 * nc3 == 0)
+      rerror ("LegendreP: argument 'x' has to be MATRIX-DENSE-REAL");
+    if (nr < nr3)
+      nr = nr3;
+    if (nc < nc3)
+      nc = nc3;
+    w = mdr_Create (nr, nc);
+    //
+    // calculate
+    //
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        l = Mdr1 (x1, id, jd);
+        id = i;
+        jd = j;
+        if (id > nr2)
+          id = nr2;
+        if (jd > nc2)
+          jd = nc2;
+        m = Mdr1 (x2, id, jd);
+        id = i;
+        jd = j;
+        if (id > nr3)
+          id = nr3;
+        if (jd > nc3)
+          jd = nc3;
+        x = Mdr1 (x3, id, jd);
+        MdrV0 (w, i) = gsl_sf_legendre_Plm (l, m, x);
+      }
+  }
+  ent_Clean (e1);
+  ent_Clean (e2);
+  ent_Clean (e3);
+
+  return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// LegendreQ
+//
+static inline double gsl_sf_legendreQ(double dl, double x)
+{
+  double rval = create_nan();
+  int l=dl;
+
+  if (l == 0)
+  {
+    rval = gsl_sf_legendre_Q0 (x);
+  }
+  else if (l == 1)
+  {
+    rval = gsl_sf_legendre_Q1 (x);
+  }
+  else if (l > 1)
+  {
+    rval = gsl_sf_legendre_Ql(l, x);
+  }
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("LegendreQ",gsl_sf_legendreQ,
+                        "Legendre polynomials Q of order l\n",
+                        "LegendreQ(l,x) or LegendreQ([l,x])\n");
+
+//
+// LegendreSphericalP
+//
+RLABENT_CALL_D_FUNC_D_D_D("LegendreSphericalP",gsl_sf_legendre_sphPlm,
+                        "Legendre polynomials Q of order l\n",
+                        "LegendreSphericalP(l,m,x) or LegendreSphericalP([l,m,x])\n");
+
+//
+// LegendreConicalP
+//
+static inline double gsl_sf_conicalP(double m, double lambda, double x)
+{
+  double rval = create_nan();
+
+  if (m == 1)
+  {
+    rval = gsl_sf_conicalP_1 (lambda, x);
+  }
+  else if (m == 0.5)
+  {
+    rval = gsl_sf_conicalP_half (lambda, x);
+  }
+  else if (m == 0)
+  {
+    rval = gsl_sf_conicalP_0 (lambda, x);
+  }
+  else if (m == -0.5)
+  {
+    rval = gsl_sf_conicalP_mhalf (lambda, x);
+  }
+  else if (m == (int) m)
+  {
+    rval = gsl_sf_conicalP_cyl_reg (m, lambda, x);
+  }
+  else if (2 * m == (int) (2 * m))
+  {
+    rval = gsl_sf_conicalP_sph_reg (m, lambda, x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("LegendreConicalP",gsl_sf_conicalP,
+                          "Regular and irregular spherical conical Legendre\n",
+                          "LegendreConicalP(m,lambda,x) or LegendreConicalP([m,lambda,x])\n");
+
+//
+// LegendreH3d
+//
+static inline double gsl_sf_legendreH3d(double dl, double lambda, double eta)
+{
+  int l = dl;
+  double rval = create_nan();
+
+  if (l == 0)
+  {
+    rval = gsl_sf_legendre_H3d_0 (lambda, eta);
+  }
+  else if (l == 1)
+  {
+    rval = gsl_sf_legendre_H3d_1 (lambda, eta);
+  }
+  else if (l > 1)
+  {
+    rval = gsl_sf_legendre_H3d (l, lambda, eta);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D_D("LegendreH3d",gsl_sf_legendreH3d,
+                          "Regular eigenfunctions of a 3-D Laplacian in hyperbolic coordinate system\n",
+                          "LegendreH3d(l,lambda,eta) or LegendreH3d([l,lambda,eta])\n");
+
+//
+// Digamma function
+//
+static inline double gsl_sf_digamma(double x)
+{
+  double rval = create_nan();
+
+  if (x == (int) x)
+  {
+    rval = gsl_sf_psi_int (x);
+  }
+  else
+  {
+    rval = gsl_sf_psi (x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D("Digamma",gsl_sf_digamma,"Digamma or Psi function\n","Digamma(x)\n");
+
+//
+// Polygamma
+//
+RLABENT_CALL_D_FUNC_D_D("Polygamma",gsl_sf_psi_n,"Polygamma function\n",
+                        "Polygamma(m,x) or Polygamma([m,x])\n");
+
+//
+// TransportF
+//
+static inline double gsl_sf_transport(double dn, double x)
+{
+  int n = dn;
+  double rval = create_nan();
+
+  if (n == 2)
+  {
+    rval = gsl_sf_transport_2 (x);
+  }
+  else if (n == 3)
+  {
+    rval = gsl_sf_transport_3 (x);
+  }
+  else if (n == 4)
+  {
+    rval = gsl_sf_transport_4 (x);
+  }
+  else if (n == 5)
+  {
+    rval = gsl_sf_transport_5 (x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("TransportF",gsl_sf_transport,
+                        "Transport function of integer order n=2,3,4,5\n",
+                        "TransportF(n,x) or TransportF([n,x])\n");
+
+//
+// SynchrotronF
+//
+static inline double gsl_sf_synchrotron(double dn, double x)
+{
+  int n = dn;
+  double rval = create_nan();
+
+  if (n == 1)
+  {
+    rval = gsl_sf_synchrotron_1 (x);
+  }
+  else if (n == 2)
+  {
+    rval = gsl_sf_synchrotron_2 (x);
+  }
+
+  return rval;
+}
+RLABENT_CALL_D_FUNC_D_D("SynchrotronF",gsl_sf_synchrotron,
+                        "Synchrotron function of integer order n=1,2\n",
+                        "SynchrotronF(n,x) or SynchrotronF([n,x])\n");
+
+//
+// Zeta and Hurwitz Zeta functions
+//
+Ent *
+ent_gsl_sf_zeta (int nargs, Datum args[])
+{
+  Ent *e1 = 0, *e2 = 0;
+  int nr, nc, nr1, nc1, nr2, nc2, i, j, id, jd;
+  double s, q;
+  MDR *x1, *x2;
+  MDR *w;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("Zeta: Riemann and Hurwitz Zeta function for real arguments.\n");
+    printf ("Zeta: (1) Format:\n");
+    printf ("Zeta:   Zeta(s)\n");
+    printf ("Zeta: (2) Format:\n");
+    printf ("Zeta:   Zeta(s,q)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get e1
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("Zeta: argument 's' has to be MATRIX-DENSE-REAL");
+  x1 = class_matrix_real (e1);
+  nr1 = MNR (x1);
+  nc1 = MNC (x1);
+  nr = nr1;
+  nc = nc1;
+  if (nr1 * nc1 == 0)
+    rerror ("Zeta: argument 's' has to be MATRIX-DENSE-REAL");
+  if (nargs == 2)
+  {
+    // get e2
+    e2 = bltin_get_ent (args[1]);
+    if (ent_type (e2) != MATRIX_DENSE_REAL)
+      rerror ("Zeta: argument 'q' has to be MATRIX-DENSE-REAL");
+    x2 = class_matrix_real (e2);
+    nr2 = MNR (x2);
+    nc2 = MNC (x2);
+    if (nr2 * nc2 == 0)
+      rerror ("Zeta: argument 'q' has to be MATRIX-DENSE-REAL");
+    // figure out the size of output matrix
+    if (nc < nc2)
+      nc = nc2;
+    if (nr < nr2)
+      nr = nr2;
+  }
+  w = mdr_Create (nr, nc);
+  // calculate
+  if (nargs == 1)
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        s = Mdr1 (x1, id, jd);
+        if (s == (int) s)
+          MdrV0 (w, i) = gsl_sf_zeta_int ((int) s);
+        else
+          MdrV0 (w, i) = gsl_sf_zeta (s);
+      }
+  if (nargs == 2)
+    for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+      {
+        id = i;
+        jd = j;
+        if (id > nr1)
+          id = nr1;
+        if (jd > nc1)
+          jd = nc1;
+        s = Mdr1 (x1, id, jd);
+        id = i;
+        jd = j;
+        if (id > nr2)
+          id = nr2;
+        if (jd > nc2)
+          jd = nc2;
+        q = Mdr1 (x2, id, jd);
+        MdrV0 (w, i) = gsl_sf_hzeta (s, q);
+      }
+      ent_Clean (e1);
+      ent_Clean (e2);
+
+      return ent_Assign_Rlab_MDR(w);
+}
+
+//
+// erling class of functions
+//
+static double double_sf_erling(double *k, double *r, double *t)
+{
+  double a = (*r) * (*t);
+  int i;
+  double rval=1;
+
+  // a^k/(k!)
+  for (i=1; i<=(*k); i++)
+    rval = rval * a / (i);
+
+  //
+  rval = rval * exp(-a) * (*r);
+  return rval;
+}
+
+static double double_sf_erlingn(double *k, double *r, double *s, double *t)
+{
+  double rval;
+  double a = (*r) / (*s);
+  double b = 1 + 2 * (*s) * (*t);
+
+  switch ((int) (*k))
+  {
+    case 0:
+      rval = pow(b,-2.5)*(a+b);
+      break;
+
+    case 1:
+      rval = 0.5*(b-1)*pow(b,-4.5)*(a*a + 6 * a * b + 3 * b*b);
+      break;
+
+    case 2:
+      rval = 0.125*pow(b-1,2)*pow(b,-6.5)
+          * (a*a*a + 15*a*a * b + 45*a*b*b + 15 * b*b*b);
+      break;
+
+    case 3:
+      rval = 1./48.*pow(b-1,3)*pow(b,-8.5)
+          * (pow(a,4) + 28*pow(a,3)*b + 210*a*a*b*b + 420*a*pow(b,3) + 105*pow(b,4));
+      break;
+
+    case 4:
+      rval = 1./384. * pow(b-1,4)*pow(b,-10.5)
+          *(pow(a,5) + 45*pow(a,4)*b + 630*pow(a,3)*b*b + 3150*a*a*pow(b,3)
+          + 4725*a*pow(b,4) + 945*pow(b,5));
+      break;
+
+    case 5:
+      rval = 1./3840.*pow(b-1,5)*pow(b,-12.5)
+          *(pow(a,6) + 66*pow(a,5)*b + 1485*pow(a,4)*b*b + 13860*pow(a,3)*pow(b,3)
+          + 51975*a*a*pow(b,4) + 62370*a*pow(b,5) + 10395*pow(b,6));
+      break;
+
+    case 6:
+      rval = 1./46080.*pow(b-1,6)*pow(b,-14.5)
+          * (pow(a,7) + 91.*pow(a,6)*b + 3003.*pow(a,5)*b*b + 45045.*pow(a,4)*pow(b,3)
+          + 315315.*pow(a,3)*pow(b,4) + 945945.*a*a*pow(b,5) + 945945.*a*pow(b,6)
+          + 135135.*pow(b,7));
+
+    case 7:
+      rval = 1./645120.*pow(b-1,7)*pow(b,-16.5)
+          *(pow(a,8) + 120.0*pow(a,7)*b + 5640.0*pow(a,6)*b*b + 120120.0*pow(a,5)*pow(b,3)
+              + 1353150.0*pow(a,4)*pow(b,4) + 7567560.0*pow(a,3)*pow(b,5)
+              + 18918900.0*pow(a,2)*pow(b,6) + 16216200.0*a*pow(b,7) + 2027025.0*pow(b,8));
+      break;
+
+    case 8:
+      rval = 1./10321920.*pow(b-1,8)*pow(b,-18.5)
+          * (pow(a,9) + 153.*pow(a,8)*b + 9180.*pow(a,7)* pow(b,2) + 278460.*pow(a,6)*pow(b,3)
+              + 4594590.*pow(a,5)*pow(b,4) + 41351310.*pow(a,4)*pow(b,5)
+              + 192972780.*pow(a,3)*pow(b,6) + 413513100.*pow(a,2)*pow(b,7)
+              + 310134825.*a*pow(b,8) + 34459425.*pow(b,9));
+      break;
+
+    case 9:
+      rval = 1./185794560.*pow(b-1,9)*pow(b,-20.5)
+          * (pow(a,10) + 190.*pow(a,9)*b + 14535.*pow(a,8)*pow(b,2) + 581400.*pow(a,7)*pow(b,3)
+              + 13226850.*pow(a,6)*pow(b,4) + 174594420.*pow(a,5)*pow(b,5)
+              + 1309458150.*pow(a,4)*pow(b,6) + 5237832600.*pow(a,3)*pow(b,7)
+              + 9820936125.*pow(a,2)*pow(b,8) + 6547290750.*a*pow(b,9) + 654729075.*pow(b,10));
+          break;
+
+    case 10:
+      rval = 1./3715891200.*pow(b-1,10)*pow(b,-22.5)
+          *(pow(a,11) + 231.*pow(a,10)*b + 21945.*pow(a,9)*pow(b,2) + 1119195.*pow(a,8)*pow(b,3)
+              + 33575850.*pow(a,7)*pow(b,4) + 611080470.*pow(a,6)*pow(b,5)
+              + 6721885170.*pow(a,5)*pow(b,6) + 43212118950.*pow(a,4)*pow(b,7)
+              + 151242416325.*pow(a,3)*pow(b,8) + 252070693875.0*pow(a,2)*pow(b,9)
+              + 151242416325.0*a*pow(b,10) + 13749310575.0*pow(b,11));
+      break;
+
+    default:
+      rval = 2.0*pow(b,-(1.5+(*k)))*exp(-0.5*a)*(*s)*pow(b-1,(*k))*gsl_sf_gamma(1.5+(*k))
+        / (M_SQRTPI*gsl_sf_gamma(1+(*k))) * gsl_sf_hyperg_1F1(1.5+(*k), 0.5, 0.5*a/b);
+
+  } // switch ((int) (*k))
+
+  // this is valid only for explicit formulae for ErlingN
+  if((*k) < 11)
+    rval *= (*s) * exp(-0.5 * a + a / (2 * b));
+
+  //
+  return rval;
+}
+
+Ent *
+ent_sf_erling (int nargs, Datum args[])
+{
+  Ent *e1=0, *e2=0, *e3=0, *e4=0;
+  int nr, nc, nr1, nc1, nr2, nc2, nr3=0, nc3=0, nr4, nc4, i, j;
+  double k1, r1, s1, t1;
+  MDR *k=0, *r=0, *s=0, *t=0;
+  MDR *w=0;
+  gsl_set_error_handler_off ();
+  if (nargs == 0)
+  {
+    printf ("ErlingN: Erling+Normal function for real arguments.\n");
+    printf ("ErlingN: Format:\n");
+    printf ("ErlingN: (1)  ErlingN(k,r,s,t)\n");
+    printf ("ErlingN: (2)  ErlingN(k,r,t)\n");
+    rerror ("No parameters given!");
+  }
+  //
+  // get k
+  //
+  e1 = bltin_get_ent (args[0]);
+  if (ent_type (e1) != MATRIX_DENSE_REAL)
+    rerror ("ErlingN: argument 'k' has to be MATRIX-DENSE-REAL");
+  k = class_matrix_real (e1);
+  nr1 = MNR (k);
+  nc1 = MNC (k);
+  if (nr1 * nc1 == 0)
+    rerror ("ErlingN: argument 'k' has to be MATRIX-DENSE-REAL");
+  // figure out the size of output matrix
+  nc = nc1;
+  nr = nr1;
+
+  // get r
+  e2 = bltin_get_ent (args[1]);
+  if (ent_type (e2) != MATRIX_DENSE_REAL)
+    rerror ("ErlingN: argument 'r' has to be MATRIX-DENSE-REAL");
+  r = class_matrix_real (e2);
+  nr2 = MNR (r);
+  nc2 = MNC (r);
+  if (nr2 * nc2 == 0)
+    rerror ("ErlingN: argument 'r' has to be MATRIX-DENSE-REAL");
+  // figure out the size of output matrix
+  nc = nc > nc2 ? nc : nc2;
+  nr = nr > nr2 ? nr : nr2;
+
+  j = 2;
+  if (nargs == 4)
+  {
+    // get s
+    e3 = bltin_get_ent (args[j]);
+    if (ent_type (e2) != MATRIX_DENSE_REAL)
+      rerror ("ErlingN: argument 's' has to be MATRIX-DENSE-REAL");
+    s = class_matrix_real (e3);
+    nr3 = MNR (s);
+    nc3 = MNC (s);
+    if (nr3 * nc3 == 0)
+      rerror ("ErlingN: argument 's' has to be MATRIX-DENSE-REAL");
+    // figure out the size of output matrix
+    nc = nc > nc3 ? nc : nc3;
+    nr = nr > nr3 ? nr : nr3;
+
+    j++;
+  }
+
+  // get t
+  e4 = bltin_get_ent (args[j]);
+  if (ent_type (e4) != MATRIX_DENSE_REAL)
+    rerror ("ErlingN: argument 't' has to be MATRIX-DENSE-REAL");
+  t = class_matrix_real (e4);
+  nr4 = MNR (t);
+  nc4 = MNC (t);
+  if (nr4 * nc4 == 0)
+    rerror ("ErlingN: argument 't' has to be MATRIX-DENSE-REAL");
+  // figure out the size of output matrix
+  nc = nc > nc4 ? nc : nc4;
+  nr = nr > nr4 ? nr : nr4;
+
+  w = mdr_Create (nr, nc);
+  // calculate
+  for (i = 1; i <= nr; i++)
+      for (j = 1; j <= nc; j++)
+  {
+    k1 = Mdr1(k, MIN(nr1,i), MIN(nc1,j) );
+    r1 = Mdr1(r, MIN(nr2,i), MIN(nc2,j) );
+    s1 = 0;
+    t1 = Mdr1(t, MIN(nr4,i), MIN(nc4,j) );
+    if (s)
+    {
+      // ErlingN(k,r,s,t)
+      s1 = Mdr1(s, MIN(nr3,i), MIN(nc3,j) );
+      if (s1>0)
+        Mdr1(w, i, j) = double_sf_erlingn(&k1, &r1, &s1, &t1);
+      else
+        Mdr1(w, i, j) = double_sf_erling (&k1, &r1, &t1);
+    }
+    else
+    {
+      // ErlingN(k,r,t)
+      Mdr1(w, i, j) = double_sf_erling (&k1, &r1, &t1);
+    }
+  }
+
+  ent_Clean (e1);
+  ent_Clean (e2);
+  ent_Clean (e3);
+  ent_Clean (e4);
+
+  return ent_Assign_Rlab_MDR(w);
+}

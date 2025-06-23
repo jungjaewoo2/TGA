@@ -1,0 +1,8 @@
+#/bin/bash
+# change w1 bus address as needed
+#
+# tempread=`cat /sys/bus/w1/devices/28-02131acde2aa/w1_slave`
+tempread=`cat /sys/bus/w1/devices/28-011927954fa2/w1_slave`
+temp=`echo "scale=2; "\`echo ${tempread##*=}\`" / 1000" | bc`
+echo "The measured temperature is " $temp "°C"
+

@@ -1,0 +1,66 @@
+  close
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Close a file.
+
+      [1mSyntax[0m
+        close ( [4mfilename[24m )
+
+      [1mDescription[0m
+        close takes a string ([4mfilename[24m) as input, and attempts to close
+        the output stream associated with [4mfilename[24m. close returns TRUE
+        (1) if the output stream was successfully closed, FALSE (0) if
+        the output stream could not be closed.
+
+        If you want to read the contents of a file that you have created
+        with the write function in the present session, then be sure to
+        close the file before using the read function.
+
+        Example:
+
+
+          write( "eig_output", a , vec , val );
+          close( "eig_output" );
+          read( "eig_output" );
+
+
+
+
+
+
+     [1mSee Also[0m
+        printf, fprintf, getline, open, read, readb, readm, write,
+        writeb, writem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

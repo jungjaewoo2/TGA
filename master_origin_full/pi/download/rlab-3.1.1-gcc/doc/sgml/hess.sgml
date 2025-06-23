@@ -1,0 +1,19 @@
+<sect> hess 
+<p>
+<descrip>
+<tag> Synopsis </tag> Find the Hessenberg form of a matrix.
+<tag> Syntax </tag> hess( <em>A</> )
+<tag> Description </tag>
+
+	Hess finds the Hessenberg from of a matrix. Hess takes a
+	single matrix, <em>A</>, as input, and returns a list with two
+	elements, <em>h</>, and <em>p</>.
+
+	<quote>
+		A = p * h * p'		where A is the input
+	</quote>
+
+	Hess uses the LAPACK subroutines DGEHRD, DORGHR, and ZGEHRD,
+	ZUNGHR.
+
+</descrip>

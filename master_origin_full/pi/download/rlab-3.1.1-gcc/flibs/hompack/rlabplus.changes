@@ -1,0 +1,13 @@
+This is hompack library adapted for use in rlab, part of the project rlabplus (c) Marijan
+Kostrun 2006.
+
+The solvers have been modified in the following way compared to the sources available
+from www.netlib.org/hompack:
+I changed the names of the function F and its jacobian FJAC to HOM1F and HOM1FJAC,
+and the function RHO and its jacobian RHOJAC to  HOM1RHO and HOM1RHOJ.
+The solvers FIXPDF, FIXPNF and FIXPQF have greater number of input parameters: some control parameter, and the output file/stream parameters, if such is desired.
+
+The c code for functions HOM1F, HOM1FJAC, HOM1RHO and HOM1RHOJ is in file
+gsl_findroot.c.
+
+Send comments/questions to mkostrun@gmail.com.

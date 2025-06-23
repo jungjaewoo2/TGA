@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/download/plplot/plplot-5.13.0/bindings/c++/plstream.cc
+plplot.h
+/home/pi/download/plplot/plplot-5.13.0/bindings/c++/plplot.h
+plstream.h
+/home/pi/download/plplot/plplot-5.13.0/bindings/c++/plstream.h
+iostream
+-
+
+/home/pi/download/plplot/plplot-5.13.0/bindings/c++/plstream.h
+plplot.h
+/home/pi/download/plplot/plplot-5.13.0/bindings/c++/plplot.h
+
+/home/pi/download/plplot/plplot-5.13.0/include/plplot.h
+plConfig.h
+/home/pi/download/plplot/plplot-5.13.0/include/plConfig.h
+stdio.h
+-
+stdlib.h
+-
+pldll.h
+/home/pi/download/plplot/plplot-5.13.0/include/pldll.h
+stdint.h
+-
+Limits.h
+-
+
+include/plConfig.h
+plplot_config.h
+-
+
+include/pldll.h
+
+plplot_config.h
+

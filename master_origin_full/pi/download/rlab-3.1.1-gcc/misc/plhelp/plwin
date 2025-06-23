@@ -1,0 +1,9 @@
+plwin:
+
+Synopsis: Change the "focus" the the Nth plot-window.
+
+Syntax: plwin ( N )
+
+Descriptin:
+
+	Switch the current plot-window to plot-window N.

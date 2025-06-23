@@ -1,0 +1,1661 @@
+For additional information, read file ../src/sys_linux/aaaread.me
+Reading configuration file: ../src/sys_linux/gfortran_gcc.conf
+Selecting uncommented drivers from ./drivers.list
+Found drivers GIDRIV LXDRIV NUDRIV PNDRIV PPDRIV PSDRIV X2DRIV XWDRIV
+Copying color database.
+Creating make file: makefile
+Determining object file dependencies.
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgarro.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgask.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgaxis.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgaxlg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgband.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbbuf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbeg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbin.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbox.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbox1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcirc.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgclos.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcn01.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcnsc.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgconb.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgconf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgconl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcons.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcont.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgconx.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgctab.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcurs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgdraw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgebuf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgend.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgenv.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgeras.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgerr1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgerrb.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgerrx.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgerry.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgetxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgfunt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgfunx.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgfuny.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pggray.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgrgbfor.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pghi2d.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pghis1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pghist.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pghtch.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgiden.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgimag.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pginit.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pglab.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pglcur.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgldev.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pglen.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgline.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgmove.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgmtxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgncur.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgnoto.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgnpl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgnumb.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgolin.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgopen.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpage.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpanl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpap.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpixl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpnts.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpoly.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpt1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgptxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqah.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqcf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqch.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqci.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqcir.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqclp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqcol.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqcr.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqcs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqdt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqfs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqhs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqid.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqinf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqitf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqlw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqndt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqpos.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqtbg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqtxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqvp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqvsz.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgqwin.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgrect.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgrnd.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgrnge.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsah.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsave.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgscf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsch.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsci.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgscir.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsclp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgscr.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgscrl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgscrn.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsfs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgshls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgshs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsitf.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgslct.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgslw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgstbg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsubp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgsvp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgswin.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgtbox.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgtext.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgtick.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgtikl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgupdt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvect.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvsiz.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvstd.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgwedg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgwnad.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgadvance.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgbegin.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgcurse.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pglabel.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgmtext.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgncurse.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpaper.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgpoint.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgptext.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvport.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvsize.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgvstand.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/pgwindow.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grarea.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grbpic.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grchsz.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grclip.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grclos.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grclpl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grctoi.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grcurs.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grdot0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grdot1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grdtyp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/gresc.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grepic.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/gretxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grfa.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grfao.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grgfil.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grgray.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grimg0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grimg1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grimg2.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grimg3.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grinit.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/gritoc.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlen.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlin0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlin1.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlin2.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlin3.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grlina.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grmcur.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grmker.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grmova.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grmsg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/gropen.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpage.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpars.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpixl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpocl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grprom.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpxpo.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpxps.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpxpx.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grpxre.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqcap.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqci.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqcol.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqcr.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqdev.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqdt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqfnt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqlw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqpos.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqtxt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grqtyp.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grquit.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grrec0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grrect.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsci.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grscr.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grscrl.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsetc.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsets.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsfnt.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsize.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grskpb.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grslct.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grslw.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsyds.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsymk.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grsyxd.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grterm.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grtext.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grtoup.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grtrim.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grtrn0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grtxy0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grvct0.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grwarn.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grxhls.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/src/grxrgb.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O grexec.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include ../src/drivers/figdisp_comm.c
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/drivers/gidriv.f
+../src/drivers/gidriv.f:254.43:
+
+      CALL GRGI03(1, 1, BX, BY, 0, BX, BY, PIXMAP)
+                                           1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+../src/drivers/gidriv.f:275.50:
+
+      CALL GRGI01(IX0, IY0, IX1, IY1, IC, BX, BY, PIXMAP)
+                                                  1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+../src/drivers/gidriv.f:284.50:
+
+      CALL GRGI01(IX0, IY0, IX0, IY0, IC, BX, BY, PIXMAP)
+                                                  1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+../src/drivers/gidriv.f:296.46:
+
+            CALL GRGI06(UNIT, BX, BY, CTABLE, PIXMAP, MAXIDX,
+                                              1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+../src/drivers/gidriv.f:376.50:
+
+      CALL GRGI03(IX0, IY0, IX1, IY1, IC, BX, BY, PIXMAP)
+                                                  1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+../src/drivers/gidriv.f:387.38:
+
+      CALL GRGI04(NBUF, RBUF, BX, BY, PIXMAP, MAXIDX)
+                                      1
+Warning: Type mismatch in argument 'pixmap' at (1); passed INTEGER(4) to INTEGER(1)
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/drivers/lxdriv.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/drivers/nudriv.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include ../src/drivers/pndriv.c
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/drivers/ppdriv.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/drivers/psdriv.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include ../src/drivers/x2driv.c
+../src/drivers/x2driv.c: In function ‘x2driv_’:
+../src/drivers/x2driv.c:202:3: warning: call to function ‘figdisp_getresponse’ without a real prototype [-Wunprototyped-calls]
+   answer=figdisp_getresponse(&anslen);
+   ^
+../src/drivers/x2driv.c:129:9: note: ‘figdisp_getresponse’ was declared here
+  short *figdisp_getresponse(); /* get a response from the server */
+         ^
+../src/drivers/x2driv.c:240:15: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+    if ((combuf= (short *)malloc(combuflen*sizeof(short)))
+               ^
+../src/drivers/x2driv.c:249:3: warning: call to function ‘figdisp_opencomm’ without a real prototype [-Wunprototyped-calls]
+   if (!figdisp_opencomm(combuflen,i))
+   ^
+../src/drivers/x2driv.c:131:6: note: ‘figdisp_opencomm’ was declared here
+  int figdisp_opencomm();  /* open connection with the server */
+      ^
+../src/drivers/x2driv.c:265:3: warning: call to function ‘figdisp_getresponse’ without a real prototype [-Wunprototyped-calls]
+   answer=figdisp_getresponse(&anslen);
+   ^
+../src/drivers/x2driv.c:129:9: note: ‘figdisp_getresponse’ was declared here
+  short *figdisp_getresponse(); /* get a response from the server */
+         ^
+../src/drivers/x2driv.c:280:3: warning: call to function ‘figdisp_getresponse’ without a real prototype [-Wunprototyped-calls]
+   answer=figdisp_getresponse(&anslen);
+   ^
+../src/drivers/x2driv.c:129:9: note: ‘figdisp_getresponse’ was declared here
+  short *figdisp_getresponse(); /* get a response from the server */
+         ^
+../src/drivers/x2driv.c:300:3: warning: call to function ‘figdisp_getresponse’ without a real prototype [-Wunprototyped-calls]
+   answer=figdisp_getresponse(&anslen);
+   ^
+../src/drivers/x2driv.c:129:9: note: ‘figdisp_getresponse’ was declared here
+  short *figdisp_getresponse(); /* get a response from the server */
+         ^
+../src/drivers/x2driv.c:414:3: warning: call to function ‘figdisp_getresponse’ without a real prototype [-Wunprototyped-calls]
+   answer=figdisp_getresponse(&anslen);
+   ^
+../src/drivers/x2driv.c:129:9: note: ‘figdisp_getresponse’ was declared here
+  short *figdisp_getresponse(); /* get a response from the server */
+         ^
+../src/drivers/x2driv.c:120:9: warning: unused variable ‘sptr’ [-Wunused-variable]
+  short *sptr; /* a pointer to a short */
+         ^
+../src/drivers/x2driv.c:119:8: warning: unused variable ‘ftmp’ [-Wunused-variable]
+  float ftmp; /* a temporary floating point number */
+        ^
+../src/drivers/x2driv.c:110:14: warning: unused variable ‘lockname’ [-Wunused-variable]
+  static char lockname[40]; /* the name of the locking atom */
+              ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include ../src/drivers/xwdriv.c
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/grdate.c
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/grfileio.c
+../src/sys/grfileio.c: In function ‘grcfil_’:
+../src/sys/grfileio.c:135:5: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+     return close(*fd);
+     ^
+../src/sys/grfileio.c: In function ‘grwfil_’:
+../src/sys/grfileio.c:161:3: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+   return write(*fd, (void *) buf, *nbytes);
+   ^
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grflun.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grgcom.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grgenv.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/grgetc.c
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grglun.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/grgmem.c
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grgmsg.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grlgtr.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/groptx.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grsy00.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/grtermio.c
+../src/sys/grtermio.c: In function ‘grcter_’:
+../src/sys/grtermio.c:70:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+   close(*fd);
+   ^
+../src/sys/grtermio.c: In function ‘grwter_’:
+../src/sys/grtermio.c:83:4: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+    int nwritten = write (*fd, cbuf, *lbuf);
+    ^
+../src/sys/grtermio.c: In function ‘grpter_’:
+../src/sys/grtermio.c:148:7: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+       nread = read(*fd, &buff[ndone], ntry);
+       ^
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grtrml.f
+gfortran -c -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O ../src/sys/grtter.f
+gcc -c -Wall -fPIC -DPG_PPU -O -I. ../src/sys/gruser.c
+ar ru libpgplot.a \
+	`ls pgarro.o pgask.o  pgaxis.o pgaxlg.o pgband.o pgbbuf.o pgbeg.o  pgbin.o  pgbox.o  pgbox1.o pgcirc.o pgcl.o   pgclos.o pgcn01.o pgcnsc.o pgconb.o pgconf.o pgconl.o pgcons.o pgcont.o pgconx.o pgcp.o   pgctab.o pgcurs.o pgdraw.o pgebuf.o pgend.o  pgenv.o  pgeras.o pgerr1.o pgerrb.o pgerrx.o pgerry.o pgetxt.o pgfunt.o pgfunx.o pgfuny.o pggray.o pgrgbfor.o pghi2d.o pghis1.o pghist.o pghtch.o pgiden.o pgimag.o pginit.o pglab.o  pglcur.o pgldev.o pglen.o  pgline.o pgmove.o pgmtxt.o pgncur.o pgnoto.o pgnpl.o  pgnumb.o pgolin.o pgopen.o pgpage.o pgpanl.o pgpap.o  pgpixl.o pgpnts.o pgpoly.o pgpt.o   pgpt1.o  pgptxt.o pgqah.o  pgqcf.o  pgqch.o  pgqci.o  pgqcir.o pgqclp.o pgqcol.o pgqcr.o  pgqcs.o  pgqdt.o  pgqfs.o  pgqhs.o  pgqid.o  pgqinf.o pgqitf.o pgqls.o  pgqlw.o  pgqndt.o pgqpos.o pgqtbg.o pgqtxt.o pgqvp.o  pgqvsz.o pgqwin.o pgrect.o pgrnd.o  pgrnge.o pgsah.o  pgsave.o pgscf.o  pgsch.o  pgsci.o  pgscir.o pgsclp.o pgscr.o  pgscrl.o pgscrn.o pgsfs.o  pgshls.o pgshs.o  pgsitf.o pgslct.o pgsls.o  pgslw.o  pgstbg.o pgsubp.o pgsvp.o  pgswin.o pgtbox.o pgtext.o pgtick.o pgtikl.o pgupdt.o pgvect.o pgvsiz.o pgvstd.o pgvw.o   pgwedg.o pgwnad.o \
+	pgadvance.o pgbegin.o   pgcurse.o   pglabel.o   pgmtext.o   pgncurse.o  pgpaper.o   pgpoint.o   pgptext.o   pgvport.o   pgvsize.o   pgvstand.o  pgwindow.o  grarea.o grbpic.o grchsz.o grclip.o grclos.o grclpl.o grctoi.o grcurs.o grdot0.o grdot1.o grdtyp.o gresc.o  grepic.o gretxt.o grfa.o   grfao.o  grgfil.o grgray.o grimg0.o grimg1.o grimg2.o grimg3.o grinit.o gritoc.o grlen.o  grlin0.o grlin1.o grlin2.o grlin3.o grlina.o grmcur.o grmker.o grmova.o grmsg.o gropen.o grpage.o grpars.o grpixl.o grpocl.o grprom.o grpxpo.o grpxps.o grpxpx.o grpxre.o grqcap.o grqci.o  grqcol.o grqcr.o  grqdev.o grqdt.o  grqfnt.o grqls.o  grqlw.o  grqpos.o grqtxt.o grqtyp.o grquit.o grrec0.o grrect.o grsci.o  grscr.o  grscrl.o grsetc.o grsets.o grsfnt.o grsize.o grskpb.o grslct.o grsls.o  grslw.o  grsyds.o grsymk.o grsyxd.o grterm.o grtext.o grtoup.o grtrim.o grtrn0.o grtxy0.o grvct0.o grwarn.o grxhls.o grxrgb.o grexec.o \
+	figdisp_comm.o gidriv.o lxdriv.o nudriv.o pndriv.o ppdriv.o psdriv.o x2driv.o xwdriv.o  grdate.o grfileio.o grflun.o grgcom.o grgenv.o grgetc.o grglun.o grgmem.o grgmsg.o grlgtr.o groptx.o grsy00.o grtermio.o grtrml.o grtter.o gruser.o | sort | uniq`
+ar: creating libpgplot.a
+ranlib libpgplot.a
+gcc -shared  -o libpgplot.so `ls pgarro.o pgask.o  pgaxis.o pgaxlg.o pgband.o pgbbuf.o pgbeg.o  pgbin.o  pgbox.o  pgbox1.o pgcirc.o pgcl.o   pgclos.o pgcn01.o pgcnsc.o pgconb.o pgconf.o pgconl.o pgcons.o pgcont.o pgconx.o pgcp.o   pgctab.o pgcurs.o pgdraw.o pgebuf.o pgend.o  pgenv.o  pgeras.o pgerr1.o pgerrb.o pgerrx.o pgerry.o pgetxt.o pgfunt.o pgfunx.o pgfuny.o pggray.o pgrgbfor.o pghi2d.o pghis1.o pghist.o pghtch.o pgiden.o pgimag.o pginit.o pglab.o  pglcur.o pgldev.o pglen.o  pgline.o pgmove.o pgmtxt.o pgncur.o pgnoto.o pgnpl.o  pgnumb.o pgolin.o pgopen.o pgpage.o pgpanl.o pgpap.o  pgpixl.o pgpnts.o pgpoly.o pgpt.o   pgpt1.o  pgptxt.o pgqah.o  pgqcf.o  pgqch.o  pgqci.o  pgqcir.o pgqclp.o pgqcol.o pgqcr.o  pgqcs.o  pgqdt.o  pgqfs.o  pgqhs.o  pgqid.o  pgqinf.o pgqitf.o pgqls.o  pgqlw.o  pgqndt.o pgqpos.o pgqtbg.o pgqtxt.o pgqvp.o  pgqvsz.o pgqwin.o pgrect.o pgrnd.o  pgrnge.o pgsah.o  pgsave.o pgscf.o  pgsch.o  pgsci.o  pgscir.o pgsclp.o pgscr.o  pgscrl.o pgscrn.o pgsfs.o  pgshls.o pgshs.o  pgsitf.o pgslct.o pgsls.o  pgslw.o  pgstbg.o pgsubp.o pgsvp.o  pgswin.o pgtbox.o pgtext.o pgtick.o pgtikl.o pgupdt.o pgvect.o pgvsiz.o pgvstd.o pgvw.o   pgwedg.o pgwnad.o \
+pgadvance.o pgbegin.o   pgcurse.o   pglabel.o   pgmtext.o   pgncurse.o  pgpaper.o   pgpoint.o   pgptext.o   pgvport.o   pgvsize.o   pgvstand.o  pgwindow.o  grarea.o grbpic.o grchsz.o grclip.o grclos.o grclpl.o grctoi.o grcurs.o grdot0.o grdot1.o grdtyp.o gresc.o  grepic.o gretxt.o grfa.o   grfao.o  grgfil.o grgray.o grimg0.o grimg1.o grimg2.o grimg3.o grinit.o gritoc.o grlen.o  grlin0.o grlin1.o grlin2.o grlin3.o grlina.o grmcur.o grmker.o grmova.o grmsg.o gropen.o grpage.o grpars.o grpixl.o grpocl.o grprom.o grpxpo.o grpxps.o grpxpx.o grpxre.o grqcap.o grqci.o  grqcol.o grqcr.o  grqdev.o grqdt.o  grqfnt.o grqls.o  grqlw.o  grqpos.o grqtxt.o grqtyp.o grquit.o grrec0.o grrect.o grsci.o  grscr.o  grscrl.o grsetc.o grsets.o grsfnt.o grsize.o grskpb.o grslct.o grsls.o  grslw.o  grsyds.o grsymk.o grsyxd.o grterm.o grtext.o grtoup.o grtrim.o grtrn0.o grtxy0.o grvct0.o grwarn.o grxhls.o grxrgb.o grexec.o \
+figdisp_comm.o gidriv.o lxdriv.o nudriv.o pndriv.o ppdriv.o psdriv.o x2driv.o xwdriv.o  grdate.o grfileio.o grflun.o grgcom.o grgenv.o grgetc.o grglun.o grgmem.o grgmsg.o grlgtr.o groptx.o grsy00.o grtermio.o grtrml.o grtter.o gruser.o | sort | uniq` 
+gfortran -ffixed-form -ffixed-line-length-none -u -Wall -fPIC -O -o pgpack ../src/fonts/pgpack.f
+rm -f grfont.dat
+./pgpack <../src/fonts/grfont.txt
+ Characters defined:   996
+ Array cells used:   26732
+rm -f pgpack
+gfortran -fno-backslash -o pgdemo1 ../src/examples/pgdemo1.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo2 ../src/examples/pgdemo2.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo3 ../src/examples/pgdemo3.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo4 ../src/examples/pgdemo4.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo5 ../src/examples/pgdemo5.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo6 ../src/examples/pgdemo6.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo7 ../src/examples/pgdemo7.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo8 ../src/examples/pgdemo8.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo9 ../src/examples/pgdemo9.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo10 ../src/examples/pgdemo10.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo11 ../src/examples/pgdemo11.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo12 ../src/examples/pgdemo12.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo13 ../src/examples/pgdemo13.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo14 ../src/examples/pgdemo14.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo15 ../src/examples/pgdemo15.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo16 ../src/examples/pgdemo16.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+gfortran -fno-backslash -o pgdemo17 ../src/examples/pgdemo17.f libpgplot.a -lpng -lz -L/usr/X11R6/lib -lX11
+../src/makedoc ../src/src/pgarro.f ../src/src/pgask.f  ../src/src/pgaxis.f ../src/src/pgaxlg.f ../src/src/pgband.f ../src/src/pgbbuf.f ../src/src/pgbeg.f  ../src/src/pgbin.f  ../src/src/pgbox.f  ../src/src/pgbox1.f ../src/src/pgcirc.f ../src/src/pgcl.f   ../src/src/pgclos.f ../src/src/pgcn01.f ../src/src/pgcnsc.f ../src/src/pgconb.f ../src/src/pgconf.f ../src/src/pgconl.f ../src/src/pgcons.f ../src/src/pgcont.f ../src/src/pgconx.f ../src/src/pgcp.f   ../src/src/pgctab.f ../src/src/pgcurs.f ../src/src/pgdraw.f ../src/src/pgebuf.f ../src/src/pgend.f  ../src/src/pgenv.f  ../src/src/pgeras.f ../src/src/pgerr1.f ../src/src/pgerrb.f ../src/src/pgerrx.f ../src/src/pgerry.f ../src/src/pgetxt.f ../src/src/pgfunt.f ../src/src/pgfunx.f ../src/src/pgfuny.f ../src/src/pggray.f ../src/src/pgrgbfor.f ../src/src/pghi2d.f ../src/src/pghis1.f ../src/src/pghist.f ../src/src/pghtch.f ../src/src/pgiden.f ../src/src/pgimag.f ../src/src/pginit.f ../src/src/pglab.f  ../src/src/pglcur.f ../src/src/pgldev.f ../src/src/pglen.f  ../src/src/pgline.f ../src/src/pgmove.f ../src/src/pgmtxt.f ../src/src/pgncur.f ../src/src/pgnoto.f ../src/src/pgnpl.f  ../src/src/pgnumb.f ../src/src/pgolin.f ../src/src/pgopen.f ../src/src/pgpage.f ../src/src/pgpanl.f ../src/src/pgpap.f  ../src/src/pgpixl.f ../src/src/pgpnts.f ../src/src/pgpoly.f ../src/src/pgpt.f   ../src/src/pgpt1.f  ../src/src/pgptxt.f ../src/src/pgqah.f  ../src/src/pgqcf.f  ../src/src/pgqch.f  ../src/src/pgqci.f  ../src/src/pgqcir.f ../src/src/pgqclp.f ../src/src/pgqcol.f ../src/src/pgqcr.f  ../src/src/pgqcs.f  ../src/src/pgqdt.f  ../src/src/pgqfs.f  ../src/src/pgqhs.f  ../src/src/pgqid.f  ../src/src/pgqinf.f ../src/src/pgqitf.f ../src/src/pgqls.f  ../src/src/pgqlw.f  ../src/src/pgqndt.f ../src/src/pgqpos.f ../src/src/pgqtbg.f ../src/src/pgqtxt.f ../src/src/pgqvp.f  ../src/src/pgqvsz.f ../src/src/pgqwin.f ../src/src/pgrect.f ../src/src/pgrnd.f  ../src/src/pgrnge.f ../src/src/pgsah.f  ../src/src/pgsave.f ../src/src/pgscf.f  ../src/src/pgsch.f  ../src/src/pgsci.f  ../src/src/pgscir.f ../src/src/pgsclp.f ../src/src/pgscr.f  ../src/src/pgscrl.f ../src/src/pgscrn.f ../src/src/pgsfs.f  ../src/src/pgshls.f ../src/src/pgshs.f  ../src/src/pgsitf.f ../src/src/pgslct.f ../src/src/pgsls.f  ../src/src/pgslw.f  ../src/src/pgstbg.f ../src/src/pgsubp.f ../src/src/pgsvp.f  ../src/src/pgswin.f ../src/src/pgtbox.f ../src/src/pgtext.f ../src/src/pgtick.f ../src/src/pgtikl.f ../src/src/pgupdt.f ../src/src/pgvect.f ../src/src/pgvsiz.f ../src/src/pgvstd.f ../src/src/pgvw.f   ../src/src/pgwedg.f ../src/src/pgwnad.f  ../src/src/pgadvance.f ../src/src/pgbegin.f   ../src/src/pgcurse.f   ../src/src/pglabel.f   ../src/src/pgmtext.f   ../src/src/pgncurse.f  ../src/src/pgpaper.f   ../src/src/pgpoint.f   ../src/src/pgptext.f   ../src/src/pgvport.f   ../src/src/pgvsize.f   ../src/src/pgvstand.f  ../src/src/pgwindow.f  > pgplot.doc
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/cleanup.c
+In file included from ../src/pgdispd/cleanup.c:16:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/pgdisp.c
+In file included from ../src/pgdispd/pgdisp.c:39:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/pgdisp.c: In function ‘main’:
+../src/pgdispd/pgdisp.c:61:2: warning: call to function ‘parsedisp’ without a real prototype [-Wunprototyped-calls]
+  parsedisp(&argc, argv);
+  ^
+../src/pgdispd/pgdisp.c:53:7: note: ‘parsedisp’ was declared here
+  void parsedisp();
+       ^
+../src/pgdispd/pgdisp.c:78:2: warning: implicit declaration of function ‘initlock’ [-Wimplicit-function-declaration]
+  if (initlock() || getvisuals() || initlgwin()) return(FAIL);
+  ^
+../src/pgdispd/pgdisp.c:78:2: warning: implicit declaration of function ‘getvisuals’ [-Wimplicit-function-declaration]
+../src/pgdispd/pgdisp.c:78:2: warning: implicit declaration of function ‘initlgwin’ [-Wimplicit-function-declaration]
+../src/pgdispd/pgdisp.c:87:2: warning: implicit declaration of function ‘mainloop’ [-Wimplicit-function-declaration]
+  (void)mainloop();
+  ^
+In file included from ../src/pgdispd/pgdisp.c:39:0:
+../src/pgdispd/pgdisp.c: At top level:
+../src/pgdispd/figdisp.h:81:13: warning: ‘figdisp_h_rcsid’ defined but not used [-Wunused-variable]
+ static char figdisp_h_rcsid[]="@(#)$Id: figdisp.h,v 1.12 1992/10/19 02:18:32 figaro Exp $";
+             ^
+In file included from ../src/pgdispd/pgdisp.c:41:0:
+../src/pgdispd/globals.h:23:13: warning: ‘global_h_rcsid’ defined but not used [-Wunused-variable]
+ static char global_h_rcsid[]="@(#)$Id: globals.h,v 1.7 1993/03/04 05:55:13 figaro Exp $";
+             ^
+In file included from ../src/pgdispd/pgdisp.c:42:0:
+../src/pgdispd/commands.h:68:13: warning: ‘commands_h_rcsid’ defined but not used [-Wunused-variable]
+ static char commands_h_rcsid[]="@(#)$Id: commands.h,v 1.13 1994/02/07 04:33:26 figaro Exp $";
+             ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/figcurs.c
+In file included from ../src/pgdispd/figcurs.c:31:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/figcurs.c: In function ‘pggcurs’:
+../src/pgdispd/figcurs.c:62:2: warning: call to function ‘getcurs’ without a real prototype [-Wunprototyped-calls]
+  return(getcurs(buf,&lgcurses,&lastlg));
+  ^
+../src/pgdispd/figcurs.c:60:6: note: ‘getcurs’ was declared here
+  int getcurs ();
+      ^
+../src/pgdispd/figcurs.c: In function ‘getcurs’:
+../src/pgdispd/figcurs.c:99:2: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+  free((char *)tmpptr);
+  ^
+../src/pgdispd/figcurs.c:99:2: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+../src/pgdispd/figcurs.c: In function ‘pgcursor’:
+../src/pgdispd/figcurs.c:116:8: warning: conflicting types for built-in function ‘malloc’ [enabled by default]
+  char *malloc();
+        ^
+../src/pgdispd/figcurs.c:118:2: warning: call to function ‘getbuttonval’ without a real prototype [-Wunprototyped-calls]
+  if (event.type == ButtonPress) getbuttonval(event.xbutton.button, &val);
+  ^
+../src/pgdispd/figcurs.c:113:7: note: ‘getbuttonval’ was declared here
+  void getbuttonval();
+       ^
+../src/pgdispd/figcurs.c:119:2: warning: call to function ‘getkeyval’ without a real prototype [-Wunprototyped-calls]
+  else if (!getkeyval(event, &val)) return(1);
+  ^
+../src/pgdispd/figcurs.c:114:6: note: ‘getkeyval’ was declared here
+  int getkeyval();
+      ^
+../src/pgdispd/figcurs.c:128:22: warning: call to function ‘malloc’ without a real prototype [-Wunprototyped-calls]
+        sizeof(struct curpos))) == NULL)
+                      ^
+../src/pgdispd/figcurs.c:116:8: note: ‘malloc’ was declared here
+  char *malloc();
+        ^
+../src/pgdispd/figcurs.c:136:59: warning: call to function ‘malloc’ without a real prototype [-Wunprototyped-calls]
+       if ((lgcurses=(struct curpos *)malloc(sizeof(struct curpos)))
+                                                           ^
+../src/pgdispd/figcurs.c:116:8: note: ‘malloc’ was declared here
+  char *malloc();
+        ^
+../src/pgdispd/figcurs.c: In function ‘clearcurs’:
+../src/pgdispd/figcurs.c:317:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+   free((char *)lgcurses);
+   ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/getdata.c
+../src/pgdispd/getdata.c:7:1: warning: "/*" within comment [-Wcomment]
+ /* Sam Southard, Jr. */
+ ^
+In file included from ../src/pgdispd/getdata.c:34:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/getdata.c: In function ‘getdata’:
+../src/pgdispd/getdata.c:69:3: warning: call to function ‘proccom’ without a real prototype [-Wunprototyped-calls]
+   if (proccom(buffer,(int)nitems>>1,rbuf,rbuflen)) return(0);
+   ^
+../src/pgdispd/getdata.c:57:6: note: ‘proccom’ was declared here
+  int proccom ();
+      ^
+../src/pgdispd/getdata.c:85:4: warning: call to function ‘proccom’ without a real prototype [-Wunprototyped-calls]
+    (void)proccom(buffer,0,rbuf,rbuflen);
+    ^
+../src/pgdispd/getdata.c:57:6: note: ‘proccom’ was declared here
+  int proccom ();
+      ^
+../src/pgdispd/getdata.c:99:3: warning: call to function ‘returnbuf’ without a real prototype [-Wunprototyped-calls]
+   returnbuf(rbuf,*rbuflen,srcwin);
+   ^
+../src/pgdispd/getdata.c:55:7: note: ‘returnbuf’ was declared here
+  void returnbuf();  /* return data to the user process */
+       ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/getvisuals.c
+In file included from ../src/pgdispd/getvisuals.c:28:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/getvisuals.c: In function ‘getvisuals’:
+../src/pgdispd/getvisuals.c:68:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  if ((lg.pix=(unsigned long *)malloc(i*sizeof(unsigned long))) == NULL)
+  ^
+../src/pgdispd/getvisuals.c:68:31: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  if ((lg.pix=(unsigned long *)malloc(i*sizeof(unsigned long))) == NULL)
+                               ^
+../src/pgdispd/getvisuals.c:81:3: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+   free(lg.pix);
+   ^
+../src/pgdispd/getvisuals.c:81:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+../src/pgdispd/getvisuals.c:93:9: warning: implicit declaration of function ‘getcolors’ [-Wimplicit-function-declaration]
+         (bm.colors=getcolors(UseDefaultCmap, &bitvisual, &bitcmap,
+         ^
+../src/pgdispd/getvisuals.c:325:4: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    lg.pix, res.lgcolors, res.lgcolors, &linedepth)) break;
+    ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/handlexevent.c
+In file included from ../src/pgdispd/handlexevent.c:45:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/handlexevent.c: In function ‘handlexevent’:
+../src/pgdispd/handlexevent.c:113:3: warning: implicit declaration of function ‘getdata’ [-Wimplicit-function-declaration]
+   *go_on=getdata(event.xselection, &retbuf[0], &retbuflen,
+   ^
+../src/pgdispd/handlexevent.c:117:3: warning: call to function ‘exposelgwin’ without a real prototype [-Wunprototyped-calls]
+   if (event.xexpose.window == lg.win) exposelgwin(event.xexpose);
+   ^
+../src/pgdispd/handlexevent.c:75:7: note: ‘exposelgwin’ was declared here
+  void exposelgwin(); /* expose the line graphics window */
+       ^
+../src/pgdispd/handlexevent.c:133:4: warning: call to function ‘resizelgwin’ without a real prototype [-Wunprototyped-calls]
+    resizelgwin(event.xconfigure);
+    ^
+../src/pgdispd/handlexevent.c:74:7: note: ‘resizelgwin’ was declared here
+  void resizelgwin(); /* resize line graphics window */
+       ^
+../src/pgdispd/handlexevent.c:216:4: warning: call to function ‘updatelgtitle’ without a real prototype [-Wunprototyped-calls]
+    updatelgtitle(px-lg.winxoff,py-lg.winyoff);
+    ^
+../src/pgdispd/handlexevent.c:76:7: note: ‘updatelgtitle’ was declared here
+  void updatelgtitle(); /* update the line graphics cursor position */
+       ^
+../src/pgdispd/handlexevent.c:415:3: warning: implicit declaration of function ‘pgcursor’ [-Wimplicit-function-declaration]
+   if (selset && (event.xany.window == lg.win && pgcursor(event)
+   ^
+../src/pgdispd/handlexevent.c:422:5: warning: implicit declaration of function ‘pggcurs’ [-Wimplicit-function-declaration]
+     pggcurs(&retbuf[0])
+     ^
+../src/pgdispd/handlexevent.c:429:5: warning: call to function ‘returnbuf’ without a real prototype [-Wunprototyped-calls]
+     returnbuf(&retbuf[0],4,srcwin);
+     ^
+../src/pgdispd/handlexevent.c:73:7: note: ‘returnbuf’ was declared here
+  void returnbuf(); /* return data to user program */
+       ^
+../src/pgdispd/handlexevent.c:71:15: warning: unused variable ‘keys’ [-Wunused-variable]
+  unsigned int keys;
+               ^
+../src/pgdispd/handlexevent.c:70:6: warning: unused variable ‘dummy’ [-Wunused-variable]
+  int dummy;
+      ^
+../src/pgdispd/handlexevent.c:69:9: warning: unused variable ‘windum’ [-Wunused-variable]
+  Window windum;
+         ^
+../src/pgdispd/handlexevent.c: At top level:
+../src/pgdispd/handlexevent.c:30:13: warning: ‘rcsid’ defined but not used [-Wunused-variable]
+ static char rcsid[]="@(#)$Id: handlexevent.c,v 1.12 1993/10/08 00:02:48 figaro Exp figaro $";
+             ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/proccom.c
+In file included from ../src/pgdispd/proccom.c:112:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/proccom.c: In function ‘proccom’:
+../src/pgdispd/proccom.c:168:6: warning: suggest parentheses around operand of ‘!’ or change ‘&’ to ‘&&’ or ‘!’ to ‘~’ [-Wparentheses]
+  if (!len & savedshorts)
+      ^
+../src/pgdispd/proccom.c:171:3: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+   free((char *)olddata);
+   ^
+../src/pgdispd/proccom.c:171:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+../src/pgdispd/proccom.c:196:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+   free((char *)olddata);
+   ^
+../src/pgdispd/proccom.c:294:4: warning: call to function ‘pgscurs’ without a real prototype [-Wunprototyped-calls]
+    pgscurs(ntohs(bufcont[1]),ntohs(bufcont[2]));
+    ^
+../src/pgdispd/proccom.c:159:7: note: ‘pgscurs’ was declared here
+  void pgscurs();  /* set the line graphics cursor position */
+       ^
+../src/pgdispd/proccom.c:296:4: warning: implicit declaration of function ‘pggcurs’ [-Wimplicit-function-declaration]
+    if (pggcurs(&bufcont[0]))
+    ^
+../src/pgdispd/proccom.c:298:5: warning: call to function ‘returnbuf’ without a real prototype [-Wunprototyped-calls]
+     returnbuf(&bufcont[0],4,srcwin);
+     ^
+../src/pgdispd/proccom.c:160:7: note: ‘returnbuf’ was declared here
+  void returnbuf(); /* return the answer to the client */
+       ^
+../src/pgdispd/proccom.c:388:4: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+    free((char *)points);
+    ^
+../src/pgdispd/proccom.c:675:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+     if (j && len < i || !j && len < 3*i)
+           ^
+../src/pgdispd/proccom.c:816:20: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+    if (bppix == 16 && len < npix*nline ||
+                    ^
+../src/pgdispd/proccom.c:1160:19: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+  if (usedolddata) free((char *)bothbuf);
+                   ^
+../src/pgdispd/proccom.c:151:19: warning: variable ‘starty’ set but not used [-Wunused-but-set-variable]
+  int bppix,startx,starty,nline; /* vars to decode commands */
+                   ^
+../src/pgdispd/proccom.c:151:12: warning: variable ‘startx’ set but not used [-Wunused-but-set-variable]
+  int bppix,startx,starty,nline; /* vars to decode commands */
+            ^
+../src/pgdispd/proccom.c:148:16: warning: unused variable ‘dtmp2’ [-Wunused-variable]
+  double dtmp1, dtmp2;
+                ^
+../src/pgdispd/proccom.c:148:9: warning: unused variable ‘dtmp1’ [-Wunused-variable]
+  double dtmp1, dtmp2;
+         ^
+../src/pgdispd/proccom.c:146:9: warning: unused variable ‘sptr’ [-Wunused-variable]
+  short *sptr;  /* A pointer to a short */
+         ^
+../src/pgdispd/proccom.c: At top level:
+../src/pgdispd/proccom.c:88:13: warning: ‘rcsid’ defined but not used [-Wunused-variable]
+ static char rcsid[]="@(#)$Id: proccom.c,v 1.17 1993/10/08 00:02:48 figaro Exp figaro $";
+             ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/resdb.c
+In file included from ../src/pgdispd/resdb.c:42:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/resdb.c: In function ‘parsedisp’:
+../src/pgdispd/resdb.c:277:2: warning: call to function ‘Usage’ without a real prototype [-Wunprototyped-calls]
+  if (*argc != 1) Usage(argv[0]);
+  ^
+../src/pgdispd/resdb.c:268:7: note: ‘Usage’ was declared here
+  void Usage();
+       ^
+../src/pgdispd/resdb.c: In function ‘mergeops’:
+../src/pgdispd/resdb.c:330:3: warning: call to function ‘GetHomeDir’ without a real prototype [-Wunprototyped-calls]
+   (void)GetHomeDir(filename);
+   ^
+../src/pgdispd/resdb.c:254:14: note: ‘GetHomeDir’ was declared here
+ static char *GetHomeDir();
+              ^
+../src/pgdispd/resdb.c:343:3: warning: call to function ‘GetHomeDir’ without a real prototype [-Wunprototyped-calls]
+   env=GetHomeDir(filename);
+   ^
+../src/pgdispd/resdb.c:254:14: note: ‘GetHomeDir’ was declared here
+ static char *GetHomeDir();
+              ^
+../src/pgdispd/resdb.c:348:3: warning: implicit declaration of function ‘gethostname’ [-Wimplicit-function-declaration]
+   (void)gethostname(env+len,1024-len);
+   ^
+../src/pgdispd/resdb.c: At top level:
+../src/pgdispd/resdb.c:39:13: warning: ‘rcsid’ defined but not used [-Wunused-variable]
+ static char rcsid[]="@(#)$Id: resdb.c,v 1.13 1993/10/08 00:02:48 figaro Exp figaro $";
+             ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/exposelgwin.c
+In file included from ../src/pgdispd/exposelgwin.c:18:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/exposelgwin.c:14:13: warning: ‘rcsid’ defined but not used [-Wunused-variable]
+ static char rcsid[]="@(#)$Id: exposelgwin.c,v 1.4 1992/10/19 02:14:16 figaro Exp $";
+             ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/getcolors.c
+In file included from ../src/pgdispd/getcolors.c:22:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/getcolors.c: In function ‘getcolors’:
+../src/pgdispd/getcolors.c:112:25: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   if (res.visclass >= 0 && res.visclass != class ||
+                         ^
+../src/pgdispd/getcolors.c:47:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j; /* silly loop variables */
+        ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/initlgluts.c
+In file included from ../src/pgdispd/initlgluts.c:14:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/initlgluts.c:18:6: warning: missing braces around initializer [-Wmissing-braces]
+      0,     0,     0,
+      ^
+../src/pgdispd/initlgluts.c:18:6: warning: (near initialization for ‘pgcolors[0]’) [-Wmissing-braces]
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/initlgwin.c
+In file included from ../src/pgdispd/initlgwin.c:43:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/initlgwin.c: In function ‘initlgwin’:
+../src/pgdispd/initlgwin.c:70:8: warning: conflicting types for built-in function ‘malloc’ [enabled by default]
+  char *malloc();
+        ^
+../src/pgdispd/initlgwin.c:128:2: warning: call to function ‘initwmattr’ without a real prototype [-Wunprototyped-calls]
+  initwmattr(lg, &wintitle[0], "line graphics", &res.lggeo);
+  ^
+../src/pgdispd/initlgwin.c:71:7: note: ‘initwmattr’ was declared here
+  void initwmattr();
+       ^
+../src/pgdispd/initlgwin.c:66:9: warning: unused variable ‘foobar’ [-Wunused-variable]
+  Window foobar;
+         ^
+../src/pgdispd/initlgwin.c:62:6: warning: unused variable ‘newmap’ [-Wunused-variable]
+  int newmap;   /* do we need our own color map */
+      ^
+../src/pgdispd/initlgwin.c:61:6: warning: unused variable ‘visualsMatched’ [-Wunused-variable]
+  int visualsMatched;  /* how many matched? */
+      ^
+../src/pgdispd/initlgwin.c:60:15: warning: unused variable ‘visualList’ [-Wunused-variable]
+  XVisualInfo *visualList; /* The visuals which matched */
+               ^
+../src/pgdispd/initlgwin.c:59:14: warning: unused variable ‘vTemplate’ [-Wunused-variable]
+  XVisualInfo vTemplate;  /* The template for our visual */
+              ^
+../src/pgdispd/initlgwin.c:58:16: warning: unused variable ‘pmtmp’ [-Wunused-variable]
+  unsigned long pmtmp[1]; /* temporary for plane masks */
+                ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/initlock.c
+In file included from ../src/pgdispd/initlock.c:28:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/initwmattr.c
+In file included from ../src/pgdispd/initwmattr.c:11:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/mainloop.c
+In file included from ../src/pgdispd/mainloop.c:58:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/mainloop.c: In function ‘mainloop’:
+../src/pgdispd/mainloop.c:70:3: warning: implicit declaration of function ‘waitevent’ [-Wimplicit-function-declaration]
+   if (selset) selset=waitevent();
+   ^
+../src/pgdispd/mainloop.c:73:3: warning: implicit declaration of function ‘handlexevent’ [-Wimplicit-function-declaration]
+   if (handlexevent(event,&go_on) == FAIL) return(FAIL);
+   ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/resizelgwin.c
+In file included from ../src/pgdispd/resizelgwin.c:18:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/returnbuf.c
+In file included from ../src/pgdispd/returnbuf.c:11:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/waitevent.c
+In file included from ../src/pgdispd/waitevent.c:45:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/waitevent.c:53:17: warning: "/*" within comment [-Wcomment]
+ /* #define BUSY /* Busy loop while waiting for events.  This loads */
+ ^
+../src/pgdispd/waitevent.c:56:18: warning: "/*" within comment [-Wcomment]
+ /* #define SLEEP /* Use the sleep(3) call to wait between existance */
+ ^
+../src/pgdispd/waitevent.c:59:19: warning: "/*" within comment [-Wcomment]
+ /* #define SELECT /* Use this if possible. */
+ ^
+../src/pgdispd/waitevent.c: In function ‘waitevent’:
+../src/pgdispd/waitevent.c:96:4: warning: implicit declaration of function ‘proccom’ [-Wimplicit-function-declaration]
+    (void)proccom((short *)NULL,0,(short *)NULL,(int *)0);
+    ^
+../src/pgdispd/waitevent.c:103:4: warning: implicit declaration of function ‘returnbuf’ [-Wimplicit-function-declaration]
+    returnbuf (&retbuf, 1, srcwin);
+    ^
+gcc -c -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -DPGDISP ../src/pgdispd/updatelgtitle.c
+In file included from ../src/pgdispd/updatelgtitle.c:14:0:
+../src/pgdispd/figdisp.h:12:1: warning: "/*" within comment [-Wcomment]
+ /*   added. */
+ ^
+../src/pgdispd/figdisp.h:18:1: warning: "/*" within comment [-Wcomment]
+ /*   added.  Image, line, maxh, minh, maxw, and minw */
+ ^
+../src/pgdispd/figdisp.h:51:1: warning: "/*" within comment [-Wcomment]
+ /*   color map to any private color map. */
+ ^
+../src/pgdispd/updatelgtitle.c: In function ‘updatelgtitle’:
+../src/pgdispd/updatelgtitle.c:31:8: warning: conflicting types for built-in function ‘sprintf’ [enabled by default]
+  char *sprintf();
+        ^
+../src/pgdispd/updatelgtitle.c:62:4: warning: call to function ‘sprintf’ without a real prototype [-Wunprototyped-calls]
+    cury);
+    ^
+../src/pgdispd/updatelgtitle.c:31:8: note: ‘sprintf’ was declared here
+  char *sprintf();
+        ^
+../src/pgdispd/updatelgtitle.c:65:4: warning: call to function ‘sprintf’ without a real prototype [-Wunprototyped-calls]
+    res.id, curx, cury, datval);
+    ^
+../src/pgdispd/updatelgtitle.c:31:8: note: ‘sprintf’ was declared here
+  char *sprintf();
+        ^
+../src/pgdispd/updatelgtitle.c:23:7: warning: unused variable ‘tempstr’ [-Wunused-variable]
+  char tempstr[80];
+       ^
+gcc -Wall -fPIC -DPG_PPU -O -I. -o pgdisp cleanup.o pgdisp.o figcurs.o getdata.o getvisuals.o handlexevent.o proccom.o resdb.o exposelgwin.o getcolors.o initlgluts.o initlgwin.o initlock.o initwmattr.o mainloop.o resizelgwin.o returnbuf.o waitevent.o updatelgtitle.o -L/usr/X11R6/lib -lX11
+gcc -Wall -fPIC -DPG_PPU -O -I. -I/usr/X11R6/include -o pgxwin_server ../src/drivers/pgxwin_server.c -L/usr/X11R6/lib -lX11
+ 
+*** Finished compilation of PGPLOT ***
+ 
+Note that if you plan to install PGPLOT in a different
+directory than the current one, the following files will be
+needed.
+ 
+       libpgplot.a
+       libpgplot.so
+       grfont.dat
+       rgb.txt
+       pgdisp
+       pgxwin_server
+ 
+Also note that subsequent usage of PGPLOT programs requires that
+the full path of the chosen installation directory be named in
+an environment variable named PGPLOT_DIR.
+ 
+gcc -Wall -fPIC -DPG_PPU -O -I. ../src/cpg/pgbind.c -o pgbind
+./pgbind bsd -h -w ../src/src/pgarro.f ../src/src/pgask.f  ../src/src/pgaxis.f ../src/src/pgaxlg.f ../src/src/pgband.f ../src/src/pgbbuf.f ../src/src/pgbeg.f  ../src/src/pgbin.f  ../src/src/pgbox.f  ../src/src/pgbox1.f ../src/src/pgcirc.f ../src/src/pgcl.f   ../src/src/pgclos.f ../src/src/pgcn01.f ../src/src/pgcnsc.f ../src/src/pgconb.f ../src/src/pgconf.f ../src/src/pgconl.f ../src/src/pgcons.f ../src/src/pgcont.f ../src/src/pgconx.f ../src/src/pgcp.f   ../src/src/pgctab.f ../src/src/pgcurs.f ../src/src/pgdraw.f ../src/src/pgebuf.f ../src/src/pgend.f  ../src/src/pgenv.f  ../src/src/pgeras.f ../src/src/pgerr1.f ../src/src/pgerrb.f ../src/src/pgerrx.f ../src/src/pgerry.f ../src/src/pgetxt.f ../src/src/pgfunt.f ../src/src/pgfunx.f ../src/src/pgfuny.f ../src/src/pggray.f ../src/src/pgrgbfor.f ../src/src/pghi2d.f ../src/src/pghis1.f ../src/src/pghist.f ../src/src/pghtch.f ../src/src/pgiden.f ../src/src/pgimag.f ../src/src/pginit.f ../src/src/pglab.f  ../src/src/pglcur.f ../src/src/pgldev.f ../src/src/pglen.f  ../src/src/pgline.f ../src/src/pgmove.f ../src/src/pgmtxt.f ../src/src/pgncur.f ../src/src/pgnoto.f ../src/src/pgnpl.f  ../src/src/pgnumb.f ../src/src/pgolin.f ../src/src/pgopen.f ../src/src/pgpage.f ../src/src/pgpanl.f ../src/src/pgpap.f  ../src/src/pgpixl.f ../src/src/pgpnts.f ../src/src/pgpoly.f ../src/src/pgpt.f   ../src/src/pgpt1.f  ../src/src/pgptxt.f ../src/src/pgqah.f  ../src/src/pgqcf.f  ../src/src/pgqch.f  ../src/src/pgqci.f  ../src/src/pgqcir.f ../src/src/pgqclp.f ../src/src/pgqcol.f ../src/src/pgqcr.f  ../src/src/pgqcs.f  ../src/src/pgqdt.f  ../src/src/pgqfs.f  ../src/src/pgqhs.f  ../src/src/pgqid.f  ../src/src/pgqinf.f ../src/src/pgqitf.f ../src/src/pgqls.f  ../src/src/pgqlw.f  ../src/src/pgqndt.f ../src/src/pgqpos.f ../src/src/pgqtbg.f ../src/src/pgqtxt.f ../src/src/pgqvp.f  ../src/src/pgqvsz.f ../src/src/pgqwin.f ../src/src/pgrect.f ../src/src/pgrnd.f  ../src/src/pgrnge.f ../src/src/pgsah.f  ../src/src/pgsave.f ../src/src/pgscf.f  ../src/src/pgsch.f  ../src/src/pgsci.f  ../src/src/pgscir.f ../src/src/pgsclp.f ../src/src/pgscr.f  ../src/src/pgscrl.f ../src/src/pgscrn.f ../src/src/pgsfs.f  ../src/src/pgshls.f ../src/src/pgshs.f  ../src/src/pgsitf.f ../src/src/pgslct.f ../src/src/pgsls.f  ../src/src/pgslw.f  ../src/src/pgstbg.f ../src/src/pgsubp.f ../src/src/pgsvp.f  ../src/src/pgswin.f ../src/src/pgtbox.f ../src/src/pgtext.f ../src/src/pgtick.f ../src/src/pgtikl.f ../src/src/pgupdt.f ../src/src/pgvect.f ../src/src/pgvsiz.f ../src/src/pgvstd.f ../src/src/pgvw.f   ../src/src/pgwedg.f ../src/src/pgwnad.f  ../src/src/pgadvance.f ../src/src/pgbegin.f   ../src/src/pgcurse.f   ../src/src/pglabel.f   ../src/src/pgmtext.f   ../src/src/pgncurse.f  ../src/src/pgpaper.f   ../src/src/pgpoint.f   ../src/src/pgptext.f   ../src/src/pgvport.f   ../src/src/pgvsize.f   ../src/src/pgvstand.f  ../src/src/pgwindow.f 
+gcc -c -Wall -fPIC -DPG_PPU -O -I. cpg*.c
+cpgarro.c: In function ‘cpgarro’:
+cpgarro.c:6:3: warning: call to function ‘pgarro_’ without a real prototype [-Wunprototyped-calls]
+   pgarro_(&x1, &y1, &x2, &y2);
+   ^
+cpgarro.c:2:13: note: ‘pgarro_’ was declared here
+ extern void pgarro_();
+             ^
+cpgask.c: In function ‘cpgask’:
+cpgask.c:7:3: warning: call to function ‘pgask_’ without a real prototype [-Wunprototyped-calls]
+   pgask_(&l_flag);
+   ^
+cpgask.c:2:13: note: ‘pgask_’ was declared here
+ extern void pgask_();
+             ^
+cpgaxis.c: In function ‘cpgaxis’:
+cpgaxis.c:8:3: warning: call to function ‘pgaxis_’ without a real prototype [-Wunprototyped-calls]
+   pgaxis_((char *)opt, &x1, &y1, &x2, &y2, &v1, &v2, &step, &nsub, &dmajl, &dmajr, &fmin, &disp, &orient, len_opt);
+   ^
+cpgaxis.c:3:13: note: ‘pgaxis_’ was declared here
+ extern void pgaxis_();
+             ^
+cpgband.c: In function ‘cpgband’:
+cpgband.c:9:3: warning: call to function ‘pgband_’ without a real prototype [-Wunprototyped-calls]
+   r_value = pgband_(&mode, &posn, &xref, &yref, x, y, ch_scalar, len_ch_scalar);
+   ^
+cpgband.c:3:12: note: ‘pgband_’ was declared here
+ extern int pgband_();
+            ^
+cpgbeg.c: In function ‘cpgbeg’:
+cpgbeg.c:9:3: warning: call to function ‘pgbeg_’ without a real prototype [-Wunprototyped-calls]
+   r_value = pgbeg_(&unit, (char *)file, &nxsub, &nysub, len_file);
+   ^
+cpgbeg.c:3:12: note: ‘pgbeg_’ was declared here
+ extern int pgbeg_();
+            ^
+cpgbin.c: In function ‘cpgbin’:
+cpgbin.c:7:3: warning: call to function ‘pgbin_’ without a real prototype [-Wunprototyped-calls]
+   pgbin_(&nbin, (float *)x, (float *)data, &l_center);
+   ^
+cpgbin.c:2:13: note: ‘pgbin_’ was declared here
+ extern void pgbin_();
+             ^
+cpgbox.c: In function ‘cpgbox’:
+cpgbox.c:9:3: warning: call to function ‘pgbox_’ without a real prototype [-Wunprototyped-calls]
+   pgbox_((char *)xopt, xtick, nxsub, (char *)yopt, ytick, nysub, len_xopt, len_yopt);
+   ^
+cpgbox.c:3:13: note: ‘pgbox_’ was declared here
+ extern void pgbox_();
+             ^
+cpgcirc.c: In function ‘cpgcirc’:
+cpgcirc.c:6:3: warning: call to function ‘pgcirc_’ without a real prototype [-Wunprototyped-calls]
+   pgcirc_(&xcent, &ycent, &radius);
+   ^
+cpgcirc.c:2:13: note: ‘pgcirc_’ was declared here
+ extern void pgcirc_();
+             ^
+cpgconb.c: In function ‘cpgconb’:
+cpgconb.c:6:3: warning: call to function ‘pgconb_’ without a real prototype [-Wunprototyped-calls]
+   pgconb_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, (float *)c, &nc, (float *)tr, &blank);
+   ^
+cpgconb.c:2:13: note: ‘pgconb_’ was declared here
+ extern void pgconb_();
+             ^
+cpgconf.c: In function ‘cpgconf’:
+cpgconf.c:6:3: warning: call to function ‘pgconf_’ without a real prototype [-Wunprototyped-calls]
+   pgconf_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, &c1, &c2, (float *)tr);
+   ^
+cpgconf.c:2:13: note: ‘pgconf_’ was declared here
+ extern void pgconf_();
+             ^
+cpgconl.c: In function ‘cpgconl’:
+cpgconl.c:8:3: warning: call to function ‘pgconl_’ without a real prototype [-Wunprototyped-calls]
+   pgconl_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, (float *)c, &nc, (float *)tr, (int *)cparam, &idxc, (char *)label, &ts, &intval, &minint, len_label);
+   ^
+cpgconl.c:3:13: note: ‘pgconl_’ was declared here
+ extern void pgconl_();
+             ^
+cpgcons.c: In function ‘cpgcons’:
+cpgcons.c:6:3: warning: call to function ‘pgcons_’ without a real prototype [-Wunprototyped-calls]
+   pgcons_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, (float *)c, &nc, (float *)tr);
+   ^
+cpgcons.c:2:13: note: ‘pgcons_’ was declared here
+ extern void pgcons_();
+             ^
+cpgcont.c: In function ‘cpgcont’:
+cpgcont.c:6:3: warning: call to function ‘pgcont_’ without a real prototype [-Wunprototyped-calls]
+   pgcont_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, (float *)c, &nc, (float *)tr, (int *)cparam);
+   ^
+cpgcont.c:2:13: note: ‘pgcont_’ was declared here
+ extern void pgcont_();
+             ^
+cpgctab.c: In function ‘cpgctab’:
+cpgctab.c:6:3: warning: call to function ‘pgctab_’ without a real prototype [-Wunprototyped-calls]
+   pgctab_((float *)l, (float *)r, (float *)g, (float *)b, &nc, &contra, &bright);
+   ^
+cpgctab.c:2:13: note: ‘pgctab_’ was declared here
+ extern void pgctab_();
+             ^
+cpgcurs.c: In function ‘cpgcurs’:
+cpgcurs.c:9:3: warning: call to function ‘pgcurs_’ without a real prototype [-Wunprototyped-calls]
+   r_value = pgcurs_(x, y, ch_scalar, len_ch_scalar);
+   ^
+cpgcurs.c:3:12: note: ‘pgcurs_’ was declared here
+ extern int pgcurs_();
+            ^
+cpgdraw.c: In function ‘cpgdraw’:
+cpgdraw.c:6:3: warning: call to function ‘pgdraw_’ without a real prototype [-Wunprototyped-calls]
+   pgdraw_(&x, &y);
+   ^
+cpgdraw.c:2:13: note: ‘pgdraw_’ was declared here
+ extern void pgdraw_();
+             ^
+cpgenv.c: In function ‘cpgenv’:
+cpgenv.c:6:3: warning: call to function ‘pgenv_’ without a real prototype [-Wunprototyped-calls]
+   pgenv_(&xmin, &xmax, &ymin, &ymax, &just, &axis);
+   ^
+cpgenv.c:2:13: note: ‘pgenv_’ was declared here
+ extern void pgenv_();
+             ^
+cpgerr1.c: In function ‘cpgerr1’:
+cpgerr1.c:6:3: warning: call to function ‘pgerr1_’ without a real prototype [-Wunprototyped-calls]
+   pgerr1_(&dir, &x, &y, &e, &t);
+   ^
+cpgerr1.c:2:13: note: ‘pgerr1_’ was declared here
+ extern void pgerr1_();
+             ^
+cpgerrb.c: In function ‘cpgerrb’:
+cpgerrb.c:6:3: warning: call to function ‘pgerrb_’ without a real prototype [-Wunprototyped-calls]
+   pgerrb_(&dir, &n, (float *)x, (float *)y, (float *)e, &t);
+   ^
+cpgerrb.c:2:13: note: ‘pgerrb_’ was declared here
+ extern void pgerrb_();
+             ^
+cpgerrx.c: In function ‘cpgerrx’:
+cpgerrx.c:6:3: warning: call to function ‘pgerrx_’ without a real prototype [-Wunprototyped-calls]
+   pgerrx_(&n, (float *)x1, (float *)x2, (float *)y, &t);
+   ^
+cpgerrx.c:2:13: note: ‘pgerrx_’ was declared here
+ extern void pgerrx_();
+             ^
+cpgerry.c: In function ‘cpgerry’:
+cpgerry.c:6:3: warning: call to function ‘pgerry_’ without a real prototype [-Wunprototyped-calls]
+   pgerry_(&n, (float *)x, (float *)y1, (float *)y2, &t);
+   ^
+cpgerry.c:2:13: note: ‘pgerry_’ was declared here
+ extern void pgerry_();
+             ^
+cpggray.c: In function ‘cpggray’:
+cpggray.c:6:3: warning: call to function ‘pggray_’ without a real prototype [-Wunprototyped-calls]
+   pggray_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, &fg, &bg, (float *)tr);
+   ^
+cpggray.c:2:13: note: ‘pggray_’ was declared here
+ extern void pggray_();
+             ^
+cpghi2d.c: In function ‘cpghi2d’:
+cpghi2d.c:7:3: warning: call to function ‘pghi2d_’ without a real prototype [-Wunprototyped-calls]
+   pghi2d_((float *)data, &nxv, &nyv, &ix1, &ix2, &iy1, &iy2, (float *)x, &ioff, &bias, &l_center, ylims);
+   ^
+cpghi2d.c:2:13: note: ‘pghi2d_’ was declared here
+ extern void pghi2d_();
+             ^
+cpghist.c: In function ‘cpghist’:
+cpghist.c:6:3: warning: call to function ‘pghist_’ without a real prototype [-Wunprototyped-calls]
+   pghist_(&n, (float *)data, &datmin, &datmax, &nbin, &pgflag);
+   ^
+cpghist.c:2:13: note: ‘pghist_’ was declared here
+ extern void pghist_();
+             ^
+cpgimag.c: In function ‘cpgimag’:
+cpgimag.c:6:3: warning: call to function ‘pgimag_’ without a real prototype [-Wunprototyped-calls]
+   pgimag_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, &a1, &a2, (float *)tr);
+   ^
+cpgimag.c:2:13: note: ‘pgimag_’ was declared here
+ extern void pgimag_();
+             ^
+cpglab.c: In function ‘cpglab’:
+cpglab.c:10:3: warning: call to function ‘pglab_’ without a real prototype [-Wunprototyped-calls]
+   pglab_((char *)xlbl, (char *)ylbl, (char *)toplbl, len_xlbl, len_ylbl, len_toplbl);
+   ^
+cpglab.c:3:13: note: ‘pglab_’ was declared here
+ extern void pglab_();
+             ^
+cpglcur.c: In function ‘cpglcur’:
+cpglcur.c:6:3: warning: call to function ‘pglcur_’ without a real prototype [-Wunprototyped-calls]
+   pglcur_(&maxpt, npt, x, y);
+   ^
+cpglcur.c:2:13: note: ‘pglcur_’ was declared here
+ extern void pglcur_();
+             ^
+cpglen.c: In function ‘cpglen’:
+cpglen.c:8:3: warning: call to function ‘pglen_’ without a real prototype [-Wunprototyped-calls]
+   pglen_(&units, (char *)string, xl, yl, len_string);
+   ^
+cpglen.c:3:13: note: ‘pglen_’ was declared here
+ extern void pglen_();
+             ^
+cpgline.c: In function ‘cpgline’:
+cpgline.c:6:3: warning: call to function ‘pgline_’ without a real prototype [-Wunprototyped-calls]
+   pgline_(&n, (float *)xpts, (float *)ypts);
+   ^
+cpgline.c:2:13: note: ‘pgline_’ was declared here
+ extern void pgline_();
+             ^
+cpgmove.c: In function ‘cpgmove’:
+cpgmove.c:6:3: warning: call to function ‘pgmove_’ without a real prototype [-Wunprototyped-calls]
+   pgmove_(&x, &y);
+   ^
+cpgmove.c:2:13: note: ‘pgmove_’ was declared here
+ extern void pgmove_();
+             ^
+cpgmtxt.c: In function ‘cpgmtxt’:
+cpgmtxt.c:9:3: warning: call to function ‘pgmtxt_’ without a real prototype [-Wunprototyped-calls]
+   pgmtxt_((char *)side, &disp, &coord, &fjust, (char *)text, len_side, len_text);
+   ^
+cpgmtxt.c:3:13: note: ‘pgmtxt_’ was declared here
+ extern void pgmtxt_();
+             ^
+cpgncur.c: In function ‘cpgncur’:
+cpgncur.c:6:3: warning: call to function ‘pgncur_’ without a real prototype [-Wunprototyped-calls]
+   pgncur_(&maxpt, npt, x, y, &symbol);
+   ^
+cpgncur.c:2:13: note: ‘pgncur_’ was declared here
+ extern void pgncur_();
+             ^
+cpgnumb.c: In function ‘cpgnumb’:
+cpgnumb.c:8:3: warning: call to function ‘pgnumb_’ without a real prototype [-Wunprototyped-calls]
+   pgnumb_(&mm, &pp, &form, string, string_length, len_string);
+   ^
+cpgnumb.c:3:13: note: ‘pgnumb_’ was declared here
+ extern void pgnumb_();
+             ^
+cpgolin.c: In function ‘cpgolin’:
+cpgolin.c:6:3: warning: call to function ‘pgolin_’ without a real prototype [-Wunprototyped-calls]
+   pgolin_(&maxpt, npt, x, y, &symbol);
+   ^
+cpgolin.c:2:13: note: ‘pgolin_’ was declared here
+ extern void pgolin_();
+             ^
+cpgopen.c: In function ‘cpgopen’:
+cpgopen.c:9:3: warning: call to function ‘pgopen_’ without a real prototype [-Wunprototyped-calls]
+   r_value = pgopen_((char *)device, len_device);
+   ^
+cpgopen.c:3:12: note: ‘pgopen_’ was declared here
+ extern int pgopen_();
+            ^
+cpgpanl.c: In function ‘cpgpanl’:
+cpgpanl.c:6:3: warning: call to function ‘pgpanl_’ without a real prototype [-Wunprototyped-calls]
+   pgpanl_(&nxc, &nyc);
+   ^
+cpgpanl.c:2:13: note: ‘pgpanl_’ was declared here
+ extern void pgpanl_();
+             ^
+cpgpap.c: In function ‘cpgpap’:
+cpgpap.c:6:3: warning: call to function ‘pgpap_’ without a real prototype [-Wunprototyped-calls]
+   pgpap_(&width, &aspect);
+   ^
+cpgpap.c:2:13: note: ‘pgpap_’ was declared here
+ extern void pgpap_();
+             ^
+cpgpixl.c: In function ‘cpgpixl’:
+cpgpixl.c:6:3: warning: call to function ‘pgpixl_’ without a real prototype [-Wunprototyped-calls]
+   pgpixl_((int *)ia, &idim, &jdim, &i1, &i2, &j1, &j2, &x1, &x2, &y1, &y2);
+   ^
+cpgpixl.c:2:13: note: ‘pgpixl_’ was declared here
+ extern void pgpixl_();
+             ^
+cpgpnts.c: In function ‘cpgpnts’:
+cpgpnts.c:6:3: warning: call to function ‘pgpnts_’ without a real prototype [-Wunprototyped-calls]
+   pgpnts_(&n, (float *)x, (float *)y, (int *)symbol, &ns);
+   ^
+cpgpnts.c:2:13: note: ‘pgpnts_’ was declared here
+ extern void pgpnts_();
+             ^
+cpgpoly.c: In function ‘cpgpoly’:
+cpgpoly.c:6:3: warning: call to function ‘pgpoly_’ without a real prototype [-Wunprototyped-calls]
+   pgpoly_(&n, (float *)xpts, (float *)ypts);
+   ^
+cpgpoly.c:2:13: note: ‘pgpoly_’ was declared here
+ extern void pgpoly_();
+             ^
+cpgpt1.c: In function ‘cpgpt1’:
+cpgpt1.c:6:3: warning: call to function ‘pgpt1_’ without a real prototype [-Wunprototyped-calls]
+   pgpt1_(&xpt, &ypt, &symbol);
+   ^
+cpgpt1.c:2:13: note: ‘pgpt1_’ was declared here
+ extern void pgpt1_();
+             ^
+cpgpt.c: In function ‘cpgpt’:
+cpgpt.c:6:3: warning: call to function ‘pgpt_’ without a real prototype [-Wunprototyped-calls]
+   pgpt_(&n, (float *)xpts, (float *)ypts, &symbol);
+   ^
+cpgpt.c:2:13: note: ‘pgpt_’ was declared here
+ extern void pgpt_();
+             ^
+cpgptxt.c: In function ‘cpgptxt’:
+cpgptxt.c:8:3: warning: call to function ‘pgptxt_’ without a real prototype [-Wunprototyped-calls]
+   pgptxt_(&x, &y, &angle, &fjust, (char *)text, len_text);
+   ^
+cpgptxt.c:3:13: note: ‘pgptxt_’ was declared here
+ extern void pgptxt_();
+             ^
+cpgqah.c: In function ‘cpgqah’:
+cpgqah.c:6:3: warning: call to function ‘pgqah_’ without a real prototype [-Wunprototyped-calls]
+   pgqah_(fs, angle, barb);
+   ^
+cpgqah.c:2:13: note: ‘pgqah_’ was declared here
+ extern void pgqah_();
+             ^
+cpgqcf.c: In function ‘cpgqcf’:
+cpgqcf.c:6:3: warning: call to function ‘pgqcf_’ without a real prototype [-Wunprototyped-calls]
+   pgqcf_(font);
+   ^
+cpgqcf.c:2:13: note: ‘pgqcf_’ was declared here
+ extern void pgqcf_();
+             ^
+cpgqch.c: In function ‘cpgqch’:
+cpgqch.c:6:3: warning: call to function ‘pgqch_’ without a real prototype [-Wunprototyped-calls]
+   pgqch_(size);
+   ^
+cpgqch.c:2:13: note: ‘pgqch_’ was declared here
+ extern void pgqch_();
+             ^
+cpgqci.c: In function ‘cpgqci’:
+cpgqci.c:6:3: warning: call to function ‘pgqci_’ without a real prototype [-Wunprototyped-calls]
+   pgqci_(ci);
+   ^
+cpgqci.c:2:13: note: ‘pgqci_’ was declared here
+ extern void pgqci_();
+             ^
+cpgqcir.c: In function ‘cpgqcir’:
+cpgqcir.c:6:3: warning: call to function ‘pgqcir_’ without a real prototype [-Wunprototyped-calls]
+   pgqcir_(icilo, icihi);
+   ^
+cpgqcir.c:2:13: note: ‘pgqcir_’ was declared here
+ extern void pgqcir_();
+             ^
+cpgqclp.c: In function ‘cpgqclp’:
+cpgqclp.c:6:3: warning: call to function ‘pgqclp_’ without a real prototype [-Wunprototyped-calls]
+   pgqclp_(state);
+   ^
+cpgqclp.c:2:13: note: ‘pgqclp_’ was declared here
+ extern void pgqclp_();
+             ^
+cpgqcol.c: In function ‘cpgqcol’:
+cpgqcol.c:6:3: warning: call to function ‘pgqcol_’ without a real prototype [-Wunprototyped-calls]
+   pgqcol_(ci1, ci2);
+   ^
+cpgqcol.c:2:13: note: ‘pgqcol_’ was declared here
+ extern void pgqcol_();
+             ^
+cpgqcr.c: In function ‘cpgqcr’:
+cpgqcr.c:6:3: warning: call to function ‘pgqcr_’ without a real prototype [-Wunprototyped-calls]
+   pgqcr_(&ci, cr, cg, cb);
+   ^
+cpgqcr.c:2:13: note: ‘pgqcr_’ was declared here
+ extern void pgqcr_();
+             ^
+cpgqcs.c: In function ‘cpgqcs’:
+cpgqcs.c:6:3: warning: call to function ‘pgqcs_’ without a real prototype [-Wunprototyped-calls]
+   pgqcs_(&units, xch, ych);
+   ^
+cpgqcs.c:2:13: note: ‘pgqcs_’ was declared here
+ extern void pgqcs_();
+             ^
+cpgqdt.c: In function ‘cpgqdt’:
+cpgqdt.c:9:3: warning: call to function ‘pgqdt_’ without a real prototype [-Wunprototyped-calls]
+   pgqdt_(&n, type, type_length, descr, descr_length, inter, len_type, len_descr);
+   ^
+cpgqdt.c:3:13: note: ‘pgqdt_’ was declared here
+ extern void pgqdt_();
+             ^
+cpgqfs.c: In function ‘cpgqfs’:
+cpgqfs.c:6:3: warning: call to function ‘pgqfs_’ without a real prototype [-Wunprototyped-calls]
+   pgqfs_(fs);
+   ^
+cpgqfs.c:2:13: note: ‘pgqfs_’ was declared here
+ extern void pgqfs_();
+             ^
+cpgqhs.c: In function ‘cpgqhs’:
+cpgqhs.c:6:3: warning: call to function ‘pgqhs_’ without a real prototype [-Wunprototyped-calls]
+   pgqhs_(angle, sepn, phase);
+   ^
+cpgqhs.c:2:13: note: ‘pgqhs_’ was declared here
+ extern void pgqhs_();
+             ^
+cpgqid.c: In function ‘cpgqid’:
+cpgqid.c:6:3: warning: call to function ‘pgqid_’ without a real prototype [-Wunprototyped-calls]
+   pgqid_(id);
+   ^
+cpgqid.c:2:13: note: ‘pgqid_’ was declared here
+ extern void pgqid_();
+             ^
+cpgqinf.c: In function ‘cpgqinf’:
+cpgqinf.c:9:3: warning: call to function ‘pgqinf_’ without a real prototype [-Wunprototyped-calls]
+   pgqinf_((char *)item, value, value_length, len_item, len_value);
+   ^
+cpgqinf.c:3:13: note: ‘pgqinf_’ was declared here
+ extern void pgqinf_();
+             ^
+cpgqitf.c: In function ‘cpgqitf’:
+cpgqitf.c:6:3: warning: call to function ‘pgqitf_’ without a real prototype [-Wunprototyped-calls]
+   pgqitf_(itf);
+   ^
+cpgqitf.c:2:13: note: ‘pgqitf_’ was declared here
+ extern void pgqitf_();
+             ^
+cpgqls.c: In function ‘cpgqls’:
+cpgqls.c:6:3: warning: call to function ‘pgqls_’ without a real prototype [-Wunprototyped-calls]
+   pgqls_(ls);
+   ^
+cpgqls.c:2:13: note: ‘pgqls_’ was declared here
+ extern void pgqls_();
+             ^
+cpgqlw.c: In function ‘cpgqlw’:
+cpgqlw.c:6:3: warning: call to function ‘pgqlw_’ without a real prototype [-Wunprototyped-calls]
+   pgqlw_(lw);
+   ^
+cpgqlw.c:2:13: note: ‘pgqlw_’ was declared here
+ extern void pgqlw_();
+             ^
+cpgqndt.c: In function ‘cpgqndt’:
+cpgqndt.c:6:3: warning: call to function ‘pgqndt_’ without a real prototype [-Wunprototyped-calls]
+   pgqndt_(n);
+   ^
+cpgqndt.c:2:13: note: ‘pgqndt_’ was declared here
+ extern void pgqndt_();
+             ^
+cpgqpos.c: In function ‘cpgqpos’:
+cpgqpos.c:6:3: warning: call to function ‘pgqpos_’ without a real prototype [-Wunprototyped-calls]
+   pgqpos_(x, y);
+   ^
+cpgqpos.c:2:13: note: ‘pgqpos_’ was declared here
+ extern void pgqpos_();
+             ^
+cpgqtbg.c: In function ‘cpgqtbg’:
+cpgqtbg.c:6:3: warning: call to function ‘pgqtbg_’ without a real prototype [-Wunprototyped-calls]
+   pgqtbg_(tbci);
+   ^
+cpgqtbg.c:2:13: note: ‘pgqtbg_’ was declared here
+ extern void pgqtbg_();
+             ^
+cpgqtxt.c: In function ‘cpgqtxt’:
+cpgqtxt.c:8:3: warning: call to function ‘pgqtxt_’ without a real prototype [-Wunprototyped-calls]
+   pgqtxt_(&x, &y, &angle, &fjust, (char *)text, xbox, ybox, len_text);
+   ^
+cpgqtxt.c:3:13: note: ‘pgqtxt_’ was declared here
+ extern void pgqtxt_();
+             ^
+cpgqvp.c: In function ‘cpgqvp’:
+cpgqvp.c:6:3: warning: call to function ‘pgqvp_’ without a real prototype [-Wunprototyped-calls]
+   pgqvp_(&units, x1, x2, y1, y2);
+   ^
+cpgqvp.c:2:13: note: ‘pgqvp_’ was declared here
+ extern void pgqvp_();
+             ^
+cpgqvsz.c: In function ‘cpgqvsz’:
+cpgqvsz.c:6:3: warning: call to function ‘pgqvsz_’ without a real prototype [-Wunprototyped-calls]
+   pgqvsz_(&units, x1, x2, y1, y2);
+   ^
+cpgqvsz.c:2:13: note: ‘pgqvsz_’ was declared here
+ extern void pgqvsz_();
+             ^
+cpgqwin.c: In function ‘cpgqwin’:
+cpgqwin.c:6:3: warning: call to function ‘pgqwin_’ without a real prototype [-Wunprototyped-calls]
+   pgqwin_(x1, x2, y1, y2);
+   ^
+cpgqwin.c:2:13: note: ‘pgqwin_’ was declared here
+ extern void pgqwin_();
+             ^
+cpgrect.c: In function ‘cpgrect’:
+cpgrect.c:6:3: warning: call to function ‘pgrect_’ without a real prototype [-Wunprototyped-calls]
+   pgrect_(&x1, &x2, &y1, &y2);
+   ^
+cpgrect.c:2:13: note: ‘pgrect_’ was declared here
+ extern void pgrect_();
+             ^
+cpgrgbfor.c: In function ‘cpgrgbfor’:
+cpgrgbfor.c:6:3: warning: call to function ‘pgrgbfor_’ without a real prototype [-Wunprototyped-calls]
+   pgrgbfor_((float *)a, &idim, &jdim, &i1, &i2, &j1, &j2, &fg, &bg, (float *)tr, frgb);
+   ^
+cpgrgbfor.c:2:13: note: ‘pgrgbfor_’ was declared here
+ extern void pgrgbfor_();
+             ^
+cpgrnd.c: In function ‘cpgrnd’:
+cpgrnd.c:7:3: warning: call to function ‘pgrnd_’ without a real prototype [-Wunprototyped-calls]
+   r_value = pgrnd_(&x, nsub);
+   ^
+cpgrnd.c:2:14: note: ‘pgrnd_’ was declared here
+ extern float pgrnd_();
+              ^
+cpgrnge.c: In function ‘cpgrnge’:
+cpgrnge.c:6:3: warning: call to function ‘pgrnge_’ without a real prototype [-Wunprototyped-calls]
+   pgrnge_(&x1, &x2, xlo, xhi);
+   ^
+cpgrnge.c:2:13: note: ‘pgrnge_’ was declared here
+ extern void pgrnge_();
+             ^
+cpgsah.c: In function ‘cpgsah’:
+cpgsah.c:6:3: warning: call to function ‘pgsah_’ without a real prototype [-Wunprototyped-calls]
+   pgsah_(&fs, &angle, &barb);
+   ^
+cpgsah.c:2:13: note: ‘pgsah_’ was declared here
+ extern void pgsah_();
+             ^
+cpgscf.c: In function ‘cpgscf’:
+cpgscf.c:6:3: warning: call to function ‘pgscf_’ without a real prototype [-Wunprototyped-calls]
+   pgscf_(&font);
+   ^
+cpgscf.c:2:13: note: ‘pgscf_’ was declared here
+ extern void pgscf_();
+             ^
+cpgsch.c: In function ‘cpgsch’:
+cpgsch.c:6:3: warning: call to function ‘pgsch_’ without a real prototype [-Wunprototyped-calls]
+   pgsch_(&size);
+   ^
+cpgsch.c:2:13: note: ‘pgsch_’ was declared here
+ extern void pgsch_();
+             ^
+cpgsci.c: In function ‘cpgsci’:
+cpgsci.c:6:3: warning: call to function ‘pgsci_’ without a real prototype [-Wunprototyped-calls]
+   pgsci_(&ci);
+   ^
+cpgsci.c:2:13: note: ‘pgsci_’ was declared here
+ extern void pgsci_();
+             ^
+cpgscir.c: In function ‘cpgscir’:
+cpgscir.c:6:3: warning: call to function ‘pgscir_’ without a real prototype [-Wunprototyped-calls]
+   pgscir_(&icilo, &icihi);
+   ^
+cpgscir.c:2:13: note: ‘pgscir_’ was declared here
+ extern void pgscir_();
+             ^
+cpgsclp.c: In function ‘cpgsclp’:
+cpgsclp.c:6:3: warning: call to function ‘pgsclp_’ without a real prototype [-Wunprototyped-calls]
+   pgsclp_(&state);
+   ^
+cpgsclp.c:2:13: note: ‘pgsclp_’ was declared here
+ extern void pgsclp_();
+             ^
+cpgscr.c: In function ‘cpgscr’:
+cpgscr.c:6:3: warning: call to function ‘pgscr_’ without a real prototype [-Wunprototyped-calls]
+   pgscr_(&ci, &cr, &cg, &cb);
+   ^
+cpgscr.c:2:13: note: ‘pgscr_’ was declared here
+ extern void pgscr_();
+             ^
+cpgscrl.c: In function ‘cpgscrl’:
+cpgscrl.c:6:3: warning: call to function ‘pgscrl_’ without a real prototype [-Wunprototyped-calls]
+   pgscrl_(&dx, &dy);
+   ^
+cpgscrl.c:2:13: note: ‘pgscrl_’ was declared here
+ extern void pgscrl_();
+             ^
+cpgscrn.c: In function ‘cpgscrn’:
+cpgscrn.c:8:3: warning: call to function ‘pgscrn_’ without a real prototype [-Wunprototyped-calls]
+   pgscrn_(&ci, (char *)name, ier, len_name);
+   ^
+cpgscrn.c:3:13: note: ‘pgscrn_’ was declared here
+ extern void pgscrn_();
+             ^
+cpgsfs.c: In function ‘cpgsfs’:
+cpgsfs.c:6:3: warning: call to function ‘pgsfs_’ without a real prototype [-Wunprototyped-calls]
+   pgsfs_(&fs);
+   ^
+cpgsfs.c:2:13: note: ‘pgsfs_’ was declared here
+ extern void pgsfs_();
+             ^
+cpgshls.c: In function ‘cpgshls’:
+cpgshls.c:6:3: warning: call to function ‘pgshls_’ without a real prototype [-Wunprototyped-calls]
+   pgshls_(&ci, &ch, &cl, &cs);
+   ^
+cpgshls.c:2:13: note: ‘pgshls_’ was declared here
+ extern void pgshls_();
+             ^
+cpgshs.c: In function ‘cpgshs’:
+cpgshs.c:6:3: warning: call to function ‘pgshs_’ without a real prototype [-Wunprototyped-calls]
+   pgshs_(&angle, &sepn, &phase);
+   ^
+cpgshs.c:2:13: note: ‘pgshs_’ was declared here
+ extern void pgshs_();
+             ^
+cpgsitf.c: In function ‘cpgsitf’:
+cpgsitf.c:6:3: warning: call to function ‘pgsitf_’ without a real prototype [-Wunprototyped-calls]
+   pgsitf_(&itf);
+   ^
+cpgsitf.c:2:13: note: ‘pgsitf_’ was declared here
+ extern void pgsitf_();
+             ^
+cpgslct.c: In function ‘cpgslct’:
+cpgslct.c:6:3: warning: call to function ‘pgslct_’ without a real prototype [-Wunprototyped-calls]
+   pgslct_(&id);
+   ^
+cpgslct.c:2:13: note: ‘pgslct_’ was declared here
+ extern void pgslct_();
+             ^
+cpgsls.c: In function ‘cpgsls’:
+cpgsls.c:6:3: warning: call to function ‘pgsls_’ without a real prototype [-Wunprototyped-calls]
+   pgsls_(&ls);
+   ^
+cpgsls.c:2:13: note: ‘pgsls_’ was declared here
+ extern void pgsls_();
+             ^
+cpgslw.c: In function ‘cpgslw’:
+cpgslw.c:6:3: warning: call to function ‘pgslw_’ without a real prototype [-Wunprototyped-calls]
+   pgslw_(&lw);
+   ^
+cpgslw.c:2:13: note: ‘pgslw_’ was declared here
+ extern void pgslw_();
+             ^
+cpgstbg.c: In function ‘cpgstbg’:
+cpgstbg.c:6:3: warning: call to function ‘pgstbg_’ without a real prototype [-Wunprototyped-calls]
+   pgstbg_(&tbci);
+   ^
+cpgstbg.c:2:13: note: ‘pgstbg_’ was declared here
+ extern void pgstbg_();
+             ^
+cpgsubp.c: In function ‘cpgsubp’:
+cpgsubp.c:6:3: warning: call to function ‘pgsubp_’ without a real prototype [-Wunprototyped-calls]
+   pgsubp_(&nxsub, &nysub);
+   ^
+cpgsubp.c:2:13: note: ‘pgsubp_’ was declared here
+ extern void pgsubp_();
+             ^
+cpgsvp.c: In function ‘cpgsvp’:
+cpgsvp.c:6:3: warning: call to function ‘pgsvp_’ without a real prototype [-Wunprototyped-calls]
+   pgsvp_(&xleft, &xright, &ybot, &ytop);
+   ^
+cpgsvp.c:2:13: note: ‘pgsvp_’ was declared here
+ extern void pgsvp_();
+             ^
+cpgswin.c: In function ‘cpgswin’:
+cpgswin.c:6:3: warning: call to function ‘pgswin_’ without a real prototype [-Wunprototyped-calls]
+   pgswin_(&x1, &x2, &y1, &y2);
+   ^
+cpgswin.c:2:13: note: ‘pgswin_’ was declared here
+ extern void pgswin_();
+             ^
+cpgtbox.c: In function ‘cpgtbox’:
+cpgtbox.c:9:3: warning: call to function ‘pgtbox_’ without a real prototype [-Wunprototyped-calls]
+   pgtbox_((char *)xopt, &xtick, &nxsub, (char *)yopt, &ytick, &nysub, len_xopt, len_yopt);
+   ^
+cpgtbox.c:3:13: note: ‘pgtbox_’ was declared here
+ extern void pgtbox_();
+             ^
+cpgtext.c: In function ‘cpgtext’:
+cpgtext.c:8:3: warning: call to function ‘pgtext_’ without a real prototype [-Wunprototyped-calls]
+   pgtext_(&x, &y, (char *)text, len_text);
+   ^
+cpgtext.c:3:13: note: ‘pgtext_’ was declared here
+ extern void pgtext_();
+             ^
+cpgtick.c: In function ‘cpgtick’:
+cpgtick.c:8:3: warning: call to function ‘pgtick_’ without a real prototype [-Wunprototyped-calls]
+   pgtick_(&x1, &y1, &x2, &y2, &v, &tikl, &tikr, &disp, &orient, (char *)str, len_str);
+   ^
+cpgtick.c:3:13: note: ‘pgtick_’ was declared here
+ extern void pgtick_();
+             ^
+cpgvect.c: In function ‘cpgvect’:
+cpgvect.c:6:3: warning: call to function ‘pgvect_’ without a real prototype [-Wunprototyped-calls]
+   pgvect_((float *)a, (float *)b, &idim, &jdim, &i1, &i2, &j1, &j2, &c, &nc, (float *)tr, &blank);
+   ^
+cpgvect.c:2:13: note: ‘pgvect_’ was declared here
+ extern void pgvect_();
+             ^
+cpgvsiz.c: In function ‘cpgvsiz’:
+cpgvsiz.c:6:3: warning: call to function ‘pgvsiz_’ without a real prototype [-Wunprototyped-calls]
+   pgvsiz_(&xleft, &xright, &ybot, &ytop);
+   ^
+cpgvsiz.c:2:13: note: ‘pgvsiz_’ was declared here
+ extern void pgvsiz_();
+             ^
+cpgwedg.c: In function ‘cpgwedg’:
+cpgwedg.c:9:3: warning: call to function ‘pgwedg_’ without a real prototype [-Wunprototyped-calls]
+   pgwedg_((char *)side, &disp, &width, &fg, &bg, (char *)label, len_side, len_label);
+   ^
+cpgwedg.c:3:13: note: ‘pgwedg_’ was declared here
+ extern void pgwedg_();
+             ^
+cpgwnad.c: In function ‘cpgwnad’:
+cpgwnad.c:6:3: warning: call to function ‘pgwnad_’ without a real prototype [-Wunprototyped-calls]
+   pgwnad_(&x1, &x2, &y1, &y2);
+   ^
+cpgwnad.c:2:13: note: ‘pgwnad_’ was declared here
+ extern void pgwnad_();
+             ^
+rm -f cpg*.c
+ar ru libcpgplot.a cpg*.o
+ar: creating libcpgplot.a
+ranlib libcpgplot.a
+rm -f cpg*.o
+gcc -Wall -O -c -I. ../src/cpg/cpgdemo.c
+../src/cpg/cpgdemo.c: In function ‘demo2’:
+../src/cpg/cpgdemo.c:128:5: error: too many arguments to function ‘cpgcont’
+     cpgcont(f, nx, ny, 1, nx, 1, ny, &alev, -1, tr, NULL, 0, NULL);
+     ^
+In file included from ../src/cpg/cpgdemo.c:1:0:
+./cpgplot.h:24:6: note: declared here
+ void cpgcont(const float *a, int idim, int jdim, int i1, int i2, int j1, int j2, const float *c, int nc, const float *tr, const int *cparam);
+      ^
+makefile:919: recipe for target 'cpgdemo' failed
+make: *** [cpgdemo] Error 1
+Configuring pgplot/gfortran for rlab located in ../install/
+Checking if ../install/ exists . fine!
+Making PGPLOT files available to the rlab+rlabplus installation
+  Copying file cpgplot.h
+  Copying file grfont.dat
+  Copying file libpgplot.a
+  Copying file pgxwin_server
+  Copying file drivers.list
+  Copying file libcpgplot.a
+  Copying file libpgplot.so
+  Copying file pgdisp
+  Copying file rgb.txt
+All done!

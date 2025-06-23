@@ -1,0 +1,66 @@
+  nan
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return a variable or a scalar with value NaN (Not a Number)
+
+      [1mSyntax[0m
+        nan ( )
+
+        nan (nrow,ncol)
+
+        nan (A)
+
+      [1mDescription[0m
+        Nan returns a NaN (Not a Number) scalar, matrix of NaN's of size
+        [4mnrow[24m-by-[4mncol[24m, or of the same size as the matrix [4mA[24m. NaN value is
+        according to IEEE-754.  One way to determine if a variable
+        contains a NaN is to test it against itself.
+
+
+          NaN == NaN
+
+
+     Should always return FALSE (0).
+
+
+     [1mSee Also[0m
+        inf, isnan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

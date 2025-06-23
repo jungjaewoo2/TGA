@@ -1,0 +1,12 @@
+showpwin:
+
+Synopsis: Show existing plotwindows.
+
+Syntax: showpwin ( )
+
+Description:
+
+	The showpwin function prints the currently existing plotwindows 
+	to stdout.
+
+See Also: showplot

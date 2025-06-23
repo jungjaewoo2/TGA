@@ -1,0 +1,17 @@
+mxtics:
+
+Synopsis: Sets the minor tics on the bottom x-axis.
+
+Syntax: mxtics ( freq, I )
+
+Description:
+
+	The mxtics() function sets the minor tics on the bottom x-axis 
+	in the I:th plot-window. 
+	'freq' is the number of sub-intervals between major tics.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, noxtics, x2tics, nox2tics, ytics, noytics, y2tics, noy2tics,
+          ztics, noztics, nomxtics, mx2tics, nomx2tics, mytics, nomytics, 
+          my2tics, nomy2tics, mztics, nomztics

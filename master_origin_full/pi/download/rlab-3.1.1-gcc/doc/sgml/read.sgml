@@ -1,0 +1,47 @@
+<sect> read 
+<p>
+<descrip>
+<tag> Synopsis </tag> Read data from a file.
+<tag> Syntax </tag> read ( <em>FILENAME</> )
+             <p>    read ( <em>FILENAME</>, <em>LIST</> )
+<tag> Description </tag>
+
+	read reads the file identified by the <em>FILENAME</>. The
+	file is opened with read access, and all of the contents are
+	read.  The file identified by the 1st argument must contain
+	data that is in RLaB binary format.  The entities in the file
+	are installed in the global symbol table, overwriting any
+	existing entities. Upon completion the file is closed.
+
+	Example:
+
+        <tscreen><verb>
+read ("bunch_of_data_in_a_file");
+        </verb></tscreen>
+
+	The second form of the read function allows the data in the
+	file to be read into list variable <em>LIST</>. The
+	global-symbol-table is untouched (except for <em>LIST</>).
+
+	Example:
+
+        <tscreen><verb>
+read ("bunch_of_data", X);
+        </verb></tscreen>
+
+	The contents of the file <tt>bunch_of_data</> are read and
+	stored in the list variable <tt>X</>. Except for the
+	creation/modification of the variable <tt>X</>, the
+	global-symbol-table is unchanged.
+
+	Read will read most numeric matrices written by MATLAB's save
+	command. Read will not read MATLAB text matrices, or sparse
+	matrices, or matrices written with reduced precision (integer
+	format). Read will not read Cray, or VAX binaries. Read will
+	read big and little endian binaries - this includes binaries
+	written from PCs, DEC Risc, Macintosh, Sun, and Apollo.
+
+<tag>See Also</tag>   FILES, close, getline, read, readm, writem
+
+
+</descrip>

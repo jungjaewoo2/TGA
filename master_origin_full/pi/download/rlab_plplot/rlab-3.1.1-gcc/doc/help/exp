@@ -1,0 +1,66 @@
+  exp
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Exponential function.
+
+      [1mSyntax[0m
+        exp ( [4mX[24m )
+
+      [1mDescription[0m
+        Exp returns the value of e (the base of natural logarithms)
+        raised to the power of [4mX[24m. If the argument to exp is a matrix
+        then an element-by-element operation is performed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

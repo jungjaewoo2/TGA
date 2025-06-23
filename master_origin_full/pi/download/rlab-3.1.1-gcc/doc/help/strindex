@@ -1,0 +1,66 @@
+  strindex
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Locate a string inside entries of a larger string matrix.
+
+
+     [1mSyntax[0m
+        r = strindex ( [4ms[24m , [4mc[24m )
+
+
+     [1mDescription[0m
+        In entries of a string matrix [4ms[24m find the first occurence of the
+        string [4mc[24m from the left, and return its position.
+
+
+        Arguments:
+
+        [4ms[24m  string matrix.
+
+        [4mc[24m  string being sought.
+
+
+        Result:
+
+        [1mx  [22mreal matrix, each entry contains a first left position of [4mc[0m
+           in entries of string matrix [4ms[24m, or 0 if [4mc[24m is not found.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

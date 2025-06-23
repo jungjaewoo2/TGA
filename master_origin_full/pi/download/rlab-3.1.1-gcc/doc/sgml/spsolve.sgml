@@ -1,0 +1,27 @@
+<sect> spsolve 
+<p>
+<descrip>
+<tag> Synopsis </tag> Solve sparse linear equations.
+<tag> Syntax </tag> spsolve ( <em>A</>, <em>B</>, <em>DIAG_PIVOT</>,
+                              <em>PERMV</> )
+<tag> Description </tag>
+
+	Solve solves a system of sparse linear equations:
+
+	<quote>
+	<em>A * X = B</>
+	</quote>
+
+	<descrip>
+	<tag><em>A</></tag>  is the coefficient matrix.
+	<tag><em>B</></tag>  is the right hand side.
+	<tag><em>DIAG_PIVOT</></tag>  specifies the diagonal-pivoting
+                             threshold. 
+        <tag><em>PERMV</></tag> is the permutation vector.
+	<tag><em>X</></tag>  is the solution vector/matrix.
+	</descrip>
+
+        To be finished later...
+<tag>See Also</tag>   solve, backsub, factor
+
+</descrip>

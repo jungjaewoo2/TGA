@@ -1,0 +1,30 @@
+# Parameter file for ppmtompeg command, written by marijan kostrun using
+# web resources.
+# In konsole type
+# > ppmtompeg mpegpar.txt
+# to create a mpeg movie containing the ppm images, each being a single
+# frame in a simulation.
+
+PATTERN IBBPBBPBBPBBPBBP
+OUTPUT ropewave.mpg
+BASE_FILE_FORMAT PPM
+INPUT_CONVERT *
+GOP_SIZE 16
+SLICES_PER_FRAME 1
+INPUT_DIR .
+INPUT
+*.ppm [0000-0398]
+END_INPUT
+PIXEL HALF
+RANGE 10
+PSEARCH_ALG LOGARITHMIC
+BSEARCH_ALG CROSS2
+IQSCALE 8
+PQSCALE 10
+BQSCALE 25
+REFERENCE_FRAME DECODED
+FORCE_ENCODE_LAST_FRAME
+ASPECT_RATIO 1
+FRAME_RATE 24
+
+

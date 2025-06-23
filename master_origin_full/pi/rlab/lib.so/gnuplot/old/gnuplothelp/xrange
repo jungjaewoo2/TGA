@@ -1,0 +1,15 @@
+xrange:
+
+Synopsis: Sets the plot range in x for the bottom x-axis.
+
+Syntax: xrange ( start, end, I )
+
+Description:
+
+	Sets the plot range in x in the I:th plot-window. 
+	xrange() uses the bottom x-axis.
+	The x-axis will start at "start" and end at "end".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: range, range2, x2range, yrange, y2range, zrange

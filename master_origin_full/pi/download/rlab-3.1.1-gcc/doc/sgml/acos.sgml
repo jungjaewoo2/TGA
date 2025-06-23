@@ -1,0 +1,17 @@
+<sect> acos 
+<p>
+<descrip>
+<tag> Synopsis </tag> Compute the arc-cosine. 
+<tag> Syntax </tag> acos ( <em>A</> ) 
+<tag> Description </tag>
+
+	The trigonometric functions are scalars functions.  The return
+	value is the result of the trigonometric operation performed
+	on the input, element-by-element.
+
+	All the trigonometric functions use the C language math
+	library functions, so details about the ranges and error
+	conditions can be found by examining the appropriate man pages
+	on your system.
+
+</descrip>

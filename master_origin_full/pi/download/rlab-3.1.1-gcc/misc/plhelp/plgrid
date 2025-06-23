@@ -1,0 +1,39 @@
+plgrid:
+
+Synopsis: Set the grid type for the current sub-plot.
+
+Syntax: plgrid ( GRID_STY_X , GRID_STY_Y )
+
+Description:
+
+	Set the grid type for the current sub-plot in the curent
+	plot-window. The grid type is specified by a string. The
+	possible elements of the string are described below. The
+	string can include any combination of the following letters
+	(lower case) in any order. If plgrid is called without any
+	arguments, the defaults are reset. 
+
+	a	Draws axis, X-axis is horizontal line 
+		(at y=0), and Y-axis is vertical line (at x=0).
+
+	b	Draws bottom (X) or left (Y) edge of frame.
+	c	Draws top (X) or right (Y) edge of frame.
+	g	Draws a grid at the major tick interval.
+	i	Inverts tick marks, so they are drawn
+		outwards, rather than inwards.
+	l	Scales axis logarithmithecally.
+	m	Writes numeric labels at major tick intervals 
+		in the unconventional location 
+		(above box for X, right of box for Y).
+	n	Writes numeric labels at major tick intervals 
+		in the conventional location 
+		(below box for X, left of box for Y).
+	s	Enables subticks between major ticks, only
+		valid if "t" is also specified.
+	t	Draws major ticks.
+
+	Example - Set X and Y logarithmic scales:
+
+		plgrid ( "bcgnstl", "bcgnstlv")
+
+See Also: plaxis

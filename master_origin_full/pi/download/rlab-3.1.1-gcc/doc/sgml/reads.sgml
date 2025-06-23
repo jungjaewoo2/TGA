@@ -1,0 +1,32 @@
+<sect> reads 
+<p>
+<descrip>
+<tag> Synopsis </tag> Read a data stream into a string
+<tag> Syntax </tag> 
+<p>reads ( )
+<p>reads ( <em>filename</em> )
+<tag> Description </tag>
+
+<tt>reads( )</tt> reads input from keyboard until `return' is pressed.
+<tt>reads( <em>filename</em> )</tt> reads the content of the file in a single
+column string vector. If the <em>filename</em>  begins with `|' then the
+reading is performed from the pipe. The latter is the
+<tt>modus operandi</tt> of many functions in RLaB2 Rel. 2 that communicate
+ with shell, e.g., see dir, ls, email, md5sum etc. For example,
+<tscreen><verb>
+ys = reads  (`my_file_with_lots_of_data');
+y  = strtod (ys);
+</verb></tscreen>
+Or, another example where a pipe to shell command is used,
+<tscreen><verb>
+fns = reads  (`| ls -1A');
+for (fn in fns)
+{
+  printf (`Found file: ');
+  printf (`%s', fn);
+}
+</verb></tscreen>
+
+
+<tag>See Also</tag>   FILES, close, getline, read, readm, writem, strtod
+</descrip>

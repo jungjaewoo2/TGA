@@ -1,0 +1,25 @@
+multiplot:
+
+Synopsis: Set the current I:th plot-window in multiplot-mode.
+
+Syntax: multiplot ( rows, columns, I )
+
+Description:
+
+	multiplot() allows you to make multiple plots in the I:th window. 
+	After giving the command you enter multiplot-mode.
+	
+	If only 'I' is specified, the I:th plotwindow is set into
+	multiplot-mode. You then have to leave multiplot-mode manually
+	with "nomultiplot(I)".
+
+	If 'row' and 'col' are specified, you leave multiplot-mode automaticly
+	after making rows*columns plot-commands.
+	
+	The first plot made will appear in north-west, the second in 
+	north-east, and so on.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: postplot, printplot, latexplot, plotyy, nomultiplot
+

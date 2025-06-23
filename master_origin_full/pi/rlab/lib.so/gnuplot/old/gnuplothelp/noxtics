@@ -1,0 +1,16 @@
+noxtics:
+
+Synopsis: Sets the major tics on the bottom x-axis.
+
+Syntax: noxtics ( I )
+
+Description:
+
+	The noxtics() function turns off the major tics on the 
+	bottom x-axis in the I:th plot-window. 
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autotics, xtics, x2tics, nox2tics, ytics, noytics, y2tics, noy2tics,
+          ztics, noztics, mxtics, nomxtics, mx2tics, nomx2tics, mytics, nomytics, 
+          my2tics, nomy2tics, mztics, nomztics

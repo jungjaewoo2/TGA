@@ -1,0 +1,66 @@
+  fwrite
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Binary stream output.
+
+      [1mSyntax[0m
+        fwrite ( [4mFILENAME[24m, [4mTYPE[24m, [4mDATA[24m )
+
+      [1mDescription[0m
+        fwrite writes [4mDATA[24m to the file identified by [4mFILENAME[24m. [4mDATA[24m is
+        cast, or converted to the data type identified in [4mTYPE[24m. fwrite
+        roughly mimincs the C programming language's fwrite library
+        function.
+
+        [4mDATA[24m can either be a dense numeric matrix, or a string matrix.
+        The size of the matrix does not need to be specified because the
+        entire matrix is written.
+
+        If [4mDATA[24m is a string matrix, then the first character of each
+        element is written to [4mFILENAME[24m, after being coerced to type
+        [4mTYPE[24m.
+
+        Allowable arguments are:
+
+
+        [4mTYPE[0m
+
+             "char"
+
+
+
+             "unsigned char"
+
+
+
+             "short int"
+
+
+
+             "unsigned int"
+
+
+
+             "int"
+
+
+
+             "float"
+
+
+
+             "double"
+
+
+
+
+     [1mSee Also[0m
+        FILES, fread, fseek, close, open, write
+
+
+
+
+

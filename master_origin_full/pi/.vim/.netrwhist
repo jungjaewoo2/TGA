@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/pi/sandbox/rlabplus/rlab-3.1.1-gcc/flibs/pgplot/install'
+let g:netrw_dirhist_2='/home/pi/rlab'
+let g:netrw_dirhist_3='/usr/share/zoneinfo'
+let g:netrw_dirhist_4='/usr/share/zoneinfo/Asia'

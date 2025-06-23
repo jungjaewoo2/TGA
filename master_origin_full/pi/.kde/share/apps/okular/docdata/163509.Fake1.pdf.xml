@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE documentInfo>
+<documentInfo url="/var/www/html/Fake1.pdf">
+ <pageList/>
+ <generalInfo>
+  <history>
+   <oldPage viewport="0;C2:0.499494:0.661723:1"/>
+   <oldPage viewport="1;C2:0.392576:0.230932:1"/>
+   <current viewport="0;C2:0.584906:0.59322:1"/>
+  </history>
+  <views>
+   <view name="PageView">
+    <zoom mode="1" value="1.47173"/>
+   </view>
+  </views>
+ </generalInfo>
+</documentInfo>

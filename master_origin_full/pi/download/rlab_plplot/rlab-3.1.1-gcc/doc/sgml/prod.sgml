@@ -1,0 +1,12 @@
+<sect> prod 
+<p>
+<descrip>
+<tag> Synopsis </tag> Product.
+<tag> Syntax </tag> prod ( <em>A</> )
+<tag> Description </tag>
+
+	Compute the product of the elements of <em>A</> (if <em>A</>
+	is a vector).  If <em>A</> is a matrix return a row vector
+	containing the product of each column.
+
+</descrip>

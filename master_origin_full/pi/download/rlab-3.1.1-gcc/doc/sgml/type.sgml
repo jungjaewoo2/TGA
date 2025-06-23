@@ -1,0 +1,18 @@
+<sect> type 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the type of an object.
+<tag> Syntax </tag> type ( <em>A</> )
+<tag> Description </tag>
+
+	Type returns a string that describes the type of element
+	contained in object <em>A</>. The valid types for an object
+	vary according to the class of the object
+
+	If a list object has a string member with name <tt>type</>,
+	then the type function will report the contents of that
+	member.
+
+<tag>See Also</tag>   class, show
+
+</descrip>

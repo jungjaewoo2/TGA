@@ -1,0 +1,36 @@
+epsplot:
+
+Synopsis: Generates an Encapsulated PostScript file.
+
+Syntax: epsplot ( "file_name", "mode", I )
+
+Description:
+
+	The epsplot() function generates a small PostScript file named
+	"file_name" of the current I:th plot. "mode" is further
+	PostScript definitions to GNUPLOT if needed, for example
+	"color 'Times-Roman' 14" for making a plot in color with
+	Times-Roman-font size 14.  The PostScript plot is saved in a
+	file for printing, or whatever.  Immediately after calling
+	epsplot(), the GNUPLOT variables term, and output are reset to
+	there former values.
+	
+	The default value for the mode argument is: "default enh"
+	(stands for default-enhanced). Valid options are: 
+
+		"landscape"
+		"portrait"
+		"default"
+
+	Technically "color" is not a valid gnuplot mode. But, "color"
+	can often be specified in the mode argument.
+
+	epsplot() will not work with multiplot().  If a PostScript
+	hardcopy is wanted in multiplot-mode, change the terminal-type
+	before and after leaving these modes.
+	
+	If 'I' is not specified the default plot-window is used, see
+	defplotwin().
+
+See Also: psplot, printplot, latexplot, setterm
+

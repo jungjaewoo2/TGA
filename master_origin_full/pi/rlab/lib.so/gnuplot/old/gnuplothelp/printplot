@@ -1,0 +1,21 @@
+printplot:
+
+Synopsis: Print the the current plot-window.
+
+Syntax: printplot ( "printer-name", I )
+
+Description:
+
+	Print the the I:th plot-window to "printer-name".
+	printplot() generates a PostScript file and sends it to 
+	the printer.
+
+	printplot() will not work with multiplot() or plotyy().
+	If a print is wanted in multiplot- or plotyy-mode, 
+	change the terminaltype before and after leaving these modes,
+	using setterm(), to generate a PostScript hardcopy.
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+	
+See Also: postplot, latexplot, setterm
+

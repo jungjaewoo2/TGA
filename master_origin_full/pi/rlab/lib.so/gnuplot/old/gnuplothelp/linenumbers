@@ -1,0 +1,15 @@
+linenumbers:
+
+Synopsis: Control the line style for the plots.
+
+Syntax: linenumbers ( list, I )
+
+Description:
+
+	linenumbers() controls the line-style numbers for the I:th plot.
+	linenumbers takes a vector as input and the plots will be made
+	using "linestyle" with numbers chosen from the linenumbers vector.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+	
+See Also: linestyle

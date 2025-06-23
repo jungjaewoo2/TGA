@@ -1,0 +1,14 @@
+noautoscale:
+
+Synopsis: Unsets autoscaling on axis.
+
+Syntax: noautoscale ( "axis", I )
+
+Description:
+
+	Unsets autoscaling on selected axis in the I:th plot-window. 
+	"axis" can be, for example, "x", "xy" "x2" or alike.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autoscale

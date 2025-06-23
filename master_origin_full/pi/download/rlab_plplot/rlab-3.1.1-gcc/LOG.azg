@@ -1,0 +1,21 @@
+ mkdir rlab_plplot
+ cd rlab_plplot
+ tar zxvf ../rlab-3.1.1.9.src.tgz 
+ cd rlab-3.1.1-gcc/
+ make clean
+ cp ../../rlab-3.1.1-gcc/*azg* .
+ mv rconfigure2_rpi_azg rconfigure2_rpi_plplot_azg 
+ vi  rconfigure2_rpi_plplot_azg 
+ mv configure_raspbian configure_raspbian.orig
+ cp ../../rlab-3.1.1-gcc/configure_raspbian configure_raspbian 
+ ./rconfigure2_rpi_plplot_azg 
+ cd ./clibs/fidlib/
+ make clean
+ make 
+ cd -
+ make 
+
+NOTES: raspian does not have gawk; configure needs gawk 
+      - ./clibs/fidlib/ is not cleaned by make clean
+
+

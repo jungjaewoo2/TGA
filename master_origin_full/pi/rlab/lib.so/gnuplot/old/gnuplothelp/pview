@@ -1,0 +1,22 @@
+pview:
+
+Synopsis: Change the view of a 3D plot
+
+Syntax: pview ( ROTX , ROTZ , SCALE , SCALEZ , N )
+
+Description:
+
+	pview() controls how the 3-d coordinates of the plot are
+	mapped into the 2-d screen space.
+
+	ROTX: controls the rotation angle (degrees) about an axis that
+	is horizontal in the plane of the display.
+
+	ROTZ: controls the rotation angle (degrees) about an axis that
+	is perpendicular to the display.
+
+	SCALE: controls the scaling of the entire splot.
+
+	SCALEZ: controls the scaling of Z-axis.
+
+	The default values are ROTX=60, ROTZ=30, SCALE=1, SCALEZ=1.

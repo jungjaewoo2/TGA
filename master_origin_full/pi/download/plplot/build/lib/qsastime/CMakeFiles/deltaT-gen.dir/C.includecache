@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/deltaT-gen.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+dspline.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dspline.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dspline.c
+dspline.h
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dspline.h
+
+/home/pi/download/plplot/plplot-5.13.0/lib/qsastime/dspline.h
+

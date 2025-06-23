@@ -1,0 +1,66 @@
+  toc
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Measure time elapsed since tic.
+
+      [1mSyntax[0m
+        toc ( )
+
+      [1mDescription[0m
+        Toc reports the time (in seconds) elapsed since the last call to
+        tic.
+
+        See also: tic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

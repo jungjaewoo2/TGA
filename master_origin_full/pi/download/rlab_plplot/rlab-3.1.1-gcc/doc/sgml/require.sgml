@@ -1,0 +1,36 @@
+<sect> require 
+<p>
+<descrip>
+<tag> Synopsis </tag> Specify program dependencies/requirements.
+<tag> Syntax </tag> require <em>NAME</>
+<tag> Description </tag>
+
+	The require command takes Rfile names as operands, and checks
+	the workspace for a function variable called <em>NAME</>. If
+	that function exists, then no action is taken. If the function
+	does not exist, then the file <tt>NAME.r</> is loaded.
+
+	More than one <em>NAME</> can be given on the same
+	line. Continuations are not allowed.
+
+	<em>NAME</> can contain the `.r' extension that distinguishes
+	Rfiles (by convention), or <em>NAME</> can omit the `.r'
+	extension. In either case a workspace variable without the
+	`.r' extension is checked for.
+
+	Example:
+
+<tscreen><verb>
+> require roots poly.r bode
+</verb></tscreen>
+
+	The require command syntax is identical to the rfile command,
+	with the obvious exception of the initial keyword.
+
+	The rules for searching the user's <tt>RLAB2_PATH</> are the
+	same as those used with the rfile command.
+
+ <tag>See Also</tag>  rfile, load
+
+
+</descrip>

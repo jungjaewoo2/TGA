@@ -1,0 +1,56 @@
+<sect> rand 
+<p>
+<descrip>
+<tag> Synopsis </tag> Samples a default continuous random number generator.
+<tag> Syntax </tag>
+             <p>    rand (  )
+             <p>    rand ( <em>A</em> )
+             <p>    rand ( <em>nrow</em>, <em>ncol</> )
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag> rand ( ) </tag>
+       samples a single random integer from a default continuous
+       random number generator.
+
+	<tag> rand ( <em>A</em> ) </tag>
+       samples a matrix of random integers of size of the
+		 matrix <em>A</em> from a default continuous random number generator.
+		 
+	<tag> rand ( <em>nrow</em>, <em>ncol</em> ) </tag>
+		 samples a matrix of random integers of size <em>nrow</em> by <em>ncol</em>
+		 from a default continuous random number generator.
+
+	</descrip>
+
+	rand uses the facilities from the GSL library, 
+	see <tt>http://www.gnu.org/software/gsl</tt>.
+
+	<tag>See Also</tag> rng, irng, iseed, drng, drand.
+	
+	Consider an example
+<tscreen><verb>
+>> rng(1, "normal", [2,4], 1);
+>> rand(3,4)
+ matrix columns 1 thru 4
+ -2.22907625    2.86692906    3.43259885    2.27584677
+  3.40927653    5.79154734     1.8912692    1.13409702
+  1.41650298    10.4804326    0.43938129     2.2230814
+
+>> rng()
+Currently defined random number generators :
+ user *   1: normal, with irng no. 1
+  nparam = 2
+  p[1] = 2
+  p[2] = 4
+(*) is a user-default generator.
+           1
+>> irng()
+Currently defined integer random number generators :
+ user *   1: gfsr4, size =  65540
+(*) is a user-default generator.
+           1
+>> </verb></tscreen>	
+
+</descrip>

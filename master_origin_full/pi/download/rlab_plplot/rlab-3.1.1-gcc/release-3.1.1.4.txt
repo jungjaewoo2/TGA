@@ -1,0 +1,621 @@
+Changes in 3.1.1.4 [2.6.1.4]
+
+1. xfig classdef now available for creation of vector graphics and is fully documented.
+2. Some fixes of ImageMagick interfaces with improved documentation.
+3. Fixes to some internal routines. Continuing work on cleaning/leaning/deglitching the code.
+4. Dummy library ieee removed from build.
+
+
+[PREVIOUS POSTS]
+
+
+Changes in 3.1.1.3 [2.6.1.2]
+
+1. Maintenance release. Continuing work on cleaning/leaning/deglitching the code.
+2. Reintroduced built-in superlu-3 and umfpack-4/amd-1 for sparse matrices rather
+than shared libraries because of the change in input parameters in some functions
+in superlu-4. This removes dependency on shared libraries superlu and suitesparse
+that seem to have been available only with opensuse distribution anyway.
+3. Resolved some glitches in parser (classdef can now be up to 120kB big,
+switch-statement accepts values - as in results of algabraic expression -
+as well as variables).
+
+
+Changes in 3.1.1.2 [2.6.1.*]
+
+1. Added flag --rlab2 for user to use rlab2 parser instead of the default rlab3 parser.
+Fixed rconfigure{2,3}-* scripts so they end with 'make scanner' which either copies perser
+files, or if user has bison/flex installed tries to build the parser. To use provided files
+DO NOT use flags --with-bison and --with-flex.
+2. Fixing glitches in parser/interpreter: the parser should now work fine
+with script files with UNIX as well as with MSDOS line endings.
+3. Fixed pgplot library for oldtimers. Flag --with-pgplot should work without need
+to download pgplot sources from ftp://ftp.astro.caltech.edu/pub/pgplot/pgplot5.2.tar.gz.
+4. Continuing work on cleaning/leaning/deglitching the code.
+5. Miscelaneous improvements to existing functions. New functions.
+
+
+Changes in 3.1.1.1
+
+1. Fixing glitches in parser/interpreter:
+In rlab-3.1.1.1 the file-static variables from the file containing the
+classdef environment are accessible inside classdef. Previously, it was the file
+in which classdef was executed which file-static variables were accessible.
+2. Continuing work on cleaning/leaning/deglitching the code.
+3. Miscelaneous improvements to existing functions.
+
+
+Changes in 3.1.0.0
+Changes in 2.6.0.0
+
+1. Further changes to parser/interpreter:
+
+(a) rlab-3.1 and rlab-2.6: classdef(...){...} environment accepts static(...) declaration for class-member private
+properties and methods.
+(b) rlab-2.6 differs from rlab-3.1 ONLY in if-else statement:
+  rlab-2.6: if (cond) { ... else ... } [full support for legacy scripts]
+  rlab-3.1: if (cond) { ... } else { ... }
+
+2. Continuing work on cleaning/leaning/deglitching the code.
+3. Miscelaneous improvements to existing functions.
+
+
+Changes in 3.1.0.0
+
+1. Further changes to parser/interpreter:
+
+(a) classdef(...){...} environment with private(...), public(...) and instantiation variables
+that allows programmatic creation of lists (class members). The list entries
+can be either variables (public properties) or functions (public methods), where
+all so created lists (class members) share constructor-static common entries
+which can be either variables (private properties) or functions (private methods).
+Their syntax and usage partially follows C++ (in that :: is not supported).
+
+(b) Special system variable 'ans' is distinguished from operator '?':
+- ending statement without ';' causes it to be assigned to 'ans', and then printed. This
+may be convinient for command-line computations;
+- ending statement with '?' causes it to be only printed.
+
+(c) Strings can now be defined over multiple lines: parser looks for pair of
+matching " "
+
+(d) Internal fixes that prevent segfaults in case of scripts full of errors.
+
+
+Changes in 3.0.6.0
+
+
+1. Major changes in PARSER which make rlab3 not-compatible with rlab2:
+
+(a) New format of the if-else-command follows c-language:
+      if (cond) { ... }
+      if (cond) { ... } else { ... }
+      if (cond) { ... } else if (cond) { ... } ...
+rather then the old-style
+      if (cond) { ... else ... }      [ rlab2 ]
+NB: To change your files to new format, replace 'else' with '} else {', e.g., using
+the following script ONCE:
+      # copy old file with extension .r to files with extension .r3
+      rename .r .r3 *.r
+      # change else command in .r3 files
+      sed -i -e 's/ else/ } else {/g' *.r3
+
+(b) added for-then and while-then constructs that follow the python's for-else
+and while-else.
+
+(c) added do-while/until loop that follows c-language (do-while)
+      do { ... } while/until (cond);
+
+(d) added switch command that follows c-language definition, with that difference
+that part of the case statement can be an expression or variable.
+
+(e) added element-wise operations +=, -=, *= and /= mostly without storage of
+intermediate results.
+
+(f) static declaration of variables allowed inside function body, which specifies
+function-static variables, which values are kept between function calls.
+
+(g) EOF token that stops processing of the current file and returns control either
+to calling file or to the prompt.
+
+(h) script{} environment that allows programmatic manipulations of scripts.
+
+
+2. rlab3 is configured so it can coexist with rlab2 on the same system.
+The rlab2 keeps the extension "*.r" , while rlab3 takes on ".r3"
+
+
+Changes in 2.5.0.3
+
+1. Improved configure script. Unneeded libraries are removed from configuration.
+
+
+Changes in 2.5.0.2
+
+1. Continuing work on cleaning/leaning/deglitching the code. Improved build script so it reacts
+properly to two different versions of plplot library (libplplot.so vs. libplplotd.so).
+2. Fixes of glitches in plplot interface. Better documentation in rlabplus manual.
+3. Added Powell optimization solvers newuoa (unconstrained), bobyqa (simply constrained),
+lincoa (linear constraint), and cobyla (functional constraint).
+
+
+Changes in 2.5.0.1
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Improved interface to plplot - now it is more gnuplot-like within rlab environment.
+3. Miscelaneous improvements to existing functions, e.g., hist().
+
+
+Changes in 2.5.0.0
+
+1. EXPERIMENTAL New data type MATRIX_DENSE_ENTITY, or 'cell' (matrix-like collection of rlab objects, accessed by
+the indices, just like regular matrix) that is an alternative to
+'list' (unstructured collection, accessed with a key);
+2. Continuing work on cleaning/leaning/deglitching the code: e.g., readm.
+
+
+Changes in 2.4.2.5
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+
+
+Changes in 2.4.2.4
+
+1. Continuing work on cleaning/leaning/deglitching the code: ImageMagick interface.
+2. Improved command line interface to rlab and scripts. More options for serial port.
+
+
+Changes in 2.4.2.3
+
+1. Continuing work on cleaning/leaning/deglitching the code. Overhaul of some functions with more options
+added, c.f., floor, ceil, mean, var, covar, polyval, polyder.
+2. Modifications of parser: now accepts comments during a multi-line definition of an array. The scripts
+relying this feature may be incompatible with older versions.
+
+
+Changes in 2.4.2.2
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Further work on parser: Now it recognizes c-style comments /* ... */, that is, ignores them.
+3. Minor fixes in many libraries (libooo, libsystem, libstdio, to mention a few) so that they
+better handle error conditions.
+4. String functions now fully integrate Pattern matching, cf., findstr, strindex(r), strsplt, strtod,
+lstrip/rstrip/strip, gsub, grep, readm, reads.
+
+
+Changes in 2.4.2.1
+
+1. Experimental implementation of string functions based on Pattern matching library.
+
+
+Changes in 2.4.2.0
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Added feature to parser that recognizes integers: in hexadecimal format using prefices "0x" or "0X,"
+e.g., 0x034; in binary format using postfices "B" or "b," e.g., 10010101B; or as plain integer using postfices
+"l" or "L," e.g., 47891491741L. This may make scripts for latest versions incompatible with the older versions.
+E.g., a statement 'x=0xaa' creates an integer variable which content is 170 in decimal notation. Previously
+this could have been accomplished through sequence of statements 'x=int(strtod("0xaa"))'
+3. added some manipulations with integers, e.g., bit-rotation and bit-shift.
+4. expanded h5 family of functions.
+
+
+Changes in 2.4.1.2
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Reworked neural network solvers that used to be tied to (now extinct) library sprann. These are now
+hooked up to "c-library" for pattern recognition.
+
+
+Changes in 2.4.1.1
+
+1. Fixed segfault occuring on some systems caused when parser would encounter error in the script. Partial fix
+segfaults as a result of repeated errors that occur when the 'eval' function has improper argument, e.g., evaluate value
+of expression in which there are undefined variables, >> clear(x); eval("x+6")
+2. Further fixing of the scanner: changed type of 'nargs' within function call from 'double' to 'MDR' so that
+it can be operated on.
+3. Modified 'make' script so that internally 'make scanner' preceeds 'make rlab'.
+4. Continuing work on cleaning/leaning/deglitching the code.
+
+Changes in 2.4.1.0
+
+1. Fixed segfault occuring when calling solvers with (functions with no arguments) as arguments.
+2. Fixed backward compatibility with gsl (e.g., robust linear fit was introduced recently, rlab can be linked to
+old versions of gsl).
+
+
+Changes in 2.4.0.0
+
+1. Thorough internal reorganization of solvers that call functions as arguments. A number of mini memory leaks
+have been resolved in the process. Certain invocation procedures modified so their execution is 10-20% faster.
+Haxes replaced by procedures uniform across different solvers.
+
+
+Changes in 2.3.3.8
+
+1. Continuing work on cleaning/leaning/deglitching the code. Case in point: preventing existing functions
+to cause segmentation fault or return non-sensical results if their arguments were not correct.
+E.g., y = ifelse(x==[], 1, x[1]) used to fail if x is empty matrix because the function would assume that
+all three supplied arguments exist (here, x[1] does not exist if x is an empty matrix).
+E.g., polyval(x,a) treats properly any vector 'a', rather then just row vector. Previously, if 'a' was column
+vector it would go internally out of bounds, and return non-sensical result.
+Please note, in helping me eliminate such glitches I encourage you to send me nonsenses, or segfaults rlab
+creates while running your scripts.
+3. More work on incorporating NaN's in rlab workings, e.g., see functions diff() or quot().
+4. Fixed functions writem() when operating on hdf5 file in append mode: it deletes previous value
+of the object before entering new one. Also writem("somefilename.h5", [], "/hdf/abs/object/name") will delete
+object "/hdf/abs/object/name" if argument is empty matrix.
+
+
+Changes in 2.3.3.7
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+
+
+Changes in 2.3.3.6
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. More work on patterns in function 'compact', set operations now work with string vectors as well.
+3. sorting function has now three ways of dealing with nans: put them on top of the list, on bottom,
+or leave them in place.
+
+
+Changes in 2.3.3.5
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Some work on patterns is implemented in the function 'match'
+3. Added operation with sets, some functionality with tables. All can tolerate nans.
+
+Changes in 2.3.3.4
+
+1. Fixed corrupted 'y.tab.h' file in 2.3.3.3.
+2. Continuing work on cleaning/leaning/deglitching the code.
+
+
+Changes in 2.3.3.3
+Changes in 2.3.3.2
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+2. Modified build script so that flex and bison can be used through 'make scanner'.
+Updated default rlab parser to output of flex 2.5.37.
+
+
+Changes in 2.3.3.1
+
+1. Continuing work on cleaning/leaning/deglitching the code.
+
+
+Changes in 2.3.3.0
+
+1. Consolidated rlab complex codes.
+2. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code: case in point harminv and time-frequency toolbox.
+
+
+Changes in 2.3.2.3
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+2. Fixed build script: It can recognize libngspice on 32-bit systems. It builds the .bin. version
+without any addons with pgplot for plotting - see ./rconfigure_low32 in source root directory.
+
+
+Changes in 2.3.2.2
+
+1. Added suggested build script for Raspberry Pi, "rconfigure_rpi." Rlab tested and operational
+on Raspberry Pi running opensuse 13.1. Binary version available, as well.
+Fixed different "#define" statements so that the same sources can be built on either
+of three architectures, armv6l, x86 & x86_64.
+
+2. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+
+
+Changes in 2.3.2.1
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code: emphasis on date time funcions.
+
+
+Changes in 2.3.2.0
+
+1. New internal type: dense matrix, existing dense matrix formats converted to dense matrix type.
+2. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code. Statistical functions improved so to ignore nan's.
+3. Improved plplot interface: it now accepts lists for plotting 3-d lines and surfaces (plsplot)
+"mesh" style or "3d" style, and contours (plcont). Improved interna efficiency of data transfer
+to plplot.
+4. Pattern recognition functions added: classify, cluster, distance matrix, localabsmaxi, localrelmaxi.
+
+
+Changes in 2.3.1.8
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+2. Updated configure script so to handle properly ImageMagick and gphoto2 library configurations.
+User still has to request the feature during configuring.
+
+
+Changes in 2.3.1.7
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code, e.g., prompt, or 'ans'.
+
+
+Changes in 2.3.1.6
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code. Silent upgrades completed.
+
+
+Changes in 2.3.1.5
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+
+
+Changes in 2.3.1.4
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+2. Deglitched extraction of rlabplus-addons, so that scaled down version of rlab+rlabplus compiles
+even on old 32-bit machines (currently oldest machine that runs rlab is a
+toshiba laptop 1GHz, 512MB RAM, with suse 11.1 on it). Its configuration is given in
+script 'myconfigure_low32'.
+3. Please note: All binaries available on the sourceforge are built using 'myconfigure_low32'.
+For all rlab+rlabplus features one has to build from sources.
+
+
+Changes in 2.3.1.3
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code: fixed some internal lack of features and overly optimistic dealing with non-existent
+variables.
+2. Fixed omission in 'configure' script so that location of the jvm is properly passed to
+rlab start-up script. Same with some other libraries.
+3. Finished filter. It works now for complex numbers as well.
+
+
+Changes in 2.3.1.2
+
+1. Changes in configuration of rlab.
+I was hit by blast from the past: most of special-topic libraries added to rlab as a part of
+rlabplus are now optional, and need to be specified during 'configure' to be included.
+This was done so that rlab can be built on very old laptops running even older linuces
+(do you remember kde3.5?). What is still required are: hdf, gsl, curl shared library.
+On older systems arpack, glpk and superlu might be available as static libraries. Configure script
+takes that into account: One still needs to specify only the directory where the library resides,
+and hope that the headers are available through /usr/include.
+Overall, these are the latest flags needed to build rlab totally (see also 'myconfigure' script that
+lists them all):
+
+./configure
+  --with-jvm=[where is my JVM located? 'myconfigure' can find it for you]
+  --with-ngspice=[where did I put shared ngspice when I built it? 'myconfigure' can try to find it]
+  --with-arpack[=/dir/to/static or shared library, but only if different from default locations]
+  --with-superlu[=/dir/to/static or shared library, but only if different from default locations]
+  --with-im[=/dir/to/shared library, but only if different from default locations]
+  --with-gphoto2[=/dir/to/shared library, but only if different from default locations]
+  --with-plplot[=/dir/to/shared library, but only if different from default locations],
+      or --with-pgplot, for the latter rlab contains its source tree - needed for old systems without plplot
+  --enable-python[=/dir/to/shared library, but only if different from default locations]
+  --with-suitesparse[=/dir/to/shared library, but only if different from default locations]
+  --enable-glpk[=/dir/to/static or shared library, but only if different from default locations]
+
+Default behavior is not to install any. Even then, one gets system with bunch of improvements and new
+features, with many a bug or glitch fix.
+
+
+Changes in 2.3.1.1
+
+1. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code: fixed some HDF bugs and glitches: 'isfile' works, reading and writing string matrices works.
+2. Additional features to existing solvers, e.g. mean/var. Fixed filter function: it can now take
+the initial output as input parameter. Fixed 'eval' function: does not segfault if improper input.
+3. Statistical lists <<val;wgt>> now support algabraic operations +, -, ./, .\, .*,
+and *. Some functions, e.g., mean,var, ..., support them from before.
+4. Fixed glpk so it properly compiles on older version of the library (parameters have changed recently).
+5. Fixed rgphoto in regards to nonexistent uint8_t type.
+6. Rebuilt the plplot interface, as any further work on pgplot has been ceased (it blows on xinerama setup,
+creates windows that take half screen - 1 monitor). Most pgplot commands and structures should work under
+plplot: the two have almost identical functions.
+User now has to choose between  --with-plplot   and   --with-pgplot   flags when 'configure'-ing.
+7. 'ans' variable stores the most recent result of command line calculations.
+
+
+Changes in 2.3.1.0
+
+1. Fixed build-up script and rectified some omissions.
+2. Added libgphoto2 through new command list 'gp'. If not wanted
+configure rlab with '--disable-gphoto2'
+3. Added parts of ImageMagick through new command list 'image'. If not wanted configure
+rlab with '--disable-im'
+4. Updated GLPK wrapper to work with versions of GLPK 4.52 and higher: Do I need to put this
+with --disable-glpk flag?
+5. Cleaning/leaning/deglitching of the code. Minor fixes to some mathematic functions, e.g., mod.
+6. If building from sources, there is a script 'myconfigure' which tries to figure out flags
+for compilation in regards to python, java, spice.
+
+
+Changes in 2.3.0.4
+
+1. Fixed documentation omission. Flag for using java virtual machine should read
+--with-jvm=/dir/where/yourlibjvm.so.is
+and it should not contain the file name libjvm.so itself. Silly me. Also fixed some other
+glitches in configure script.
+2. Cleaning/leaning/deglitching of the code. Modified output of diffevol solver and added convergence
+controls.
+
+
+Changes in 2.3.0.3
+
+1. Notable new solver: a version of differential evolution algorithm is now available as solver
+'diffevol'.
+2. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+
+
+Changes in 2.3.0.2
+
+1. Build flags are better defined in configure script
+  --disable-python (by default it is enabled, provides command list 'py')
+  --with-jvm=/usr/lib64/libjvm.so (by default it is disabled, if enabled provides
+      command list 'jvm')
+  --with-ngspice (by default it is disabled, if enabled provides command list 'spice')
+2. Added support for ngspice built as a shared library.
+3. Updated to the latest version of the Boehm's Garbage Collector (gc-7.2).
+4. Continuing work on adding more options to existing solvers, and cleaning/leaning/deglitching
+the code.
+
+
+Changes in 2.3.0.1
+
+1. Removed static libraries arpack, amdpack, umfpack and superlu, and replaced them with
+the shared object ones available from your linux distribution - check install.txt.
+2. Continuing work on: adding more options to existing solvers and functions,
+and cleaning/leaning/deglitching the code: fixed ngspice, added calendar library.
+3. Add a calendar/date/time toolbox.
+
+
+Changes in 2.2.12.16
+
+1. Added jvm set of functions that allow rlab to call java methods and passes parameters to them and
+get results from them.
+2. Continuing work on: adding more options to existing solvers and functions,
+and cleaning/leaning/deglitching the code.
+
+
+Changes in 2.2.12.15
+
+1. Added flag -e "cmds" so that commands can be executed when invoking rlab2 from the command line.
+The flag parameter "cmds" does not allow white spaces (feature of GNU getopt).
+2. Fixed 'configure' script so that gcc version is correctly recognized.
+3. Continuing work on: adding more options to existing solvers and functions,
+and cleaning/leaning/deglitching the code.
+
+
+Changes in 2.2.12.14
+
+1. fixed build script - glpk was improperly removed.
+
+
+Changes in 2.2.12.13
+
+1. libglpk removed from source. User needs to download the library and development files, and install them
+on his/her own.
+2. Fixed wrong location of rlab headers in python.c.in
+3. Fixed glitch in main.c that appears in newer versions of gcc, related to 'yydebug'
+
+
+Changes in 2.2.12.12
+
+1. Fixed build script for python, so it builds properly on opensuse and
+fedora systems (thanks a.g.).
+2. Continuing work on: adding more options to existing solvers and functions,
+and cleaning/leaning/debugging the code.
+3. More functions, e.g., showkey, prompt, inputs.
+
+Changes in 2.2.12.11
+
+1. Embedded python interpreter is now available.
+2. Added some more options to existing solvers.
+3. Continued work on removing bugs, and buglets, and code cleaning.
+
+
+Changes in 2.2.12.10
+
+1. 'make flibs' now builds pgplot
+2. fixed linking issues between 64 and 32-bit versions (each links to its respective
+/usr/lib{64} libraries). Fixed variable in 'configure' so that the system architecture
+is properly registered - should work on opensuse and redhat fedora systems.
+3. continuous work on code cleaning and glitches removal.
+
+
+Changes in 2.2.12.8
+
+1. Fixed the configure/Makefile so it properly links to libraries on fedora systems (and not
+just on opensuse32/64) [Thanks a.g.].
+Fixed some of the testfiles. Clean-up/tidying the source code for some solvers that rely on
+fortran solvers (resolved segfaults that occur when fortran code is expected to write run-time
+messages).
+Fixed glitches in gsl solvers for minimization.
+
+
+Changes in 2.2.12.7
+
+1. Functions fwrite/fseek/fread now work without glitches. 'fseek' requires file to be open prior
+to seeking it. Code now passes the script 'test.r'.
+
+
+Changes in 2.2.12.6
+
+1. Fixed some memory leaks in read/write functions to the serial port. Added more options to the
+open-function.
+2. Added some more solvers: harminterp. Modified some existing solvers: linterp and findroot.
+3. Reviewed sections of the code. Fixed some small memory leaks.
+
+
+Changes in 2.2.12.5
+
+1. Succesfully tested sockets on ethernet connected instruments - they have reached near-production quality.
+Same minor changes in some system functions: tic()/toc() now have a microsecond precision.
+Modifified/expanded some solvers, e.g., linterp.
+
+
+Changes in 2.2.12.4
+
+1. configuration of rlab is changed. The script ./configure no longer checks for the presence
+of flex. Instead it uses the file provided with the distribution that was built with flex-2.5.35,
+and then fixed by hand.
+Added is option 'make scanner' that checks the file 'scanner.l' against local installation of flex
+and tries to compile the result. Such installation, however, has to be put in 'Makefile.in' by hand
+in line where '@FLEX@' is defined.
+2. Added are few solvers, and some bugs and lack of features are corrected.
+3. Sprannlib has been removed.
+
+
+Changes in 2.2.12.3
+
+1. The directory 'examples' transferred to the rlab-test collection of files that user has to
+install in his/hers home directory, under ~/rlab/test.
+2. More of the gsl: cumulative probability functions
+
+
+Changes in 2.2.12.2
+
+1. Changes in internal handling of open HDF5 files that removed few remaining glitches in basic
+HDF5 handling functionality. The reliability is now at the production level for files
+containing rlab recognized data.
+2. Added more options to some existing solvers, e.g., findmins.
+3. More functions and operators are now matrix optimized (addition, subtraction,
+multiplication and division by element)
+4. Added some gcc "#define"'s so that rlab builds properly on 32- and 64-bit
+architectures. Fixed install script (was for version 2.2.11).
+
+
+Changes in 2.2.12.1
+
+Slight Modification of HDF5:
+1. rlab scalar variables, i.e., matrices of size 1x1 are written as scalars (HDF5 data set
+of rank 0) rather then as matrices (HDF5 data set of rank 2, with dimensions 1 and 1).
+2. When writing non-scalar vectors and matrices to HDF5 objects, an attribute "Transpose"
+with the value of unity is appended to them. This is to indicate to other software that
+is used to access the data that it needs to be transposed.
+If rlab reads a matrix that does not have that attribute with that value then it internally
+transposes it.
+3. The format of writing (and reading) of the sparse real and complex matrices to a HDF5 file
+has changed to minimize recopying of the structure. An HDF5 storage of a sparse matrix is
+a compound of 7 variable length arrays (6 integer, 1 double, or double-double - complex, that is).
+
+
+Changes in 2.2.12.0
+
+1. Read/write operations:
+(a) Limited access to HDF5 - can read and write all data types native to rlab, and
+can access atomic data sets within any HDF5 file. No support planned for special
+HDF5 data types, e.g., compounds & c, except in the context of native data types.
+(b) Integrated with cURL, so rlab can now read, download and upload web pages and files
+to and from local filesystem and into the memory.
+(c) Limited support for sockets, and their read and write operations.
+2. More code cleaning and more glitches removed.
+

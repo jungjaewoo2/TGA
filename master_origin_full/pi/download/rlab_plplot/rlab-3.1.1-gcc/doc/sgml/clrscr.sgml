@@ -1,0 +1,12 @@
+<sect> clrscr
+<p>
+<descrip>
+<tag> Synopsis </tag> Clears the konsole.
+<tag> Syntax </tag>
+             <p> clrscr (  )
+
+	clrscr uses termcap library.
+	
+	<tag>See Also</tag>   mvcrsr, clrpos, colors.
+
+</descrip>

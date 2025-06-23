@@ -1,0 +1,39 @@
+# scalar : pi
+ 3.141592653589793        0                       
+# matrix : a no_of_rows: 3 no_of_cols: 3 REAL
+# matrix columns 1 thru 3
+ 1                        2                        3                       
+ 4                        5                        6                       
+ 7                        8                        9                       
+# string : s Length : 6
+string
+# matrix : sm no_of_rows: 3 no_of_cols: 3 STRING
+abs
+acos
+acosh
+dot
+eig
+eign
+issymm
+length
+linspace
+# list : list no_of_elements: 4 
+# matrix : a no_of_rows: 3 no_of_cols: 3 REAL
+# matrix columns 1 thru 3
+ 1                        2                        3                       
+ 4                        5                        6                       
+ 7                        8                        9                       
+# scalar : pi
+ 3.141592653589793        0                       
+# matrix : sm no_of_rows: 3 no_of_cols: 3 STRING
+abs
+acos
+acosh
+dot
+eig
+eign
+issymm
+length
+linspace
+# string : str Length : 6
+string

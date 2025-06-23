@@ -1,0 +1,15 @@
+zrange:
+
+Synopsis: Sets the plot range in z.
+
+Syntax: zrange ( start, end, I )
+
+Description:
+
+	Sets the plot range in z in the I:th plot-window. 
+	The z-axis will start at "start" and end at "end".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: range, xrange, yrange
+

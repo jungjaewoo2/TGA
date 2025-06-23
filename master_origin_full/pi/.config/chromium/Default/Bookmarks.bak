@@ -1,0 +1,48 @@
+{
+   "checksum": "21c88c2cdea12280c2f033a7016c5b72",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13151140784764765",
+            "id": "6",
+            "meta_info": {
+               "last_visited_desktop": "13152923545385977"
+            },
+            "name": "Using GQRX with RTL-SDR on a Raspberry Pi (Linux) - YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/watch?v=mBU7eSviy_0&feature=youtu.be"
+         }, {
+            "date_added": "13316335617327979",
+            "id": "8",
+            "meta_info": {
+               "last_visited_desktop": "13370407206774079"
+            },
+            "name": "Directory Listing of . (TGA Measured Data)",
+            "type": "url",
+            "url": "http://localhost/"
+         } ],
+         "date_added": "13151140535889392",
+         "date_modified": "13316335617327979",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13151140535889419",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13151140535889428",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

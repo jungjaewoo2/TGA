@@ -1,0 +1,15 @@
+yrange:
+
+Synopsis: Sets the plot range in y for the left y-axis.
+
+Syntax: yrange ( start, end, I )
+
+Description:
+
+	Sets the plot range in y in the I:th plot-window. 
+	yrange() uses the left y-axis.
+	The y-axis will start at "start" and end at "end".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: range, range2, xrange, x2range, y2range, zrange

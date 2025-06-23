@@ -1,0 +1,66 @@
+  hess
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Find the Hessenberg form of a matrix.
+
+      [1mSyntax[0m
+        hess( [4mA[24m )
+
+      [1mDescription[0m
+        Hess finds the Hessenberg from of a matrix. Hess takes a single
+        matrix, [4mA[24m, as input, and returns a list with two elements, [4mh[24m,
+        and [4mp[24m.
+
+
+          A = p * h * p'          where A is the input
+
+
+     Hess uses the LAPACK subroutines DGEHRD, DORGHR, and ZGEHRD,
+     ZUNGHR.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

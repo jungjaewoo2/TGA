@@ -1,0 +1,66 @@
+  polyfit
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+
+        Finds a best fit polynomial to a set of data points.
+
+
+      [1mSyntax[0m
+
+        c = polyfit ( [4mY[24m, [4mX[24m/, [4moptions[24m/ )
+
+
+        Arguments:
+
+        [4mY[24m[1m, [4m[22mX[0m
+           ordinatae and abscisae of the data points which are fitted to
+           a polynomial.
+
+        [4moptions[24m [1m=<< maxdeg;f;error >>[0m
+           [4mmaxdeg[24m is the maximal degree of polynomial being sought,
+           where the degree must be  smaller than the number of given
+           points.  The criterion for the fit is given either in terms
+           of f-statistics threshold, as [4mf[24m [4m=[24m [4m0.01,[24m [4m0.05,[24m [4m0.1[24m, or through
+           absolute error criterion in terms of [4merror[24m.
+
+        Result:
+
+        [4mc[24m [1m= << coef;error;degree >>[0m
+           with [4mcoef[24m being the coefficients of the best fit polynomial,
+           [4mdegree[24m its degree and [4merror[24m the maximal error in the
+           coefficients.
+
+        The solver is built upon a fortran routine DPOLFT from the
+        SLATEC library.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

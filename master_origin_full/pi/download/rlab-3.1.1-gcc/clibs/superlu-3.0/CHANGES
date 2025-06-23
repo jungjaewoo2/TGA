@@ -1,0 +1,25 @@
+Changes to superlu to conform to RLaB2 Rel.2:
+
+1. Uses gc to do memory allocation and deallocation. There has to be a link pointing to
+RLaB's gc in the directory with superlu (set by default). Thus, in file src/util.h:
+    //
+    // We use GC for memory allocation, by kmk IV/2005
+    //
+    #include "../../gc/include/gc.h"
+    #define USER_MALLOC GC_MALLOC
+    #define USER_FREE   GC_FREE
+    #define calloc(m,n) GC_MALLOC(m*n)
+
+2. Uses RLaB _rlab_complex instead of superlu's doublecomplex (identical structures). CC
+gets confused if the two bear different names. Thus, in file src/dcomplex.h
+    //
+    // complex numbers from RLaB's complex.h, by kmk IV/2005
+    //
+    //typedef struct { double r, i; } doublecomplex; // original superlu definition
+    #include "../../../complex.h"
+    typedef struct _rlab_complex doublecomplex;
+
+4. Modified make.inc file as a link to make.rlab. Builds superlu.a in a top directory and
+purges src/*.o to save disk space.
+
+Please report any problems to Marijan Kostrun, mkostrun@gmail.com.

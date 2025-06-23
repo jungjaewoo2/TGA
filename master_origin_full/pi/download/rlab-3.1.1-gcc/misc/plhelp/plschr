@@ -1,0 +1,12 @@
+plschr:
+
+Synopsis: Set the character size, and scale values.
+
+Syntax: plschr ( DEF , SCALE )
+
+Description:
+
+	Set the character size. The size is the product of the default
+	character size (DEF), and scale value (SCALE). For most
+	applications it is recommended that DEF be left alone, and the
+	SCALE value used to adjust character size.

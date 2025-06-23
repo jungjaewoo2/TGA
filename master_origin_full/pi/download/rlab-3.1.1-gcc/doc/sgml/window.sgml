@@ -1,0 +1,33 @@
+<sect>window
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>window function
+	
+	<tag>Syntax</tag> 
+		<p>x = <tt>window ( <em>name</em>, <em>N</em>, <em>params</em>, ... )</tt>
+      
+	<tag>Description</tag> 
+		Creates a one dimensional real vector of length <em>N</em> that contains
+		a window function.
+
+
+   Arguments:
+	<descrip>
+   	<tag><em>name</em></tag>
+      	string, type of the window: "RECTANG", "HAMMING", "HANNING",
+      	"NUTTALL", "BLACKMAN", "HARRIS", "BARTLETT", "BARTHANN",
+      	"PAPOULIS", "GAUSS", "PARZEN", "HANNA", and "SPLINE".
+
+     	<tag><em>N</em></tag>
+     		odd integer, length of the window.
+      <tag><em>params</em></tag>
+      	optional parameter array for the window function: "KAISER", "GAUSS" and
+      	"HANNA" require one, while "SPLINE" requires at least one while the second
+      	parameter is optional.
+      	
+   </descrip>
+   
+   See also: stft
+   
+</descrip>

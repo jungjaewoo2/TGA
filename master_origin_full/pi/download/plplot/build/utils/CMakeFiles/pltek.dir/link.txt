@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/pltek.dir/pltek.c.o  -o pltek -Wl,-rpath,/home/pi/download/plplot/build/src::: ../src/libplplot.so.15.0.0 

@@ -1,0 +1,16 @@
+linestyle:
+
+Synopsis: Control the line style for the plots.
+
+Syntax: linestyle ( "line_style", I )
+
+Description:
+
+	linestyle() controls the line-style for the I:th plot.
+	"line_style" can be: "lines", "points", "linespoints", 
+	"dots", "steps", "impulses", "errorbars", "boxes" or 
+	"boxerrorbars".
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+	
+See Also: linenumbers

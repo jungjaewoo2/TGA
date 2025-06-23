@@ -1,0 +1,15 @@
+nolabel:
+
+Synopsis: Turn zero-axis on.
+
+Syntax: nolabel ( labelnr, I )
+
+Description:
+
+	Remove the label with label-number labelnr in the I:th plot-window.
+	If labelnr is not specified, all labels are cleared.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: label
+

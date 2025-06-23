@@ -1,0 +1,66 @@
+  writem
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Write a matrix in ASCII format.
+
+      [1mSyntax[0m
+        writem ( "filename" , [4mA[24m )
+
+      [1mDescription[0m
+
+        Writem is the counterpart to readm. Writem writes the matrix [4mA[0m
+        to the file denoted by the 1st argument in a generic format.
+
+        The format used is:
+
+
+
+          line 1:         value[1;1]    ... value[1;ncol] \n
+          line nrow:      value[nrow;1] ... value[nrow;ncol] \n
+
+
+
+
+
+     Writem will write real and complex numeric matrices, as well as
+     string matrices even though readm can only read real numeric
+     matrices. Complex matrices are written as a single 2*nrow by
+     ncolumn real matrix. Sparse matrices are written as triplets (row
+     column value) for each element of the matrix.
+
+     Writem does not close the file after writing [4mA[24m. The file is left
+     open for further writes if necessary. Close can be called to
+     explicitly close the file.
+
+
+     [1mSee Also[0m
+        close, getline, open, readm, write
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

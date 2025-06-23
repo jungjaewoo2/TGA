@@ -1,0 +1,15 @@
+<sect> det 
+<p>
+<descrip>
+<tag> Synopsis </tag> Matrix determinant. 
+<tag> Syntax </tag> det ( <em>A</> )
+<tag> Description </tag>
+
+	Det computes the determinant of the matrix argument.
+
+	Det uses the LAPACK functions to factor the input, and the
+	LINPACK algorithm to calculate the determinant.
+
+See Also inv, lu, rcond
+
+</descrip>

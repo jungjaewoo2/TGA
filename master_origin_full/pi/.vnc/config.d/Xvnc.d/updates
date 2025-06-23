@@ -1,0 +1,52 @@
+{
+  "version":"1.1",
+  "type":1,
+  "level":0,
+  "product-version":"6.1.1 (r28093)",
+  "messages":{
+    "de":{
+      "title":"VNC Connect 6.2.0 ist verfügbar",
+      "description":"VNC Connect 6.2.0 ist verfügbar",
+      "payload":[
+        {
+          "action-type":0,
+          "action-data":"Sehen Sie diese Web-Seite für weitere Informationen: www.realvnc.com/latest-release-notes",
+          "action-url":"https://www.realvnc.com/de/connect/release/?utm_campaign=vnc-connect-sw-push-notification-vnc-connect-620-available&utm_medium=referral&utm_source=vncserver"
+        }
+      ]
+    },
+    "en":{
+      "title":"VNC Connect 6.2.0 is available",
+      "description":"VNC Connect 6.2.0 is available",
+      "payload":[
+        {
+          "action-type":0,
+          "action-data":"For a summary of this new release and a complete set of resources, please visit the VNC Connect release resource page by clicking on the \"Launch web page\" button below.",
+          "action-url":"https://www.realvnc.com/en/connect/release/?utm_campaign=vnc-connect-sw-push-notification-vnc-connect-620-available&utm_medium=referral&utm_source=vncserver"
+        }
+      ]
+    },
+    "es":{
+      "title":"VNC Connect 6.2.0 está disponible",
+      "description":"VNC Connect 6.2.0 está disponible",
+      "payload":[
+        {
+          "action-type":0,
+          "action-data":"Ver esta página web para más información: www.realvnc.com/latest-release-notes",
+          "action-url":"https://www.realvnc.com/es/connect/release/?utm_campaign=vnc-connect-sw-push-notification-vnc-connect-620-available&utm_medium=referral&utm_source=vncserver"
+        }
+      ]
+    },
+    "fr":{
+      "title":"VNC Connect 6.2.0 est disponible",
+      "description":"VNC Connect 6.2.0 est disponible",
+      "payload":[
+        {
+          "action-type":0,
+          "action-data":"Voir cette page web pour plus d'informations: www.realvnc.com/latest-release-notes",
+          "action-url":"https://www.realvnc.com/fr/connect/release/?utm_campaign=vnc-connect-sw-push-notification-vnc-connect-620-available&utm_medium=referral&utm_source=vncserver"
+        }
+      ]
+    }
+  }
+}

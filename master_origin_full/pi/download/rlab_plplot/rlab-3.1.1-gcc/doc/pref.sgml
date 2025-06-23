@@ -1,0 +1,516 @@
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Introduction
+<p>
+
+  Rlab2 is not at present an externally visible departure from
+  Rlab1. However, internally, there are substantial, changes. It is
+  not really necessary to document the changes, since no programmer's
+  reference existed for Rlab1. However, documenting the inner-workings
+  of Rlab2 (here-after referred to simply as Rlab) will not only
+  benefit the author, but allow advanced users to modify and extend
+  Rlab2.
+
+  In addition to explaining the inner architecture, some justification
+  will also be provided along the way. I do this mostly so I will
+  remember why I made certain choices years from now. Additionally, it
+  may be of some benefit to users.
+
+  If you are interested only in writing new builtin, or dynamically
+  linked functions, you can skip to Section <ref id="dl-functions"
+  name="Writing Builtin Functions">
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Interpreter Operation
+<p> 
+
+<sect1> Overview
+<p>
+
+  In front of the interpreter sit the scanner and the parser. I will
+  not spend any time discussing the implementation of these pieces,
+  since they are constructed with fairly common tools: yacc, and
+  flex. There are many excellent references that cover these
+  tools.
+
+  The interpreter is a stack-based machine. The machine instructions
+  are called ``op-codes''. Op-codes are to byte codes what RISC
+  instructions are to CISC instructions. Each op-code is an
+  integer. Operation information is <em>not</> packed into
+  words. Instead each op-code is an integer, and any necessary
+  information occupies its own word. Although this is not space
+  efficient, it is easier to work with, and usually faster, since the
+  program does not have to spend any time dissassembling
+  words. Instructions are aligned on double-word boundaries, further
+  speeding operation on most architectures.
+
+  It is easiest to present the rest of the interpreter in terms of the
+  data structures:
+
+  <itemize>
+
+  <item> The stack data structure is the <tt>Datum</>. The <tt>Datum</>
+        looks like:
+
+<tscreen><verb>
+typedef struct _datum Datum;
+
+struct _datum
+{
+  int type;
+  union
+  {
+    double val;
+    void *ptr;
+  }
+  u;
+};
+</verb></tscreen>
+
+  The <tt>type</> element tells the programmer what the <tt>Datum</>
+  is carrying, a <tt>val</>, or a <tt>ptr</> of some type. <tt>val</>
+  is a simple double value used to hold numeric constants. <tt>ptr</>
+  is a void pointer to a variable or an entity. Rlab's variables are
+  contained in the <tt>ListNode</> structure, since each variable must
+  be associated with some sort of list, tree, or hash-table.
+
+  <item> The <tt>ListNode</> structure is simple:
+
+<tscreen><verb>
+typedef struct _listNode ListNode;
+
+struct _listNode
+{
+  char *key;
+  void *ent;
+  int scope;
+  ListNode *next;
+  ListNode *prev;
+};
+</verb></tscreen>
+
+  <tt>ListNode</>s only carry the bare essentials: <tt>key</> is the
+  variables name, and is used for identification/lookup. <tt>Ent</> is
+  the entity pointer (the thing that actually holds the
+  data). <tt>next</>, and <tt>prev</> are pointers to other
+  <tt>ListNodes</>; these are only used when a variable
+  (<tt>ListNode</>) is actually installed in a tree or hash-table.
+
+  <item> <tt>Ent</> is short for entity. An entity can contain any
+  sort of data: matrices, lists, and functions, to name a few. Each
+  entity can contain only <em>one</> item of data. The <tt>Ent</>
+  looks like:
+
+<tscreen><verb>
+typedef struct _ent Ent;
+
+struct _ent
+{
+  int refc;
+  int type;
+  double d;
+  void *data;
+};
+</verb></tscreen>
+
+  <tt>refc</> is the reference counter. In Rlab, any number of
+  variables can point to the same entity. We need to keep track of the
+  number of variables that actually point to an entitiy, so that we
+  know when it is safe to delete, or change the entity. Any function
+  that tries to delete an entity, should really only decrement the
+  reference count. The entity should not be deleted until the
+  reference count is zero.
+
+  The <tt>type</> element tells functions operating on the entity,
+  what type of data the entity contains.
+
+  The <tt>d</> element is for storing simple numeric scalars, and may
+  go away in the future.
+
+  The <tt>data</> element is a pointer to the actual data. The data
+  can be anything, in addition to the pre-defined data classes that
+  Rlab comes with.  I will not discuss the <tt>data</> structure
+  because it is arbitrary.
+
+  </itemize>
+
+  The overall operation of the interpreter is easily viewed with an
+  outline of the steps needed to perform an operation:
+
+  <itemize>
+    <item> The interpreter makes it way through the instruction
+           array. For each defined instruction there is a
+           corresponding block of code, or function that performs the
+           operation. 
+    <item> The operation-function pops data off the data-stack (an array of
+           Datums) as needed.
+    <item> If a operation-function needs to operate on the data, it
+           does so through the class-interface.
+    <item> The operation-function pushes data back on the data-stack
+           as necessary.
+    <item> Interpreter execution continues to the next operation.
+  </itemize>
+  
+<sect1> Scanner and Parser
+<p>
+
+<sect1> Stack Machine
+<p>
+
+<sect1> Memory Management
+<p>
+
+  A consverative garbage collector is used to do the bulk of memory
+  managemant functions. All data structures are allocated and free'ed
+  through the garbage-collector functions. Normally, one wouldn't have
+  to free any objects when a garbage-collector is in use. However,
+  users can create quite large data objects, and it helps the
+  garbage-collector (sometimes) to free these objects when we know
+  they aren't needed.
+
+<sect1> Class Management / Interface
+<p>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Writing Builtin Functions <label id="dl-functions">
+<p>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Introduction
+<p>
+
+  This section describes the process for building and linking your
+  own function(s) into RLaB. There are two ways to do this: 
+
+  <enum> 
+  <item> Compile and link your function with the rlab source to
+         build a new executable. 
+
+  <item> Compile your function as a separate shared-object, and
+         dynamically  link it with rlab using the <tt>dlopen</>
+         function. Assuming your platform properly supports runtime
+         dynamic linking.
+  </enum>
+
+  Either method requires that you write an interface function so that
+  your function can communicate arguments and a return value with
+  rlab. The interface function is the same whether you compile your
+  function with rlab to make a new executable or compile your function
+  as a shared object.  The end result of this process is the
+  incorporation of your function into rlab as a builtin function.
+
+  This subject will be presented almost entirely with
+  examples. Writing builting functions is <em>not</> difficult
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Example 1
+<p>
+
+  All builtin functions are functions, which return an entity pointer,
+  and have the same argument list. The following exampes is a trivial,
+  but simple builtin function that multiplies its argument by 2, and
+  returns the result. The basic steps in this (and most) function are:
+
+  <enum>
+  <item> Perform argument checking. The interpreter does not perform
+         any argument checking. Argument checking is entirely up to
+         the builtin function. In this example argument checking
+         consists of checking the number of arguments.
+
+  <item> Extracting the required data from the arguments list.
+
+  <item> Performing the desired operations.
+
+  <item> Creating and configuring the return entity.
+  </enum>
+
+<code>
+#includecode "examples/simplest.c"
+</code>
+
+  Now we will examine this function in more detail:
+
+  <descrip>
+  <tag> Lines 1-17 </tag> Comments and header files.
+  <tag> Lines 19-24 </tag> The function and automatic variables
+        declarations. <tt>nargs</> is the number of arguments the
+        function was invoked with. <tt>args</> is the array of Datums
+        that contains each argument.
+  <tag> Lines 26-30</tag> Checking the function argument(s). In this
+        case we merely check that the function was called with only
+        one argument. In some instances you might wish to do more, or
+        less. 
+  <tag> Line 33</tag> The function argument is extraced from the array
+        of Datums. <tt>bltin_get_ent</> takes a single Datum, and
+        converts (reduces) it to an entity.
+  <tag> Line 36</tag> <tt>class_double</> takes a single entity as an
+        argument, and returns a double value. If the argument to
+        <tt>class_double</> is not recognized, and error message is
+        created, and program control returns to the interpreter.
+
+        The return value from <tt>class_double</> is multiplied by 2.
+  <tag> Line 39</tag> The return matrix is created, and its value is
+        set to two.
+  <tag> Line 42</tag> The return entity (which will carry the return
+        matrix) is created.
+  <tag> Line 45</tag> The return entity's data pointer is set to point
+        at the return matrix.
+  <tag> Line 49</tag> The return entity's data type is set. The
+        available types are listed at the bottom of <tt>rlab.h</>.
+  <tag> Line 51</tag> The argument entity is cleaned (the memory is
+        free'ed) if possible.
+  </descrip>
+
+  The new builtin can be compiled on a Linux/ELF system like:
+
+<tscreen><verb>
+examples> gcc -fPIC -g -c simplest.c -I../../ -I../../gc
+examples> gcc -shared -o simplest.so  simplest.o
+</verb></tscreen>
+
+  And tested like:
+
+<tscreen><verb>
+examples> ../../rlab -rmp
+> simplest = dlopen("./simplest.so", "Simplest")
+	<bltin-function>
+> i = 0;
+> while (i < 10000) { x=simplest(i); i++; }
+> i
+    1e+04  
+> x
+    2e+04  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Example 2, Portable Gray Map File I/O
+<p>
+
+  This example may be a little more meaningful than the last. The file
+  <tt>pgm.c</> contains builtin functions for loading and saving
+  Portable Gray May (PGM) files. The <tt>RSavepgm</> function takes a
+  real matrix, and writes it to a file using the PGM
+  format. <tt>RLoadpgm</> reads a PGM files, and returns a matrix of
+  the pixel values. An outline of the these functions follows:
+
+  For <tt>RSavepgm</>:
+
+  <enum>
+  <item> Check the number of arguments. Two or three arguments allowed.
+         <enum>
+         <item> Image-Matrix. The matrix of pixel values.
+         <item> File-Name. The file to write.
+         <item> Maximum-Gray-Level. 
+         </enum>
+  <item> Get each of the arguments.
+  <item> Open the specified file for binary-write.
+  <item> Use the PGM API to write the matrix as a PGM-file.
+  <item> Clean up, and return.
+  </enum>
+
+  There are several sections of code that warrant explanation:
+
+  <descrip>
+  <tag> Lines 53-71</tag> Here is where the arguments are extracted
+        from the <tt>args</> array. The function <tt>bltin_get_ent</>
+        is used extensively, as before. However, this time,
+        <tt>class_matrix_rea</>, and <tt>class_char_pointer</> are
+        used in addition to <tt>class_double</>.
+  <tag> Lines 73-88</tag> Here is a nice example of file I/O. The
+        functions <tt>get_file_ds</>, and <tt>close_file_ds</>, are
+        Rlab's interface to file I/O. In this instance a simple file
+        is opened for writing. But, <tt>get_file_ds</> works equally
+        well with sub-processes.
+  <tag> Lines 146, 147</tag> It is not necessary to use the function
+        <tt>ent_clean</> since Rlab uses a generational garbage
+        collector. However, using <tt>ent_clean</> can help in some
+        cases, so it is a good idea to use it whenever possible.
+  <tag> Lines 152-155</tag> This is where the return-value entity is
+        created, and configured. In this instance a scalar success
+        value is all that is returned. 
+  <tag> Lines 235-238</tag> <tt>RLoadpgm</> returns a matrix. Note
+        that the return entity configuration is similar to that in
+        <tt>RSavepgm</>.
+  </descrip>
+
+<code>
+#includecode "examples/pgm.c"
+</code>
+
+  A simple example showing one possible usage of these two new builtin
+  functions is provided. Both <tt>savepgm</>, and <tt>loadpgm</> are
+  created via the <tt>dlopen</> function. The Linux logo is read in,
+  and some white-noise is added to the picture. The new graphic is
+  written to a file, which can then be viewed with any PGM compatible
+  viewer (xv for example).
+
+<tscreen><verb>
+examples> ../../rlab -mpr
+> savepgm = dlopen("./pgm.so","RSavepgm")
+	<bltin-function>
+> loadpgm = dlopen("./pgm.so","RLoadpgm")
+	<bltin-function>
+> logo = loadpgm("Logo.pgm");
+> show(logo);
+	nr                  :	303
+	nc                  :	257
+	n                   :	77871
+	class               :	num
+	type                :	real
+	storage             :	dense
+> max(max(logo))
+      248  
+> min(min(logo))
+        0  
+> rand("uniform", 0,50);
+> logo = logo + rand(size(logo));
+> savepgm(logo,"Logo_noisy.pgm");
+> close("Logo_noisy.pgm");
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Dynamic Linking
+<p>
+
+<bf> Not Finished Yet ! </>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Programmer's Interface
+<p>
+
+  This section provides an overview of the most likely to be used
+  C-language functions. This list is not all inclusive.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> bltin_get_ent
+<p>
+<descrip>
+<tag> Synopsis </tag> Get an entity from a Datum.
+<tag> Syntax </tag> Ent * bltin_get_ent ( Datum <em>arg</>&lsqb;&rsqb; )
+<tag> Description </tag>
+
+  <tt>bltin_get_ent</> returns the entity, or creates a new one if
+  necessary, from the Datum <em>arg</>. <tt>bltin_get_ent</> is most
+  often used to extract argument entities from the argument Datum
+  array. For example: <tt>bltin_get_ent(args[2])</> will return the
+  argument entity associated with the third argument to the builtin
+  function. 
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> ent_Clean
+<p>
+<descrip>
+<tag> Synopsis </tag> Destroy an entity if possible.
+<tag> Syntax </tag> void ent_Clean ( Ent *<em>entity</> )
+<tag> Description </tag>
+
+  If possible, clean (destroy/free) the entity,
+  <em>entity</>. <tt>ent_Clean</> must <bf>always</> be used for this
+  purpose, since a reference counting scheme is used to allow more
+  than one variable point to the same entity.
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> class_double
+<p>
+<descrip>
+<tag> Synopsis </tag> Given an entity, return a double value via the
+  class interface.
+<tag> Syntax </tag> double class_double ( Ent *<em>entity</> )
+<tag> Description </tag>
+
+  <tt>class_double</> uses Rlab's class-interface to get a double
+  value from an arbitrary <em>entity</>. If the class that
+  <em>entity</> belongs to does not support this operation, an error
+  message is generated, and program control returns to the
+  interpreter. 
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> class_char_pointer
+<p>
+<descrip>
+<tag> Synopsis </tag> Given an entity, return a character pointer via
+  the class interface. 
+<tag> Syntax </tag> char * class_char_pointer ( Ent *<em>entity</> )
+<tag> Description </tag>
+
+  <tt>class_char_pointer</> uses Rlab's class-interface to get a
+  character pointer from an arbitrary <em>entity</>. If the class that
+  <em>entity</> belongs to does not support this operation, an error
+  message is generated, and program control returns to the
+  interpreter.
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> class_matrix_real
+<p>
+<descrip>
+<tag> Synopsis </tag> Given an entity, return a full-real-matrix via the
+  class interface.
+<tag> Syntax </tag> MDR * class_matrix_real ( Ent *<em>entity</> )
+<tag> Description </tag>
+
+  <tt>class_matrix_real</> uses Rlab's class-interface to get a
+  pointer to a Matrix-Dense-Real (MDR) from an arbitrary
+  <em>entity</>. If the class that <em>entity</> belongs to does not
+  support this operation, an error message is generated, and program
+  control returns to the interpreter.
+
+  The user must <em>not</> destroy, or change the matrix in any
+  way. The returned matrix should be treated as read-only! If you must
+  modify the matrix, use <tt>mdr_Copy</> to generate a copy of the
+  matrix. 
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> get_file_ds
+<p>
+<descrip>
+<tag> Synopsis </tag> Get a new, or existing file-descriptor.
+<tag> Syntax </tag> FILE * get_file_ds ( char *<em>name</>, char *<em>mode</>, int <em>buffsize</> )
+<tag> Description </tag>
+
+  Get the file-descriptor associated with the character string
+  <em>name</>. If the file-descriptor already exists (Rlab keeps track
+  of them), then the existing descriptor is returned. Otherwise, a new
+  file-descriptor is returned. The new file is opened with mode
+  <em>mode</>, and buffersize <em>buffsize</>. If <em>buffsize</> is
+  zero, then the system's default buffersize is used.
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> close_file_ds
+<p>
+<descrip>
+<tag> Synopsis </tag> Close the named file-descriptor.
+<tag> Syntax </tag> int close_file_ds ( char *<em>name</> )
+<tag> Description </tag>
+
+  Close the file-descriptor associated with <em>name</>.
+
+</descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

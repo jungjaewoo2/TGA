@@ -1,0 +1,13 @@
+plstart:
+
+Synopsis: Create a plot-window.
+
+Syntax: plstart ( NCOL , NROW , DEVICE )
+
+Description:
+
+	Create a plot-window. The newly created plot-window becomes
+	the current plot-window with NCOLxNROW sub-plots. DEVICE
+	specifies the output device type. If DEVICE is not specified,
+	then the default of "/XWIN" is used (if this isn't suitable
+	for your system, then edit rlib/plot.r).

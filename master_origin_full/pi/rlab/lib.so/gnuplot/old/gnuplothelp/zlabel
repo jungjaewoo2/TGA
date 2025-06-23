@@ -1,0 +1,16 @@
+zlabel:
+
+Synopsis: Set the Z-axis text label.
+
+Syntax: zlabel ( "string", I )
+
+Description:
+
+	Set the z-axis label for the I:th plot-window. 
+	If zlabel() is used without any arguments, then the
+	z-axis label is set to the null-string. 
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: xlabel, ylabel, label, title
+

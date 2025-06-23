@@ -1,0 +1,132 @@
+  odeiv
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+
+        Integrates an initial value problem for a system of the first
+        order ordinary differential equations (ODE).
+
+
+      [1mSyntax[0m
+
+        (1) w = odeiv ( [4mf[24m, /[4mp[24m/, [4mT[24m, [4mystart[24m, [4moptions[24m )
+
+        (2) w = odeiv ( [4mf[24m, [4mdfdyt[24m, /[4mp[24m/, [4mT[24m, [4mystart[24m, [4moptions[24m )
+
+
+        Arguments:
+
+        [4mf[24m[1m, [4m[22mp[0m
+           A vector function and its parameter (a RLaB variable passed
+           directly to the function), that evaluates dy(i)/dt at time t.
+           For example,
+
+
+             vdpol = function ( t, y, p )
+             {
+               yp = zeros(2,1);
+               yp[1] = p[1] * y[1] * (1 - p[2] * y[2]^2) - ...
+                 p[3] * y[2];
+               yp[2] = y[1];
+               return yp;
+             };
+
+
+
+
+
+        [4mdfdyt[0m
+           A function that calculates the full jacobian of the function
+           [4mf[24m with respect to the functions [4my(i),i=1..N[24m and independent
+           variable [4mt[24m.  It evaluates a matrix dfdyt[i;j] = df(i)/dy(j)
+           at time t.  Compared to jacobian, [4mdfdyt[24m has an additional
+           column dfdyt[i;N+1] = df(i)/dt, containing partial
+           derivatives of [4mf[24m with respect to the independent variable [4mt[24m.
+           For example,
+
+
+             dvdpol = function ( t, y, p )
+             {
+               yp = zeros(2,3);
+               yp[1;] = [ p[1] * (1 - p[2] * y[2]^2), ...
+                 - 2 * p[1] * y[1] * p[2] * y[2] - p[3], ...
+                 0];
+               yp[2;] = y[1];
+               return yp;
+             };
+
+
+
+
+        [4mT[24m  An array of time points, T=[t1,t2,...tK], at which the values
+           of [4my(i),[24m [4mi=1..N[24m are to be returned to user.
+
+
+        [4mystart[0m
+           An initial value of the vector function [4mystart[24m [4m=[24m [4my(t1)[24m.
+
+        [4moptions[24m [1m=<< imethod;ady;adydt;eabs;erel;step;stdout;phase_space[0m
+           [1m>>[0m
+           For solver that do not require [4mdfdyt[24m, imethod=0,..9 for the
+           integrators adams (0, default),  rk2 (1), rk4 (2), rkf45 (3),
+           rkck45 (4), rk8pd (5), rk2imp (6), rk4imp (7), gear1 (8),
+           gear2 (9), while for solver that do require [4mdfdyt[24m,
+           [4mimethod[24m=0..2 for integrators PVODE (0,default), BIM (1) and
+           bsimp (2); [4mady[24m, [4madydt[24m determine the step size criterion; [4meabs[0m
+           and [4merel[24m are the absolute and relative error; [4mstep[24m is the
+           initial step size; and, [4mstdout[24m is the file/terminal where the
+           run-time messages are posted.
+
+
+        Result:
+
+           Depending whether [4mphase_space[24m=0 or 1, in [4moptions[24m above, the
+           solver returns
+
+           [4mw[24m = [t, y(t)], or
+
+           [4mw[24m = [t, y(t), y'(t)], respectively.
+
+
+        The solver is built upon the Gnu Science Library (solvers rk2,
+        rk4, rkf45, rkck45, rk8pd, rk2imp, rk4imp, gear1, gear2, bsimp),
+        fortran solver ODE.F (adams'), fortran library DVODE and a
+        fortran solver BiM.  Please see the references in the rlabplus
+        manual.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

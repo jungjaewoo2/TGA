@@ -1,0 +1,66 @@
+  colors
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Sets the terminal foreground and background color.  Resets the
+        terminal color scheme to default values.
+
+      [1mSyntax[0m
+        colors ( [4mfg[24m, [4mbg[24m )
+
+        colors ( )
+
+
+      [1mArguments[0m
+
+         [1mfg / bg[0m
+           name of the color, "default", "red", "green", "yellow" or
+           "brown", "blue", "magenta", "cyan", "grey" or "white".
+
+         [1mnone[0m
+           resets the terminal to its default values.
+
+
+        colors uses termcap library.
+
+
+     [1mSee Also[0m
+        clrscr, mvcrsr, clrpos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

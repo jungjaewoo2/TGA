@@ -1,0 +1,911 @@
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+  Rlab is, in a sense, an object oriented language. The term ``object
+  oriented'' is used with some trepidation, since the term has itself
+  been overloaded to the point of becoming unintelligible. Although
+  Rlab does not support all of the concepts of the more classical
+  object-oriented languages like Smalltalk it does offer some features
+  of an object-oriented language. Operator overloading is one concept
+  Rlab supports. For example, the behavior of the mathematical
+  operators is dictated by the arguments, or objects.
+
+  There are several predefined classes, they are:
+
+  <descrip>
+  <tag>Numeric</tag> This class is the most widely used class in
+       Rlab. The numeric class, abbreviated for use as <tt>num</>
+       consists of two dimensional arrays or matrices. Subsets of this
+       class include real and complex matrices, in both dense and
+       sparse storage formats.
+
+  <tag>String</tag> The string class consists of two dimensional
+       arrays of variable length strings. Much of the syntax used for
+       working with string arrays is directly derived from the numeric
+       array class.
+
+  <tag>List</tag> The list class provides a convenient, and user
+       definable method for grouping related sets of data and
+       functions. The list class is implemented as an N-dimensional
+       associative array.
+
+  <tag>Function</tag> The function class consists of both builtin and
+       user-defined functions. If your computing platform supports
+       runtime dynamic linking, then you can add builtin function via
+       the <tt>dlopen</> interface.
+  </descrip>
+
+  We will stick with conventional object oriented terminology, and
+  call an instantiation of a class an object. All objects have
+  members. The members themselves are other objects. The syntax for
+  accessing an object's members is the same syntax used for list
+  members (see Section <ref id="lists">). To see what an objects
+  members are named use the members function. Members returns a string
+  matrix containing the names of an objects members, like so:
+
+<tscreen><verb>
+> a = rand(3,4);
+> members(a)
+nr       nc       n        class    type     storage  
+</verb></tscreen>
+
+  The objects members can be referenced with either the formal string
+  syntax like:
+
+<tscreen><verb>
+> a.["nr"]
+        3  
+</verb></tscreen>
+
+  Or, the shorthand notation can be used:
+
+<tscreen><verb>
+> a.nr
+        3  
+</verb></tscreen>
+
+  The formal notation is useful when you need variable evaluation:
+
+<tscreen><verb>
+> for (i in members(a)) { printf("%10s\t%s\n", i, a.[i]); }
+        nr	3
+        nc	4
+         n	12
+     class	num
+      type	real
+   storage	dense
+</verb></tscreen>
+
+  An object's predefined members can be considered "read-only". That
+  is, the user cannot change these member's values without changing
+  the object itself. For example: the <tt>nr</> member of a matrix
+  denotes the number of rows in the matrix. This member cannot be
+  directly modified by the user. The only way to change the number of
+  rows member is to actually add, or delete rows from the object.
+
+  Additional members can be added to any object. Additional object
+  members are arbitrary, and can be modified after creation. For
+  example:
+
+<tscreen><verb>
+> a = rand(3,4);
+> a.rid = [1;2;3];
+> a.cid = 1:3;
+> a
+     0.91      0.265     0.0918      0.915  
+    0.112        0.7      0.902      0.441  
+    0.299       0.95       0.96     0.0735  
+> a.rid
+        1  
+        2  
+        3  
+> a.cid
+        1          2          3  
+> a.rid = ["row1", "row2", "row3"]
+     0.91      0.265     0.0918      0.915  
+    0.112        0.7      0.902      0.441  
+    0.299       0.95       0.96     0.0735  
+> a.rid
+row1  row2  row3  
+</verb></tscreen>
+
+  <tt>show</> and <tt>whos</> are useful functions for displaying
+  object information. <tt>show</> displays an objects members, and
+  their values, iff the values are scalar. Otherwise <tt>show</>
+  displays the member's own attributes. For example:
+
+<tscreen><verb>
+> a = rand(3,4);
+> a.row_id = (1:3)';
+> a.col_id = 1:4;
+> show(a);
+	nr                  :	3
+	nc                  :	4
+	n                   :	12
+	class               :	num
+	type                :	real
+	storage             :	dense
+	col_id              :	num, real, dense, 1x4
+	row_id              :	num, real, dense, 3x1
+</verb></tscreen>
+
+  <tt>whos</> will display the object information for each member
+  (with the exception of members that are functions) in addition to
+  more detailed information about the size in bytes of each object.
+
+<tscreen><verb>
+> whos(a)
+	Name            Class	Type	Size		NBytes
+	nr             	num	real	1	1	8
+	nc             	num	real	1	1	8
+	n              	num	real	1	1	8
+	class          	string	string	1	1	7
+	type           	string	string	1	1	8
+	storage        	string	string	1	1	9
+	col_id         	num	real	1	4	32
+	row_id         	num	real	3	1	24
+Total MBytes = 0.000104
+</verb></tscreen>
+
+  Both <tt>show</> and <tt>whos</> were originally designed to operate
+  on the global workspace. The fact that they work equally well on
+  individual objects provides a clue to the design of Rlab. The global
+  symbol table, or global workspace can be considered an object of the
+  list class. There is a special symbol for referring to the global
+  workspace, <tt>&dollar;&dollar;</>. Accessing members of the global
+  workspace can be performed with the same notation as previously
+  described for an object's members. For example:
+
+<tscreen><verb>
+> $$.a
+        1      0.333      0.665      0.167  
+    0.975     0.0369     0.0847      0.655  
+    0.647      0.162      0.204      0.129  
+> $$.cos($$.a)
+     0.54      0.945      0.787      0.986  
+    0.562      0.999      0.996      0.793  
+    0.798      0.987      0.979      0.992  
+</verb></tscreen>
+
+  In this example, the object <tt>a</> is referenced through the
+  global workspace object <tt>&dollar;&dollar;</> rather than using
+  the more conventional shorthand <tt>a</>. Then, the cosine function
+  is invoked, again through the global workspace symbol. There are
+  special provisions in place to ensure that users don't delete
+  <tt>&dollar;&dollar;</>. The benefits of these capabilities may not
+  be apparent until there is a need to construct and work with
+  variables in an automated fashion.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Numeric
+<p>
+
+  The simplest numeric objects are scalars, or matrices with row and
+  column dimensions of 1. Real values can be specified in integer or
+  floating point format. For example:
+
+<tscreen><verb>
+> 3
+        3
+> 3.14
+     3.14
+> 3.14e2
+      314
+> 3.14e-2
+   0.0314
+> 3.14E-02
+   0.0314
+</verb></tscreen>
+
+  Are all valid ways to express real numeric values.  Complex values
+  are specified with the help of a complex constant. The complex
+  constant is any real value <em>immediately</> followed by <tt>i</>
+  or <tt>j</>. Complex numbers, with real and imaginary parts can be
+  constructed with the arithmetic operators, for example:
+
+<tscreen><verb>
+> z = 3.2 + 2j
+                3.2 + 2i
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Numeric Object Elements
+<p>
+
+  The numeric class supports two types of data, and two types of
+  storage format.
+
+  Each object has, as a minimum the following members:
+
+  <descrip>
+  <tag><tt>nr</></tag> The matrix number of rows.
+  <tag><tt>nc</></tag> The matrix number of columns.
+  <tag><tt>n</></tag> The matrix number of elements.
+  <tag><tt>class</></tag> A string, with value <tt>"num"</>, for
+                          numeric. 
+  <tag><tt>type</></tag> A string, with value <tt>"real"</> or
+                         <tt>"complex"</>.
+  <tag><tt>storage</></tag> A string, with value <tt>"dense"</> or
+                         <tt>"sparse"</>.
+  </descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Numeric Object Operations
+<p>
+
+  This section will cover the basic numeric operations. Starting with
+  the operations necessary for creating and manipulating numeric
+  matrices. The aritmetic operations are covered in Section <ref
+  id="arithmetic-ops" name="Arithmetic Operations">
+
+<sect2> Matrix Creation
+<p>
+
+  The syntax for operating with numeric arrays/matrices is fairly
+  simple. Square braces, <tt>[]</> are used for both creating
+  matrices, assignment to matrix elements, and partitioning. The
+  operation of creating a matrix consists of either appending elements
+  to form rows, or stacking elements to form columns. Both operations
+  must be performed within brackets. The append operation is performed
+  with commas:
+
+<tscreen><verb>
+> a = [ 1 , 2 ];
+> a = [ a , a ]
+        1          2          1          2  
+</verb></tscreen>
+
+  As you can see, either scalar elements, or matrices can be used with
+  the append operator, as long as the row dimensions are the same. The
+  stack operation is similar to the append operation, except
+  semicolons are used as delimiters, and the column dimensions must
+  match. 
+
+<tscreen><verb>
+> b = [ 1 ; 2 ];
+> b = [ b ; b]
+        1  
+        2  
+        1  
+        2  
+</verb></tscreen>
+
+  Any combination of append and stack operations can be performed
+  together as long as the dimensions of the operands match.
+
+<tscreen><verb>
+> a = [1, 2];
+> b = [3; 4];
+> c = [ [a; a], [b, b] ]
+        1          2          3          3  
+        1          2          4          4  
+</verb></tscreen>
+
+<sect2> Assignment
+<p>
+
+  Assignment to matrix elements is also simple. Square brackets,
+  <tt>[]</> are used to identify the matrix elements to be
+  re-assigned. Row and column identifiers are separated with a
+  semicolon. Multiple row or column specifiers can separated with
+  commas. To assign to a single element:
+
+<tscreen><verb>
+> a = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+> a[1;1] = 10
+       10          2          3  
+        4          5          6  
+        7          8          9  
+</verb></tscreen>
+
+  To assign to multiple elements, specifically multiple rows:
+
+<tscreen><verb>
+> a[1,3;2] = [11;12]
+       10         11          3  
+        4          5          6  
+        7         12          9  
+</verb></tscreen>
+
+  The dimensions of both the right hand side (RHS) and left hand side
+  (LHS) must match. Assignment can be made to blocks of elements, in
+  any specified order:
+
+<tscreen><verb>
+> a[3,1;3,1] = [30,30;30,30]
+       30         11         30  
+        4          5          6  
+       30         12         30  
+</verb></tscreen>
+
+  To eliminate the tedium of specifying all the rows or all the
+  columns, simply leave out the appropriate row or column specifier: 
+
+<tscreen><verb>
+> a[;2] = [100;200;300]
+       30        100         30  
+        4        200          6  
+       30        300         30  
+</verb></tscreen>
+
+  Entire rows and columns can be eliminated via the assignment of the
+  null matrix to those row and columns to be removed. The allowed
+  syntax for this operation is:
+
+  <quote>
+  <em>VAR</> &lsqb; <em>ROW-ID</> ; &rsqb; = &lsqb;&rsqb;
+  </quote>
+
+  <quote>
+  <em>VAR</> &lsqb; ; <em>COL-ID</> &rsqb; = &lsqb;&rsqb;
+  </quote>
+
+  A simple example:
+
+<tscreen><verb>
+> a = magic(5)
+       17         24          1          8         15  
+       23          5          7         14         16  
+        4          6         13         20         22  
+       10         12         19         21          3  
+       11         18         25          2          9  
+> a[3,2;] = []
+       17         24          1          8         15  
+       10         12         19         21          3  
+       11         18         25          2          9  
+> a[;2,4] = []
+       17          1         15  
+       10         19          3  
+       11         25          9  
+</verb></tscreen>
+
+
+
+<sect2> Matrix Partitioning
+<p>
+
+  Matrix partitioning, the operation of extracting a sub-matrix from
+  an existing matrix, uses the same syntax, and concepts of matrix
+  element assignment. To partition a 2-by-2 sub-matrix from the
+  original <tt>a</>:
+
+<tscreen><verb>
+> a = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+> a[2,3;2,3]
+        5          6  
+        8          9  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Arithmetic Operations <label id="arithmetic-ops">
+<p>
+
+  For clarification: each operand (either <tt>A</> or <tt>B</>) is a
+  matrix, with row dimension M, and column dimension N.
+
+  <descrip>
+
+  <tag><tt>A + B</></tag> Does element-by-element addition of two
+     matrices.  The row and column dimensions of both <tt>A</> and
+     <tt>B</> must be the same. An exception to the aforementioned
+     rule occurs when either <tt>A</> or <tt>B</> is a 1-by-1 matrix;
+     in this case a scalar-matrix addition operation is performed.
+
+  <tag><tt>A - B</></tag> Does element-by-element subtraction of two
+     matrices.  The row and column dimensions of both <tt>A</> and
+     <tt>B</> must be the same. An exception to the aforementioned
+     rule occurs when either <tt>A</> or <tt>B</> is a 1-by-1 matrix;
+     in this case a scalar-matrix addition operation is performed.
+
+  <tag><tt>A * B</></tag> Performs matrix multiplication on the two
+     operands.  The column dimension of <tt>A</> must match the row
+     dimension of <tt>B</>. An exception to the aforementioned rule
+     occurs when either <tt>A</> or <tt>B</> is a 1-by-1 matrix; in
+     this case a scalar-matrix multiplication is performed.
+
+  <tag><tt>A .* B</></tag> Performs element-by-element matrix
+     multiplication on the two operands. Both row and column
+     dimensions must agree, unless:
+
+     <itemize>
+     <item> <tt>A</> or <tt>B</> is a 1x1. In this case the operation
+     is performed element-by-element over the entire matrix. The
+     result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a 1xN. and the other is MxN. In
+     this instance the operation is performed element-by-element
+     fashion for each row in the matrix. The result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a Nx1. and the other is NxM. In
+     this instance the operation is performed element-by-element
+     fashion for each column in the matrix. The result is a NxM
+     matrix.
+     </itemize>
+
+  <tag><tt>A / B</></tag> Performs matrix right-division on its
+     operands.  The matrix right-division <tt>B/A</> can be thought of
+     as <tt>B*inv (A)</>. The column dimensions of <tt>A</> and
+     <tt>B</> must be the same. Internally right division is the same
+     as left-division with the arguments transposed.
+
+<tscreen><verb>
+B / A = ( A' \ B')'
+</verb></tscreen>
+
+     The exception to the aforementioned dimension rule occurs when
+     <tt>A</> is a 1-by-1 matrix; in this case a matrix-scalar divide
+     occurs.
+
+  <tag><tt>A ./ B</></tag> Performs element-by-element right-division
+     on its operands. The dimensions of <tt>A</> and <tt>B</> must
+     agree, unless:
+
+     <itemize>
+     <item> <tt>A</> or <tt>B</> is a 1x1. In this case the operation
+     is performed element-by-element over the entire matrix. The
+     result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a 1xN. and the other is MxN. In
+     this instance the operation is performed element-by-element
+     fashion for each row in the matrix. The result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a Nx1. and the other is NxM. In
+     this instance the operation is performed element-by-element
+     fashion for each column in the matrix. The result is a NxM
+     matrix.
+     </itemize>
+
+  <tag><tt>A &bsol; B</></tag> Performs matrix left-division. Given
+     operands <tt>A&bsol;B</> matrix left division is the solution to
+     the set of equations <tt>Ax = B</>. If <tt>B</> has several
+     columns, then each column of <tt>x</> is a solution to
+     <tt>A*x[;i] = B[;i]</>. The row dimensions of <tt>A</> and
+     <tt>B</> must agree.
+
+  <tag><tt>A .&bsol; B</></tag> Performs element-by-element
+     left-division.  Element-by-element left-division is provided for
+     symmetry, and is equivalent to <tt>B .&bsol; A</>. The row and
+     column dimensions of <tt>A</> and <tt>B</> must agree, unless:
+
+     <itemize>
+
+     <item> <tt>A</> or <tt>B</> is a 1x1. In this case the operation
+     is performed element-by-element over the entire matrix. The
+     result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a 1xN. and the other is MxN. In
+     this instance the operation is performed element-by-element
+     fashion for each row in the matrix. The result is a MxN matrix.
+
+     <item> <tt>A</> or <tt>B</> is a Nx1. and the other is NxM. In
+     this instance the operation is performed element-by-element
+     fashion for each column in the matrix. The result is a NxM
+     matrix.
+     </itemize>
+  </descrip>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Relational Operations <label id="relational-ops">
+<p>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Logical Operations <label id="logical-ops">
+<p>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Vectors <label id="vectors">
+<p>
+
+  Although there is no separate vector class, the concept of row and
+  column vectors is often used. Row and column vectors are matrices
+  with a column or row dimension equal to one, respectively. Rlab
+  offers convenient notation for creating, assignment to, and
+  partitioning matrices as if they were vectors.
+
+  There is a special notation for creating ordered row vectors.
+
+  <quote>
+   start-value : end-value : increment-value
+  </quote>
+
+  The start, end and increment values can be any floating point or
+  integer value. If the start-value is less than the end-value, then a
+  null-vector will be returned, unless the increment-value is
+  negative. This vector notation is most often used within for-loops. 
+
+<tscreen><verb>
+> n = 4;
+> 1:n
+        1          2          3          4  
+> n:1:-1
+        4          3          2          1  
+> 1:n/2:0.5
+        1        1.5          2  
+</verb></tscreen>
+
+  Unexpected results can occur when a non-integer increment is
+  used. Since not all real numbers can be expressed precisely in
+  floating point format, incrementing the start-value by the
+  increment-value may not produce the expected result. An increment
+  value of 0.1 provides a nice example:
+
+<tscreen><verb>
+> 1:2:.1
+ matrix columns 1 thru 6
+        1        1.1        1.2        1.3        1.4        1.5  
+
+ matrix columns 7 thru 10
+      1.6        1.7        1.8        1.9  
+</verb></tscreen>
+
+  Most would expect the final value to be 2. But, since 0.1 cannot be
+  expressed exactly in floating point format, the final value of 2 is
+  not reached. The reason is more obvious if we reset the print
+  format:
+
+<tscreen><verb>
+> format(18);
+> 1:2:.1
+ matrix columns 1 thru 3
+                    1    1.10000000000000009    1.19999999999999996  
+
+ matrix columns 4 thru 6
+  1.30000000000000004    1.39999999999999991                    1.5  
+
+ matrix columns 7 thru 9
+  1.60000000000000009    1.69999999999999996    1.80000000000000004  
+
+ matrix columns 10 thru 10
+  1.90000000000000013  
+</verb></tscreen>
+
+  When it is important to have the precise start and end values, the
+  user-function <tt>linspace</> should be used.
+
+
+  Fairly frequently it is desirable to force a matrix into a column
+  vector. This is fairly natural since matrices are stored in
+  column-major order, and it makes operating on the data notationally
+  simpler. The syntax for this operation is:
+
+  <quote>
+  <em>matrix</> &lsqb : &rsqb;
+  </quote>
+
+  For example:
+
+<tscreen><verb>
+> a = [1,2,3,4];
+> a = a[:]
+        1  
+        2  
+        3  
+        4  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Sparse Storage <label id="sparse">
+<p>
+
+  Sparse matrices are matrices in which the zero elements are not
+  explicitly stored. Quite a few applications, such as finite element
+  modeling, lead to matrices which are sparsely populated with
+  non-zero elements. A sparse storage scheme offers reduced memory
+  usage, and more efficient matrix operations (in most cases) for
+  operations on matrices with mostly zero elements. There are many
+  different sparse storage schemes, each offers particular
+  advantages. Rlab uses the compressed row-wise (CRW) sparse storage
+  format. The CRW format is very general, and offers good performance
+  for a wide variety of problems.
+
+  Sparse matrices, and operations are not common for the majority of
+  users. Therefore, some extra work is required for users who wish to
+  use this storage scheme. The functions <tt>sparse</> and
+  <tt>spconvert</> are useful for converting from dense/full storage
+  to sparse storage, and vice-versa. Although the syntax for sparse
+  storage matrices is the same as that used for dense matrices, sparse
+  matrices are visibly different when printed to the display:
+
+<tscreen><verb>
+> a = speye(3,3)
+ (1, 1)    	        1
+ (2, 2)    	        1
+ (3, 3)    	        1
+> full(a)
+        1          0          0  
+        0          1          0  
+        0          0          1  
+</verb></tscreen>
+
+  Since only the non-zero elements are stored, only the non-zero
+  elements, along with their row and column indices are printed.
+
+  All matrix partitioning, assignment and arithmetic operations
+  perform the same function for sparse matrices as for dense matrices
+  (eventually). The only difference is the storage format of the
+  result. In some instances an operation on a sparse matrix will
+  produce a dense (or full) matrix because there is no benefit to
+  retaining sparse storage. For instance, using the <tt>cos</>
+  function on a sparse matrix will return a full matrix, since the
+  cosine of zero is one, there is no point in retaining the sparse
+  storage format for the result. On the other hand Rlab will never
+  change the storage format of a matrix, once it has been
+  created. Even if you deliberately add zeros to a sparse matrix, or
+  increase the number of non-zeros to the point where the matrix is
+  full, the storage format will remain sparse. 
+
+  While sparse storage formats facilitate the solution of problems
+  that dense storage cannot manage, there are some things that sparse
+  storage cannot do efficiently. Sparse storage is inefficient for
+  matrix manipulations. Assigning to the elements of a sparse matrix
+  can be very inefficient, especially if you are replacing zeros with
+  non-zero values. Likewise matrix stacking and concatenation are not
+  very efficient.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect1> Special Numeric Values (Inf and NaN)
+<p>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> String
+<p>
+
+  Strings are arbitrary length concatenations of printable
+  characters. 
+
+<sect1> String Object Elements
+<p>
+
+  Each object has, as a minimum the following members:
+
+  <descrip>
+  <tag><tt>nr</></tag> The matrix number of rows.
+  <tag><tt>nc</></tag> The matrix number of columns.
+  <tag><tt>n</></tag> The matrix number of elements.
+  <tag><tt>class</></tag> A string, with value <tt>"string"</>, for
+                          numeric. 
+  <tag><tt>type</></tag> A string, with value <tt>"string"</>.
+  <tag><tt>storage</></tag> A string, with value <tt>"dense"</>.
+  </descrip>
+
+<sect1> String Object Operations
+<p>
+
+  The syntax for creating a string is similar to the C-language
+  syntax:
+
+  <quote>
+  &dquot; arbitrary_printable_characters &dquot;
+  </quote>
+
+  So to create a string, and assign it to a variable you might do:
+
+<tscreen><verb>
+> str = "this is a sample string"
+this is a sample string  
+</verb></tscreen>
+
+  String matrix operations are performed exactly the same way as
+  numeric matrix operations. String matrix creation, element
+  assignment, and partitioning are all performed as described for
+  numeric matrices. For example:
+
+<tscreen><verb>
+> strm = [ "this", "is a"; "sample", "string matrix"]
+this           is a           
+sample         string matrix  
+> for (i in [1,3,2,4]) { strm[i] }
+this  
+is a  
+sample  
+string matrix  
+</verb></tscreen>
+
+  There is no provision for individual character operations on
+  strings, unless the string consists of a single character. However,
+  the function <tt>strsplt</> will break a string into an array
+  (row-matrix) of single character strings.
+
+<tscreen><verb>
+> strsplt (str)
+t  h  i  s     i  s     a     s  a  m  p  l  e     s  t  r  i  n  g  
+</verb></tscreen>
+
+  <tt>strsplt</> can also split strings into sub-strings of a
+  specified length, using the second (optional) argument.:
+
+<tscreen><verb>
+> strsplt (str, 4)
+this   is   a sa  mple   str  
+> length(strsplt (str, 4))
+        4          4          4          4          4  
+</verb></tscreen>
+
+  Furthermore, <tt>strsplt</> can split strings using a field
+  separator defined in the second (optional) argument:
+
+<tscreen><verb>
+> strsplt (str, "i")
+th              s               s a sample str  ng              
+</verb></tscreen>
+
+  Strings can be concatenated with the <tt>+</> operator:
+
+<tscreen><verb>
+> strm[1;1] + " " + strm[1;2] + " " + strm[2;1] + " " + strm[2;2]
+this is a sample string matrix  
+</verb></tscreen>
+
+  The relational operators work for strings, comparing them using the
+  characters ASCII decimal representation. Thus
+  <tt>&dquot;A&dquot;</>, (ASCII 65) is less than
+  <tt>&dquot;a&dquot;</> (ASCII 97). String comparisons are useful for
+  testing the properties of objects. For instance, the function
+  <tt>class</> returns a string identifying the class an object
+  belongs to.
+
+<tscreen><verb>
+> class(l)
+list  
+> class(l) == "list"
+        1  
+</verb></tscreen>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> List <label id="lists">
+<p>
+
+  A list is a heterogeneous associative array. Simply, a list is an
+  array whose elements can be from different classes. Thus a list can
+  contain numeric, string, function, and other list objects. Lists are
+  also a convenient vehicle for functions that must return multiple
+  data objects. Additionally, lists offer programmer the ability to
+  create arbitrary data structures to suit particular programming
+  tasks.
+
+<sect1> List Object Elements
+<p>
+
+  Lists have no predefined elements, the quantity and class of a
+  list's elements is entirely up to the user. A list's elements are
+  displayed when an expression evaluates to a list. Entering the name
+  of a list variable, without a trailing semi-colon, will print out
+  the list's element names. The standard user-functions: <tt>show</>,
+  <tt>who</>, and <tt>whos</> will also display information about a
+  list's elements. The following example will create a list, then
+  display information about the list's elements using the
+  aforementioned methods.
+
+<tscreen><verb>
+> rfile magic
+> l = << m2 = magic(2); m3 = magic(3); m6 = magic(6) >>
+   m2           m3           m6           
+> who(l)
+m2  m3  m6          
+> l
+   m2           m3           m6           
+> who(l)
+m2  m3  m6          
+> show(l);
+	m2                  :num	real
+	m3                  :num	real
+	m6                  :num	real
+> whos(l);
+	Name            Class	Type	Size		NBytes
+	m2             	num	real	2	2	32
+	m3             	num	real	3	3	72
+	m6             	num	real	6	6	288
+Total MBytes = 0.000392
+</verb></tscreen>
+
+<sect1> List Object Operations
+<p>
+
+  To create a list-object use the <tt>&lt;&lt;</> and <tt>&gt;&gt;</>
+  operators. The list will be created, and the objects inside the
+  <tt>&lt;&lt; &gt;&gt;</> will be installed in the new list. If the
+  objects are not renamed during the list-creation, they will be given
+  numerical index values. An expression that evaluates to a list will
+  print out the names of that list's elements. For example:
+
+<tscreen><verb>
+> a = rand(3,4); b = sqrt (a); c = 2*a + b;
+> ll = << a ; b ; c >>
+   1            2            3            
+> ll2 = << A = a; b = b ; x = c >>
+   A            b            x            
+> ll2.A == ll.[1]
+        1          1          1          1  
+        1          1          1          1  
+        1          1          1          1  
+</verb></tscreen>
+
+   Lists are not indexed with numeric values. Lists are indexed with
+  string values (in a fashion similar to AWK's associative
+  arrays.}. There are two methods for referencing the elements of a
+  list. The first, a shorthand notation looks like:
+
+  <quote>
+      <em>list_name</> . <em>element_name</>
+  </quote>
+
+  In this case, the <em>list_name</> and <em>element_name</> must
+  follow the same rules as ordinary variable names. The second method
+  for indexing a list is:
+
+  <quote>
+      <em>list_name</> . &lsqb; <em>numeric_or_string_expression</> &rsqb;
+  </quote>
+
+  The second method allows string and numeric variables to be
+  evaluated before doing the conversion to string type.
+
+  The dimensionality of a list is also arbitrary. To increase the
+  dimension of a list make a member of the parent list a list. For
+  example:
+
+<tscreen><verb>
+> person = << type="Human"; name=<<first="John"; last="Doe">>; age=37 >>
+   age          name         type         
+> person.name
+   first        last         
+> person.name.first
+John  
+> person.name.last
+Doe  
+</verb></tscreen>
+
+  The <tt>person</> list contains the elements <tt>type</>,
+  <tt>name</>, and <tt>age</>. However, the <tt>name</> element is
+  another list that contains the elements <tt>first</> and
+  <tt>last</>.
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<sect> Function
+<p>
+
+  Functions, both builtin and user written are stored in ordinary
+  variables, and in almost all instances are treated as such. An
+  expression that evaluates to a function prints the string:
+  <tt>&lt;user-function&gt;</> if it is a user-written function, and
+  the string: <tt>&lt;bltin-function&gt;</> if it is a builtin
+  function.
+
+<sect1> Function Object Elements
+<p>
+
+  Each object has, as a minimum the following members:
+
+  <descrip>
+  <tag><tt>class</></tag> A string, with value <tt>"function"</>.
+  <tag><tt>type</></tag> A string, with value <tt>"user"</> or 
+                         <tt>"builtin"</>.
+  </descrip>
+
+  The function class has an optional member which exists only when the
+  function is of type <tt>user</>. The additional member is named
+  <tt>file</>, and its value is the full pathname of the file that
+  contains the source code for the user function.
+
+  Functions, both user and builtin are treated in great detail in
+  subsequent sections of this manual.
+
+<sect1> Function Object Operations
+
+<!-- Function Creation -->
+
+<!-- Function evaluation -->
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+

@@ -1,0 +1,66 @@
+  printf
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Formatted printing.
+
+      [1mSyntax[0m
+        printf ( [4mformatstring[24m , [4mVARi[24m ... )
+
+      [1mDescription[0m
+        The RLaB printf is a limited feature version of the C-language
+        printf(). The features are limited because RLaB does not support
+        all of the data type the C-language does.
+
+
+
+        [4mformatstring[0m
+           must be a valid printf format string
+
+
+        [4mVARi[0m
+           are any number of constants or variables that match the
+           format string. printf cannot print out vector, matrix, or
+           list objects as a whole. Valid print objects are strings,
+           constants, and scalars.
+
+        The following shows how one might print out the annotated
+        contents of a matrix.
+
+
+
+          for(i in 0:size(a)[0]-1)
+          {
+            for(j in 0:size(a)[1]-1)
+            {
+              printf("a[%i;%i] = %f\n", i, j, a[i;j]);
+            }
+          }
+
+
+
+
+
+     However, it would be more efficient to use:
+
+
+
+          > writem("stdout", a);
+
+
+
+
+
+
+     [1mSee Also[0m
+        fprintf, sprintf, write, read
+
+
+
+
+
+
+
+

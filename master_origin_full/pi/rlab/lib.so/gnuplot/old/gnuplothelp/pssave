@@ -1,0 +1,13 @@
+pssave:
+
+Synopsis: Save the plot as data-file.
+
+Syntax: pssave ( "file_name", X, Y, Z )
+
+Description:
+
+	The pssave() saves the usual temporary file to a specific, 
+	non-temporary file named "file_name". pssave() is for 3D-plots. 
+	This is useful if you wish to save session-output in a 
+	GNUPLOT-way.
+

@@ -1,0 +1,24 @@
+	README.PGRAF
+
+	Pgraf is a plotting library that offers very portable
+	graphics. Pgraf is pretty simple to install, offers 2 and 3
+	dimensional graphics on most any X-Window display.
+
+	The Pgraf author is David J. Raymond. Pgraf is available at:
+
+		ftp://kestrel.nmt.edu/pub/raymond/pgraf.tar.gz
+
+	The distribution contains instructions for compiling (very
+	simple), and the rfiles necessary to make RLaB recognize
+	Pgraf. 
+
+	To build RLaB to use with Pgraf, simply specify `--with-pgraf'
+	when running configure. The resulting RLaB executable will be
+	ready to use Pgraf once you have built the Pgraf executables,
+	and installed pgraf.r in your RLAB2_PATH.
+
+	I do not distribute Pgraf with RLaB, because I do not maintain
+	Pgraf. Getting it from the source (kestrel) will insure that
+	you always have the latest version.
+
+	4/2/97

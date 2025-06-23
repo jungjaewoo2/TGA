@@ -1,0 +1,105 @@
+# examples/c++/Makefile.examples.in for PLplot
+###
+### Process this file with configure to produce Makefile.examples
+###
+# Copyright (C) 2002-2015  Alan W. Irwin
+# Copyright (C) 2004  Rafael Laboissiere
+# Copyright (C) 2004  Andrew Ross
+#
+# This file is part of PLplot.
+#
+# PLplot is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Library General Public License as published by
+# the Free Software Foundation; version 2 of the License.
+#
+# PLplot is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Library General Public License for more details.
+#
+# You should have received a copy of the GNU Library General Public License
+# along with the file PLplot; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+
+SHELL = /bin/bash
+CXX = /usr/bin/c++  
+EXEEXT = 
+
+PKG_CONFIG_ENV = PKG_CONFIG_PATH="/home/pi/plplot/install_directory/lib/pkgconfig:/home/pi/plplot/install_directory/share/plplot5.13.0/../../lib/pkgconfig/"
+RPATHCMD = -Wl,-rpath -Wl,"/home/pi/plplot/install_directory/lib"
+#QT_MOC_EXECUTABLE = /usr/lib/arm-linux-gnueabihf/qt5/bin/moc
+#qt_RPATHCMD = 
+
+#PLPLOTWXWIDGETS_EXECUTABLES_list = \
+#	$(EXEEXT)
+
+#qt_gui_EXECUTABLES_list = \
+#	qt_example$(EXEEXT)
+
+EXECUTABLES_list = \
+		 x01cc$(EXEEXT) \
+		 x00$(EXEEXT) \
+		 x01$(EXEEXT) \
+		 x02$(EXEEXT) \
+		 x03$(EXEEXT) \
+		 x04$(EXEEXT) \
+		 x05$(EXEEXT) \
+		 x06$(EXEEXT) \
+		 x07$(EXEEXT) \
+		 x08$(EXEEXT) \
+		 x09$(EXEEXT) \
+		 x10$(EXEEXT) \
+		 x11$(EXEEXT) \
+		 x12$(EXEEXT) \
+		 x13$(EXEEXT) \
+		 x14$(EXEEXT) \
+		 x15$(EXEEXT) \
+		 x16$(EXEEXT) \
+		 x17$(EXEEXT) \
+		 x18$(EXEEXT) \
+		 x19$(EXEEXT) \
+		 x20$(EXEEXT) \
+		 x21$(EXEEXT) \
+		 x22$(EXEEXT) \
+		 x23$(EXEEXT) \
+		 x24$(EXEEXT) \
+		 x25$(EXEEXT) \
+		 x26$(EXEEXT) \
+		 x27$(EXEEXT) \
+		 x28$(EXEEXT) \
+		 x29$(EXEEXT) \
+		 x30$(EXEEXT) \
+		 x31$(EXEEXT) \
+		 x33$(EXEEXT) \
+		 $(PLPLOTWXWIDGETS_EXECUTABLES_list) \
+		 $(qt_gui_EXECUTABLES_list)
+
+
+all: $(EXECUTABLES_list)
+
+clean:
+	rm -f $(EXECUTABLES_list)
+
+# target_link_libraries(wxPLplotDemo plplotwxwidgets plplotcxx  /usr/lib/arm-linux-gnueabihf/libm.so)
+#$(EXEEXT): .cpp
+#	$(CXX) $< -o $@ $(RPATHCMD) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags --libs plplot-wxwidgets plplot-c++)  /usr/lib/arm-linux-gnueabihf/libm.so
+
+# Note, must filter out -p options which confuse $(QT_MOC_EXECUTABLE).  Such
+# options (e.g., -pthread) tend to appear in the static driver case.
+#moc_qt_PlotWindow.cpp: qt_PlotWindow.h
+#	$(QT_MOC_EXECUTABLE) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags-only-I plplot-qt) $< -o $@
+
+# For the ENABLE_DYNDRIVERS=ON case, must include link to the plplot-qt library
+# target_link_libraries(qt_example  plplotqt plplot)
+# For the ENABLE_DYNDRIVERS=OFF case, drop the link to the plplot-qt library (to avoid memory
+# management issues when linking to identical code in two different libraries).
+# target_link_libraries(qt_example  plplot)
+#qt_example$(EXEEXT): qt_example.cpp qt_PlotWindow.cpp moc_qt_PlotWindow.cpp
+#	$(CXX)  qt_example.cpp qt_PlotWindow.cpp moc_qt_PlotWindow.cpp -o $@ $(qt_RPATHCMD) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags --libs plplot-qt) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags --libs plplot) 
+##	$(CXX)  qt_example.cpp qt_PlotWindow.cpp moc_qt_PlotWindow.cpp -o $@ $(qt_RPATHCMD) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags --libs plplot) 
+
+# target_link_libraries(x plplotcxx /usr/lib/arm-linux-gnueabihf/libm.so)
+.cc$(EXEEXT):
+	$(CXX) $< -o $@ $(RPATHCMD) $(shell $(PKG_CONFIG_ENV) pkg-config  --cflags --libs plplot-c++) /usr/lib/arm-linux-gnueabihf/libm.so
+
+.SUFFIXES: .cc $(EXEEXT)

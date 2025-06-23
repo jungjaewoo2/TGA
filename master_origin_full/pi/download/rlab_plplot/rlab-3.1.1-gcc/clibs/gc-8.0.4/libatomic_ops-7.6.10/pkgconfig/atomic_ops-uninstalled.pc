@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+top_builddir=/scratch/rlabplus/rlab64/rlab-3.1.1-gcc/clibs/gc-8.0.4/libatomic_ops
+top_srcdir=/scratch/rlabplus/rlab64/rlab-3.1.1-gcc/clibs/gc-8.0.4/libatomic_ops
+
+Name: The atomic_ops library (uninstalled)
+Description: Atomic memory update operations
+Version: 7.6.10
+Libs: ${top_builddir}/src/libatomic_ops.la
+Cflags: -I${top_builddir}/src -I${top_srcdir}/src

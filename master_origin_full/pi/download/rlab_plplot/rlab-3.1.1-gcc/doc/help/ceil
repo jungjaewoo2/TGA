@@ -1,0 +1,66 @@
+  ceil
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Smallest integer not less than argument.
+
+      [1mSyntax[0m
+        ceil ( [4ma[24m )
+
+      [1mDescription[0m
+        Ceil returns the smallest integer not less than the argument.
+        If the argument is a MATRIX then the ceil operation is performed
+        on an element-by-element basis.
+
+
+     [1mSee Also[0m
+        floor, int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

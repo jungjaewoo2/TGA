@@ -1,0 +1,23 @@
+<sect> zeros 
+<p>
+<descrip>
+<tag> Synopsis </tag> Create a matrix of zeros
+<tag> Syntax </tag> 
+<p>zeros ( <em>nrow</em>, <em>ncol</em> )
+<p>zeros ( <em>A</em>)
+<tag> Description </tag>
+
+Zeros returns a matrix with all zero elements. If the
+arguments are two scalars, then zeros returns a matrix with
+dimensions <em>nrow</em>x<em>ncol</em>. If the argument is a matrix <em>A</em>
+then zeros returns a matrix with the same dimensions.
+For example,
+<tscreen><verb>
+> Z = zeros( 3, 3 );
+> A = rand( 10, 4 );
+> B = zeros( A )
+</verb></tscreen>
+
+<tag>See Also</tag>   size
+
+</descrip>

@@ -1,0 +1,72 @@
+//
+// libgpib.so.r
+// loader for the functions that communicate with gpib card
+//
+
+_HOME_ = getenv("HOME");
+_LIBD_ = "/rlab/lib.so/gpib/rlabplus_libgpib.so";
+
+fileaddr = _HOME_ + _LIBD_ ;
+
+if (!exist(ibln))
+{
+  ibln = dlopen(fileaddr, "ent_gpib_ibln");
+}
+
+if (!exist(ibsic))
+{
+  ibsic = dlopen(fileaddr, "ent_gpib_ibsic");
+}
+
+if (!exist(ibonl))
+{
+  ibonl = dlopen(fileaddr, "ent_gpib_ibonl");
+}
+
+if (!exist(ibsre))
+{
+  ibsre = dlopen(fileaddr, "ent_gpib_ibsre");
+}
+
+if (!exist(ibclr))
+{
+  ibclr = dlopen(fileaddr, "ent_gpib_ibclr");
+}
+
+if (!exist(ibfind))
+{
+  ibfind = dlopen(fileaddr, "ent_gpib_ibfind");
+}
+
+if (!exist(ibdev))
+{
+  ibdev = dlopen(fileaddr, "ent_gpib_ibdev");
+}
+
+if (!exist(ibwrt))
+{
+  ibwrt = dlopen(fileaddr, "ent_gpib_ibwrt");
+}
+
+if (!exist(ibrd))
+{
+  ibrd = dlopen(fileaddr, "ent_gpib_ibrd");
+}
+
+if (!exist(ibqrd))
+{
+  ibqrd = dlopen(fileaddr, "ent_gpib_ibqrd");
+}
+
+if (!exist(ibwrta))
+{
+  ibwrta = dlopen(fileaddr, "ent_gpib_ibwrta");
+}
+
+if (!exist(ibask))
+{
+  ibask = dlopen(fileaddr, "ent_gpib_ibask");
+}
+
+clear(fileaddr,_HOME_,_LIBD_);
+

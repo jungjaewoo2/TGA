@@ -1,0 +1,14 @@
+<sect> log10 
+<p>
+<descrip>
+<tag> Synopsis </tag> Base-10 logarithm.
+<tag> Syntax </tag> log10 ( <em>A</> )
+<tag> Description </tag>
+
+	Log10 returns the base-10 logarithm of it's argument. If the
+	argument is a MATRIX, an element-by-element log10 operation is
+	performed.
+
+	log10 is not implemented yet for COMPLEX data.
+
+</descrip>

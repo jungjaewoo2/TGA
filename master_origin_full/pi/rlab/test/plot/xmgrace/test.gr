@@ -1,0 +1,5742 @@
+# Grace project file by RLaB2 using libxmgrace toolkit.
+# part of the rlabplus project, available from sourceforge.net
+# all bugs should be reported to kostrun@krampus.phys.uconn.edu
+@version 50102
+@page size 792, 612
+@page scroll 5%
+@page inout 5%
+@link page off
+@map font 0 to "Times-Roman", "Times-Roman" 
+@map font 1 to "Times-Italic", "Times-Italic" 
+@map font 2 to "Times-Bold", "Times-Bold" 
+@map font 3 to "Times-BoldItalic", "Times-BoldItalic" 
+@map font 4 to "Helvetica", "Helvetica" 
+@map font 5 to "Helvetica-Oblique", "Helvetica-Oblique" 
+@map font 6 to "Helvetica-Bold", "Helvetica-Bold" 
+@map font 7 to "Helvetica-BoldOblique", "Helvetica-BoldOblique" 
+@map font 8 to "Courier", "Courier" 
+@map font 9 to "Courier-Oblique", "Courier-Oblique" 
+@map font 10 to "Courier-Bold", "Courier-Bold" 
+@map font 11 to "Courier-BoldOblique", "Courier-BoldOblique" 
+@map font 12 to "Symbol", "Symbol" 
+@map font 13 to "ZapfDingbats", "ZapfDingbats" 
+@map color 0 to (255,255,255), "white"
+@map color 1 to (0,0,0), "black"
+@map color 2 to (255,0,0), "red"
+@map color 3 to (0,255,0), "green"
+@map color 4 to (0,0,255), "blue"
+@map color 5 to (255,255,0), "yellow"
+@map color 6 to (188,143,143), "brown"
+@map color 7 to (153,153,153), "grey"
+@map color 8 to (148,0,211), "violet"
+@map color 9 to (0,255,255), "cyan"
+@map color 10 to (255,0,255), "magenta"
+@map color 11 to (255,165,0), "orange"
+@map color 12 to (114,33,188), "indigo"
+@map color 13 to (103,7,72), "maroon"
+@map color 14 to (64,224,208), "turquoise"
+@map color 15 to (0,59,0), "green5"
+@reference date 0 
+@date wrap off 
+@date wrap year 1950 
+@default linewidth 1.5 
+@default linestyle 1 
+@default color 1 
+@default pattern 1 
+@default font 0 
+@default char size 1.25000000 
+@default symbol size 1.000000 
+@default sformat "%16.8g" 
+@background color 0 
+@page background fill on 
+@timestamp off 
+@timestamp 0.03, 0.03 
+@timestamp color 1 
+@timestamp rot 0 
+@timestamp font 0 
+@timestamp char size 1.000000 
+@timestamp def "Tue May 19 16:14:25 2009"
+@g0 on
+@g0 hidden false
+@g0 type XY
+@g0 stacked false
+@g0 bar hgap 0.000000
+@g0 fixedpoint off
+@g0 fixedpoint type 0
+@g0 fixedpoint xy 0.000000, 0.000000
+@g0 fixedpoint format general general
+@g0 fixedpoint prec 6, 6
+@with g0
+@    world xmin 0
+@    world xmax 1
+@    world ymin 0
+@    world ymax 1
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view xmin 0.05
+@    view xmax 0.65
+@    view ymin 0.08
+@    view ymax 0.43
+@    title "Fig.1: Plot of randomly generated points"
+@    title font 0
+@    title size 1.3
+@    title color 1
+@    subtitle ""
+@    subtitle font 0
+@    subtitle size 1.15
+@    subtitle color 1
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "x"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 0
+@    xaxis  label font 0
+@    xaxis  label color 1
+@    xaxis  label place normal
+@    xaxis  tick on
+@    xaxis  tick major 0.100000
+@    xaxis  tick minor ticks 1.000000
+@    xaxis  tick default 6
+@    xaxis  tick place rounded true
+@    xaxis  tick in
+@    xaxis  tick major size 1.000000
+@    xaxis  tick major color 1
+@    xaxis  tick major linewidth 1
+@    xaxis  tick major linestyle 1
+@    xaxis  tick major grid off
+@    xaxis  tick minor color 1
+@    xaxis  tick minor linewidth 1.0
+@    xaxis  tick minor linestyle 1
+@    xaxis  tick minor grid off
+@    xaxis  tick minor size 0.500000
+@    xaxis  ticklabel on
+@    xaxis  ticklabel format general
+@    xaxis  ticklabel prec 5
+@    xaxis  ticklabel formula ""
+@    xaxis  ticklabel append ""
+@    xaxis  ticklabel prepend ""
+@    xaxis  ticklabel angle 0
+@    xaxis  ticklabel skip 0
+@    xaxis  ticklabel stagger 0
+@    xaxis  ticklabel place normal
+@    xaxis  ticklabel offset auto
+@    xaxis  ticklabel offset 0.000000 , 0.010000
+@    xaxis  ticklabel start type auto
+@    xaxis  ticklabel start 0.000000
+@    xaxis  ticklabel stop type auto
+@    xaxis  ticklabel stop 0.000000
+@    xaxis  ticklabel char size 0
+@    xaxis  ticklabel font 0
+@    xaxis  ticklabel color 1
+@    xaxis  tick place both
+@    xaxis  tick spec type none
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "y"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.06
+@    yaxis  label char size 0
+@    yaxis  label font 0
+@    yaxis  label color 1
+@    yaxis  label place normal
+@    yaxis  tick on
+@    yaxis  tick major 0.100000
+@    yaxis  tick minor ticks 1.000000
+@    yaxis  tick default 6
+@    yaxis  tick place rounded true
+@    yaxis  tick in
+@    yaxis  tick major size 1.000000
+@    yaxis  tick major color 1
+@    yaxis  tick major linewidth 1
+@    yaxis  tick major linestyle 1
+@    yaxis  tick major grid off
+@    yaxis  tick minor color 1
+@    yaxis  tick minor linewidth 1.0
+@    yaxis  tick minor linestyle 1
+@    yaxis  tick minor grid off
+@    yaxis  tick minor size 0.500000
+@    yaxis  ticklabel on
+@    yaxis  ticklabel format general
+@    yaxis  ticklabel prec 5
+@    yaxis  ticklabel formula ""
+@    yaxis  ticklabel append ""
+@    yaxis  ticklabel prepend ""
+@    yaxis  ticklabel angle 0
+@    yaxis  ticklabel skip 0
+@    yaxis  ticklabel stagger 0
+@    yaxis  ticklabel place normal
+@    yaxis  ticklabel offset auto
+@    yaxis  ticklabel offset 0.000000 , 0.010000
+@    yaxis  ticklabel start type auto
+@    yaxis  ticklabel start 0.000000
+@    yaxis  ticklabel stop type auto
+@    yaxis  ticklabel stop 0.000000
+@    yaxis  ticklabel char size 0
+@    yaxis  ticklabel font 0
+@    yaxis  ticklabel color 1
+@    yaxis  tick place both
+@    yaxis  tick spec type none
+@    altxaxis  off
+@    altyaxis  off
+@    legend off
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 2.0
+@    frame color 1
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s0 hidden false
+@    s0 type xy
+@    s0 symbol 1
+@    s0 symbol size 0.1
+@    s0 symbol color 1
+@    s0 symbol pattern 1
+@    s0 symbol fill color 1
+@    s0 symbol fill pattern 0
+@    s0 symbol linewidth 1
+@    s0 symbol linestyle 1
+@    s0 symbol char 65
+@    s0 symbol char font 0
+@    s0 symbol skip 0
+@    s0 line type 0
+@    s0 baseline type 0
+@    s0 baseline off
+@    s0 dropline off
+@    s0 fill type 0
+@    s0 fill rule 0
+@    s0 fill color 1
+@    s0 fill pattern 1
+@    s0 avalue off
+@    s0 avalue type 2
+@    s0 avalue char size 1.000000
+@    s0 avalue font 0
+@    s0 avalue color 1
+@    s0 avalue rot 0
+@    s0 avalue format general
+@    s0 avalue prec 3
+@    s0 avalue prepend ""
+@    s0 avalue append ""
+@    s0 avalue offset 0.000000 , 0.000000
+@    s0 errorbar on
+@    s0 errorbar place both
+@    s0 errorbar color 1
+@    s0 errorbar pattern 1
+@    s0 errorbar size 1.000000
+@    s0 errorbar linewidth 1.0
+@    s0 errorbar linestyle 1
+@    s0 errorbar riser linewidth 1.0
+@    s0 errorbar riser linestyle 1
+@    s0 errorbar riser clip off
+@    s0 errorbar riser clip length 0.100000
+@    s0 comment "RLaB xmgr output"
+@    s0 legend  "random points"
+@g1 on
+@g1 hidden false
+@g1 type XY
+@g1 stacked false
+@g1 bar hgap 0.000000
+@g1 fixedpoint off
+@g1 fixedpoint type 0
+@g1 fixedpoint xy 0.000000, 0.000000
+@g1 fixedpoint format general general
+@g1 fixedpoint prec 6, 6
+@with g1
+@    world xmin 0
+@    world xmax 1
+@    world ymin 0
+@    world ymax 1
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view xmin 0.4
+@    view xmax 0.64
+@    view ymin 0.22
+@    view ymax 0.423
+@    title ""
+@    title font 0
+@    title size 1.3
+@    title color 1
+@    subtitle ""
+@    subtitle font 0
+@    subtitle size 1.15
+@    subtitle color 1
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "X-axis"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1
+@    xaxis  label font 0
+@    xaxis  label color 1
+@    xaxis  label place normal
+@    xaxis  tick off
+@    xaxis  ticklabel off
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "Y-axis"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.08
+@    yaxis  label char size 1
+@    yaxis  label font 0
+@    yaxis  label color 1
+@    yaxis  label place normal
+@    yaxis  tick off
+@    yaxis  ticklabel off
+@    altxaxis  off
+@    altyaxis  off
+@    legend off
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 2.0
+@    frame color 1
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s1 hidden false
+@    s1 type xy
+@    s1 symbol 1
+@    s1 symbol size 0.1
+@    s1 symbol color 2
+@    s1 symbol pattern 1
+@    s1 symbol fill color 1
+@    s1 symbol fill pattern 0
+@    s1 symbol linewidth 1
+@    s1 symbol linestyle 1
+@    s1 symbol char 65
+@    s1 symbol char font 0
+@    s1 symbol skip 0
+@    s1 line type 0
+@    s1 baseline type 0
+@    s1 baseline off
+@    s1 dropline off
+@    s1 fill type 0
+@    s1 fill rule 0
+@    s1 fill color 1
+@    s1 fill pattern 1
+@    s1 avalue off
+@    s1 avalue type 2
+@    s1 avalue char size 1.000000
+@    s1 avalue font 0
+@    s1 avalue color 1
+@    s1 avalue rot 0
+@    s1 avalue format general
+@    s1 avalue prec 3
+@    s1 avalue prepend ""
+@    s1 avalue append ""
+@    s1 avalue offset 0.000000 , 0.000000
+@    s1 errorbar on
+@    s1 errorbar place both
+@    s1 errorbar color 2
+@    s1 errorbar pattern 1
+@    s1 errorbar size 1.000000
+@    s1 errorbar linewidth 1.0
+@    s1 errorbar linestyle 1
+@    s1 errorbar riser linewidth 1.0
+@    s1 errorbar riser linestyle 1
+@    s1 errorbar riser clip off
+@    s1 errorbar riser clip length 0.100000
+@    s1 comment "RLaB xmgr output"
+@    s1 legend  "random points"
+@g2 on
+@g2 hidden false
+@g2 type XY
+@g2 stacked false
+@g2 bar hgap 0.000000
+@g2 fixedpoint off
+@g2 fixedpoint type 0
+@g2 fixedpoint xy 0.000000, 0.000000
+@g2 fixedpoint format general general
+@g2 fixedpoint prec 6, 6
+@with g2
+@    world xmin 0
+@    world xmax 1
+@    world ymin 0
+@    world ymax 1
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view xmin 0.65
+@    view xmax 0.85
+@    view ymin 0.08
+@    view ymax 0.43
+@    title ""
+@    title font 0
+@    title size 1.3
+@    title color 1
+@    subtitle ""
+@    subtitle font 0
+@    subtitle size 1.15
+@    subtitle color 1
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "X-axis"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1
+@    xaxis  label font 0
+@    xaxis  label color 1
+@    xaxis  label place normal
+@    xaxis  tick off
+@    xaxis  ticklabel off
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "Y-axis"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.08
+@    yaxis  label char size 1
+@    yaxis  label font 0
+@    yaxis  label color 1
+@    yaxis  label place normal
+@    yaxis  tick off
+@    yaxis  ticklabel off
+@    altxaxis  off
+@    altyaxis  off
+@    legend off
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 2.0
+@    frame color 1
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s2 hidden false
+@    s2 type xy
+@    s2 symbol 1
+@    s2 symbol size 0.1
+@    s2 symbol color 3
+@    s2 symbol pattern 1
+@    s2 symbol fill color 1
+@    s2 symbol fill pattern 0
+@    s2 symbol linewidth 1
+@    s2 symbol linestyle 1
+@    s2 symbol char 65
+@    s2 symbol char font 0
+@    s2 symbol skip 0
+@    s2 line type 0
+@    s2 baseline type 0
+@    s2 baseline off
+@    s2 dropline off
+@    s2 fill type 0
+@    s2 fill rule 0
+@    s2 fill color 1
+@    s2 fill pattern 1
+@    s2 avalue off
+@    s2 avalue type 2
+@    s2 avalue char size 1.000000
+@    s2 avalue font 0
+@    s2 avalue color 1
+@    s2 avalue rot 0
+@    s2 avalue format general
+@    s2 avalue prec 3
+@    s2 avalue prepend ""
+@    s2 avalue append ""
+@    s2 avalue offset 0.000000 , 0.000000
+@    s2 errorbar on
+@    s2 errorbar place both
+@    s2 errorbar color 3
+@    s2 errorbar pattern 1
+@    s2 errorbar size 1.000000
+@    s2 errorbar linewidth 1.0
+@    s2 errorbar linestyle 1
+@    s2 errorbar riser linewidth 1.0
+@    s2 errorbar riser linestyle 1
+@    s2 errorbar riser clip off
+@    s2 errorbar riser clip length 0.100000
+@    s2 comment "RLaB xmgr output"
+@    s2 legend  "random points"
+@g3 on
+@g3 hidden false
+@g3 type XY
+@g3 stacked false
+@g3 bar hgap 0.000000
+@g3 fixedpoint off
+@g3 fixedpoint type 0
+@g3 fixedpoint xy 0.000000, 0.000000
+@g3 fixedpoint format general general
+@g3 fixedpoint prec 6, 6
+@with g3
+@    world xmin 0
+@    world xmax 1
+@    world ymin 0
+@    world ymax 1
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view xmin 0.15
+@    view xmax 1.15
+@    view ymin 0.5
+@    view ymax 0.71
+@    title ""
+@    title font 0
+@    title size 1.3
+@    title color 1
+@    subtitle ""
+@    subtitle font 0
+@    subtitle size 1.15
+@    subtitle color 1
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "X-axis"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1
+@    xaxis  label font 0
+@    xaxis  label color 1
+@    xaxis  label place normal
+@    xaxis  tick off
+@    xaxis  ticklabel off
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "Y-axis"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.08
+@    yaxis  label char size 1
+@    yaxis  label font 0
+@    yaxis  label color 1
+@    yaxis  label place normal
+@    yaxis  tick off
+@    yaxis  ticklabel off
+@    altxaxis  off
+@    altyaxis  off
+@    legend off
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 2.0
+@    frame color 1
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s3 hidden false
+@    s3 type xy
+@    s3 symbol 0
+@    s3 line type 1
+@    s3 line linestyle 1
+@    s3 line linewidth 0.1
+@    s3 line color 4
+@    s3 line pattern 1
+@    s3 baseline type 0
+@    s3 baseline off
+@    s3 dropline off
+@    s3 fill type 0
+@    s3 fill rule 0
+@    s3 fill color 1
+@    s3 fill pattern 1
+@    s3 avalue off
+@    s3 avalue type 2
+@    s3 avalue char size 1.000000
+@    s3 avalue font 0
+@    s3 avalue color 1
+@    s3 avalue rot 0
+@    s3 avalue format general
+@    s3 avalue prec 3
+@    s3 avalue prepend ""
+@    s3 avalue append ""
+@    s3 avalue offset 0.000000 , 0.000000
+@    s3 errorbar on
+@    s3 errorbar place both
+@    s3 errorbar color 4
+@    s3 errorbar pattern 1
+@    s3 errorbar size 1.000000
+@    s3 errorbar linewidth 1.0
+@    s3 errorbar linestyle 1
+@    s3 errorbar riser linewidth 1.0
+@    s3 errorbar riser linestyle 1
+@    s3 errorbar riser clip off
+@    s3 errorbar riser clip length 0.100000
+@    s3 comment "RLaB xmgr output"
+@    s3 legend  "random lines"
+@g4 on
+@g4 hidden false
+@g4 type XY
+@g4 stacked false
+@g4 bar hgap 0.000000
+@g4 fixedpoint off
+@g4 fixedpoint type 0
+@g4 fixedpoint xy 0.000000, 0.000000
+@g4 fixedpoint format general general
+@g4 fixedpoint prec 6, 6
+@with g4
+@    world xmin 0
+@    world xmax 1
+@    world ymin 0
+@    world ymax 1
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view xmin 0.75
+@    view xmax 1.05
+@    view ymin 0.71
+@    view ymax 0.92
+@    title ""
+@    title font 0
+@    title size 1.3
+@    title color 1
+@    subtitle ""
+@    subtitle font 0
+@    subtitle size 1.15
+@    subtitle color 1
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "X-axis"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1
+@    xaxis  label font 0
+@    xaxis  label color 1
+@    xaxis  label place normal
+@    xaxis  tick off
+@    xaxis  ticklabel off
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "Y-axis"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.08
+@    yaxis  label char size 1
+@    yaxis  label font 0
+@    yaxis  label color 1
+@    yaxis  label place normal
+@    yaxis  tick off
+@    yaxis  ticklabel off
+@    altxaxis  off
+@    altyaxis  off
+@    legend off
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 2.0
+@    frame color 1
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s4 hidden false
+@    s4 type xy
+@    s4 symbol 1
+@    s4 symbol size 0.1
+@    s4 symbol color 5
+@    s4 symbol pattern 1
+@    s4 symbol fill color 1
+@    s4 symbol fill pattern 0
+@    s4 symbol linewidth 1
+@    s4 symbol linestyle 1
+@    s4 symbol char 65
+@    s4 symbol char font 0
+@    s4 symbol skip 0
+@    s4 line type 0
+@    s4 baseline type 0
+@    s4 baseline off
+@    s4 dropline off
+@    s4 fill type 0
+@    s4 fill rule 0
+@    s4 fill color 1
+@    s4 fill pattern 1
+@    s4 avalue off
+@    s4 avalue type 2
+@    s4 avalue char size 1.000000
+@    s4 avalue font 0
+@    s4 avalue color 1
+@    s4 avalue rot 0
+@    s4 avalue format general
+@    s4 avalue prec 3
+@    s4 avalue prepend ""
+@    s4 avalue append ""
+@    s4 avalue offset 0.000000 , 0.000000
+@    s4 errorbar on
+@    s4 errorbar place both
+@    s4 errorbar color 5
+@    s4 errorbar pattern 1
+@    s4 errorbar size 1.000000
+@    s4 errorbar linewidth 1.0
+@    s4 errorbar linestyle 1
+@    s4 errorbar riser linewidth 1.0
+@    s4 errorbar riser linestyle 1
+@    s4 errorbar riser clip off
+@    s4 errorbar riser clip length 0.100000
+@    s4 comment "RLaB xmgr output"
+@    s4 legend  "random points"
+@target G0.S0
+@type xy
+ 0.818935253 0.466352942
+ 0.311109115 0.224805413
+ 0.165260228 0.360717803
+ 0.770080122 0.11648034
+ 0.256260154 0.107477973
+ 0.675771728 0.852421826
+ 0.508786324 0.473882927
+ 0.0846307315 0.348343307
+ 0.849952892 0.919075108
+ 0.139603124 0.863406596
+ 0.744412996 0.577745784
+ 0.563134712 0.434641509
+ 0.999021482 0.931276268
+ 0.998075587 0.410685037
+ 0.180824318 0.480092892
+ 0.625571199 0.737970327
+ 0.576296451 0.392933865
+ 0.746174899 0.960945185
+ 0.401424147 0.131361649
+ 0.182485725 0.677927648
+ 0.252415506 0.89333476
+ 0.282923336 0.33144541
+ 0.266538335 0.545979363
+ 0.651192095 0.405023392
+ 0.327589944 0.464488847
+ 0.358364739 0.182106118
+ 0.0340445586 0.659914437
+ 0.396212968 0.596429154
+ 0.49099035 0.25431699
+ 0.160439005 0.0307817291
+ 0.112617858 0.310658323
+ 0.327081025 0.881375848
+ 0.61363537 0.203238385
+ 0.834348599 0.424868785
+ 0.361031567 0.704145397
+ 0.998752146 0.909155552
+ 0.626005102 0.863153004
+ 0.907149194 0.0619916772
+ 0.139595256 0.685963309
+ 0.422581841 0.0738849225
+ 0.130411811 0.416891888
+ 0.600354995 0.421284744
+ 0.628507482 0.623567366
+ 0.767460604 0.741721506
+ 0.979253968 0.436477549
+ 0.804079744 0.33035561
+ 0.793475798 0.579231342
+ 0.0933652008 0.708438042
+ 0.344577668 0.014109957
+ 0.302709743 0.402608999
+ 0.612843173 0.573075766
+ 0.717016306 0.697354196
+ 0.0664561773 0.668231473
+ 0.814562557 0.595658464
+ 0.163961782 0.595281608
+ 0.360925637 0.927586315
+ 0.0778913784 0.578661439
+ 0.166648565 0.916352826
+ 0.946932629 0.12231201
+ 0.540220523 0.733963797
+ 0.429920098 0.495107013
+ 0.520417404 0.252840882
+ 0.354019213 0.236424957
+ 0.327204116 0.608555963
+ 0.335852243 0.795857936
+ 0.869133147 0.637285747
+ 0.0466498358 0.898370631
+ 0.0749177246 0.943172634
+ 0.544308292 0.441852366
+ 0.837356939 0.63010403
+ 0.48887834 0.356863787
+ 0.824318307 0.787796025
+ 0.572906767 0.245149684
+ 0.343509141 0.256918521
+ 0.635262482 0.848655253
+ 0.0287227994 0.771789268
+ 0.279133004 0.18439566
+ 0.477178045 0.162643378
+ 0.727864264 0.550049235
+ 0.573561458 0.378846892
+ 0.721434674 0.256020452
+ 0.800506679 0.234471135
+ 0.878606501 0.547689595
+ 0.724752597 0.388595461
+ 0.191857113 0.304753811
+ 0.537260782 0.663498977
+ 0.153878599 0.23642128
+ 0.110897982 0.30250753
+ 0.632830478 0.0470855606
+ 0.2482991 0.683683606
+ 0.350396447 0.782626243
+ 0.718154057 0.93907243
+ 0.49493702 0.782219293
+ 0.935327484 0.96951691
+ 0.284632744 0.996576355
+ 0.32707177 0.319971525
+ 0.188464186 0.119467958
+ 0.419563069 0.371676887
+ 0.241621767 0.763244386
+ 0.749992762 0.29136336
+ 0.863623289 0.957688973
+ 0.765627638 0.200999452
+ 0.293988357 0.30604941
+ 0.435096293 0.85847928
+ 0.0403205645 0.933680696
+ 0.0739632584 0.340692688
+ 0.532295148 0.328607521
+ 0.0195453791 0.315232003
+ 0.977470891 0.179985233
+ 0.718101513 0.309390778
+ 0.763737066 0.842762461
+ 0.94190425 0.178519636
+ 0.247248663 0.503431267
+ 0.0018186369 0.801493261
+ 0.734257817 0.124180472
+ 0.37329796 0.135555773
+ 0.208241154 0.866717157
+ 0.454998643 0.219041299
+ 0.566504767 0.669172807
+ 0.975005664 0.206478397
+ 0.128903007 0.125334619
+ 0.654771762 0.433761828
+ 0.224824753 0.213945824
+ 0.19724349 0.606174584
+ 0.38372507 0.801392281
+ 0.831255391 0.460232403
+ 0.319724598 0.554894907
+ 0.982108316 0.831923554
+ 0.217608818 0.0361020418
+ 0.182105635 0.341279857
+ 0.782657357 0.00954471854
+ 0.846088816 0.413674665
+ 0.723289945 0.153264684
+ 0.979959604 0.189677824
+ 0.0381100478 0.0433065183
+ 0.217695721 0.196771372
+ 0.114911585 0.494975084
+ 0.191732342 0.746649012
+ 0.723307096 0.199137486
+ 0.881874892 0.8451881
+ 0.700832912 0.283311348
+ 0.275297349 0.659346334
+ 0.209513259 0.245593821
+ 0.731524341 0.550805173
+ 0.941198475 0.397572732
+ 0.369252625 0.204452402
+ 0.534772687 0.873029488
+ 0.131622771 0.076543032
+ 0.511235968 0.536623546
+ 0.448135535 0.581952498
+ 0.709033708 0.179987902
+ 0.693833011 0.556715705
+ 0.293712127 0.78087396
+ 0.268413355 0.38432159
+ 0.0497553044 0.840270967
+ 0.295603751 0.520606532
+ 0.521123681 0.411454993
+ 0.358855265 0.749246827
+ 0.101749095 0.969263439
+ 0.055387845 0.333168122
+ 0.78292171 0.141995144
+ 0.740292734 0.0186367361
+ 0.91926743 0.88244227
+ 0.255694371 0.828671957
+ 0.0508396348 0.554232253
+ 0.562726928 0.0243466732
+ 0.916553435 0.786282464
+ 0.060269183 0.366459068
+ 0.461511393 0.941998073
+ 0.939833963 0.902066167
+ 0.0646314053 0.630992868
+ 0.0907667242 0.330182506
+ 0.501610259 0.402531915
+ 0.318932753 0.76452032
+ 0.170916166 0.624766516
+ 0.556464631 0.119387957
+ 0.477521968 0.348806223
+ 0.62481529 0.51965165
+ 0.96461606 0.822254331
+ 0.661634682 0.565246877
+ 0.132104983 0.651923436
+ 0.0497768265 0.151211416
+ 0.321005824 0.924105677
+ 0.781925862 0.421737553
+ 0.22107092 0.273822084
+ 0.829898766 0.786271431
+ 0.406981242 0.843350484
+ 0.382174445 0.503147116
+ 0.362500463 0.372584306
+ 0.577651234 0.43307351
+ 0.383291488 0.0109113385
+ 0.477983247 0.350618463
+ 0.325870679 0.765910971
+ 0.998111257 0.19124687
+ 0.904328014 0.740773357
+ 0.170772338 0.484518934
+ 0.889477252 0.842000412
+ 0.407288042 0.547409882
+ 0.735707881 0.0722028506
+ 0.0719075091 0.281304516
+ 0.55386353 0.746728082
+ 0.0476555005 0.209985426
+ 0.0338080872 0.865821204
+ 0.500460711 0.96670522
+ 0.719512088 0.44318597
+ 0.13608313 0.092155088
+ 0.0909094736 0.487216105
+ 0.41887243 0.0368333315
+ 0.880655497 0.731260328
+ 0.871688769 0.395506617
+ 0.787981518 0.0884212165
+ 0.210476507 0.0108774547
+ 0.758320977 0.184631724
+ 0.978376183 0.951909391
+ 0.416147906 0.079394022
+ 0.171637326 0.960913112
+ 0.217631822 0.902080192
+ 0.238757673 0.124024399
+ 0.806774191 0.933145368
+ 0.53352856 0.923261007
+ 0.301281843 0.376266739
+ 0.91052306 0.019897765
+ 0.699889764 0.47454675
+ 0.241064253 0.708841106
+ 0.107153622 0.225528223
+ 0.165380162 0.483280059
+ 0.524209225 0.915858807
+ 0.345504392 0.178268869
+ 0.857094493 0.642070074
+ 0.707313522 0.810524611
+ 0.165194216 0.993054126
+ 0.798123936 0.985616726
+ 0.930457132 0.108167055
+ 0.6199759 0.710702491
+ 0.120764011 0.183439468
+ 0.393502617 0.839335243
+ 0.919210041 0.66417125
+ 0.811994714 0.705449637
+ 0.666053303 0.22787307
+ 0.194048235 0.377220944
+ 0.265447731 0.0143705963
+ 0.056062507 0.541652596
+ 0.80563907 0.395803297
+ 0.460391097 0.971230747
+ 0.881260578 0.643891808
+ 0.942598705 0.0329464562
+ 0.822364674 0.686425591
+ 0.0947421794 0.887526278
+ 0.424218548 0.851718493
+ 0.683257893 0.499356902
+ 0.710227618 0.25626311
+ 0.774566445 0.222838719
+ 0.812739084 0.306435215
+ 0.51808567    0.9573
+ 0.399703837 0.376410234
+ 0.926680702 0.458296965
+ 0.802130707 0.521775248
+ 0.0469624619 0.603280888
+ 0.996150969 0.902563065
+ 0.340402516 0.893836634
+ 0.478339864 0.172541622
+ 0.890700317 0.602785773
+ 0.655757681 0.861636339
+ 0.80342911 0.0930118938
+ 0.426020824 0.168893432
+ 0.523034773 0.115596714
+ 0.00357203279 0.412924249
+ 0.371953699 0.139504182
+ 0.128894152 0.671833264
+ 0.0528508222 0.436145377
+ 0.468720592 0.512147299
+ 0.469575211 0.656953531
+ 0.36058169 0.0598401714
+ 0.817058507 0.395434341
+ 0.787841576 0.267159822
+ 0.0751111857 0.0463661186
+ 0.966055546 0.53289346
+ 0.439524474 0.784314435
+ 0.0576642591 0.762456801
+ 0.498748494 0.99332836
+ 0.886280577 0.980570857
+ 0.777728995 0.0364500687
+ 0.139976238 0.677067663
+ 0.36058675 0.0256702905
+ 0.670994055 0.961377135
+ 0.248145941 0.776363119
+ 0.728684205 0.253787924
+ 0.83414444 0.379198552
+ 0.342678805 0.0228034167
+ 0.265773003 0.315654852
+ 0.852760865 0.433104053
+ 0.91631579 0.77691788
+ 0.240262908 0.800013969
+ 0.475171948 0.599321899
+ 0.03988329 0.0194736128
+ 0.932881973 0.521050207
+ 0.647516657 0.966322136
+ 0.67497398 0.518749049
+ 0.159785397 0.589486976
+ 0.427722879 0.414952973
+ 0.217575046 0.730322663
+ 0.715624782 0.210190841
+ 0.230287624 0.658232045
+ 0.803061292 0.980312575
+ 0.444019007 0.0240838677
+ 0.631907358 0.422559456
+ 0.778791616 0.714205849
+ 0.510001506 0.486487594
+ 0.133858316 0.442956549
+ 0.529607889 0.139937725
+ 0.418848592 0.591308826
+ 0.398680001 0.301489528
+ 0.180520775 0.481644248
+ 0.748238973 0.420071736
+ 0.0783291054 0.690923915
+ 0.150339331 0.113815342
+ 0.76975532 0.948438281
+ 0.959157283 0.707732494
+ 0.0176790662 0.443206612
+ 0.564340638 0.80004727
+ 0.222076732 0.20472236
+ 0.1574623 0.104986788
+ 0.183266999 0.138963661
+ 0.0821784299 0.470662633
+ 0.560250427 0.568618258
+ 0.945908501 0.925840758
+ 0.518664225 0.835242753
+ 0.0509728449 0.578180569
+ 0.426157873 0.641097212
+ 0.842886382 0.821625328
+ 0.854610792 0.952297612
+ 0.7964866 0.621468819
+ 0.282520079 0.445235491
+ 0.0321397583 0.372987669
+ 0.952647287 0.555543771
+ 0.646001994 0.560881025
+ 0.576189763 0.573390931
+ 0.589392719 0.784653859
+ 0.337116543 0.417896208
+ 0.14872481 0.845535863
+ 0.932999859 0.695053604
+ 0.232577137 0.208279782
+ 0.649209453 0.825130866
+ 0.0617985423 0.481012653
+ 0.0369161321 0.146594086
+ 0.819183241 0.900106865
+ 0.978466605 0.313225181
+ 0.446647915 0.358105443
+ 0.615063626 0.649141794
+ 0.56217768 0.125840602
+ 0.0872411861 0.493128383
+ 0.629166022 0.0964995425
+ 0.160346958 0.606803264
+ 0.288654124 0.903139609
+ 0.457735026 0.339869584
+ 0.21739589 0.254295337
+ 0.93132918 0.639035524
+ 0.559194471 0.171752111
+ 0.676782661 0.883143864
+ 0.985801202 0.394977655
+ 0.526774575 0.549682784
+ 0.866719641 0.0550194634
+ 0.268594158 0.867087912
+ 0.112021012 0.257170777
+ 0.505955312 0.890721445
+ 0.178984033 0.547819069
+ 0.204944308 0.226319473
+ 0.225107905 0.663237838
+ 0.951764231 0.390185654
+ 0.223917988 0.381604818
+ 0.7920846 0.650759073
+ 0.387329099 0.27442751
+ 0.374219361 0.859536781
+ 0.834156266 0.254307044
+ 0.841844716 0.208713587
+ 0.00413620938 0.415678622
+ 0.594078814 0.97776503
+ 0.164314716 0.79665827
+ 0.237138132 0.588798943
+ 0.280320272 0.819101365
+ 0.34270625 0.970595564
+ 0.614603243 0.323532897
+ 0.235880625 0.949370453
+ 0.280040399 0.5514836
+ 0.572796006 0.245372387
+ 0.896452909 0.0605981899
+ 0.117714886 0.45189977
+ 0.100516317 0.303385528
+ 0.131238863 0.931527808
+ 0.314781998 0.100709669
+ 0.216174662 0.0558569662
+ 0.431075905 0.0128161546
+ 0.841606639 0.0657996801
+ 0.660426144 0.605462985
+ 0.576416464 0.0213906481
+ 0.249601786 0.629394628
+ 0.925440586 0.409784885
+ 0.764075065 0.926565497
+ 0.688100167 0.292892126
+ 0.258711566 0.861051256
+ 0.158542326 0.502953595
+ 0.697395156 0.634772733
+ 0.209102629 0.432680289
+ 0.690089577 0.158015735
+ 0.821590773 0.530354892
+ 0.961021414 0.114304736
+ 0.609068851 0.803574447
+ 0.31796553 0.691155721
+ 0.739919079 0.291456279
+ 0.628572473 0.328810542
+ 0.406718497 0.136083051
+ 0.971181949 0.754844807
+ 0.241919821 0.232645246
+ 0.583014067 0.949975842
+ 0.994874165 0.818318535
+ 0.655273014 0.173670594
+ 0.437206747 0.654818762
+ 0.116085997 0.0175755084
+ 0.103481914 0.504212482
+ 0.702664152 0.7019778
+ 0.0948656814 0.022884995
+ 0.511439792 0.105825531
+ 0.793721525 0.530379614
+ 0.785301267 0.347712843
+ 0.3655536 0.421387098
+ 0.736252529 0.600438373
+ 0.0976665646 0.474528454
+ 0.542696976 0.34706868
+ 0.290273904 0.964503311
+ 0.862352143 0.310155783
+ 0.490218433 0.905512581
+ 0.695665375 0.124902682
+ 0.517854691 0.988184745
+  0.874664 0.623475209
+ 0.945630698 0.990983452
+ 0.607626741 0.419729001
+ 0.324098092 0.879307646
+ 0.285632876 0.332245068
+ 0.225512742 0.598603071
+ 0.395263612 0.042109031
+ 0.274588714 0.319320346
+ 0.542250249 0.0754387842
+ 0.706099047 0.896817871
+ 0.0461896197 0.417555907
+ 0.762807556 0.547664943
+ 0.743499437 0.651562397
+ 0.442421663 0.180343176
+ 0.320609451 0.245499082
+ 0.50360472 0.617565506
+ 0.0874570222 0.0218161966
+ 0.736708597 0.366483741
+ 0.640922153 0.0166006179
+ 0.389001966 0.590085868
+ 0.418810806 0.359931914
+ 0.200680702 0.193661327
+ 0.593380086 0.406685478
+ 0.0861683418 0.0415359002
+ 0.227247101 0.85571854
+ 0.358262959 0.31370643
+ 0.563104115 0.524779833
+ 0.327684716 0.503714878
+ 0.414791035 0.374402444
+ 0.830271567 0.445019324
+ 0.583201032 0.152652098
+ 0.972702773 0.471878483
+ 0.184330695 0.0729803422
+ 0.0158207461 0.0820056691
+ 0.356089722 0.825340771
+ 0.284988619 0.9740696
+ 0.125337079 0.00394304167
+ 0.0536480609 0.132243031
+ 0.129340208 0.19390203
+ 0.98716804 0.186045004
+ 0.378434528 0.819331743
+ 0.290894914 0.211993806
+ 0.921229017 0.427643409
+ 0.777300047 0.517316096
+ 0.727781248 0.0727973324
+ 0.28588503 0.0276253764
+ 0.250479191 0.16258221
+ 0.206400512 0.493295124
+ 0.140383017 0.540116606
+ 0.0947458141 0.541248685
+ 0.164137695 0.682051073
+ 0.500684001 0.951276982
+ 0.767334503 0.768170206
+ 0.789171856 0.717873238
+ 0.931184316 0.0268245519
+ 0.970837209 0.539569383
+ 0.921081076 0.242760952
+ 0.698651755 0.380863142
+ 0.36348557 0.680825559
+ 0.529947382 0.714878638
+ 0.287824643 0.160657625
+ 0.657803689 0.632980985
+ 0.985756321 0.570135189
+ 0.0349789502 0.109914941
+ 0.463881584 0.993054361
+ 0.989126448 0.837595703
+ 0.283431531 0.729563546
+ 0.219950441 0.0275596092
+ 0.76522582 0.740315733
+ 0.730910678 0.443972202
+ 0.719566966 0.446230706
+ 0.92170696 0.106088945
+ 0.391924294 0.963784547
+ 0.223949662 0.821829018
+ 0.876288021 0.688556001
+ 0.450811411 0.734283069
+ 0.804913339 0.420760929
+ 0.666589725 0.369291143
+ 0.57526547 0.525506724
+ 0.627477778 0.680445423
+ 0.384389668 0.651130484
+ 0.404733203 0.522001659
+ 0.945870905 0.173158247
+ 0.293268312 0.903105613
+ 0.633878303 0.616931206
+ 0.258571399 0.377130928
+ 0.468137183 0.887959924
+ 0.437264906 0.333006737
+ 0.999243901 0.204666045
+ 0.690866545 0.388109602
+ 0.796601317 0.27081811
+ 0.208198269 0.422748379
+ 0.204033251 0.350866791
+ 0.677262078 0.437854194
+ 0.939204445 0.0625808353
+ 0.121294381 0.176210435
+ 0.94943511 0.0526325337
+ 0.784023976 0.561679035
+ 0.952353561 0.11567309
+ 0.720298235 0.968746626
+ 0.257002946 0.295505078
+ 0.0915734004 0.179280811
+ 0.843675442 0.448040097
+ 0.934612366 0.0484515266
+ 0.309497025 0.721787751
+ 0.420631093 0.0843292112
+ 0.355297626 0.101870736
+ 0.362286119 0.0553085085
+ 0.929562324 0.732324124
+ 0.0585484696 0.942369162
+ 0.799137793 0.504036885
+ 0.26341466 0.121002545
+ 0.759740545 0.400315147
+ 0.357787248 0.50015556
+ 0.0932665688 0.823763112
+ 0.838120209 0.676613116
+ 0.895132987 0.307462912
+ 0.786470248 0.207536173
+ 0.902587331 0.684923332
+ 0.38462396 0.121897924
+ 0.410155251 0.715892401
+ 0.0891767263 0.837457961
+ 0.793555984 0.193021712
+ 0.712376329 0.774479523
+ 0.643054105 0.639600821
+ 0.00789069175 0.913566679
+ 0.105743714 0.946383208
+ 0.0949122575 0.078776249
+ 0.355190636 0.273992602
+ 0.310872363 0.407625559
+ 0.103834132 0.0575545076
+ 0.981659449 0.340531168
+ 0.727147821 0.721186934
+ 0.979607852 0.759720206
+ 0.146156309 0.450067754
+ 0.992773646 0.590797893
+ 0.309818347 0.475173223
+ 0.850151043 0.517947985
+ 0.150366957 0.549172442
+ 0.418880712 0.386399655
+ 0.965528715 0.499187777
+ 0.329908188 0.602388292
+ 0.959246583 0.557216963
+ 0.126700458 0.724636816
+ 0.887460936 0.000377682969
+ 0.345063023 0.604773178
+ 0.143737216 0.24124666
+ 0.898077954 0.814034842
+ 0.552479784 0.0981790288
+ 0.917920421 0.571423062
+ 0.517230949 0.940873408
+ 0.851586829 0.389602542
+ 0.167788453 0.370967898
+ 0.060688165 0.415457364
+ 0.679034511 0.583012001
+ 0.967178825 0.265118459
+ 0.0347481961 0.430091149
+ 0.106055837 0.925010429
+ 0.280569212 0.226458441
+ 0.542220378 0.0922701962
+ 0.128300033 0.121912089
+ 0.909828478 0.250428102
+ 0.593671525 0.0514335004
+ 0.392600169 0.704037586
+ 0.121713072 0.839523374
+ 0.300534036 0.629301057
+ 0.452937365 0.536107053
+ 0.69675126 0.17939428
+ 0.575546569 0.438500918
+ 0.361077223 0.192545378
+ 0.0866494658 0.922364162
+ 0.549709775 0.477691822
+ 0.644770533 0.0403010449
+ 0.37325964 0.117697773
+ 0.734192898 0.0763430314
+ 0.192173053 0.806899878
+ 0.00735623692 0.787012059
+ 0.853040717 0.847192559
+ 0.432100655 0.731115449
+ 0.515755667 0.677223407
+ 0.846995714 0.824557607
+ 0.380817049 0.472085436
+ 0.999801517 0.74099426
+ 0.0485795625 0.490731329
+ 0.932455609 0.883857673
+ 0.934374545 0.149091814
+ 0.967452069 0.953820667
+ 0.67840151 0.0286955121
+ 0.488331319 0.196887828
+ 0.96307036 0.818834789
+ 0.217111757 0.453506864
+ 0.73282217 0.646609959
+ 0.593547102 0.0391656316
+ 0.72828587 0.85817936
+ 0.783720975 0.577072888
+ 0.379514567 0.664734076
+ 0.406070672 0.885510946
+ 0.204711285 0.405358629
+ 0.547159324 0.694589868
+ 0.447678769 0.414965926
+ 0.935937881 0.26610087
+ 0.570330709 0.785333222
+ 0.765681747 0.717315564
+ 0.164547167 0.939153464
+ 0.61809352 0.539389561
+ 0.605581442 0.991928788
+ 0.342057213 0.42933739
+ 0.50186039 0.699347017
+ 0.547211217 0.479105384
+ 0.133340425 0.362355509
+ 0.449779745 0.488749552
+ 0.805072728 0.559001243
+ 0.194715449 0.181358227
+ 0.0549102246 0.241682074
+ 0.81192795 0.576070817
+ 0.336998031 0.395754772
+ 0.666882047 0.929193234
+ 0.207264398 0.243084621
+ 0.10809197 0.49267994
+ 0.57677121 0.418595947
+ 0.865788418 0.291771224
+ 0.968565013 0.451196599
+ 0.880451471 0.679026743
+ 0.438959637 0.269968305
+ 0.45627416 0.0318392564
+ 0.329898837 0.109126166
+ 0.956876032 0.116660373
+ 0.014201368 0.216973603
+ 0.184286942 0.193244927
+ 0.54690006 0.906036525
+ 0.80863554 0.631885873
+ 0.714664069 0.938094486
+ 0.514130555 0.406521003
+ 0.133287091 0.113946859
+ 0.0116648814 0.165623027
+ 0.467218184 0.475314841
+ 0.416519579 0.666963282
+ 0.352966639 0.605497799
+ 0.299620504 0.687408097
+ 0.278885567 0.402251748
+ 0.20376453 0.235442128
+ 0.204598919 0.31200222
+ 0.849402689 0.846658563
+ 0.534280489 0.055886931
+ 0.9183707 0.0557234355
+ 0.892203894 0.0491395351
+ 0.655737468 0.427664304
+ 0.276635886 0.111393183
+ 0.208909848 0.733830722
+ 0.24484267 0.720488706
+ 0.849650192 0.224439941
+ 0.81631161 0.702298535
+ 0.66466898 0.736927402
+ 0.525111252 0.0979057159
+ 0.894222337 0.581249889
+ 0.708566105 0.667334015
+ 0.0975022747 0.626080454
+ 0.740596046 0.835958335
+ 0.793133124 0.974717766
+ 0.124357362 0.0647378266
+ 0.827242016 0.107710611
+ 0.707384935 0.44173422
+ 0.796142137 0.339438748
+ 0.160126561 0.561967229
+ 0.557858468 0.208276692
+ 0.310662284 0.903525948
+ 0.516041164 0.543107117
+ 0.285977302 0.0365953674
+ 0.591902369 0.451773422
+ 0.994733123 0.980276385
+ 0.841250662 0.0161357841
+ 0.174070919 0.571239335
+ 0.838124119 0.355244372
+ 0.0371987668 0.485613288
+ 0.518391193 0.702482409
+ 0.705579435 0.781553558
+ 0.434992594 0.90934138
+ 0.409201327 0.588567287
+ 0.835207274 0.426638053
+ 0.334204634 0.920605161
+ 0.217623963 0.858799823
+ 0.990516263 0.200630615
+ 0.151074212 0.163447125
+ 0.388665604 0.928856597
+ 0.245672124 0.0810093028
+ 0.153076605 0.865887373
+ 0.851321219 0.229425039
+ 0.0802210418 0.0400722155
+ 0.660348394 0.520980385
+ 0.145484774 0.715962003
+ 0.76453439 0.583816503
+ 0.763207105 0.26500238
+ 0.106132832 0.705590102
+ 0.314342338 0.634841154
+ 0.0856619647 0.523609741
+ 0.145811236 0.647927011
+ 0.560243349 0.797353045
+ 0.30034097 0.534233111
+ 0.86202459 0.149218199
+ 0.864806682 0.949611003
+ 0.0119206796 0.29268783
+ 0.833724261 0.838797079
+ 0.299857314 0.914312823
+ 0.880715947 0.935192381
+ 0.14075901 0.273815143
+ 0.584010922 0.416090784
+ 0.206311282 0.839018358
+ 0.588313245 0.197406927
+ 0.682080664 0.887596667
+ 0.464589353 0.32017658
+ 0.657022221 0.283262236
+ 0.86749847 0.969137023
+ 0.153472786 0.884718077
+ 0.355556285 0.745048492
+ 0.799788681 0.682564309
+ 0.477782827 0.103766322
+  0.359614 0.950095847
+ 0.579442273 0.633837988
+ 0.432870338 0.588456335
+ 0.488163393 0.370106307
+ 0.893083751 0.301164365
+ 0.696884598 0.617968887
+ 0.0628065336 0.450361806
+ 0.230320744 0.561022659
+ 0.5714753 0.604397628
+ 0.479637644 0.117626125
+ 0.64117799 0.821592048
+ 0.933876506 0.0409074405
+ 0.662852614 0.85127944
+ 0.801012298 0.658929921
+ 0.657440293 0.350026752
+ 0.640419895 0.288582822
+ 0.308055246 0.18067635
+ 0.785915377 0.729481448
+ 0.807566512 0.0458671756
+ 0.321791587 0.23406401
+ 0.00303227687 0.703580975
+ 0.576552352 0.333479955
+ 0.951681779 0.25252258
+ 0.490746078 0.710030092
+ 0.389499829 0.727068092
+ 0.490538246 0.891329241
+ 0.549588189 0.0907929358
+ 0.97047345 0.333890629
+ 0.326045418 0.664588365
+ 0.0125393493 0.70103779
+ 0.984657611 0.495947691
+ 0.844881727 0.617973526
+ 0.65160586 0.826455069
+ 0.0405516068 0.592945803
+ 0.559990349 0.946844466
+ 0.832576784 0.62444264
+ 0.199523162 0.6835689
+ 0.174534047 0.786804685
+ 0.965971704 0.543573793
+ 0.334223675 0.48779125
+ 0.93518814 0.214817702
+ 0.00509253424 0.952236311
+ 0.362839947 0.949867291
+ 0.71791016 0.135189052
+ 0.706557821 0.840445398
+ 0.542692557 0.0147280896
+ 0.938520494 0.32479051
+ 0.768699043 0.0815054558
+ 0.816506568 0.0410828537
+ 0.678974509 0.212753182
+ 0.576948718 0.726446379
+ 0.575225197 0.248044502
+ 0.524198453 0.665530765
+ 0.559466232 0.874573128
+ 0.278699153 0.289188234
+ 0.676814373 0.87304443
+ 0.0533683561 0.948305856
+ 0.150004104 0.42790644
+ 0.54350217 0.543198243
+ 0.821811832 0.481396592
+ 0.644074387 0.0437883975
+ 0.107696725 0.985725397
+ 0.588826799 0.907284981
+ 0.343032908 0.408432615
+ 0.92143996 0.699514452
+ 0.319963657 0.437267597
+ 0.108301445 0.536540198
+ 0.496092402 0.634198346
+ 0.0182096579 0.0377466164
+ 0.420350984 0.164440432
+ 0.459204204 0.332902217
+ 0.105210365 0.791993438
+ 0.648684255 0.304050517
+ 0.936065599 0.341903073
+ 0.516914262 0.306345053
+ 0.477732681 0.413267672
+ 0.207449506 0.0580206728
+ 0.20147671 0.953787851
+ 0.0433873571 0.716588772
+ 0.946998681 0.631971158
+ 0.803664359 0.00189106842
+ 0.023882858 0.583875293
+ 0.740003946 0.58733439
+ 0.0441677654 0.475423798
+ 0.955379457 0.929534654
+ 0.819659905 0.85319535
+ 0.364201259 0.209662225
+ 0.415597448 0.475399711
+ 0.425782067 0.767358051
+ 0.182649104 0.978194923
+ 0.595269612 0.509564829
+ 0.918325232 0.927766141
+ 0.0660563319 0.987888368
+ 0.656371363 0.391461328
+ 0.563754617 0.914412081
+ 0.61341727 0.012027838
+ 0.317679813 0.677089894
+ 0.378198749 0.247322616
+ 0.267071984 0.60319386
+ 0.167260402 0.983827358
+ 0.818464188 0.252703663
+ 0.86691778 0.475162481
+ 0.715194391 0.652540572
+ 0.203095435 0.899234951
+ 0.116059656 0.664552924
+ 0.907084508 0.589024437
+ 0.747731829 0.112586474
+ 0.273905061 0.301010865
+ 0.357614256 0.012204055
+ 0.892057966 0.679310048
+ 0.748142699 0.387899968
+ 0.239835062 0.827688229
+ 0.670205978 0.539526513
+ 0.125370506 0.744575728
+ 0.4632737 0.410656009
+ 0.631221212 0.759176453
+ 0.88037971 0.523850834
+ 0.911372262 0.722150169
+ 0.778505169 0.339431247
+ 0.208313585 0.358242933
+ 0.456846919 0.854833193
+ 0.763558617 0.256384134
+ 0.02504934 0.1783399
+ 0.0393144232 0.0827855011
+ 0.841413946 0.570998878
+ 0.212557302 0.281220725
+ 0.451247021 0.349827604
+ 0.757913507 0.890302011
+ 0.867987838 0.246302984
+ 0.582881022 0.310729265
+ 0.943650292 0.326166903
+ 0.710950174 0.784746852
+ 0.977850926 0.645617273
+ 0.0661527789 0.402293876
+ 0.377961553 0.96691887
+ 0.682630532 0.560826027
+ 0.0767650981 0.367440734
+ 0.915086145 0.463734597
+ 0.108314326 0.98944722
+ 0.303418975 0.706980491
+ 0.765825463 0.598215458
+ 0.586756407 0.138608395
+ 0.798648965 0.745555422
+ 0.692595451 0.714194337
+ 0.309739189 0.49619458
+ 0.801025552 0.198878578
+ 0.440679436 0.575007678
+ 0.946549043 0.52630118
+ 0.776505467 0.849828707
+ 0.213224256 0.205173476
+ 0.520933081 0.29329507
+ 0.759987147 0.931898925
+ 0.291884449 0.018607338
+ 0.3342405 0.307993036
+ 0.854561054 0.13788615
+ 0.79862118 0.888740491
+ 0.323496839 0.794224691
+ 0.333445329 0.870011444
+ 0.791343521 0.202420224
+ 0.480270022 0.0463560047
+ 0.886207204 0.339019834
+ 0.0603083065 0.885042441
+ 0.551229508 0.239192604
+ 0.57218026 0.082939175
+ 0.508117642 0.390809769
+ 0.230234643 0.235148747
+ 0.223665302 0.623332723
+ 0.842246062 0.844587819
+ 0.234781046 0.632556724
+ 0.0326947637 0.743390343
+ 0.817907869 0.163072505
+ 0.0935089744 0.27318813
+ 0.767015517 0.438516898
+ 0.641273133 0.284213822
+ 0.248517599 0.663739042
+ 0.364696923 0.823851179
+ 0.308778974 0.28290279
+ 0.560088432 0.283707275
+ 0.343230458 0.0257150573
+ 0.973201043 0.916842631
+ 0.15029046 0.41079118
+ 0.151651386 0.143327996
+ 0.588116825 0.149340382
+ 0.398885151 0.591468361
+ 0.66530222 0.0504257488
+ 0.117443084 0.592477425
+ 0.283016465 0.131265234
+ 0.704861428 0.244983086
+ 0.330763171 0.740090957
+ 0.864309574 0.768196886
+ 0.396295614 0.792343971
+ 0.75427949 0.01439305
+ 0.391893758 0.480972372
+ 0.955950183 0.618854509
+ 0.7901008 0.449765874
+ 0.800887908 0.885599582
+ 0.546386257 0.693311514
+ 0.540133657 0.0290301475
+ 0.201490808 0.683231542
+ 0.992653197 0.948798835
+ 0.859131904 0.95943703
+ 0.759813644 0.470880402
+ 0.225048473 0.485746735
+ 0.420412869 0.0752256115
+ 0.11885883 0.866029697
+ 0.3590969 0.592712552
+ 0.534894568 0.830774634
+ 0.430588837 0.855763728
+ 0.918437511 0.129381082
+ 0.188127215 0.868563215
+ 0.509872357 0.435096274
+ 0.688294677 0.0184322209
+ 0.100132685 0.174430747
+ 0.71339439 0.0136480199
+ 0.34752645 0.703131447
+ 0.766726271 0.218882841
+ 0.10203834 0.839979896
+ 0.658806674 0.404534281
+ 0.974993117 0.0944009582
+ 0.278516848 0.547237235
+ 0.0496986255 0.128136738
+ 0.758121514 0.837039425
+ 0.127990682 0.475298382
+ 0.243719543 0.296901269
+ 0.163720274 0.0278752944
+ 0.712862693 0.593104788
+ 0.344409714 0.218163337
+ 0.524280505 0.556998298
+ 0.936344518 0.565861344
+ 0.117767144 0.831686989
+ 0.494310925 0.847382746
+ 0.440323085 0.503577177
+ 0.074082664 0.122900161
+ 0.281041592 0.481035009
+ 0.933686324 0.761911699
+ 0.696352112 0.713522602
+ 0.000635224627 0.106301801
+ 0.410409275 0.176861659
+ 0.421496234 0.1921522
+ 0.83696135 0.262885531
+ 0.679900039 0.0335103518
+ 0.786506604 0.77730262
+ 0.354082654 0.628083257
+ 0.658849269 0.128271533
+ 0.449930591 0.807161709
+ 0.650863441 0.0363534128
+ 0.713826658 0.799980871
+ 0.553715794 0.218512823
+ 0.461249108 0.24756524
+ 0.0891190337 0.970925543
+ 0.924265794 0.692692583
+&
+@target G1.S1
+@type xy
+ 0.818935253 0.466352942
+ 0.311109115 0.224805413
+ 0.165260228 0.360717803
+ 0.770080122 0.11648034
+ 0.256260154 0.107477973
+ 0.675771728 0.852421826
+ 0.508786324 0.473882927
+ 0.0846307315 0.348343307
+ 0.849952892 0.919075108
+ 0.139603124 0.863406596
+ 0.744412996 0.577745784
+ 0.563134712 0.434641509
+ 0.999021482 0.931276268
+ 0.998075587 0.410685037
+ 0.180824318 0.480092892
+ 0.625571199 0.737970327
+ 0.576296451 0.392933865
+ 0.746174899 0.960945185
+ 0.401424147 0.131361649
+ 0.182485725 0.677927648
+ 0.252415506 0.89333476
+ 0.282923336 0.33144541
+ 0.266538335 0.545979363
+ 0.651192095 0.405023392
+ 0.327589944 0.464488847
+ 0.358364739 0.182106118
+ 0.0340445586 0.659914437
+ 0.396212968 0.596429154
+ 0.49099035 0.25431699
+ 0.160439005 0.0307817291
+ 0.112617858 0.310658323
+ 0.327081025 0.881375848
+ 0.61363537 0.203238385
+ 0.834348599 0.424868785
+ 0.361031567 0.704145397
+ 0.998752146 0.909155552
+ 0.626005102 0.863153004
+ 0.907149194 0.0619916772
+ 0.139595256 0.685963309
+ 0.422581841 0.0738849225
+ 0.130411811 0.416891888
+ 0.600354995 0.421284744
+ 0.628507482 0.623567366
+ 0.767460604 0.741721506
+ 0.979253968 0.436477549
+ 0.804079744 0.33035561
+ 0.793475798 0.579231342
+ 0.0933652008 0.708438042
+ 0.344577668 0.014109957
+ 0.302709743 0.402608999
+ 0.612843173 0.573075766
+ 0.717016306 0.697354196
+ 0.0664561773 0.668231473
+ 0.814562557 0.595658464
+ 0.163961782 0.595281608
+ 0.360925637 0.927586315
+ 0.0778913784 0.578661439
+ 0.166648565 0.916352826
+ 0.946932629 0.12231201
+ 0.540220523 0.733963797
+ 0.429920098 0.495107013
+ 0.520417404 0.252840882
+ 0.354019213 0.236424957
+ 0.327204116 0.608555963
+ 0.335852243 0.795857936
+ 0.869133147 0.637285747
+ 0.0466498358 0.898370631
+ 0.0749177246 0.943172634
+ 0.544308292 0.441852366
+ 0.837356939 0.63010403
+ 0.48887834 0.356863787
+ 0.824318307 0.787796025
+ 0.572906767 0.245149684
+ 0.343509141 0.256918521
+ 0.635262482 0.848655253
+ 0.0287227994 0.771789268
+ 0.279133004 0.18439566
+ 0.477178045 0.162643378
+ 0.727864264 0.550049235
+ 0.573561458 0.378846892
+ 0.721434674 0.256020452
+ 0.800506679 0.234471135
+ 0.878606501 0.547689595
+ 0.724752597 0.388595461
+ 0.191857113 0.304753811
+ 0.537260782 0.663498977
+ 0.153878599 0.23642128
+ 0.110897982 0.30250753
+ 0.632830478 0.0470855606
+ 0.2482991 0.683683606
+ 0.350396447 0.782626243
+ 0.718154057 0.93907243
+ 0.49493702 0.782219293
+ 0.935327484 0.96951691
+ 0.284632744 0.996576355
+ 0.32707177 0.319971525
+ 0.188464186 0.119467958
+ 0.419563069 0.371676887
+ 0.241621767 0.763244386
+ 0.749992762 0.29136336
+ 0.863623289 0.957688973
+ 0.765627638 0.200999452
+ 0.293988357 0.30604941
+ 0.435096293 0.85847928
+ 0.0403205645 0.933680696
+ 0.0739632584 0.340692688
+ 0.532295148 0.328607521
+ 0.0195453791 0.315232003
+ 0.977470891 0.179985233
+ 0.718101513 0.309390778
+ 0.763737066 0.842762461
+ 0.94190425 0.178519636
+ 0.247248663 0.503431267
+ 0.0018186369 0.801493261
+ 0.734257817 0.124180472
+ 0.37329796 0.135555773
+ 0.208241154 0.866717157
+ 0.454998643 0.219041299
+ 0.566504767 0.669172807
+ 0.975005664 0.206478397
+ 0.128903007 0.125334619
+ 0.654771762 0.433761828
+ 0.224824753 0.213945824
+ 0.19724349 0.606174584
+ 0.38372507 0.801392281
+ 0.831255391 0.460232403
+ 0.319724598 0.554894907
+ 0.982108316 0.831923554
+ 0.217608818 0.0361020418
+ 0.182105635 0.341279857
+ 0.782657357 0.00954471854
+ 0.846088816 0.413674665
+ 0.723289945 0.153264684
+ 0.979959604 0.189677824
+ 0.0381100478 0.0433065183
+ 0.217695721 0.196771372
+ 0.114911585 0.494975084
+ 0.191732342 0.746649012
+ 0.723307096 0.199137486
+ 0.881874892 0.8451881
+ 0.700832912 0.283311348
+ 0.275297349 0.659346334
+ 0.209513259 0.245593821
+ 0.731524341 0.550805173
+ 0.941198475 0.397572732
+ 0.369252625 0.204452402
+ 0.534772687 0.873029488
+ 0.131622771 0.076543032
+ 0.511235968 0.536623546
+ 0.448135535 0.581952498
+ 0.709033708 0.179987902
+ 0.693833011 0.556715705
+ 0.293712127 0.78087396
+ 0.268413355 0.38432159
+ 0.0497553044 0.840270967
+ 0.295603751 0.520606532
+ 0.521123681 0.411454993
+ 0.358855265 0.749246827
+ 0.101749095 0.969263439
+ 0.055387845 0.333168122
+ 0.78292171 0.141995144
+ 0.740292734 0.0186367361
+ 0.91926743 0.88244227
+ 0.255694371 0.828671957
+ 0.0508396348 0.554232253
+ 0.562726928 0.0243466732
+ 0.916553435 0.786282464
+ 0.060269183 0.366459068
+ 0.461511393 0.941998073
+ 0.939833963 0.902066167
+ 0.0646314053 0.630992868
+ 0.0907667242 0.330182506
+ 0.501610259 0.402531915
+ 0.318932753 0.76452032
+ 0.170916166 0.624766516
+ 0.556464631 0.119387957
+ 0.477521968 0.348806223
+ 0.62481529 0.51965165
+ 0.96461606 0.822254331
+ 0.661634682 0.565246877
+ 0.132104983 0.651923436
+ 0.0497768265 0.151211416
+ 0.321005824 0.924105677
+ 0.781925862 0.421737553
+ 0.22107092 0.273822084
+ 0.829898766 0.786271431
+ 0.406981242 0.843350484
+ 0.382174445 0.503147116
+ 0.362500463 0.372584306
+ 0.577651234 0.43307351
+ 0.383291488 0.0109113385
+ 0.477983247 0.350618463
+ 0.325870679 0.765910971
+ 0.998111257 0.19124687
+ 0.904328014 0.740773357
+ 0.170772338 0.484518934
+ 0.889477252 0.842000412
+ 0.407288042 0.547409882
+ 0.735707881 0.0722028506
+ 0.0719075091 0.281304516
+ 0.55386353 0.746728082
+ 0.0476555005 0.209985426
+ 0.0338080872 0.865821204
+ 0.500460711 0.96670522
+ 0.719512088 0.44318597
+ 0.13608313 0.092155088
+ 0.0909094736 0.487216105
+ 0.41887243 0.0368333315
+ 0.880655497 0.731260328
+ 0.871688769 0.395506617
+ 0.787981518 0.0884212165
+ 0.210476507 0.0108774547
+ 0.758320977 0.184631724
+ 0.978376183 0.951909391
+ 0.416147906 0.079394022
+ 0.171637326 0.960913112
+ 0.217631822 0.902080192
+ 0.238757673 0.124024399
+ 0.806774191 0.933145368
+ 0.53352856 0.923261007
+ 0.301281843 0.376266739
+ 0.91052306 0.019897765
+ 0.699889764 0.47454675
+ 0.241064253 0.708841106
+ 0.107153622 0.225528223
+ 0.165380162 0.483280059
+ 0.524209225 0.915858807
+ 0.345504392 0.178268869
+ 0.857094493 0.642070074
+ 0.707313522 0.810524611
+ 0.165194216 0.993054126
+ 0.798123936 0.985616726
+ 0.930457132 0.108167055
+ 0.6199759 0.710702491
+ 0.120764011 0.183439468
+ 0.393502617 0.839335243
+ 0.919210041 0.66417125
+ 0.811994714 0.705449637
+ 0.666053303 0.22787307
+ 0.194048235 0.377220944
+ 0.265447731 0.0143705963
+ 0.056062507 0.541652596
+ 0.80563907 0.395803297
+ 0.460391097 0.971230747
+ 0.881260578 0.643891808
+ 0.942598705 0.0329464562
+ 0.822364674 0.686425591
+ 0.0947421794 0.887526278
+ 0.424218548 0.851718493
+ 0.683257893 0.499356902
+ 0.710227618 0.25626311
+ 0.774566445 0.222838719
+ 0.812739084 0.306435215
+ 0.51808567    0.9573
+ 0.399703837 0.376410234
+ 0.926680702 0.458296965
+ 0.802130707 0.521775248
+ 0.0469624619 0.603280888
+ 0.996150969 0.902563065
+ 0.340402516 0.893836634
+ 0.478339864 0.172541622
+ 0.890700317 0.602785773
+ 0.655757681 0.861636339
+ 0.80342911 0.0930118938
+ 0.426020824 0.168893432
+ 0.523034773 0.115596714
+ 0.00357203279 0.412924249
+ 0.371953699 0.139504182
+ 0.128894152 0.671833264
+ 0.0528508222 0.436145377
+ 0.468720592 0.512147299
+ 0.469575211 0.656953531
+ 0.36058169 0.0598401714
+ 0.817058507 0.395434341
+ 0.787841576 0.267159822
+ 0.0751111857 0.0463661186
+ 0.966055546 0.53289346
+ 0.439524474 0.784314435
+ 0.0576642591 0.762456801
+ 0.498748494 0.99332836
+ 0.886280577 0.980570857
+ 0.777728995 0.0364500687
+ 0.139976238 0.677067663
+ 0.36058675 0.0256702905
+ 0.670994055 0.961377135
+ 0.248145941 0.776363119
+ 0.728684205 0.253787924
+ 0.83414444 0.379198552
+ 0.342678805 0.0228034167
+ 0.265773003 0.315654852
+ 0.852760865 0.433104053
+ 0.91631579 0.77691788
+ 0.240262908 0.800013969
+ 0.475171948 0.599321899
+ 0.03988329 0.0194736128
+ 0.932881973 0.521050207
+ 0.647516657 0.966322136
+ 0.67497398 0.518749049
+ 0.159785397 0.589486976
+ 0.427722879 0.414952973
+ 0.217575046 0.730322663
+ 0.715624782 0.210190841
+ 0.230287624 0.658232045
+ 0.803061292 0.980312575
+ 0.444019007 0.0240838677
+ 0.631907358 0.422559456
+ 0.778791616 0.714205849
+ 0.510001506 0.486487594
+ 0.133858316 0.442956549
+ 0.529607889 0.139937725
+ 0.418848592 0.591308826
+ 0.398680001 0.301489528
+ 0.180520775 0.481644248
+ 0.748238973 0.420071736
+ 0.0783291054 0.690923915
+ 0.150339331 0.113815342
+ 0.76975532 0.948438281
+ 0.959157283 0.707732494
+ 0.0176790662 0.443206612
+ 0.564340638 0.80004727
+ 0.222076732 0.20472236
+ 0.1574623 0.104986788
+ 0.183266999 0.138963661
+ 0.0821784299 0.470662633
+ 0.560250427 0.568618258
+ 0.945908501 0.925840758
+ 0.518664225 0.835242753
+ 0.0509728449 0.578180569
+ 0.426157873 0.641097212
+ 0.842886382 0.821625328
+ 0.854610792 0.952297612
+ 0.7964866 0.621468819
+ 0.282520079 0.445235491
+ 0.0321397583 0.372987669
+ 0.952647287 0.555543771
+ 0.646001994 0.560881025
+ 0.576189763 0.573390931
+ 0.589392719 0.784653859
+ 0.337116543 0.417896208
+ 0.14872481 0.845535863
+ 0.932999859 0.695053604
+ 0.232577137 0.208279782
+ 0.649209453 0.825130866
+ 0.0617985423 0.481012653
+ 0.0369161321 0.146594086
+ 0.819183241 0.900106865
+ 0.978466605 0.313225181
+ 0.446647915 0.358105443
+ 0.615063626 0.649141794
+ 0.56217768 0.125840602
+ 0.0872411861 0.493128383
+ 0.629166022 0.0964995425
+ 0.160346958 0.606803264
+ 0.288654124 0.903139609
+ 0.457735026 0.339869584
+ 0.21739589 0.254295337
+ 0.93132918 0.639035524
+ 0.559194471 0.171752111
+ 0.676782661 0.883143864
+ 0.985801202 0.394977655
+ 0.526774575 0.549682784
+ 0.866719641 0.0550194634
+ 0.268594158 0.867087912
+ 0.112021012 0.257170777
+ 0.505955312 0.890721445
+ 0.178984033 0.547819069
+ 0.204944308 0.226319473
+ 0.225107905 0.663237838
+ 0.951764231 0.390185654
+ 0.223917988 0.381604818
+ 0.7920846 0.650759073
+ 0.387329099 0.27442751
+ 0.374219361 0.859536781
+ 0.834156266 0.254307044
+ 0.841844716 0.208713587
+ 0.00413620938 0.415678622
+ 0.594078814 0.97776503
+ 0.164314716 0.79665827
+ 0.237138132 0.588798943
+ 0.280320272 0.819101365
+ 0.34270625 0.970595564
+ 0.614603243 0.323532897
+ 0.235880625 0.949370453
+ 0.280040399 0.5514836
+ 0.572796006 0.245372387
+ 0.896452909 0.0605981899
+ 0.117714886 0.45189977
+ 0.100516317 0.303385528
+ 0.131238863 0.931527808
+ 0.314781998 0.100709669
+ 0.216174662 0.0558569662
+ 0.431075905 0.0128161546
+ 0.841606639 0.0657996801
+ 0.660426144 0.605462985
+ 0.576416464 0.0213906481
+ 0.249601786 0.629394628
+ 0.925440586 0.409784885
+ 0.764075065 0.926565497
+ 0.688100167 0.292892126
+ 0.258711566 0.861051256
+ 0.158542326 0.502953595
+ 0.697395156 0.634772733
+ 0.209102629 0.432680289
+ 0.690089577 0.158015735
+ 0.821590773 0.530354892
+ 0.961021414 0.114304736
+ 0.609068851 0.803574447
+ 0.31796553 0.691155721
+ 0.739919079 0.291456279
+ 0.628572473 0.328810542
+ 0.406718497 0.136083051
+ 0.971181949 0.754844807
+ 0.241919821 0.232645246
+ 0.583014067 0.949975842
+ 0.994874165 0.818318535
+ 0.655273014 0.173670594
+ 0.437206747 0.654818762
+ 0.116085997 0.0175755084
+ 0.103481914 0.504212482
+ 0.702664152 0.7019778
+ 0.0948656814 0.022884995
+ 0.511439792 0.105825531
+ 0.793721525 0.530379614
+ 0.785301267 0.347712843
+ 0.3655536 0.421387098
+ 0.736252529 0.600438373
+ 0.0976665646 0.474528454
+ 0.542696976 0.34706868
+ 0.290273904 0.964503311
+ 0.862352143 0.310155783
+ 0.490218433 0.905512581
+ 0.695665375 0.124902682
+ 0.517854691 0.988184745
+  0.874664 0.623475209
+ 0.945630698 0.990983452
+ 0.607626741 0.419729001
+ 0.324098092 0.879307646
+ 0.285632876 0.332245068
+ 0.225512742 0.598603071
+ 0.395263612 0.042109031
+ 0.274588714 0.319320346
+ 0.542250249 0.0754387842
+ 0.706099047 0.896817871
+ 0.0461896197 0.417555907
+ 0.762807556 0.547664943
+ 0.743499437 0.651562397
+ 0.442421663 0.180343176
+ 0.320609451 0.245499082
+ 0.50360472 0.617565506
+ 0.0874570222 0.0218161966
+ 0.736708597 0.366483741
+ 0.640922153 0.0166006179
+ 0.389001966 0.590085868
+ 0.418810806 0.359931914
+ 0.200680702 0.193661327
+ 0.593380086 0.406685478
+ 0.0861683418 0.0415359002
+ 0.227247101 0.85571854
+ 0.358262959 0.31370643
+ 0.563104115 0.524779833
+ 0.327684716 0.503714878
+ 0.414791035 0.374402444
+ 0.830271567 0.445019324
+ 0.583201032 0.152652098
+ 0.972702773 0.471878483
+ 0.184330695 0.0729803422
+ 0.0158207461 0.0820056691
+ 0.356089722 0.825340771
+ 0.284988619 0.9740696
+ 0.125337079 0.00394304167
+ 0.0536480609 0.132243031
+ 0.129340208 0.19390203
+ 0.98716804 0.186045004
+ 0.378434528 0.819331743
+ 0.290894914 0.211993806
+ 0.921229017 0.427643409
+ 0.777300047 0.517316096
+ 0.727781248 0.0727973324
+ 0.28588503 0.0276253764
+ 0.250479191 0.16258221
+ 0.206400512 0.493295124
+ 0.140383017 0.540116606
+ 0.0947458141 0.541248685
+ 0.164137695 0.682051073
+ 0.500684001 0.951276982
+ 0.767334503 0.768170206
+ 0.789171856 0.717873238
+ 0.931184316 0.0268245519
+ 0.970837209 0.539569383
+ 0.921081076 0.242760952
+ 0.698651755 0.380863142
+ 0.36348557 0.680825559
+ 0.529947382 0.714878638
+ 0.287824643 0.160657625
+ 0.657803689 0.632980985
+ 0.985756321 0.570135189
+ 0.0349789502 0.109914941
+ 0.463881584 0.993054361
+ 0.989126448 0.837595703
+ 0.283431531 0.729563546
+ 0.219950441 0.0275596092
+ 0.76522582 0.740315733
+ 0.730910678 0.443972202
+ 0.719566966 0.446230706
+ 0.92170696 0.106088945
+ 0.391924294 0.963784547
+ 0.223949662 0.821829018
+ 0.876288021 0.688556001
+ 0.450811411 0.734283069
+ 0.804913339 0.420760929
+ 0.666589725 0.369291143
+ 0.57526547 0.525506724
+ 0.627477778 0.680445423
+ 0.384389668 0.651130484
+ 0.404733203 0.522001659
+ 0.945870905 0.173158247
+ 0.293268312 0.903105613
+ 0.633878303 0.616931206
+ 0.258571399 0.377130928
+ 0.468137183 0.887959924
+ 0.437264906 0.333006737
+ 0.999243901 0.204666045
+ 0.690866545 0.388109602
+ 0.796601317 0.27081811
+ 0.208198269 0.422748379
+ 0.204033251 0.350866791
+ 0.677262078 0.437854194
+ 0.939204445 0.0625808353
+ 0.121294381 0.176210435
+ 0.94943511 0.0526325337
+ 0.784023976 0.561679035
+ 0.952353561 0.11567309
+ 0.720298235 0.968746626
+ 0.257002946 0.295505078
+ 0.0915734004 0.179280811
+ 0.843675442 0.448040097
+ 0.934612366 0.0484515266
+ 0.309497025 0.721787751
+ 0.420631093 0.0843292112
+ 0.355297626 0.101870736
+ 0.362286119 0.0553085085
+ 0.929562324 0.732324124
+ 0.0585484696 0.942369162
+ 0.799137793 0.504036885
+ 0.26341466 0.121002545
+ 0.759740545 0.400315147
+ 0.357787248 0.50015556
+ 0.0932665688 0.823763112
+ 0.838120209 0.676613116
+ 0.895132987 0.307462912
+ 0.786470248 0.207536173
+ 0.902587331 0.684923332
+ 0.38462396 0.121897924
+ 0.410155251 0.715892401
+ 0.0891767263 0.837457961
+ 0.793555984 0.193021712
+ 0.712376329 0.774479523
+ 0.643054105 0.639600821
+ 0.00789069175 0.913566679
+ 0.105743714 0.946383208
+ 0.0949122575 0.078776249
+ 0.355190636 0.273992602
+ 0.310872363 0.407625559
+ 0.103834132 0.0575545076
+ 0.981659449 0.340531168
+ 0.727147821 0.721186934
+ 0.979607852 0.759720206
+ 0.146156309 0.450067754
+ 0.992773646 0.590797893
+ 0.309818347 0.475173223
+ 0.850151043 0.517947985
+ 0.150366957 0.549172442
+ 0.418880712 0.386399655
+ 0.965528715 0.499187777
+ 0.329908188 0.602388292
+ 0.959246583 0.557216963
+ 0.126700458 0.724636816
+ 0.887460936 0.000377682969
+ 0.345063023 0.604773178
+ 0.143737216 0.24124666
+ 0.898077954 0.814034842
+ 0.552479784 0.0981790288
+ 0.917920421 0.571423062
+ 0.517230949 0.940873408
+ 0.851586829 0.389602542
+ 0.167788453 0.370967898
+ 0.060688165 0.415457364
+ 0.679034511 0.583012001
+ 0.967178825 0.265118459
+ 0.0347481961 0.430091149
+ 0.106055837 0.925010429
+ 0.280569212 0.226458441
+ 0.542220378 0.0922701962
+ 0.128300033 0.121912089
+ 0.909828478 0.250428102
+ 0.593671525 0.0514335004
+ 0.392600169 0.704037586
+ 0.121713072 0.839523374
+ 0.300534036 0.629301057
+ 0.452937365 0.536107053
+ 0.69675126 0.17939428
+ 0.575546569 0.438500918
+ 0.361077223 0.192545378
+ 0.0866494658 0.922364162
+ 0.549709775 0.477691822
+ 0.644770533 0.0403010449
+ 0.37325964 0.117697773
+ 0.734192898 0.0763430314
+ 0.192173053 0.806899878
+ 0.00735623692 0.787012059
+ 0.853040717 0.847192559
+ 0.432100655 0.731115449
+ 0.515755667 0.677223407
+ 0.846995714 0.824557607
+ 0.380817049 0.472085436
+ 0.999801517 0.74099426
+ 0.0485795625 0.490731329
+ 0.932455609 0.883857673
+ 0.934374545 0.149091814
+ 0.967452069 0.953820667
+ 0.67840151 0.0286955121
+ 0.488331319 0.196887828
+ 0.96307036 0.818834789
+ 0.217111757 0.453506864
+ 0.73282217 0.646609959
+ 0.593547102 0.0391656316
+ 0.72828587 0.85817936
+ 0.783720975 0.577072888
+ 0.379514567 0.664734076
+ 0.406070672 0.885510946
+ 0.204711285 0.405358629
+ 0.547159324 0.694589868
+ 0.447678769 0.414965926
+ 0.935937881 0.26610087
+ 0.570330709 0.785333222
+ 0.765681747 0.717315564
+ 0.164547167 0.939153464
+ 0.61809352 0.539389561
+ 0.605581442 0.991928788
+ 0.342057213 0.42933739
+ 0.50186039 0.699347017
+ 0.547211217 0.479105384
+ 0.133340425 0.362355509
+ 0.449779745 0.488749552
+ 0.805072728 0.559001243
+ 0.194715449 0.181358227
+ 0.0549102246 0.241682074
+ 0.81192795 0.576070817
+ 0.336998031 0.395754772
+ 0.666882047 0.929193234
+ 0.207264398 0.243084621
+ 0.10809197 0.49267994
+ 0.57677121 0.418595947
+ 0.865788418 0.291771224
+ 0.968565013 0.451196599
+ 0.880451471 0.679026743
+ 0.438959637 0.269968305
+ 0.45627416 0.0318392564
+ 0.329898837 0.109126166
+ 0.956876032 0.116660373
+ 0.014201368 0.216973603
+ 0.184286942 0.193244927
+ 0.54690006 0.906036525
+ 0.80863554 0.631885873
+ 0.714664069 0.938094486
+ 0.514130555 0.406521003
+ 0.133287091 0.113946859
+ 0.0116648814 0.165623027
+ 0.467218184 0.475314841
+ 0.416519579 0.666963282
+ 0.352966639 0.605497799
+ 0.299620504 0.687408097
+ 0.278885567 0.402251748
+ 0.20376453 0.235442128
+ 0.204598919 0.31200222
+ 0.849402689 0.846658563
+ 0.534280489 0.055886931
+ 0.9183707 0.0557234355
+ 0.892203894 0.0491395351
+ 0.655737468 0.427664304
+ 0.276635886 0.111393183
+ 0.208909848 0.733830722
+ 0.24484267 0.720488706
+ 0.849650192 0.224439941
+ 0.81631161 0.702298535
+ 0.66466898 0.736927402
+ 0.525111252 0.0979057159
+ 0.894222337 0.581249889
+ 0.708566105 0.667334015
+ 0.0975022747 0.626080454
+ 0.740596046 0.835958335
+ 0.793133124 0.974717766
+ 0.124357362 0.0647378266
+ 0.827242016 0.107710611
+ 0.707384935 0.44173422
+ 0.796142137 0.339438748
+ 0.160126561 0.561967229
+ 0.557858468 0.208276692
+ 0.310662284 0.903525948
+ 0.516041164 0.543107117
+ 0.285977302 0.0365953674
+ 0.591902369 0.451773422
+ 0.994733123 0.980276385
+ 0.841250662 0.0161357841
+ 0.174070919 0.571239335
+ 0.838124119 0.355244372
+ 0.0371987668 0.485613288
+ 0.518391193 0.702482409
+ 0.705579435 0.781553558
+ 0.434992594 0.90934138
+ 0.409201327 0.588567287
+ 0.835207274 0.426638053
+ 0.334204634 0.920605161
+ 0.217623963 0.858799823
+ 0.990516263 0.200630615
+ 0.151074212 0.163447125
+ 0.388665604 0.928856597
+ 0.245672124 0.0810093028
+ 0.153076605 0.865887373
+ 0.851321219 0.229425039
+ 0.0802210418 0.0400722155
+ 0.660348394 0.520980385
+ 0.145484774 0.715962003
+ 0.76453439 0.583816503
+ 0.763207105 0.26500238
+ 0.106132832 0.705590102
+ 0.314342338 0.634841154
+ 0.0856619647 0.523609741
+ 0.145811236 0.647927011
+ 0.560243349 0.797353045
+ 0.30034097 0.534233111
+ 0.86202459 0.149218199
+ 0.864806682 0.949611003
+ 0.0119206796 0.29268783
+ 0.833724261 0.838797079
+ 0.299857314 0.914312823
+ 0.880715947 0.935192381
+ 0.14075901 0.273815143
+ 0.584010922 0.416090784
+ 0.206311282 0.839018358
+ 0.588313245 0.197406927
+ 0.682080664 0.887596667
+ 0.464589353 0.32017658
+ 0.657022221 0.283262236
+ 0.86749847 0.969137023
+ 0.153472786 0.884718077
+ 0.355556285 0.745048492
+ 0.799788681 0.682564309
+ 0.477782827 0.103766322
+  0.359614 0.950095847
+ 0.579442273 0.633837988
+ 0.432870338 0.588456335
+ 0.488163393 0.370106307
+ 0.893083751 0.301164365
+ 0.696884598 0.617968887
+ 0.0628065336 0.450361806
+ 0.230320744 0.561022659
+ 0.5714753 0.604397628
+ 0.479637644 0.117626125
+ 0.64117799 0.821592048
+ 0.933876506 0.0409074405
+ 0.662852614 0.85127944
+ 0.801012298 0.658929921
+ 0.657440293 0.350026752
+ 0.640419895 0.288582822
+ 0.308055246 0.18067635
+ 0.785915377 0.729481448
+ 0.807566512 0.0458671756
+ 0.321791587 0.23406401
+ 0.00303227687 0.703580975
+ 0.576552352 0.333479955
+ 0.951681779 0.25252258
+ 0.490746078 0.710030092
+ 0.389499829 0.727068092
+ 0.490538246 0.891329241
+ 0.549588189 0.0907929358
+ 0.97047345 0.333890629
+ 0.326045418 0.664588365
+ 0.0125393493 0.70103779
+ 0.984657611 0.495947691
+ 0.844881727 0.617973526
+ 0.65160586 0.826455069
+ 0.0405516068 0.592945803
+ 0.559990349 0.946844466
+ 0.832576784 0.62444264
+ 0.199523162 0.6835689
+ 0.174534047 0.786804685
+ 0.965971704 0.543573793
+ 0.334223675 0.48779125
+ 0.93518814 0.214817702
+ 0.00509253424 0.952236311
+ 0.362839947 0.949867291
+ 0.71791016 0.135189052
+ 0.706557821 0.840445398
+ 0.542692557 0.0147280896
+ 0.938520494 0.32479051
+ 0.768699043 0.0815054558
+ 0.816506568 0.0410828537
+ 0.678974509 0.212753182
+ 0.576948718 0.726446379
+ 0.575225197 0.248044502
+ 0.524198453 0.665530765
+ 0.559466232 0.874573128
+ 0.278699153 0.289188234
+ 0.676814373 0.87304443
+ 0.0533683561 0.948305856
+ 0.150004104 0.42790644
+ 0.54350217 0.543198243
+ 0.821811832 0.481396592
+ 0.644074387 0.0437883975
+ 0.107696725 0.985725397
+ 0.588826799 0.907284981
+ 0.343032908 0.408432615
+ 0.92143996 0.699514452
+ 0.319963657 0.437267597
+ 0.108301445 0.536540198
+ 0.496092402 0.634198346
+ 0.0182096579 0.0377466164
+ 0.420350984 0.164440432
+ 0.459204204 0.332902217
+ 0.105210365 0.791993438
+ 0.648684255 0.304050517
+ 0.936065599 0.341903073
+ 0.516914262 0.306345053
+ 0.477732681 0.413267672
+ 0.207449506 0.0580206728
+ 0.20147671 0.953787851
+ 0.0433873571 0.716588772
+ 0.946998681 0.631971158
+ 0.803664359 0.00189106842
+ 0.023882858 0.583875293
+ 0.740003946 0.58733439
+ 0.0441677654 0.475423798
+ 0.955379457 0.929534654
+ 0.819659905 0.85319535
+ 0.364201259 0.209662225
+ 0.415597448 0.475399711
+ 0.425782067 0.767358051
+ 0.182649104 0.978194923
+ 0.595269612 0.509564829
+ 0.918325232 0.927766141
+ 0.0660563319 0.987888368
+ 0.656371363 0.391461328
+ 0.563754617 0.914412081
+ 0.61341727 0.012027838
+ 0.317679813 0.677089894
+ 0.378198749 0.247322616
+ 0.267071984 0.60319386
+ 0.167260402 0.983827358
+ 0.818464188 0.252703663
+ 0.86691778 0.475162481
+ 0.715194391 0.652540572
+ 0.203095435 0.899234951
+ 0.116059656 0.664552924
+ 0.907084508 0.589024437
+ 0.747731829 0.112586474
+ 0.273905061 0.301010865
+ 0.357614256 0.012204055
+ 0.892057966 0.679310048
+ 0.748142699 0.387899968
+ 0.239835062 0.827688229
+ 0.670205978 0.539526513
+ 0.125370506 0.744575728
+ 0.4632737 0.410656009
+ 0.631221212 0.759176453
+ 0.88037971 0.523850834
+ 0.911372262 0.722150169
+ 0.778505169 0.339431247
+ 0.208313585 0.358242933
+ 0.456846919 0.854833193
+ 0.763558617 0.256384134
+ 0.02504934 0.1783399
+ 0.0393144232 0.0827855011
+ 0.841413946 0.570998878
+ 0.212557302 0.281220725
+ 0.451247021 0.349827604
+ 0.757913507 0.890302011
+ 0.867987838 0.246302984
+ 0.582881022 0.310729265
+ 0.943650292 0.326166903
+ 0.710950174 0.784746852
+ 0.977850926 0.645617273
+ 0.0661527789 0.402293876
+ 0.377961553 0.96691887
+ 0.682630532 0.560826027
+ 0.0767650981 0.367440734
+ 0.915086145 0.463734597
+ 0.108314326 0.98944722
+ 0.303418975 0.706980491
+ 0.765825463 0.598215458
+ 0.586756407 0.138608395
+ 0.798648965 0.745555422
+ 0.692595451 0.714194337
+ 0.309739189 0.49619458
+ 0.801025552 0.198878578
+ 0.440679436 0.575007678
+ 0.946549043 0.52630118
+ 0.776505467 0.849828707
+ 0.213224256 0.205173476
+ 0.520933081 0.29329507
+ 0.759987147 0.931898925
+ 0.291884449 0.018607338
+ 0.3342405 0.307993036
+ 0.854561054 0.13788615
+ 0.79862118 0.888740491
+ 0.323496839 0.794224691
+ 0.333445329 0.870011444
+ 0.791343521 0.202420224
+ 0.480270022 0.0463560047
+ 0.886207204 0.339019834
+ 0.0603083065 0.885042441
+ 0.551229508 0.239192604
+ 0.57218026 0.082939175
+ 0.508117642 0.390809769
+ 0.230234643 0.235148747
+ 0.223665302 0.623332723
+ 0.842246062 0.844587819
+ 0.234781046 0.632556724
+ 0.0326947637 0.743390343
+ 0.817907869 0.163072505
+ 0.0935089744 0.27318813
+ 0.767015517 0.438516898
+ 0.641273133 0.284213822
+ 0.248517599 0.663739042
+ 0.364696923 0.823851179
+ 0.308778974 0.28290279
+ 0.560088432 0.283707275
+ 0.343230458 0.0257150573
+ 0.973201043 0.916842631
+ 0.15029046 0.41079118
+ 0.151651386 0.143327996
+ 0.588116825 0.149340382
+ 0.398885151 0.591468361
+ 0.66530222 0.0504257488
+ 0.117443084 0.592477425
+ 0.283016465 0.131265234
+ 0.704861428 0.244983086
+ 0.330763171 0.740090957
+ 0.864309574 0.768196886
+ 0.396295614 0.792343971
+ 0.75427949 0.01439305
+ 0.391893758 0.480972372
+ 0.955950183 0.618854509
+ 0.7901008 0.449765874
+ 0.800887908 0.885599582
+ 0.546386257 0.693311514
+ 0.540133657 0.0290301475
+ 0.201490808 0.683231542
+ 0.992653197 0.948798835
+ 0.859131904 0.95943703
+ 0.759813644 0.470880402
+ 0.225048473 0.485746735
+ 0.420412869 0.0752256115
+ 0.11885883 0.866029697
+ 0.3590969 0.592712552
+ 0.534894568 0.830774634
+ 0.430588837 0.855763728
+ 0.918437511 0.129381082
+ 0.188127215 0.868563215
+ 0.509872357 0.435096274
+ 0.688294677 0.0184322209
+ 0.100132685 0.174430747
+ 0.71339439 0.0136480199
+ 0.34752645 0.703131447
+ 0.766726271 0.218882841
+ 0.10203834 0.839979896
+ 0.658806674 0.404534281
+ 0.974993117 0.0944009582
+ 0.278516848 0.547237235
+ 0.0496986255 0.128136738
+ 0.758121514 0.837039425
+ 0.127990682 0.475298382
+ 0.243719543 0.296901269
+ 0.163720274 0.0278752944
+ 0.712862693 0.593104788
+ 0.344409714 0.218163337
+ 0.524280505 0.556998298
+ 0.936344518 0.565861344
+ 0.117767144 0.831686989
+ 0.494310925 0.847382746
+ 0.440323085 0.503577177
+ 0.074082664 0.122900161
+ 0.281041592 0.481035009
+ 0.933686324 0.761911699
+ 0.696352112 0.713522602
+ 0.000635224627 0.106301801
+ 0.410409275 0.176861659
+ 0.421496234 0.1921522
+ 0.83696135 0.262885531
+ 0.679900039 0.0335103518
+ 0.786506604 0.77730262
+ 0.354082654 0.628083257
+ 0.658849269 0.128271533
+ 0.449930591 0.807161709
+ 0.650863441 0.0363534128
+ 0.713826658 0.799980871
+ 0.553715794 0.218512823
+ 0.461249108 0.24756524
+ 0.0891190337 0.970925543
+ 0.924265794 0.692692583
+&
+@target G2.S2
+@type xy
+ 0.818935253 0.466352942
+ 0.311109115 0.224805413
+ 0.165260228 0.360717803
+ 0.770080122 0.11648034
+ 0.256260154 0.107477973
+ 0.675771728 0.852421826
+ 0.508786324 0.473882927
+ 0.0846307315 0.348343307
+ 0.849952892 0.919075108
+ 0.139603124 0.863406596
+ 0.744412996 0.577745784
+ 0.563134712 0.434641509
+ 0.999021482 0.931276268
+ 0.998075587 0.410685037
+ 0.180824318 0.480092892
+ 0.625571199 0.737970327
+ 0.576296451 0.392933865
+ 0.746174899 0.960945185
+ 0.401424147 0.131361649
+ 0.182485725 0.677927648
+ 0.252415506 0.89333476
+ 0.282923336 0.33144541
+ 0.266538335 0.545979363
+ 0.651192095 0.405023392
+ 0.327589944 0.464488847
+ 0.358364739 0.182106118
+ 0.0340445586 0.659914437
+ 0.396212968 0.596429154
+ 0.49099035 0.25431699
+ 0.160439005 0.0307817291
+ 0.112617858 0.310658323
+ 0.327081025 0.881375848
+ 0.61363537 0.203238385
+ 0.834348599 0.424868785
+ 0.361031567 0.704145397
+ 0.998752146 0.909155552
+ 0.626005102 0.863153004
+ 0.907149194 0.0619916772
+ 0.139595256 0.685963309
+ 0.422581841 0.0738849225
+ 0.130411811 0.416891888
+ 0.600354995 0.421284744
+ 0.628507482 0.623567366
+ 0.767460604 0.741721506
+ 0.979253968 0.436477549
+ 0.804079744 0.33035561
+ 0.793475798 0.579231342
+ 0.0933652008 0.708438042
+ 0.344577668 0.014109957
+ 0.302709743 0.402608999
+ 0.612843173 0.573075766
+ 0.717016306 0.697354196
+ 0.0664561773 0.668231473
+ 0.814562557 0.595658464
+ 0.163961782 0.595281608
+ 0.360925637 0.927586315
+ 0.0778913784 0.578661439
+ 0.166648565 0.916352826
+ 0.946932629 0.12231201
+ 0.540220523 0.733963797
+ 0.429920098 0.495107013
+ 0.520417404 0.252840882
+ 0.354019213 0.236424957
+ 0.327204116 0.608555963
+ 0.335852243 0.795857936
+ 0.869133147 0.637285747
+ 0.0466498358 0.898370631
+ 0.0749177246 0.943172634
+ 0.544308292 0.441852366
+ 0.837356939 0.63010403
+ 0.48887834 0.356863787
+ 0.824318307 0.787796025
+ 0.572906767 0.245149684
+ 0.343509141 0.256918521
+ 0.635262482 0.848655253
+ 0.0287227994 0.771789268
+ 0.279133004 0.18439566
+ 0.477178045 0.162643378
+ 0.727864264 0.550049235
+ 0.573561458 0.378846892
+ 0.721434674 0.256020452
+ 0.800506679 0.234471135
+ 0.878606501 0.547689595
+ 0.724752597 0.388595461
+ 0.191857113 0.304753811
+ 0.537260782 0.663498977
+ 0.153878599 0.23642128
+ 0.110897982 0.30250753
+ 0.632830478 0.0470855606
+ 0.2482991 0.683683606
+ 0.350396447 0.782626243
+ 0.718154057 0.93907243
+ 0.49493702 0.782219293
+ 0.935327484 0.96951691
+ 0.284632744 0.996576355
+ 0.32707177 0.319971525
+ 0.188464186 0.119467958
+ 0.419563069 0.371676887
+ 0.241621767 0.763244386
+ 0.749992762 0.29136336
+ 0.863623289 0.957688973
+ 0.765627638 0.200999452
+ 0.293988357 0.30604941
+ 0.435096293 0.85847928
+ 0.0403205645 0.933680696
+ 0.0739632584 0.340692688
+ 0.532295148 0.328607521
+ 0.0195453791 0.315232003
+ 0.977470891 0.179985233
+ 0.718101513 0.309390778
+ 0.763737066 0.842762461
+ 0.94190425 0.178519636
+ 0.247248663 0.503431267
+ 0.0018186369 0.801493261
+ 0.734257817 0.124180472
+ 0.37329796 0.135555773
+ 0.208241154 0.866717157
+ 0.454998643 0.219041299
+ 0.566504767 0.669172807
+ 0.975005664 0.206478397
+ 0.128903007 0.125334619
+ 0.654771762 0.433761828
+ 0.224824753 0.213945824
+ 0.19724349 0.606174584
+ 0.38372507 0.801392281
+ 0.831255391 0.460232403
+ 0.319724598 0.554894907
+ 0.982108316 0.831923554
+ 0.217608818 0.0361020418
+ 0.182105635 0.341279857
+ 0.782657357 0.00954471854
+ 0.846088816 0.413674665
+ 0.723289945 0.153264684
+ 0.979959604 0.189677824
+ 0.0381100478 0.0433065183
+ 0.217695721 0.196771372
+ 0.114911585 0.494975084
+ 0.191732342 0.746649012
+ 0.723307096 0.199137486
+ 0.881874892 0.8451881
+ 0.700832912 0.283311348
+ 0.275297349 0.659346334
+ 0.209513259 0.245593821
+ 0.731524341 0.550805173
+ 0.941198475 0.397572732
+ 0.369252625 0.204452402
+ 0.534772687 0.873029488
+ 0.131622771 0.076543032
+ 0.511235968 0.536623546
+ 0.448135535 0.581952498
+ 0.709033708 0.179987902
+ 0.693833011 0.556715705
+ 0.293712127 0.78087396
+ 0.268413355 0.38432159
+ 0.0497553044 0.840270967
+ 0.295603751 0.520606532
+ 0.521123681 0.411454993
+ 0.358855265 0.749246827
+ 0.101749095 0.969263439
+ 0.055387845 0.333168122
+ 0.78292171 0.141995144
+ 0.740292734 0.0186367361
+ 0.91926743 0.88244227
+ 0.255694371 0.828671957
+ 0.0508396348 0.554232253
+ 0.562726928 0.0243466732
+ 0.916553435 0.786282464
+ 0.060269183 0.366459068
+ 0.461511393 0.941998073
+ 0.939833963 0.902066167
+ 0.0646314053 0.630992868
+ 0.0907667242 0.330182506
+ 0.501610259 0.402531915
+ 0.318932753 0.76452032
+ 0.170916166 0.624766516
+ 0.556464631 0.119387957
+ 0.477521968 0.348806223
+ 0.62481529 0.51965165
+ 0.96461606 0.822254331
+ 0.661634682 0.565246877
+ 0.132104983 0.651923436
+ 0.0497768265 0.151211416
+ 0.321005824 0.924105677
+ 0.781925862 0.421737553
+ 0.22107092 0.273822084
+ 0.829898766 0.786271431
+ 0.406981242 0.843350484
+ 0.382174445 0.503147116
+ 0.362500463 0.372584306
+ 0.577651234 0.43307351
+ 0.383291488 0.0109113385
+ 0.477983247 0.350618463
+ 0.325870679 0.765910971
+ 0.998111257 0.19124687
+ 0.904328014 0.740773357
+ 0.170772338 0.484518934
+ 0.889477252 0.842000412
+ 0.407288042 0.547409882
+ 0.735707881 0.0722028506
+ 0.0719075091 0.281304516
+ 0.55386353 0.746728082
+ 0.0476555005 0.209985426
+ 0.0338080872 0.865821204
+ 0.500460711 0.96670522
+ 0.719512088 0.44318597
+ 0.13608313 0.092155088
+ 0.0909094736 0.487216105
+ 0.41887243 0.0368333315
+ 0.880655497 0.731260328
+ 0.871688769 0.395506617
+ 0.787981518 0.0884212165
+ 0.210476507 0.0108774547
+ 0.758320977 0.184631724
+ 0.978376183 0.951909391
+ 0.416147906 0.079394022
+ 0.171637326 0.960913112
+ 0.217631822 0.902080192
+ 0.238757673 0.124024399
+ 0.806774191 0.933145368
+ 0.53352856 0.923261007
+ 0.301281843 0.376266739
+ 0.91052306 0.019897765
+ 0.699889764 0.47454675
+ 0.241064253 0.708841106
+ 0.107153622 0.225528223
+ 0.165380162 0.483280059
+ 0.524209225 0.915858807
+ 0.345504392 0.178268869
+ 0.857094493 0.642070074
+ 0.707313522 0.810524611
+ 0.165194216 0.993054126
+ 0.798123936 0.985616726
+ 0.930457132 0.108167055
+ 0.6199759 0.710702491
+ 0.120764011 0.183439468
+ 0.393502617 0.839335243
+ 0.919210041 0.66417125
+ 0.811994714 0.705449637
+ 0.666053303 0.22787307
+ 0.194048235 0.377220944
+ 0.265447731 0.0143705963
+ 0.056062507 0.541652596
+ 0.80563907 0.395803297
+ 0.460391097 0.971230747
+ 0.881260578 0.643891808
+ 0.942598705 0.0329464562
+ 0.822364674 0.686425591
+ 0.0947421794 0.887526278
+ 0.424218548 0.851718493
+ 0.683257893 0.499356902
+ 0.710227618 0.25626311
+ 0.774566445 0.222838719
+ 0.812739084 0.306435215
+ 0.51808567    0.9573
+ 0.399703837 0.376410234
+ 0.926680702 0.458296965
+ 0.802130707 0.521775248
+ 0.0469624619 0.603280888
+ 0.996150969 0.902563065
+ 0.340402516 0.893836634
+ 0.478339864 0.172541622
+ 0.890700317 0.602785773
+ 0.655757681 0.861636339
+ 0.80342911 0.0930118938
+ 0.426020824 0.168893432
+ 0.523034773 0.115596714
+ 0.00357203279 0.412924249
+ 0.371953699 0.139504182
+ 0.128894152 0.671833264
+ 0.0528508222 0.436145377
+ 0.468720592 0.512147299
+ 0.469575211 0.656953531
+ 0.36058169 0.0598401714
+ 0.817058507 0.395434341
+ 0.787841576 0.267159822
+ 0.0751111857 0.0463661186
+ 0.966055546 0.53289346
+ 0.439524474 0.784314435
+ 0.0576642591 0.762456801
+ 0.498748494 0.99332836
+ 0.886280577 0.980570857
+ 0.777728995 0.0364500687
+ 0.139976238 0.677067663
+ 0.36058675 0.0256702905
+ 0.670994055 0.961377135
+ 0.248145941 0.776363119
+ 0.728684205 0.253787924
+ 0.83414444 0.379198552
+ 0.342678805 0.0228034167
+ 0.265773003 0.315654852
+ 0.852760865 0.433104053
+ 0.91631579 0.77691788
+ 0.240262908 0.800013969
+ 0.475171948 0.599321899
+ 0.03988329 0.0194736128
+ 0.932881973 0.521050207
+ 0.647516657 0.966322136
+ 0.67497398 0.518749049
+ 0.159785397 0.589486976
+ 0.427722879 0.414952973
+ 0.217575046 0.730322663
+ 0.715624782 0.210190841
+ 0.230287624 0.658232045
+ 0.803061292 0.980312575
+ 0.444019007 0.0240838677
+ 0.631907358 0.422559456
+ 0.778791616 0.714205849
+ 0.510001506 0.486487594
+ 0.133858316 0.442956549
+ 0.529607889 0.139937725
+ 0.418848592 0.591308826
+ 0.398680001 0.301489528
+ 0.180520775 0.481644248
+ 0.748238973 0.420071736
+ 0.0783291054 0.690923915
+ 0.150339331 0.113815342
+ 0.76975532 0.948438281
+ 0.959157283 0.707732494
+ 0.0176790662 0.443206612
+ 0.564340638 0.80004727
+ 0.222076732 0.20472236
+ 0.1574623 0.104986788
+ 0.183266999 0.138963661
+ 0.0821784299 0.470662633
+ 0.560250427 0.568618258
+ 0.945908501 0.925840758
+ 0.518664225 0.835242753
+ 0.0509728449 0.578180569
+ 0.426157873 0.641097212
+ 0.842886382 0.821625328
+ 0.854610792 0.952297612
+ 0.7964866 0.621468819
+ 0.282520079 0.445235491
+ 0.0321397583 0.372987669
+ 0.952647287 0.555543771
+ 0.646001994 0.560881025
+ 0.576189763 0.573390931
+ 0.589392719 0.784653859
+ 0.337116543 0.417896208
+ 0.14872481 0.845535863
+ 0.932999859 0.695053604
+ 0.232577137 0.208279782
+ 0.649209453 0.825130866
+ 0.0617985423 0.481012653
+ 0.0369161321 0.146594086
+ 0.819183241 0.900106865
+ 0.978466605 0.313225181
+ 0.446647915 0.358105443
+ 0.615063626 0.649141794
+ 0.56217768 0.125840602
+ 0.0872411861 0.493128383
+ 0.629166022 0.0964995425
+ 0.160346958 0.606803264
+ 0.288654124 0.903139609
+ 0.457735026 0.339869584
+ 0.21739589 0.254295337
+ 0.93132918 0.639035524
+ 0.559194471 0.171752111
+ 0.676782661 0.883143864
+ 0.985801202 0.394977655
+ 0.526774575 0.549682784
+ 0.866719641 0.0550194634
+ 0.268594158 0.867087912
+ 0.112021012 0.257170777
+ 0.505955312 0.890721445
+ 0.178984033 0.547819069
+ 0.204944308 0.226319473
+ 0.225107905 0.663237838
+ 0.951764231 0.390185654
+ 0.223917988 0.381604818
+ 0.7920846 0.650759073
+ 0.387329099 0.27442751
+ 0.374219361 0.859536781
+ 0.834156266 0.254307044
+ 0.841844716 0.208713587
+ 0.00413620938 0.415678622
+ 0.594078814 0.97776503
+ 0.164314716 0.79665827
+ 0.237138132 0.588798943
+ 0.280320272 0.819101365
+ 0.34270625 0.970595564
+ 0.614603243 0.323532897
+ 0.235880625 0.949370453
+ 0.280040399 0.5514836
+ 0.572796006 0.245372387
+ 0.896452909 0.0605981899
+ 0.117714886 0.45189977
+ 0.100516317 0.303385528
+ 0.131238863 0.931527808
+ 0.314781998 0.100709669
+ 0.216174662 0.0558569662
+ 0.431075905 0.0128161546
+ 0.841606639 0.0657996801
+ 0.660426144 0.605462985
+ 0.576416464 0.0213906481
+ 0.249601786 0.629394628
+ 0.925440586 0.409784885
+ 0.764075065 0.926565497
+ 0.688100167 0.292892126
+ 0.258711566 0.861051256
+ 0.158542326 0.502953595
+ 0.697395156 0.634772733
+ 0.209102629 0.432680289
+ 0.690089577 0.158015735
+ 0.821590773 0.530354892
+ 0.961021414 0.114304736
+ 0.609068851 0.803574447
+ 0.31796553 0.691155721
+ 0.739919079 0.291456279
+ 0.628572473 0.328810542
+ 0.406718497 0.136083051
+ 0.971181949 0.754844807
+ 0.241919821 0.232645246
+ 0.583014067 0.949975842
+ 0.994874165 0.818318535
+ 0.655273014 0.173670594
+ 0.437206747 0.654818762
+ 0.116085997 0.0175755084
+ 0.103481914 0.504212482
+ 0.702664152 0.7019778
+ 0.0948656814 0.022884995
+ 0.511439792 0.105825531
+ 0.793721525 0.530379614
+ 0.785301267 0.347712843
+ 0.3655536 0.421387098
+ 0.736252529 0.600438373
+ 0.0976665646 0.474528454
+ 0.542696976 0.34706868
+ 0.290273904 0.964503311
+ 0.862352143 0.310155783
+ 0.490218433 0.905512581
+ 0.695665375 0.124902682
+ 0.517854691 0.988184745
+  0.874664 0.623475209
+ 0.945630698 0.990983452
+ 0.607626741 0.419729001
+ 0.324098092 0.879307646
+ 0.285632876 0.332245068
+ 0.225512742 0.598603071
+ 0.395263612 0.042109031
+ 0.274588714 0.319320346
+ 0.542250249 0.0754387842
+ 0.706099047 0.896817871
+ 0.0461896197 0.417555907
+ 0.762807556 0.547664943
+ 0.743499437 0.651562397
+ 0.442421663 0.180343176
+ 0.320609451 0.245499082
+ 0.50360472 0.617565506
+ 0.0874570222 0.0218161966
+ 0.736708597 0.366483741
+ 0.640922153 0.0166006179
+ 0.389001966 0.590085868
+ 0.418810806 0.359931914
+ 0.200680702 0.193661327
+ 0.593380086 0.406685478
+ 0.0861683418 0.0415359002
+ 0.227247101 0.85571854
+ 0.358262959 0.31370643
+ 0.563104115 0.524779833
+ 0.327684716 0.503714878
+ 0.414791035 0.374402444
+ 0.830271567 0.445019324
+ 0.583201032 0.152652098
+ 0.972702773 0.471878483
+ 0.184330695 0.0729803422
+ 0.0158207461 0.0820056691
+ 0.356089722 0.825340771
+ 0.284988619 0.9740696
+ 0.125337079 0.00394304167
+ 0.0536480609 0.132243031
+ 0.129340208 0.19390203
+ 0.98716804 0.186045004
+ 0.378434528 0.819331743
+ 0.290894914 0.211993806
+ 0.921229017 0.427643409
+ 0.777300047 0.517316096
+ 0.727781248 0.0727973324
+ 0.28588503 0.0276253764
+ 0.250479191 0.16258221
+ 0.206400512 0.493295124
+ 0.140383017 0.540116606
+ 0.0947458141 0.541248685
+ 0.164137695 0.682051073
+ 0.500684001 0.951276982
+ 0.767334503 0.768170206
+ 0.789171856 0.717873238
+ 0.931184316 0.0268245519
+ 0.970837209 0.539569383
+ 0.921081076 0.242760952
+ 0.698651755 0.380863142
+ 0.36348557 0.680825559
+ 0.529947382 0.714878638
+ 0.287824643 0.160657625
+ 0.657803689 0.632980985
+ 0.985756321 0.570135189
+ 0.0349789502 0.109914941
+ 0.463881584 0.993054361
+ 0.989126448 0.837595703
+ 0.283431531 0.729563546
+ 0.219950441 0.0275596092
+ 0.76522582 0.740315733
+ 0.730910678 0.443972202
+ 0.719566966 0.446230706
+ 0.92170696 0.106088945
+ 0.391924294 0.963784547
+ 0.223949662 0.821829018
+ 0.876288021 0.688556001
+ 0.450811411 0.734283069
+ 0.804913339 0.420760929
+ 0.666589725 0.369291143
+ 0.57526547 0.525506724
+ 0.627477778 0.680445423
+ 0.384389668 0.651130484
+ 0.404733203 0.522001659
+ 0.945870905 0.173158247
+ 0.293268312 0.903105613
+ 0.633878303 0.616931206
+ 0.258571399 0.377130928
+ 0.468137183 0.887959924
+ 0.437264906 0.333006737
+ 0.999243901 0.204666045
+ 0.690866545 0.388109602
+ 0.796601317 0.27081811
+ 0.208198269 0.422748379
+ 0.204033251 0.350866791
+ 0.677262078 0.437854194
+ 0.939204445 0.0625808353
+ 0.121294381 0.176210435
+ 0.94943511 0.0526325337
+ 0.784023976 0.561679035
+ 0.952353561 0.11567309
+ 0.720298235 0.968746626
+ 0.257002946 0.295505078
+ 0.0915734004 0.179280811
+ 0.843675442 0.448040097
+ 0.934612366 0.0484515266
+ 0.309497025 0.721787751
+ 0.420631093 0.0843292112
+ 0.355297626 0.101870736
+ 0.362286119 0.0553085085
+ 0.929562324 0.732324124
+ 0.0585484696 0.942369162
+ 0.799137793 0.504036885
+ 0.26341466 0.121002545
+ 0.759740545 0.400315147
+ 0.357787248 0.50015556
+ 0.0932665688 0.823763112
+ 0.838120209 0.676613116
+ 0.895132987 0.307462912
+ 0.786470248 0.207536173
+ 0.902587331 0.684923332
+ 0.38462396 0.121897924
+ 0.410155251 0.715892401
+ 0.0891767263 0.837457961
+ 0.793555984 0.193021712
+ 0.712376329 0.774479523
+ 0.643054105 0.639600821
+ 0.00789069175 0.913566679
+ 0.105743714 0.946383208
+ 0.0949122575 0.078776249
+ 0.355190636 0.273992602
+ 0.310872363 0.407625559
+ 0.103834132 0.0575545076
+ 0.981659449 0.340531168
+ 0.727147821 0.721186934
+ 0.979607852 0.759720206
+ 0.146156309 0.450067754
+ 0.992773646 0.590797893
+ 0.309818347 0.475173223
+ 0.850151043 0.517947985
+ 0.150366957 0.549172442
+ 0.418880712 0.386399655
+ 0.965528715 0.499187777
+ 0.329908188 0.602388292
+ 0.959246583 0.557216963
+ 0.126700458 0.724636816
+ 0.887460936 0.000377682969
+ 0.345063023 0.604773178
+ 0.143737216 0.24124666
+ 0.898077954 0.814034842
+ 0.552479784 0.0981790288
+ 0.917920421 0.571423062
+ 0.517230949 0.940873408
+ 0.851586829 0.389602542
+ 0.167788453 0.370967898
+ 0.060688165 0.415457364
+ 0.679034511 0.583012001
+ 0.967178825 0.265118459
+ 0.0347481961 0.430091149
+ 0.106055837 0.925010429
+ 0.280569212 0.226458441
+ 0.542220378 0.0922701962
+ 0.128300033 0.121912089
+ 0.909828478 0.250428102
+ 0.593671525 0.0514335004
+ 0.392600169 0.704037586
+ 0.121713072 0.839523374
+ 0.300534036 0.629301057
+ 0.452937365 0.536107053
+ 0.69675126 0.17939428
+ 0.575546569 0.438500918
+ 0.361077223 0.192545378
+ 0.0866494658 0.922364162
+ 0.549709775 0.477691822
+ 0.644770533 0.0403010449
+ 0.37325964 0.117697773
+ 0.734192898 0.0763430314
+ 0.192173053 0.806899878
+ 0.00735623692 0.787012059
+ 0.853040717 0.847192559
+ 0.432100655 0.731115449
+ 0.515755667 0.677223407
+ 0.846995714 0.824557607
+ 0.380817049 0.472085436
+ 0.999801517 0.74099426
+ 0.0485795625 0.490731329
+ 0.932455609 0.883857673
+ 0.934374545 0.149091814
+ 0.967452069 0.953820667
+ 0.67840151 0.0286955121
+ 0.488331319 0.196887828
+ 0.96307036 0.818834789
+ 0.217111757 0.453506864
+ 0.73282217 0.646609959
+ 0.593547102 0.0391656316
+ 0.72828587 0.85817936
+ 0.783720975 0.577072888
+ 0.379514567 0.664734076
+ 0.406070672 0.885510946
+ 0.204711285 0.405358629
+ 0.547159324 0.694589868
+ 0.447678769 0.414965926
+ 0.935937881 0.26610087
+ 0.570330709 0.785333222
+ 0.765681747 0.717315564
+ 0.164547167 0.939153464
+ 0.61809352 0.539389561
+ 0.605581442 0.991928788
+ 0.342057213 0.42933739
+ 0.50186039 0.699347017
+ 0.547211217 0.479105384
+ 0.133340425 0.362355509
+ 0.449779745 0.488749552
+ 0.805072728 0.559001243
+ 0.194715449 0.181358227
+ 0.0549102246 0.241682074
+ 0.81192795 0.576070817
+ 0.336998031 0.395754772
+ 0.666882047 0.929193234
+ 0.207264398 0.243084621
+ 0.10809197 0.49267994
+ 0.57677121 0.418595947
+ 0.865788418 0.291771224
+ 0.968565013 0.451196599
+ 0.880451471 0.679026743
+ 0.438959637 0.269968305
+ 0.45627416 0.0318392564
+ 0.329898837 0.109126166
+ 0.956876032 0.116660373
+ 0.014201368 0.216973603
+ 0.184286942 0.193244927
+ 0.54690006 0.906036525
+ 0.80863554 0.631885873
+ 0.714664069 0.938094486
+ 0.514130555 0.406521003
+ 0.133287091 0.113946859
+ 0.0116648814 0.165623027
+ 0.467218184 0.475314841
+ 0.416519579 0.666963282
+ 0.352966639 0.605497799
+ 0.299620504 0.687408097
+ 0.278885567 0.402251748
+ 0.20376453 0.235442128
+ 0.204598919 0.31200222
+ 0.849402689 0.846658563
+ 0.534280489 0.055886931
+ 0.9183707 0.0557234355
+ 0.892203894 0.0491395351
+ 0.655737468 0.427664304
+ 0.276635886 0.111393183
+ 0.208909848 0.733830722
+ 0.24484267 0.720488706
+ 0.849650192 0.224439941
+ 0.81631161 0.702298535
+ 0.66466898 0.736927402
+ 0.525111252 0.0979057159
+ 0.894222337 0.581249889
+ 0.708566105 0.667334015
+ 0.0975022747 0.626080454
+ 0.740596046 0.835958335
+ 0.793133124 0.974717766
+ 0.124357362 0.0647378266
+ 0.827242016 0.107710611
+ 0.707384935 0.44173422
+ 0.796142137 0.339438748
+ 0.160126561 0.561967229
+ 0.557858468 0.208276692
+ 0.310662284 0.903525948
+ 0.516041164 0.543107117
+ 0.285977302 0.0365953674
+ 0.591902369 0.451773422
+ 0.994733123 0.980276385
+ 0.841250662 0.0161357841
+ 0.174070919 0.571239335
+ 0.838124119 0.355244372
+ 0.0371987668 0.485613288
+ 0.518391193 0.702482409
+ 0.705579435 0.781553558
+ 0.434992594 0.90934138
+ 0.409201327 0.588567287
+ 0.835207274 0.426638053
+ 0.334204634 0.920605161
+ 0.217623963 0.858799823
+ 0.990516263 0.200630615
+ 0.151074212 0.163447125
+ 0.388665604 0.928856597
+ 0.245672124 0.0810093028
+ 0.153076605 0.865887373
+ 0.851321219 0.229425039
+ 0.0802210418 0.0400722155
+ 0.660348394 0.520980385
+ 0.145484774 0.715962003
+ 0.76453439 0.583816503
+ 0.763207105 0.26500238
+ 0.106132832 0.705590102
+ 0.314342338 0.634841154
+ 0.0856619647 0.523609741
+ 0.145811236 0.647927011
+ 0.560243349 0.797353045
+ 0.30034097 0.534233111
+ 0.86202459 0.149218199
+ 0.864806682 0.949611003
+ 0.0119206796 0.29268783
+ 0.833724261 0.838797079
+ 0.299857314 0.914312823
+ 0.880715947 0.935192381
+ 0.14075901 0.273815143
+ 0.584010922 0.416090784
+ 0.206311282 0.839018358
+ 0.588313245 0.197406927
+ 0.682080664 0.887596667
+ 0.464589353 0.32017658
+ 0.657022221 0.283262236
+ 0.86749847 0.969137023
+ 0.153472786 0.884718077
+ 0.355556285 0.745048492
+ 0.799788681 0.682564309
+ 0.477782827 0.103766322
+  0.359614 0.950095847
+ 0.579442273 0.633837988
+ 0.432870338 0.588456335
+ 0.488163393 0.370106307
+ 0.893083751 0.301164365
+ 0.696884598 0.617968887
+ 0.0628065336 0.450361806
+ 0.230320744 0.561022659
+ 0.5714753 0.604397628
+ 0.479637644 0.117626125
+ 0.64117799 0.821592048
+ 0.933876506 0.0409074405
+ 0.662852614 0.85127944
+ 0.801012298 0.658929921
+ 0.657440293 0.350026752
+ 0.640419895 0.288582822
+ 0.308055246 0.18067635
+ 0.785915377 0.729481448
+ 0.807566512 0.0458671756
+ 0.321791587 0.23406401
+ 0.00303227687 0.703580975
+ 0.576552352 0.333479955
+ 0.951681779 0.25252258
+ 0.490746078 0.710030092
+ 0.389499829 0.727068092
+ 0.490538246 0.891329241
+ 0.549588189 0.0907929358
+ 0.97047345 0.333890629
+ 0.326045418 0.664588365
+ 0.0125393493 0.70103779
+ 0.984657611 0.495947691
+ 0.844881727 0.617973526
+ 0.65160586 0.826455069
+ 0.0405516068 0.592945803
+ 0.559990349 0.946844466
+ 0.832576784 0.62444264
+ 0.199523162 0.6835689
+ 0.174534047 0.786804685
+ 0.965971704 0.543573793
+ 0.334223675 0.48779125
+ 0.93518814 0.214817702
+ 0.00509253424 0.952236311
+ 0.362839947 0.949867291
+ 0.71791016 0.135189052
+ 0.706557821 0.840445398
+ 0.542692557 0.0147280896
+ 0.938520494 0.32479051
+ 0.768699043 0.0815054558
+ 0.816506568 0.0410828537
+ 0.678974509 0.212753182
+ 0.576948718 0.726446379
+ 0.575225197 0.248044502
+ 0.524198453 0.665530765
+ 0.559466232 0.874573128
+ 0.278699153 0.289188234
+ 0.676814373 0.87304443
+ 0.0533683561 0.948305856
+ 0.150004104 0.42790644
+ 0.54350217 0.543198243
+ 0.821811832 0.481396592
+ 0.644074387 0.0437883975
+ 0.107696725 0.985725397
+ 0.588826799 0.907284981
+ 0.343032908 0.408432615
+ 0.92143996 0.699514452
+ 0.319963657 0.437267597
+ 0.108301445 0.536540198
+ 0.496092402 0.634198346
+ 0.0182096579 0.0377466164
+ 0.420350984 0.164440432
+ 0.459204204 0.332902217
+ 0.105210365 0.791993438
+ 0.648684255 0.304050517
+ 0.936065599 0.341903073
+ 0.516914262 0.306345053
+ 0.477732681 0.413267672
+ 0.207449506 0.0580206728
+ 0.20147671 0.953787851
+ 0.0433873571 0.716588772
+ 0.946998681 0.631971158
+ 0.803664359 0.00189106842
+ 0.023882858 0.583875293
+ 0.740003946 0.58733439
+ 0.0441677654 0.475423798
+ 0.955379457 0.929534654
+ 0.819659905 0.85319535
+ 0.364201259 0.209662225
+ 0.415597448 0.475399711
+ 0.425782067 0.767358051
+ 0.182649104 0.978194923
+ 0.595269612 0.509564829
+ 0.918325232 0.927766141
+ 0.0660563319 0.987888368
+ 0.656371363 0.391461328
+ 0.563754617 0.914412081
+ 0.61341727 0.012027838
+ 0.317679813 0.677089894
+ 0.378198749 0.247322616
+ 0.267071984 0.60319386
+ 0.167260402 0.983827358
+ 0.818464188 0.252703663
+ 0.86691778 0.475162481
+ 0.715194391 0.652540572
+ 0.203095435 0.899234951
+ 0.116059656 0.664552924
+ 0.907084508 0.589024437
+ 0.747731829 0.112586474
+ 0.273905061 0.301010865
+ 0.357614256 0.012204055
+ 0.892057966 0.679310048
+ 0.748142699 0.387899968
+ 0.239835062 0.827688229
+ 0.670205978 0.539526513
+ 0.125370506 0.744575728
+ 0.4632737 0.410656009
+ 0.631221212 0.759176453
+ 0.88037971 0.523850834
+ 0.911372262 0.722150169
+ 0.778505169 0.339431247
+ 0.208313585 0.358242933
+ 0.456846919 0.854833193
+ 0.763558617 0.256384134
+ 0.02504934 0.1783399
+ 0.0393144232 0.0827855011
+ 0.841413946 0.570998878
+ 0.212557302 0.281220725
+ 0.451247021 0.349827604
+ 0.757913507 0.890302011
+ 0.867987838 0.246302984
+ 0.582881022 0.310729265
+ 0.943650292 0.326166903
+ 0.710950174 0.784746852
+ 0.977850926 0.645617273
+ 0.0661527789 0.402293876
+ 0.377961553 0.96691887
+ 0.682630532 0.560826027
+ 0.0767650981 0.367440734
+ 0.915086145 0.463734597
+ 0.108314326 0.98944722
+ 0.303418975 0.706980491
+ 0.765825463 0.598215458
+ 0.586756407 0.138608395
+ 0.798648965 0.745555422
+ 0.692595451 0.714194337
+ 0.309739189 0.49619458
+ 0.801025552 0.198878578
+ 0.440679436 0.575007678
+ 0.946549043 0.52630118
+ 0.776505467 0.849828707
+ 0.213224256 0.205173476
+ 0.520933081 0.29329507
+ 0.759987147 0.931898925
+ 0.291884449 0.018607338
+ 0.3342405 0.307993036
+ 0.854561054 0.13788615
+ 0.79862118 0.888740491
+ 0.323496839 0.794224691
+ 0.333445329 0.870011444
+ 0.791343521 0.202420224
+ 0.480270022 0.0463560047
+ 0.886207204 0.339019834
+ 0.0603083065 0.885042441
+ 0.551229508 0.239192604
+ 0.57218026 0.082939175
+ 0.508117642 0.390809769
+ 0.230234643 0.235148747
+ 0.223665302 0.623332723
+ 0.842246062 0.844587819
+ 0.234781046 0.632556724
+ 0.0326947637 0.743390343
+ 0.817907869 0.163072505
+ 0.0935089744 0.27318813
+ 0.767015517 0.438516898
+ 0.641273133 0.284213822
+ 0.248517599 0.663739042
+ 0.364696923 0.823851179
+ 0.308778974 0.28290279
+ 0.560088432 0.283707275
+ 0.343230458 0.0257150573
+ 0.973201043 0.916842631
+ 0.15029046 0.41079118
+ 0.151651386 0.143327996
+ 0.588116825 0.149340382
+ 0.398885151 0.591468361
+ 0.66530222 0.0504257488
+ 0.117443084 0.592477425
+ 0.283016465 0.131265234
+ 0.704861428 0.244983086
+ 0.330763171 0.740090957
+ 0.864309574 0.768196886
+ 0.396295614 0.792343971
+ 0.75427949 0.01439305
+ 0.391893758 0.480972372
+ 0.955950183 0.618854509
+ 0.7901008 0.449765874
+ 0.800887908 0.885599582
+ 0.546386257 0.693311514
+ 0.540133657 0.0290301475
+ 0.201490808 0.683231542
+ 0.992653197 0.948798835
+ 0.859131904 0.95943703
+ 0.759813644 0.470880402
+ 0.225048473 0.485746735
+ 0.420412869 0.0752256115
+ 0.11885883 0.866029697
+ 0.3590969 0.592712552
+ 0.534894568 0.830774634
+ 0.430588837 0.855763728
+ 0.918437511 0.129381082
+ 0.188127215 0.868563215
+ 0.509872357 0.435096274
+ 0.688294677 0.0184322209
+ 0.100132685 0.174430747
+ 0.71339439 0.0136480199
+ 0.34752645 0.703131447
+ 0.766726271 0.218882841
+ 0.10203834 0.839979896
+ 0.658806674 0.404534281
+ 0.974993117 0.0944009582
+ 0.278516848 0.547237235
+ 0.0496986255 0.128136738
+ 0.758121514 0.837039425
+ 0.127990682 0.475298382
+ 0.243719543 0.296901269
+ 0.163720274 0.0278752944
+ 0.712862693 0.593104788
+ 0.344409714 0.218163337
+ 0.524280505 0.556998298
+ 0.936344518 0.565861344
+ 0.117767144 0.831686989
+ 0.494310925 0.847382746
+ 0.440323085 0.503577177
+ 0.074082664 0.122900161
+ 0.281041592 0.481035009
+ 0.933686324 0.761911699
+ 0.696352112 0.713522602
+ 0.000635224627 0.106301801
+ 0.410409275 0.176861659
+ 0.421496234 0.1921522
+ 0.83696135 0.262885531
+ 0.679900039 0.0335103518
+ 0.786506604 0.77730262
+ 0.354082654 0.628083257
+ 0.658849269 0.128271533
+ 0.449930591 0.807161709
+ 0.650863441 0.0363534128
+ 0.713826658 0.799980871
+ 0.553715794 0.218512823
+ 0.461249108 0.24756524
+ 0.0891190337 0.970925543
+ 0.924265794 0.692692583
+&
+@target G3.S3
+@type xy
+ 0.818935253 0.466352942
+ 0.311109115 0.224805413
+ 0.165260228 0.360717803
+ 0.770080122 0.11648034
+ 0.256260154 0.107477973
+ 0.675771728 0.852421826
+ 0.508786324 0.473882927
+ 0.0846307315 0.348343307
+ 0.849952892 0.919075108
+ 0.139603124 0.863406596
+ 0.744412996 0.577745784
+ 0.563134712 0.434641509
+ 0.999021482 0.931276268
+ 0.998075587 0.410685037
+ 0.180824318 0.480092892
+ 0.625571199 0.737970327
+ 0.576296451 0.392933865
+ 0.746174899 0.960945185
+ 0.401424147 0.131361649
+ 0.182485725 0.677927648
+ 0.252415506 0.89333476
+ 0.282923336 0.33144541
+ 0.266538335 0.545979363
+ 0.651192095 0.405023392
+ 0.327589944 0.464488847
+ 0.358364739 0.182106118
+ 0.0340445586 0.659914437
+ 0.396212968 0.596429154
+ 0.49099035 0.25431699
+ 0.160439005 0.0307817291
+ 0.112617858 0.310658323
+ 0.327081025 0.881375848
+ 0.61363537 0.203238385
+ 0.834348599 0.424868785
+ 0.361031567 0.704145397
+ 0.998752146 0.909155552
+ 0.626005102 0.863153004
+ 0.907149194 0.0619916772
+ 0.139595256 0.685963309
+ 0.422581841 0.0738849225
+ 0.130411811 0.416891888
+ 0.600354995 0.421284744
+ 0.628507482 0.623567366
+ 0.767460604 0.741721506
+ 0.979253968 0.436477549
+ 0.804079744 0.33035561
+ 0.793475798 0.579231342
+ 0.0933652008 0.708438042
+ 0.344577668 0.014109957
+ 0.302709743 0.402608999
+ 0.612843173 0.573075766
+ 0.717016306 0.697354196
+ 0.0664561773 0.668231473
+ 0.814562557 0.595658464
+ 0.163961782 0.595281608
+ 0.360925637 0.927586315
+ 0.0778913784 0.578661439
+ 0.166648565 0.916352826
+ 0.946932629 0.12231201
+ 0.540220523 0.733963797
+ 0.429920098 0.495107013
+ 0.520417404 0.252840882
+ 0.354019213 0.236424957
+ 0.327204116 0.608555963
+ 0.335852243 0.795857936
+ 0.869133147 0.637285747
+ 0.0466498358 0.898370631
+ 0.0749177246 0.943172634
+ 0.544308292 0.441852366
+ 0.837356939 0.63010403
+ 0.48887834 0.356863787
+ 0.824318307 0.787796025
+ 0.572906767 0.245149684
+ 0.343509141 0.256918521
+ 0.635262482 0.848655253
+ 0.0287227994 0.771789268
+ 0.279133004 0.18439566
+ 0.477178045 0.162643378
+ 0.727864264 0.550049235
+ 0.573561458 0.378846892
+ 0.721434674 0.256020452
+ 0.800506679 0.234471135
+ 0.878606501 0.547689595
+ 0.724752597 0.388595461
+ 0.191857113 0.304753811
+ 0.537260782 0.663498977
+ 0.153878599 0.23642128
+ 0.110897982 0.30250753
+ 0.632830478 0.0470855606
+ 0.2482991 0.683683606
+ 0.350396447 0.782626243
+ 0.718154057 0.93907243
+ 0.49493702 0.782219293
+ 0.935327484 0.96951691
+ 0.284632744 0.996576355
+ 0.32707177 0.319971525
+ 0.188464186 0.119467958
+ 0.419563069 0.371676887
+ 0.241621767 0.763244386
+ 0.749992762 0.29136336
+ 0.863623289 0.957688973
+ 0.765627638 0.200999452
+ 0.293988357 0.30604941
+ 0.435096293 0.85847928
+ 0.0403205645 0.933680696
+ 0.0739632584 0.340692688
+ 0.532295148 0.328607521
+ 0.0195453791 0.315232003
+ 0.977470891 0.179985233
+ 0.718101513 0.309390778
+ 0.763737066 0.842762461
+ 0.94190425 0.178519636
+ 0.247248663 0.503431267
+ 0.0018186369 0.801493261
+ 0.734257817 0.124180472
+ 0.37329796 0.135555773
+ 0.208241154 0.866717157
+ 0.454998643 0.219041299
+ 0.566504767 0.669172807
+ 0.975005664 0.206478397
+ 0.128903007 0.125334619
+ 0.654771762 0.433761828
+ 0.224824753 0.213945824
+ 0.19724349 0.606174584
+ 0.38372507 0.801392281
+ 0.831255391 0.460232403
+ 0.319724598 0.554894907
+ 0.982108316 0.831923554
+ 0.217608818 0.0361020418
+ 0.182105635 0.341279857
+ 0.782657357 0.00954471854
+ 0.846088816 0.413674665
+ 0.723289945 0.153264684
+ 0.979959604 0.189677824
+ 0.0381100478 0.0433065183
+ 0.217695721 0.196771372
+ 0.114911585 0.494975084
+ 0.191732342 0.746649012
+ 0.723307096 0.199137486
+ 0.881874892 0.8451881
+ 0.700832912 0.283311348
+ 0.275297349 0.659346334
+ 0.209513259 0.245593821
+ 0.731524341 0.550805173
+ 0.941198475 0.397572732
+ 0.369252625 0.204452402
+ 0.534772687 0.873029488
+ 0.131622771 0.076543032
+ 0.511235968 0.536623546
+ 0.448135535 0.581952498
+ 0.709033708 0.179987902
+ 0.693833011 0.556715705
+ 0.293712127 0.78087396
+ 0.268413355 0.38432159
+ 0.0497553044 0.840270967
+ 0.295603751 0.520606532
+ 0.521123681 0.411454993
+ 0.358855265 0.749246827
+ 0.101749095 0.969263439
+ 0.055387845 0.333168122
+ 0.78292171 0.141995144
+ 0.740292734 0.0186367361
+ 0.91926743 0.88244227
+ 0.255694371 0.828671957
+ 0.0508396348 0.554232253
+ 0.562726928 0.0243466732
+ 0.916553435 0.786282464
+ 0.060269183 0.366459068
+ 0.461511393 0.941998073
+ 0.939833963 0.902066167
+ 0.0646314053 0.630992868
+ 0.0907667242 0.330182506
+ 0.501610259 0.402531915
+ 0.318932753 0.76452032
+ 0.170916166 0.624766516
+ 0.556464631 0.119387957
+ 0.477521968 0.348806223
+ 0.62481529 0.51965165
+ 0.96461606 0.822254331
+ 0.661634682 0.565246877
+ 0.132104983 0.651923436
+ 0.0497768265 0.151211416
+ 0.321005824 0.924105677
+ 0.781925862 0.421737553
+ 0.22107092 0.273822084
+ 0.829898766 0.786271431
+ 0.406981242 0.843350484
+ 0.382174445 0.503147116
+ 0.362500463 0.372584306
+ 0.577651234 0.43307351
+ 0.383291488 0.0109113385
+ 0.477983247 0.350618463
+ 0.325870679 0.765910971
+ 0.998111257 0.19124687
+ 0.904328014 0.740773357
+ 0.170772338 0.484518934
+ 0.889477252 0.842000412
+ 0.407288042 0.547409882
+ 0.735707881 0.0722028506
+ 0.0719075091 0.281304516
+ 0.55386353 0.746728082
+ 0.0476555005 0.209985426
+ 0.0338080872 0.865821204
+ 0.500460711 0.96670522
+ 0.719512088 0.44318597
+ 0.13608313 0.092155088
+ 0.0909094736 0.487216105
+ 0.41887243 0.0368333315
+ 0.880655497 0.731260328
+ 0.871688769 0.395506617
+ 0.787981518 0.0884212165
+ 0.210476507 0.0108774547
+ 0.758320977 0.184631724
+ 0.978376183 0.951909391
+ 0.416147906 0.079394022
+ 0.171637326 0.960913112
+ 0.217631822 0.902080192
+ 0.238757673 0.124024399
+ 0.806774191 0.933145368
+ 0.53352856 0.923261007
+ 0.301281843 0.376266739
+ 0.91052306 0.019897765
+ 0.699889764 0.47454675
+ 0.241064253 0.708841106
+ 0.107153622 0.225528223
+ 0.165380162 0.483280059
+ 0.524209225 0.915858807
+ 0.345504392 0.178268869
+ 0.857094493 0.642070074
+ 0.707313522 0.810524611
+ 0.165194216 0.993054126
+ 0.798123936 0.985616726
+ 0.930457132 0.108167055
+ 0.6199759 0.710702491
+ 0.120764011 0.183439468
+ 0.393502617 0.839335243
+ 0.919210041 0.66417125
+ 0.811994714 0.705449637
+ 0.666053303 0.22787307
+ 0.194048235 0.377220944
+ 0.265447731 0.0143705963
+ 0.056062507 0.541652596
+ 0.80563907 0.395803297
+ 0.460391097 0.971230747
+ 0.881260578 0.643891808
+ 0.942598705 0.0329464562
+ 0.822364674 0.686425591
+ 0.0947421794 0.887526278
+ 0.424218548 0.851718493
+ 0.683257893 0.499356902
+ 0.710227618 0.25626311
+ 0.774566445 0.222838719
+ 0.812739084 0.306435215
+ 0.51808567    0.9573
+ 0.399703837 0.376410234
+ 0.926680702 0.458296965
+ 0.802130707 0.521775248
+ 0.0469624619 0.603280888
+ 0.996150969 0.902563065
+ 0.340402516 0.893836634
+ 0.478339864 0.172541622
+ 0.890700317 0.602785773
+ 0.655757681 0.861636339
+ 0.80342911 0.0930118938
+ 0.426020824 0.168893432
+ 0.523034773 0.115596714
+ 0.00357203279 0.412924249
+ 0.371953699 0.139504182
+ 0.128894152 0.671833264
+ 0.0528508222 0.436145377
+ 0.468720592 0.512147299
+ 0.469575211 0.656953531
+ 0.36058169 0.0598401714
+ 0.817058507 0.395434341
+ 0.787841576 0.267159822
+ 0.0751111857 0.0463661186
+ 0.966055546 0.53289346
+ 0.439524474 0.784314435
+ 0.0576642591 0.762456801
+ 0.498748494 0.99332836
+ 0.886280577 0.980570857
+ 0.777728995 0.0364500687
+ 0.139976238 0.677067663
+ 0.36058675 0.0256702905
+ 0.670994055 0.961377135
+ 0.248145941 0.776363119
+ 0.728684205 0.253787924
+ 0.83414444 0.379198552
+ 0.342678805 0.0228034167
+ 0.265773003 0.315654852
+ 0.852760865 0.433104053
+ 0.91631579 0.77691788
+ 0.240262908 0.800013969
+ 0.475171948 0.599321899
+ 0.03988329 0.0194736128
+ 0.932881973 0.521050207
+ 0.647516657 0.966322136
+ 0.67497398 0.518749049
+ 0.159785397 0.589486976
+ 0.427722879 0.414952973
+ 0.217575046 0.730322663
+ 0.715624782 0.210190841
+ 0.230287624 0.658232045
+ 0.803061292 0.980312575
+ 0.444019007 0.0240838677
+ 0.631907358 0.422559456
+ 0.778791616 0.714205849
+ 0.510001506 0.486487594
+ 0.133858316 0.442956549
+ 0.529607889 0.139937725
+ 0.418848592 0.591308826
+ 0.398680001 0.301489528
+ 0.180520775 0.481644248
+ 0.748238973 0.420071736
+ 0.0783291054 0.690923915
+ 0.150339331 0.113815342
+ 0.76975532 0.948438281
+ 0.959157283 0.707732494
+ 0.0176790662 0.443206612
+ 0.564340638 0.80004727
+ 0.222076732 0.20472236
+ 0.1574623 0.104986788
+ 0.183266999 0.138963661
+ 0.0821784299 0.470662633
+ 0.560250427 0.568618258
+ 0.945908501 0.925840758
+ 0.518664225 0.835242753
+ 0.0509728449 0.578180569
+ 0.426157873 0.641097212
+ 0.842886382 0.821625328
+ 0.854610792 0.952297612
+ 0.7964866 0.621468819
+ 0.282520079 0.445235491
+ 0.0321397583 0.372987669
+ 0.952647287 0.555543771
+ 0.646001994 0.560881025
+ 0.576189763 0.573390931
+ 0.589392719 0.784653859
+ 0.337116543 0.417896208
+ 0.14872481 0.845535863
+ 0.932999859 0.695053604
+ 0.232577137 0.208279782
+ 0.649209453 0.825130866
+ 0.0617985423 0.481012653
+ 0.0369161321 0.146594086
+ 0.819183241 0.900106865
+ 0.978466605 0.313225181
+ 0.446647915 0.358105443
+ 0.615063626 0.649141794
+ 0.56217768 0.125840602
+ 0.0872411861 0.493128383
+ 0.629166022 0.0964995425
+ 0.160346958 0.606803264
+ 0.288654124 0.903139609
+ 0.457735026 0.339869584
+ 0.21739589 0.254295337
+ 0.93132918 0.639035524
+ 0.559194471 0.171752111
+ 0.676782661 0.883143864
+ 0.985801202 0.394977655
+ 0.526774575 0.549682784
+ 0.866719641 0.0550194634
+ 0.268594158 0.867087912
+ 0.112021012 0.257170777
+ 0.505955312 0.890721445
+ 0.178984033 0.547819069
+ 0.204944308 0.226319473
+ 0.225107905 0.663237838
+ 0.951764231 0.390185654
+ 0.223917988 0.381604818
+ 0.7920846 0.650759073
+ 0.387329099 0.27442751
+ 0.374219361 0.859536781
+ 0.834156266 0.254307044
+ 0.841844716 0.208713587
+ 0.00413620938 0.415678622
+ 0.594078814 0.97776503
+ 0.164314716 0.79665827
+ 0.237138132 0.588798943
+ 0.280320272 0.819101365
+ 0.34270625 0.970595564
+ 0.614603243 0.323532897
+ 0.235880625 0.949370453
+ 0.280040399 0.5514836
+ 0.572796006 0.245372387
+ 0.896452909 0.0605981899
+ 0.117714886 0.45189977
+ 0.100516317 0.303385528
+ 0.131238863 0.931527808
+ 0.314781998 0.100709669
+ 0.216174662 0.0558569662
+ 0.431075905 0.0128161546
+ 0.841606639 0.0657996801
+ 0.660426144 0.605462985
+ 0.576416464 0.0213906481
+ 0.249601786 0.629394628
+ 0.925440586 0.409784885
+ 0.764075065 0.926565497
+ 0.688100167 0.292892126
+ 0.258711566 0.861051256
+ 0.158542326 0.502953595
+ 0.697395156 0.634772733
+ 0.209102629 0.432680289
+ 0.690089577 0.158015735
+ 0.821590773 0.530354892
+ 0.961021414 0.114304736
+ 0.609068851 0.803574447
+ 0.31796553 0.691155721
+ 0.739919079 0.291456279
+ 0.628572473 0.328810542
+ 0.406718497 0.136083051
+ 0.971181949 0.754844807
+ 0.241919821 0.232645246
+ 0.583014067 0.949975842
+ 0.994874165 0.818318535
+ 0.655273014 0.173670594
+ 0.437206747 0.654818762
+ 0.116085997 0.0175755084
+ 0.103481914 0.504212482
+ 0.702664152 0.7019778
+ 0.0948656814 0.022884995
+ 0.511439792 0.105825531
+ 0.793721525 0.530379614
+ 0.785301267 0.347712843
+ 0.3655536 0.421387098
+ 0.736252529 0.600438373
+ 0.0976665646 0.474528454
+ 0.542696976 0.34706868
+ 0.290273904 0.964503311
+ 0.862352143 0.310155783
+ 0.490218433 0.905512581
+ 0.695665375 0.124902682
+ 0.517854691 0.988184745
+  0.874664 0.623475209
+ 0.945630698 0.990983452
+ 0.607626741 0.419729001
+ 0.324098092 0.879307646
+ 0.285632876 0.332245068
+ 0.225512742 0.598603071
+ 0.395263612 0.042109031
+ 0.274588714 0.319320346
+ 0.542250249 0.0754387842
+ 0.706099047 0.896817871
+ 0.0461896197 0.417555907
+ 0.762807556 0.547664943
+ 0.743499437 0.651562397
+ 0.442421663 0.180343176
+ 0.320609451 0.245499082
+ 0.50360472 0.617565506
+ 0.0874570222 0.0218161966
+ 0.736708597 0.366483741
+ 0.640922153 0.0166006179
+ 0.389001966 0.590085868
+ 0.418810806 0.359931914
+ 0.200680702 0.193661327
+ 0.593380086 0.406685478
+ 0.0861683418 0.0415359002
+ 0.227247101 0.85571854
+ 0.358262959 0.31370643
+ 0.563104115 0.524779833
+ 0.327684716 0.503714878
+ 0.414791035 0.374402444
+ 0.830271567 0.445019324
+ 0.583201032 0.152652098
+ 0.972702773 0.471878483
+ 0.184330695 0.0729803422
+ 0.0158207461 0.0820056691
+ 0.356089722 0.825340771
+ 0.284988619 0.9740696
+ 0.125337079 0.00394304167
+ 0.0536480609 0.132243031
+ 0.129340208 0.19390203
+ 0.98716804 0.186045004
+ 0.378434528 0.819331743
+ 0.290894914 0.211993806
+ 0.921229017 0.427643409
+ 0.777300047 0.517316096
+ 0.727781248 0.0727973324
+ 0.28588503 0.0276253764
+ 0.250479191 0.16258221
+ 0.206400512 0.493295124
+ 0.140383017 0.540116606
+ 0.0947458141 0.541248685
+ 0.164137695 0.682051073
+ 0.500684001 0.951276982
+ 0.767334503 0.768170206
+ 0.789171856 0.717873238
+ 0.931184316 0.0268245519
+ 0.970837209 0.539569383
+ 0.921081076 0.242760952
+ 0.698651755 0.380863142
+ 0.36348557 0.680825559
+ 0.529947382 0.714878638
+ 0.287824643 0.160657625
+ 0.657803689 0.632980985
+ 0.985756321 0.570135189
+ 0.0349789502 0.109914941
+ 0.463881584 0.993054361
+ 0.989126448 0.837595703
+ 0.283431531 0.729563546
+ 0.219950441 0.0275596092
+ 0.76522582 0.740315733
+ 0.730910678 0.443972202
+ 0.719566966 0.446230706
+ 0.92170696 0.106088945
+ 0.391924294 0.963784547
+ 0.223949662 0.821829018
+ 0.876288021 0.688556001
+ 0.450811411 0.734283069
+ 0.804913339 0.420760929
+ 0.666589725 0.369291143
+ 0.57526547 0.525506724
+ 0.627477778 0.680445423
+ 0.384389668 0.651130484
+ 0.404733203 0.522001659
+ 0.945870905 0.173158247
+ 0.293268312 0.903105613
+ 0.633878303 0.616931206
+ 0.258571399 0.377130928
+ 0.468137183 0.887959924
+ 0.437264906 0.333006737
+ 0.999243901 0.204666045
+ 0.690866545 0.388109602
+ 0.796601317 0.27081811
+ 0.208198269 0.422748379
+ 0.204033251 0.350866791
+ 0.677262078 0.437854194
+ 0.939204445 0.0625808353
+ 0.121294381 0.176210435
+ 0.94943511 0.0526325337
+ 0.784023976 0.561679035
+ 0.952353561 0.11567309
+ 0.720298235 0.968746626
+ 0.257002946 0.295505078
+ 0.0915734004 0.179280811
+ 0.843675442 0.448040097
+ 0.934612366 0.0484515266
+ 0.309497025 0.721787751
+ 0.420631093 0.0843292112
+ 0.355297626 0.101870736
+ 0.362286119 0.0553085085
+ 0.929562324 0.732324124
+ 0.0585484696 0.942369162
+ 0.799137793 0.504036885
+ 0.26341466 0.121002545
+ 0.759740545 0.400315147
+ 0.357787248 0.50015556
+ 0.0932665688 0.823763112
+ 0.838120209 0.676613116
+ 0.895132987 0.307462912
+ 0.786470248 0.207536173
+ 0.902587331 0.684923332
+ 0.38462396 0.121897924
+ 0.410155251 0.715892401
+ 0.0891767263 0.837457961
+ 0.793555984 0.193021712
+ 0.712376329 0.774479523
+ 0.643054105 0.639600821
+ 0.00789069175 0.913566679
+ 0.105743714 0.946383208
+ 0.0949122575 0.078776249
+ 0.355190636 0.273992602
+ 0.310872363 0.407625559
+ 0.103834132 0.0575545076
+ 0.981659449 0.340531168
+ 0.727147821 0.721186934
+ 0.979607852 0.759720206
+ 0.146156309 0.450067754
+ 0.992773646 0.590797893
+ 0.309818347 0.475173223
+ 0.850151043 0.517947985
+ 0.150366957 0.549172442
+ 0.418880712 0.386399655
+ 0.965528715 0.499187777
+ 0.329908188 0.602388292
+ 0.959246583 0.557216963
+ 0.126700458 0.724636816
+ 0.887460936 0.000377682969
+ 0.345063023 0.604773178
+ 0.143737216 0.24124666
+ 0.898077954 0.814034842
+ 0.552479784 0.0981790288
+ 0.917920421 0.571423062
+ 0.517230949 0.940873408
+ 0.851586829 0.389602542
+ 0.167788453 0.370967898
+ 0.060688165 0.415457364
+ 0.679034511 0.583012001
+ 0.967178825 0.265118459
+ 0.0347481961 0.430091149
+ 0.106055837 0.925010429
+ 0.280569212 0.226458441
+ 0.542220378 0.0922701962
+ 0.128300033 0.121912089
+ 0.909828478 0.250428102
+ 0.593671525 0.0514335004
+ 0.392600169 0.704037586
+ 0.121713072 0.839523374
+ 0.300534036 0.629301057
+ 0.452937365 0.536107053
+ 0.69675126 0.17939428
+ 0.575546569 0.438500918
+ 0.361077223 0.192545378
+ 0.0866494658 0.922364162
+ 0.549709775 0.477691822
+ 0.644770533 0.0403010449
+ 0.37325964 0.117697773
+ 0.734192898 0.0763430314
+ 0.192173053 0.806899878
+ 0.00735623692 0.787012059
+ 0.853040717 0.847192559
+ 0.432100655 0.731115449
+ 0.515755667 0.677223407
+ 0.846995714 0.824557607
+ 0.380817049 0.472085436
+ 0.999801517 0.74099426
+ 0.0485795625 0.490731329
+ 0.932455609 0.883857673
+ 0.934374545 0.149091814
+ 0.967452069 0.953820667
+ 0.67840151 0.0286955121
+ 0.488331319 0.196887828
+ 0.96307036 0.818834789
+ 0.217111757 0.453506864
+ 0.73282217 0.646609959
+ 0.593547102 0.0391656316
+ 0.72828587 0.85817936
+ 0.783720975 0.577072888
+ 0.379514567 0.664734076
+ 0.406070672 0.885510946
+ 0.204711285 0.405358629
+ 0.547159324 0.694589868
+ 0.447678769 0.414965926
+ 0.935937881 0.26610087
+ 0.570330709 0.785333222
+ 0.765681747 0.717315564
+ 0.164547167 0.939153464
+ 0.61809352 0.539389561
+ 0.605581442 0.991928788
+ 0.342057213 0.42933739
+ 0.50186039 0.699347017
+ 0.547211217 0.479105384
+ 0.133340425 0.362355509
+ 0.449779745 0.488749552
+ 0.805072728 0.559001243
+ 0.194715449 0.181358227
+ 0.0549102246 0.241682074
+ 0.81192795 0.576070817
+ 0.336998031 0.395754772
+ 0.666882047 0.929193234
+ 0.207264398 0.243084621
+ 0.10809197 0.49267994
+ 0.57677121 0.418595947
+ 0.865788418 0.291771224
+ 0.968565013 0.451196599
+ 0.880451471 0.679026743
+ 0.438959637 0.269968305
+ 0.45627416 0.0318392564
+ 0.329898837 0.109126166
+ 0.956876032 0.116660373
+ 0.014201368 0.216973603
+ 0.184286942 0.193244927
+ 0.54690006 0.906036525
+ 0.80863554 0.631885873
+ 0.714664069 0.938094486
+ 0.514130555 0.406521003
+ 0.133287091 0.113946859
+ 0.0116648814 0.165623027
+ 0.467218184 0.475314841
+ 0.416519579 0.666963282
+ 0.352966639 0.605497799
+ 0.299620504 0.687408097
+ 0.278885567 0.402251748
+ 0.20376453 0.235442128
+ 0.204598919 0.31200222
+ 0.849402689 0.846658563
+ 0.534280489 0.055886931
+ 0.9183707 0.0557234355
+ 0.892203894 0.0491395351
+ 0.655737468 0.427664304
+ 0.276635886 0.111393183
+ 0.208909848 0.733830722
+ 0.24484267 0.720488706
+ 0.849650192 0.224439941
+ 0.81631161 0.702298535
+ 0.66466898 0.736927402
+ 0.525111252 0.0979057159
+ 0.894222337 0.581249889
+ 0.708566105 0.667334015
+ 0.0975022747 0.626080454
+ 0.740596046 0.835958335
+ 0.793133124 0.974717766
+ 0.124357362 0.0647378266
+ 0.827242016 0.107710611
+ 0.707384935 0.44173422
+ 0.796142137 0.339438748
+ 0.160126561 0.561967229
+ 0.557858468 0.208276692
+ 0.310662284 0.903525948
+ 0.516041164 0.543107117
+ 0.285977302 0.0365953674
+ 0.591902369 0.451773422
+ 0.994733123 0.980276385
+ 0.841250662 0.0161357841
+ 0.174070919 0.571239335
+ 0.838124119 0.355244372
+ 0.0371987668 0.485613288
+ 0.518391193 0.702482409
+ 0.705579435 0.781553558
+ 0.434992594 0.90934138
+ 0.409201327 0.588567287
+ 0.835207274 0.426638053
+ 0.334204634 0.920605161
+ 0.217623963 0.858799823
+ 0.990516263 0.200630615
+ 0.151074212 0.163447125
+ 0.388665604 0.928856597
+ 0.245672124 0.0810093028
+ 0.153076605 0.865887373
+ 0.851321219 0.229425039
+ 0.0802210418 0.0400722155
+ 0.660348394 0.520980385
+ 0.145484774 0.715962003
+ 0.76453439 0.583816503
+ 0.763207105 0.26500238
+ 0.106132832 0.705590102
+ 0.314342338 0.634841154
+ 0.0856619647 0.523609741
+ 0.145811236 0.647927011
+ 0.560243349 0.797353045
+ 0.30034097 0.534233111
+ 0.86202459 0.149218199
+ 0.864806682 0.949611003
+ 0.0119206796 0.29268783
+ 0.833724261 0.838797079
+ 0.299857314 0.914312823
+ 0.880715947 0.935192381
+ 0.14075901 0.273815143
+ 0.584010922 0.416090784
+ 0.206311282 0.839018358
+ 0.588313245 0.197406927
+ 0.682080664 0.887596667
+ 0.464589353 0.32017658
+ 0.657022221 0.283262236
+ 0.86749847 0.969137023
+ 0.153472786 0.884718077
+ 0.355556285 0.745048492
+ 0.799788681 0.682564309
+ 0.477782827 0.103766322
+  0.359614 0.950095847
+ 0.579442273 0.633837988
+ 0.432870338 0.588456335
+ 0.488163393 0.370106307
+ 0.893083751 0.301164365
+ 0.696884598 0.617968887
+ 0.0628065336 0.450361806
+ 0.230320744 0.561022659
+ 0.5714753 0.604397628
+ 0.479637644 0.117626125
+ 0.64117799 0.821592048
+ 0.933876506 0.0409074405
+ 0.662852614 0.85127944
+ 0.801012298 0.658929921
+ 0.657440293 0.350026752
+ 0.640419895 0.288582822
+ 0.308055246 0.18067635
+ 0.785915377 0.729481448
+ 0.807566512 0.0458671756
+ 0.321791587 0.23406401
+ 0.00303227687 0.703580975
+ 0.576552352 0.333479955
+ 0.951681779 0.25252258
+ 0.490746078 0.710030092
+ 0.389499829 0.727068092
+ 0.490538246 0.891329241
+ 0.549588189 0.0907929358
+ 0.97047345 0.333890629
+ 0.326045418 0.664588365
+ 0.0125393493 0.70103779
+ 0.984657611 0.495947691
+ 0.844881727 0.617973526
+ 0.65160586 0.826455069
+ 0.0405516068 0.592945803
+ 0.559990349 0.946844466
+ 0.832576784 0.62444264
+ 0.199523162 0.6835689
+ 0.174534047 0.786804685
+ 0.965971704 0.543573793
+ 0.334223675 0.48779125
+ 0.93518814 0.214817702
+ 0.00509253424 0.952236311
+ 0.362839947 0.949867291
+ 0.71791016 0.135189052
+ 0.706557821 0.840445398
+ 0.542692557 0.0147280896
+ 0.938520494 0.32479051
+ 0.768699043 0.0815054558
+ 0.816506568 0.0410828537
+ 0.678974509 0.212753182
+ 0.576948718 0.726446379
+ 0.575225197 0.248044502
+ 0.524198453 0.665530765
+ 0.559466232 0.874573128
+ 0.278699153 0.289188234
+ 0.676814373 0.87304443
+ 0.0533683561 0.948305856
+ 0.150004104 0.42790644
+ 0.54350217 0.543198243
+ 0.821811832 0.481396592
+ 0.644074387 0.0437883975
+ 0.107696725 0.985725397
+ 0.588826799 0.907284981
+ 0.343032908 0.408432615
+ 0.92143996 0.699514452
+ 0.319963657 0.437267597
+ 0.108301445 0.536540198
+ 0.496092402 0.634198346
+ 0.0182096579 0.0377466164
+ 0.420350984 0.164440432
+ 0.459204204 0.332902217
+ 0.105210365 0.791993438
+ 0.648684255 0.304050517
+ 0.936065599 0.341903073
+ 0.516914262 0.306345053
+ 0.477732681 0.413267672
+ 0.207449506 0.0580206728
+ 0.20147671 0.953787851
+ 0.0433873571 0.716588772
+ 0.946998681 0.631971158
+ 0.803664359 0.00189106842
+ 0.023882858 0.583875293
+ 0.740003946 0.58733439
+ 0.0441677654 0.475423798
+ 0.955379457 0.929534654
+ 0.819659905 0.85319535
+ 0.364201259 0.209662225
+ 0.415597448 0.475399711
+ 0.425782067 0.767358051
+ 0.182649104 0.978194923
+ 0.595269612 0.509564829
+ 0.918325232 0.927766141
+ 0.0660563319 0.987888368
+ 0.656371363 0.391461328
+ 0.563754617 0.914412081
+ 0.61341727 0.012027838
+ 0.317679813 0.677089894
+ 0.378198749 0.247322616
+ 0.267071984 0.60319386
+ 0.167260402 0.983827358
+ 0.818464188 0.252703663
+ 0.86691778 0.475162481
+ 0.715194391 0.652540572
+ 0.203095435 0.899234951
+ 0.116059656 0.664552924
+ 0.907084508 0.589024437
+ 0.747731829 0.112586474
+ 0.273905061 0.301010865
+ 0.357614256 0.012204055
+ 0.892057966 0.679310048
+ 0.748142699 0.387899968
+ 0.239835062 0.827688229
+ 0.670205978 0.539526513
+ 0.125370506 0.744575728
+ 0.4632737 0.410656009
+ 0.631221212 0.759176453
+ 0.88037971 0.523850834
+ 0.911372262 0.722150169
+ 0.778505169 0.339431247
+ 0.208313585 0.358242933
+ 0.456846919 0.854833193
+ 0.763558617 0.256384134
+ 0.02504934 0.1783399
+ 0.0393144232 0.0827855011
+ 0.841413946 0.570998878
+ 0.212557302 0.281220725
+ 0.451247021 0.349827604
+ 0.757913507 0.890302011
+ 0.867987838 0.246302984
+ 0.582881022 0.310729265
+ 0.943650292 0.326166903
+ 0.710950174 0.784746852
+ 0.977850926 0.645617273
+ 0.0661527789 0.402293876
+ 0.377961553 0.96691887
+ 0.682630532 0.560826027
+ 0.0767650981 0.367440734
+ 0.915086145 0.463734597
+ 0.108314326 0.98944722
+ 0.303418975 0.706980491
+ 0.765825463 0.598215458
+ 0.586756407 0.138608395
+ 0.798648965 0.745555422
+ 0.692595451 0.714194337
+ 0.309739189 0.49619458
+ 0.801025552 0.198878578
+ 0.440679436 0.575007678
+ 0.946549043 0.52630118
+ 0.776505467 0.849828707
+ 0.213224256 0.205173476
+ 0.520933081 0.29329507
+ 0.759987147 0.931898925
+ 0.291884449 0.018607338
+ 0.3342405 0.307993036
+ 0.854561054 0.13788615
+ 0.79862118 0.888740491
+ 0.323496839 0.794224691
+ 0.333445329 0.870011444
+ 0.791343521 0.202420224
+ 0.480270022 0.0463560047
+ 0.886207204 0.339019834
+ 0.0603083065 0.885042441
+ 0.551229508 0.239192604
+ 0.57218026 0.082939175
+ 0.508117642 0.390809769
+ 0.230234643 0.235148747
+ 0.223665302 0.623332723
+ 0.842246062 0.844587819
+ 0.234781046 0.632556724
+ 0.0326947637 0.743390343
+ 0.817907869 0.163072505
+ 0.0935089744 0.27318813
+ 0.767015517 0.438516898
+ 0.641273133 0.284213822
+ 0.248517599 0.663739042
+ 0.364696923 0.823851179
+ 0.308778974 0.28290279
+ 0.560088432 0.283707275
+ 0.343230458 0.0257150573
+ 0.973201043 0.916842631
+ 0.15029046 0.41079118
+ 0.151651386 0.143327996
+ 0.588116825 0.149340382
+ 0.398885151 0.591468361
+ 0.66530222 0.0504257488
+ 0.117443084 0.592477425
+ 0.283016465 0.131265234
+ 0.704861428 0.244983086
+ 0.330763171 0.740090957
+ 0.864309574 0.768196886
+ 0.396295614 0.792343971
+ 0.75427949 0.01439305
+ 0.391893758 0.480972372
+ 0.955950183 0.618854509
+ 0.7901008 0.449765874
+ 0.800887908 0.885599582
+ 0.546386257 0.693311514
+ 0.540133657 0.0290301475
+ 0.201490808 0.683231542
+ 0.992653197 0.948798835
+ 0.859131904 0.95943703
+ 0.759813644 0.470880402
+ 0.225048473 0.485746735
+ 0.420412869 0.0752256115
+ 0.11885883 0.866029697
+ 0.3590969 0.592712552
+ 0.534894568 0.830774634
+ 0.430588837 0.855763728
+ 0.918437511 0.129381082
+ 0.188127215 0.868563215
+ 0.509872357 0.435096274
+ 0.688294677 0.0184322209
+ 0.100132685 0.174430747
+ 0.71339439 0.0136480199
+ 0.34752645 0.703131447
+ 0.766726271 0.218882841
+ 0.10203834 0.839979896
+ 0.658806674 0.404534281
+ 0.974993117 0.0944009582
+ 0.278516848 0.547237235
+ 0.0496986255 0.128136738
+ 0.758121514 0.837039425
+ 0.127990682 0.475298382
+ 0.243719543 0.296901269
+ 0.163720274 0.0278752944
+ 0.712862693 0.593104788
+ 0.344409714 0.218163337
+ 0.524280505 0.556998298
+ 0.936344518 0.565861344
+ 0.117767144 0.831686989
+ 0.494310925 0.847382746
+ 0.440323085 0.503577177
+ 0.074082664 0.122900161
+ 0.281041592 0.481035009
+ 0.933686324 0.761911699
+ 0.696352112 0.713522602
+ 0.000635224627 0.106301801
+ 0.410409275 0.176861659
+ 0.421496234 0.1921522
+ 0.83696135 0.262885531
+ 0.679900039 0.0335103518
+ 0.786506604 0.77730262
+ 0.354082654 0.628083257
+ 0.658849269 0.128271533
+ 0.449930591 0.807161709
+ 0.650863441 0.0363534128
+ 0.713826658 0.799980871
+ 0.553715794 0.218512823
+ 0.461249108 0.24756524
+ 0.0891190337 0.970925543
+ 0.924265794 0.692692583
+&
+@target G4.S4
+@type xy
+ 0.818935253 0.466352942
+ 0.311109115 0.224805413
+ 0.165260228 0.360717803
+ 0.770080122 0.11648034
+ 0.256260154 0.107477973
+ 0.675771728 0.852421826
+ 0.508786324 0.473882927
+ 0.0846307315 0.348343307
+ 0.849952892 0.919075108
+ 0.139603124 0.863406596
+ 0.744412996 0.577745784
+ 0.563134712 0.434641509
+ 0.999021482 0.931276268
+ 0.998075587 0.410685037
+ 0.180824318 0.480092892
+ 0.625571199 0.737970327
+ 0.576296451 0.392933865
+ 0.746174899 0.960945185
+ 0.401424147 0.131361649
+ 0.182485725 0.677927648
+ 0.252415506 0.89333476
+ 0.282923336 0.33144541
+ 0.266538335 0.545979363
+ 0.651192095 0.405023392
+ 0.327589944 0.464488847
+ 0.358364739 0.182106118
+ 0.0340445586 0.659914437
+ 0.396212968 0.596429154
+ 0.49099035 0.25431699
+ 0.160439005 0.0307817291
+ 0.112617858 0.310658323
+ 0.327081025 0.881375848
+ 0.61363537 0.203238385
+ 0.834348599 0.424868785
+ 0.361031567 0.704145397
+ 0.998752146 0.909155552
+ 0.626005102 0.863153004
+ 0.907149194 0.0619916772
+ 0.139595256 0.685963309
+ 0.422581841 0.0738849225
+ 0.130411811 0.416891888
+ 0.600354995 0.421284744
+ 0.628507482 0.623567366
+ 0.767460604 0.741721506
+ 0.979253968 0.436477549
+ 0.804079744 0.33035561
+ 0.793475798 0.579231342
+ 0.0933652008 0.708438042
+ 0.344577668 0.014109957
+ 0.302709743 0.402608999
+ 0.612843173 0.573075766
+ 0.717016306 0.697354196
+ 0.0664561773 0.668231473
+ 0.814562557 0.595658464
+ 0.163961782 0.595281608
+ 0.360925637 0.927586315
+ 0.0778913784 0.578661439
+ 0.166648565 0.916352826
+ 0.946932629 0.12231201
+ 0.540220523 0.733963797
+ 0.429920098 0.495107013
+ 0.520417404 0.252840882
+ 0.354019213 0.236424957
+ 0.327204116 0.608555963
+ 0.335852243 0.795857936
+ 0.869133147 0.637285747
+ 0.0466498358 0.898370631
+ 0.0749177246 0.943172634
+ 0.544308292 0.441852366
+ 0.837356939 0.63010403
+ 0.48887834 0.356863787
+ 0.824318307 0.787796025
+ 0.572906767 0.245149684
+ 0.343509141 0.256918521
+ 0.635262482 0.848655253
+ 0.0287227994 0.771789268
+ 0.279133004 0.18439566
+ 0.477178045 0.162643378
+ 0.727864264 0.550049235
+ 0.573561458 0.378846892
+ 0.721434674 0.256020452
+ 0.800506679 0.234471135
+ 0.878606501 0.547689595
+ 0.724752597 0.388595461
+ 0.191857113 0.304753811
+ 0.537260782 0.663498977
+ 0.153878599 0.23642128
+ 0.110897982 0.30250753
+ 0.632830478 0.0470855606
+ 0.2482991 0.683683606
+ 0.350396447 0.782626243
+ 0.718154057 0.93907243
+ 0.49493702 0.782219293
+ 0.935327484 0.96951691
+ 0.284632744 0.996576355
+ 0.32707177 0.319971525
+ 0.188464186 0.119467958
+ 0.419563069 0.371676887
+ 0.241621767 0.763244386
+ 0.749992762 0.29136336
+ 0.863623289 0.957688973
+ 0.765627638 0.200999452
+ 0.293988357 0.30604941
+ 0.435096293 0.85847928
+ 0.0403205645 0.933680696
+ 0.0739632584 0.340692688
+ 0.532295148 0.328607521
+ 0.0195453791 0.315232003
+ 0.977470891 0.179985233
+ 0.718101513 0.309390778
+ 0.763737066 0.842762461
+ 0.94190425 0.178519636
+ 0.247248663 0.503431267
+ 0.0018186369 0.801493261
+ 0.734257817 0.124180472
+ 0.37329796 0.135555773
+ 0.208241154 0.866717157
+ 0.454998643 0.219041299
+ 0.566504767 0.669172807
+ 0.975005664 0.206478397
+ 0.128903007 0.125334619
+ 0.654771762 0.433761828
+ 0.224824753 0.213945824
+ 0.19724349 0.606174584
+ 0.38372507 0.801392281
+ 0.831255391 0.460232403
+ 0.319724598 0.554894907
+ 0.982108316 0.831923554
+ 0.217608818 0.0361020418
+ 0.182105635 0.341279857
+ 0.782657357 0.00954471854
+ 0.846088816 0.413674665
+ 0.723289945 0.153264684
+ 0.979959604 0.189677824
+ 0.0381100478 0.0433065183
+ 0.217695721 0.196771372
+ 0.114911585 0.494975084
+ 0.191732342 0.746649012
+ 0.723307096 0.199137486
+ 0.881874892 0.8451881
+ 0.700832912 0.283311348
+ 0.275297349 0.659346334
+ 0.209513259 0.245593821
+ 0.731524341 0.550805173
+ 0.941198475 0.397572732
+ 0.369252625 0.204452402
+ 0.534772687 0.873029488
+ 0.131622771 0.076543032
+ 0.511235968 0.536623546
+ 0.448135535 0.581952498
+ 0.709033708 0.179987902
+ 0.693833011 0.556715705
+ 0.293712127 0.78087396
+ 0.268413355 0.38432159
+ 0.0497553044 0.840270967
+ 0.295603751 0.520606532
+ 0.521123681 0.411454993
+ 0.358855265 0.749246827
+ 0.101749095 0.969263439
+ 0.055387845 0.333168122
+ 0.78292171 0.141995144
+ 0.740292734 0.0186367361
+ 0.91926743 0.88244227
+ 0.255694371 0.828671957
+ 0.0508396348 0.554232253
+ 0.562726928 0.0243466732
+ 0.916553435 0.786282464
+ 0.060269183 0.366459068
+ 0.461511393 0.941998073
+ 0.939833963 0.902066167
+ 0.0646314053 0.630992868
+ 0.0907667242 0.330182506
+ 0.501610259 0.402531915
+ 0.318932753 0.76452032
+ 0.170916166 0.624766516
+ 0.556464631 0.119387957
+ 0.477521968 0.348806223
+ 0.62481529 0.51965165
+ 0.96461606 0.822254331
+ 0.661634682 0.565246877
+ 0.132104983 0.651923436
+ 0.0497768265 0.151211416
+ 0.321005824 0.924105677
+ 0.781925862 0.421737553
+ 0.22107092 0.273822084
+ 0.829898766 0.786271431
+ 0.406981242 0.843350484
+ 0.382174445 0.503147116
+ 0.362500463 0.372584306
+ 0.577651234 0.43307351
+ 0.383291488 0.0109113385
+ 0.477983247 0.350618463
+ 0.325870679 0.765910971
+ 0.998111257 0.19124687
+ 0.904328014 0.740773357
+ 0.170772338 0.484518934
+ 0.889477252 0.842000412
+ 0.407288042 0.547409882
+ 0.735707881 0.0722028506
+ 0.0719075091 0.281304516
+ 0.55386353 0.746728082
+ 0.0476555005 0.209985426
+ 0.0338080872 0.865821204
+ 0.500460711 0.96670522
+ 0.719512088 0.44318597
+ 0.13608313 0.092155088
+ 0.0909094736 0.487216105
+ 0.41887243 0.0368333315
+ 0.880655497 0.731260328
+ 0.871688769 0.395506617
+ 0.787981518 0.0884212165
+ 0.210476507 0.0108774547
+ 0.758320977 0.184631724
+ 0.978376183 0.951909391
+ 0.416147906 0.079394022
+ 0.171637326 0.960913112
+ 0.217631822 0.902080192
+ 0.238757673 0.124024399
+ 0.806774191 0.933145368
+ 0.53352856 0.923261007
+ 0.301281843 0.376266739
+ 0.91052306 0.019897765
+ 0.699889764 0.47454675
+ 0.241064253 0.708841106
+ 0.107153622 0.225528223
+ 0.165380162 0.483280059
+ 0.524209225 0.915858807
+ 0.345504392 0.178268869
+ 0.857094493 0.642070074
+ 0.707313522 0.810524611
+ 0.165194216 0.993054126
+ 0.798123936 0.985616726
+ 0.930457132 0.108167055
+ 0.6199759 0.710702491
+ 0.120764011 0.183439468
+ 0.393502617 0.839335243
+ 0.919210041 0.66417125
+ 0.811994714 0.705449637
+ 0.666053303 0.22787307
+ 0.194048235 0.377220944
+ 0.265447731 0.0143705963
+ 0.056062507 0.541652596
+ 0.80563907 0.395803297
+ 0.460391097 0.971230747
+ 0.881260578 0.643891808
+ 0.942598705 0.0329464562
+ 0.822364674 0.686425591
+ 0.0947421794 0.887526278
+ 0.424218548 0.851718493
+ 0.683257893 0.499356902
+ 0.710227618 0.25626311
+ 0.774566445 0.222838719
+ 0.812739084 0.306435215
+ 0.51808567    0.9573
+ 0.399703837 0.376410234
+ 0.926680702 0.458296965
+ 0.802130707 0.521775248
+ 0.0469624619 0.603280888
+ 0.996150969 0.902563065
+ 0.340402516 0.893836634
+ 0.478339864 0.172541622
+ 0.890700317 0.602785773
+ 0.655757681 0.861636339
+ 0.80342911 0.0930118938
+ 0.426020824 0.168893432
+ 0.523034773 0.115596714
+ 0.00357203279 0.412924249
+ 0.371953699 0.139504182
+ 0.128894152 0.671833264
+ 0.0528508222 0.436145377
+ 0.468720592 0.512147299
+ 0.469575211 0.656953531
+ 0.36058169 0.0598401714
+ 0.817058507 0.395434341
+ 0.787841576 0.267159822
+ 0.0751111857 0.0463661186
+ 0.966055546 0.53289346
+ 0.439524474 0.784314435
+ 0.0576642591 0.762456801
+ 0.498748494 0.99332836
+ 0.886280577 0.980570857
+ 0.777728995 0.0364500687
+ 0.139976238 0.677067663
+ 0.36058675 0.0256702905
+ 0.670994055 0.961377135
+ 0.248145941 0.776363119
+ 0.728684205 0.253787924
+ 0.83414444 0.379198552
+ 0.342678805 0.0228034167
+ 0.265773003 0.315654852
+ 0.852760865 0.433104053
+ 0.91631579 0.77691788
+ 0.240262908 0.800013969
+ 0.475171948 0.599321899
+ 0.03988329 0.0194736128
+ 0.932881973 0.521050207
+ 0.647516657 0.966322136
+ 0.67497398 0.518749049
+ 0.159785397 0.589486976
+ 0.427722879 0.414952973
+ 0.217575046 0.730322663
+ 0.715624782 0.210190841
+ 0.230287624 0.658232045
+ 0.803061292 0.980312575
+ 0.444019007 0.0240838677
+ 0.631907358 0.422559456
+ 0.778791616 0.714205849
+ 0.510001506 0.486487594
+ 0.133858316 0.442956549
+ 0.529607889 0.139937725
+ 0.418848592 0.591308826
+ 0.398680001 0.301489528
+ 0.180520775 0.481644248
+ 0.748238973 0.420071736
+ 0.0783291054 0.690923915
+ 0.150339331 0.113815342
+ 0.76975532 0.948438281
+ 0.959157283 0.707732494
+ 0.0176790662 0.443206612
+ 0.564340638 0.80004727
+ 0.222076732 0.20472236
+ 0.1574623 0.104986788
+ 0.183266999 0.138963661
+ 0.0821784299 0.470662633
+ 0.560250427 0.568618258
+ 0.945908501 0.925840758
+ 0.518664225 0.835242753
+ 0.0509728449 0.578180569
+ 0.426157873 0.641097212
+ 0.842886382 0.821625328
+ 0.854610792 0.952297612
+ 0.7964866 0.621468819
+ 0.282520079 0.445235491
+ 0.0321397583 0.372987669
+ 0.952647287 0.555543771
+ 0.646001994 0.560881025
+ 0.576189763 0.573390931
+ 0.589392719 0.784653859
+ 0.337116543 0.417896208
+ 0.14872481 0.845535863
+ 0.932999859 0.695053604
+ 0.232577137 0.208279782
+ 0.649209453 0.825130866
+ 0.0617985423 0.481012653
+ 0.0369161321 0.146594086
+ 0.819183241 0.900106865
+ 0.978466605 0.313225181
+ 0.446647915 0.358105443
+ 0.615063626 0.649141794
+ 0.56217768 0.125840602
+ 0.0872411861 0.493128383
+ 0.629166022 0.0964995425
+ 0.160346958 0.606803264
+ 0.288654124 0.903139609
+ 0.457735026 0.339869584
+ 0.21739589 0.254295337
+ 0.93132918 0.639035524
+ 0.559194471 0.171752111
+ 0.676782661 0.883143864
+ 0.985801202 0.394977655
+ 0.526774575 0.549682784
+ 0.866719641 0.0550194634
+ 0.268594158 0.867087912
+ 0.112021012 0.257170777
+ 0.505955312 0.890721445
+ 0.178984033 0.547819069
+ 0.204944308 0.226319473
+ 0.225107905 0.663237838
+ 0.951764231 0.390185654
+ 0.223917988 0.381604818
+ 0.7920846 0.650759073
+ 0.387329099 0.27442751
+ 0.374219361 0.859536781
+ 0.834156266 0.254307044
+ 0.841844716 0.208713587
+ 0.00413620938 0.415678622
+ 0.594078814 0.97776503
+ 0.164314716 0.79665827
+ 0.237138132 0.588798943
+ 0.280320272 0.819101365
+ 0.34270625 0.970595564
+ 0.614603243 0.323532897
+ 0.235880625 0.949370453
+ 0.280040399 0.5514836
+ 0.572796006 0.245372387
+ 0.896452909 0.0605981899
+ 0.117714886 0.45189977
+ 0.100516317 0.303385528
+ 0.131238863 0.931527808
+ 0.314781998 0.100709669
+ 0.216174662 0.0558569662
+ 0.431075905 0.0128161546
+ 0.841606639 0.0657996801
+ 0.660426144 0.605462985
+ 0.576416464 0.0213906481
+ 0.249601786 0.629394628
+ 0.925440586 0.409784885
+ 0.764075065 0.926565497
+ 0.688100167 0.292892126
+ 0.258711566 0.861051256
+ 0.158542326 0.502953595
+ 0.697395156 0.634772733
+ 0.209102629 0.432680289
+ 0.690089577 0.158015735
+ 0.821590773 0.530354892
+ 0.961021414 0.114304736
+ 0.609068851 0.803574447
+ 0.31796553 0.691155721
+ 0.739919079 0.291456279
+ 0.628572473 0.328810542
+ 0.406718497 0.136083051
+ 0.971181949 0.754844807
+ 0.241919821 0.232645246
+ 0.583014067 0.949975842
+ 0.994874165 0.818318535
+ 0.655273014 0.173670594
+ 0.437206747 0.654818762
+ 0.116085997 0.0175755084
+ 0.103481914 0.504212482
+ 0.702664152 0.7019778
+ 0.0948656814 0.022884995
+ 0.511439792 0.105825531
+ 0.793721525 0.530379614
+ 0.785301267 0.347712843
+ 0.3655536 0.421387098
+ 0.736252529 0.600438373
+ 0.0976665646 0.474528454
+ 0.542696976 0.34706868
+ 0.290273904 0.964503311
+ 0.862352143 0.310155783
+ 0.490218433 0.905512581
+ 0.695665375 0.124902682
+ 0.517854691 0.988184745
+  0.874664 0.623475209
+ 0.945630698 0.990983452
+ 0.607626741 0.419729001
+ 0.324098092 0.879307646
+ 0.285632876 0.332245068
+ 0.225512742 0.598603071
+ 0.395263612 0.042109031
+ 0.274588714 0.319320346
+ 0.542250249 0.0754387842
+ 0.706099047 0.896817871
+ 0.0461896197 0.417555907
+ 0.762807556 0.547664943
+ 0.743499437 0.651562397
+ 0.442421663 0.180343176
+ 0.320609451 0.245499082
+ 0.50360472 0.617565506
+ 0.0874570222 0.0218161966
+ 0.736708597 0.366483741
+ 0.640922153 0.0166006179
+ 0.389001966 0.590085868
+ 0.418810806 0.359931914
+ 0.200680702 0.193661327
+ 0.593380086 0.406685478
+ 0.0861683418 0.0415359002
+ 0.227247101 0.85571854
+ 0.358262959 0.31370643
+ 0.563104115 0.524779833
+ 0.327684716 0.503714878
+ 0.414791035 0.374402444
+ 0.830271567 0.445019324
+ 0.583201032 0.152652098
+ 0.972702773 0.471878483
+ 0.184330695 0.0729803422
+ 0.0158207461 0.0820056691
+ 0.356089722 0.825340771
+ 0.284988619 0.9740696
+ 0.125337079 0.00394304167
+ 0.0536480609 0.132243031
+ 0.129340208 0.19390203
+ 0.98716804 0.186045004
+ 0.378434528 0.819331743
+ 0.290894914 0.211993806
+ 0.921229017 0.427643409
+ 0.777300047 0.517316096
+ 0.727781248 0.0727973324
+ 0.28588503 0.0276253764
+ 0.250479191 0.16258221
+ 0.206400512 0.493295124
+ 0.140383017 0.540116606
+ 0.0947458141 0.541248685
+ 0.164137695 0.682051073
+ 0.500684001 0.951276982
+ 0.767334503 0.768170206
+ 0.789171856 0.717873238
+ 0.931184316 0.0268245519
+ 0.970837209 0.539569383
+ 0.921081076 0.242760952
+ 0.698651755 0.380863142
+ 0.36348557 0.680825559
+ 0.529947382 0.714878638
+ 0.287824643 0.160657625
+ 0.657803689 0.632980985
+ 0.985756321 0.570135189
+ 0.0349789502 0.109914941
+ 0.463881584 0.993054361
+ 0.989126448 0.837595703
+ 0.283431531 0.729563546
+ 0.219950441 0.0275596092
+ 0.76522582 0.740315733
+ 0.730910678 0.443972202
+ 0.719566966 0.446230706
+ 0.92170696 0.106088945
+ 0.391924294 0.963784547
+ 0.223949662 0.821829018
+ 0.876288021 0.688556001
+ 0.450811411 0.734283069
+ 0.804913339 0.420760929
+ 0.666589725 0.369291143
+ 0.57526547 0.525506724
+ 0.627477778 0.680445423
+ 0.384389668 0.651130484
+ 0.404733203 0.522001659
+ 0.945870905 0.173158247
+ 0.293268312 0.903105613
+ 0.633878303 0.616931206
+ 0.258571399 0.377130928
+ 0.468137183 0.887959924
+ 0.437264906 0.333006737
+ 0.999243901 0.204666045
+ 0.690866545 0.388109602
+ 0.796601317 0.27081811
+ 0.208198269 0.422748379
+ 0.204033251 0.350866791
+ 0.677262078 0.437854194
+ 0.939204445 0.0625808353
+ 0.121294381 0.176210435
+ 0.94943511 0.0526325337
+ 0.784023976 0.561679035
+ 0.952353561 0.11567309
+ 0.720298235 0.968746626
+ 0.257002946 0.295505078
+ 0.0915734004 0.179280811
+ 0.843675442 0.448040097
+ 0.934612366 0.0484515266
+ 0.309497025 0.721787751
+ 0.420631093 0.0843292112
+ 0.355297626 0.101870736
+ 0.362286119 0.0553085085
+ 0.929562324 0.732324124
+ 0.0585484696 0.942369162
+ 0.799137793 0.504036885
+ 0.26341466 0.121002545
+ 0.759740545 0.400315147
+ 0.357787248 0.50015556
+ 0.0932665688 0.823763112
+ 0.838120209 0.676613116
+ 0.895132987 0.307462912
+ 0.786470248 0.207536173
+ 0.902587331 0.684923332
+ 0.38462396 0.121897924
+ 0.410155251 0.715892401
+ 0.0891767263 0.837457961
+ 0.793555984 0.193021712
+ 0.712376329 0.774479523
+ 0.643054105 0.639600821
+ 0.00789069175 0.913566679
+ 0.105743714 0.946383208
+ 0.0949122575 0.078776249
+ 0.355190636 0.273992602
+ 0.310872363 0.407625559
+ 0.103834132 0.0575545076
+ 0.981659449 0.340531168
+ 0.727147821 0.721186934
+ 0.979607852 0.759720206
+ 0.146156309 0.450067754
+ 0.992773646 0.590797893
+ 0.309818347 0.475173223
+ 0.850151043 0.517947985
+ 0.150366957 0.549172442
+ 0.418880712 0.386399655
+ 0.965528715 0.499187777
+ 0.329908188 0.602388292
+ 0.959246583 0.557216963
+ 0.126700458 0.724636816
+ 0.887460936 0.000377682969
+ 0.345063023 0.604773178
+ 0.143737216 0.24124666
+ 0.898077954 0.814034842
+ 0.552479784 0.0981790288
+ 0.917920421 0.571423062
+ 0.517230949 0.940873408
+ 0.851586829 0.389602542
+ 0.167788453 0.370967898
+ 0.060688165 0.415457364
+ 0.679034511 0.583012001
+ 0.967178825 0.265118459
+ 0.0347481961 0.430091149
+ 0.106055837 0.925010429
+ 0.280569212 0.226458441
+ 0.542220378 0.0922701962
+ 0.128300033 0.121912089
+ 0.909828478 0.250428102
+ 0.593671525 0.0514335004
+ 0.392600169 0.704037586
+ 0.121713072 0.839523374
+ 0.300534036 0.629301057
+ 0.452937365 0.536107053
+ 0.69675126 0.17939428
+ 0.575546569 0.438500918
+ 0.361077223 0.192545378
+ 0.0866494658 0.922364162
+ 0.549709775 0.477691822
+ 0.644770533 0.0403010449
+ 0.37325964 0.117697773
+ 0.734192898 0.0763430314
+ 0.192173053 0.806899878
+ 0.00735623692 0.787012059
+ 0.853040717 0.847192559
+ 0.432100655 0.731115449
+ 0.515755667 0.677223407
+ 0.846995714 0.824557607
+ 0.380817049 0.472085436
+ 0.999801517 0.74099426
+ 0.0485795625 0.490731329
+ 0.932455609 0.883857673
+ 0.934374545 0.149091814
+ 0.967452069 0.953820667
+ 0.67840151 0.0286955121
+ 0.488331319 0.196887828
+ 0.96307036 0.818834789
+ 0.217111757 0.453506864
+ 0.73282217 0.646609959
+ 0.593547102 0.0391656316
+ 0.72828587 0.85817936
+ 0.783720975 0.577072888
+ 0.379514567 0.664734076
+ 0.406070672 0.885510946
+ 0.204711285 0.405358629
+ 0.547159324 0.694589868
+ 0.447678769 0.414965926
+ 0.935937881 0.26610087
+ 0.570330709 0.785333222
+ 0.765681747 0.717315564
+ 0.164547167 0.939153464
+ 0.61809352 0.539389561
+ 0.605581442 0.991928788
+ 0.342057213 0.42933739
+ 0.50186039 0.699347017
+ 0.547211217 0.479105384
+ 0.133340425 0.362355509
+ 0.449779745 0.488749552
+ 0.805072728 0.559001243
+ 0.194715449 0.181358227
+ 0.0549102246 0.241682074
+ 0.81192795 0.576070817
+ 0.336998031 0.395754772
+ 0.666882047 0.929193234
+ 0.207264398 0.243084621
+ 0.10809197 0.49267994
+ 0.57677121 0.418595947
+ 0.865788418 0.291771224
+ 0.968565013 0.451196599
+ 0.880451471 0.679026743
+ 0.438959637 0.269968305
+ 0.45627416 0.0318392564
+ 0.329898837 0.109126166
+ 0.956876032 0.116660373
+ 0.014201368 0.216973603
+ 0.184286942 0.193244927
+ 0.54690006 0.906036525
+ 0.80863554 0.631885873
+ 0.714664069 0.938094486
+ 0.514130555 0.406521003
+ 0.133287091 0.113946859
+ 0.0116648814 0.165623027
+ 0.467218184 0.475314841
+ 0.416519579 0.666963282
+ 0.352966639 0.605497799
+ 0.299620504 0.687408097
+ 0.278885567 0.402251748
+ 0.20376453 0.235442128
+ 0.204598919 0.31200222
+ 0.849402689 0.846658563
+ 0.534280489 0.055886931
+ 0.9183707 0.0557234355
+ 0.892203894 0.0491395351
+ 0.655737468 0.427664304
+ 0.276635886 0.111393183
+ 0.208909848 0.733830722
+ 0.24484267 0.720488706
+ 0.849650192 0.224439941
+ 0.81631161 0.702298535
+ 0.66466898 0.736927402
+ 0.525111252 0.0979057159
+ 0.894222337 0.581249889
+ 0.708566105 0.667334015
+ 0.0975022747 0.626080454
+ 0.740596046 0.835958335
+ 0.793133124 0.974717766
+ 0.124357362 0.0647378266
+ 0.827242016 0.107710611
+ 0.707384935 0.44173422
+ 0.796142137 0.339438748
+ 0.160126561 0.561967229
+ 0.557858468 0.208276692
+ 0.310662284 0.903525948
+ 0.516041164 0.543107117
+ 0.285977302 0.0365953674
+ 0.591902369 0.451773422
+ 0.994733123 0.980276385
+ 0.841250662 0.0161357841
+ 0.174070919 0.571239335
+ 0.838124119 0.355244372
+ 0.0371987668 0.485613288
+ 0.518391193 0.702482409
+ 0.705579435 0.781553558
+ 0.434992594 0.90934138
+ 0.409201327 0.588567287
+ 0.835207274 0.426638053
+ 0.334204634 0.920605161
+ 0.217623963 0.858799823
+ 0.990516263 0.200630615
+ 0.151074212 0.163447125
+ 0.388665604 0.928856597
+ 0.245672124 0.0810093028
+ 0.153076605 0.865887373
+ 0.851321219 0.229425039
+ 0.0802210418 0.0400722155
+ 0.660348394 0.520980385
+ 0.145484774 0.715962003
+ 0.76453439 0.583816503
+ 0.763207105 0.26500238
+ 0.106132832 0.705590102
+ 0.314342338 0.634841154
+ 0.0856619647 0.523609741
+ 0.145811236 0.647927011
+ 0.560243349 0.797353045
+ 0.30034097 0.534233111
+ 0.86202459 0.149218199
+ 0.864806682 0.949611003
+ 0.0119206796 0.29268783
+ 0.833724261 0.838797079
+ 0.299857314 0.914312823
+ 0.880715947 0.935192381
+ 0.14075901 0.273815143
+ 0.584010922 0.416090784
+ 0.206311282 0.839018358
+ 0.588313245 0.197406927
+ 0.682080664 0.887596667
+ 0.464589353 0.32017658
+ 0.657022221 0.283262236
+ 0.86749847 0.969137023
+ 0.153472786 0.884718077
+ 0.355556285 0.745048492
+ 0.799788681 0.682564309
+ 0.477782827 0.103766322
+  0.359614 0.950095847
+ 0.579442273 0.633837988
+ 0.432870338 0.588456335
+ 0.488163393 0.370106307
+ 0.893083751 0.301164365
+ 0.696884598 0.617968887
+ 0.0628065336 0.450361806
+ 0.230320744 0.561022659
+ 0.5714753 0.604397628
+ 0.479637644 0.117626125
+ 0.64117799 0.821592048
+ 0.933876506 0.0409074405
+ 0.662852614 0.85127944
+ 0.801012298 0.658929921
+ 0.657440293 0.350026752
+ 0.640419895 0.288582822
+ 0.308055246 0.18067635
+ 0.785915377 0.729481448
+ 0.807566512 0.0458671756
+ 0.321791587 0.23406401
+ 0.00303227687 0.703580975
+ 0.576552352 0.333479955
+ 0.951681779 0.25252258
+ 0.490746078 0.710030092
+ 0.389499829 0.727068092
+ 0.490538246 0.891329241
+ 0.549588189 0.0907929358
+ 0.97047345 0.333890629
+ 0.326045418 0.664588365
+ 0.0125393493 0.70103779
+ 0.984657611 0.495947691
+ 0.844881727 0.617973526
+ 0.65160586 0.826455069
+ 0.0405516068 0.592945803
+ 0.559990349 0.946844466
+ 0.832576784 0.62444264
+ 0.199523162 0.6835689
+ 0.174534047 0.786804685
+ 0.965971704 0.543573793
+ 0.334223675 0.48779125
+ 0.93518814 0.214817702
+ 0.00509253424 0.952236311
+ 0.362839947 0.949867291
+ 0.71791016 0.135189052
+ 0.706557821 0.840445398
+ 0.542692557 0.0147280896
+ 0.938520494 0.32479051
+ 0.768699043 0.0815054558
+ 0.816506568 0.0410828537
+ 0.678974509 0.212753182
+ 0.576948718 0.726446379
+ 0.575225197 0.248044502
+ 0.524198453 0.665530765
+ 0.559466232 0.874573128
+ 0.278699153 0.289188234
+ 0.676814373 0.87304443
+ 0.0533683561 0.948305856
+ 0.150004104 0.42790644
+ 0.54350217 0.543198243
+ 0.821811832 0.481396592
+ 0.644074387 0.0437883975
+ 0.107696725 0.985725397
+ 0.588826799 0.907284981
+ 0.343032908 0.408432615
+ 0.92143996 0.699514452
+ 0.319963657 0.437267597
+ 0.108301445 0.536540198
+ 0.496092402 0.634198346
+ 0.0182096579 0.0377466164
+ 0.420350984 0.164440432
+ 0.459204204 0.332902217
+ 0.105210365 0.791993438
+ 0.648684255 0.304050517
+ 0.936065599 0.341903073
+ 0.516914262 0.306345053
+ 0.477732681 0.413267672
+ 0.207449506 0.0580206728
+ 0.20147671 0.953787851
+ 0.0433873571 0.716588772
+ 0.946998681 0.631971158
+ 0.803664359 0.00189106842
+ 0.023882858 0.583875293
+ 0.740003946 0.58733439
+ 0.0441677654 0.475423798
+ 0.955379457 0.929534654
+ 0.819659905 0.85319535
+ 0.364201259 0.209662225
+ 0.415597448 0.475399711
+ 0.425782067 0.767358051
+ 0.182649104 0.978194923
+ 0.595269612 0.509564829
+ 0.918325232 0.927766141
+ 0.0660563319 0.987888368
+ 0.656371363 0.391461328
+ 0.563754617 0.914412081
+ 0.61341727 0.012027838
+ 0.317679813 0.677089894
+ 0.378198749 0.247322616
+ 0.267071984 0.60319386
+ 0.167260402 0.983827358
+ 0.818464188 0.252703663
+ 0.86691778 0.475162481
+ 0.715194391 0.652540572
+ 0.203095435 0.899234951
+ 0.116059656 0.664552924
+ 0.907084508 0.589024437
+ 0.747731829 0.112586474
+ 0.273905061 0.301010865
+ 0.357614256 0.012204055
+ 0.892057966 0.679310048
+ 0.748142699 0.387899968
+ 0.239835062 0.827688229
+ 0.670205978 0.539526513
+ 0.125370506 0.744575728
+ 0.4632737 0.410656009
+ 0.631221212 0.759176453
+ 0.88037971 0.523850834
+ 0.911372262 0.722150169
+ 0.778505169 0.339431247
+ 0.208313585 0.358242933
+ 0.456846919 0.854833193
+ 0.763558617 0.256384134
+ 0.02504934 0.1783399
+ 0.0393144232 0.0827855011
+ 0.841413946 0.570998878
+ 0.212557302 0.281220725
+ 0.451247021 0.349827604
+ 0.757913507 0.890302011
+ 0.867987838 0.246302984
+ 0.582881022 0.310729265
+ 0.943650292 0.326166903
+ 0.710950174 0.784746852
+ 0.977850926 0.645617273
+ 0.0661527789 0.402293876
+ 0.377961553 0.96691887
+ 0.682630532 0.560826027
+ 0.0767650981 0.367440734
+ 0.915086145 0.463734597
+ 0.108314326 0.98944722
+ 0.303418975 0.706980491
+ 0.765825463 0.598215458
+ 0.586756407 0.138608395
+ 0.798648965 0.745555422
+ 0.692595451 0.714194337
+ 0.309739189 0.49619458
+ 0.801025552 0.198878578
+ 0.440679436 0.575007678
+ 0.946549043 0.52630118
+ 0.776505467 0.849828707
+ 0.213224256 0.205173476
+ 0.520933081 0.29329507
+ 0.759987147 0.931898925
+ 0.291884449 0.018607338
+ 0.3342405 0.307993036
+ 0.854561054 0.13788615
+ 0.79862118 0.888740491
+ 0.323496839 0.794224691
+ 0.333445329 0.870011444
+ 0.791343521 0.202420224
+ 0.480270022 0.0463560047
+ 0.886207204 0.339019834
+ 0.0603083065 0.885042441
+ 0.551229508 0.239192604
+ 0.57218026 0.082939175
+ 0.508117642 0.390809769
+ 0.230234643 0.235148747
+ 0.223665302 0.623332723
+ 0.842246062 0.844587819
+ 0.234781046 0.632556724
+ 0.0326947637 0.743390343
+ 0.817907869 0.163072505
+ 0.0935089744 0.27318813
+ 0.767015517 0.438516898
+ 0.641273133 0.284213822
+ 0.248517599 0.663739042
+ 0.364696923 0.823851179
+ 0.308778974 0.28290279
+ 0.560088432 0.283707275
+ 0.343230458 0.0257150573
+ 0.973201043 0.916842631
+ 0.15029046 0.41079118
+ 0.151651386 0.143327996
+ 0.588116825 0.149340382
+ 0.398885151 0.591468361
+ 0.66530222 0.0504257488
+ 0.117443084 0.592477425
+ 0.283016465 0.131265234
+ 0.704861428 0.244983086
+ 0.330763171 0.740090957
+ 0.864309574 0.768196886
+ 0.396295614 0.792343971
+ 0.75427949 0.01439305
+ 0.391893758 0.480972372
+ 0.955950183 0.618854509
+ 0.7901008 0.449765874
+ 0.800887908 0.885599582
+ 0.546386257 0.693311514
+ 0.540133657 0.0290301475
+ 0.201490808 0.683231542
+ 0.992653197 0.948798835
+ 0.859131904 0.95943703
+ 0.759813644 0.470880402
+ 0.225048473 0.485746735
+ 0.420412869 0.0752256115
+ 0.11885883 0.866029697
+ 0.3590969 0.592712552
+ 0.534894568 0.830774634
+ 0.430588837 0.855763728
+ 0.918437511 0.129381082
+ 0.188127215 0.868563215
+ 0.509872357 0.435096274
+ 0.688294677 0.0184322209
+ 0.100132685 0.174430747
+ 0.71339439 0.0136480199
+ 0.34752645 0.703131447
+ 0.766726271 0.218882841
+ 0.10203834 0.839979896
+ 0.658806674 0.404534281
+ 0.974993117 0.0944009582
+ 0.278516848 0.547237235
+ 0.0496986255 0.128136738
+ 0.758121514 0.837039425
+ 0.127990682 0.475298382
+ 0.243719543 0.296901269
+ 0.163720274 0.0278752944
+ 0.712862693 0.593104788
+ 0.344409714 0.218163337
+ 0.524280505 0.556998298
+ 0.936344518 0.565861344
+ 0.117767144 0.831686989
+ 0.494310925 0.847382746
+ 0.440323085 0.503577177
+ 0.074082664 0.122900161
+ 0.281041592 0.481035009
+ 0.933686324 0.761911699
+ 0.696352112 0.713522602
+ 0.000635224627 0.106301801
+ 0.410409275 0.176861659
+ 0.421496234 0.1921522
+ 0.83696135 0.262885531
+ 0.679900039 0.0335103518
+ 0.786506604 0.77730262
+ 0.354082654 0.628083257
+ 0.658849269 0.128271533
+ 0.449930591 0.807161709
+ 0.650863441 0.0363534128
+ 0.713826658 0.799980871
+ 0.553715794 0.218512823
+ 0.461249108 0.24756524
+ 0.0891190337 0.970925543
+ 0.924265794 0.692692583
+&

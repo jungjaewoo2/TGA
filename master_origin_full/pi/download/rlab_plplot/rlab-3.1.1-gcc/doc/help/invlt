@@ -1,0 +1,66 @@
+  invlt
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Inverse laplace transform of a complex scalar function of a
+        complex scalar variable by means of expansion in sine and cosine
+        fourier series as implemented in TOMS/769.
+
+
+      [1mSyntax[0m
+        invlt ( [4mf[24m, /[4mp[24m/, [4mt[24m, /[4moptions[24m/ )
+
+        The arguments:
+
+        [4mf[24m[1m=function(t,/,p/)[0m
+           complex scalar function of a complex scalar variable, with a
+           parameter [4mp[24m.
+
+        [4mt[24m  real vector of points at which the inverse laplace transform
+           is sought.
+
+        [4moptions[24m [1m= << erel; sigma; ssbar; maxfeval >>[0m
+           list of options for the solver, where [4merel[24m is the relative
+           error, [4msigma[24m is the abcissa of convergence, [4mssbar[24m is a
+           mysterious parameter related to the sine/cosine transform
+           used in finding the inverse, and [4mmaxfeval[24m is a maximum number
+           of function evaluations used to obtain the inverse.
+
+
+        See also: nintlt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

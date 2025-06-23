@@ -1,0 +1,248 @@
+[
+    {
+        "editor_class": "Editor",
+        "editor_id": 1970251056,
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:16:54.167823",
+        "sequence": "EditorTextCreated",
+        "text_widget_id": 1970250352
+    },
+    {
+        "editor_class": "Editor",
+        "editor_id": 1970251056,
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:16:54.171888",
+        "sequence": "NewFile",
+        "text_widget_id": 1970250352
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:16:54.461684",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "index": "1.0",
+        "tags": "('welcome',)",
+        "text": "Python 3.5.3 (/usr/bin/python3)",
+        "text_widget_class": "ShellText",
+        "text_widget_context": "shell",
+        "time": "2017-09-28T23:16:54.643451",
+        "text_widget_id": 1970191248,
+        "sequence": "TextInsert"
+    },
+    {
+        "index": "1.31",
+        "tags": "('io',)",
+        "text": "\n",
+        "text_widget_class": "ShellText",
+        "text_widget_context": "shell",
+        "time": "2017-09-28T23:16:54.801930",
+        "text_widget_id": 1970191248,
+        "sequence": "TextInsert"
+    },
+    {
+        "index": "2.0",
+        "tags": "('toplevel', 'prompt')",
+        "text": ">>> ",
+        "text_widget_class": "ShellText",
+        "text_widget_context": "shell",
+        "time": "2017-09-28T23:16:54.804348",
+        "text_widget_id": 1970191248,
+        "sequence": "TextInsert"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:16:58.415371",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:16:58.851775",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1970250352,
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:17:13.462916",
+        "sequence": "<Button-1>",
+        "widget_class": "CodeViewText",
+        "text_widget_id": 1970250352
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:15.680902",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:16.267898",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1970132784,
+        "time": "2017-09-28T23:17:17.148444",
+        "sequence": "<Button-1>",
+        "widget_class": "Frame"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:17.792939",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:18.265217",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:17:20.397009",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:20.496109",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:17:23.018761",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616.#1982673616#1982910800"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:23.322636",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:23.328491",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:17:29.262050",
+        "sequence": "<Button-1>",
+        "widget": ".__tk_filedialog.contents.icons.cHull"
+    },
+    {
+        "time": "2017-09-28T23:17:30.254334",
+        "sequence": "<Button-1>",
+        "widget": ".__tk_filedialog.contents.icons.cHull.sbar"
+    },
+    {
+        "time": "2017-09-28T23:17:32.118223",
+        "sequence": "<Button-1>",
+        "widget": ".__tk_filedialog.contents.icons.cHull.canvas"
+    },
+    {
+        "time": "2017-09-28T23:17:33.471467",
+        "sequence": "<Button-1>",
+        "widget": ".__tk_filedialog.contents.f2.ok"
+    },
+    {
+        "editor_class": "Editor",
+        "editor_id": 1970250768,
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:17:33.667053",
+        "sequence": "EditorTextCreated",
+        "text_widget_id": 1931317136
+    },
+    {
+        "editor_class": "Editor",
+        "filename": "/home/pi/azg_button.py",
+        "editor_id": 1970250768,
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:17:33.668811",
+        "text_widget_id": 1931317136,
+        "sequence": "Open"
+    },
+    {
+        "time": "2017-09-28T23:17:33.673480",
+        "text_widget_class": "CodeViewText",
+        "index1": "1.0",
+        "index2": "2.0",
+        "text_widget_id": 1931317136,
+        "sequence": "TextDelete"
+    },
+    {
+        "index": "1.0",
+        "tags": "()",
+        "text": "import time\nimport RPi.GPIO as GPIO\nfrom subprocess import call\n\nswitch1 = 18\n# [azg] BCM #18 is *pin 12* on Raspberry header\n\nGPIO.setmode(GPIO.BCM) # Use BCM GPIO numbers\n\nGPIO.setup(switch1, GPIO.IN)\n\nprint \"start\"\n\nwhile True:\n\t    if GPIO.input(switch1):\n\t\t        print \"Button 1 pressed\"\n\t\t\tcall([\"play\", \"10Hz-3kHz_chirp_Ampl=0.5.wav\"])\n        \t\ttime.sleep(0.5)\n\n\t    else:\n\t            pass\n",
+        "text_widget_class": "CodeViewText",
+        "time": "2017-09-28T23:17:33.706221",
+        "text_widget_id": 1931317136,
+        "sequence": "TextInsert"
+    },
+    {
+        "denied": "False",
+        "time": "2017-09-28T23:17:33.720178",
+        "sequence": "Command",
+        "command_id": "open_file"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:33.721282",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:40.130043",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:17:40.843480",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:18:06.930331",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:18:07.053467",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:18:25.260473",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:18:25.419549",
+        "sequence": "<FocusIn>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:18:43.241922",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616"
+    },
+    {
+        "widget_id": 1989893904,
+        "time": "2017-09-28T23:18:43.324715",
+        "sequence": "<FocusOut>",
+        "widget_class": "Workbench"
+    },
+    {
+        "time": "2017-09-28T23:18:44.569002",
+        "sequence": "<Button-1>",
+        "widget": ".#1982673616.#1982673616#1982910800"
+    }
+]

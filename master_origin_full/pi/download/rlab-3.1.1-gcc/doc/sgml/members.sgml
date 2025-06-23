@@ -1,0 +1,27 @@
+<sect> members 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return an object's member names.
+<tag> Syntax </tag> members ( <em>L</> )
+<tag> Description </tag>
+
+	The members function takes a variable as an argument
+	(<em>L</>), and returns a string-vector containing the
+	object's member names.
+
+	For example: <tt>x = members (&dollar;&dollar;)</tt> will
+	create a row-vector and assign it to <em>x</>. The row-vector
+	will contain the names of all the elements in the
+	global-symbol-table.
+
+	The members function is probably most useful when used in
+	conjunction with for-loops. The result of members can be
+	used as the loop index, allowing users to operate on the
+	elements of an object. For example:
+
+<tscreen><verb>
+ll = << a = rand(3,3); b = rand(3,3); c = rand(3,3) >>;
+for (i in members (ll)) { ll.[i] = diag(ll.[i]); }
+</verb></tscreen>
+
+</descrip>

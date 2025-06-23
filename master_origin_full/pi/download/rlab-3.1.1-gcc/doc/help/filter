@@ -1,0 +1,132 @@
+  filter
+  Builtin Function
+
+
+
+
+      [1mSynopsis[0m
+        Discrete time recursive filter.
+
+
+      [1mSyntax[0m
+        filter (  [4mX[24m , [4mB[24m, [4mA[24m )
+
+        filter (  [4mX[24m , [4mB[24m, [4mA[24m, [4mopt[24m )
+
+
+      [1mDescription[0m
+
+           Filter is an implementation of the standard difference
+           equation:
+
+
+               y[n] = b(1)*x[n] + b(2)*x[n-1] + ... b(nb+1)*x[n-nb]
+                    - a(2)*y[n-1] - ... a(na+1)*y[n-na]
+
+
+
+
+        The filter is implemented using a method described as a "Direct
+        Form II Transposed" filter. More for information see Chapter 6
+        of "Discrete-Time Signal Processing" by Oppenheim and Schafer.
+
+
+      [1mInputs[0m
+
+        [4mB[24m  The numerator coefficients, or zeros of the system transfer
+           function.  The coefficients are specified in a vector like:
+
+
+             [ b(1) , b(2) , ... b(nb) ]
+
+
+
+
+        [4mA[24m  The denominator coefficients, or the poles of the system
+           transfer function. the coefficients are specified in a vector
+           like:
+
+
+              [ a(1) , a(2) , ... a(na) ]
+
+
+
+
+        [4mX[24m  A vector of the filter inputs.
+
+        [4mopt[0m
+           A list which entries specify initial delays through entry [4mzi[24m,
+           or initial values of filter output [4my0[24m, both given as an array
+           of size max(dim(A),dim(B))-1.
+
+
+      [1mOutput[0m
+        List with entries
+
+
+        [4my[24m  The filter output. [4my[24m is a vector of the same dimension as [4mX[24m.
+
+        [4mzf[24m A vector of the final values of the filter delays.
+
+        The A(1) coefficient must be non-zero, as the other coefficients
+        are divided by A(1).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

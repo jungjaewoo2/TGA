@@ -1,0 +1,198 @@
+  getline
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Get a line of input.
+
+      [1mSyntax[0m
+        getline ( [4mFN[24m )
+
+        getline ( [4mFN[24m, [4mLL[24m )
+
+      [1mDescription[0m
+        Getline returns an N-element list which contains all of the
+        tokens from a line in the file described by [4mFN[24m. The tokens are
+        delimited by whitespace. Numbers are installed in the list as
+        numeric scalars, everything else is installed as scalar strings.
+
+        The list elements have numeric indices, and are numbered from 1
+        to N. The 1st element containing the 1st token on the line, and
+        the Nth element containing the last token on the line. The
+        newline is not returned as a token.
+
+        Getline will also recognize everything enclosed within a pair of
+        " as a string, including escape characters.
+
+        Getline will always return a list-object. When an empty-line has
+        been read, getline returns an empty list. Getline will terminate
+        on an End-Of-File (EOF).
+
+        The filename can be a string that specifies a sub-process (see
+        help FILES), in which case getline will run the sub-process, and
+        read from the process's standard output.
+
+        The second, and optional argument, [4mLL[24m, forces getline to return
+        the entire line (including the newline) as a string, without any
+        parsing. If [4mLL[24m is <= 0, then getline will read lines as long as
+        512 characters. If [4mLL[24m > 0, then getline will read lines as long
+        as [4mLL[24m characters. The return value is a single string, not a
+        list, when [4mLL[24m is used. If getline encounters and EOF, while LL
+        is being used, a numeric value of 0 is returned.
+
+        Examples:
+
+        To get input interactively:
+
+
+
+          > printf( "Enter a string and a number: " ); x = getline( "stdin" );
+          Enter a string and a number: test-string 1.234e5
+          > show(x)
+             name:   x
+             class:  list
+                 n:  2
+          > x.[1]
+          test-string
+          > x.[2]
+           2 =
+           1.23e+05
+
+
+
+
+     Given a file named `test', which contains the following lines:
+
+          jcool  259  4 1075  822 vt01     S   Dec 29  9:32 X :0 -p 1 -s 5
+          jcool  256  0   21    0 console  S   Dec 29  0:00 startx
+          jcool  261  0  338   88 console  S   Dec 29  0:16 twm
+          jcool  288  8  635  333 ?        S   Dec 29  2:00 emacs
+          jcool  287  0  408   65 console  S   Dec 29  0:01 xclock
+
+
+
+
+
+
+          > tmp = getline( "test" );
+
+
+
+
+     would produce a list variable named `tmp' with 16 elements: tmp.[1]
+     would be the string "jcool" and tmp.[16] would be the number 5.
+     The next call to getline() would read the second line in the file,
+     and create a new list containing those elements.
+
+     The above could also have been done with:
+
+
+
+          > tmp = getline( "|ps -aux | grep jcool" );
+
+
+
+
+     Which would open a readable pipe to the "ps -aux | grep jcool"
+     command and grab a line at a time from the process.
+
+     To read the entire contents of a file:
+
+
+
+          if (length (ans = getline("stdin")))
+          {
+            // do something with ans
+          else
+            // finish up
+          }
+
+
+
+
+     Since getline returns an empty list when there is no input, we can
+     tell when to terminate the input loop by checking the length of the
+     returned list.
+
+     Using the optional second arguemnt to getline we can get old-style
+     Fortran formattted output. For example, we have a file filled with:
+
+
+
+          0.1285186E+000.1463163E+000.0000000E+000.0000000E+000.0000000E+000.0000000E+00
+          0.0000000E+000.0000000E+000.0000000E+000.0000000E+000.7322469E-010.5245288E-01
+          0.0000000E+00-.9399651E-010.2397120E-01-.6551484E-010.2616772E+020.5796479E-01
+          0.0000000E+000.2500000E+000.7788281E-010.2121489E-010.0000000E+00-.1345507E+00
+          0.1516225E-01-.1284981E+000.1136876E+020.3010250E-010.0000000E+00-.2500000E+00
+
+
+
+
+     we can do:
+          > lv = strtod (getline (FN, 13));
+
+
+
+
+     and get a vector with the numeric values for each line.
+
+
+     [1mSee Also[0m
+        strsplt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

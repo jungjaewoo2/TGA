@@ -1,0 +1,32 @@
+Changes to the original code found in netlib so that dloessf.f compiles without
+warning or errors under g77:
+1. subroutine ehg139
+  phi(n) is declared double precision rather than integer. This is done because
+  in subroutine ehg131, which calls 139, corresponding array 'dist' is declared
+  double precision.
+  Attempt to communicate this situations with the authors of the code failed. It
+  is not clear whether k-tree part of the code can work at all.  Test scripts,
+  however, produce results which are very close to those printed in the
+  loess manual.
+2. subroutine ehg137
+  Added declarations for vc, integer; c(vc,ncmax), integer; v(nmax,d), integer.
+3. loess.h
+  Removed 'extern' in definition of the struct loess.  The header file is not
+  used from RLaB.
+4.
+  Deleted c-routines 'predict', 'anova', 'loess_setup' and 'loess' from the
+  library. Part of their content went into the rlab functions loess.predict,
+  loess.anova, and loess.main, and loess.setup. Changed name of predict to
+  loess_predict_.
+5.
+  Linked to Boehm's garbage collector within the RLaB source tree.  All calloc/free
+  are repaced by GC_malloc/GC_free.  Added -I../../gc  to the compiler options in
+  Makefile.
+6.
+  Original loess code distribution is now separated into two subdirectories, src and
+  doc, where the former contains relevant c and fortran codes (see above), while the
+  latter contains verbatim documentation.
+
+by Marijan Kostrun, Storrs CT, IV-2006.
+
+PS: Please send comments to mkostrun@gmail.com.

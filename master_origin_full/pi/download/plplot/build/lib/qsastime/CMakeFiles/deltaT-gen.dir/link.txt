@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/deltaT-gen.dir/deltaT-gen.c.o CMakeFiles/deltaT-gen.dir/dspline.c.o  -o deltaT-gen 

@@ -1,0 +1,31 @@
+plln3:
+
+Synopsis: Plot line segments in 3D space.
+
+Syntax: plln3 ( PNTS )
+        plln3 ( PNTS , THETA , PHI )
+        plln3 ( PNTS , THETA , PHI , AXIS )
+	plln3 ( PNTS , THETA , PHI , AXIS , NEW )
+
+Description:
+
+	Plln3 draws 3D line segments projected onto the current plot window.
+	The required input is PNTS, a matrix of coordinate triplets: [X, Y, Z]
+
+ 	PNTS:  Matrix of [X,Y,Z] triplets.
+
+	THETA: Defaults to 60 degrees. The angle (in degrees) of rotation 
+               about the Z-axis.
+	       
+	PHI:   Defaults to 35 degrees. The angle (in degrees) of rotation 
+               about the X-axis.
+	       
+	AXIS:  If AXIS is TRUE (1), then the 3 orthogonal axes will
+               be drawn. Axis-1: [1, 0, 0], Axis-2: [0, 1, 0],
+               Axis-3: [0, 0, 1].  The axes are scaled to the plot window. 
+	       
+	NEW:   If NEW is TRUE (1), then the current plot window is cleared prior
+	       to drawing the line segment(s).  If NEW if FALSE (0),
+	       the plot window will not be cleared.  When NEW is
+	       FALSE, plimits should be used to ensure the plot window
+	       does not change.

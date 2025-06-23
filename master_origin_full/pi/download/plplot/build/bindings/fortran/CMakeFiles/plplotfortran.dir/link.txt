@@ -1,0 +1,1 @@
+/usr/bin/gfortran  -fPIC   -shared -Wl,-soname,libplplotfortran.so.0 -o libplplotfortran.so.0.0.0 CMakeFiles/plplotfortran.dir/plplot.f90.o CMakeFiles/plplotfortran.dir/plplot_single.f90.o CMakeFiles/plplotfortran.dir/plplot_double.f90.o CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o -Wl,-rpath,/home/pi/download/plplot/build/src::: ../../src/libplplot.so.15.0.0 

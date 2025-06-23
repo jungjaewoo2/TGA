@@ -1,0 +1,66 @@
+  gsub
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Replace parts of the string with another string.
+
+
+     [1mSyntax[0m
+        x = gsub ( [4mr[24m, [4ms[24m, [4mt[24m )
+
+
+     [1mDescription[0m
+        In target string [4mt[24m replace every occurence of a source string [4ms[0m
+        with a replacement string [4mr[24m.  The order of input parameters
+        follows that of the same GAWK command.
+
+
+        Arguments:
+
+        [4mr[24m  string, a replacement.
+
+        [4ms[24m  string, a source.
+
+        [4mt[24m  string, a target.
+
+
+        Result:
+
+        x = << [4mcount[24m; [4mstring[24m >>
+
+        [4mstring[0m
+           string, a result of replacement.
+
+        [4mcount[0m
+           integer, a number of replacements performed for each entry in
+           the target string [4mt[24m.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

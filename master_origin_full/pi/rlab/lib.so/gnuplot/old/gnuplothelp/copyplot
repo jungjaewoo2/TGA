@@ -1,0 +1,14 @@
+copyplot:
+
+Synopsis: Re-draw plot-window I1 into I2
+
+Syntax: copyplot ( I1, I2 )
+
+Description:
+
+	Re-draws the I1:th plot-window in the I2:th. The I2:th plot
+        window must exist prior to using copyplot().
+
+	copyplot ( I1, I2 )
+
+See Also: replot

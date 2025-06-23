@@ -1,0 +1,54 @@
+plot:
+
+Synopsis: RLaB graphics interface
+
+Syntax: plot ( A, KeyTitles, I ) or plot( X, Y, I )
+
+Description:
+
+	The plot() function plots numeric data via the GNUPLOT
+	program on the left y-axis. The argument A can be a matrix, 
+	or a list of matrices, or a string. plot() can also plot a 
+	vector Y versus a vector X. X and Y can also be matrixes. 
+
+	When A is a matrix, columns 2 through N are plotted versus the 1st
+	column. When A is a list of matrices, each matrix is plotted
+	versus it's own 1st column. When A is a string, the string is sent
+	to GNUPLOT as a command.
+
+	plot ( M )			plots the contents of matrix M
+	plot ( X, Y )			plots Y verus X
+	plot ( << M1 ; M2 >> )		plots M1, and M2 on the same graph
+	plot ( "set noborder" )		sends the string directly to
+					GNUPLOT as a command
+
+	Using a list of matrices as an argument to plot() is useful when the
+	the independent variable (1st column) of each matrix is different.
+
+	The second and third, and optional argument to plot() denotes the plot process
+	number and sends key-titles. The plot() function will open distinct plot
+	processes when given distinct values of N. When this feature is used in a
+	X-windows environment, the effect is to create separate plot windows.
+	The KeyTitles is a string-vector containing the titles to be plotted as keys.
+	They are chosen beginning at KeyTitles[1] and so on.
+	For example:
+
+	plot ( M )			plot the contents if matrix M
+	plot ( 2.*M, 1 )		plot 2 times M, to another window
+	plot (<<M1;M2>>,KeyTitles,2)	plot M1, and M2 on the same graph in another
+					window with the keytitles from KeyTitles
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: autoscale autotics axis cont copyplot defplotwin epsplot
+          gnuplot grid hist key label latexplot linenumbers linestyle
+          loglog loglog2 multiplot mx2tics mxtics my2tics mytics
+          mztics noautoscale noaxis nogrid nokey nolabel nolog nolog2
+          nomultiplot nomx2tics nomxtics nomy2tics nomytics nomztics
+          notime notitle nox2tics noxtics noy2tics noytics noztics
+          origin pclose pcloseall pend pformat phelp plot plot2
+          pobj_list pointsize printplot psave psize psplot pssave
+          pstring pview range range2 replot replot2 semilogx semilogx2
+          semilogy semilogy2 setterm showplot showpwin splot time
+          title x2label x2range x2tics xlabel xrange xtics y2label
+          y2range y2tics ylabel yrange ytics zlabel zrange ztics

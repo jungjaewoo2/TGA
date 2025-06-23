@@ -1,0 +1,26 @@
+splot:
+
+Synopsis: Create a 3-dimensional surface plot.
+
+Syntax: splot ( X, Y, Z, KeyTitles, I )
+
+Description:
+
+	For 3D-plotting splot() makes a 3D-surface plot.
+	This is in GNUPLOT a 3D-plot with no 
+	
+	The splot() function splots numeric data via the GNUPLOT program. The
+	argument Z is a matrix as functions of vectors X and Y.
+	The KeyTitles is a string-vector containing the titles to be plotted as keys.
+	They are chosen beginning at KeyTitles[1] and so on.
+
+	splot ( X, Y, Z )		splots the contents of matrix Z
+					versus X and Y
+	splot ( Z )			splots the contents of matrix Z
+					versus rows and columns
+	splot ( X, Y, [Z1,Z2] )         splots Z1, and Z2 on the same graph
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: cont
+

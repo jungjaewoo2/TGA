@@ -1,0 +1,66 @@
+  stft
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Short Time Fourier Transform.
+
+      [1mSyntax[0m
+        stft ( [4mX[24m )
+
+        stft ( [4mX[24m, [4mW[24m, [4mFMAX[24m )
+
+      [1mDescription[0m
+        stft utilizes the FFTPACK subroutine CFFTF to compute a windowed
+        discrete forward Fourier transform of the signal [4mX[24m, where the
+        window is provided as [4mW[24m.
+
+        If fft is used with the third argument, [4mFMAX[24m, then the short
+        time fourier transform, that would otherwise be of the length of
+        the signal [4mX[24m, is truncated to [4mFMAX[24m.
+
+        Subroutine CFFTF computes the forward complex discrete Fourier
+        transform (the Fourier analysis). equivalently , CFFTF computes
+        the Fourier coefficients of a complex periodic sequence.
+
+        The argument [4mX[24m must be a single signal - vector, while the
+        argument [4mW[24m has to be a real vector.  It is required that the
+        length of signal is greater than the length of the window, and
+        that [4mFMAX[24m       is greater than the window length as well.
+
+
+     [1mSee Also[0m
+        fft, window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

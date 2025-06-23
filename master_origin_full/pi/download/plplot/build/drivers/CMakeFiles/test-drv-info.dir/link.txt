@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/test-drv-info.dir/test-drv-info.c.o  -o test-drv-info -Wl,-rpath,/home/pi/download/plplot/build/drivers:/home/pi/download/plplot/build/src:/home/pi/download/plplot/build/lib/csa:/home/pi/download/plplot/build/lib/nn:/home/pi/download/plplot/build/lib/qsastime ../src/libplplot.so.15.0.0 /usr/lib/arm-linux-gnueabihf/libltdl.so 

@@ -1,0 +1,10 @@
+; You should not normally edit this generated file.  Instead, check its consistency
+; with the symbols in the plplotfortran library using the
+; (Unix) target "check_ifort_definitions_file".  If that target reports an
+; inconsistency (via a cmp message) between the generated
+; plplotfortran_ifort.def_compare file in the build tree and
+; plplotfortran_ifort.def in the source tree, then copy that generated
+; plplotfortran_ifort.def_compare on top of plplotfortran_ifort.def and
+; check in that result.
+LIBRARY plplotfortran.dll
+EXPORTS

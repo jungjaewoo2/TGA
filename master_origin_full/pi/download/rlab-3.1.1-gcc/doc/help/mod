@@ -1,0 +1,66 @@
+  mod
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Floating point remainder
+
+      [1mSyntax[0m
+        mod( [4mA[24m, [4mB[24m )
+
+      [1mDescription[0m
+        The mod routine returns the floating point remainder of the
+        division of [4mA[24m by [4mB[24m: zero if [4mB[24m is zero or if [4mA[24m/[4mB[24m would overflow;
+        otherwise the number F with the same sign as [4mA[24m, such that [4mA[24m = i[4mB[0m
+        + F for some integer i, and |f| < |B|.
+
+        When the arguments to mod are two matrices, then an element by
+        element mod is performed. Mod works on complex number also.
+
+        mod(x,y) is equivalent to:
+
+          n = int( x/y )
+
+
+
+          mod(x,y) = x - y.*n
+
+
+     mod is implemented via libm.a fmod function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<sect> inf 
+<p>
+<descrip>
+<tag> Synopsis </tag> Create a variable or a matrix with value of infinity.
+<tag> Syntax </tag> 
+<p>inf ( )
+<p>inf (nrow, ncol)
+<p>inf (A)
+<tag> Description </tag>
+Inf returns a scalar whose value is infinity, or a matrix
+of inf's of size <em>nrow</em>-by-<em>ncol</em>, or a matrix of 
+inf's of the same size as the matrix <em>A</em>. Inf value is
+according to IEEE-754. 
+Unlike NaN, inf == inf should return TRUE (1).
+
+<tag>See Also</tag>   nan, isinf
+
+</descrip>

@@ -1,0 +1,17 @@
+<sect> mini 
+<p>
+<descrip>
+<tag> Synopsis </tag> Minimum value indices.
+<tag> Syntax </tag> mini ( <em>A</> ) 
+<tag> Description </tag>
+
+	Mini returns the index of the minimum value contained in
+	matrix. If the input argument (<em>A</>) is a vector, then the
+	index of the smallest value is returned. If <em>A</> is a MxN
+	matrix, then a row-vector of the column indices of the
+	smallest column values of <em>A</> is returned.
+
+ <tag>See Also</tag>   max, maxi, min
+
+
+</descrip>

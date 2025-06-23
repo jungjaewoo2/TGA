@@ -1,0 +1,50 @@
+<sect> factor 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Factor a square matrix.
+<tag> Syntax </tag> factor ( <em>A</> )
+<tag> Description </tag>
+
+	The factor function computes the LU factorization of the input
+	matrix <em>A</>. Factor returns a list with 3 elements: 
+
+	<bf> if <em>A</> is a general matrix: </>
+	<descrip>
+	<tag><em>lu</></> a matrix containing the LU factors
+	<tag><em>pvt</></> a vector containing the pivot indices
+	<tag><em>rcond</></> the inverse of the condition estimate
+	</descrip>
+
+	Factor utilizes the LAPACK subroutines DGETRF, DGECON or
+	ZGETRF, ZGECON.
+
+	<bf> if <em>A</> is a symmetric matrix: </>
+	<descrip>
+	<tag><em>ldl</></> a matrix containing the block diagonal
+			matrix D, and the multipliers used to obtain L.
+	<tag><em>pvt</></> a vector containing the pivot indices
+	<tag><em>rcond</></> the inverse of the condition estimate
+	</descrip>
+
+	Factor utilizes the LAPACK subroutines DSYTRF, DSYCON or
+	ZHETRF, ZHECON.
+
+	The user can overide factor's choice of solution type with the
+	optional argument TYPE. 
+
+	<quote>
+	TYPE = "g" or "G"	The general solution is used.
+	</quote>
+
+	<quote>
+	TYPE = "s" or "S"	the symmetric solution is used.
+	</quote>
+
+	Factor returns the results in the above format, so that they
+	may be conveniently used with backsub for repetitive
+	solutions. The user-function lu will separate the results from
+	factor into separate L and U matrices.
+
+<tag>See Also</tag>   backsub, inv, lu, solve
+
+</descrip>

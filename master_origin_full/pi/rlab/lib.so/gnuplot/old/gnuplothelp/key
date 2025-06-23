@@ -1,0 +1,24 @@
+key:
+
+Synopsis: Turn keys on.
+
+Syntax: key ( x, y, z, I )
+
+Description:
+
+	Turns keys on in the I:th plot-window. The keys will be placed at 
+	x, y and z. If x, y and z are left out, the keys will be placed at
+	the default position, the upper right corner.
+
+	x can also be `left`, `right`, `top`, `bottom`, `outside` or
+	`below`, which will place the keys at these positions.
+	For example, key("bottom,2), will place the keys at the bottom
+	of the plot in the 2nd plot window,
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+	(*) Be alert how you send this command. You will get into trouble
+	if you try to send "I" without fully specified coordinates.
+	Do not leave out "z" for example.
+
+See Also: nokey, keyname

@@ -1,0 +1,16 @@
+plhistx:
+
+Synopsis: Plot a histogram using line, point or line-point styles.
+
+Syntax: plhistx ( DATA , NBIN )
+
+Description:
+
+	Plot a histogram of the data in DATA. DATA can be a N-column
+	matrix. The columns of DATA are plotted in histogram fashion
+	using the line-styles set by plstyle() as opposed to the
+	bar-graph style used by plhist(). An optional second argument,
+	NBIN specifies the number of bins to separate the data
+	into. If NBIN is not specified the default is 10.
+
+See Also: plhist

@@ -1,0 +1,49 @@
+plot2:
+
+Synopsis: RLaB graphics interface
+
+Syntax: plot2 ( A, KeyTitles, I ) or plot( X, Y, I )
+
+Description:
+
+	The plot2() function plots numeric data via the GNUPLOT
+	program on the right y-axis. The argument A can be a matrix, 
+	or a list of matrices, or a string. plot2() can also plot a 
+	vector Y versus a vector X. X and Y can also be matrixes. 
+
+	When A is a matrix, columns 2 through N are plotted versus the 1st
+	column. When A is a list of matrices, each matrix is plotted
+	versus it's own 1st column. When A is a string, the string is sent
+	to GNUPLOT as a command.
+
+	plot2 ( M )			plots the contents of matrix M
+	plot2 ( X, Y )			plots Y verus X
+	plot2 ( << M1 ; M2>> )		plots M1, and M2 on the same graph
+	plot2 ( "set noborder" )	sends the string directly to
+					GNUPLOT as a command
+
+	Using a list of matrices as an argument to plot2() is useful when the
+	the independent variable (1st column) of each matrix is different.
+
+	The second and third, and optional argument to plot2() denotes the plot process
+	number and sends key-titles. The plot2() function will open distinct plot
+	processes when given distinct values of N. When this feature is used in a
+	X-windows environment, the effect is to create separate plot windows.
+	The KeyTitles is a string-vector containing the titles to be plotted as keys.
+	They are chosen beginning at KeyTitles[1] and so on.
+	For example:
+
+	plot2 ( M )			plot the contents if matrix M
+	plot2 ( 2.*M, 1 )		plot 2 times M, to another window
+	plot2 (<<M1;M2>>,KeyTitles,2)	plot M1, and M2 on the same graph in another
+					window with the keytitles from KeyTitles
+
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: plot, replot, replot2, splot, cont, pstring, postplot,
+latexplot, printplot, psave, pssave, multiplot, nomultiplot, plotyy,
+noplotyy, pclose, setterm, showplot, showpwin, phelp, autoscale,
+range, xrange, yrange, zrange, xtics, noxtics, ytics, noytics, ztics,
+noztics, loglog, semilogx, semilogy, nolog, xlabel, ylabel, zlabel,
+title, notitle, linestyle, pformat, key, nokey, grid, nogrid, axis,
+noaxis, label, nolabel, time, notime

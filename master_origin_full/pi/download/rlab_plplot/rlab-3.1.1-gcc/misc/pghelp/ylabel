@@ -1,0 +1,11 @@
+ylabel:
+
+Synopsis: Set the Y-axis text label for the current sub-plot.
+
+Syntax: ylabel ( YLABEL )
+
+	Set the y-axis label for the current sub-plot in the current
+	plot-window. If YLABEL is undefined, the the y-axis label is
+	set to the null-string.
+
+See Also: plptex

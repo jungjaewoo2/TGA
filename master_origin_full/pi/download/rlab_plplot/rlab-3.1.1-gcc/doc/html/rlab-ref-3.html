@@ -1,0 +1,945 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Objects and Data</TITLE>
+ <LINK HREF="rlab-ref-4.html" REL=next>
+ <LINK HREF="rlab-ref-2.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="rlab-ref-4.html">Next</A>
+<A HREF="rlab-ref-2.html">Previous</A>
+<A HREF="rlab-ref.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="s3">3. Objects and Data</A></H2>
+
+<P>
+<P>Rlab is, in a sense, an object oriented language. The term ``object
+oriented'' is used with some trepidation, since the term has itself
+been overloaded to the point of becoming unintelligible. Although
+Rlab does not support all of the concepts of the more classical
+object-oriented languages like Smalltalk it does offer some features
+of an object-oriented language. Operator overloading is one concept
+Rlab supports. For example, the behavior of the mathematical
+operators is dictated by the arguments, or objects.
+<P>There are several predefined classes, they are:
+<P>
+<DL>
+<DT><B>Numeric</B><DD><P>This class is the most widely used class in
+Rlab. The numeric class, abbreviated for use as <CODE>num</CODE>
+consists of two dimensional arrays or matrices. Subsets of this
+class include real and complex matrices, in both dense and
+sparse storage formats.
+<P>
+<DT><B>String</B><DD><P>The string class consists of two dimensional
+arrays of variable length strings. Much of the syntax used for
+working with string arrays is directly derived from the numeric
+array class.
+<P>
+<DT><B>List</B><DD><P>The list class provides a convenient, and user
+definable method for grouping related sets of data and
+functions. The list class is implemented as an N-dimensional
+associative array.
+<P>
+<DT><B>Function</B><DD><P>The function class consists of both builtin and
+user-defined functions. If your computing platform supports
+runtime dynamic linking, then you can add builtin function via
+the <CODE>dlopen</CODE> interface.
+</DL>
+<P>We will stick with conventional object oriented terminology, and
+call an instantiation of a class an object. All objects have
+members. The members themselves are other objects. The syntax for
+accessing an object's members is the same syntax used for list
+members (see Section 
+<A HREF="#lists">lists</A>
+). To see what an objects
+members are named use the members function. Members returns a string
+matrix containing the names of an objects members, like so:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = rand(3,4);
+> members(a)
+nr       nc       n        class    type     storage  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The objects members can be referenced with either the formal string
+syntax like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a.["nr"]
+        3  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Or, the shorthand notation can be used:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a.nr
+        3  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The formal notation is useful when you need variable evaluation:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> for (i in members(a)) { printf("%10s\t%s\n", i, a.[i]); }
+        nr      3
+        nc      4
+         n      12
+     class      num
+      type      real
+   storage      dense
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>An object's predefined members can be considered "read-only". That
+is, the user cannot change these member's values without changing
+the object itself. For example: the <CODE>nr</CODE> member of a matrix
+denotes the number of rows in the matrix. This member cannot be
+directly modified by the user. The only way to change the number of
+rows member is to actually add, or delete rows from the object.
+<P>Additional members can be added to any object. Additional object
+members are arbitrary, and can be modified after creation. For
+example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = rand(3,4);
+> a.rid = [1;2;3];
+> a.cid = 1:3;
+> a
+     0.91      0.265     0.0918      0.915  
+    0.112        0.7      0.902      0.441  
+    0.299       0.95       0.96     0.0735  
+> a.rid
+        1  
+        2  
+        3  
+> a.cid
+        1          2          3  
+> a.rid = ["row1", "row2", "row3"]
+     0.91      0.265     0.0918      0.915  
+    0.112        0.7      0.902      0.441  
+    0.299       0.95       0.96     0.0735  
+> a.rid
+row1  row2  row3  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P><CODE>show</CODE> and <CODE>whos</CODE> are useful functions for displaying
+object information. <CODE>show</CODE> displays an objects members, and
+their values, iff the values are scalar. Otherwise <CODE>show</CODE>
+displays the member's own attributes. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = rand(3,4);
+> a.row_id = (1:3)';
+> a.col_id = 1:4;
+> show(a);
+        nr                  :   3
+        nc                  :   4
+        n                   :   12
+        class               :   num
+        type                :   real
+        storage             :   dense
+        col_id              :   num, real, dense, 1x4
+        row_id              :   num, real, dense, 3x1
+</PRE>
+</CODE></BLOCKQUOTE>
+<P><CODE>whos</CODE> will display the object information for each member
+(with the exception of members that are functions) in addition to
+more detailed information about the size in bytes of each object.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> whos(a)
+        Name            Class   Type    Size            NBytes
+        nr              num     real    1       1       8
+        nc              num     real    1       1       8
+        n               num     real    1       1       8
+        class           string  string  1       1       7
+        type            string  string  1       1       8
+        storage         string  string  1       1       9
+        col_id          num     real    1       4       32
+        row_id          num     real    3       1       24
+Total MBytes = 0.000104
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Both <CODE>show</CODE> and <CODE>whos</CODE> were originally designed to operate
+on the global workspace. The fact that they work equally well on
+individual objects provides a clue to the design of Rlab. The global
+symbol table, or global workspace can be considered an object of the
+list class. There is a special symbol for referring to the global
+workspace, <CODE>$$</CODE>. Accessing members of the global
+workspace can be performed with the same notation as previously
+described for an object's members. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> $$.a
+        1      0.333      0.665      0.167  
+    0.975     0.0369     0.0847      0.655  
+    0.647      0.162      0.204      0.129  
+> $$.cos($$.a)
+     0.54      0.945      0.787      0.986  
+    0.562      0.999      0.996      0.793  
+    0.798      0.987      0.979      0.992  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>In this example, the object <CODE>a</CODE> is referenced through the
+global workspace object <CODE>$$</CODE> rather than using
+the more conventional shorthand <CODE>a</CODE>. Then, the cosine function
+is invoked, again through the global workspace symbol. There are
+special provisions in place to ensure that users don't delete
+<CODE>$$</CODE>. The benefits of these capabilities may not
+be apparent until there is a need to construct and work with
+variables in an automated fashion.
+<P>
+<P>
+<H2><A NAME="ss3.1">3.1 Numeric</A>
+</H2>
+
+<P>
+<P>The simplest numeric objects are scalars, or matrices with row and
+column dimensions of 1. Real values can be specified in integer or
+floating point format. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> 3
+        3
+> 3.14
+     3.14
+> 3.14e2
+      314
+> 3.14e-2
+   0.0314
+> 3.14E-02
+   0.0314
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Are all valid ways to express real numeric values.  Complex values
+are specified with the help of a complex constant. The complex
+constant is any real value <EM>immediately</EM> followed by <CODE>i</CODE>
+or <CODE>j</CODE>. Complex numbers, with real and imaginary parts can be
+constructed with the arithmetic operators, for example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> z = 3.2 + 2j
+                3.2 + 2i
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3>Numeric Object Elements</H3>
+
+<P>
+<P>The numeric class supports two types of data, and two types of
+storage format.
+<P>Each object has, as a minimum the following members:
+<P>
+<DL>
+<DT><B><CODE>nr</CODE></B><DD><P>The matrix number of rows.
+<DT><B><CODE>nc</CODE></B><DD><P>The matrix number of columns.
+<DT><B><CODE>n</CODE></B><DD><P>The matrix number of elements.
+<DT><B><CODE>class</CODE></B><DD><P>A string, with value <CODE>"num"</CODE>, for
+numeric. 
+<DT><B><CODE>type</CODE></B><DD><P>A string, with value <CODE>"real"</CODE> or
+<CODE>"complex"</CODE>.
+<DT><B><CODE>storage</CODE></B><DD><P>A string, with value <CODE>"dense"</CODE> or
+<CODE>"sparse"</CODE>.
+</DL>
+<P>
+<P>
+<H3>Numeric Object Operations</H3>
+
+<P>
+<P>This section will cover the basic numeric operations. Starting with
+the operations necessary for creating and manipulating numeric
+matrices. The aritmetic operations are covered in Section 
+<A HREF="#arithmetic-ops">Arithmetic Operations</A><P>
+<H3>Matrix Creation</H3>
+
+<P>
+<P>The syntax for operating with numeric arrays/matrices is fairly
+simple. Square braces, <CODE>[]</CODE> are used for both creating
+matrices, assignment to matrix elements, and partitioning. The
+operation of creating a matrix consists of either appending elements
+to form rows, or stacking elements to form columns. Both operations
+must be performed within brackets. The append operation is performed
+with commas:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [ 1 , 2 ];
+> a = [ a , a ]
+        1          2          1          2  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>As you can see, either scalar elements, or matrices can be used with
+the append operator, as long as the row dimensions are the same. The
+stack operation is similar to the append operation, except
+semicolons are used as delimiters, and the column dimensions must
+match. 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> b = [ 1 ; 2 ];
+> b = [ b ; b]
+        1  
+        2  
+        1  
+        2  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Any combination of append and stack operations can be performed
+together as long as the dimensions of the operands match.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, 2];
+> b = [3; 4];
+> c = [ [a; a], [b, b] ]
+        1          2          3          3  
+        1          2          4          4  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H3>Assignment</H3>
+
+<P>
+<P>Assignment to matrix elements is also simple. Square brackets,
+<CODE>[]</CODE> are used to identify the matrix elements to be
+re-assigned. Row and column identifiers are separated with a
+semicolon. Multiple row or column specifiers can separated with
+commas. To assign to a single element:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+> a[1;1] = 10
+       10          2          3  
+        4          5          6  
+        7          8          9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>To assign to multiple elements, specifically multiple rows:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a[1,3;2] = [11;12]
+       10         11          3  
+        4          5          6  
+        7         12          9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The dimensions of both the right hand side (RHS) and left hand side
+(LHS) must match. Assignment can be made to blocks of elements, in
+any specified order:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a[3,1;3,1] = [30,30;30,30]
+       30         11         30  
+        4          5          6  
+       30         12         30  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>To eliminate the tedium of specifying all the rows or all the
+columns, simply leave out the appropriate row or column specifier: 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a[;2] = [100;200;300]
+       30        100         30  
+        4        200          6  
+       30        300         30  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Entire rows and columns can be eliminated via the assignment of the
+null matrix to those row and columns to be removed. The allowed
+syntax for this operation is:
+<P>
+<BLOCKQUOTE>
+<EM>VAR</EM> [ <EM>ROW-ID</EM> ; ] = []
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+<EM>VAR</EM> [ ; <EM>COL-ID</EM> ] = []
+</BLOCKQUOTE>
+<P>A simple example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = magic(5)
+       17         24          1          8         15  
+       23          5          7         14         16  
+        4          6         13         20         22  
+       10         12         19         21          3  
+       11         18         25          2          9  
+> a[3,2;] = []
+       17         24          1          8         15  
+       10         12         19         21          3  
+       11         18         25          2          9  
+> a[;2,4] = []
+       17          1         15  
+       10         19          3  
+       11         25          9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<P>
+<H3>Matrix Partitioning</H3>
+
+<P>
+<P>Matrix partitioning, the operation of extracting a sub-matrix from
+an existing matrix, uses the same syntax, and concepts of matrix
+element assignment. To partition a 2-by-2 sub-matrix from the
+original <CODE>a</CODE>:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+> a[2,3;2,3]
+        5          6  
+        8          9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3><A NAME="arithmetic-ops"></A> Arithmetic Operations </H3>
+
+<P>
+<P>For clarification: each operand (either <CODE>A</CODE> or <CODE>B</CODE>) is a
+matrix, with row dimension M, and column dimension N.
+<P>
+<DL>
+<P>
+<DT><B><CODE>A + B</CODE></B><DD><P>Does element-by-element addition of two
+matrices.  The row and column dimensions of both <CODE>A</CODE> and
+<CODE>B</CODE> must be the same. An exception to the aforementioned
+rule occurs when either <CODE>A</CODE> or <CODE>B</CODE> is a 1-by-1 matrix;
+in this case a scalar-matrix addition operation is performed.
+<P>
+<DT><B><CODE>A - B</CODE></B><DD><P>Does element-by-element subtraction of two
+matrices.  The row and column dimensions of both <CODE>A</CODE> and
+<CODE>B</CODE> must be the same. An exception to the aforementioned
+rule occurs when either <CODE>A</CODE> or <CODE>B</CODE> is a 1-by-1 matrix;
+in this case a scalar-matrix addition operation is performed.
+<P>
+<DT><B><CODE>A * B</CODE></B><DD><P>Performs matrix multiplication on the two
+operands.  The column dimension of <CODE>A</CODE> must match the row
+dimension of <CODE>B</CODE>. An exception to the aforementioned rule
+occurs when either <CODE>A</CODE> or <CODE>B</CODE> is a 1-by-1 matrix; in
+this case a scalar-matrix multiplication is performed.
+<P>
+<DT><B><CODE>A .* B</CODE></B><DD><P>Performs element-by-element matrix
+multiplication on the two operands. Both row and column
+dimensions must agree, unless:
+<P>
+<UL>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1x1. In this case the operation
+is performed element-by-element over the entire matrix. The
+result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1xN. and the other is MxN. In
+this instance the operation is performed element-by-element
+fashion for each row in the matrix. The result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a Nx1. and the other is NxM. In
+this instance the operation is performed element-by-element
+fashion for each column in the matrix. The result is a NxM
+matrix.</LI>
+</UL>
+<P>
+<DT><B><CODE>A / B</CODE></B><DD><P>Performs matrix right-division on its
+operands.  The matrix right-division <CODE>B/A</CODE> can be thought of
+as <CODE>B*inv (A)</CODE>. The column dimensions of <CODE>A</CODE> and
+<CODE>B</CODE> must be the same. Internally right division is the same
+as left-division with the arguments transposed.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+B / A = ( A' \ B')'
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The exception to the aforementioned dimension rule occurs when
+<CODE>A</CODE> is a 1-by-1 matrix; in this case a matrix-scalar divide
+occurs.
+<P>
+<DT><B><CODE>A ./ B</CODE></B><DD><P>Performs element-by-element right-division
+on its operands. The dimensions of <CODE>A</CODE> and <CODE>B</CODE> must
+agree, unless:
+<P>
+<UL>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1x1. In this case the operation
+is performed element-by-element over the entire matrix. The
+result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1xN. and the other is MxN. In
+this instance the operation is performed element-by-element
+fashion for each row in the matrix. The result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a Nx1. and the other is NxM. In
+this instance the operation is performed element-by-element
+fashion for each column in the matrix. The result is a NxM
+matrix.</LI>
+</UL>
+<P>
+<DT><B><CODE>A \ B</CODE></B><DD><P>Performs matrix left-division. Given
+operands <CODE>A\B</CODE> matrix left division is the solution to
+the set of equations <CODE>Ax = B</CODE>. If <CODE>B</CODE> has several
+columns, then each column of <CODE>x</CODE> is a solution to
+<CODE>A*x[;i] = B[;i]</CODE>. The row dimensions of <CODE>A</CODE> and
+<CODE>B</CODE> must agree.
+<P>
+<DT><B><CODE>A .\ B</CODE></B><DD><P>Performs element-by-element
+left-division.  Element-by-element left-division is provided for
+symmetry, and is equivalent to <CODE>B .\ A</CODE>. The row and
+column dimensions of <CODE>A</CODE> and <CODE>B</CODE> must agree, unless:
+<P>
+<UL>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1x1. In this case the operation
+is performed element-by-element over the entire matrix. The
+result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a 1xN. and the other is MxN. In
+this instance the operation is performed element-by-element
+fashion for each row in the matrix. The result is a MxN matrix.
+</LI>
+<LI> <CODE>A</CODE> or <CODE>B</CODE> is a Nx1. and the other is NxM. In
+this instance the operation is performed element-by-element
+fashion for each column in the matrix. The result is a NxM
+matrix.</LI>
+</UL>
+</DL>
+<P>
+<P>
+<H3><A NAME="relational-ops"></A> Relational Operations </H3>
+
+<P>
+<P>
+<P>
+<H3><A NAME="logical-ops"></A> Logical Operations </H3>
+
+<P>
+<P>
+<P>
+<H3><A NAME="vectors"></A> Vectors </H3>
+
+<P>
+<P>Although there is no separate vector class, the concept of row and
+column vectors is often used. Row and column vectors are matrices
+with a column or row dimension equal to one, respectively. Rlab
+offers convenient notation for creating, assignment to, and
+partitioning matrices as if they were vectors.
+<P>There is a special notation for creating ordered row vectors.
+<P>
+<BLOCKQUOTE>
+start-value : end-value : increment-value
+</BLOCKQUOTE>
+<P>The start, end and increment values can be any floating point or
+integer value. If the start-value is less than the end-value, then a
+null-vector will be returned, unless the increment-value is
+negative. This vector notation is most often used within for-loops. 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> n = 4;
+> 1:n
+        1          2          3          4  
+> n:1:-1
+        4          3          2          1  
+> 1:n/2:0.5
+        1        1.5          2  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Unexpected results can occur when a non-integer increment is
+used. Since not all real numbers can be expressed precisely in
+floating point format, incrementing the start-value by the
+increment-value may not produce the expected result. An increment
+value of 0.1 provides a nice example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> 1:2:.1
+ matrix columns 1 thru 6
+        1        1.1        1.2        1.3        1.4        1.5  
+
+ matrix columns 7 thru 10
+      1.6        1.7        1.8        1.9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Most would expect the final value to be 2. But, since 0.1 cannot be
+expressed exactly in floating point format, the final value of 2 is
+not reached. The reason is more obvious if we reset the print
+format:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> format(18);
+> 1:2:.1
+ matrix columns 1 thru 3
+                    1    1.10000000000000009    1.19999999999999996  
+
+ matrix columns 4 thru 6
+  1.30000000000000004    1.39999999999999991                    1.5  
+
+ matrix columns 7 thru 9
+  1.60000000000000009    1.69999999999999996    1.80000000000000004  
+
+ matrix columns 10 thru 10
+  1.90000000000000013  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>When it is important to have the precise start and end values, the
+user-function <CODE>linspace</CODE> should be used.
+<P>
+<P>Fairly frequently it is desirable to force a matrix into a column
+vector. This is fairly natural since matrices are stored in
+column-major order, and it makes operating on the data notationally
+simpler. The syntax for this operation is:
+<P>
+<BLOCKQUOTE>
+<EM>matrix</EM> [ : ]
+</BLOCKQUOTE>
+<P>For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1,2,3,4];
+> a = a[:]
+        1  
+        2  
+        3  
+        4  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3><A NAME="sparse"></A> Sparse Storage </H3>
+
+<P>
+<P>Sparse matrices are matrices in which the zero elements are not
+explicitly stored. Quite a few applications, such as finite element
+modeling, lead to matrices which are sparsely populated with
+non-zero elements. A sparse storage scheme offers reduced memory
+usage, and more efficient matrix operations (in most cases) for
+operations on matrices with mostly zero elements. There are many
+different sparse storage schemes, each offers particular
+advantages. Rlab uses the compressed row-wise (CRW) sparse storage
+format. The CRW format is very general, and offers good performance
+for a wide variety of problems.
+<P>Sparse matrices, and operations are not common for the majority of
+users. Therefore, some extra work is required for users who wish to
+use this storage scheme. The functions <CODE>sparse</CODE> and
+<CODE>spconvert</CODE> are useful for converting from dense/full storage
+to sparse storage, and vice-versa. Although the syntax for sparse
+storage matrices is the same as that used for dense matrices, sparse
+matrices are visibly different when printed to the display:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = speye(3,3)
+ (1, 1)                 1
+ (2, 2)                 1
+ (3, 3)                 1
+> full(a)
+        1          0          0  
+        0          1          0  
+        0          0          1  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Since only the non-zero elements are stored, only the non-zero
+elements, along with their row and column indices are printed.
+<P>All matrix partitioning, assignment and arithmetic operations
+perform the same function for sparse matrices as for dense matrices
+(eventually). The only difference is the storage format of the
+result. In some instances an operation on a sparse matrix will
+produce a dense (or full) matrix because there is no benefit to
+retaining sparse storage. For instance, using the <CODE>cos</CODE>
+function on a sparse matrix will return a full matrix, since the
+cosine of zero is one, there is no point in retaining the sparse
+storage format for the result. On the other hand Rlab will never
+change the storage format of a matrix, once it has been
+created. Even if you deliberately add zeros to a sparse matrix, or
+increase the number of non-zeros to the point where the matrix is
+full, the storage format will remain sparse. 
+<P>While sparse storage formats facilitate the solution of problems
+that dense storage cannot manage, there are some things that sparse
+storage cannot do efficiently. Sparse storage is inefficient for
+matrix manipulations. Assigning to the elements of a sparse matrix
+can be very inefficient, especially if you are replacing zeros with
+non-zero values. Likewise matrix stacking and concatenation are not
+very efficient.
+<P>
+<P>
+<H3>Special Numeric Values (Inf and NaN)</H3>
+
+<P>
+<P>
+<P>
+<H2><A NAME="ss3.2">3.2 String</A>
+</H2>
+
+<P>
+<P>Strings are arbitrary length concatenations of printable
+characters. 
+<P>
+<H3>String Object Elements</H3>
+
+<P>
+<P>Each object has, as a minimum the following members:
+<P>
+<DL>
+<DT><B><CODE>nr</CODE></B><DD><P>The matrix number of rows.
+<DT><B><CODE>nc</CODE></B><DD><P>The matrix number of columns.
+<DT><B><CODE>n</CODE></B><DD><P>The matrix number of elements.
+<DT><B><CODE>class</CODE></B><DD><P>A string, with value <CODE>"string"</CODE>, for
+numeric. 
+<DT><B><CODE>type</CODE></B><DD><P>A string, with value <CODE>"string"</CODE>.
+<DT><B><CODE>storage</CODE></B><DD><P>A string, with value <CODE>"dense"</CODE>.
+</DL>
+<P>
+<H3>String Object Operations</H3>
+
+<P>
+<P>The syntax for creating a string is similar to the C-language
+syntax:
+<P>
+<BLOCKQUOTE>
+&quot; arbitrary_printable_characters &quot;
+</BLOCKQUOTE>
+<P>So to create a string, and assign it to a variable you might do:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> str = "this is a sample string"
+this is a sample string  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>String matrix operations are performed exactly the same way as
+numeric matrix operations. String matrix creation, element
+assignment, and partitioning are all performed as described for
+numeric matrices. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> strm = [ "this", "is a"; "sample", "string matrix"]
+this           is a           
+sample         string matrix  
+> for (i in [1,3,2,4]) { strm[i] }
+this  
+is a  
+sample  
+string matrix  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>There is no provision for individual character operations on
+strings, unless the string consists of a single character. However,
+the function <CODE>strsplt</CODE> will break a string into an array
+(row-matrix) of single character strings.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> strsplt (str)
+t  h  i  s     i  s     a     s  a  m  p  l  e     s  t  r  i  n  g  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P><CODE>strsplt</CODE> can also split strings into sub-strings of a
+specified length, using the second (optional) argument.:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> strsplt (str, 4)
+this   is   a sa  mple   str  
+> length(strsplt (str, 4))
+        4          4          4          4          4  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Furthermore, <CODE>strsplt</CODE> can split strings using a field
+separator defined in the second (optional) argument:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> strsplt (str, "i")
+th              s               s a sample str  ng              
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Strings can be concatenated with the <CODE>+</CODE> operator:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> strm[1;1] + " " + strm[1;2] + " " + strm[2;1] + " " + strm[2;2]
+this is a sample string matrix  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The relational operators work for strings, comparing them using the
+characters ASCII decimal representation. Thus
+<CODE>&quot;A&quot;</CODE>, (ASCII 65) is less than
+<CODE>&quot;a&quot;</CODE> (ASCII 97). String comparisons are useful for
+testing the properties of objects. For instance, the function
+<CODE>class</CODE> returns a string identifying the class an object
+belongs to.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> class(l)
+list  
+> class(l) == "list"
+        1  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H2><A NAME="lists"></A> <A NAME="ss3.3">3.3 List </A>
+</H2>
+
+<P>
+<P>A list is a heterogeneous associative array. Simply, a list is an
+array whose elements can be from different classes. Thus a list can
+contain numeric, string, function, and other list objects. Lists are
+also a convenient vehicle for functions that must return multiple
+data objects. Additionally, lists offer programmer the ability to
+create arbitrary data structures to suit particular programming
+tasks.
+<P>
+<H3>List Object Elements</H3>
+
+<P>
+<P>Lists have no predefined elements, the quantity and class of a
+list's elements is entirely up to the user. A list's elements are
+displayed when an expression evaluates to a list. Entering the name
+of a list variable, without a trailing semi-colon, will print out
+the list's element names. The standard user-functions: <CODE>show</CODE>,
+<CODE>who</CODE>, and <CODE>whos</CODE> will also display information about a
+list's elements. The following example will create a list, then
+display information about the list's elements using the
+aforementioned methods.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> rfile magic
+> l = &lt;&lt; m2 = magic(2); m3 = magic(3); m6 = magic(6) >>
+   m2           m3           m6           
+> who(l)
+m2  m3  m6          
+> l
+   m2           m3           m6           
+> who(l)
+m2  m3  m6          
+> show(l);
+        m2                  :num        real
+        m3                  :num        real
+        m6                  :num        real
+> whos(l);
+        Name            Class   Type    Size            NBytes
+        m2              num     real    2       2       32
+        m3              num     real    3       3       72
+        m6              num     real    6       6       288
+Total MBytes = 0.000392
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H3>List Object Operations</H3>
+
+<P>
+<P>To create a list-object use the <CODE>&lt;&lt;</CODE> and <CODE>&gt;&gt;</CODE>
+operators. The list will be created, and the objects inside the
+<CODE>&lt;&lt; &gt;&gt;</CODE> will be installed in the new list. If the
+objects are not renamed during the list-creation, they will be given
+numerical index values. An expression that evaluates to a list will
+print out the names of that list's elements. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = rand(3,4); b = sqrt (a); c = 2*a + b;
+> ll = &lt;&lt; a ; b ; c >>
+   1            2            3            
+> ll2 = &lt;&lt; A = a; b = b ; x = c >>
+   A            b            x            
+> ll2.A == ll.[1]
+        1          1          1          1  
+        1          1          1          1  
+        1          1          1          1  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Lists are not indexed with numeric values. Lists are indexed with
+string values (in a fashion similar to AWK's associative
+arrays.}. There are two methods for referencing the elements of a
+list. The first, a shorthand notation looks like:
+<P>
+<BLOCKQUOTE>
+<EM>list_name</EM> . <EM>element_name</EM>
+</BLOCKQUOTE>
+<P>In this case, the <EM>list_name</EM> and <EM>element_name</EM> must
+follow the same rules as ordinary variable names. The second method
+for indexing a list is:
+<P>
+<BLOCKQUOTE>
+<EM>list_name</EM> . [ <EM>numeric_or_string_expression</EM> ]
+</BLOCKQUOTE>
+<P>The second method allows string and numeric variables to be
+evaluated before doing the conversion to string type.
+<P>The dimensionality of a list is also arbitrary. To increase the
+dimension of a list make a member of the parent list a list. For
+example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> person = &lt;&lt; type="Human"; name=&lt;&lt;first="John"; last="Doe">>; age=37 >>
+   age          name         type         
+> person.name
+   first        last         
+> person.name.first
+John  
+> person.name.last
+Doe  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The <CODE>person</CODE> list contains the elements <CODE>type</CODE>,
+<CODE>name</CODE>, and <CODE>age</CODE>. However, the <CODE>name</CODE> element is
+another list that contains the elements <CODE>first</CODE> and
+<CODE>last</CODE>.
+<P>
+<P>
+<H2><A NAME="ss3.4">3.4 Function</A>
+</H2>
+
+<P>
+<P>Functions, both builtin and user written are stored in ordinary
+variables, and in almost all instances are treated as such. An
+expression that evaluates to a function prints the string:
+<CODE>&lt;user-function&gt;</CODE> if it is a user-written function, and
+the string: <CODE>&lt;bltin-function&gt;</CODE> if it is a builtin
+function.
+<P>
+<H3>Function Object Elements</H3>
+
+<P>
+<P>Each object has, as a minimum the following members:
+<P>
+<DL>
+<DT><B><CODE>class</CODE></B><DD><P>A string, with value <CODE>"function"</CODE>.
+<DT><B><CODE>type</CODE></B><DD><P>A string, with value <CODE>"user"</CODE> or 
+<CODE>"builtin"</CODE>.
+</DL>
+<P>The function class has an optional member which exists only when the
+function is of type <CODE>user</CODE>. The additional member is named
+<CODE>file</CODE>, and its value is the full pathname of the file that
+contains the source code for the user function.
+<P>Functions, both user and builtin are treated in great detail in
+subsequent sections of this manual.
+<P>
+<H3>Function Object Operations</H3>
+
+<HR>
+<A HREF="rlab-ref-4.html">Next</A>
+<A HREF="rlab-ref-2.html">Previous</A>
+<A HREF="rlab-ref.html#toc3">Contents</A>
+</BODY>
+</HTML>

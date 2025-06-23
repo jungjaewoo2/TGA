@@ -1,0 +1,28 @@
+Determining if the Ada compiler works failed with the following output:
+Change Dir: /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make"
+/usr/bin/cmake -H/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp -B/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp/CMakeFiles /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/testadacompiler.dir/build.make CMakeFiles/testadacompiler.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+cd /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp/CMakeFiles/testadacompiler.dir/DependInfo.cmake
+Scanning dependencies of target testadacompiler
+make[2]: Leaving directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/testadacompiler.dir/build.make CMakeFiles/testadacompiler.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+[ 50%] Building Ada object CMakeFiles/testadacompiler.dir/testadacompiler.o
+/usr/bin/gcc      -o CMakeFiles/testadacompiler.dir/testadacompiler.o -c /home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp/testadacompiler.adb
+gcc: error trying to exec 'gnat1': execvp: No such file or directory
+CMakeFiles/testadacompiler.dir/build.make:65: recipe for target 'CMakeFiles/testadacompiler.dir/testadacompiler.o' failed
+make[2]: *** [CMakeFiles/testadacompiler.dir/testadacompiler.o] Error 1
+make[2]: Leaving directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+CMakeFiles/Makefile2:70: recipe for target 'CMakeFiles/testadacompiler.dir/all' failed
+make[1]: *** [CMakeFiles/testadacompiler.dir/all] Error 2
+make[1]: Leaving directory '/home/pi/download/plplot/build/language_tests/Ada/CMakeFiles/CMakeTmp'
+Makefile:86: recipe for target 'all' failed
+make: *** [all] Error 2
+
+

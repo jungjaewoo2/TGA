@@ -1,0 +1,66 @@
+  nintlt
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Laplace transform of a real scalar function of a real scalar
+        variable.
+
+
+      [1mSyntax[0m
+        (1) nintlt ( [4ms[24m, [4mk[24m, [4mf[24m, /[4mp[24m/, [4mx[24m, /[4moptions[24m/ ),
+
+        (2) nintlt ( [4ms[24m, [4mf[24m, /[4mp[24m/, /[4mx[24m/, /[4moptions[24m/ ).
+
+
+
+        The arguments:
+
+        [4ms[24m  real vector, range of values for which the Laplace transform
+           is sought.
+
+        [4mk[24m  integer vector, range of values for which the Laplace
+           transform is sought.
+
+        [4mf[24m[1m=function(t,/,p/)[0m
+           complex scalar function of a complex scalar variable, with a
+           parameter [4mp[24m.
+
+        [4mx[24m[1m=[x1, x2 ... ][0m
+           real vector containing the end points of integration
+           intervals representing the integration domain.
+
+        [4moptions[24m [1m= << eabs; erel; maxi; ikey >>[0m
+           list of options for the solver, where [4meabs[24m and [4merel[24m are the
+           absolute and the relative error, [4mmaxi[24m is the maximum number
+           of subdivision of the integration interval to reach the
+           desired tolerance, while [4mikey[24m is the choice of integration
+           method.
+
+
+        See also: nintegrate, nintegrates.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

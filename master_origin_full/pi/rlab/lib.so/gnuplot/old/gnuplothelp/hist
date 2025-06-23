@@ -1,0 +1,15 @@
+hist:
+
+Synopsis: Plot a histogram.
+
+Syntax: hist ( A , N, I )
+
+Description:
+
+	Plot a histogram of the data in A in the I:th plot window. 
+	A can be a N-column matrix. The columns of A are plotted in 
+	histogram fashion.
+	An optional second argument, N specifies the number of bins
+	to separate the data into. If N is not specified the
+	default is 10. 
+

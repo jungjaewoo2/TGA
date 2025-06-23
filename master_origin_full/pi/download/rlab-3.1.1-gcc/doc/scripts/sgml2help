@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# by Marijan Kostrun, 2006-2008.
+# Based on the scripts by Ian Searle, from RLaB2 Release 1.
+
+isit=`which sgml2txt`
+[ -z "$isit" ]&& (echo "No sgml2txt installed. Exiting."; exit 1)
+
+#
+# if no argument is given take all sgml's from  ../sgml  directory
+#
+[ -z "$*" ]&& fnames=`ls -1A ../sgml/*.sgml`
+
+#
+# conversely, if arguments are given then these are the sgml's to
+# be processed
+#
+if [ -n "$*" ]; then
+  fnames="../sgml/$1.sgml"
+  shift
+  while (( $# > 0 ))
+  do
+    fnames="$fnames ../sgml/$1.sgml"
+    shift
+  done
+fi
+
+#
+# now do the processing
+#
+for fn in $fnames; do
+  un=`echo $fn |\
+    gawk '{
+      gsub(/..\/sgml\//,"",$1);
+      gsub(/.sgml/,"",$1);
+      print $1;
+      }'`
+  echo -n "Processing $un "
+  echo '<!doctype linuxdoc system>' > ./tmp.sgml
+  echo '<article>' >> ./tmp.sgml
+  echo '<title> ' "$un" >> ./tmp.sgml
+  # check if it is user or bltin type of function
+  # for user function leave an empty <author> tag in the body of the text
+  isuser=`cat $fn | grep "<author>"`
+  [ -z "$isuser" ]&& echo '<author> Builtin Function' >> ./tmp.sgml
+  [ -z "$isuser" ]|| echo '<author> User Function' >> ./tmp.sgml
+  echo '<date> ' >> ./tmp.sgml
+  echo -n " ."
+  [ -z "$isuser" ]&& tail +2 $fn >> ./tmp.sgml
+  [ -z "$isuser" ]|| tail +3 $fn >> ./tmp.sgml
+  echo '</article>' >> ./tmp.sgml
+  echo -n " ."
+  sgml2txt ./tmp.sgml 1>/dev/null
+  echo -n " ."
+  mv ./tmp.txt ../help/$un
+  echo -n " ."
+  rm ./tmp.sgml
+  echo " Done!"
+done

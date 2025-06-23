@@ -1,0 +1,28 @@
+<sect> system 
+<p>
+<descrip>
+<tag> Synopsis </tag> Execute operating system commands.
+<tag> Syntax </tag> system ( <em>COMMAND</> ) 
+<tag> Description </tag>
+
+	The system function behaves like the the UNIX system call. The
+	string argument to system, <em>COMMAND</>, is passed directly
+	to the bourne-shell for execution. The program waits until the
+	system call is finished.
+
+	Example:
+<tscreen><verb>
+> system( "vi test.r" )
+</verb></tscreen>
+
+	will allow the user to edit (create) the file
+	<tt>test.r</>. When the vi process is finished the user will
+	be back at the RLaB prompt.
+
+<tscreen><verb>
+> rfile test
+</verb></tscreen>
+
+	will then load the result of the vi process.
+
+</descrip>

@@ -1,0 +1,65 @@
+   	                          FFTPACK
+	
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+	The routines in this directory are from netlib/bihar.
+	Although, they look like they are derivitaves of the following
+	package. 
+
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	
+	                  version 4  april 1985
+	
+	     a package of fortran subprograms for the fast fourier
+	      transform of periodic and other symmetric sequences
+	
+	                         by
+	
+	                  paul n swarztrauber
+	
+	  national center for atmospheric research  boulder,colorado 80307
+	
+	   which is sponsored by the national science foundation
+	
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+	The Fortran files have been translated to the C-language with
+	f2c, which is also available from netlib.
+	
+	Note: Actually the version of fftpack on netlib is slightly
+	different. This version is a double-precision version. If you
+	want to compile it with a Fortran compiler (the original
+	source), either use IMPLICIT statements, or get the Fortran
+	source from: netlib/bihar
+
+	The command used to generate the C source was `f2c *.f'
+
+	To make:
+
+	1) Type `./configure'
+
+	The options configure will recognize:
+
+	--with-prefix=install_prefix_pathname
+
+	--with-cc=full_cc_pathname
+	--with-ld=full_ld_pathname
+	--with-ar=full_ar_pathname
+	--with-ranlib=full_ranlib_pathname
+
+	These options are designed to allow users to specify alternate
+	programs to use so that cross compiling can be performed. If
+	you are compiling this library for a native platform then you
+	should not need to specify any options.
+
+	2.) Type `make'
+
+	3.) Type `make -n install'
+
+	The default installation directory is `/usr/local/lib'. If you
+	wish to install the library in another directory the do:
+	
+		make -n install prefix=/usr/wherever/lib
+
+	3a) If you are satisfied with the "make install" command
+	output, then retype the command without the `-n'.

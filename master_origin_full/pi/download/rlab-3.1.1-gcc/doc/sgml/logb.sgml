@@ -1,0 +1,16 @@
+<sect> logb 
+<p>
+<descrip>
+<tag> Synopsis </tag> Unbiased exponent.
+<tag> Syntax </tag> logb ( <em>A</> ) 
+<tag> Description </tag>
+	
+	Logb returns the unbiased exponent of its REAL argument.
+
+	This function depends upon operating system support. Logb is
+	part of the IEEE-754 standard, and should be available on most
+	machines that implement this standard in one form or another.
+
+<tag>See Also</tag>  frexp
+
+</descrip>

@@ -1,0 +1,14 @@
+<sect> abs 
+<p>
+<descrip>
+<tag> Synopsis </> Compute the absolute value. 
+<tag> Syntax </> abs ( <em> A </> )
+<tag> Description </tag>
+
+	abs returns the absolute value of it's input,
+	<em>A</>. abs is a scalar function.
+
+	For complex values abs returns the square root of the
+	sum of the squares of the real and imaginary parts.
+
+</descrip>

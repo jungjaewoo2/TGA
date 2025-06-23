@@ -1,0 +1,41 @@
+<sect> irand 
+<p>
+<descrip>
+<tag> Synopsis </tag> Samples a default integer random number generator.
+<tag> Syntax </tag>
+             <p>    irand (  )
+             <p>    irand ( <em>A</em> )
+             <p>    irand ( <em>nrow</em>, <em>ncol</> )
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag> irand ( ) </tag>
+       samples a single random integer from a default integer
+       random number generator.
+
+	<tag> irand ( <em>A</em> ) </tag>
+       samples a matrix of random integers of size of the
+		 matrix <em>A</em> from a default integer random number generator.
+		 
+	<tag> irand ( <em>nrow</em>, <em>ncol</em> ) </tag>
+		 samples a matrix of random integers of size <em>nrow</em> by <em>ncol</em>
+		 from a default integer random number generator.
+
+	</descrip>
+
+	irand uses the facilities from the GSL library, 
+	see <tt>http://www.gnu.org/software/gsl</tt>.
+
+	<tag>See Also</tag> irng, iseed, drng, drand, rng, rand.
+	
+	<tag>Note:</tag>
+		The GSL stores the integers in <tt>unsigned long</tt> format, while
+		the rlab treats them as being in <tt>long int</tt> format.
+		The integers can be converted to proper format as follows,
+		
+		text( irand(), "%u" )
+		
+		
+
+</descrip>

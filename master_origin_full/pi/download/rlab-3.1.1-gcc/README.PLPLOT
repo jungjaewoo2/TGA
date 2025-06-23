@@ -1,0 +1,90 @@
+	README.PLPLOT:
+
+	Beginning with version 0.96, RLaB has built-in plotting
+	support. This support can only be utilized if you have the
+	Plplot library installed on your system. Plplot is good stuff,
+	not only for RLaB. So, if you don't have it already it is
+	definitely worthwhile. You can get it at dino.ph.utexas.edu in
+	the plplot directory. In order to use the plplot libraries
+	with RLaB you must make and install the DOUBLE PRECISION
+	version of plplot. RLaB's configure will look for either
+	libplplotdX.a or libplplotdtk.a, and configure accordingly. It
+	is also recommended that you install the Plplot distribution
+	in its own directory, as opposed to putting it in
+	/usr/local/bin, /usr/local/lib, etc... At the bottom of this
+	file are some recommended options for running Plplot's
+	configure. 
+
+	If you do not have the plplot libraries installed on your
+	system, then RLaB will configure itself to use the Gnuplot
+	plot interface.
+
+	You can get help on plotting by typing `help plot' at the RLaB
+	prompt (if you compiled RLaB to use Plplot). The RLaB Primer
+	has an introduction to plotting, and there are several
+	plotting examples in the examples directory.
+
+	The Plplot plotting has been implemented as a set of low-level
+	interface functions to the Plplot API. These functions mimic
+	the Plplot API, and provide access to most of the Plplot
+	features. The best way to understand this setup is to read the
+	Plplot manual, and use the file misc/plplot.r as a
+	reference. 
+
+	The user plot interface is fairly high level. It consists of
+	plot functions written in RLaB that use the low-level
+	interface. This design works well - it provides the causal
+	user with an easy-to-use plot capability, and the more
+	in-depth user with the ability to create many different types
+	of plots.
+
+        *********** 1/18/97
+
+        Prior to the release of Tcl-8.x and Tk-4.x life was
+        simpler... However, the newer versions of Tcl/Tk have included
+        significant changes. Enough so that this has caused a problems
+        with Plplot usage of the Tk driver (this does _not_ affect
+        other Plplot drivers like xwin, or postscript). 
+
+	So, if you have Tcl-7.x and Tk-3.x, then you must stick with
+        Plplot-4p99i. If you have Tcl-8.x and Tk-4.x, then you must
+        use one of the Plplot "snapshots" to get the Tk driver to
+        work.
+
+        ***********
+
+
+	Enjoy,
+	Ian Searle
+
+
+	Recommended Plplot Configuration Usage. As you will note,
+	Plplot installation is the same on most systems, at least the
+	ones I have tried.
+
+	Linux/ELF:
+	configure --with-double --prefix=/usr/local/plplot --without-shlib \
+		--disable-f77
+
+	SVR4/386:
+	configure --with-double --prefix=/usr/local/plplot --without-shlib \
+		--disable-f77 --with-gcc
+
+	Solaris 2.x (SunOS-5.x)
+        configure --with-double --without-shlib --disable-f77 \
+                --prefix=/usr/local/plplot
+
+	SunOS-4.1.3
+	configure --with-double --prefix=/usr/local/plplot --without-shlib \
+		--disable-f77 --with-gcc
+
+	HP-UX:
+	configure --with-double --prefix=/usr/local/plplot --without-shlib \
+		--disable-f77
+
+
+	Note that it is important _not_ to use shared libs on most
+        systems, and the Plplot makefiles are not properly setup to
+        build shared libs that know how to resolve their own
+        dependencies. Sometimes, configure cannot find the Plplot
+        library if it is a shared library.

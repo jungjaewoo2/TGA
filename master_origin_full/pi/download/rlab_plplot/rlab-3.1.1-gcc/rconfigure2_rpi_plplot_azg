@@ -1,0 +1,9 @@
+#!/bin/sh
+
+./configure \
+	--rlab2 \
+	--with-plplot \
+	--prefix=/usr/local/lib  \
+	--includedir=/usr/include/hdf5/serial \
+	--with-libdir=arm-linux-gnueabihf
+# LDFLAGS=-L/usr/lib

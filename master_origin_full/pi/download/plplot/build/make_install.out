@@ -1,0 +1,530 @@
+/usr/bin/cmake -H/home/pi/download/plplot/plplot-5.13.0 -B/home/pi/download/plplot/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/pi/download/plplot/build/CMakeFiles /home/pi/download/plplot/build/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/pi/download/plplot/build'
+make -f lib/csa/CMakeFiles/csirocsa.dir/build.make lib/csa/CMakeFiles/csirocsa.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/csa /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/csa /home/pi/download/plplot/build/lib/csa/CMakeFiles/csirocsa.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/csa/CMakeFiles/csirocsa.dir/build.make lib/csa/CMakeFiles/csirocsa.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/csa/CMakeFiles/csirocsa.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[  2%] Built target csirocsa
+make -f lib/nn/CMakeFiles/csironn.dir/build.make lib/nn/CMakeFiles/csironn.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/nn /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/nn /home/pi/download/plplot/build/lib/nn/CMakeFiles/csironn.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/nn/CMakeFiles/csironn.dir/build.make lib/nn/CMakeFiles/csironn.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/nn/CMakeFiles/csironn.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 11%] Built target csironn
+make -f lib/qsastime/CMakeFiles/deltaT-gen.dir/build.make lib/qsastime/CMakeFiles/deltaT-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT-gen.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/deltaT-gen.dir/build.make lib/qsastime/CMakeFiles/deltaT-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/qsastime/CMakeFiles/deltaT-gen.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 14%] Built target deltaT-gen
+make -f lib/qsastime/CMakeFiles/deltaT.h_built.dir/build.make lib/qsastime/CMakeFiles/deltaT.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/deltaT.h_built.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/deltaT.h_built.dir/build.make lib/qsastime/CMakeFiles/deltaT.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/qsastime/CMakeFiles/deltaT.h_built.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 15%] Built target deltaT.h_built
+make -f lib/qsastime/CMakeFiles/tai-utc-gen.dir/build.make lib/qsastime/CMakeFiles/tai-utc-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc-gen.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/tai-utc-gen.dir/build.make lib/qsastime/CMakeFiles/tai-utc-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/qsastime/CMakeFiles/tai-utc-gen.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 18%] Built target tai-utc-gen
+make -f lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build.make lib/qsastime/CMakeFiles/tai-utc.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/tai-utc.h_built.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build.make lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/qsastime/CMakeFiles/tai-utc.h_built.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 20%] Built target tai-utc.h_built
+make -f lib/qsastime/CMakeFiles/qsastime.dir/build.make lib/qsastime/CMakeFiles/qsastime.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/lib/qsastime /home/pi/download/plplot/build /home/pi/download/plplot/build/lib/qsastime /home/pi/download/plplot/build/lib/qsastime/CMakeFiles/qsastime.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f lib/qsastime/CMakeFiles/qsastime.dir/build.make lib/qsastime/CMakeFiles/qsastime.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'lib/qsastime/CMakeFiles/qsastime.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 22%] Built target qsastime
+make -f include/CMakeFiles/plhershey-unicode-gen.dir/build.make include/CMakeFiles/plhershey-unicode-gen.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/include /home/pi/download/plplot/build /home/pi/download/plplot/build/include /home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode-gen.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f include/CMakeFiles/plhershey-unicode-gen.dir/build.make include/CMakeFiles/plhershey-unicode-gen.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'include/CMakeFiles/plhershey-unicode-gen.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 25%] Built target plhershey-unicode-gen
+make -f include/CMakeFiles/plhershey-unicode.h_built.dir/build.make include/CMakeFiles/plhershey-unicode.h_built.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/include /home/pi/download/plplot/build /home/pi/download/plplot/build/include /home/pi/download/plplot/build/include/CMakeFiles/plhershey-unicode.h_built.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f include/CMakeFiles/plhershey-unicode.h_built.dir/build.make include/CMakeFiles/plhershey-unicode.h_built.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'include/CMakeFiles/plhershey-unicode.h_built.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 27%] Built target plhershey-unicode.h_built
+make -f src/CMakeFiles/plplot.dir/build.make src/CMakeFiles/plplot.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/src /home/pi/download/plplot/build /home/pi/download/plplot/build/src /home/pi/download/plplot/build/src/CMakeFiles/plplot.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f src/CMakeFiles/plplot.dir/build.make src/CMakeFiles/plplot.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'src/CMakeFiles/plplot.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 65%] Built target plplot
+make -f bindings/c++/CMakeFiles/plplotcxx.dir/build.make bindings/c++/CMakeFiles/plplotcxx.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/bindings/c++ /home/pi/download/plplot/build /home/pi/download/plplot/build/bindings/c++ /home/pi/download/plplot/build/bindings/c++/CMakeFiles/plplotcxx.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/c++/CMakeFiles/plplotcxx.dir/build.make bindings/c++/CMakeFiles/plplotcxx.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'bindings/c++/CMakeFiles/plplotcxx.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 67%] Built target plplotcxx
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/bindings/fortran /home/pi/download/plplot/build /home/pi/download/plplot/build/bindings/fortran /home/pi/download/plplot/build/bindings/fortran/CMakeFiles/plplotfortran.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/requires
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+make[3]: 'bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o.provides.build' is up to date.
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+make[3]: 'bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_double.f90.o.provides.build' is up to date.
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.f90.o.provides.build
+make[3]: Entering directory '/home/pi/download/plplot/build'
+make[3]: 'bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_single.f90.o.provides.build' is up to date.
+make[3]: Leaving directory '/home/pi/download/plplot/build'
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f bindings/fortran/CMakeFiles/plplotfortran.dir/build.make bindings/fortran/CMakeFiles/plplotfortran.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'bindings/fortran/CMakeFiles/plplotfortran.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 72%] Built target plplotfortran
+make -f drivers/CMakeFiles/ps.dir/build.make drivers/CMakeFiles/ps.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/ps.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/ps.dir/build.make drivers/CMakeFiles/ps.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/ps.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 75%] Built target ps
+make -f drivers/CMakeFiles/test-drv-info.dir/build.make drivers/CMakeFiles/test-drv-info.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test-drv-info.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test-drv-info.dir/build.make drivers/CMakeFiles/test-drv-info.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test-drv-info.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 77%] Built target test-drv-info
+make -f drivers/CMakeFiles/test_ps_dyndriver.dir/build.make drivers/CMakeFiles/test_ps_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_ps_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_ps_dyndriver.dir/build.make drivers/CMakeFiles/test_ps_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_ps_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 77%] Built target test_ps_dyndriver
+make -f drivers/CMakeFiles/xwin.dir/build.make drivers/CMakeFiles/xwin.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/xwin.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/xwin.dir/build.make drivers/CMakeFiles/xwin.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/xwin.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 80%] Built target xwin
+make -f drivers/CMakeFiles/test_xwin_dyndriver.dir/build.make drivers/CMakeFiles/test_xwin_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_xwin_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_xwin_dyndriver.dir/build.make drivers/CMakeFiles/test_xwin_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_xwin_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 81%] Built target test_xwin_dyndriver
+make -f drivers/CMakeFiles/mem.dir/build.make drivers/CMakeFiles/mem.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/mem.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/mem.dir/build.make drivers/CMakeFiles/mem.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/mem.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 84%] Built target mem
+make -f drivers/CMakeFiles/test_mem_dyndriver.dir/build.make drivers/CMakeFiles/test_mem_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_mem_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_mem_dyndriver.dir/build.make drivers/CMakeFiles/test_mem_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_mem_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 85%] Built target test_mem_dyndriver
+make -f drivers/CMakeFiles/xfig.dir/build.make drivers/CMakeFiles/xfig.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/xfig.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/xfig.dir/build.make drivers/CMakeFiles/xfig.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/xfig.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 87%] Built target xfig
+make -f drivers/CMakeFiles/test_xfig_dyndriver.dir/build.make drivers/CMakeFiles/test_xfig_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_xfig_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_xfig_dyndriver.dir/build.make drivers/CMakeFiles/test_xfig_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_xfig_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 88%] Built target test_xfig_dyndriver
+make -f drivers/CMakeFiles/null.dir/build.make drivers/CMakeFiles/null.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/null.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/null.dir/build.make drivers/CMakeFiles/null.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/null.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 90%] Built target null
+make -f drivers/CMakeFiles/test_null_dyndriver.dir/build.make drivers/CMakeFiles/test_null_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_null_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_null_dyndriver.dir/build.make drivers/CMakeFiles/test_null_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_null_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 91%] Built target test_null_dyndriver
+make -f drivers/CMakeFiles/svg.dir/build.make drivers/CMakeFiles/svg.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/svg.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/svg.dir/build.make drivers/CMakeFiles/svg.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/svg.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 92%] Built target svg
+make -f drivers/CMakeFiles/test_svg_dyndriver.dir/build.make drivers/CMakeFiles/test_svg_dyndriver.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_svg_dyndriver.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_svg_dyndriver.dir/build.make drivers/CMakeFiles/test_svg_dyndriver.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_svg_dyndriver.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 94%] Built target test_svg_dyndriver
+make -f drivers/CMakeFiles/test_dyndrivers.dir/build.make drivers/CMakeFiles/test_dyndrivers.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/drivers /home/pi/download/plplot/build /home/pi/download/plplot/build/drivers /home/pi/download/plplot/build/drivers/CMakeFiles/test_dyndrivers.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f drivers/CMakeFiles/test_dyndrivers.dir/build.make drivers/CMakeFiles/test_dyndrivers.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'drivers/CMakeFiles/test_dyndrivers.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 94%] Built target test_dyndrivers
+make -f utils/CMakeFiles/pltek.dir/build.make utils/CMakeFiles/pltek.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/utils /home/pi/download/plplot/build /home/pi/download/plplot/build/utils /home/pi/download/plplot/build/utils/CMakeFiles/pltek.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f utils/CMakeFiles/pltek.dir/build.make utils/CMakeFiles/pltek.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'utils/CMakeFiles/pltek.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 95%] Built target pltek
+make -f utils/CMakeFiles/parity_bit_check.dir/build.make utils/CMakeFiles/parity_bit_check.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/utils /home/pi/download/plplot/build /home/pi/download/plplot/build/utils /home/pi/download/plplot/build/utils/CMakeFiles/parity_bit_check.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f utils/CMakeFiles/parity_bit_check.dir/build.make utils/CMakeFiles/parity_bit_check.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'utils/CMakeFiles/parity_bit_check.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[ 98%] Built target parity_bit_check
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/depend
+make[2]: Entering directory '/home/pi/download/plplot/build'
+cd /home/pi/download/plplot/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pi/download/plplot/plplot-5.13.0 /home/pi/download/plplot/plplot-5.13.0/examples/fortran /home/pi/download/plplot/build /home/pi/download/plplot/build/examples/fortran /home/pi/download/plplot/build/examples/fortran/CMakeFiles/plfortrandemolib.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/requires
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'examples/fortran/CMakeFiles/plfortrandemolib.dir/requires'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+make -f examples/fortran/CMakeFiles/plfortrandemolib.dir/build.make examples/fortran/CMakeFiles/plfortrandemolib.dir/build
+make[2]: Entering directory '/home/pi/download/plplot/build'
+make[2]: Nothing to be done for 'examples/fortran/CMakeFiles/plfortrandemolib.dir/build'.
+make[2]: Leaving directory '/home/pi/download/plplot/build'
+[100%] Built target plfortrandemolib
+make[1]: Leaving directory '/home/pi/download/plplot/build'
+/usr/bin/cmake -E cmake_progress_start /home/pi/download/plplot/build/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[1]: Entering directory '/home/pi/download/plplot/build'
+make[1]: Nothing to be done for 'preinstall'.
+make[1]: Leaving directory '/home/pi/download/plplot/build'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: ""
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/ABOUT
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/AUTHORS
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/COPYING.LIB
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/ChangeLog.release
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/Copyright
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/FAQ
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/NEWS
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/PROBLEMS
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.release
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.cumulated_release
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.testing
+-- Installing: /home/pi/plplot/install_directory/lib/libcsirocsa.so.0.0.1
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libcsirocsa.so.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libcsirocsa.so
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.csa
+-- Installing: /home/pi/plplot/install_directory/lib/libcsironn.so.0.0.2
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libcsironn.so.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libcsironn.so
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.nn
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/qsastime.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/qsastimedll.h
+-- Installing: /home/pi/plplot/install_directory/lib/libqsastime.so.0.0.1
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libqsastime.so.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libqsastime.so
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/disptab.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/drivers.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/pdf.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/pldebug.h
+-- Installing: /home/pi/plplot/install_directory/include/plplot/pldll.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plevent.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plplot.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plplotP.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plstrm.h
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plxwd.h
+-- Installing: /home/pi/plplot/install_directory/include/plplot/plConfig.h
+-- Installing: /home/pi/plplot/install_directory/include/plplot/plDevs.h
+-- Installing: /home/pi/plplot/install_directory/lib/libplplot.so.15.0.0
+-- Installing: /home/pi/plplot/install_directory/lib/libplplot.so.15
+-- Installing: /home/pi/plplot/install_directory/lib/libplplot.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/libplplot.so.15.0.0" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/cmake/plplot/export_plplot.cmake
+-- Installing: /home/pi/plplot/install_directory/lib/cmake/plplot/export_plplot-noconfig.cmake
+-- Up-to-date: /home/pi/plplot/install_directory/lib/cmake/plplot/plplotConfig.cmake
+-- Installing: /home/pi/plplot/install_directory/lib/pkgconfig/plplot.pc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/plstnd5.fnt
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/plxtnd5.fnt
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap0_default.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap0_alternate.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap0_white_bg.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap0_black_on_white.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_default.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_blue_yellow.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_blue_red.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_gray.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_radar.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_highfreq.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cmap1_lowfreq.pal
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/cglobe.map
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/globe.map
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/usa.map
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/usaglobe.map
+-- Installing: /home/pi/plplot/install_directory/lib/libplplotcxx.so.13.0.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libplplotcxx.so.13
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libplplotcxx.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/libplplotcxx.so.13.0.0" to "/home/pi/plplot/install_directory/lib"
+-- Up-to-date: /home/pi/plplot/install_directory/include/plplot/plstream.h
+-- Installing: /home/pi/plplot/install_directory/lib/pkgconfig/plplot-c++.pc
+-- Installing: /home/pi/plplot/install_directory/lib/libplplotfortran.so.0.0.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libplplotfortran.so.0
+-- Up-to-date: /home/pi/plplot/install_directory/lib/libplplotfortran.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/libplplotfortran.so.0.0.0" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_double.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_single.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_private_utilities.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_graphics.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_private_exposed.mod
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plplot_types.mod
+-- Installing: /home/pi/plplot/install_directory/lib/pkgconfig/plplot-fortran.pc
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.drivers
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.wxwidgets
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/mem.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/mem.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/mem.driver_info
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/null.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/null.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/null.driver_info
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/ps.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/ps.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/ps.driver_info
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/svg.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/svg.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/svg.driver_info
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xfig.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xfig.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xfig.driver_info
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xwin.so
+-- Set runtime path of "/home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xwin.so" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers/xwin.driver_info
+-- Installing: /home/pi/plplot/install_directory/bin/pltek
+-- Set runtime path of "/home/pi/plplot/install_directory/bin/pltek" to "/home/pi/plplot/install_directory/lib"
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/test_c.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/test_c_interactive.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/test_cxx.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/test_fortran.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/test_diff.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/plplot-test.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/plplot-test-interactive.sh
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/Makefile
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/Chloe.pgm
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/README.Chloe
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/CMakeLists.txt
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/cmake/modules/plplot_configure.cmake
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/cmake/modules/plplot_functions.cmake
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/cmake/modules/pkg-config.cmake
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/cmake/modules/language_support.cmake
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/plcdemos.h
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/tutor.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/test_plend.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/test_plbuf.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x00c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x01c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x02c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x03c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x04c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x05c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x06c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x07c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x08c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x09c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x10c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x11c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x12c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x13c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x14c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x15c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x16c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x17c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x18c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x19c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x20c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x21c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x22c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x23c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x24c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x25c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x26c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x27c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x28c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x29c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x30c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x31c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x32c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x33c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/x34c.c
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/CMakeLists.txt
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c/Makefile
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/plc++demos.h
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x01cc.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x00.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x01.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x02.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x03.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x04.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x05.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x06.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x07.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x08.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x09.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x10.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x11.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x12.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x13.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x14.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x15.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x16.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x17.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x18.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x19.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x20.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x21.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x22.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x23.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x24.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x25.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x26.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x27.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x28.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x29.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x30.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x31.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/x33.cc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/CMakeLists.txt
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/c++/Makefile
+-- Installing: /home/pi/plplot/install_directory/lib/libplfortrandemolib.a
+-- Installing: /home/pi/plplot/install_directory/lib/fortran/modules/plplot/plfortrandemolib.mod
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x00f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x01f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x02f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x03f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x04f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x05f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x06f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x07f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x08f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x09f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x10f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x11f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x12f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x13f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x14f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x15f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x16f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x16af.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x17f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x18f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x19f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x20f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x21f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x22f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x23f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x24f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x25f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x26f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x27f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x28f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x29f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x30f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x31f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/x33f.f90
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/README_precision
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/Makefile
+-- Installing: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/plfortrandemos.inc
+-- Up-to-date: /home/pi/plplot/install_directory/share/plplot5.13.0/examples/fortran/CMakeLists.txt
+-- Up-to-date: /home/pi/plplot/install_directory/share/man/man1/pltek.1
+-- Up-to-date: /home/pi/plplot/install_directory/share/doc/plplot/README.pkg-config

@@ -1,0 +1,66 @@
+  fft
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Discrete Fourier Transform.
+
+      [1mSyntax[0m
+        fft ( [4mX[24m )
+
+        fft ( [4mX[24m, [4mN[24m )
+
+      [1mDescription[0m
+        Fft utilizes the FFTPACK subroutine CFFTF to compute a discrete
+        forward Fourier transform of the input.
+
+        If fft is used with a second argument, [4mN[24m, then the matrix [4mX[24m is
+        either padded with zeros, or truncated till it is of length [4mN[0m
+        (if [4mX[24m is a vector), or has row dimension [4mN[24m (if it is a matrix).
+
+        Subroutine CFFTF computes the forward complex discrete Fourier
+        transform (the Fourier analysis). equivalently , CFFTF computes
+        the Fourier coefficients of a complex periodic sequence.
+
+
+
+                  for j=1,...,n
+
+                     c(j)=the sum from k=1,...,n of
+
+                           c(k)*exp(-i*(j-1)*(k-1)*2*pi/n)
+
+                                 where i=sqrt(-1)
+
+
+
+
+
+     The argument [4mX[24m must be a matrix. If [4mX[24m is a row, or column matrix
+     then a vector fft is performed. If [4mX[24m is a MxN matrix then the [4mN[0m
+     columns of [4mX[24m are fft'ed.
+
+
+     [1mSee Also[0m
+        ifft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

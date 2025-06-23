@@ -1,0 +1,23 @@
+<sect> all 
+<p>
+<descrip>
+<tag> Synopsis </tag> Check if <em>all</> elements are non-zero. 
+<tag> Syntax </tag> all ( <em>A</> )
+<tag> Description </tag>
+
+	When <em>A</> is a vector (row or column):
+<quote>
+	  all returns TRUE (1) if all of the elements of <em>A</> are non-zero.
+	  all returns zero otherwise.
+</quote>
+
+	When <em>A</> is a matrix:
+<quote>
+	  all operates on the columns of <em>A</>, returning a row-vector of
+	  ones and zeros.
+</quote>
+
+<tag>See Also</tag>   any
+
+
+</descrip>

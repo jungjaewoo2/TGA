@@ -1,0 +1,354 @@
+-- The C compiler identification is GNU 6.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMake version = 3.7.2
+-- CMAKE_SYSTEM_NAME = Linux
+-- SH_EXECUTABLE = /bin/bash
+-- Checking whether system has ANSI C header files
+-- Looking for 4 include files stdlib.h, ..., float.h
+-- Looking for 4 include files stdlib.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- Check for whether ctype.h macros work on characters with the
+   high bit set.
+-- High-bit characters - work
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file termios.h
+-- Looking for include file termios.h - found
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for crt_externs.h
+-- Looking for crt_externs.h - not found
+-- Performing Test HAVE_SYS_WAIT_H
+-- Performing Test HAVE_SYS_WAIT_H - Success
+-- Looking for DIR symbol in sys/types.h;dirent.h
+-- Looking for DIR symbol in sys/types.h;dirent.h - found
+-- Check for signal return type in <signal.h>
+-- Check for signal handler return type type void  - found
+-- Looking for popen
+-- Looking for popen - found
+-- Looking for usleep
+-- Looking for usleep - found
+-- Looking for nanosleep
+-- Looking for nanosleep - found
+-- Looking for mkstemp
+-- Looking for mkstemp - found
+-- Looking for mkdtemp
+-- Looking for mkdtemp - found
+-- Looking for mkfifo
+-- Looking for mkfifo - found
+-- Looking for unlink
+-- Looking for unlink - found
+-- Looking for _NSGetArgc
+-- Looking for _NSGetArgc - not found
+-- Looking for isfinite
+-- Looking for isfinite - found
+-- Looking for finite
+-- Looking for finite - found
+-- Looking for isnan
+-- Looking for isnan - found
+-- Looking for isinf
+-- Looking for isinf - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Could NOT find SWIG (missing:  SWIG_EXECUTABLE SWIG_DIR) 
+-- Found Perl: /usr/bin/perl (found version "5.24.1") 
+-- WARNING: Perl module XML::Parser not found
+-- WARNING: Perl module XML::DOM not found
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for using namespace support
+-- Check for using namespace - found
+-- Looking for C++ include cmath
+-- Looking for C++ include cmath - found
+-- Check for broken isnan support in <cmath>
+-- Check for isnan in <cmath> - found
+-- Check for using stdint.h with CXX compiler
+-- Check for using stdint.h with CXX compiler - ok
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29") 
+-- Looking for pkg-config - found
+-- cxx_compiler_library_pathname_list = /usr/lib/gcc/arm-linux-gnueabihf/6/libstdc++.so;/usr/lib/arm-linux-gnueabihf/libm.so;/usr/lib/arm-linux-gnueabihf/libc.so
+-- Looking for XOpenDisplay in /usr/lib/arm-linux-gnueabihf/libX11.so;/usr/lib/arm-linux-gnueabihf/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/arm-linux-gnueabihf/libX11.so;/usr/lib/arm-linux-gnueabihf/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Found X11: /usr/lib/arm-linux-gnueabihf/libX11.so
+-- X11_FOUND = 1
+-- X11_INCLUDE_DIR = /usr/include
+-- X11_COMPILE_FLAGS = -I/usr/include
+-- X11_LIBRARIES = /usr/lib/arm-linux-gnueabihf/libSM.so;/usr/lib/arm-linux-gnueabihf/libICE.so;/usr/lib/arm-linux-gnueabihf/libX11.so;/usr/lib/arm-linux-gnueabihf/libXext.so
+-- The Fortran compiler identification is GNU 6.3.0
+-- Check for working Fortran compiler: /usr/bin/gfortran
+-- Check for working Fortran compiler: /usr/bin/gfortran  -- works
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Checking whether /usr/bin/gfortran supports Fortran 90
+-- Checking whether /usr/bin/gfortran supports Fortran 90 -- yes
+-- Check if isnan function is available in fortran
+-- Check for isnan in fortran - not found
+-- NOTICE: Found: /usr/bin/gfortran
+-- WARNING: swig not found. Disabling Java binding
+-- WARNING: swig not found. Disabling Python binding
+-- WARNING: swig not found. Disabling Octave binding
+-- Start determining consistent system data for Tcl and friends
+-- Could NOT find Tclsh (missing:  TCL_TCLSH) 
+-- Could NOT find TCL (missing:  TCL_INCLUDE_PATH) 
+-- Could NOT find TCLTK (missing:  TCL_INCLUDE_PATH TK_INCLUDE_PATH) 
+-- Could NOT find TK (missing:  TK_INCLUDE_PATH) 
+-- Looking for Tcl - not found
+-- WARNING: setting ENABLE_tcl to OFF
+-- WARNING: ENABLE_tcl is OFF so disabling everything else that is Tcl/Tk related
+-- A test cmake run with language = Ada enabled failed.
+-- Specify -DENABLE_compiler_diagnostics=ON to see full CMake diagnostics concerning this failure.
+-- WARNING: no working Ada compiler so disabling Ada binding and examples.
+-- WARNING: swig not found. Disabling Lua binding
+-- A test cmake run with language = D enabled failed.
+-- Specify -DENABLE_compiler_diagnostics=ON to see full CMake diagnostics concerning this failure.
+-- WARNING: no working D compiler so disabling D binding and examples.
+-- WARNING: SHAPELIB not found.  Setting HAVE_SHAPELIB to OFF.
+-- Found Freetype: /usr/lib/arm-linux-gnueabihf/libfreetype.so (found version "2.6.3") 
+-- FREETYPE_CFLAGS = -I/usr/include/freetype2
+-- FREETYPE_LIBRARIES = /usr/lib/arm-linux-gnueabihf/libfreetype.so
+-- Check for NaN awareness in C compiler
+-- Check for NaN awareness in C compiler - found
+-- Found QHULL: /usr/include  
+-- QHULL_INCLUDE_DIRS = /usr/include
+-- HAS_LIBQHULL_INCLUDE = OFF
+-- QHULL_LIBRARIES = /usr/lib/arm-linux-gnueabihf/libqhull.so
+-- QHULL_RPATH = 
+-- Looking for qh_new_qhull
+-- Looking for qh_new_qhull - found
+-- Checking for module 'pango'
+--   No package 'pango' found
+-- WARNING: pkg-config does not find pango.
+-- Checking for module 'pangoft2'
+--   No package 'pangoft2' found
+-- WARNING: pkg-config does not find pangoft2.
+-- Found LTDL: /usr/lib/arm-linux-gnueabihf/libltdl.so
+-- LTDL_INCLUDE_DIR = /usr/include
+-- LTDL_LIBRARY_DIR = /usr/lib/arm-linux-gnueabihf
+-- LTDL_LIBRARIES = /usr/lib/arm-linux-gnueabihf/libltdl.so
+-- Checking for module 'pangocairo'
+--   No package 'pangocairo' found
+includedir = 
+linkdir = 
+linkflags = 
+cflags = 
+-- WARNING: pango and/or cairo not found with pkg-config.
+   Disabling cairo drivers.  To enable these drivers you must install
+   development versions of pango and cairo and/or set
+   the environment variable PKG_CONFIG_PATH appropriately.
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- WARNING: ENABLE_tk OFF.  Therefore turning off tk, tkwin, and ntk devices
+-- Checking for modules 'lasi;pango;pangoft2'
+--   No package 'lasi' found
+--   No package 'pango' found
+--   No package 'pangoft2' found
+includedir = 
+libdir = 
+linkflags = 
+cflags = 
+-- WARNING: pango, pangoft2, or lasi not found with pkg-config.
+   Setting PLD_psttf to OFF.  Please install all of these packages
+   and/or set the environment variable PKG_CONFIG_PATH appropriately.
+-- Found unsuitable Qt version "5.7.1" from /usr/bin/qmake
+-- WARNING: Suitable Qt4 development environment not found so trying Qt5 instead.
+CMake Warning at /usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake:26 (find_package):
+  Could not find a package configuration file provided by "Qt5Svg" with any
+  of the following names:
+
+    Qt5SvgConfig.cmake
+    qt5svg-config.cmake
+
+  Add the installation prefix of "Qt5Svg" to CMAKE_PREFIX_PATH or set
+  "Qt5Svg_DIR" to a directory containing one of the above files.  If "Qt5Svg"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+Call Stack (most recent call first):
+  cmake/modules/qt.cmake:144 (find_package)
+  cmake/modules/drivers.cmake:96 (include)
+  cmake/modules/plplot.cmake:556 (include)
+  CMakeLists.txt:125 (include)
+
+
+CMake Warning at cmake/modules/qt.cmake:144 (find_package):
+  Found package configuration file:
+
+    /usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake
+
+  but it set Qt5_FOUND to FALSE so package "Qt5" is considered to be NOT
+  FOUND.  Reason given by package:
+
+  Failed to find Qt5 component "Svg" config file at
+  "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Svg/Qt5SvgConfig.cmake"
+
+  
+
+Call Stack (most recent call first):
+  cmake/modules/drivers.cmake:96 (include)
+  cmake/modules/plplot.cmake:556 (include)
+  CMakeLists.txt:125 (include)
+
+
+-- WARNING: Suitable Qt5 development environment not found so disabling qt
+-- WARNING: ENABLE_qt is OFF so setting all qt devices to OFF.
+-- WARNING: PLPLOT_USE_QT5 is ON so setting ENABLE_pyqt4 to OFF.
+-- WARNING: ENABLE_python is OFF so setting ENABLE_pyqt5 to OFF.
+-- wxWidgets_FOUND             : FALSE
+-- wxWidgets_INCLUDE_DIRS      : 
+-- wxWidgets_LIBRARIES         : 
+-- wxWidgets_LIBRARY_DIRS      : 
+-- wxWidgets_DEFINITIONS       : 
+-- wxWidgets_DEFINITIONS_DEBUG : 
+-- WARNING: wxWidgets or its libraries not found so setting all wxwidgets devices to OFF.
+-- WARNING: PLD_wxwidgets is OFF so setting ENABLE_wxwidgets to OFF.
+-- WARNING: ENABLE_wxwidgets is OFF so setting all wxwidgets devices to OFF.
+-- Looking for haru pdf header and library
+-- Looking for haru pdf header and library - not found
+-- WARNING: Setting PLD_pdf to OFF.
+-- WARNING: The ocamlc application not found. Disabling OCaml binding
+-- WARNING: ENABLE_ocaml is OFF so disabling Plcairo module and lablgtk2 support
+-- WARNING: validate target will not be available to check for syntax issues in the PLplot DocBook documentation because onsgmls (or env) was not found.
+pc_libplplot_LINK_FLAGS = /usr/lib/arm-linux-gnueabihf/libltdl.so;/usr/lib/arm-linux-gnueabihf/libm.so;/usr/lib/arm-linux-gnueabihf/libfreetype.so;-lcsirocsa;-lcsironn;-lqhull;-lqsastime
+-- WARNING: Perl modules XML::Parser and/or XML::DOM not available
+   so cannot check that swig_documentation.i is up to date.
+-- WARNING concerning spurious warning messages generated by the gfortran compiler.
+   The new Fortran binding is known to generate some ~50 "marked
+   PRIVATE" warning messages when building the plplotfortran target with the
+   gfortran Fortran compiler.  A typical example of such a warning
+   message is
+
+   Warning: Symbol 'interface_plcont' at (1) is marked PRIVATE but has been given the binding label 'c_plcont'
+
+   It appears these warnings (which do not occur if using the ifort or
+   nagfor Fortran compilers) are due to a gfortran bug (see
+   <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=49111> and
+   <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=64861>), i.e., they
+   are spurious warnings concerning completely valid use of the
+   private attribute for interface blocks describing C routines.
+   There appear to be no known negative consequences of this gfortran
+   bug other than the spurious warnings themselves.  Until this gfortran
+   bug is fixed, these ~50 "marked PRIVATE" warnings should just be
+   ignored for those using gfortran.
+-- TEST_ENVIRONMENT = EXAMPLES_DIR=/home/pi/download/plplot/build/examples SRC_EXAMPLES_DIR=/home/pi/download/plplot/plplot-5.13.0/examples OUTPUT_DIR=/home/pi/download/plplot/build/ctest_examples_output_dir VC_CTEST_DIRECTORY=
+
+Summary of CMake build system results for PLplot
+
+Install location variables which can be set by the user.  N.B. These
+variables are ordered by decreasing degree of generality, with the
+_default_ values of the later ones in the list determined by the
+values of variables earlier in the list.  So, for example, it is
+usually sufficient in the vast majority of cases to just set
+CMAKE_INSTALL_PREFIX, and the rest of these variables are adjusted
+accordingly (at least for a fresh configuration), and it is rare
+indeed that is is necessary for a user to set any variable here whose
+name does not start with "CMAKE_INSTALL_".
+
+
+CMAKE_INSTALL_PREFIX: /home/pi/plplot/install_directory
+CMAKE_INSTALL_EXEC_PREFIX: /home/pi/plplot/install_directory
+CMAKE_INSTALL_BINDIR: /home/pi/plplot/install_directory/bin
+CMAKE_INSTALL_DATADIR: /home/pi/plplot/install_directory/share
+CMAKE_INSTALL_LIBDIR: /home/pi/plplot/install_directory/lib
+CMAKE_INSTALL_INCLUDEDIR: /home/pi/plplot/install_directory/include
+CMAKE_INSTALL_INFODIR: /home/pi/plplot/install_directory/share/info
+CMAKE_INSTALL_MANDIR: /home/pi/plplot/install_directory/share/man
+CMAKE_INSTALL_PKG_CONFIG_DIR: /home/pi/plplot/install_directory/lib/pkgconfig
+DATA_DIR: /home/pi/plplot/install_directory/share/plplot5.13.0
+LIB_DIR: /home/pi/plplot/install_directory/lib
+INCLUDE_DIR: /home/pi/plplot/install_directory/include/plplot
+BIN_DIR: /home/pi/plplot/install_directory/bin
+DRV_DIR: /home/pi/plplot/install_directory/lib/plplot5.13.0/drivers
+DOC_DIR: /home/pi/plplot/install_directory/share/doc/plplot
+INFO_DIR: /home/pi/plplot/install_directory/share/info
+MAN_DIR: /home/pi/plplot/install_directory/share/man
+PKG_CONFIG_DIR: /home/pi/plplot/install_directory/lib/pkgconfig
+FORTRAN_MOD_DIR: /home/pi/plplot/install_directory/lib/fortran/modules/plplot
+
+
+Other important CMake variables:
+
+CMAKE_SYSTEM_NAME:	Linux
+UNIX:			1
+WIN32:			
+APPLE:			
+MSVC:				(MSVC_VERSION:	)
+MINGW:			
+MSYS:			
+CYGWIN:			
+BORLAND:		
+WATCOM:		  
+
+SWIG_FOUND:		FALSE
+PERL_FOUND:		TRUE
+X11_FOUND:		1
+
+CMAKE_BUILD_TYPE:	
+CMAKE_C_COMPILER CMAKE_C_FLAGS:			/usr/bin/cc 
+CMAKE_CXX_COMPILER CMAKE_CXX_FLAGS:		/usr/bin/c++ 
+CMAKE_Fortran_COMPILER CMAKE_Fortran_FLAGS:	/usr/bin/gfortran 
+Target Fortran:	
+
+ENABLE_DYNDRIVERS:	ON
+DRIVERS_LIST: mem;null;ps;svg;xfig;xwin
+DEVICES_LIST: mem;null;ps;svg;xfig;xwin
+
+Library options:
+BUILD_SHARED_LIBS:	ON		PL_DOUBLE:	ON
+
+Optional libraries:
+PL_HAVE_QHULL:		ON		WITH_CSA:	ON
+PL_HAVE_FREETYPE:	ON		PL_HAVE_PTHREAD:	ON
+HAVE_AGG:				HAVE_SHAPELIB:	OFF
+
+Language Bindings:
+ENABLE_ada:		OFF
+ENABLE_cxx:		ON
+ENABLE_d:		OFF
+ENABLE_fortran:		ON
+ENABLE_java:		OFF
+ENABLE_lua:		OFF
+ENABLE_ocaml:		OFF
+ENABLE_octave:		OFF
+ENABLE_pdl:		OFF
+ENABLE_python:		OFF
+ENABLE_qt:		OFF
+ENABLE_pyqt5:		OFF
+ENABLE_tcl:		OFF
+ENABLE_itcl:		OFF
+ENABLE_tk:		OFF
+ENABLE_itk:		OFF
+ENABLE_wxwidgets:	OFF
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pi/download/plplot/build

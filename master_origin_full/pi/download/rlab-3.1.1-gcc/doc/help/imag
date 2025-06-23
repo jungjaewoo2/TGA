@@ -1,0 +1,66 @@
+  imag
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Imaginary part
+
+      [1mSyntax[0m
+        imag ( [4mA[24m )
+
+      [1mDescription[0m
+        Imag returns the imaginary part of an [4mA[24m.
+
+        Example:
+
+
+          > z = pi + 3*pi*1j
+                      3.14 + 9.42i
+          > imag(z)
+               9.42
+
+
+
+
+
+     [1mSee Also[0m
+        conj, real
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

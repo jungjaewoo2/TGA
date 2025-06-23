@@ -1,0 +1,66 @@
+  exist
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Check the existence of a variable.
+
+      [1mSyntax[0m
+        exist ( [4mVAR[24m )
+
+      [1mDescription[0m
+        The exist function returns TRUE (1) if [4mVAR[24m exists, and FALSE
+        (0), if [4mVAR[24m does not exist. [4mVAR[24m is any valid variable name.
+
+        If you need to know if a variable exists, and if it is a
+        function or data, then use the exist function in conjunction
+        with the class or type functions.
+
+
+     [1mSee Also[0m
+        class, type, who, what
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

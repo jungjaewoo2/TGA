@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/pi/Downloads/2024-09-09_coarse_motion%20(8).csv" added="2024-09-09T02:10:01Z" modified="2024-09-09T02:10:01Z" visited="2024-09-09T02:10:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-09T02:10:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/pi/Downloads/2024-09-09_coarse_motion%20(10).csv" added="2024-09-09T02:36:09Z" modified="2024-09-09T02:36:10Z" visited="2024-09-09T02:36:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-09T02:36:10Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/pi/Downloads/2024-09-09_coarse_motion%20(12).csv" added="2024-09-09T02:40:25Z" modified="2024-09-09T02:40:25Z" visited="2024-09-09T02:40:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-09T02:40:25Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/pi/Downloads/2024-09-10_coarse_motion%20(9).csv" added="2024-09-10T00:55:02Z" modified="2024-09-10T00:55:45Z" visited="2024-09-10T00:55:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-10T00:55:45Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/pi/02FE-4BC0/COARSE&amp;TWANG/C240910T3Ncsv" added="2024-09-10T00:55:38Z" modified="2024-09-10T00:55:38Z" visited="2024-09-10T00:55:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-10T00:55:38Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/pi/02FE-4BC0/COARSE&amp;TWANG/C240910T3Ncsv.csv" added="2024-09-10T00:55:45Z" modified="2024-09-10T00:55:45Z" visited="2024-09-10T00:55:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-10T00:55:45Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/pi/Downloads/2024-09-10_twang%20(2).csv" added="2024-09-10T00:55:55Z" modified="2024-09-10T00:56:18Z" visited="2024-09-10T00:55:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-10T00:56:18Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///media/pi/02FE-4BC0/COARSE&amp;TWANG/T240910T3N.csv" added="2024-09-10T00:56:14Z" modified="2024-09-10T00:56:18Z" visited="2024-09-10T00:56:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/csv"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.2" exec="&apos;soffice %u&apos;" modified="2024-09-10T00:56:18Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+./configure \
+  --rlab2 \
+  --with-arpack \
+  --with-plplot \
+  --enable-glpk \
+  --with-flex \
+  --with-bison \
+  $*
+

@@ -1,0 +1,56 @@
+
+from before 4/6/2005:
+
+	Rlab is _not_ a clone of languages such as those used by tools
+	like MATLAB or matrix_X/Xmath. However, as Rlab focuses on
+	creating a good experimental environment (or laboratory) in
+	which to do matrix math, it can be called "MATLAB-like" since
+	the programming language possesses similar operators and
+	concepts.  Extensive use has been made of the LAPACK, FFTPACK
+	and RANLIB sources available from netlib.
+
+	The most significant difference between the other proprietary
+	tools and RLaB is the GNU Copyleft.
+
+	See the file INSTALL for installation instructions.
+
+	See the file WHATS.NEW for release news.
+
+	See the file PROBLEMS for solutions to some commonly
+	encountered installation/operation problems.
+
+	See the examples directory for simple examples on how to use
+	the program, and the plotting capabilities.
+
+	See the RlaB Primer for a guided tour of the program, and more
+	examples.
+
+	Ian Searle
+   	searleir@yahoo.com
+
+
+4/6/2005:
+
+        This is RLaB2 Release 2, yet another step in an evolution of the original Rlab.
+        While there has been no further work on internal workings of RLaB scripting
+        interpreter a number of functions have been added, which significantly improve
+        usability of RLaB2. The Rel. 2 is released as a part of rlabplus project hosted
+        on rlabplus.sourceforge.net.
+        The additions/changes are:
+        1. Added interface to the GNU Scientific Library. Pretty much everything is covered.
+        2. Added interface to the GNU Linear Programming Kit. Pretty much everything is covered.
+        Plus support for sparse and dense constraint matrices.
+        3. Use BLAS/LAPACK 3.0 optimized for a single processor, a.k.a. Goto's BLAS, BLAS(KG).
+        4. rlab Built with optimal flags.
+        5. Added interface to xmgrace. Pretty much everything is covered.
+        6. Numerous new toolkits: strings, polynomials, stderr terminal for error message (think
+        matlab), ..
+        7. A 120+ pages draft of a manual.
+        8. Full suport for SuperLU and solutions of sparse linear systems and the factorization
+        of sparse matrices. Does anybody need UMPACK?
+        9. PGPLOT is now a default plotting program. The interface to gnuplot is kept and
+        added full suport for xmgrace.
+        10. Removed minpack and ranlib. Both are part of GSL.
+
+        Marijan Kostrun
+        kostrun@phys.uconn.edu

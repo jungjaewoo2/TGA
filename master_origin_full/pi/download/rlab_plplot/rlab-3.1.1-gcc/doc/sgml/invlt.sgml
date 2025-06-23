@@ -1,0 +1,29 @@
+<sect> invlt
+<p>
+<descrip>
+<tag> Synopsis </tag> Inverse laplace transform of a complex scalar
+function of a complex scalar variable by means of expansion
+in sine and cosine fourier series as implemented in TOMS/769.
+
+<tag> Syntax </tag> 
+	<p><tt>invlt ( <em>f</em>, /<em>p</em>/, <em>t</em>, /<em>options</em>/ )</tt>
+
+	The arguments:
+	<descrip>
+	<tag><em>f</em>=function(t,/,p/)</tag> 
+		complex scalar function of a complex scalar variable, with a
+		parameter <em>p</em>.
+	<tag><em>t</em></tag> 
+		real vector of points at which the inverse laplace transform is
+		sought.
+	<tag><em>options</em> = << erel; sigma; ssbar; maxfeval >></tag>
+  		list of options for the solver, where <em>erel</em> is the relative 
+	  	error, <em>sigma</em> is the abcissa of convergence, 
+  		<em>ssbar</em> is a mysterious parameter related to the sine/cosine transform used
+  		in finding the inverse, and <em>maxfeval</em> is a maximum number of function 
+  		evaluations used to obtain the inverse.
+	</descrip>
+	
+	
+	See also: nintlt.
+</descrip>

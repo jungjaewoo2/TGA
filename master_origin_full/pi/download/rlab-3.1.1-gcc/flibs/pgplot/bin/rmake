@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+# script that builds pgplot library for rlabplus
+# without installing it system-wide
+# by Marijan Kostrun, (C) 2008-09
+
+RMCMD=/bin/rm
+
+# RLAB_PGPLOT=../../rlab-2.2.12-gcc/pgplot/
+# RLAB_PGPLOT=../../../pgplot/
+RLAB_PGPLOT=../install/
+RLAB_PGPLOT_FILES="cpgplot.h     \
+   grfont.dat    \
+   libpgplot.a   \
+   pgxwin_server \
+   drivers.list  \
+   libcpgplot.a  \
+   libpgplot.so  \
+   pgdisp        \
+   rgb.txt"
+PGPLOT_SRC="../src"
+PGPLOT_OPTS="linux gfortran_gcc"
+
+# clean-up everything
+if [ "$1" = "clean" ]; then
+# # clean local bin/
+  $RMCMD *.o 2>/dev/null
+  $RMCMD *.so 2>/dev/null
+  $RMCMD *.a 2>/dev/null
+  $RMCMD *.h 2>/dev/null
+  $RMCMD *.dat 2>/dev/null
+  $RMCMD *.inc 2>/dev/null
+  $RMCMD makefile 2>/dev/null
+  $RMCMD pg* 2>/dev/null
+  $RMCMD rgb.txt 2>/dev/null
+  $RMCMD *demo* 2>/dev/null
+  $RMCMD *.f 2>/dev/null
+# # clean pgplot/ in rlab source tree
+  [ -d $RLAB_PGPLOT ]&& $RMCMD -f $RLAB_PGPLOT/* 2>/dev/null
+  mkdir $RLAB_PGPLOT 2>/dev/null
+  exit
+fi
+
+
+#
+# script to build pgplot for rlabplus:
+#
+# create Makefile
+./makemake $PGPLOT_SRC $PGPLOT_OPTS
+# make the library
+make
+# make its c-wrapper
+make cpg
+
+# put it where rlab can find it
+echo "Configuring pgplot/gfortran for rlab located in $RLAB_PGPLOT"
+echo -n "Checking if $RLAB_PGPLOT exists"
+if [ -d $RLAB_PGPLOT ]; then
+  echo " . fine!"
+else
+  echo "$RLAB_PGPLOT does not exist"
+  echo "Check your rlab+rlabplus source installation"
+  exit
+fi
+echo "Making PGPLOT files available to the rlab+rlabplus installation"
+for file in $RLAB_PGPLOT_FILES; do
+  echo "  Copying file $file"
+  cp -a $file $RLAB_PGPLOT
+  done
+echo "All done!"
+
+# clean-up the build?
+if [ "$1" = "cleanlib" ]; then
+  $RMCMD *.o 2>/dev/null
+  $RMCMD *demo* 2>/dev/null
+  $RMCMD *.f 2>/dev/null
+  $RMCMD *.inc 2>/dev/null
+fi

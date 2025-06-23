@@ -1,0 +1,45 @@
+<sect> strsplt 
+<p>
+<descrip>
+<tag> Synopsis </tag> Split a string.
+<tag> Syntax </tag> strsplt ( <em>STR</> )
+             <p>    strsplt ( <em>STR</>, <em>FW</> )
+<tag> Description </tag>
+
+	Strsplt returns a row matrix that contains a single character
+	string as each element. The resulting matrix has as many
+	columns as the input argument had characters.
+
+	Example:
+
+<tscreen><verb>
+> smat = strsplt( "string" )
+ smat =
+s  t  r  i  n  g  
+> show(smat)
+   name:      smat    
+   class:     matrix  
+   type:      string  
+     nr:      1       
+     nc:      6       
+</verb></tscreen>
+
+	The second, and optional, argument to strsplt, <em>FW</> forces
+	strsplt to split <em>STR</> into <em>FW</> length strings.
+
+	<em>FW</> can also be a string, or a string matrix, specifying
+	the field separators that strsplt will use:
+
+<tscreen><verb>
+> str = "this;is;a;sem-colon;separated string;with numbers;1.234"
+this;is;a;sem-colon;separated string;with numbers;1.234  
+
+> strsplt(str,";")
+this              is                a                 sem-colon         
+
+separated string  with numbers      1.234             
+</verb></tscreen>
+
+<tag>See also</tag> getline
+
+</descrip>

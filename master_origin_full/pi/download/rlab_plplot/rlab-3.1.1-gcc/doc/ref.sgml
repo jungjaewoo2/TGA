@@ -1,0 +1,231 @@
+<!doctype linuxdoc system>
+
+<!-- The Rlab2 Reference Manual
+
+ This file documents RLaB2, a Vector and Matrix Programming Language
+ Copyright 1996, Ian R. Searle
+
+ Permission is granted to make and distribute verbatim copies of
+ this manual provided the copyright notice and this permission notice
+ are preserved on all copies.
+
+ Permission is granted to process this file through SGML translators,
+ and LaTeX, and print the results, provided the printed document
+ carries a copying permission notice identical to this one except for
+ the removal of this paragraph (this paragraph not being relevant to
+ the printed manual).
+
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided also that the
+ sections entitled ``Distribution'' and ``General Public License'' are
+ included exactly as in the original, and provided that the entire
+ resulting derived work is distributed under the terms of a permission
+ notice identical to this one.
+
+ Permission is granted to copy and distribute translations of this manual
+ into another language, under the above conditions for modified versions,
+ except that the sections entitled ``Distribution'' and ``General Public
+ License'' may be included in a translation approved by the author instead
+ of in the original English.
+
+ This document copyright
+		Ian R. Searle
+		searleir@yahoo.com
+
+ For permissions relating to reproduction of this document,
+ see PERMISSIONS below.
+
+ -->
+
+<book>
+
+<!-- Title information -->
+
+<title> Rlab2 Reference Manual
+<author> Ian Searle, <tt> searleir@yahoo.com </tt>
+<date> Version 2.1, 1/3/99
+
+<toc>
+
+<!-- Begin the document -->
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Introduction
+<p>
+#include "intro.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<chapt> Tutorial
+<p>
+#include "tutorial.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Objects and Data
+<p>
+#include "data-classes.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Program Control Flow
+<p>
+#include "control-flow.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Input and Output
+<p>
+#include "io.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> User Functions
+<p>
+#include "ufunctions.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Builtin Functions
+<p>
+
+  This chapter covers the built-in functions. Normally, no distinction
+  is made between the built-in, and the user-functions. However, they
+  are documented separately because custom installations, and program
+  execution options make it possible for Rlab to run with many of the
+  user-functions missing.
+
+  The documentation for each built-in function is nearly the same as
+  the online help. In fact, the printed documentation is the source of
+  the online help files.
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+#include "help-source/abs.sgml"
+#include "help-source/acos.sgml"
+#include "help-source/all.sgml"
+#include "help-source/any.sgml"
+#include "help-source/asin.sgml"
+#include "help-source/atan.sgml"
+#include "help-source/atan2.sgml"
+#include "help-source/backsub.sgml"
+#include "help-source/balance.sgml"
+#include "help-source/ceil.sgml"
+#include "help-source/chol.sgml"
+#include "help-source/class.sgml"
+#include "help-source/clear.sgml"
+#include "help-source/close.sgml"
+#include "help-source/conj.sgml"
+#include "help-source/cos.sgml"
+#include "help-source/cumprod.sgml"
+#include "help-source/cumsum.sgml"
+#include "help-source/det.sgml"
+#include "help-source/diag.sgml"
+#include "help-source/diary.sgml"
+#include "help-source/dlopen.sgml"
+#include "help-source/eig.sgml"
+#include "help-source/entinfo.sgml"
+#include "help-source/error.sgml"
+#include "help-source/eval.sgml"
+#include "help-source/exist.sgml"
+#include "help-source/exp.sgml"
+#include "help-source/factor.sgml"
+#include "help-source/fft.sgml"
+#include "help-source/filter.sgml"
+#include "help-source/find.sgml"
+#include "help-source/findstr.sgml"
+#include "help-source/finite.sgml"
+#include "help-source/floor.sgml"
+#include "help-source/format.sgml"
+#include "help-source/fprintf.sgml"
+#include "help-source/fread.sgml"
+#include "help-source/frexp.sgml"
+#include "help-source/fseek.sgml"
+#include "help-source/full.sgml"
+#include "help-source/fwrite.sgml"
+#include "help-source/getenv.sgml"
+#include "help-source/getline.sgml"
+#include "help-source/help.sgml"
+#include "help-source/hess.sgml"
+#include "help-source/ifft.sgml"
+#include "help-source/imag.sgml"
+#include "help-source/inf.sgml"
+#include "help-source/int.sgml"
+#include "help-source/isinf.sgml"
+#include "help-source/isnan.sgml"
+#include "help-source/issymm.sgml"
+#include "help-source/ldexp.sgml"
+#include "help-source/length.sgml"
+#include "help-source/load.sgml"
+#include "help-source/log.sgml"
+#include "help-source/log10.sgml"
+#include "help-source/logb.sgml"
+#include "help-source/max.sgml"
+#include "help-source/maxi.sgml"
+#include "help-source/members.sgml"
+#include "help-source/min.sgml"
+#include "help-source/mini.sgml"
+#include "help-source/mnorm.sgml"
+#include "help-source/mod.sgml"
+#include "help-source/nan.sgml"
+#include "help-source/nlleastsq.sgml"
+#include "help-source/ode.sgml"
+#include "help-source/ones.sgml"
+#include "help-source/open.sgml"
+#include "help-source/printf.sgml"
+#include "help-source/prod.sgml"
+#include "help-source/putenv.sgml"
+#include "help-source/qr.sgml"
+#include "help-source/quit.sgml"
+#include "help-source/rand.sgml"
+#include "help-source/rcond.sgml"
+#include "help-source/read.sgml"
+#include "help-source/read_ascii.sgml"
+#include "help-source/readm.sgml"
+#include "help-source/readl.sgml"
+#include "help-source/require.sgml"
+#include "help-source/reshape.sgml"
+#include "help-source/rfile.sgml"
+#include "help-source/round.sgml"
+#include "help-source/schur.sgml"
+#include "help-source/sign.sgml"
+#include "help-source/sin.sgml"
+#include "help-source/size.sgml"
+#include "help-source/sizeof.sgml"
+#include "help-source/sleep.sgml"
+#include "help-source/solve.sgml"
+#include "help-source/sort.sgml"
+#include "help-source/sparse.sgml"
+#include "help-source/spconvert.sgml"
+#include "help-source/spfactor.sgml"
+#include "help-source/sprintf.sgml"
+#include "help-source/spsolve.sgml"
+#include "help-source/spwrite.sgml"
+#include "help-source/sqrt.sgml"
+#include "help-source/srand.sgml"
+#include "help-source/strsplt.sgml"
+#include "help-source/strtod.sgml"
+#include "help-source/strtol.sgml"
+#include "help-source/sum.sgml"
+#include "help-source/svd.sgml"
+#include "help-source/sylv.sgml"
+#include "help-source/system.sgml"
+#include "help-source/tan.sgml"
+#include "help-source/tic.sgml"
+#include "help-source/tmpnam.sgml"
+#include "help-source/toc.sgml"
+#include "help-source/type.sgml"
+#include "help-source/vpnorm.sgml"
+#include "help-source/write_ascii.sgml"
+#include "help-source/writem.sgml"
+#include "help-source/zeros.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<chapt> Programmer's Reference
+<p>
+#include "pref.sgml"
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</book>

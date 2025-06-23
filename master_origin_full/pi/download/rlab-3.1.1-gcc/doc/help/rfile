@@ -1,0 +1,132 @@
+  rfile
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Load an rfile.
+
+      [1mSyntax[0m
+        rfile
+
+        rfile [4mNAME[0m
+
+      [1mDescription[0m
+
+
+        [1mrfile[0m
+           Prints a list of all the files with a `.r' suffix. The list
+           is compiled by searching the directories contained in the
+           environment variable RLAB2__PATH.
+
+
+        [1mrfile [4m[22mNAME[0m
+           Loads the contents of the file denoted by [4mNAME[24m into the
+           workspace. The [4mNAME[24m argument is NOT a string, and does not
+           have to include the `.r' suffix.
+
+           Allowable names for rfiles are filenames that start with:
+
+             A digit, or a letter (a-z or A-Z).
+
+
+        and contain:
+
+
+             digits, letters, and/or -, _, .
+
+
+        You may not be able to use all the possible filenames allowed by
+        the host operating system.
+
+
+        If the user's environment does not contain RLAB2_PATH, then the
+        default search-path is used. The default is set at compile time.
+        Normally the default is ".", the current working directory.
+
+        Rfile is a command, not an expression or statement. Therefore,
+        it must be issued on a line by itself, and cannot occur in the
+        midst of another statement or expression.  The rfile command
+        cannot be continued across lines (no continuations).
+
+        The command `rfile [4mNAME[24m' can be used more than once. Each time
+        the command is issued the file `[4mNAME[24m.r' is loaded.
+
+        The rfile command tries to be friendly. If you give it a string
+        without the `.r' extension, it will automatically add one for
+        you. If you give is a string with the `.r' extension, it will
+        leave it alone.
+
+        The contents of the named file can be any valid RLaB commands or
+        functions. There is no limit to the number of functions that a
+        file can contain. Additionally, a mixture of commands, and
+        function definitions can be included in the same file.
+
+        Example:
+
+          > rfile roots.r poly bode
+
+
+
+
+
+     [1mSee Also[0m
+        help, load, require
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<sect> mod 
+<p>
+<descrip>
+<tag> Synopsis </tag> Floating point remainder
+<tag> Syntax </tag> mod( <em>A</>, <em>B</> ) 
+<tag> Description </tag>
+
+	The mod routine returns the floating point remainder of the
+	division of <em>A</> by <em>B</>: zero if <em>B</> is zero or
+	if <em>A</>/<em>B</> would overflow; otherwise the number F
+	with the same sign as <em>A</>, such that <em>A</> = i<em>B</>
+	+ F for some integer i, and |f| &lt; |B|.
+
+	When the arguments to mod are two matrices, then an element by
+	element mod is performed. Mod works on complex number also.
+
+	mod(x,y) is equivalent to: 
+	<quote>
+	n = int( x/y )
+	</quote>
+
+	<quote>
+	mod(x,y) = x - y.*n
+	</quote>
+
+	mod is implemented via libm.a fmod function.
+
+</descrip>

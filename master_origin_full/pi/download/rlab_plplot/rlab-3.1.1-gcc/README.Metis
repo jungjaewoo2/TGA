@@ -1,0 +1,26 @@
+
+  From the Metis INSTALL file:
+
+     METIS is a system for partitioning unstructured graphs and for
+     producing fill reducing orderings for sparse matrices. ...
+
+     METIS is written in ANSI C and should compile on Unix systems
+     that have a ANSI C compiler. 
+
+  Metis can be used (actually Metis-lib) from within Rlab to compute
+  fill-reducing permutation vectors to reduce sparse matrix
+  fill. Metis is easy to get:
+
+         http://www.cs.umn.edu/~karypis/metis/metis.html
+
+  And, easy to build and install. Note that you may need to make minor
+  modification to the Metis Makefile.lib for your particular
+  platform. As long as you have an ANSI compiler, there should not be
+  any serious difficulty. After you have built libmetis.a, simply put
+  it in /usr/local/lib, or some other place Rlab's configure can find
+  it. 
+
+  When you run configure for Rlab add `--enable-METIS'.
+
+  Note that RLaB is only setup to work with Metis 2.0.6.  The
+  interface needs some updating to work properly with Metis-3.x.y

@@ -1,0 +1,13 @@
+semilogy2:
+
+Synopsis: Sets the plot-window right y-axis logaritmic.
+
+Syntax: semilogy2 ( I )
+
+Description:
+
+	Sets the I:th plot-window right y-axis logaritmic and top x-axis linear.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+See Also: loglog, loglog2, semilogx, semilogx2, semilogy2, nolog, nolog2

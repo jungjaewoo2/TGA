@@ -1,0 +1,12 @@
+<sect> log 
+<p>
+<descrip>
+<tag> Synopsis </tag> Logarithmic function.
+<tag> Syntax </tag> log ( <em>A</> ) 
+<tag> Description </tag>
+
+	Log returns the natural logarithm of it's argument. If the
+	argument is a VECTOR or MATRIX an element-by-element log
+	operation is performed.
+
+</descrip>

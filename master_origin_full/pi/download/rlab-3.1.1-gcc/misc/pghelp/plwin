@@ -1,0 +1,16 @@
+plwin:
+
+Synopsis: Set the current plot window.
+
+Syntax: plwin ( )
+	plwin ( WID )
+
+Description:
+
+	Plwin sets the current plot window to WID.  If WID is not
+	specified, the default is the first plot window (WID=1).
+
+	Plot window identification is usually displayed in the title
+	bar of the plow window.
+
+See Also: getplot showplwin

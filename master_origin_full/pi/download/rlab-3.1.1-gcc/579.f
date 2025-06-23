@@ -1,0 +1,313 @@
+C CPSC - COMPLEX POWER SERIES COEFFICIENTS
+C
+C BY BENGT FORNBERG
+C
+C ACM TRANSACTIONS ON MATHEMATICAL SOFTWARE, DECEMBER 1981
+C
+C     PROGRAM TEST (OUTPUT)
+C
+C  THIS PROGRAM WITH THE FUNCTION F BELOW USES CPSC TO EVALUATE
+C  THE LEADING DERIVATIVES OF F(Z) = CEXP(Z)/(CSIN(Z)**3+CCOS(Z)**3)
+C  AT Z = 0.
+c       EXTERNAL F
+c       DIMENSION A(51),IRANGE(4),ER(51)
+c       COMPLEX A
+c       DATA IRANGE/6,12,25,51/
+c       DO 10 I=1,4
+c         IR = IRANGE(I)
+c         R = 1.
+c         CALL CPSC(F,(0.,0.),IR,1,R,A,ER)
+c         WRITE(6,20) I
+c         WRITE(6,30) (A(J),J=1,IR)
+c    10   WRITE(6,40) (ER(J),J=1,IR)
+c    20 FORMAT(/20H DERIVATIVES , RANGE,I3)
+c    30 FORMAT(4(1X,E18.10,E9.1))
+c    40 FORMAT(/17H ESTIMATED ERRORS/(1X,16E8.1))
+c       STOP
+c       END
+c       COMPLEX FUNCTION F(Z)
+C
+C  TEST FUNCTION FOR USE WITH CPSC.
+C
+c       COMPLEX Z
+c       F = CEXP(Z)/(CSIN(Z)**3+CCOS(Z)**3)
+c       RETURN
+c       END
+      SUBROUTINE CPSC(Z,N,IC,R,RS,ER,EPS)
+C
+C  EVALUATION OF COMPLEX POWER SERIES COEFFICIENTS OR DERIVATIVES.
+C
+C  *** INPUT PARAMETERS ***
+C    F  COMPLEX FUNCTION, OF WHICH THE COEFFICIENTS OR DERIVATIVES
+C       ARE SOUGHT. THIS FUNCTION MUST BE DECLARED EXTERNAL IN THE
+C       CALLING PROGRAM.
+C    Z  COMPLEX POINT AROUND WHICH F SHALL BE EXPANDED OR AT WHICH
+C       DERIVATIVES SHALL BE EVALUATED.
+C    N  INTEGER, NUMBER OF COEFFICIENTS OR DERIVATIVES WANTED.
+C       N MUST BE GE 1 AND LE 51.
+C    IC SELECTS BETWEEN POWER SERIES COEFFICIENTS AND DREIVATIVES.
+C       IC .EQ. 0  ROUTINE RETURNS POWER SERIES COEFFICIENTS IN  RS
+C       IC .NE. 0  ROUTINE RETURNS DERIVATIVES IN RS .
+C  *** INPUT AND OUTPUT PARAMETER ***
+C    R  INITIAL RADIUS USED IN SEARCH FOR OPTIMAL RADIUS. THE RESULTING
+C       RADIUS IS LEFT IN R. THE PROVIDED GUESS MAY BE IN ERROR WITH AT
+C       MOST A FACTOR OF 3.E4 .
+C  *** OUTPUT PARAMETERS ***
+C    RS COMPLEX ARRAY RS(N) CONTAINING THE N FIRST
+C       COEFFICIENTS (CORRESPONDING TO THE POWERS 0 TO N-1) OR DERIVA-
+C       TIVES (ORDERS 0 TO N-1) .
+C    ER REAL ARRAY ER(N) CONTAINING ERROR ESTIMATES FOR THE
+C       NUMBERS IN RS(N).
+C
+      IMPLICIT DOUBLE PRECISION(A-H,O-Z)
+
+      DOUBLE COMPLEX
+     *                  A, V, RS, RT, FV, U, W, T, Z, RV, RQ,
+     *                  S, XK, DRCMULT, CO, ZDUMMY
+
+      DIMENSION
+     *                  IP(32), A(64), RS(N), ER(N), RT(51,3),
+     *                  FV(6), IW(7), SC(4), RV(3), C(4), FC(3)
+
+
+      EXTERNAL
+     *                  DRCMULT, CPS1FUNC
+C
+C  LIST OF THE VARIABLES INITIALIZED IN THE DATA STATEMENT BELOW.
+C   EPS  MACHINE ACCURACY. THIS CONSTANT HAS TO BE SUPPLIED BY
+C        THE USER. IN THIS LIST, IT IS GIVEN AS 1.E-14 CORRESPONDING
+C        TO THE 48 BIT FLOATING POINT MANTISSAS ON CDC CYBER MACHINES.
+C   IND  INTEGER FLAG.
+C   L2   INTEGER FLAG.
+C   IW   2**( 0 , 1 , 2 , 3 , 4 , 5 , 6 ) .
+C   IP   PERMUTATION CONSTANTS FOR THE FFT.
+C   RV   CONSTANTS FOR THE LAURENT SERIES TEST .
+C
+      DATA
+     *                  IND /0/,
+     *                  L2  /1/,
+     *                  IW  /1,2,4,8,16,32,64/,
+     *                  IP  /64,32,48,16,56,24,
+     *                       40, 8,60,28,44,12,
+     *                       52,20,36, 4,62,30,
+     *                       46,14,54,22,38, 6,
+     *                       58,26,42,10,50,18,
+     *                       34, 2/,
+     *                  RV  /(-.4,.3),(.7,.2),(.02,-.06)/
+
+      SAVE
+C
+C  STATEMENT FUNCTION FOR MULTIPLICATION OF A COMPLEX NUMBER
+C  BY A REAL NUMBER.
+C
+C      DRCMULT(RE,CO) = DCMPLX(RE*DBLE(CO),RE*DIMAG(CO))
+C
+C  EVALUATE SOME CONSTANTS THE FIRST TIME THE CODE IS EXECUTED.
+C
+      IF(IND.EQ.1) GOTO 20
+      IND = 1
+      SC(1) = .125
+      C(1) = EPS**(1./28.)
+      EP6 = C(1)**6
+      PI = 4.*ATAN(1.)
+      FV(1) = (-1.,0.)
+      FV(2) = (0.,-1.)
+      R1 = SQRT(.5)
+      RA = 1./R1
+      FV(3) = DCMPLX(R1,-R1)
+      DO 10 I=2,4
+        SC(I) = .5*SC(I-1)
+        C(I) = SQRT(C(I-1))
+        ANG = PI*SC(I-1)
+   10   FV(I+2) = DCMPLX(COS(ANG),-SIN(ANG))
+   20 CONTINUE
+C
+C  START EXECUTION.
+C
+      IF(N.GT.51.OR.N.LT.1) GOTO 260
+      LF = 0
+      NP = 0
+      M = 0
+      NR = -1
+C
+C  FIND IF A FFT OVER 8, 16, 32, OR 64 POINTS SHOULD BE USED.
+C
+      KL = 1
+      IF(N.GT.6) KL=2
+      IF(N.GT.12) KL=3
+      IF(N.GT.25) KL=4
+      KM = KL+2
+      KN = 7-KM
+      IX = IW(KM+1)
+      IS = IW(KN)
+   30 V = DCMPLX(R,0.)
+C
+C  FUNCTION VALUES OF F ARE STORED READY PERMUTATED FOR THE FFT.
+C
+      DO 40 I=IS,32,IS
+        IQ = IP(I)
+        V = V*FV(KM)
+c        A(IQ)   = CPS1FUNC(Z+V)
+c        A(IQ-1) = CPS1FUNC(Z-V)
+        CALL CPS1FUNC(Z+V,A(IQ))
+        CALL CPS1FUNC(Z-V,A(IQ-1))
+   40 CONTINUE
+      LN = 2
+      JN = 1
+C
+C  THE LOOP  DO 70 ... CONSTITUTES THE FFT.
+C
+      DO 70 L=1,KM
+        U = (1.,0.)
+        W = FV(L)
+        DO 60 J=1,JN
+          DO 50 I=J,IX,LN
+            IT = I+JN
+            T = A(IT)*U
+            A(IT) = A(I)-T
+   50       A(I) = A(I)+T
+   60     U = U*W
+        LN = LN+LN
+   70   JN = JN+JN
+      CX = 0.
+      B = 1.
+
+C
+C  TEST ON HOW FAST THE COEFFICIENTS OBTAINED DECREASE.
+C
+      DO 80 I=1,IX
+        CT = ABS(A(I))/B
+        IF(CT.LT.CX) GOTO 80
+        CX = CT
+        INR = I
+   80   B = B*C(KL)
+      IF(M.LE.1) GOTO 100
+C
+C  ESTIMATE OF THE ROUNDING ERROR LEVEL FOR THE LAST RADIUS.
+C
+      ER(1) = CX*EPS
+      DO 90 I=2,N
+   90   ER(I) = ER(I-1)/R
+  100 CONTINUE
+      SF = SC(KL)
+      DO 110 I=1,IX
+        A(I) = DRCMULT(SF,A(I))
+        SF = SF/R
+  110 CONTINUE
+
+      L1 = L2
+      L2 = 1
+      IF(INR.GT.IW(KM)) GOTO 150
+      IF(LF.EQ.1) GOTO 140
+C
+C  TEST IF THE SERIES IS A TAYLOR OR A LAURENT SERIES.
+C
+      SR = 0.
+      SP = 0.
+      DO 130 J=1,3
+        RQ = DRCMULT(R,RV(J))
+        S = A(IX)
+        DO 120 I=2,IX
+          IA = IX+1-I
+  120     S = S*RQ+A(IA)
+        CP = ABS(S)
+        IF(CP.GT.SP) SP=CP
+        CALL CPS1FUNC(Z+RQ,ZDUMMY)
+        CM = ABS(S-ZDUMMY)
+  130   IF(CM.GT.SR) SR=CM
+      IF(SR.GT.1.E-3*SP) GOTO 150
+      LF = 1
+  140 L2 = -1
+C
+C  DETERMINATION OF THE NEXT RADIUS TO BE USED.
+C
+  150 continue
+      IF(NR.GE.0) GOTO 160
+      FACT = 2.
+      IF(L2.EQ.1) FACT=.5
+      L1 = L2
+      NR = 0
+  160 IF(L1.NE.L2) GOTO 180
+      IF(NR.GT.0) GOTO 170
+      NP = NP+1
+      IF(NP-15) 190,190,260
+  170 FACT = 1./FACT
+  180 FACT = 1./SQRT(FACT)
+      NR = NR+1
+  190 R = R*FACT
+      M = NR-KL-1
+      IF(M.LE.0) GOTO 30
+C
+C  THE RESULTS FOR THE LAST THREE RADII ARE STORED.
+C
+      DO 200 I=1,N
+  200   RT(I,M) = A(I)
+      IF(M.EQ.1) GOTO 220
+C
+C  EXTRAPOLATION.
+C
+      DO 210 I=1,N
+        XK = RT(I,M-1)-RT(I,M)
+  210   RT(I,M-1) = RT(I,M)-DRCMULT(FC(M-1),XK)
+      IF(M.EQ.3) GOTO 230
+C
+C  CALCULATION OF THE EXTRAPOLATION CONSTANTS.
+C
+C FUCKIN' GFORTRAN CRAP:
+C 220 FC(M) = 1.5+SIGN(.5,FACT-1.)
+C                         1
+C Error: 'b' argument of 'sign' intrinsic at (1) must be the same type and kind as 'a'
+C 
+C GO FIGURE!
+C START GFORTRAN CRAP FIX
+  220 CONTINUE
+      IF (FACT .GE. -1) THEN
+        FC(M) = 2.0
+      ELSE
+        FC(M) = 1.0
+      ENDIF
+C END GFORTRAN CRAP FIX
+C BY KMK, 8/2/2007
+      IF(M.EQ.2) FC(M)=FC(M)+RA
+      IF(FACT.GT.1.) FC(M)=-FC(M)
+      GOTO 30
+  230 FC(3) = FC(1)*FC(2)/(FC(1)+FC(2)+1.)
+C
+C  FINAL EXTRAPOLATION AND ERROR ESTIMATE.
+C
+      DO 240 I=1,N
+        XK = RT(I,1)-RT(I,2)
+        ER(I) = ER(I)+EP6*ABS(XK)
+  240   RS(I) = RT(I,2)-DRCMULT(FC(3),XK)
+C
+C  MULTIPLY POWER SERIES COEFFICIENTS AND ERROR ESTIMATE BY FACTORIALS
+C  IF DERIVATIVES WANTED.
+C
+      IF(IC.EQ.0) RETURN
+      FAC = 0.
+      FACT = 1.
+      DO 250 I=1,N
+        RS(I) = DRCMULT(FACT,RS(I))
+        ER(I) = FACT*ER(I)
+        FAC = FAC+1.
+  250   FACT = FACT*FAC
+      RETURN
+C
+C  ERROR RETURN.
+C
+  260 DO 270 I=1,N
+        RS(I) = (0.,0.)
+  270   ER(I) = 1.E10
+      RETURN
+      END
+
+      FUNCTION DRCMULT(RE,CO)
+
+      DOUBLE PRECISION
+     *                  RE
+      DOUBLE COMPLEX
+     *                  CO, DRCMULT
+
+      DRCMULT = DCMPLX(RE*DBLE(CO),RE*DIMAG(CO))
+      RETURN
+      END

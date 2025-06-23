@@ -1,0 +1,65 @@
+1   rlab source code      (C) Ian Searle          GNU GPL version 2 or later
+2   asamin                (C) Lester Ingber       BSD Software License
+3   510.f                 Netlib                  Public Domain
+4   579.f                 Netlib                  Public Domain
+5   688.f                 Netlib                  Public Domain
+6   811.f                 Netlib                  Public Domain
+7   acdc.f                Netlib                  Public Domain
+8   arpack/so             (C) Rice University     BSD Software License
+9   blas/so               Netlib                  Public Domain
+10  tisean                (C) see source code     GNU GPL version 2 or later
+11  clawpack              (C) Randall J. LeVeque  BSD Software License
+12  coldae.f              Netlib                  Public Domain
+13  conmax.f              Netlib                  BSD Software License
+14  crc32                 (C) Andrew Pociu        Public Domain
+15  openssl/so            (c) 1998-2011 The OpenSSL Project   OpenSSL License and the original SSLeay license
+16  ddaskr.f              Netlib                  Public Domain
+17  loess                 Netlib                  Public Domain
+18  expokit.f             Netlib                  Public Domain
+19  gcvspl.f              Netlib                  Public Domain
+20  getopt/so             (C) FSF                 Public Domain
+21  GLPK/so               (C) Andrew Makhorin     GNU GPL
+22  C clustring library   (C) Michiel Jan Laurens de Hoon   BSD Software License
+23  GNU Scince Library    (C) GNU Project         GNU GPL
+24  harminv               (C) Steven G. Johnson   GNU GPL
+25  flex/parser           (C) Vern Paxson         BSD Software License
+26  match                 (C) Dmitry Kazakov      GNU GPL
+27  matrix market i/o     (C) NIST                Public Domain
+28  newuoa.f              (C) Michael J. D. Powell  Public Domain
+29  ode.f                 Netlib                  Public Domain
+30  hdf5/so               (C) HDF Group           Free to use
+31  ImageMagick/so        (C) ImageMagick Studio LLC    Apache 2.0 License
+32  gphoto2/so            (C) gphoto team         GNU GPL version 2 or later
+33  ngspice/so            (C) ngspice team        New BSD license
+34  sleign.f              (C) P.B. BAILEY, W.N. EVERITT AND A. ZETTL      Public Domain
+35  vode.f                Netlib                  Public Domain
+36  lapack/so             Netlib                  Public Domain
+37  contin                Netlib                  Public Domain
+38  linpack               Netlib                  Public Domain
+39  fftpack               Netlib                  Public Domain
+40  fitpack(dierckx)      Netlib                  Public Domain
+41  genzpak               Alan Genz,Jarle Berntsen    Public Domain
+42  hompack               Netlib                  Public Domain
+43  libcurl/so            (C) Daniel Stenberg etal  GNU GPL version 2 or later
+44  odebim                (C) CECILIA MAGHERINI, LUIGI   BRUGNANO     GNU GPL version 2 or later
+45  odrpack               Netlib                  Public Domain
+46  slatec                Netlib                  Public Domain
+47  sparskit              Netlib                  Public Domain
+48  garbage collector     (C) Hewlett-Packard     modified GPL license
+49  ctftbx                (C) Emmanuel Roy, Manuel DAVY     GNU GPL version 2 or later
+50  gnulib                (C) FSF                 GNU GPL version 2 or later
+51  umfpack/so            (C) Timothy A. Davis    BSD Software License
+52  plplot/so             (C) Maurice J. LeBrun and Geoffrey Furnish    GNU Lesser General Public License
+53  rlabplus source code  (C) Marijan Kostrun     GNU GPL version 2 or later
+
+Special status:
+
+54  pgplot                (C) Tim Pearson, CIT    Free for non-commercial,non-profit use. Has to install its own source tree from their web site.
+                                                  binary tar contains shared object library (permitted by the terms of the license)
+
+
+
+
+
+
+

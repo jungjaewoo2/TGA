@@ -1,0 +1,18 @@
+label:
+
+Synopsis: Insert labeltext.
+
+Syntax: label ( "label_text", x, y, z, labelnr, I )	
+
+Description:
+
+	Inserts labeltext in the I:th plot-window at location, x, y
+	and z. The label will have label-number labelnr.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+
+	(*) Be alert how you send this command. You will get into trouble
+	if you try to send "I" without fully specified coordinates.
+	Do not leave out "labelnr" for example.
+
+See Also: nolabel

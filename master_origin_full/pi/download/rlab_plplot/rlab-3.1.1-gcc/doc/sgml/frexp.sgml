@@ -1,0 +1,24 @@
+<sect> frexp 
+<p>
+<descrip>
+<tag> Synopsis </tag> Convert floating-point number to fractional and
+                      integral components 
+<tag> Syntax </tag> frexp ( <em>A</> )
+<tag> Description </tag>
+	
+	Frexp returns a list with elements <em>f</> and <em>e</>
+	Frexp splits <em>A</> into a normalized fraction in the interval:
+
+	<tscreen><verb>
+		0.5 <= abs(f) <= 1
+	</verb></tscreen>
+
+	which is returned in <em>f</>, and a power of 2, which is returned
+	in <em>e</>. If <em>A</> is zero, then both <em>e</> and
+	<em>f</> are zero.
+
+	Frexp operates on REAL matrices of any dimension.
+
+<tag>See Also</tag>   log, log10, log2, exp, mod
+
+</descrip>

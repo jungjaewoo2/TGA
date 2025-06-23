@@ -1,0 +1,11 @@
+pend:
+
+Synopsis: Close the I:th plot window
+
+Syntax: pend ( I )
+
+Desription:
+
+	The pend() function closes (destroys) all GNUPLOT subprocess.
+
+See also: pclose

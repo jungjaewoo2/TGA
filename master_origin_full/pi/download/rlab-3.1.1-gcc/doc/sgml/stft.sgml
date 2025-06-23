@@ -1,0 +1,30 @@
+<sect> stft 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Short Time Fourier Transform.
+<tag> Syntax </tag> stft ( <em>X</> )
+	     <p>    stft ( <em>X</>, <em>W</>, <em>FMAX</> )
+<tag> Description </tag>
+
+	stft utilizes the FFTPACK subroutine CFFTF to compute a
+	windowed discrete forward Fourier transform of the signal <em>X</>,
+	where the window is provided as <em>W</>.
+
+	If fft is used with the third argument, <em>FMAX</>, then the
+	short time fourier transform, that would otherwise be of the length
+	of the signal <em>X</em>, is truncated to <em>FMAX</em>.
+
+	Subroutine CFFTF computes the forward complex discrete Fourier
+	transform (the Fourier analysis). equivalently , CFFTF
+	computes the Fourier coefficients of a complex periodic
+	sequence.
+
+	The argument <em>X</> must be a single signal - vector,
+	while the argument <em>W</em> has to be a real vector.
+	It is required that the length of signal is greater than the
+	length of the window, and that <em>FMAX</em>	is greater than
+	the window length as well.
+	
+ <tag>See Also</tag>   fft, window
+
+</descrip>

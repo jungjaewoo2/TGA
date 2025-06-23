@@ -1,0 +1,382 @@
+/* rlab.h */
+
+/*  This file is a part of RLaB ("Our"-LaB)
+   Copyright (C) 1992, 1993, 1994  Ian R. Searle
+   Copyright (C) 2004-2019 Marijan Kostrun
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+   See the file ./COPYING
+   ********************************************************************** */
+
+#ifndef RLAB_H
+#define RLAB_H
+
+#include "config.h"
+#include "version.h"
+
+#include <stdio.h>
+#include <ctype.h>
+#include <signal.h>
+#include <setjmp.h>
+
+#include "listnode.h"
+#include "complex.h"
+#include "math_macros.h"
+
+#ifdef HAVE_SQLITE
+#include <sqlite3.h>
+#endif
+
+#define YY_READ_BUF_SIZE 131072
+#define YY_BUF_SIZE 131072
+
+
+/* ASSERTION MACRO, a cheap imitation of the ANSI assert() */
+
+#ifndef ASSERT_OFF
+#define ASSERT_ON     1
+#endif
+
+#define AssertPrintMessage   fprintf(stderr,\
+                             "\nAssertion Failed: file %s, line %d",\
+                             __FILE__, __LINE__)
+
+#if ASSERT_ON
+#define ASSERT(ex)     {if(!(ex)) {AssertPrintMessage; abort();}}
+#else
+#define ASSERT(ex)     ;
+#endif
+
+// #define DEBUG_MDE
+#if RLAB_VERSION_NUM == 3
+  #define RLAB_FILENAME_EXTENSION ".r3"
+#else
+  #define RLAB_FILENAME_EXTENSION ".r"
+#endif
+
+//
+// Union for RLaB machine/interpreter
+// 
+typedef union _inst
+{
+  int op_code;			// machine op-code
+  VPTR ptr;			    // entity pointer
+  double d_val;			// NUMBER
+} Inst;
+
+//
+// Structure for holding variable info
+//
+typedef struct _var
+{
+  int type;
+  ListNode *var;
+  int offset;
+  char *name;
+} Var;
+
+//
+// The data type for the virtual machine stack. This is
+// mostly what sits on the data stack.
+//
+typedef struct _datum
+{
+  int type;
+  union
+  {
+    double val;
+    void *ptr;
+  } u;
+} Datum;
+
+extern int new_file _PROTO ((char *fn));
+extern void init_symbol_table _PROTO ((void));
+
+//
+// Entity
+//
+typedef struct _ent
+{
+  int refc;                     /* The reference count. */
+  int type;                     /* The object type. */
+  double d;
+  void *data;                   /* The actual data. */
+} Ent;
+
+
+/* types used in the parser */
+
+#define GLOBAL        0     /* used when creating code for user-functions */
+#define LOCAL         1
+#define STATIC        2
+#define VAR           3
+#define ENTITY        4
+#define LOCAL_VAR     5
+#define GLOBAL_VAR    6
+#define ARG_VAR       7
+#define CONSTANT      8
+#define iCONSTANT     9
+#define LIST         10
+#define STATIC_VAR   11
+#define LVAR         12
+
+/*
+ * The data types / classes available to the interpreter.
+ */
+
+#define UNDEF              0            /* This needs to be 0 */
+#define DOUBLE             1
+#define iDOUBLE            2
+#define BTREE              3
+#define BLTIN              4
+#define U_FUNCTION         5
+#define U_CLASS            6
+
+#define MATRIX_SPARSE_COMPLEX  8
+#define MATRIX_SPARSE_REAL     9
+#define MATRIX_DENSE_REAL     10
+#define MATRIX_DENSE_COMPLEX  11
+#define MATRIX_DENSE_STRING   12
+#define MATRIX_DENSE_ENTITY   13
+
+#define NCL  14                        /* The number of classes. */
+
+//-------------------------------------------------//
+//
+// R L A B P L U S   -  is here !!!
+//
+//-------------------------------------------------//
+typedef struct _btree
+{
+  int isconst;  // since rlabplus 2.2.7
+  int type;
+  int numNodes;
+  ListNode *root_node;
+} Btree;
+
+
+typedef enum _rlab_atomic_data_type
+{
+  RLAB_TYPE_STRING,       // string
+  RLAB_TYPE_INT8,         // signed char
+  RLAB_TYPE_UINT8,        // unsigned char
+  RLAB_TYPE_INT32,        // int  (4 bytes)     [currently implemented]
+  RLAB_TYPE_UINT32,       // unsigned int
+  RLAB_TYPE_INT64,        // long int (8 bytes)
+  RLAB_TYPE_UINT64,       // unsigned long int
+  RLAB_TYPE_FLOAT,        // double (4 bytes)
+  RLAB_TYPE_DOUBLE,       // double (8 bytes)   [currently implemented]
+  RLAB_TYPE_COMPLEX,      // pair of doubles    [currently implemented]
+  RLAB_TYPE_LONG_DOUBLE,
+  RLAB_TYPE_LONG_COMPLEX,
+  RLAB_TYPE_ENTITY        // entities in the matrix
+} Rtype;
+
+struct _matrix_dense
+{
+  int       nrow;     // # of rows
+  int       ncol;     // # of columns
+  Rtype     type;     // determines how d is alocated
+  void     *d;
+  struct
+  {
+    unsigned char allocated:1;
+    unsigned char row_dominant:1; /* default is column-dominant storage */
+    unsigned char notused:6;
+  };
+  Btree    *list;
+};
+typedef struct _matrix_dense MD, MDR, MDC, MDS, MDE;  // it is all MD to me
+
+/*
+ * A structure for determining the proper method to use.
+ * The op array contains function pointers to use for a
+ * particular operation. If the operator is unary, then op
+ * is a one-dimensional array. If the operator is binary, then
+ * op is a two-dimensional array, and so on.
+ */
+struct _op_def
+{
+  int type;     /* The type of the return object. */
+  void *op;     /* Pointer to method (function). */
+};
+typedef struct _op_def OpDef;
+
+/*
+ * To make life easier...
+ */
+typedef void *(*VFPTR) ();
+typedef void (*VVFPTR) ();
+typedef int (*IFPTR) ();
+typedef double *(*DFPTR) ();
+typedef size_t (*SFPTR) ();
+typedef char *(*CFPTR) ();
+
+
+// **************************************************************
+//
+// Functions for handling files. Keep track of all the open files
+// with a list. Only close() when explicitly requested, or on exit
+//
+// **************************************************************
+enum RFILE_TYPE {
+  RFILE_NULL,           // no file
+  RFILE_FILE,           // file or pipe
+  RFILE_COMM,           // serial port
+  RFILE_SOCKET          // sockets
+#ifdef HAVE_LIBCURL
+      , RFILE_CURL      // http, https and ftp
+#endif
+#ifdef HAVE_HDF5_SO
+      , RFILE_H5        // Hierarhical Data Format Ver. 5
+#endif
+#ifdef HAVE_SQLITE
+      , RFILE_SQLITE    // embedded SQLITE database
+#endif
+};
+
+// sockets
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <netinet/in.h>
+
+#ifdef HAVE_LIBCURL
+#include <curl/curl.h>
+#endif
+
+#ifdef HAVE_HDF5_SO
+#include "%HEADER_HDF5%hdf5.h"
+#endif
+//
+// RLaB File struct
+//
+struct _r_file
+{
+  char            * name;       // The file/process name
+  char            * mode;       // The file I/O mode
+  enum RFILE_TYPE   filetype;   // The type of the file
+  FILE            * fileds_f;   // standard file descriptor - for files
+  int               fileds_i;   // integer file descriptor - for streams, e.g. serial port or socket
+  char            * buffer;     // The I/O buffer - for files, curls, sockets
+  int               buffer_len; //    its length
+  int               buffer_pos; //    end of data in buffer
+  char            * eol;        // end-of-line string (for regular files)
+  char            * csp;        // column-separator   (for regular files)
+  char            * nan;        // nan (for regular files)
+  char            * inf_pos;    // positive infinity (for regular files)
+  char            * inf_neg;    // negative infinity (for regular files)
+  MDS             * fmt;        // format (for regular files)
+#ifdef HAVE_SQLITE
+  sqlite3         * sql_db;     // db pointer
+  int               sql_flags;  // how the db is accessed: read(only), write(delete if exists), or append (read,write)
+#endif
+#ifdef HAVE_LIBCURL
+  // libcurl
+  CURL            * curl;           // CURL:  Internet data descriptor through libcurl
+  FILE            * curl_stderr_fd; //        Error log for file transfer
+  FILE            * curl_read_fd;   //        read from http goes here
+  FILE            * curl_write_fd;  //        write file to http goes from here 
+#endif
+
+#ifdef HAVE_HDF5_SO
+  // Hierarhical Data Format Ver. 5
+  hid_t             h5_file;          // Integer  file descriptor
+  unsigned          h5_flags;         // file access flags
+  hid_t             h5_fapl_id;       // file access property list
+  herr_t            h5_status;        // error messages if any
+#endif
+
+  // socketry:
+  struct sockaddr_in remote_server;
+  double socket_timeout;
+
+  // The next Rfile in the list
+  struct _r_file * next;
+};
+typedef struct _r_file Rfile;
+
+
+
+
+
+//
+// macros for all MATRIXDENSE types
+//
+#define MD_TYPE_STRING(m)  (((MD*)(m))->type == RLAB_TYPE_STRING)
+#define MD_TYPE_INT32(m)   (((MD*)(m))->type == RLAB_TYPE_INT32)
+#define MD_TYPE_DOUBLE(m)  (((MD*)(m))->type == RLAB_TYPE_DOUBLE)
+#define MD_TYPE_COMPLEX(m) (((MD*)(m))->type == RLAB_TYPE_COMPLEX)
+#define MD_TYPE_ENTITY(m)  (((MD*)(m))->type == RLAB_TYPE_ENTITY)
+#define MNR(m)              (((MD*)(m))->nrow)
+#define MNC(m)              (((MD*)(m))->ncol)
+#define SIZE(m)             ( (m) ? MNR(m) * MNC(m) : -1)
+#define NEQNULL(m1)         ( MNR(m1) * MNC(m1) != 0 )
+#define EQVECT(m1)          (((MNR(m1) == 1) || (MNC(m1) == 1)) && NEQNULL(m1))
+#define EQROWVECT(m1)       (((MNR(m1) == 1) && (MNC(m1) >= 1)) && NEQNULL(m1))
+#define EQCOLVECT(m1)       (((MNC(m1) == 1) && (MNR(m1) >= 1)) && NEQNULL(m1))
+#define EQNULL(m1)          ( MNR(m1) * MNC(m1) == 0 )
+#define EQSIZE(m1,m2)       ( (MNR(m1) == MNR(m2)) && (MNC(m1)==MNC(m2)) && NEQNULL(m1)  && NEQNULL(m2) )
+#define EQNROW(m1,m2)       ( (MNR(m1) == MNR(m2)) && NEQNULL(m1) && NEQNULL(m2) )
+#define EQNCOL(m1,m2)       ( (MNC(m1) == MNC(m2)) && NEQNULL(m1) && NEQNULL(m2) )
+#define EQSCAL(m1)          ( (MNR(m1) == 1) && (MNC(m1) == 1) )
+
+#define MATRIXOP_MDR_DARGS2MDR(res,arg1,arg2,func)\
+  int r1 = MNR(arg1);\
+  int c1 = MNC(arg1);\
+  int r2 = MNR(arg2);\
+  int c2 = MNC(arg2);\
+  int rr = MAX(r1,r2);\
+  int rc = MAX(c1,c2);\
+  res = mdr_Create(rr,rc);\
+  int ir,ic;\
+  for (ir=0;ir<rr;ir++){\
+  for (ic=0;ic<rc;ic++){\
+  Mdr0(res,ir,ic) = func(mdr0(arg1,MIN(ir,r1-1),MIN(ic,c1-1)), mdr0(arg2,MIN(ir,r2-1),MIN(ic,c2-1)));\
+}}\
+
+#define MATRIXOP_MDI_IARGS_MDI_MD(res,arg1,arg2,func)\
+  int r1 = MNR(arg1);\
+  int c1 = MNC(arg1);\
+  int r2 = MNR(arg2);\
+  int c2 = MNC(arg2);\
+  int rr = MAX(r1,r2);\
+  int rc = MAX(c1,c2);\
+  res = mdi_Create(rr,rc);\
+  int ir,ic;\
+  for (ir=0;ir<rr;ir++){\
+  for (ic=0;ic<rc;ic++){\
+  Mdi0(res,ir,ic) = func(Mdi0(arg1,MIN(ir,r1-1),MIN(ic,c1-1)), mdi0(arg2,MIN(ir,r2-1),MIN(ic,c2-1)));\
+}}\
+
+#define MATRIXOP_MDI_IARGS_MDI_2MD(res,arg1,arg2,arg3,func)\
+  int r1 = MNR(arg1);\
+  int c1 = MNC(arg1);\
+  int r2 = MNR(arg2);\
+  int c2 = MNC(arg2);\
+  int r3 = MNR(arg3);\
+  int c3 = MNC(arg3);\
+  int rr = MAX(MAX(r1,r2),r3);\
+  int rc = MAX(MAX(c1,c2),c3);\
+  res = mdi_Create(rr,rc);\
+  int ir,ic;\
+  for (ir=0;ir<rr;ir++){\
+  for (ic=0;ic<rc;ic++){\
+  Mdi0(res,ir,ic) = func(Mdi0(arg1,MIN(ir,r1-1),MIN(ic,c1-1)), mdi0(arg2,MIN(ir,r2-1),MIN(ic,c2-1)), mdi0(arg3,MIN(ir,r3-1),MIN(ic,c3-1)));\
+}}\
+
+#endif /* RLAB_H */

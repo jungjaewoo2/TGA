@@ -1,0 +1,26 @@
+<sect> putenv 
+<p>
+<descrip>
+<tag> Synopsis </tag> Change or add an environment variable.
+<tag> Syntax </tag> putenv ( <em>STRING</> ) 
+<tag> Description </tag>
+
+	putenv takes a single argument, <em>STRING</>, of the form:
+
+	<tscreen><verb>
+"NAME=VALUE"
+	</verb></tscreen>
+
+	putenv make the value of the environment variable <tt>NAME</> equal
+	to <tt>VALUE</> by altering an existing variable or creating a new
+	one. 
+
+	Exactly how putenv behaves is depends upon the underlying
+	operating system implementation. 
+
+	On most Unix systems putenv will return  non-zero if an error
+	occurred, and zero otherwise.
+
+<tag>See Also</tag>   getenv
+
+</descrip>

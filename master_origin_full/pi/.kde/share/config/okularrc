@@ -1,0 +1,14 @@
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+Height 768=769
+State=AAAA/wAAAAD9AAAAAAAABQAAAAKRAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1366=902
+
+[Recent Files]
+File1[$e]=/tmp/gnuplot4junk.eps
+File2[$e]=/tmp/Fake134.pdf
+Name1[$e]=gnuplot4junk.eps
+Name2[$e]=Fake134.pdf

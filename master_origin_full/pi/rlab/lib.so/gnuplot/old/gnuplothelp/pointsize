@@ -1,0 +1,14 @@
+pointsize:
+
+Synopsis: Control the size of points
+
+Syntax: pointsize ( SIZE, I )
+
+Description:
+
+	Controls the size of points. If SIZE is not specified, the
+	default size of 1.0 is used.
+	
+	If 'I' is not specified the default plot-window is used, see defplotwin().
+	
+See Also: linestyle

@@ -1,0 +1,50 @@
+   Installing RLaB2 on a Freebsd system that uses ELF format executables
+
+
+Note: the Makefile is patched to specifically use the EGCS 1.1.1 gcc/g77
+      compilers (the autoconfigure will see the default gcc in your
+      /usr/local/bin follows /usr/bin in your PATH).
+
+
+0. Extract the distribution and cd into the top directory:
+
+     tar xzvf rlab-2.1.04.tar.gz
+     cd rlab-2.1.04
+
+
+1. Configure the settings:
+
+     ./configure --prefix=/usr/local/rlab --with-gnuplot
+
+   Here, we are installing RLaB into area /usr/local/rlab and using an
+   existing gnuplot for plotting.
+
+
+2. Adjust the Makefile to specifically use EGCS's gcc and g77:
+
+      This entails modifying the values of CC and F77 to contain the
+      full pathname to the EGCS versions of gcc and g77 on your
+      system. Example:
+
+         CC = /usr/local/bin/gcc
+         F77 = /usr/local/bin/g77
+
+      Make sure that the value of FCONV is properly set:
+
+         FCONV = -DUSE_F2C
+
+
+3. Build, check, and install as per instructions in file INSTALL.  This
+   is something like:
+
+     umask 22
+     make
+     make check
+
+     [become root]
+
+     umask 22
+     make install
+
+---------------------------------------------------------------------------
+Phillip Musumeci February 1999.

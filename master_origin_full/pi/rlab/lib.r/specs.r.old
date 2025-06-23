@@ -1,0 +1,19 @@
+DEBUG2=1; // Testing at home without lasers 
+UNDER = 12;
+OVER = -4;
+RCAL=0.63;
+RDCMAX=14.0;
+RDCMIN=12.0;
+TAUmin=2.3;
+TAUmax=5.9;
+FMAX=120;
+FMIN=80;
+RESRISEmin = -1.2;
+RESRISEmax = 2.8;
+# TADDR1="28-02131ace25aa"; 
+TADDR1="28-02131acde2aa"; 
+pBEMF=[ 0.00332153576,    87.3182479,    289.401213,   0.450137308,  -0.00117697422  ]';
+pLASER=[ 0.00296779553,    86.1768055,    132.631621,   0.502642791,  -0.00124655545 ]'; # for laser data 
+TRAVELmin=1200;
+GAINmin=3.5;
+
