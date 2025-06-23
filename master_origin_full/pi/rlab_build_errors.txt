@@ -1,0 +1,45 @@
+gfortran -Wl,-export-dynamic -Wl,-rpath /usr/local/lib -DUSE_F2C -DHAVE_CONFIG_H -DASSERT_OFF -I./gc/include -Wall \
+        main.o rlab.o lex.yy.o init.o code.o symbol.o list.o listnode.o op.o opapp.o opmat.o complex.o function.o rel.o util.o btree.o misc.o fpe.o ent.o mathl.o rfileio.o mde.o mdr.o class.o diss.o mdc.o mdr_mdc.o mds.o mdr_mds.o rfile.o bltin.o bltin1.o mdrf1.o print.o getline.o mdcf1.o mdsf1.o bltin2.o mdrf2.o ar.o mdcf2.o rfft.o sort.o rstring.o rdl.o odeb.o odesl.o chaos.o btreef1.o msr.o msrf1.o bltin3.o msc.o mscf1.o msrf2.o msrf3.o mscf2.o r_pgplot.o glpk_simplex.o gsl_rlab.o gsl_levinu.o gsl_pdf.o gsl_spline.o gsl_diffint.o gsl_min.o gsl_mins.o gsl_rng.o gsl_stat.o gsl_findroot.o gsl_findroots.o gsl_ndiff_md.o gsl_leastsquares.o gsl_wavelet.o gsl_nintegrate.o gsl_nintegrate_lt.o gsl_specfunc.o gsl_odeiv.o mdr_spf1.o odae.o mmio.o claw1.o odr.o pz1rl.o pdecol.o dloess.o bltin4.o bltin5.o mdrf4.o mdcf4.o dierckx.o crypto_hash.o asamin.o gnuplot.o r_sep.o  lp.o ode.o acdc.o gcvspl.o 510.o claw1rl.o sleign2.o mirkdc.o coldae.o sparskit.o sparse.o  pzeros.o 688.o 579.o conmax2.o 811.o vode.o mebdfi.o ddaskr.o expokit.o invltf.o libmjdpowell.o    ./gc/.libs/libgc.a -L/usr/local/lib  -ldl -lc -lutil -Lpgplot -lpgplot  -lX11   -lcurl -lhdf5 -lssl -lcrypto -lpthread -lblas -lgsl -lgslcblas -llapack       -lreadline -lncurses  -lieee -lm -lc  -o rlab ./flibs/fftpack/libfftpack.a -lglpk pgplot/libpgplot.a pgplot/libcpgplot.a ./flibs/sparskit2/libskit.a ./flibs/lapack/liblapackaux.a ./flibs/clawpack/libclaw.a ./flibs/odrpack/libodr.a ./flibs/loess/libloess.a ./flibs/hompack/libhompack.a ./flibs/contin/libcontin.a ./flibs/odebim/libodebim.a  ./flibs/bacol/libbacol.a ./flibs/minpack/libminpack.a ./flibs/genzpak/libgenzpak.a ./flibs/slatec/libslatec.a ./flibs/fitpack/libfit.a ./clibs/ctftbx/libctftbx.a  ./clibs/gnulib/gnulib.a `pkg-config --libs-only-l glib-2.0` ./clibs/sep/libsep.a
+crypto_hash.o: In function `ent_openssl_hash':
+crypto_hash.c:(.text+0x6ec): undefined reference to `OPENSSL_init_crypto'
+crypto_hash.c:(.text+0x8a0): undefined reference to `EVP_MD_CTX_new'
+crypto_hash.c:(.text+0xa5c): undefined reference to `EVP_MD_CTX_free'
+collect2: error: ld returned 1 exit status
+Makefile:495: recipe for target 'rlab' failed
+make: *** [rlab] Error 1
+
+
+after linking libcrypto with newer version:
+
+gfortran -Wl,-export-dynamic -Wl,-rpath /usr/local/lib -DUSE_F2C -DHAVE_CONFIG_H -DASSERT_OFF -I./gc/include -Wall \
+        main.o rlab.o lex.yy.o init.o code.o symbol.o list.o listnode.o op.o opapp.o opmat.o complex.o function.o rel.o util.o btree.o misc.o fpe.o ent.o mathl.o rfileio.o mde.o mdr.o class.o diss.o mdc.o mdr_mdc.o mds.o mdr_mds.o rfile.o bltin.o bltin1.o mdrf1.o print.o getline.o mdcf1.o mdsf1.o bltin2.o mdrf2.o ar.o mdcf2.o rfft.o sort.o rstring.o rdl.o odeb.o odesl.o chaos.o btreef1.o msr.o msrf1.o bltin3.o msc.o mscf1.o msrf2.o msrf3.o mscf2.o r_pgplot.o glpk_simplex.o gsl_rlab.o gsl_levinu.o gsl_pdf.o gsl_spline.o gsl_diffint.o gsl_min.o gsl_mins.o gsl_rng.o gsl_stat.o gsl_findroot.o gsl_findroots.o gsl_ndiff_md.o gsl_leastsquares.o gsl_wavelet.o gsl_nintegrate.o gsl_nintegrate_lt.o gsl_specfunc.o gsl_odeiv.o mdr_spf1.o odae.o mmio.o claw1.o odr.o pz1rl.o pdecol.o dloess.o bltin4.o bltin5.o mdrf4.o mdcf4.o dierckx.o crypto_hash.o asamin.o gnuplot.o r_sep.o  lp.o ode.o acdc.o gcvspl.o 510.o claw1rl.o sleign2.o mirkdc.o coldae.o sparskit.o sparse.o  pzeros.o 688.o 579.o conmax2.o 811.o vode.o mebdfi.o ddaskr.o expokit.o invltf.o libmjdpowell.o    ./gc/.libs/libgc.a -L/usr/local/lib  -ldl -lc -lutil -Lpgplot -lpgplot  -lX11   -lcurl -lhdf5 -lssl -lcrypto -lpthread -lblas -lgsl -lgslcblas -llapack       -lreadline -lncurses  -lieee -lm -lc  -o rlab ./flibs/fftpack/libfftpack.a -lglpk pgplot/libpgplot.a pgplot/libcpgplot.a ./flibs/sparskit2/libskit.a ./flibs/lapack/liblapackaux.a ./flibs/clawpack/libclaw.a ./flibs/odrpack/libodr.a ./flibs/loess/libloess.a ./flibs/hompack/libhompack.a ./flibs/contin/libcontin.a ./flibs/odebim/libodebim.a  ./flibs/bacol/libbacol.a ./flibs/minpack/libminpack.a ./flibs/genzpak/libgenzpak.a ./flibs/slatec/libslatec.a ./flibs/fitpack/libfit.a ./clibs/ctftbx/libctftbx.a  ./clibs/gnulib/gnulib.a `pkg-config --libs-only-l glib-2.0` ./clibs/sep/libsep.a
+/usr/bin/ld: warning: libcrypto.so.1.0.2, needed by /usr/lib/gcc/arm-linux-gnueabihf/6/../../../arm-linux-gnueabihf/libcurl.so, may conflict with libcrypto.so.1.1
+/usr/bin/ld: crypto_hash.o: undefined reference to symbol 'EVP_dss1@@OPENSSL_1.0.2d'
+//usr/lib/arm-linux-gnueabihf/libcrypto.so.1.0.2: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+Makefile:495: recipe for target 'rlab' failed
+make: *** [rlab] Error 1
+
+
+after:
+sudo apt-get install libssl1.0-dev
+
+gfortran -Wl,-export-dynamic -Wl,-rpath /usr/local/lib -DUSE_F2C -DHAVE_CONFIG_H -DASSERT_OFF -I./gc/include -Wall \
+        main.o rlab.o lex.yy.o init.o code.o symbol.o list.o listnode.o op.o opapp.o opmat.o complex.o function.o rel.o util.o btree.o misc.o fpe.o ent.o mathl.o rfileio.o mde.o mdr.o class.o diss.o mdc.o mdr_mdc.o mds.o mdr_mds.o rfile.o bltin.o bltin1.o mdrf1.o print.o getline.o mdcf1.o mdsf1.o bltin2.o mdrf2.o ar.o mdcf2.o rfft.o sort.o rstring.o rdl.o odeb.o odesl.o chaos.o btreef1.o msr.o msrf1.o bltin3.o msc.o mscf1.o msrf2.o msrf3.o mscf2.o r_pgplot.o glpk_simplex.o gsl_rlab.o gsl_levinu.o gsl_pdf.o gsl_spline.o gsl_diffint.o gsl_min.o gsl_mins.o gsl_rng.o gsl_stat.o gsl_findroot.o gsl_findroots.o gsl_ndiff_md.o gsl_leastsquares.o gsl_wavelet.o gsl_nintegrate.o gsl_nintegrate_lt.o gsl_specfunc.o gsl_odeiv.o mdr_spf1.o odae.o mmio.o claw1.o odr.o pz1rl.o pdecol.o dloess.o bltin4.o bltin5.o mdrf4.o mdcf4.o dierckx.o crypto_hash.o asamin.o gnuplot.o r_sep.o  lp.o ode.o acdc.o gcvspl.o 510.o claw1rl.o sleign2.o mirkdc.o coldae.o sparskit.o sparse.o  pzeros.o 688.o 579.o conmax2.o 811.o vode.o mebdfi.o ddaskr.o expokit.o invltf.o libmjdpowell.o    ./gc/.libs/libgc.a -L/usr/local/lib  -ldl -lc -lutil -Lpgplot -lpgplot  -lX11   -lcurl -lhdf5 -lssl -lcrypto -lpthread -lblas -lgsl -lgslcblas -llapack       -lreadline -lncurses  -lieee -lm -lc  -o rlab ./flibs/fftpack/libfftpack.a -lglpk pgplot/libpgplot.a pgplot/libcpgplot.a ./flibs/sparskit2/libskit.a ./flibs/lapack/liblapackaux.a ./flibs/clawpack/libclaw.a ./flibs/odrpack/libodr.a ./flibs/loess/libloess.a ./flibs/hompack/libhompack.a ./flibs/contin/libcontin.a ./flibs/odebim/libodebim.a  ./flibs/bacol/libbacol.a ./flibs/minpack/libminpack.a ./flibs/genzpak/libgenzpak.a ./flibs/slatec/libslatec.a ./flibs/fitpack/libfit.a ./clibs/ctftbx/libctftbx.a  ./clibs/gnulib/gnulib.a `pkg-config --libs-only-l glib-2.0` ./clibs/sep/libsep.a
+crypto_hash.o: In function `ent_openssl_hash':
+crypto_hash.c:(.text+0x6ec): undefined reference to `OPENSSL_init_crypto'
+crypto_hash.c:(.text+0x8a0): undefined reference to `EVP_MD_CTX_new'
+crypto_hash.c:(.text+0xa5c): undefined reference to `EVP_MD_CTX_free'
+collect2: error: ld returned 1 exit status
+Makefile:495: recipe for target 'rlab' failed
+make: *** [rlab] Error 1
+
+after hacking Makefile puttinc .c file before -I
+
+diff Makefile Makefile.orig 
+848c848
+<       $(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) crypto_hash.c -I/usr/include/openssl 
+---
+>       $(CC) -c $(CFLAGS) -I/usr/include/openssl $(DEFS) $(SPECIAL_FLAGS) crypto_hash.c
+
+compiled with no errors

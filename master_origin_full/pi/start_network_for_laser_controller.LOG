@@ -1,0 +1,2 @@
+# controller address 192.168.10.10
+sudo ifconfig eno1 192.168.10.5

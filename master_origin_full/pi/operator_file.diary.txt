@@ -1,0 +1,5 @@
+// RLaB diary file: operator_file.diary.txt. Opened Mon Aug 13 18:19:24 2018
+
+op=reads("/var/www/html/Operator.txt");
+op
+Kim2diary();

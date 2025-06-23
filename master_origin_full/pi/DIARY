@@ -1,0 +1,73 @@
+// RLaB diary file: DIARY. Opened Fri Aug 31 01:49:28 2018
+
+diary();
+writem(GREEN,ON)
+           0  
+writem(GREEN,OFF)
+           0  
+writem(GREEN,ON)
+           0  
+system (" echo 0 > /sys/class/gpio/gpio17/value") 
+           0  
+system (" echo 1 > /sys/class/gpio/gpio17/value") 
+           0  
+system (" echo 0 > /sys/class/gpio/gpio17/value") 
+           0  
+GREEN2="2/sys/class/gpio/gpio17/value"
+2/sys/class/gpio/gpio17/valuewritem(GREEN2,ON)
+GREEN2="|/sys/class/gpio/gpio17/value"
+|/sys/class/gpio/gpio17/valuewritem(GREEN2,ON)
+           0  
+help
+hep tmpnam
+	UNDEFINED
+	UNDEFINED
+hep displaypoles
+	UNDEFINED
+	UNDEFINED
+help displaypoles
+help tmpnam
+help reads
+writem(GREEN2,ON)
+           0  
+writem(GREEN,ON)
+           0  
+ON
+1
+ON=[1"\n"];
+ON=["1"];
+writem(GREEN,ON)
+           0  
+ON=[1"\r"];
+ON=["1\r"];
+writem(GREEN,ON)
+           0  
+system (" echo 1 > /sys/class/gpio/gpio17/value") 
+           0  
+system (" echo 0 > /sys/class/gpio/gpio17/value") 
+           0  
+LEDOFF=system (" echo 0 > /sys/class/gpio/gpio17/value") 
+           0  
+LEDON=system (" echo 1 > /sys/class/gpio/gpio17/value") 
+           0  
+LEDOFF
+           0  
+GON=function(){system (" echo 1 > /sys/class/gpio/gpio17/value") ;}
+	<user-function>
+GOFF=function(){system (" echo 0 > /sys/class/gpio/gpio17/value") ;}
+	<user-function>
+GOFF
+	<user-function>
+GON
+	<user-function>
+GOFF
+	<user-function>
+GOFF=function(){system (" echo 0 > /sys/class/gpio/gpio17/value") }
+	<user-function>
+GOFF
+	<user-function>
+system (" echo 0 > /sys/class/gpio/gpio17/value") 
+           0  
+help GPIO.diary.r
+help GPIO.diary
+quit
