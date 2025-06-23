@@ -1,0 +1,66 @@
+  irand
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Samples a default integer random number generator.
+
+      [1mSyntax[0m
+        irand (  )
+
+        irand ( [4mA[24m )
+
+        irand ( [4mnrow[24m, [4mncol[24m )
+
+      [1mDescription[0m
+
+
+         [1mirand ( )[0m
+           samples a single random integer from a default integer random
+           number generator.
+
+
+         [1mirand ( [4m[22mA[24m [1m)[0m
+           samples a matrix of random integers of size of the matrix [4mA[0m
+           from a default integer random number generator.
+
+
+         [1mirand ( [4m[22mnrow[24m[1m, [4m[22mncol[24m [1m)[0m
+           samples a matrix of random integers of size [4mnrow[24m by [4mncol[24m from
+           a default integer random number generator.
+
+
+        irand uses the facilities from the GSL library, see
+        http://www.gnu.org/software/gsl.
+
+
+     [1mSee Also[0m
+        irng, iseed, drng, drand, rng, rand.
+
+
+     [1mNote:[0m
+        The GSL stores the integers in unsigned long format, while the
+        rlab treats them as being in long int format.  The integers can
+        be converted to proper format as follows,
+
+        text( irand(), "%u" )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

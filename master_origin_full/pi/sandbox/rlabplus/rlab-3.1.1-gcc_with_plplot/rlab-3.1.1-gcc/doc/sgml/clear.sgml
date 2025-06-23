@@ -1,0 +1,15 @@
+<sect> clear 
+<p>
+<descrip>
+<tag> Synopsis </tag> Delete a variable. 
+<tag> Syntax </tag> clear ( <em>A</> ) 
+<tag> Description </tag>
+
+	Clear effectively deletes a variables object from the symbol
+	table. The effect is the variable does not show up when who()
+	is used. The memory associated with the variable is freed. 
+
+	Clear accepts up to 32 arguments, the return value is the
+	number of objects that have been successfully cleared.
+
+</descrip>

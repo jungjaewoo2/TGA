@@ -1,0 +1,66 @@
+  prod
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Product.
+
+      [1mSyntax[0m
+        prod ( [4mA[24m )
+
+      [1mDescription[0m
+        Compute the product of the elements of [4mA[24m (if [4mA[24m is a vector).  If
+        [4mA[24m is a matrix return a row vector containing the product of each
+        column.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

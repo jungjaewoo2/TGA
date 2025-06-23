@@ -1,0 +1,66 @@
+  isnan
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Test for NaN values.
+
+      [1mSyntax[0m
+        isnan ( [4mA[24m )
+
+      [1mDescription[0m
+        isnan returns TRUE (1) if [4mA[24m is a NaN (Not A Number). If [4mA[24m is a
+        vector or a matrix the test is performed element-by-element, and
+        a matrix the same size as [4mA[24m is returned.
+
+        NaNs can be created by the 0/0 operation on most computers.
+
+        Example:
+
+
+          > a = [1, 2, 3; 4, 5, nan(); 7, 8, 9]
+           a =
+                  1          2          3
+                  4          5         nan
+                  7          8          9
+          > isnan (a)
+                  0          0          0
+                  0          0          1
+                  0          0          0
+
+
+
+
+
+     [1mSee Also[0m
+        inf, isinf, finite, nan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<sect> polyfit
+<p>
+<descrip>
+	<tag> Synopsis </tag> 
+		
+		<p>Finds a best fit polynomial to a set of data points.
+	
+	<tag> Syntax </tag> 
+ 		
+ 		<p><tt>c = polyfit ( <em>Y</em>, <em>X</em>/, <em>options</em>/ )</tt>
+
+
+	   Arguments:
+		<descrip>
+  		<tag><em>Y</em>, <em>X</em></tag> 
+   		ordinatae and abscisae of the data points which are fitted to a polynomial.
+		<tag><em>options</em> =<< maxdeg;f;error >></tag> 
+			<em>maxdeg</em> is the maximal degree of polynomial being sought, where the
+			degree must be	smaller than the number of given points.
+			The criterion for the fit is given either in terms of f-statistics threshold,
+			as <em>f = 0.01, 0.05, 0.1</em>, or through absolute error criterion in terms
+			of <em>error</em>.
+   	</descrip>
+   
+	   Result:
+   	<descrip>
+   	<tag><em>c</em> = << coef;error;degree >></tag> 
+   		with <em>coef</em> being the coefficients of the best fit polynomial, 
+   		<em>degree</em> its degree and <em>error</em> the maximal error in 
+   		the coefficients.
+   	</descrip>
+   
+	The solver is built upon a fortran routine DPOLFT from the SLATEC library.
+</descrip>

@@ -1,0 +1,66 @@
+  tic
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Start the timer.
+
+      [1mSyntax[0m
+        tic ( )
+
+      [1mDescription[0m
+        Tic internally marks the time at which it was invoked. To
+        measure elapsed time, use tic in conjunction with toc.
+
+        Example:
+
+
+          tic();
+          a = rand(100,100);
+          eig(a);
+          toc()
+
+
+
+
+     The above would measure the time spent generating the 100x100
+     random matrix, and calculating the eigenvectors and values.
+
+
+     [1mSee Also[0m
+        toc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<sect> schur 
+<p>
+<descrip>
+<tag> Synopsis </tag> Schur decomposition.
+<tag> Syntax </tag> schur ( <em>A</> )
+<tag> Description </tag>
+
+	The schur function returns a list containing elements <em>t</>
+	and <em>z</>, such that:
+
+	<quote>	
+		<em>A = z * t * z'</>
+	</quote>
+
+	If <em>A</> is real, the <em>t</> is in "Real-Schur" form. The
+	"Real-Schur" form is block upper-triangular with 1-by-1 and
+	2-by-2 diagonal blocks; each 2-by-2 diagonal block has its
+	diagonal elements equal and its off-diagonal elements of
+	opposite sign. The eigenvalues of the 2-by-2 block: 
+	<tt>[a, b; c, a]</> are: <tt>a +/- sqrt(b*c)</>
+
+	schur uses the LAPACK subroutines DGEES, and ZGEES.
+
+</descrip>

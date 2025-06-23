@@ -1,0 +1,22 @@
+plprint:
+
+Synopsis: Print the contents of the current plot-window.
+
+Syntax: plprint ( FILENM , DEVICE )
+
+Description:
+
+	Print the contents of the current plot-window to the PLPLOT
+	device identified by the string DEVICE (the default is black
+	and white Postscript if DEVICE is omitted). Options are:
+
+		"ps"		Postscript (default)
+		"psc"		Color Postscript
+		"xfig"		Xfig file format
+		"plmeta"	Plplot meta-file
+		"ljii"		HP LaserJet II
+		"lj_hpgl"	HP LaserJet III, HPGL emulation mode
+
+	The output of plprint() is sent to the first argument, FILENM.
+	FILENM can be an ordinary file. On UNIX systems FILENM can
+	also be a pipe to the printer or some other process.

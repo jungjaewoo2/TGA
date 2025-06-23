@@ -1,0 +1,39 @@
+<sect> read_ascii 
+<p>
+<descrip>
+<tag> Synopsis </tag> Read ASCII data from a file.
+<tag> Syntax </tag> read_ascii ( <em>FILENAME</> )
+             <p>    read_ascii ( <em>FILENAME</>, <em>LIST</> )
+<tag> Description </tag>
+
+	read_ascii reads the file identified by the <em>FILENAME</>. The
+	file is opened with read access, and all of the contents are
+	read.  The file identified by the 1st argument must contain
+	data that is in RLaB ASCII format.  The entities in the file
+	are installed in the global symbol table, overwriting any
+	existing entities. Upon completion the file is closed.
+
+	Example:
+
+        <tscreen><verb>
+read_ascii ("bunch_of_data_in_a_file");
+        </verb></tscreen>
+
+	The second form of the read function allows the data in the
+	file to be read into list variable <em>LIST</>. The
+	global-symbol-table is untouched (except for <em>LIST</>).
+
+	Example:
+
+        <tscreen><verb>
+read_ascii ("bunch_of_data", X);
+        </verb></tscreen>
+
+	The contents of the file <tt>bunch_of_data</> are read and
+	stored in the list variable <tt>X</>. Except for the
+	creation/modification of the variable <tt>X</>, the
+	global-symbol-table is unchanged.
+
+<tag>See Also</tag>   write_ascii, FILES, close, getline, read, readm, writem
+
+</descrip>

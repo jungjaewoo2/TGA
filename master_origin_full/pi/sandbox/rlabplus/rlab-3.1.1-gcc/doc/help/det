@@ -1,0 +1,66 @@
+  det
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Matrix determinant.
+
+      [1mSyntax[0m
+        det ( [4mA[24m )
+
+      [1mDescription[0m
+        Det computes the determinant of the matrix argument.
+
+        Det uses the LAPACK functions to factor the input, and the
+        LINPACK algorithm to calculate the determinant.
+
+        See Also inv, lu, rcond
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

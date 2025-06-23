@@ -1,0 +1,24 @@
+<sect> min 
+<p>
+<descrip>
+<tag> Synopsis </tag> Minimum function.
+<tag> Syntax </tag> min ( <em>A</> )
+             <p>    min ( <em>A</>, <em>B</> )
+<tag> Description </tag>
+
+	Min returns the minimum value(s) contained in the matrix
+	<em>A</>. If the argument is a vector, then the smallest value
+	is returned.  If <em>A</> is a MxN matrix, then a row-vector
+	of N columns is returned containing the minimum value from
+	each column of <em>A</>.
+
+	If min is used with two arguments, then min returns a matrix
+	the same size as <em>A</> and <em>B</> filled with the
+	smallest elements from <em>A</> and <em>B</>.
+
+	When matrix elements are complex the absolute value is used
+	for comparison purposes.
+
+<tag>See Also</tag>  mini, max, maxi
+
+</descrip>

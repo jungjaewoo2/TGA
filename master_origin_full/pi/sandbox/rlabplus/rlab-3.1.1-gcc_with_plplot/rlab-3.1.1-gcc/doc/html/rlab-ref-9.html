@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Programmer's Interface</TITLE>
+ <LINK HREF="rlab-ref-8.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+Next
+<A HREF="rlab-ref-8.html">Previous</A>
+<A HREF="rlab-ref.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="s9">9. Programmer's Interface</A></H2>
+
+<P>
+<P>This section provides an overview of the most likely to be used
+C-language functions. This list is not all inclusive.
+<P>
+<P>
+<H2><A NAME="ss9.1">9.1 bltin_get_ent</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Get an entity from a Datum.
+<DT><B> Syntax </B><DD><P>Ent * bltin_get_ent ( Datum <EM>arg</EM>[] )
+<DT><B> Description </B><DD><P><CODE>bltin_get_ent</CODE> returns the entity, or creates a new one if
+necessary, from the Datum <EM>arg</EM>. <CODE>bltin_get_ent</CODE> is most
+often used to extract argument entities from the argument Datum
+array. For example: <CODE>bltin_get_ent(args[2])</CODE> will return the
+argument entity associated with the third argument to the builtin
+function. 
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.2">9.2 ent_Clean</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Destroy an entity if possible.
+<DT><B> Syntax </B><DD><P>void ent_Clean ( Ent *<EM>entity</EM> )
+<DT><B> Description </B><DD><P>If possible, clean (destroy/free) the entity,
+<EM>entity</EM>. <CODE>ent_Clean</CODE> must <B>always</B> be used for this
+purpose, since a reference counting scheme is used to allow more
+than one variable point to the same entity.
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.3">9.3 class_double</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Given an entity, return a double value via the
+class interface.
+<DT><B> Syntax </B><DD><P>double class_double ( Ent *<EM>entity</EM> )
+<DT><B> Description </B><DD><P><CODE>class_double</CODE> uses Rlab's class-interface to get a double
+value from an arbitrary <EM>entity</EM>. If the class that
+<EM>entity</EM> belongs to does not support this operation, an error
+message is generated, and program control returns to the
+interpreter. 
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.4">9.4 class_char_pointer</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Given an entity, return a character pointer via
+the class interface. 
+<DT><B> Syntax </B><DD><P>char * class_char_pointer ( Ent *<EM>entity</EM> )
+<DT><B> Description </B><DD><P><CODE>class_char_pointer</CODE> uses Rlab's class-interface to get a
+character pointer from an arbitrary <EM>entity</EM>. If the class that
+<EM>entity</EM> belongs to does not support this operation, an error
+message is generated, and program control returns to the
+interpreter.
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.5">9.5 class_matrix_real</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Given an entity, return a full-real-matrix via the
+class interface.
+<DT><B> Syntax </B><DD><P>MDR * class_matrix_real ( Ent *<EM>entity</EM> )
+<DT><B> Description </B><DD><P><CODE>class_matrix_real</CODE> uses Rlab's class-interface to get a
+pointer to a Matrix-Dense-Real (MDR) from an arbitrary
+<EM>entity</EM>. If the class that <EM>entity</EM> belongs to does not
+support this operation, an error message is generated, and program
+control returns to the interpreter.
+<P>The user must <EM>not</EM> destroy, or change the matrix in any
+way. The returned matrix should be treated as read-only! If you must
+modify the matrix, use <CODE>mdr_Copy</CODE> to generate a copy of the
+matrix. 
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.6">9.6 get_file_ds</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Get a new, or existing file-descriptor.
+<DT><B> Syntax </B><DD><P>FILE * get_file_ds ( char *<EM>name</EM>, char *<EM>mode</EM>, int <EM>buffsize</EM> )
+<DT><B> Description </B><DD><P>Get the file-descriptor associated with the character string
+<EM>name</EM>. If the file-descriptor already exists (Rlab keeps track
+of them), then the existing descriptor is returned. Otherwise, a new
+file-descriptor is returned. The new file is opened with mode
+<EM>mode</EM>, and buffersize <EM>buffsize</EM>. If <EM>buffsize</EM> is
+zero, then the system's default buffersize is used.
+<P>
+</DL>
+<P>
+<P>
+<H2><A NAME="ss9.7">9.7 close_file_ds</A>
+</H2>
+
+<P>
+<DL>
+<DT><B> Synopsis </B><DD><P>Close the named file-descriptor.
+<DT><B> Syntax </B><DD><P>int close_file_ds ( char *<EM>name</EM> )
+<DT><B> Description </B><DD><P>Close the file-descriptor associated with <EM>name</EM>.
+<P>
+</DL>
+<P>
+<P>
+<HR>
+Next
+<A HREF="rlab-ref-8.html">Previous</A>
+<A HREF="rlab-ref.html#toc9">Contents</A>
+</BODY>
+</HTML>

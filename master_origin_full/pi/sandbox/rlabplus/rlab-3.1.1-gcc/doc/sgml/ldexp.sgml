@@ -1,0 +1,22 @@
+<sect> ldexp 
+<p>
+<descrip>
+<tag> Synopsis </tag> Multiply floating point number 
+                      by integral power of 2
+<tag> Syntax </tag> ldexp ( <em>X</> , <em>EXP</> )
+<tag> Description </tag>
+	
+	Ldexp returns a numeric matrix which contains the value(s)
+	resulting from the operation:
+
+	<tscreen><verb>
+		X * 2^EXP
+	</verb></tscreen>
+
+        The dimensions of <em>X</> and <em>EXP</> must be the
+	same. Optionally, <em>EXP</> can be a scalar, independent of
+	the size of <em>X</>.
+
+<tag>See Also</tag>   frexp
+
+</descrip>

@@ -1,0 +1,1332 @@
+# Generated automatically from Makefile.in by configure.
+#
+#	RLaB Makefile.in
+#
+
+# Don't modify
+DEFS = 		-DHAVE_CONFIG_H
+SHELL =		/bin/sh
+VER = 		3.1.1-gcc4.8.5
+SYSTEM =	Linux-4.1.34-33-default
+CPUINFO = 64
+
+# The name of your C compiler
+CC =		gcc
+
+# The name of your Fortran compiler
+export F77 =		gfortran
+
+# The name of installed python interpreter
+PYTHON_LIB = -lpython2.7
+
+# FCONV specifies the inter-language calling convention between
+# your C compiler and your Fortran compiler.
+# Possibilities are:
+#
+# -DUSE_F2C	to use the f2c C => Fortran convention (gcc/g77)
+# -DUSE_UPPER	to use uppercase convention
+# -DUSE_LOWER	to use lowercase convention
+# -DUSE_BACK	to use trailing underscore convention
+# -DUSE_FRONT	to use leading underscore convention
+
+FCONV = -DUSE_F2C
+
+# The flags to pass along to the C compiler/linker
+CFLAGS =	-DUSE_F2C
+#CPPFLAGS =	
+LDFLAGS =	
+
+
+#
+# Special library flags
+#
+# ImageMagick has its own configure files
+IMCFLAGS = -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/ImageMagick-6 
+G2FLAGS = -I/usr/include/gphoto2
+
+
+#FFLAGS = 	-O2
+
+EXFLAGS =	-Wl,-export-dynamic -Wl,-rpath /usr/local/lib64
+
+# Hopefully this is "ln -s"
+LN = 		ln -s
+
+# The name of the parser generator, byacc or bison is preferred.
+YACC = byacc
+YFLAGS = -vdtl
+
+# This must be flex, if flex is not available, leave it blank
+LEX =		flex
+
+# This should be a "new" AWK (not necessary)
+AWK = 		gawk
+
+# This must be the name of a GNU tar program (not necessary)
+TAR = 		tar
+
+# The name of an install program, either install(1), or cp(1)
+INSTALL = 	/usr/bin/install -c
+INSTALL_PROGRAM = ${INSTALL}
+
+# File name extension used for archive library files (DON'T include leading ".")
+A = 		a
+
+# File name extension used for object files (DON'T include leading ".")
+O = 		o
+
+# File name extension used for executable files (INCLUDING the dot, ".")
+EXE =
+
+#
+# The place to look for libraries on the system
+#
+LLIBS = -L/usr/local/lib64  -ldl -lc -lutil
+
+#
+# The Garbage-Collection library (GC)
+#
+
+LIBGC = ./gc/.libs/libgc.a
+IGC = -I./gc/include
+
+#
+# The optional Sparse Solver stuff...
+#
+
+SPARSE_SRC = 
+SPARSE_OBJ = 
+SPARSE_INC = -I/usr/include/
+SPARSE_LIB =  -lsuperlu -lumfpack -lcholmod -lbtf -lamd -lcamd -lccolamd -lcolamd -lcsparse -lcxsparse -lklu -lldl -lrbio -lspqr -lsuitesparseconfig
+
+#
+# The optional Metis graph partitioning software...
+#
+
+GRAPH_LIB = 
+
+#################################################################
+#
+# rlabplus libraries: on the shoulders of ...
+#
+#################################################################
+
+######################################
+##
+## dynamic: no compilation here
+##
+######################################
+LAPACK_LIB = -llapack
+GSL_LIB = -lgsl -lgslcblas
+BLAS_LIB = -lpthread -lblas
+CRYPTO_LIB = -lssl -lcrypto
+HDF5_LIB = -lhdf5
+LIBCURL_LIB = -lcurl
+GLPK_LIB = -lglpk
+JAVA_LIB = 
+ARPACK = -larpack
+NGSPICELIB =
+# NGSPICELIB = -lngspice
+GPHOTO2LIB = -L/usr/lib64 -lgphoto2 -lgphoto2_port -lm
+IMAGEMAGICKLIB = -lMagickWand-6.Q16 -lMagickCore-6.Q16 
+
+REQ_LIBS = $(LIBCURL_LIB) $(HDF5_LIB) $(CRYPTO_LIB) \
+	 $(BLAS_LIB) $(GSL_LIB) $(LAPACK_LIB) \
+	 $(JAVA_LIB) $(ARPACK) $(NGSPICELIB) \
+	 $(GPHOTO2LIB) $(IMAGEMAGICKLIB)
+
+##################################
+##
+## static libraries:
+##
+##################################
+
+#
+# c-libraries:
+#
+# AMDPACK = ./clibs/umfpack/AMD/Lib/libamd.a
+# UMFPACK = ./clibs/umfpack/UMFPACK/Lib/libumfpack.a
+CTFTBX = ./clibs/ctftbx/libctftbx.a
+GNULIBA = ./clibs/gnulib/gnulib.a
+GLIBLNK = `pkg-config --libs-only-l glib-2.0`
+SEPLIBA = ./clibs/sep/libsep.a
+# PGPLOT_C = ./pgplot/libcpgplot.a -lpng
+
+#
+# static fortran libraries:
+#
+# ARPACK = ./flibs/arpack/libarpack.a
+BACOL = ./flibs/bacol/libbacol.a
+CLAWPACK = ./flibs/clawpack/libclaw.a
+CONTIN = ./flibs/contin/libcontin.a
+FFTPACK = ./flibs/fftpack/libfftpack.a
+FITPACK = ./flibs/fitpack/libfit.a
+GENZPAK = ./flibs/genzpak/libgenzpak.a
+HOMPACK = ./flibs/hompack/libhompack.a
+LOESS = ./flibs/loess/libloess.a
+MINPACK = ./flibs/minpack/libminpack.a
+ODEBIM = ./flibs/odebim/libodebim.a
+ODRPACK = ./flibs/odrpack/libodr.a
+SLATEC = ./flibs/slatec/libslatec.a
+SPARSKIT = ./flibs/sparskit2/libskit.a
+LAPACKAUX = ./flibs/lapack/liblapackaux.a
+
+# pgplot with png support: requires libpng installed
+# PGPLOT  = ./pgplot/libpgplot.a
+PLIBS_A  = 
+
+#
+# all together now
+#
+RLABPLUSLIBS = $(FFTPACK) $(GLPK_LIB) $(PLIBS_A) \
+		$(SPARSKIT) $(LAPACKAUX) $(CLAWPACK) $(ODRPACK) $(LOESS)\
+		$(HOMPACK) $(CONTIN) $(ODEBIM) $(ARPACK) $(BACOL) \
+		$(MINPACK) $(GENZPAK) $(SLATEC) $(FITPACK)\
+		$(CTFTBX) $(PYTHON_LIB) $(GNULIBA) $(GLIBLNK) $(SEPLIBA)
+
+NALIBS = $(GRAPH_LIB) $(SPARSE_LIB) $(REQ_LIBS)
+
+#
+# Any special math oriented libraries, like -lieee on Linux.
+#
+MLIB = -lieee
+
+# The readline library (and -ltermcap) should be present if you have
+# defined HAVE_READLINE in config.h.
+# CMDLIBS = -lreadline -ltermcap
+#
+#
+CMDLIBS = -lreadline -lncurses 
+
+#
+# We use PGPLOT, located in ./pgplot for plotting. We cheat linker as
+# we refuse to put shared object library ./pgplot/libpgplot.so in the
+# public domain, /usr/local/lib, that is.
+# This is done with PLIBS definition. Do not change unless you know
+# what you are doing. Marijan Kostrun, IV/2005
+#
+# PLOT_PROG = pgplot
+# PLOT_DIR= pgplot/
+# PLIBS = -L/usr/X11R6/lib$(CPUINFO)/ -lX11 -L./pgplot -lpgplot -lcpgplot
+# INC_DIR = -Ipgplot/
+PLOT_PROG = plplot
+PLOT_DIR = 
+PLIBS = -lplplot -lplplotcxx -lX11
+INC_DIR = -I/usr/include/plplot
+
+
+
+#
+# Put the whole mess together
+#
+
+LIBS = $(LIBGC) $(LLIBS) $(PLIBS) $(NALIBS) $(FLIBS) $(CMDLIBS) $(MLIB) -lm -lc
+
+#
+# Any special flags you might need for your system
+#
+
+# Silicon Graphics machines need this for popen()
+# SPECIAL_FLAGS = -ansiposix
+
+SPECIAL_FLAGS = -DASSERT_OFF $(IGC) -Wall
+
+#
+# prefix: The parent directory for the installation
+#
+# currently on linux 64 bit architectures there exist ../lib and ../lib64, where
+# the latter contains exclusively 64-bit libraries. for the time being on such
+# linux machines we will install rlab in ../lib64
+buildir = /scratch/rlabplus/rlab64/rlab-3.1.1-gcc
+prefix = /usr/local
+exec_prefix = ${prefix}
+bindir = $(exec_prefix)/bin
+libdir = $(exec_prefix)/lib$(CPUINFO)
+incdir = $(exec_prefix)/include
+mand = $(exec_prefix)/man
+mandir = $(exec_prefix)/man/man1
+
+#
+# Don't change these without modifying the install actions
+#
+
+TOPDIR = $(libdir)/rlab$(CPUINFO)-$(VER)
+DOCDIR = $(TOPDIR)/doc
+RHELPDIR = $(TOPDIR)/doc/help
+RLIBDIR = $(TOPDIR)/rlib
+DEFAULT_RC0 = $(TOPDIR)/.rlab
+TOOLBOX = $(TOPDIR)/toolbox
+CTOOLBOX = $(TOPDIR)/controls-toolbox
+
+INCDIR = $(incdir)/rlab
+
+#
+# The default RLaB search path. This path is searched when
+# the `help' and `rfile' commands are used. Users can
+# override this with the environment variable RLAB_SEARCH_PATH.
+#
+
+DEFAULT_SEARCH_PATH =	".:$(RLIBDIR):$(TOOLBOX):$(CTOOLBOX)"
+
+#
+# The pager command that most users will want.
+# Usually this is more, pg, or less.
+#
+
+DEFAULT_PAGER =	"less"
+DEFAULT_HELP_PAGER = "less"
+
+#
+# Do not edit below this point until you have tried to make
+#
+
+DFLAGS =	-DDEFAULT_RC0=\"$(DEFAULT_RC0)\" \
+		-DDEFAULT_HELP=\"$(RHELPDIR)\" \
+		-DDEFAULT_LIB=\"$(RLIBDIR)\" \
+		-DDEFAULT_PAGER=\"$(DEFAULT_PAGER)\" \
+		-DDEFAULT_HELP_PAGER=\"$(DEFAULT_HELP_PAGER)\" \
+		-DDEFAULT_SEARCH_PATH=\"$(DEFAULT_SEARCH_PATH)\"
+
+R_LIBS =	$(LIBS)
+
+R_OBJ =		main.o rlab.o lex.yy.o init.o code.o symbol.o \
+		list.o listnode.o op.o opapp.o opmat.o \
+		complex.o function.o rel.o util.o btree.o \
+		misc.o fpe.o ent.o mathl.o rfileio.o \
+		mde.o mdr.o class.o diss.o mdc.o mdr_mdc.o mds.o \
+		mdr_mds.o rfile.o bltin.o bltin1.o mdrf1.o \
+		print.o getline.o mdcf1.o mdsf1.o \
+		bltin2.o mdrf2.o ar.o mdcf2.o rfft.o sort.o \
+		rstring.o rdl.o odeb.o odesl.o chaos.o btreef1.o msr.o msrf1.o \
+		bltin3.o msc.o mscf1.o msrf2.o msrf3.o mscf2.o r_plot.o glpk_simplex.o \
+		gsl_rlab.o gsl_levinu.o gsl_pdf.o gsl_spline.o \
+		gsl_diffint.o gsl_min.o gsl_mins.o gsl_rng.o gsl_stat.o\
+		gsl_findroot.o gsl_findroots.o gsl_ndiff_md.o gsl_leastsquares.o gsl_wavelet.o\
+		gsl_nintegrate.o gsl_nintegrate_lt.o gsl_specfunc.o gsl_odeiv.o\
+		mdr_spf1.o odae.o mmio.o\
+		claw1.o odr.o pz1rl.o pdecol.o dloess.o \
+		bltin4.o bltin5.o mdrf4.o mdcf4.o dierckx.o crypto_hash.o \
+		asamin.o gnuplot.o r_sep.o \
+		rpython.o  rngspice.o rgphoto2.o r_imagemagick.o
+
+R_SRC =		main.c scan.l init.c code.c symbol.c \
+		list.c listnode.c op.c opapp.c opmat.c \
+		complex.c function.c rel.c util.c btree.c \
+		misc.c fpe.c ent.c mathl.c rfileio.c \
+		mde.c mdr.c class.c diss.c mdc.c mdr_mdc.c mds.c \
+		mdr_mds.c rfile.c bltin.c bltin1.c mdrf1.c \
+		print.c getline.c mdcf1.c mdsf1.c \
+		bltin2.c mdrf2.c ar.c mdcf2.c rfft.c sort.c \
+		rstring.c rdl.c odeb.c odesl.c btreef1.c msr.c msrf1.c \
+		bltin3.c msc.c mscf1.c msrf2.c msrf3.c mscf2.c r_plot.c \
+		chaos.c glpk_simplex.c gsl_diffint.c gsl_rlab.c gsl_min.c gsl_mins.c\
+		gsl_pdf.c gsl_specfunc.c gsl_findroot.c gsl_findroots.c gsl_ndiff_md.c\
+		gsl_rng.c gsl_spline.c gsl_leastsquares.c gsl_wavelet.c\
+		gsl_nintegrate.c gsl_nintegrate_lt.c gsl_rng_nintegrate_mc.c\
+		gsl_stat.c gsl_levinu.c gsl_odeiv.c gsl_rng_siman.c\
+		mdr_spf1.c odae.c mmio.c\
+		claw1.c odr.c pz1rl.c pdecol.c dloess.c \
+		bltin4.c bltin5.c mdrf4.c mdcf4.c dierckx.c crypto_hash.c \
+		asamin.c gnuplot.c r_sep.c\
+		rpython.c  rngspice.r rgphoto2.c r_imagemagick.c
+
+#
+# Fortran section
+#
+F_SRC = lp.f ode.f acdc.f gcvspl.f 510.f\
+		claw1rl.f sleign2.f mirkdc.f coldae.f \
+		sparskit.f sparse.f $(SPARSE_SRC) \
+		ar1rl.f pzeros.f 688.f 579.f conmax2.f \
+		811.f vode.f mebdfi.f ddaskr.f expokit.f \
+		invltf.f libmjdpowell.f
+
+F_OBJ = lp.o ode.o acdc.o gcvspl.o 510.o\
+		claw1rl.o sleign2.o mirkdc.o coldae.o \
+		sparskit.o sparse.o $(SPARSE_OBJ) \
+		ar1rl.o pzeros.o 688.o 579.o conmax2.o \
+		811.o vode.o mebdfi.o ddaskr.o expokit.o \
+		invltf.o libmjdpowell.o
+
+# ALLOCA = 	
+# GNU_OBJ =	getopt.o getopt1.o $(ALLOCA)
+# GNU_SRC =	getopt.c getopt1.c alloca.c
+
+SRC = 	$(R_SRC) $(F_SRC) $(EXTRA_SRC) $(GNU_SRC) $(CMD_SRC)
+OBJ = 	$(R_OBJ) $(F_OBJ) $(EXTRA_OBJ) $(GNU_OBJ) $(CMD_OBJ)
+
+all:	scanner gc flibs clibs rlab
+
+clibs:	$(CTFTBX) $(GNULIBA) $(SEPLIBA)
+
+#
+# c-libraries
+#
+$(CTFTBX):
+	cd ./clibs/ctftbx ;\
+	$(MAKE) rlabplus
+
+$(GNULIBA):
+	cd ./clibs/gnulib ;\
+	$(MAKE)
+
+$(SEPLIBA):
+	cd ./clibs/sep ;\
+	$(MAKE) libsep.a
+#
+# good ole' fortran libs
+#
+
+flibs:	$(BACOL) $(CLAWPACK) $(CONTIN) $(FFTPACK) $(FITPACK) \
+	$(GENZPAK) $(HOMPACK) $(LAPACKAUX)  $(LOESS) $(MINPACK) \
+	$(ODEBIM) $(ODRPACK) $(SLATEC) $(SPARSKIT) 
+
+
+$(BACOL):
+	cd ./flibs/bacol ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(CLAWPACK):
+	cd ./flibs/clawpack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(CONTIN):
+	cd ./flibs/contin ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(FFTPACK):
+	cd ./flibs/fftpack ;\
+	./configure ;\
+	$(MAKE) ;\
+	$(MAKE) cleanlib
+
+$(FITPACK):
+	cd ./flibs/fitpack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(GENZPAK):
+	cd ./flibs/genzpak ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(HOMPACK):
+	cd ./flibs/hompack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(LAPACKAUX):
+	cd ./flibs/lapack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(LOESS):
+	cd ./flibs/loess ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(MINPACK):
+	cd ./flibs/minpack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(ODEBIM):
+	cd ./flibs/odebim ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(ODRPACK):
+	cd ./flibs/odrpack ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(SLATEC):
+	cd ./flibs/slatec ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+$(SPARSKIT):
+	cd ./flibs/sparskit2 ;\
+	$(MAKE) lib ;\
+	$(MAKE) cleanlib
+
+PGPLOT:
+	cd ./flibs/pgplot/bin ;\
+	./rmake clean ;\
+	./rmake cleanlib
+
+gc:
+	cd gc ;\
+	./configure --disable-threads ;\
+	$(MAKE) CFLAGS="-O3 -DNO_SIGNALS -DGC_LARGE_ALLOC_WARN_INTERVAL=12345678 -DGC_IGNORE_WARN -DSILENT -fPIC $(CFLAGS)" CC=$(CC)
+
+scanner:
+	rm rlab.o class.o code.o function.o lex.yy.o lex.yy.c 2>/dev/null ;\
+	if test -n "$(LEX)"; then \
+		$(LEX) -I -L -X -v scan.l ;\
+		sed -f misc/r.sed lex.yy.c > lex.tmp ;\
+		mv lex.tmp lex.yy.c ;\
+		cp lex.yy.c lex_dist.yy.c ;\
+	else echo "flex not available: Copying scanner from distribution files" ;\
+		cp lex_dist.yy.c lex.yy.c ;\
+	fi ;\
+	echo "Expect 62 shift/reduce and 42 reduce/reduce conflicts" ;\
+	echo "Beer and pizza for 5 of each removed to the ultimate goal of 20 shift/reduce conficts (Searle's Limit)." ;\
+	if test -n "$(YACC)"; then \
+		$(YACC) $(YFLAGS) rlab3_parser.y ;\
+		mv y.tab.c rlab.c ;\
+		cp rlab.c  rlab3_dist.c;\
+		cp y.tab.h y_dist3.tab.h ;\
+	else echo "bison not available: Copying scanner from distribution files" ;\
+		cp y_dist3.tab.h y.tab.h ;\
+		cp rlab3_dist.c rlab.c ;\
+	fi ;\
+	$(CC) $(CFLAGS) $(SPECIAL_FLAGS) $(DEFS) $(COMMAND_EDIT) 1>/dev/null -c lex.yy.c
+
+.PHONY:		gc clean libclean distclean check
+
+#
+# If you are using f2c instead of a Fortran compiler, you will probably
+# need to change the $(F77) to a $(CC).
+#
+
+rlab:	$(OBJ)
+		$(F77) $(EXFLAGS) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+		$(OBJ) $(R_LIBS) $(PLOT_LIBS) -o rlab $(RLABPLUSLIBS)
+
+#
+# Ignore these unless you know what CodeTEST Native for Solaris is.
+# To really use this rule, you have to do:
+# make CC=ctcc
+#
+CTFLAGS = -L$(AMC_HOME)/lib/swinckt/lib -lctnative -lposix4 -lsocket -lnsl
+
+rlabinst:	$(OBJ)
+		$(F77) $(EXFLAGS) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+		$(OBJ) $(R_LIBS) $(PLOT_LIBS) $(CTFLAGS) -o rlab
+
+Makefile:	Makefile.in config.status
+		$(SHELL) config.status
+
+#
+# Subdirectories/files to install
+#
+COPYDIR =	\
+	controls-toolbox/*.r3 \
+	doc/RLAB-reference.pdf \
+	doc/help doc/html\
+	rlib/*.r3 \
+	toolbox/*.r3 \
+	.rlab misc/dot_rlab.r3 \
+	ACKNOWLEDGMENT.* \
+	README.rlab*
+
+uninstall:
+	if test -d ${TOPDIR} ; then \
+		rm -rf ${TOPDIR} ;\
+	fi ;\
+	if test -L "$(libdir)/rlab3" ; then \
+		rm -f  $(libdir)/rlab3 ;\
+	fi ;\
+	if test -d "${INCDIR}" ; then \
+		rm -rf ${INCDIR} ;\
+	fi ;\
+	if test -s "$(bindir)/rlab$(CPUINFO)-$(VER)" ; then \
+		rm -f  $(bindir)/rlab$(CPUINFO)-$(VER) ;\
+	fi ;\
+	if test -s "$(bindir)/rlab3" ; then \
+		rm -f  $(bindir)/rlab3 ;\
+	fi ;\
+	if test -s "$(mandir)/rlab3" ; then \
+		rm -f  $(mandir)/rlab3 ;\
+	fi
+
+install:	rlab mkdir
+		-if [ `/bin/pwd` != `(cd ${TOPDIR}; /bin/pwd)` ] ; then \
+		tar cf - ${COPYDIR} | (cd ${TOPDIR}; umask 022; tar xf - ) ;\
+		fi
+		-if [ `/bin/pwd` != `(cd ${INCDIR}; /bin/pwd)` ] ; then \
+		tar cf - *.h | (cd ${INCDIR}; umask 022; tar xf - ) ;\
+		fi
+		-if [ `/bin/pwd` != `(cd ${INCDIR}/gc; /bin/pwd)` ] ; then \
+			cp gc/include/*.h ${INCDIR}/gc ;\
+		fi
+		if test "$(PLOT_PROG)" = "plplot" ; then\
+		  cp misc/plplot.r3 ${TOPDIR}/rlib/plot.r3;\
+		  cd misc/plhelp; tar cf - . | (cd ${RHELPDIR}; umask 022; tar xf - ) ;\
+		fi
+		if test "$(PLOT_PROG)" = "pgplot" ; then\
+		    cp -a pgplot ${TOPDIR};\
+		    cp misc/pgplot.r3 ${TOPDIR}/rlib/plot.r3;\
+		    cd misc/pghelp; tar cf - . | (cd ${RHELPDIR}; umask 022; tar xf - ) ;\
+		fi
+		if test "$(PLOT_PROG)" = "plotmtv" ; then\
+		  cp misc/plotmtv.r3 ${TOPDIR}/rlib/plot.r3;\
+		fi
+		$(INSTALL_PROGRAM) rlab $(bindir)/rlab$(CPUINFO)-$(VER)
+		if test -x "$(bindir)/rlab3" ; then\
+		  rm -f $(bindir)/rlab3;\
+		fi
+		sed 's%libjvm_dir%%g' ./misc/rlab > ./misc/rlab.tmp
+		sed 's@rlab_exec_prefix@$(exec_prefix)@' ./misc/rlab.tmp > ./misc/rlab.tmp.0
+		sed 's@rlab_ver_string@$(VER)@' ./misc/rlab.tmp.0 > ./misc/rlab.tmp.1
+		sed 's@plot_dir@$(PLOT_DIR)@' ./misc/rlab.tmp.1 > ./misc/rlab.tmp.2
+		sed 's@plot_prog@$(PLOT_PROG)@' ./misc/rlab.tmp.2 > ./misc/rlab.tmp.3
+		sed 's@rlab_ver@3@' ./misc/rlab.tmp.3 > ./misc/rlab3
+		rm -f ./misc/rlab.tmp ./misc/rlab.tmp.*
+		$(INSTALL_PROGRAM) ./misc/rlab3 $(bindir)/rlab3
+		if test "$(LN)" = "ln" ; then\
+		  @echo "RECOMMENDED YOU MV $(TOPDIR) to $(libdir)/rlab3";\
+		fi
+		if test "$(LN)" = "ln -s" ; then\
+		  if test -r "$(libdir)/rlab3" ; then\
+		    rm $(libdir)/rlab3;\
+		  fi;\
+		  cd $(libdir); $(LN) ./rlab$(CPUINFO)-$(VER) ./rlab3;\
+		fi
+		cd $(buildir); $(INSTALL) doc/rlab3 $(mandir)/rlab3
+
+mkdir:
+		-mkdir -p $(exec_prefix) $(bindir) $(libdir) $(mand) \
+			$(mandir) $(TOPDIR) $(INCDIR) $(INCDIR)/gc $(RLIBDIR) $(DOCDIR) \
+			$(RHELPDIR) $(TOOLBOX) $(CTOOLBOX)
+
+FRC:
+
+tags:		$(SRC)
+		etags $(SRC) *.h
+
+depend:		$(SRC)
+		rm -f make_depends; gcc $(IGC) $(INC_DIR) -MM $(SRC) > make_depends
+
+main.o:		main.c
+		$(CC) $(CFLAGS) $(DEFS) $(DFLAGS) $(SPECIAL_FLAGS) -c main.c
+
+lex.yy.$(O):	config.h
+	[ -f lex.yy.c ]|| cp lex.yy.c_dist lex.yy.c ;\
+	$(CC) $(CFLAGS) $(SPECIAL_FLAGS) $(DEFS) $(COMMAND_EDIT) -c lex.yy.c
+
+#rlab.$(O):	rlab.c
+rlab.$(O):
+		[ -f rlab.c ]|| cp rlab.c_dist rlab.c ;\
+		$(CC) $(CFLAGS) $(SPECIAL_FLAGS) $(DEFS) $(YCFLAGS) -c rlab.c
+
+# y.tab.h rlab.c: rlab.y rlab.h mem.h list.h code.h symbol.h function.h util.h
+# 		if test -n "$(YACC)"; then \
+# 			echo 'expect 17 shift/reduce conflicts' ;\
+# 			$(YACC) $(YFLAGS) rlab.y ;\
+# 			mv y.tab.c rlab.c ;\
+# 		else echo 'bison not available: Copying scanner from distribution files' ;\
+# 			cp rlab.c_dist rlab.c ;\
+# 		fi
+
+
+r_plot.$(O):
+		$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+		$(INC_DIR) r_plot.c
+
+r_pgplot.$(O):
+		$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+		$(INC_DIR) r_pgplot.c
+
+clean:
+	rm -f rlab .rlab version.h $(OBJ) *.output rlab.c lex.yy.c y.tab.h config.cache core;\
+	cd ./gc; $(MAKE) clean 2>/dev/null ; cd .. ;\
+	cd ./pgplot; rm -f * ; cd .. ;\
+	(for i in "$(CTFTBX) $(GNULIBA) $(SEPLIBA) \
+		$(BACOL) $(CLAWPACK) $(CONTIN) $(FFTPACK) \
+		$(FITPACK) $(GENZPAK) $(HOMPACK) $(LAPACKAUX) $(LOESS) $(MINPACK) \
+		$(ODEBIM) $(ODRPACK) $(SLATEC) $(SPARSKIT)"; do /bin/rm -rf $$i ; done) ;\
+	(cd ./flibs/pgplot/bin ;\
+	/bin/rm -rf *.o *.so *.a *.h *.dat *.inc makefile pg* rgb.txt *demo* *.f )
+
+#
+# Define SUFFIXES for non-UNIX systems and brain damaged make
+# utilities
+#
+
+.SUFFIXES:	$(EXE) .out .$A .ln .$O .c .cc .C .p .f .F .r .y .l .s .S\
+		.mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo\
+		.w .ch .web .sh .elc .el
+
+.c.o:
+		$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) $<
+
+#
+# I now assume that you have a fortran compiler available.  So, the
+# following lines are commented out.  If you have to use f2c, then you
+# should uncomment them, and comment out the F77 and .f.o rules below.
+#
+
+# The name of f2c (duh...)
+#F2C =		f2c
+
+#
+# The F2C libraries are REQUIRED
+# FLIBS = -L/usr/my/lib -lF77 -lI77
+# FLIBS = -L/usr/my/lib -lf2c
+#
+FLIBS = 
+# FLIBS = 
+
+#lp.c:		lp.f
+#		if test -n "$(F2C)" ;\
+#		then  $(F2C) -R lp.f ;\
+#		else echo 'copying distribution files' ;\
+#		      cp lp.c_dist lp.c ;\
+#		fi
+
+#bl.c:		bl.f
+#		if test -n "$(F2C)" ;\
+#		then  $(F2C) -R bl.f ;\
+#		else echo 'copying distribution files' ;\
+#		      cp bl.c_dist bl.c ;\
+#		fi
+
+#ode.c:		ode.f
+#		if test -n "$(F2C)" ;\
+#		then  $(F2C) ode.f ;\
+#		else echo 'copying distribution files' ;\
+#		      cp ode.c_dist ode.c ;\
+#		fi
+
+#sparse.c:	sparse.f
+#		if test -n "$(F2C)" ;\
+#		then  $(F2C) sparse.f ;\
+#		else echo 'copying distribution files' ;\
+#		      cp sparse.c_dist sparse.c ;\
+#		fi
+
+#umfpack.c:	umfpack.f
+#		if test -n "$(F2C)" ;\
+#		then  $(F2C) umfpack.f ;\
+#		else echo 'copying distribution files' ;\
+#		      cp umfpack.c_dist umfpack.c ;\
+#		fi
+
+#
+# Comment out these following 2 lines if you are using f2c.
+.f.$(O):
+		$(F77) -c $(FFLAGS) $<
+
+#
+# The following files have special rules because they need special flags
+# for the C -> Fortran inter-language calling convention.
+#
+dloess.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) dloess.c
+
+mdr.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdr.c
+
+mde.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mde.c
+
+mdc.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdc.c
+
+mdrf2.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdrf2.c
+
+mdrf4.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdrf4.c
+
+mdcf4.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdcf4.c
+
+dierckx.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) dierckx.c
+
+ar.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) ar.c
+
+mdcf2.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdcf2.c
+
+rfft.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) rfft.c
+
+odeb.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) odeb.c
+odr.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) odr.c
+
+pz1rl.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) pz1rl.c
+odesl.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) odesl.c
+
+claw1.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) claw1.c
+
+mdr_spf1.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mdr_spf1.c
+
+chaos.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) chaos.c
+
+glpk_simplex.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) glpk_simplex.c
+
+gsl_diffint.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_diffint.c
+
+gsl_findroot.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_findroot.c
+
+gsl_findroots.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_findroots.c
+
+gsl_leastsquares.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_leastsquares.c
+
+gsl_levinu.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_levinu.c
+
+gsl_min.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_min.c
+
+gsl_mins.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_mins.c
+
+gsl_ndiff_md.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_ndiff_md.c
+
+gsl_nintegrate.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_nintegrate.c
+
+gsl_nintegrate_lt.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_nintegrate_lt.c
+
+gsl_rng.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_rng.c
+
+gsl_spline.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_spline.c
+
+gsl_stat.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_stat.c
+
+gsl_odeiv.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gsl_odeiv.c
+
+odae.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) odae.c
+
+msr.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) msr.c
+
+msrf1.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) msrf1.c
+
+msrf2.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+			$(SPARSE_INC) msrf2.c
+
+msrf3.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+			$(SPARSE_INC) msrf3.c
+
+mscf2.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) \
+			$(SPARSE_INC) mscf2.c
+
+msc.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) msc.c
+
+mscf1.o:
+		$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mscf1.c
+
+pdecol.o:
+	$(CC) -c $(FCONV) $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) pdecol.c
+
+mmio.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) mmio.c
+
+crypto_hash.o:
+	$(CC) -c $(CFLAGS) -I/usr/include/openssl $(DEFS) $(SPECIAL_FLAGS) crypto_hash.c
+
+r_sep.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) -I./clibs/sep/src r_sep.c
+
+
+asamin.o:
+	$(CC) -c $(CFLAGS)  $(DEFS) $(SPECIAL_FLAGS) \
+	-DASA_TEST=FALSE \
+	-DASA_TEMPLATE_ASA_OUT_PID=FALSE \
+	-DASA_TEMPLATE_MULTIPLE=FALSE \
+	-DASA_TEMPLATE_SELFOPT=FALSE \
+	-DASA_TEMPLATE_SAMPLE=FALSE \
+	-DASA_TEMPLATE_QUEUE=FALSE \
+	-DASA_TEMPLATE_PARALLEL=FALSE \
+	-DASA_TEMPLATE_SAVE=FALSE \
+	-DOPTIONS_FILE=FALSE \
+	-DOPTIONS_FILE_DATA=FALSE \
+	-DRECUR_OPTIONS_FILE=FALSE \
+	-DRECUR_OPTIONS_FILE_DATA=FALSE \
+	-DCOST_FILE=FALSE \
+	-DASA_LIB=FALSE \
+	-DASA_TEMPLATE_LIB=FALSE \
+	-DHAVE_ANSI=TRUE \
+	-DIO_PROTOTYPES=FALSE \
+	-DTIME_CALC=FALSE \
+	-DTIME_STD=FALSE \
+	-DINT_LONG=TRUE \
+	-DINT_ALLOC=FALSE \
+	-DSMALL_FLOAT=1.0E-18 \
+	-DMIN_DOUBLE=SMALL_FLOAT \
+	-DMAX_DOUBLE=1.0/SMALL_FLOAT \
+	-DEPS_DOUBLE=SMALL_FLOAT \
+	-DCHECK_EXPONENT=FALSE \
+	-DNO_PARAM_TEMP_TEST=FALSE \
+	-DNO_COST_TEMP_TEST=FALSE \
+	-DSELF_OPTIMIZE=FALSE \
+	-DASA_TEST=FALSE \
+	-DASA_TEST_POINT=FALSE \
+	-DUSER_INITIAL_COST_TEMP=FALSE \
+	-DRATIO_TEMPERATURE_SCALES=FALSE \
+	-DUSER_INITIAL_PARAMETERS_TEMPS=TRUE \
+	-DDELTA_PARAMETERS=FALSE \
+	-DQUENCH_PARAMETERS=FALSE \
+	-DQUENCH_COST=FALSE \
+	-DQUENCH_PARAMETERS_SCALE=FALSE \
+	-DQUENCH_COST_SCALE=FALSE \
+	-DASA_TEMPLATE=FALSE \
+	-DOPTIONAL_DATA_DBL=FALSE \
+	-DOPTIONAL_DATA_INT=FALSE \
+	-DOPTIONAL_DATA_PTR=FALSE \
+	-DUSER_COST_SCHEDULE=TRUE \
+	-DUSER_ACCEPT_ASYMP_EXP=FALSE \
+	-DUSER_ACCEPT_THRESHOLD=TRUE \
+	-DUSER_ACCEPTANCE_TEST=TRUE \
+	-DUSER_GENERATING_FUNCTION=TRUE \
+	-DUSER_REANNEAL_COST=FALSE \
+	-DUSER_REANNEAL_PARAMETERS=FALSE \
+	-DMAXIMUM_REANNEAL_INDEX=50000 \
+	-DREANNEAL_SCALE=10 \
+	-DASA_SAMPLE=FALSE \
+	-DASA_QUEUE=FALSE \
+	-DASA_RESOLUTION=FALSE \
+	-DFITLOC=FALSE \
+	-DMULTI_MIN=FALSE \
+	-DASA_PARALLEL=FALSE \
+	-DFDLIBM_POW=FALSE \
+	-DFDLIBM_LOG=FALSE \
+	-DFDLIBM_EXP=FALSE \
+	-DASA_PRINT=TRUE \
+	-DASA_OUT=\"STDOUT\" \
+	-DUSER_OUT=\"STDOUT\" \
+	-DINCL_STDOUT=FALSE \
+	-DUSER_ASA_OUT=TRUE \
+	-DASA_PRINT_INTERMED=TRUE \
+	-DASA_PRINT_MORE=TRUE \
+	-DG_FIELD=12 -DG_PRECISION=7 \
+	-DASA_SAVE=FALSE -DASA_SAVE_BACKUP=FALSE \
+	-DASA_SAVE_OPT=FALSE -DASA_PIPE=FALSE \
+	-DASA_PIPE_FILE=FALSE -DSYSTEM_CALL=TRUE \
+	asamin.c
+
+gnuplot.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) gnuplot.c
+
+rpython.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) rpython.c
+
+rjava.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) rjava.c
+
+rngspice.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) rngspice.c
+
+rgphoto2.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS) $(G2FLAGS) rgphoto2.c
+
+r_imagemagick.o:
+	$(CC) -c $(CFLAGS) $(DEFS) $(SPECIAL_FLAGS)	$(IMCFLAGS) r_imagemagick.c
+
+#
+# Automatically generated dependencies, do not edit. To regenerate
+# type `make depend' and then edit this file to include the new list
+# of dependencies.
+#
+main.o: main.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h code.h list.h symbol.h util.h rfile.h \
+rfileio.h mdc.h complex.h bltin.h class.h bltin1.h bltin2.h \
+bltin3.h msr.h bltin4.h rfft.h gc/include/private/gc_priv.h \
+gc/include/private/../gc_tiny_fl.h gc/include/private/../gc_mark.h \
+gc/include/private/gcconfig.h gc/include/private/gc_hdrs.h \
+gc/include/private/gc_locks.h fpe.h mathl.h
+init.o: init.c rlab_solver_parameters_names.h rlab.h config.h version.h \
+ent.h mds.h mdr.h btree.h listnode.h symbol.h list.h util.h print.h \
+btreef1.h rlabplus_glpk.h rlabplus_gsl.h rlabplus_claw.h rlabplus_pde.h \
+rlabplus_odr.h rlabplus_arpack.h rlabplus_pz.h rlabplus_dloess.h \
+rlabplus_dierckx.h gnuplot.h bltin.h bltin1.h bltin2.h bltin3.h msr.h \
+bltin4.h rfft.h rfileio.h mdc.h complex.h rdl.h msrf2.h mscf2.h msc.h \
+r_pgplot.h rlabplus_python.h rjava.h rngspice.h rgphoto2.h
+code.o: code.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h y.tab.h bltin.h \
+function.h util.h rfile.h mdc.h complex.h
+symbol.o: symbol.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h function.h util.h
+list.o: list.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h util.h list.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h
+listnode.o: listnode.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h list.h
+op.o: op.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h listnode.h \
+code.h list.h symbol.h class.h util.h
+opapp.o: opapp.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h class.h util.h
+opmat.o: opmat.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h class.h util.h
+complex.o: complex.c complex.h rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h util.h list.h mathl.h
+function.o: function.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h code.h list.h symbol.h function.h util.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h
+rel.o: rel.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h class.h util.h
+util.o: util.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h mdc.h \
+complex.h function.h sort.h fpe.h
+btree.o: btree.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h function.h util.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h
+misc.o: misc.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h
+fpe.o: fpe.c config.h
+ent.o: ent.c ent.h mds.h rlab.h config.h version.h listnode.h mdr.h \
+btree.h class.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h list.h
+mathl.o: mathl.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mathl.h complex.h util.h list.h
+rfileio.o: rfileio.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h bltin.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h util.h mdc.h \
+complex.h msr.h msc.h mathl.h rlabplus_termcap.h \
+rlab_solver_parameters_names.h rfileio_hdf5.c serial.c
+mdr.o: mdr.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h rfileio.h mdc.h complex.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf2.h mdrf1.h \
+util.h list.h bltin1.h bltin.h mathl.h fi.h blas.h
+class.o: class.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h util.h list.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h function.h \
+mdrf1.h mdc.h complex.h mdcf1.h mdr_mdc.h mdsf1.h mdr_mds.h msr.h \
+msrf1.h msrf2.h msc.h mscf1.h mscf2.h
+diss.o: diss.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h code.h list.h symbol.h bltin.h print.h util.h
+mdc.o: mdc.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdc.h complex.h mdcf2.h mdcf1.h mdr_mdc.h \
+util.h list.h bltin1.h bltin.h rfileio.h mathl.h blas.h fi.h
+mdr_mdc.o: mdr_mdc.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdrf1.h mdrf2.h mdc.h complex.h mdcf1.h \
+mdcf2.h util.h list.h
+mds.o: mds.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h list.h bltin1.h bltin.h rfileio.h \
+mdc.h complex.h mathl.h
+mdr_mds.o: mdr_mds.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h list.h
+rfile.o: rfile.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h rfile.h
+bltin.o: bltin.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h util.h mathl.h complex.h class.h \
+rfileio.h mdc.h
+bltin1.o: bltin1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h class.h rfileio.h \
+mdc.h complex.h mathl.h btreef1.h function.h mdrf1.h mdcf1.h mdr_mdc.h \
+mdsf1.h mdr_mds.h msr.h msrf1.h msc.h mscf1.h
+mdrf1.o: mdrf1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdc.h complex.h util.h list.h mdrf1.h \
+mathl.h symbol.h sort.h
+print.o: print.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h bltin.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h util.h rfileio.h \
+mdc.h complex.h class.h scan.h
+getline.o: getline.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h bltin1.h util.h scan.h print.h \
+class.h rfileio.h mdc.h complex.h mdr_mdc.h mdcf1.h mdcf2.h
+mdcf1.o: mdcf1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdc.h complex.h util.h list.h symbol.h \
+mathl.h sort.h
+mdsf1.o: mdsf1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h util.h list.h symbol.h mathl.h complex.h \
+sort.h
+bltin2.o: bltin2.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h class.h rfileio.h \
+mdc.h complex.h mathl.h function.h mdrf1.h mdrf2.h ar.h msr.h msc.h \
+mdcf1.h mdcf2.h mdr_mdc.h mdsf1.h mdr_mds.h msrf1.h msrf2.h mscf1.h \
+mscf2.h
+mdrf2.o: mdrf2.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdrf1.h mdc.h complex.h \
+util.h mathl.h fi.h lp.h blas.h
+ar.o: ar.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h listnode.h \
+mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdrf1.h mdrf2.h mdc.h \
+complex.h mdcf1.h mdcf2.h msr.h msrf1.h msrf2.h msc.h mscf1.h mscf2.h \
+util.h mathl.h ar.h fi.h lp.h blas.h arpack.h
+mdcf2.o: mdcf2.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdc.h complex.h mdcf1.h \
+util.h mathl.h fi.h lp.h blas.h
+rfft.o: rfft.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h bltin.h mdc.h complex.h \
+util.h class.h rfileio.h function.h mdrf1.h mdrf2.h mdcf1.h mdcf2.h \
+mdr_mdc.h mdsf1.h mdr_mds.h msr.h msrf1.h msc.h mscf1.h mathl.h fftp.h \
+fi.h clibs/ctftbx/libctftbx.h clibs/ctftbx/tftb.h
+sort.o: sort.c
+r_plot.o: r_plot.c config.h
+rstring.o: rstring.c
+rdl.o: rdl.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h symbol.h list.h bltin.h class.h util.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h
+odeb.o: odeb.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h ode.h \
+rlab_solver_parameters_names.h
+odesl.o: odesl.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h ode.h \
+rlab_solver_parameters_names.h
+btreef1.o: btreef1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h function.h util.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h
+msr.o: msr.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h util.h list.h bltin1.h bltin.h \
+mathl.h complex.h rfileio.h mdc.h fi.h sparse.h
+msrf1.o: msrf1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h msc.h mdc.h complex.h mscf1.h \
+mdrf1.h util.h list.h symbol.h sort.h mathl.h fi.h sparse.h
+bltin3.o: bltin3.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h class.h rfileio.h \
+mdc.h complex.h function.h mdrf1.h mdrf2.h mdcf1.h mdcf2.h mdr_mdc.h \
+mdsf1.h mdr_mds.h msr.h msrf1.h msrf2.h msc.h mscf1.h mscf2.h
+msc.o: msc.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h msrf1.h mdc.h complex.h msc.h \
+mdr_mdc.h util.h list.h bltin1.h bltin.h mathl.h rfileio.h fi.h sparse.h
+mscf1.o: mscf1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h msrf1.h mdc.h complex.h msc.h \
+mdr_mdc.h util.h list.h symbol.h sort.h mathl.h fi.h sparse.h
+msrf2.o: msrf2.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h mscf2.h msc.h mdc.h complex.h \
+mdrf1.h util.h list.h symbol.h sort.h mathl.h class.h fi.h sparskit.h \
+sparse.h
+msrf3.o: msrf3.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h mdrf1.h mdc.h complex.h util.h \
+list.h symbol.h sort.h mathl.h class.h fi.h sparskit.h sparse.h
+mscf2.o: mscf2.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h msr.h msc.h mdc.h complex.h mscf1.h \
+mdr_mdc.h mdcf1.h util.h list.h symbol.h sort.h fi.h sparse.h
+r_pgplot.o: r_pgplot.c config.h rlab.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h symbol.h list.h bltin.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+class.h util.h rfileio.h pgplot/cpgplot.h
+chaos.o: chaos.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h
+glpk_simplex.o: glpk_simplex.c rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h mdc.h \
+complex.h msr.h bltin.h util.h mathl.h function.h \
+rlab_solver_parameters_names.h
+gsl_diffint.o: gsl_diffint.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h \
+rlab_solver_parameters_names.h
+gsl_min.o: gsl_min.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h conmax.h gsl_rlab.h \
+rlab_solver_parameters_names.h
+gsl_mins.o: gsl_mins.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h conmax.h libmjdpowell.h \
+gsl_rlab.h rlab_solver_parameters_names.h
+gsl_pdf.o: gsl_pdf.c complex.h rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdc.h mdcf1.h mdcf2.h mathl.h gsl_cpf.c
+gsl_specfunc.o: gsl_specfunc.c complex.h rlab.h config.h version.h ent.h \
+mds.h mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdc.h mdcf1.h mdcf2.h
+gsl_findroot.o: gsl_findroot.c rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h hompack.h \
+rlab_solver_parameters_names.h
+gsl_findroots.o: gsl_findroots.c rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h hompack.h \
+rlab_solver_parameters_names.h
+gsl_ndiff_md.o: gsl_ndiff_md.c rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h
+gsl_rng.o: gsl_rng.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h mdc.h \
+complex.h bltin.h util.h mathl.h function.h lp.h fi.h mdr_mdc.h \
+rlab_solver_parameters_names.h gsl_rng_siman.c gsl_rng_nintegrate_mc.c \
+gsl_rng_deoptim.c ode.h
+gsl_spline.o: gsl_spline.c complex.h rlab.h config.h version.h ent.h \
+mds.h mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdc.h mdcf1.h mdcf2.h rlab_solver_parameters_names.h
+gsl_leastsquares.o: gsl_leastsquares.c rlab.h config.h version.h ent.h \
+mds.h mdr.h btree.h listnode.h class.h symbol.h list.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h \
+mdrf1.h bltin.h util.h mathl.h complex.h function.h lp.h fi.h minpack.h \
+slatec.h rlab_solver_parameters_names.h
+gsl_wavelet.o: gsl_wavelet.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h mdc.h \
+complex.h bltin.h util.h mathl.h function.h lp.h fi.h \
+rlab_solver_parameters_names.h
+gsl_nintegrate.o: gsl_nintegrate.c complex.h rlab.h config.h version.h \
+ent.h mds.h mdr.h btree.h listnode.h class.h symbol.h list.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h \
+mdc.h mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h genzpak.h \
+slatec.h rlab_solver_parameters_names.h
+gsl_nintegrate_lt.o: gsl_nintegrate_lt.c rlab.h config.h version.h ent.h \
+mds.h mdr.h btree.h listnode.h class.h symbol.h list.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h \
+mdc.h complex.h mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h \
+rlab_solver_parameters_names.h
+gsl_rng_nintegrate_mc.o: gsl_rng_nintegrate_mc.c
+gsl_stat.o: gsl_stat.c complex.h rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdrf1.h mdc.h mdcf1.h mdcf2.h mathl.h \
+rlab_solver_parameters_names.h
+gsl_levinu.o: gsl_levinu.c complex.h rlab.h config.h version.h ent.h \
+mds.h mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdc.h mdcf1.h mdcf2.h
+gsl_odeiv.o: gsl_odeiv.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdrf1.h symbol.h list.h bltin.h util.h \
+mathl.h complex.h function.h lp.h fi.h ode.h \
+rlab_solver_parameters_names.h
+gsl_rng_siman.o: gsl_rng_siman.c
+mdr_spf1.o: mdr_spf1.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h complex.h \
+mdc.h mdcf1.h bltin.h util.h mathl.h function.h lp.h fi.h sp.h \
+rlab_solver_parameters_names.h
+odae.o: odae.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h mdrf1.h symbol.h list.h bltin.h util.h \
+mathl.h complex.h function.h lp.h fi.h ode.h \
+rlab_solver_parameters_names.h
+mmio.o: mmio.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h mdc.h msr.h msc.h mmio.h
+claw1.o: claw1.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h clawpack.h ode.h
+odr.o: odr.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h odrpack.h \
+rlab_solver_parameters_names.h
+pz1rl.o: pz1rl.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdrf1.h mdrf2.h mdc.h \
+complex.h mdcf1.h mdcf2.h msr.h msrf1.h msrf2.h msc.h mscf1.h mscf2.h \
+util.h mathl.h class.h bltin.h function.h lp.h fi.h pzeros.h \
+rlab_solver_parameters_names.h
+pdecol.o: pdecol.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdc.h complex.h \
+mdrf1.h bltin.h util.h mathl.h function.h lp.h fi.h pdecol.h \
+rlab_solver_parameters_names.h
+dloess.o: dloess.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h
+bltin4.o: bltin4.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h class.h rfileio.h \
+mdc.h complex.h mathl.h function.h mdrf4.h mdcf4.h
+mdrf4.o: mdrf4.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdrf1.h mdc.h complex.h \
+util.h mathl.h fi.h lp.h blas.h expokit.h
+mdcf4.o: mdcf4.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h symbol.h list.h mdc.h complex.h mdcf1.h \
+util.h mathl.h mdr_mdc.h fi.h lp.h blas.h expokit.h
+dierckx.o: dierckx.c complex.h rlab.h config.h version.h ent.h mds.h \
+mdr.h btree.h listnode.h class.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h list.h \
+util.h mdrf1.h mdrf2.h dierckx.h fi.h rlab_solver_parameters_names.h
+crypto_hash.o: crypto_hash.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h bltin.h bltin1.h \
+util.h scan.h print.h class.h rfileio.h mdc.h complex.h mdr_mdc.h \
+mdcf1.h mdcf2.h
+asamin.o: asamin.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h mdc.h \
+complex.h bltin.h util.h mathl.h function.h lp.h fi.h gsl_rng.h \
+asa_usr_asa.h asa.c asa.h rlab_solver_parameters_names.h
+gnuplot.o: gnuplot.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mdc.h complex.h mdr_mdc.h mdcf1.h mdcf2.h class.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h \
+bltin.h list.h util.h
+rpython.o: rpython.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mdc.h complex.h mdr_mdc.h mdcf1.h mdcf2.h class.h mem.h \
+gc/include/gc.h gc/include/gc_version.h gc/include/gc_config_macros.h \
+bltin.h list.h util.h
+rjava.o: rjava.c rlab.h config.h version.h ent.h mds.h mdr.h btree.h \
+listnode.h mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h class.h rfileio.h \
+mdc.h complex.h mathl.h
+rngspice.o: rngspice.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h mdc.h complex.h mdr_mdc.h mdcf1.h mdcf2.h class.h \
+mem.h gc/include/gc.h gc/include/gc_version.h \
+gc/include/gc_config_macros.h bltin.h list.h util.h function.h lp.h fi.h \
+symbol.h sharedspice.h
+rgphoto2.o: rgphoto2.c rlab.h config.h version.h ent.h mds.h mdr.h \
+btree.h listnode.h class.h symbol.h list.h mem.h gc/include/gc.h \
+gc/include/gc_version.h gc/include/gc_config_macros.h mdrf1.h bltin.h \
+util.h mathl.h complex.h function.h lp.h fi.h \
+rlab_solver_parameters_names.h

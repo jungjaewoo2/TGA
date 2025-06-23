@@ -1,0 +1,62 @@
+<sect> mnorm
+<p>
+<descrip>
+<tag> Synopsis </tag> Compute the matrix norm.
+<tag> Syntax   </tag>      mnorm ( <em>A</> )
+               <p>         mnorm ( <em>A</> , <em>TYPE</> )
+
+<tag> Description </tag>
+
+	The first form defaults to computing the 1-norm of the input
+	matrix. The second form allows the user to specify the desired
+	type of matrix norm with a string argument.
+
+	<descrip>
+
+	<tag><tt>M</> or <tt>m</></tag> returns <tt>max(abs( <em>A</> ))</>
+	
+	<tag> <tt>1</>, <tt>O</> or <tt>o</> </tag> 
+		return the 1-norm (default), the largest column sum
+		(max(sum(abs(A)))). 
+
+	<tag> <tt>2</> </tag> returns the matrix 2-norm 
+		(largest singular value)
+
+	<tag> <tt>I</> or <tt>i</> </tag> returns the infinity-norm,
+                the largest row sum (max(sum(abs(A')))).
+
+	<tag> <tt>F</>, <tt>f</>, <tt>E</> or <tt>e</> </tag>
+		 returns the Frobenius norm.
+
+	</descrip>
+
+	LAPACK subroutines DLANGE and ZLANGE are used to compute all
+	norms, except the 2-norm.
+
+	<bf>Obscure feature:</> If <em>TYPE</> is Inf (the output from
+	<tt>inf()</>, for example), then norm will compute the
+	Infinity norm of the matrix <em>A</>.
+
+	Example:
+
+<tscreen><verb>
+> a = magic(4)
+       16          2          3         13  
+        5         11         10          8  
+        9          7          6         12  
+        4         14         15          1  
+> mnorm ( a )
+       34  
+> mnorm ( a , "m" )
+       16  
+> mnorm ( a , "1" )
+       34  
+> mnorm ( a , "2" )
+       34  
+> mnorm ( a , "i" )
+       34  
+> mnorm ( a , inf() )
+       34  
+</verb></tscreen>
+
+</descrip>

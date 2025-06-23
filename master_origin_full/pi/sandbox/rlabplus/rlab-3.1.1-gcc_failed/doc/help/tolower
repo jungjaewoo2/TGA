@@ -1,0 +1,66 @@
+  tolower
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Convert alphabet characters of a string to lowercase.
+
+
+     [1mSyntax[0m
+        t = tolower ( [4ms[24m )
+
+
+        Arguments:
+
+        [4ms[24m  string matrix.
+
+
+        Result:
+
+        [1mt  [22mstring matrix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

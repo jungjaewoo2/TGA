@@ -1,0 +1,66 @@
+  sf
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        Special Functions Library
+
+
+     [1mSyntax[0m
+        y = ErlingN ( [4mk[24m, [4mr[24m, [4ms[24m, [4mt[24m )
+
+        y = ErlingN ( [4mk[24m, [4mr[24m, [4mt[24m )
+
+
+     [1mDescription[0m
+
+           Erling Function
+
+
+
+
+     [1mSyntax[0m
+        y = Gamma ( [4ma[24m )
+
+        y = GammaRegularized ( [4ma[24m , [4mx[24m )
+
+        y = GammaRegularizedC ( [4ma[24m , [4mx[24m )
+
+
+     [1mDescription[0m
+
+           Gamma Function, Normalized / Regularized Incomplete Gamma
+           Function and Complement of Regularized Incomplete Gamma
+           Function.
+
+
+
+        Arguments:
+
+        [4ma[24m  real matrix.
+
+        [4mx[24m  real matrix.
+
+
+        Gamma function as implemented in the Gnu Science Library.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

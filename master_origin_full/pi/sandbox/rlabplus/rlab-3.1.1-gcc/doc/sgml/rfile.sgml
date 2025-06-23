@@ -1,0 +1,68 @@
+<sect> rfile 
+<p>
+<descrip>
+<tag> Synopsis </tag> Load an rfile.
+<tag> Syntax </tag> rfile
+             <p>    rfile <em>NAME</>
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag>rfile</tag> Prints a list of all the files with a `.r'
+		suffix. The list is compiled by searching the
+		directories contained in the environment variable
+		<tt>RLAB2__PATH</>.
+
+	<tag>rfile <em>NAME</></tag> Loads the contents of the file
+		denoted by <em>NAME</> into the workspace. The
+		<em>NAME</> argument is NOT a string, and does not
+		have to include the `.r' suffix.
+
+		Allowable names for rfiles are filenames that start
+	        with:
+		<quote>
+		A digit, or a letter (a-z or A-Z).
+		</quote>
+		and contain:
+		<quote>	
+		digits, letters, and/or <tt>-</>, <tt>_</>, <tt>.</>
+		</quote>
+
+	        You may not be able to use all the possible filenames
+	        allowed by the host operating system.
+
+	</descrip>
+
+	If the user's environment does not contain <tt>RLAB2_PATH</>,
+	then the default search-path is used. The default is set at
+	compile time. Normally the default is ".", the current working
+	directory. 
+
+	Rfile is a command, not an expression or statement. Therefore,
+	it must be issued on a line by itself, and cannot occur in the
+	midst of another statement or expression.  The rfile command
+	cannot be continued across lines (no continuations).
+
+	The command `rfile <em>NAME</>' can be used more than
+	once. Each time the command is issued the file `<em>NAME</>.r'
+	is loaded.
+
+	The rfile command tries to be friendly. If you give it a
+	string without the `.r' extension, it will automatically add
+	one for you. If you give is a string with the `.r' extension,
+	it will leave it alone.
+
+	The contents of the named file can be any valid RLaB commands
+	or functions. There is no limit to the number of functions
+	that a file can contain. Additionally, a mixture of commands,
+	and function definitions can be included in the same file.
+
+	Example:
+
+<tscreen><verb>
+> rfile roots.r poly bode
+</verb></tscreen>
+
+<tag>See Also</tag> help, load, require
+
+</descrip>

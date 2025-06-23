@@ -1,0 +1,13 @@
+<sect> toc 
+<p>
+<descrip>
+<tag> Synopsis </tag> Measure time elapsed since tic.
+<tag> Syntax </tag> toc ( )
+<tag> Description </tag>
+
+	Toc reports the time (in seconds) elapsed since the last call
+	to tic.
+
+See also: tic
+
+</descrip>

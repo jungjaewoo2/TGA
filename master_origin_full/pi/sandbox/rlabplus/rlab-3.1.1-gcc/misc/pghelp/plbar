@@ -1,0 +1,18 @@
+plbar:
+
+Synopsis: Plot Binned Data (Bar Chart)
+
+Syntax: plbar ( DATA )
+
+Description:
+
+        plbar takes a single argument, DATA, and plots a a bar-chart
+        of the 2:DATA.nr columns of DATA versus the first column (or
+        the row numbers if DATA has a single column).
+
+        plbar does _not_ compute, or plot, a histogram. If your data
+        is already "binned" properly, then plbar will plot a
+        histogram. But, If you want to plot a histogram from un-binned
+        data-sets, you will have to use plhist().
+        
+See Also: plhist

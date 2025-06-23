@@ -1,0 +1,66 @@
+  sign
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Return the sign of [4mA[0m
+
+      [1mSyntax[0m
+        sign ( [4mA[24m )
+
+      [1mDescription[0m
+
+        For real scalar argument, sign returns:
+
+
+          1 if A > 0
+
+
+
+          0 if A == 0
+
+
+
+          -1 if A < 0
+
+
+     For a complex scalar sign returns:
+
+
+          A ./ abs (A)
+
+
+     sign performs its operation on real and complex matrices in an
+     element by element fashion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

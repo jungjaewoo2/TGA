@@ -1,0 +1,15 @@
+<sect> sleep
+<p>
+<descrip>
+<tag> Synopsis </tag> Put RLaB to sleep.
+<tag> Syntax </tag> sleep ( <em>sleepval</> )
+<tag> Description </tag>
+
+Sleep is an interface to the POSIX.1 sleep system
+function. The argument, <em>sleepval</> specifies the time in seconds the
+process should sleep for. Observe, non-integer values are allowed as well.
+
+The return value is either zero or the number of seconds left
+to sleep (if the sleep has been interrupted).
+
+</descrip>

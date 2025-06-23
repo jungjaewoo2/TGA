@@ -1,0 +1,66 @@
+  rmrows
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Remove rows from a data matrix
+
+      [1mSyntax[0m
+        rmrows ( [4mA[24m, [4midx[24m )
+
+      [1mDescription[0m
+        rmrows creates a new matrix from which the rows of matrix [4mA[24m, the
+        indices of which are given in array [4midx[24m are removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

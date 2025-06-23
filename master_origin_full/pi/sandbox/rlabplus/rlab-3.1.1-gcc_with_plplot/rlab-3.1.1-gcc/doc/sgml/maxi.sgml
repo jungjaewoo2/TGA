@@ -1,0 +1,16 @@
+<sect> maxi 
+<p>
+<descrip>
+<tag> Synopsis </tag> Maximum value indices
+<tag> Syntax </tag> maxi ( <em>A</> ) 
+<tag> Description </tag>
+
+	Maxi returns the index of the maximum value contained in
+	matrix. If the input argument (<em>A</>) is a vector, then the
+	index of the largest value is returned. If <em>A</> is a MxN
+	matrix, then a row-vector of the column indices of the largest
+	column values of <em>A</> is returned.
+
+<tag>See Also</tag>  max, min, mini
+
+</descrip>

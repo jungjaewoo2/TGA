@@ -1,0 +1,66 @@
+  backsub
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Solution of Ax = B by backsubstitution.
+
+      [1mSyntax[0m
+        backsub ( [4mLIST[24m, [4mB[24m )
+
+      [1mDescription[0m
+        The backsub function computes the solution to the set of linear
+        equations described by:
+
+
+          A * X = B
+
+
+     The 1st argument to backsub ([4mLIST[24m) is the result from `factor(A)'.
+     The second argument to backsub is the matrix [4mB[24m.  [4mB[24m can contain
+     multiple right hand sides.
+
+     Backsub returns a matrix [4mX[24m which contains the solution(s) to the
+     aforementioned equations.
+
+     Backsub utilizes the LAPACK subroutines DGETRS or ZGETRS if [4mLIST[0m
+     contains LU factors or LAPACK subroutins DSYTRS or ZHETRS if [4mLIST[0m
+     contains the LDL factors.
+
+     Example:
+
+
+          > A = [1,2,3;4,5,6;7,8,0]
+                  1          2          3
+                  4          5          6
+                  7          8          0
+          > B = [1;2;3]
+                  1
+                  2
+                  3
+          > X = backsub(factor(A), B)
+             -0.333
+              0.667
+          -3.52e-18
+          > A*X - B
+                  0
+                  0
+                  0
+
+
+
+
+
+     [1mSee Also[0m
+        factor, inv, lu, solve
+
+
+
+
+
+
+
+
+
+

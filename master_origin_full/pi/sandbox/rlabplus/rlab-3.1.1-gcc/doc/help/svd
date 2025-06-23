@@ -1,0 +1,132 @@
+  svd
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Singular Value Decomposition
+
+      [1mSyntax[0m
+        svd ( [4mA[24m )
+
+        svd ( [4mA[24m, [4mTYPE[24m )
+
+      [1mDescription[0m
+        Computes the singular values of the input matrix [4mA[24m, as well as
+        the right and left singular vectors in various forms. Where:
+
+
+
+          A = U * diag (sigma) * Vt
+
+
+
+
+     The output is a list containing the three afore-mentioned objects
+     ([4mu[24m, [4msigma[24m, [4mvt[24m).  Various forms of the right and left singular
+     vectors can be computed, depending upon the value of the second,
+     optional, string argument [4mTYPE[24m:
+
+
+
+        S  A minimal version of U, and Vt are returned.  This is the
+           default.
+
+
+        A  The full U, and Vt are returned.
+
+
+        N  U and Vt are not computed, empty U and Vt are returned.
+
+     The LAPACK subroutine DGESVD, or ZGESVD is used to perform the
+     computation.
+
+     Example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     > A = [0.96, 1.72; 2.28, 0.96];
+     > Asvd = svd(A)
+        sigma        u            vt
+     > Asvd.vt
+      matrix columns 1 thru 2
+             -0.8        -0.6
+              0.6        -0.8
+     > Asvd.u
+      matrix columns 1 thru 2
+             -0.6        -0.8
+             -0.8         0.6
+     > Asvd.sigma
+      vector elements 1 thru 2
+                3           1
+     > check = Asvd.u * diag(Asvd.sigma) * Asvd.vt
+      check =
+      matrix columns 1 thru 2
+             0.96        1.72
+             2.28        0.96
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+plmesh:
+
+Synopsis: Plot a 3-dimensional mesh plot.
+
+Syntax: plmesh ( L1 , L2 , L3 )
+
+Description:
+
+	Plmesh creates a 3-dimensional mesh plot from the data in
+	lists L1, L2, L3 (L2 and L3 are optional). The list must
+	contain elements `x', `y', and `z'. the z element is a
+	rectangular matrix that is a function of x and y (z[i;j] =
+	f(x[i],y[j])). Up to 3 mesh plots can be created on the same
+	sub-plot. A mesh plot is different from a surface plot since
+	the mesh plot is viewable from both the top and bottom.
+
+See Also: plot3

@@ -1,0 +1,19 @@
+<sect> strtol
+<p>
+<descrip>
+<tag> Synopsis </tag> String to integer conversion.
+<tag> Syntax </tag> strtol ( <em>STR</> , <em>BASE</> )
+<tag> Description </tag>
+
+	The strtol functions converts its argument, <em>STR</>, from
+	string class to numeric class. Strtol stands for STRing TO
+	Long-int.
+
+	The second (optional) argument <em>BASE</>, specifies the
+	conversion base. Valid values for <em>BASE</> are between 2
+	and 32. <em>BASE</> defaults to 10 if not specified.
+
+	Strtol will return a NaN (Not a Number) if it cannot recognize
+	a string, or an element of a string matrix, as a number.
+
+</descrip>

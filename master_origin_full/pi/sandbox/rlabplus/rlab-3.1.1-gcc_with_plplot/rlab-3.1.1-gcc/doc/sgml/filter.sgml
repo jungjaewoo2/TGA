@@ -1,0 +1,53 @@
+<sect> filter
+<p>
+<descrip>
+
+<tag> Synopsis </>
+Discrete time recursive filter.
+
+<tag> Syntax </>
+filter ( <em> X </>, <em>B</>, <em>A</> )
+<p>
+filter ( <em> X </>, <em>B</>, <em>A</>, <em>opt</> )
+
+<tag> Description </>
+<descrip>
+Filter is an implementation of the standard difference equation:
+<tscreen><verb>
+  y[n] = b(1)*x[n] + b(2)*x[n-1] + ... b(nb+1)*x[n-nb]
+       - a(2)*y[n-1] - ... a(na+1)*y[n-na]</verb></tscreen>
+The filter is implemented using a method described as a
+"Direct Form II Transposed" filter. More for information see
+Chapter 6 of "Discrete-Time Signal Processing" by Oppenheim
+and Schafer.
+</descrip>
+
+<tag> Inputs </tag>
+<descrip>
+<tag><em>B</></tag>
+The numerator coefficients, or zeros of the system transfer function.
+The coefficients are specified in a vector like:
+<tscreen><verb>[ b(1) , b(2) , ... b(nb) ]</verb></tscreen>
+<tag><em>A</></tag>
+The denominator coefficients, or the poles of
+the system transfer function. the coefficients
+are specified in a vector like:
+<tscreen><verb> [ a(1) , a(2) , ... a(na) ]</verb></tscreen>
+<tag><em>X</></tag>	A vector of the filter inputs.
+<tag><em>opt</></tag> A list which entries specify initial
+delays through entry <em>zi</>, or initial values of filter
+output <em>y0</>, both given as an array of size max(dim(A),dim(B))-1.
+</descrip>
+
+<tag> Output </tag>
+List with entries
+<descrip>
+<tag><em>y</></tag>
+The filter output. <em>y</> is a vector of the same dimension as <em>X</>.
+<tag><em>zf</></tag>
+A vector of the final values of the filter delays.
+</descrip>
+<p>
+The A(1) coefficient must be non-zero, as the other
+coefficients are divided by A(1).
+</descrip>

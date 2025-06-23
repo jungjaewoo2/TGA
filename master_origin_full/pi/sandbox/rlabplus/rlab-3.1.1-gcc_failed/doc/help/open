@@ -1,0 +1,66 @@
+  open
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Open a file for reading.
+
+      [1mSyntax[0m
+        open ( [4mFILENAME[24m, [4mMODE[24m )
+
+        open ( [4mFILENAME[24m, [4mMODE[24m, [4mBUFFSIZE[24m )
+
+      [1mDescription[0m
+        Open will open a file or a pipe for read or write operations.
+        Open allows the user to specify the mode of operation, and
+        optionally a buffer-size for I/O. The "normal" UNIX modes are:
+
+
+        [1mr  [22mread access
+
+        [1mw  [22mwrite access
+
+        [1ma  [22mappend: open for writing at end of file, or create for
+           writing
+
+
+        [4mBUFFSIZE[0m
+           Buffersize is specified in bytes. If BUFFSIZE  is not
+           specified the system defaults are used.
+
+        Other operating systems may have different mode keys. Look at
+        the API documentation for fopen on your system to find what mode
+        values are acceptable.
+
+
+     [1mSee Also[0m
+        close, printf, fprintf, read, readb, readm, write, writeb,
+        writem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

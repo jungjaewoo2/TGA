@@ -1,0 +1,105 @@
+
+1/25/92:
+
+	Rlab is _not_ a clone of languages such as those used by tools
+	like MATLAB or matrix_X/Xmath. However, as Rlab focuses on
+	creating a good experimental environment (or laboratory) in
+	which to do matrix math, it can be called "MATLAB-like" since
+	the programming language possesses similar operators and
+	concepts.  Extensive use has been made of the LAPACK, FFTPACK
+	and RANLIB sources available from netlib.
+
+	The most significant difference between the other proprietary
+	tools and RLaB is the GNU Copyleft.
+
+	See the file INSTALL for installation instructions.
+
+	See the file WHATS.NEW for release news.
+
+	See the file PROBLEMS for solutions to some commonly
+	encountered installation/operation problems.
+
+	See the examples directory for simple examples on how to use
+	the program, and the plotting capabilities.
+
+	See the RlaB Primer for a guided tour of the program, and more
+	examples.
+
+	Ian Searle
+   	searleir@yahoo.com
+
+
+2/9/97:
+
+        This is Rlab-2, an evolution of the original Rlab. For the
+        user the changes are subtle, but significant. They are:
+
+           Improved object handling. Every object can be "customized"
+           to some extent by the addition of new object elements. Each
+           object still has read-only attributes that cannot be
+           directly modified by the user. However, each object
+           supports the addition of new object elements. These
+           elements can be any type of object; recursion is
+           supported. 
+
+           Function arguments are "pass by value". This change has
+           been instituted to provide a "safer" more "error-resistant"
+           programming environment. Extensive user testing shows this
+           to be a good change. One of the reasons this change does
+           not have bad side-effects is the internal use of object
+           reference counts. Do not mistake the use of reference
+           counts as garbage-collection... in Rlab, these are two
+           separate internal mechanisms.
+
+           Rlab-2 uses generational garbage collector (Boehm's) to
+           improve performance, and reduce the risk of encountering
+           "memory leaks". The user-visible Rlab language has always
+           been garbage-collected, 
+
+           Sparse Matrices
+
+           Metis Interface
+
+           UMFPACK interface
+
+           SuperLU Interface
+
+           Internal re-structuring for expandability, and future
+           support for more object oriented features. The internal
+           virtual-machine/class interface has been restructured, so
+           that it is now possible to add new classes (data-types) to
+           Rlab _without_ a tremendous/herculean effort. This internal
+           re-structuring has been done in such a way, that new
+           classes could be added (in the future) at runtime. Allowing
+           the user to add new classes "on-the-fly", with compiled
+           C-code, or Rlab language scripts.
+
+           The Rlab Reference Manual has is mostly complete. Actually,
+           I doubt this will ever be complete, as I am always willing
+           to add more, or change it to make it better. But, this is a
+           pretty comprehensive reference for Rlab. It is available in
+           SGML, LaTeX/Postscript, and HTML. The online help files are
+           generated from the same sources as the Reference Manual.
+
+           Many new rfiles.
+
+        Enjoy,
+
+	Ian Searle
+	searleir@yahoo.com
+        2001/07/04
+
+2001/07/08:
+
+           Since leaving Boeing in 1998, I have not been an RLaB user myself. 
+	   Once of the great motivations for developing RLaB was being one
+	   of its principal users.  Also, since my son was born (same year),
+	   I find I have less spare time outside of work and family to do
+	   things like add new features to RLaB, or upgrade the version
+	   of LAPACK, etcetera.
+
+	   Thus, I am putting RLaB development in "hold mode", and providing
+	   very minimal support.  No new development.  If someone else would
+	   like to further the development of RLaB, they are welcome to. It
+	   is licensed under the GPL, and that permits others to do things
+	   like take over development of an application.

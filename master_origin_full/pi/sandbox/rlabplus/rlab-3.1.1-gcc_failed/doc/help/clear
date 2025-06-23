@@ -1,0 +1,66 @@
+  clear
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Delete a variable.
+
+      [1mSyntax[0m
+        clear ( [4mA[24m )
+
+      [1mDescription[0m
+        Clear effectively deletes a variables object from the symbol
+        table. The effect is the variable does not show up when who() is
+        used. The memory associated with the variable is freed.
+
+        Clear accepts up to 32 arguments, the return value is the number
+        of objects that have been successfully cleared.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+.TH RLAB2 1  "16 May 1997" "Version 2.0" "USER COMMANDS"
+.\" strings
+.ds ex \fIexpr\fR
+.SH NAME
+rlab2 \- matrix oriented, interactive programming environment
+
+.SH SYNOPSIS
+.B rlab2
+[\-BVdhlmnpqr] [\-e "cmd1;cdm2;..."]
+[file(s)]
+[\-]
+.SH DESCRIPTION
+.B rlab2
+is an interpreter for the RLaB Programming Language/Environment.
+The RLaB language is useful for matrix or array oriented numerical
+analyses. RLaB is especially useful for prototyping and experimenting
+with algorithms.
+
+.B rlab2
+interfaces many numerical and system libraries in c-language and FORTRAN:
+e.g., BLAS and LAPACK for general linear algebra, FFTPACK for fast fourier
+transform.
+It uses the GSL for different solvers ranging from ordinary differential equations
+to minimization and numerical integration to random number generation,
+and structures (e.g., histograms) and special functions (from Airy to Zeta).
+.B rlab2
+can export data for visualization and additional postprocessing to gnuplot, xmgrace and openoffice.
+It can work with special file formats (e.g., HDF5 or SPICE-RAW) and communicate with the scientific
+instruments through GPIB and serial port, and with the world through raw sockets and http/https/ftp protocols.
+
+.B rlab2
+can communicate with python 2.6+ interpreter and so have access to python libraries
+if such are not internally available.
+
+
+.SH OPTIONS
+
+.TP
+\-\fBV
+Prints the version number to stderr and exits.
+.TP
+\-\fBd
+causes a readable form of the internal stack machine's compiled program
+to be output to stderr. This option should be used in conjunction with
+`-qln' options. This option is not intended for general use.
+.TP
+\-\fBh
+prints the usage message to the screen and exits.
+.TP
+\-\fBl
+prevents loading of the rlab library of rfiles.
+.TP
+\-\fBm
+prevents printing of the greeting message.
+.TP
+\-\fBn
+prevents line number and file name information from being used in the
+internal stack machine codes. This option should only be used with the
+`-dlnq'. This option is not intended for general use.
+.TP
+\-\fBp
+prevents rlab from using the specified pager for all output.
+.TP
+\-\fBq
+prevents loading of the startup file
+.TP
+\-\fBr
+prevents usage of the GNU readline library for
+command line editing.
+.TP
+\-\fBe "cmd1;cmd2;..." (since 2.2.12.15)
+executes commands provided in the string between the quotation
+marks after all the libraries are loaded, but before the files
+provided as the arguments are loaded and the
+command line is reached.
+.TP
+\fBfile(s)
+are loaded and executed by rlab after the `.rlab' file, and after the
+library files.
+.TP
+\-\fB
+forces rlab to go interactive after all the files on the command line
+have been executed.
+
+.SH ENVIRONMENT
+
+.B rlab2
+checks the values of several environment variables upon
+startup, and uses them to overide the compiled in defaults. If a
+particular environment variable has not been set, the default value is
+used.
+
+.B RLAB2_RC0
+Startup rfile.
+
+.B RLAB2_HELP_DIR
+The principle directory of help files.
+
+.B RLAB2_LIB_DIR
+The directory of rfiles to load on startup.
+
+.B RLAB2_PAGER
+The pager to use for paging help
+files to the screen. If
+.B RLAB2_PAGER
+is not set, then the environment is checked for
+.B PAGER .
+If neither exists, then the pager specified at compile time
+is used.
+
+.B RLAB2_PATH
+A colon separated list of directories to search when
+attempting to load rfiles. This directory list should contain the
+.B RLAB2_LIB_DIR
+and the RLaB toolbox directory. If
+.B RLAB2_LIB_DIR
+is not in the
+.B RLAB2_PATH
+, then there may be unresolved function variables.
+
+.B RLAB_HISTFILE
+The name of the command history file. If this variable does not exist,
+then the default is $HOME/.rlab_history
+
+.B RLAB_HISTSIZE
+The size (length) of the command history to retain.
+
+.SH EXECUTION
+.B rlab
+is normally executed from a shell command line. Upon startup
+.B rlab
+.nf
+.sp
+Processes the command line options.
+
+Executes the `.rlab' file.
+
+Executes any `.r' files in the library directory.
+
+Executes any files specified on the command line.
+
+Goes into interactive mode if no files are specified on the
+command line, or if the `-' option is used.
+.sp
+.fi
+.B rlab
+can also be invoked by using the `#!' convention employed by exec(2).
+A
+.B rlab
+script that begins with a line of the form:
+.nf
+.sp
+	#! pathname [arg]
+.sp
+.fi
+where \fIpathname\fR is the full pathname to the
+.B rlab
+executable, and \fIarg\fR is optional argument(s). Note that if the
+`-' option is not specified
+.B rlab
+will not go interactive after the script has been executed.
+
+.SH DOCUMENTATION
+.B rlab
+has an on-line help system, which can be accessed by typing `help'. A
+tutorial and a reference manual are currently being worked on.
+
+This man-page was not intended to provide a description of
+the language, or rlab's features. Please refer to the manuals, or the
+on-line help.
+
+.SH BUGS
+Paged output gets hosed after an `out of memory' message.
+
+.B rlab
+implements fprintf(), printf() and sprintf() using the
+C library functions, fprintf, printf and sprintf, so
+.B rlab
+inherits any bugs or limitations of the library functions.
+
+Send bug reports to: mkostrun@gmail.com.
+
+Bug reports should include the rlab version number, a short rfile that
+exercises the bug, and a description of the host operating system and
+hardware.
+
+.SH AUTHORS
+Marijan Kostrun (mkostrun@gmail.com)
+who is also the author of the RLaB+rlabplus Manual.
+
+Ian Searle (ians@eskimo.com)
+
+Phillip Musumeci and Ian Searle are the authors of the RLaB Primer
+
+Brad Hards is the author of the RLaB Reference Manual
+
+Mike Brennan has contributed some code from mawk.
+
+.SH SEE ALSO
+.I sh
+(1)
+.I more
+(1)
+.I exec
+(2)
+.PP
+

@@ -1,0 +1,51 @@
+#
+# RLaB language description for the LGrind pretty-printer
+# Jim Green <j.j.green@shef.ac.uk>  10/15/96
+#
+# To use, just copy this block below into the file `lgrindef'
+# and Lgrind your r-files with the switch -lrlab for pretty LaTeX
+# output.
+#
+
+RLAB|RLaB|rlab:\
+ :pb=^\d?\p\d?=\d?function\d?\(:\
+ :bb={:be=}:\
+ :cb=//:ce=$:\
+ :ab=#:ae=$:\
+ :sb=":se=":\
+ :tl:\
+ :zb=@:ze=@:tb=%%:te=%%:mb=%\$:me=\$%:vb=%\|:ve=\|%:\
+ :kw= \
+ abs acos all any asin asinh atan atan2 atanh autospec  \
+ avsmooth backsub balance bandred banner besselj bessely  \
+ bodetf break cd ceil center chol choose chop class clear  \
+ clearall close command command_ compan compleme complex  \
+ conditio conj continua continue corr cos cosh cross cumprod  \
+ cumsum czt det detrend diag diary diff disp division dlopen  \
+ dot eig epsilon erf error errors eval examples exist exp  \
+ expm eye factor faxis fft fftplot files filter find finite  \
+ fix fliplr flipud floor fmin for format fprintf fread frexp  \
+ fseek function funm fvscope gamma getb getenv getline  \
+ getplot global hankel help hess hex hilb hilbert house if  \
+ ifft imag in inf input int int2str intersec intro inv isempty  \
+ isinf isnan isreal issymm join jordan keywords lagrange  \
+ lcheck length lininsrt linspace lintrp list lmsale load  \
+ loaddir local log log10 log2 logb logm logspace lu lyap max  \
+ max2 maxi mdsmax mdsmooth mean median members min min2 mini  \
+ mod mret nan nextpow2 nmsmax norm num2str ode ode4 ode78  \
+ ones open operator pascal pause pclose pend pinv plalt  \
+ plaspect plaxis plaz plclose plcont plegend plend plerry  \
+ plfont plgrid plgrid3 plhist plhistx plhold plhold_o plimits  \
+ plline plmesh plot plot3 plplot plpoint plprint plptex  \
+ plscol0 plsfile plstart plstyle pltitle plwid plwin poly  \
+ printf printmat prod pstart ptitle putenv pwin qq_norma qr  \
+ quadr rand rank rcond read readb readm real redit  \
+ relation rem replot require reshape return rfile rk4 rlab roots  \
+ rot90 round save scalars schord schur section set set3d show  \
+ show_pro showpwin sign sin sinh size sizeof solve sort  \
+ spectrog sprintf sqrt srand static std steng stmag string  \
+ strsplt strtod stzcr subplot sum surspl svd sylv symm system  \
+ tan tanh temp tempacosh tempangle tic tmpnam toc toeplitz  \
+ trace transpos trapz trig tril triu type union variable  \
+ vector while window write writeb writem xlabel  \
+ ylabel zeros zlabel:

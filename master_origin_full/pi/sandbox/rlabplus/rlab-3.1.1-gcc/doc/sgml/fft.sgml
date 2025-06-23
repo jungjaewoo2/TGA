@@ -1,0 +1,39 @@
+<sect> fft 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Discrete Fourier Transform.
+<tag> Syntax </tag> fft ( <em>X</> )
+	     <p>    fft ( <em>X</>, <em>N</> )
+<tag> Description </tag>
+
+	Fft utilizes the FFTPACK subroutine CFFTF to compute a
+	discrete forward Fourier transform of the input.
+
+	If fft is used with a second argument, <em>N</>, then the
+	matrix <em>X</> is either padded with zeros, or truncated till
+	it is of length <em>N</> (if <em>X</> is a vector), or has row
+	dimension <em>N</> (if it is a matrix).
+
+	Subroutine CFFTF computes the forward complex discrete Fourier
+	transform (the Fourier analysis). equivalently , CFFTF
+	computes the Fourier coefficients of a complex periodic
+	sequence.
+
+	<tscreen><verb>
+	for j=1,...,n
+	
+           c(j)=the sum from k=1,...,n of
+	
+                 c(k)*exp(-i*(j-1)*(k-1)*2*pi/n)
+	
+                       where i=sqrt(-1)
+	</verb></tscreen>
+
+	The argument <em>X</> must be a matrix. If <em>X</> is a row,
+	or column matrix then a vector fft is performed. If <em>X</>
+	is a MxN matrix then the <em>N</> columns of <em>X</> are
+	fft'ed.
+
+ <tag>See Also</tag>   ifft
+
+</descrip>

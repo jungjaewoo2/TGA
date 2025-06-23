@@ -1,0 +1,34 @@
+<sect> cumsum 
+<p>
+<descrip>
+<tag> Synopsis </tag> Cumulative sum. 
+<tag> Syntax </tag> cumsum ( <em>A</> ) 
+<tag> Description </tag>
+
+	cumsum computes the running, or cumulative sum of a vector or
+	matrix. The return object is a matrix the same size as the
+	input, <em>A</>. If <em>A</> is a rectangular matrix, then the
+	cumulative sums are performed over the columns of the matrix.
+
+	Example:
+	<tscreen><verb>
+> a = 1:4
+ a =
+        1          2          3          4  
+> cumsum(a)
+        1          3          6         10  
+> a= [1,2,3;4,5,6;7,8,9]
+ a =
+        1          2          3  
+        4          5          6  
+        7          8          9  
+> cumsum (a)
+        1          2          3  
+        5          7          9  
+       12         15         18  
+</verb></tscreen>
+
+ <tag>See Also</tag>   cumprod, prod, sum
+
+
+</descrip>

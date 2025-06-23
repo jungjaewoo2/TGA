@@ -1,0 +1,13 @@
+<sect> entinfo 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Return entity information.
+<tag> Syntax </tag> entinfo ( <em>VAR</> )
+<tag> Description </tag>
+
+	Entinfo returns the internal address, and reference count of
+	<em>VAR</>. This function is not intended for general
+	use... so no explanation of the function's purpose, or
+	guarentees regarding its future availability will be made.
+
+</descrip>

@@ -1,0 +1,24 @@
+<sect> vpnorm
+<p>
+<descrip>
+<tag> Synopsis </tag> Compute the vector <em>P</> norm.
+<tag> Syntax   </tag>      vpnorm ( <em>V</> , <em>P</> )
+
+<tag> Description </tag>
+
+	<tt>vpnorm</> computes the vector P-norm of <em>V</>. The
+	second argument is required, and specifies the value of
+	<em>P</>.
+
+	A small Rlab program demonstrating the P-norm computation is
+	provided below. However, <tt>vpnorm</> is implemented as a
+	builtin function for maximum efficiency. 
+
+	<code>
+pnorm = function ( V , P )
+{
+  return (sum ( V.^P )).^(1/P);
+}
+	</code>
+
+</descrip>

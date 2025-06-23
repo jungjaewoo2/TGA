@@ -1,0 +1,66 @@
+  urandom
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Uniform random number generator in range 0 to 1.
+
+      [1mSyntax[0m
+        urandom (  )
+
+        urandom ( [4mA[24m )
+
+        urandom ( [4mnrow[24m, [4mncol[24m )
+
+
+      [1mBackground[0m
+        Since rlab-2.2.11 urandom is a dedicated uniform random number
+        generator that uses system integer number generator No. 64, and
+        is sampled from the system continuous random number generator
+        No. 64.
+
+
+      [1mDescription[0m
+
+
+        [1murandom ( )[0m
+           samples a random scalar.
+
+
+        [1murandom ( [4m[22mA[24m [1m), urandom( [4m[22mnrow[24m[1m, [4m[22mncol[24m [1m)[0m
+           samples a randomly generated matrix of size of the matrix [4mA[24m,
+           or using the row dimension [4mnrow[24m, and column dimension [4mncol[24m.
+
+
+
+        urandom uses the GSL library.
+
+
+
+     [1mSee Also[0m
+        rng, rand, irng, irand, iseed, drng, drand.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

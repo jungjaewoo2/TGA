@@ -1,0 +1,132 @@
+  fread
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Binary stream input.
+
+      [1mSyntax[0m
+        fread ( [4mFILENAME[24m, [4mNITEMS[24m, [4mTYPE[24m, [4mSWAPB[24m )
+
+      [1mDescription[0m
+        fread reads [4mNITEMS[24m of type [4mTYPE[24m from [4mFILENAME[24m (a string) and
+        returns the result in a numeric matrix.
+
+        Allowable arguments are:
+
+
+        [4mNITEMS[0m
+           Number of objects of type [4mTYPE[24m to read from [4mFILENAME[24m. If
+           [4mNITEMS[24m is inf(), then fread will read from [4mFILENAME[24m until
+           end-of-file is reached.
+
+
+        [4mTYPE[0m
+
+             "char"
+
+
+
+             "unsigned char"
+
+
+
+             "short int"
+
+
+
+             "unsigned int"
+
+
+
+             "int"
+
+
+
+             "float"
+
+
+
+             "double"
+
+
+
+        [4mSWAPB[0m
+
+             0       Do not swap bytes in a word (default).
+
+
+
+             1       Do swap the bytes in each word.
+
+
+
+
+
+     [1mSee Also[0m
+        FILES, fseek, fwrite, close, open, write
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

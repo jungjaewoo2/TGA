@@ -1,0 +1,21 @@
+plimag:
+
+Synopsis: Plot a 2-dimensional image
+
+Syntax: plcont ( CL )
+
+Description:
+
+	plimag takes a single list as argument and plots the 
+	of the surface described by the list CL. CL contains the
+	members: 
+
+		x	The x-axis values, a vector with number of
+			elements equal to the number of rows of z.
+
+		y	The y-axis values, a vector with number of
+			elements equal to the number of column of z.
+
+		z	A rectangular matrix, z[i;j] = f(x[i],y[j])
+
+See Also:

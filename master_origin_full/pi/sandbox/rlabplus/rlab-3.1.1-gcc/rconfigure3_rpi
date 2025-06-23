@@ -1,0 +1,15 @@
+#!/bin/sh
+
+./configure \
+	--enable-superlu \
+	--enable-arpack \
+	--enable-glpk \
+	--with-pgplot \
+  --with-python 
+
+#	--with-gphoto2
+
+
+
+
+make scanner

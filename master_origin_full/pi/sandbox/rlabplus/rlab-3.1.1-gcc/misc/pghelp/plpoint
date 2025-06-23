@@ -1,0 +1,16 @@
+plpoint:
+
+Synopsis: Control the point style for 2-dimensinal plots.
+
+Syntax: plpoint ( PVEC )
+
+Description:
+
+	Plpoint allows the user to control the point style used for
+	each line in a 2-D plot. The single argument, PVEC, is an
+	8-element integer vector. The values of the integers in PVEC
+	control the plot point symbols. The default value of PVEC is:
+
+		[ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+See Also: VECTOR, plline

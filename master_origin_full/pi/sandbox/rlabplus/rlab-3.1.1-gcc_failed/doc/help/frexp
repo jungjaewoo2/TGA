@@ -1,0 +1,66 @@
+  frexp
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Convert floating-point number to fractional and integral
+        components
+
+      [1mSyntax[0m
+        frexp ( [4mA[24m )
+
+      [1mDescription[0m
+        Frexp returns a list with elements [4mf[24m and [4me[24m Frexp splits [4mA[24m into a
+        normalized fraction in the interval:
+
+
+
+                          0.5 <= abs(f) <= 1
+
+
+
+
+
+     which is returned in [4mf[24m, and a power of 2, which is returned in [4me[24m.
+     If [4mA[24m is zero, then both [4me[24m and [4mf[24m are zero.
+
+     Frexp operates on REAL matrices of any dimension.
+
+
+     [1mSee Also[0m
+        log, log10, log2, exp, mod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

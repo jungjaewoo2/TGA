@@ -1,0 +1,15 @@
+# works fine [azg] Fri Oct  6 21:09:27 -07 2017
+
+
+ ./mcp3008-poll -d0 0
+
+(use ctrl-c to stop)
+
+ADC                0
+Read   528001:   231  ^C
+
+Summary
+  Elapsed: 10.24 seconds
+    Reads: 529284
+     Rate: 51684.02 Hz
+

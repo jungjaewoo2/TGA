@@ -1,0 +1,66 @@
+  loess
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Function list for local regression model fit.  List elements:
+        loess.setup, loess.main, loess.anova, loess.predict.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<sect> chol 
+<p>
+<descrip>
+<tag> Synopsis </tag> Cholesky factorization. 
+<tag> Syntax </tag> chol( <em>A</> )
+<tag> Description </tag>
+
+	Chol computes the Cholesky factorization of the input matrix.
+	The input matrix must be real symmetric positive definite, or
+	complex Hermitian positive definite.  chol() produces an upper
+	triangular matrix <em>U</>, such that <tt>U'*U</> and <em>A</>
+	(the input) are equal.
+
+	chol use the LAPACK subroutine DPOTRF and ZPOTRF.
+
+</descrip>

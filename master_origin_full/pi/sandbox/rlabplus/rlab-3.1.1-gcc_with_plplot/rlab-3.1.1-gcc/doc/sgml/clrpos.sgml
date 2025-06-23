@@ -1,0 +1,26 @@
+<sect> clrpos
+<p>
+<descrip>
+<tag> Synopsis </tag> Clears position on terminal.
+<tag> Syntax </tag>
+             <p> clrpos ( <em>row</em>, <em>col</em> )
+             <p> clrpos ( <em>row</em> )
+
+<tag> Description </tag>
+
+	<descrip>
+
+	<tag> clrpos ( <em>row</em>, <em>col</em> )</tag>
+		clears a position at <em>row</em> and <em>col</em> by printing a space
+		there.
+
+	<tag> clrpos ( <em>row</em> )</tag>
+		clears a <em>row</em> using a code "clear line" from termcap library.
+
+	</descrip>
+
+	clrpos uses termcap library.
+
+	<tag>See Also</tag> clrscr, mvcrsr, colors.
+
+</descrip>

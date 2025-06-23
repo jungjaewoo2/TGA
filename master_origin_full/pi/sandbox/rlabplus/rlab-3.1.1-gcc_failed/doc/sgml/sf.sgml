@@ -1,0 +1,39 @@
+<sect>Special Functions
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>Special Functions Library
+		
+	<tag>Syntax</tag> 
+		<p>y = <tt>ErlingN ( <em>k</em>, <em>r</em>, <em>s</em>, <em>t</em> )</tt>
+		<p>y = <tt>ErlingN ( <em>k</em>, <em>r</em>, <em>t</em> )</tt>
+		
+	<tag>Description</tag> 
+	<descrip>			
+		Erling Function 
+	</descrip>		
+		
+	
+	<tag>Syntax</tag> 
+		<p>y = <tt>Gamma ( <em>a</em> )</tt>
+		<p>y = <tt>GammaRegularized ( <em>a</em> , <em>x</em> )</tt>
+		<p>y = <tt>GammaRegularizedC ( <em>a</em> , <em>x</em> )</tt>
+		
+	<tag>Description</tag> 
+	<descrip>			
+		Gamma Function, Normalized / Regularized Incomplete Gamma Function
+		and Complement of Regularized Incomplete Gamma Function.		
+	</descrip>		
+
+
+   Arguments:
+	<descrip>
+   	<tag><em>a</em></tag>
+      	real matrix.
+   	<tag><em>x</em></tag>
+      	real matrix.
+   </descrip>
+   
+   
+	Gamma function as implemented in the Gnu Science Library.
+</descrip>

@@ -1,0 +1,11 @@
+plalt:
+
+Synopsis: Set the plot altitude for a 3-dimensional plot.
+
+Syntax: plalt ( ALT )
+
+Description:
+
+	Set the "altitude" for the current sub-plot in the current
+	plot-window. The viewing altitude in degrees above the XY
+	plane. Only affects 3D plots.

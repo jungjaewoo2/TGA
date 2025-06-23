@@ -1,0 +1,23 @@
+<sect> any 
+<p>
+<descrip>
+<tag> Synopsis </tag> Check if <em>any</> elements are non-zero. 
+<tag> Syntax </tag> any ( <em>A</> ) 
+<tag> Description </tag>
+
+	When <em>A</> is a vector (row or column):
+<quote>
+	  any returns TRUE (1) if any of the elements of <em>A</> are non-zero.
+	  any returns FALSE (0) otherwise.
+</quote>
+
+	When <em>A</> is a matrix:
+<quote>
+	  any operates on the columns of <em>A</>, returning a row-vector of
+	  ones and zeros.
+</quote>
+
+ <tag>See Also</tag>   all
+
+
+</descrip>

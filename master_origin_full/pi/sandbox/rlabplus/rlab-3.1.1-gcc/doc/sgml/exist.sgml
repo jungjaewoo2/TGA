@@ -1,0 +1,19 @@
+<sect> exist 
+<p>
+<descrip>
+<tag> Synopsis </tag> Check the existence of a variable.
+<tag> Syntax </tag> exist ( <em>VAR</> ) 
+<tag> Description </tag>
+
+	The exist function returns TRUE (1) if <em>VAR</> exists, and
+	FALSE (0), if <em>VAR</> does not exist. <em>VAR</> is any
+	valid variable name.
+
+	If you need to know if a variable exists, and if it is a
+	function or data, then use the exist function in conjunction
+	with the class or type functions.
+
+<tag>See Also</tag>   class, type, who, what
+
+
+</descrip>

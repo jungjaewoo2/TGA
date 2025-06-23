@@ -1,0 +1,66 @@
+  diary
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Log commands (program statements) to a file.
+
+      [1mSyntax[0m
+        diary ( )
+
+        diary ( [4mFILENAME[24m )
+
+      [1mDescription[0m
+        The diary function echoes all input commands and Rlab output to
+        a diary file. If [4mFILENAME[24m is not specified, then a file named:
+        DIARY is opened.
+
+        The diary, used without any arguments will turn on statement
+        logging, or turn off statement logging if a diary file is
+        already open.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

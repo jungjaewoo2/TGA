@@ -1,0 +1,66 @@
+  maxi
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Maximum value indices
+
+      [1mSyntax[0m
+        maxi ( [4mA[24m )
+
+      [1mDescription[0m
+        Maxi returns the index of the maximum value contained in matrix.
+        If the input argument ([4mA[24m) is a vector, then the index of the
+        largest value is returned. If [4mA[24m is a MxN matrix, then a row-
+        vector of the column indices of the largest column values of [4mA[0m
+        is returned.
+
+
+     [1mSee Also[0m
+        max, min, mini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

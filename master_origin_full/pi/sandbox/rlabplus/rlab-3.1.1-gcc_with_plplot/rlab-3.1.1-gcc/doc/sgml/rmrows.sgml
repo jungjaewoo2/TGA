@@ -1,0 +1,12 @@
+<sect> rmrows 
+<p>
+<descrip>
+<tag> Synopsis </tag> Remove rows from a data matrix
+<tag> Syntax </tag> 
+<p>rmrows ( <em>A</em>, <em>idx</em> )
+<tag> Description </tag>
+
+rmrows creates a new matrix from which the rows of matrix <em>A</em>, the
+indices of which are given in array <em>idx</em> are removed.
+
+</descrip>

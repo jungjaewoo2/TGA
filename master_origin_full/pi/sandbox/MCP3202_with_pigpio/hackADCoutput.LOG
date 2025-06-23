@@ -1,0 +1,1 @@
+(awk '{print $1*4e-5, $2/4096*3.3 }' < square_fromRPi2.dat|tail  -n +2 |head -n -2 ;echo;awk '{print $1*4e-5, $4/4096*3.3 }' < square_fromRPi2.dat |tail  -n +2 |head -n -2) > jnk.ap

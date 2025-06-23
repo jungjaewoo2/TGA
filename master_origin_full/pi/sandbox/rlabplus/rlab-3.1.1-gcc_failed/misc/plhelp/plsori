@@ -1,0 +1,22 @@
+plsori:
+
+Synopsis: Change the orientation of the plot window.
+
+Syntax: plsori ( N )
+
+Descriptin:
+
+	Rotate the plot-window by N*(pi/2) from the default
+	orientation. N must be positive The orientation is not
+	supported by all graphics drivers. Some that are known to
+	support it are postscript, and X-windows.
+
+	plsori must be used before the plot window is started. For
+	example: 
+
+		plsori (3);
+		plstart (1,1,"ps");
+		plot (matrix);
+
+	Will produce a postscript file with the plot in portrait mode.
+

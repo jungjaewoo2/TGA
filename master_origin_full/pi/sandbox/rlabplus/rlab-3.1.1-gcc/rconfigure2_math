@@ -1,0 +1,11 @@
+#!/bin/sh
+
+./configure \
+  --rlab2 \
+  --with-arpack \
+  --with-superlu \
+  --enable-glpk \
+  --with-plplot \
+  --with-suitesparse
+
+

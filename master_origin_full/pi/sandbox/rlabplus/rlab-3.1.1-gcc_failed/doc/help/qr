@@ -1,0 +1,66 @@
+  qr
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        QR decomposition
+
+      [1mSyntax[0m
+        qr ( [4mA[24m )
+
+        qr ( [4mA[24m, "p" )
+
+      [1mDescription[0m
+
+        Qr computes the QR decomposition of the input matrix A such
+        that:
+
+
+          A = Q * R
+
+
+     or
+
+
+          A*p = Q * R
+
+
+     Qr returns a list containing elements [4mq[24m and [4mr[24m. Optionally, qr can
+     take a second argument, "p" which tells qr to perform column
+     pivoting when computing [4mq[24m and [4mr[24m. The permutation matrix [4mp[24m is
+     returned in the same list as [4mq[24m and [4mr[24m.
+
+     Qr utilizes LAPACK subroutines DGEQRF and DORGQR for REAL inputs,
+     and ZGEQRF and ZUNGQR for COMPLEX inputs. When column pivoting is
+     requested the LAPACK subroutines DGEQPF, and ZGEQPF are used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

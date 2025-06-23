@@ -1,0 +1,32 @@
+<sect> writem 
+<p>
+<descrip>
+<tag> Synopsis </tag>  Write a matrix in ASCII format.
+<tag> Syntax </tag> writem ( <tt>"filename"</> , <em>A</> )
+<tag> Description </tag>
+
+
+	Writem is the counterpart to readm. Writem writes the matrix
+	<em>A</> to the file denoted by the 1st argument in a generic format.
+	
+	The format used is:
+
+        <tscreen><verb>
+line 1:		value[1;1]    ... value[1;ncol] \n
+line nrow:	value[nrow;1] ... value[nrow;ncol] \n
+        </verb></tscreen>
+
+	Writem will write real and complex numeric matrices, as well
+	as string matrices even though readm can only read real numeric
+	matrices. Complex matrices are written as a single 2*nrow by
+	ncolumn real matrix. Sparse matrices are written as triplets
+	(row column value) for each element of the matrix.
+
+	Writem does not close the file after writing <em>A</>. The file is
+	left open for further writes if necessary. Close can be called
+	to explicitly close the file.
+
+ <tag>See Also</tag>   close, getline, open, readm, write
+
+
+</descrip>

@@ -1,0 +1,66 @@
+  window
+  Builtin Function
+
+
+
+     [1mSynopsis[0m
+        window function
+
+
+     [1mSyntax[0m
+        x = window ( [4mname[24m, [4mN[24m, [4mparams[24m, ... )
+
+
+     [1mDescription[0m
+        Creates a one dimensional real vector of length [4mN[24m that contains
+        a window function.
+
+
+        Arguments:
+
+        [4mname[0m
+           string, type of the window: "RECTANG", "HAMMING", "HANNING",
+           "NUTTALL", "BLACKMAN", "HARRIS", "BARTLETT", "BARTHANN",
+           "PAPOULIS", "GAUSS", "PARZEN", "HANNA", and "SPLINE".
+
+
+        [4mN[24m  odd integer, length of the window.
+
+        [4mparams[0m
+           optional parameter array for the window function: "KAISER",
+           "GAUSS" and "HANNA" require one, while "SPLINE" requires at
+           least one while the second parameter is optional.
+
+
+        See also: stft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

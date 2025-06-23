@@ -1,0 +1,66 @@
+  fseek
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Reposition a stream.
+
+      [1mSyntax[0m
+        fseek ( [4mFILENAME[24m, [4mOFFSET[24m )
+
+        fseek ( [4mFILENAME[24m, [4mOFFSET[24m, [4mOFFSET[24m )
+
+      [1mDescription[0m
+        fseek sets the current position in [4mFILENAME[24m. a subsequent read
+        will access data beginning at the new position. fseek is an
+        interface to the C library function of the same name. [4mOFFSET[24m is
+        specified in bytes.
+
+
+        [4mORIGIN[0m
+
+             "SEEK_SET"  beginning of file (default)
+
+
+
+             "SEEK_CUR"  current position
+
+
+
+             "SEEK_END"  end of file
+
+
+
+
+     [1mSee Also[0m
+        FILES, fread, open, close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

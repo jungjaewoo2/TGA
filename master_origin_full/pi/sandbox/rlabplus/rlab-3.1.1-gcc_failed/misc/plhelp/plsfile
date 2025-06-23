@@ -1,0 +1,22 @@
+plsfile:
+
+Synopsis: Set the output file name for plotting.
+
+Syntax: plsfile ( FILENAME )
+
+Description:
+
+	plsfile sets the output for plotting purposes to the file
+	named FILENAME. plsfile must be used prior to pstart or plot.
+
+	plsfile is most useful for creating postcript output in
+	"batch" mode. For example:
+
+
+		plsfile ("output.ps");
+		pstart (,,"ps");
+		plot (M);
+
+	sends the output to `output.ps'.
+
+See Also: pstart, plot

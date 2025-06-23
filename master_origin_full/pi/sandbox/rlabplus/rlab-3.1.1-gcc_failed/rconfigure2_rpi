@@ -1,0 +1,12 @@
+#!/bin/sh
+
+./configure \
+  --rlab2 \
+	--enable-superlu \
+	--enable-arpack \
+	--enable-glpk \
+	--with-pgplot \
+  --with-python \
+	--with-gphoto2
+
+

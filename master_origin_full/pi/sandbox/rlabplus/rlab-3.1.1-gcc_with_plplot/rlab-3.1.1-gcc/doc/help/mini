@@ -1,0 +1,66 @@
+  mini
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Minimum value indices.
+
+      [1mSyntax[0m
+        mini ( [4mA[24m )
+
+      [1mDescription[0m
+        Mini returns the index of the minimum value contained in matrix.
+        If the input argument ([4mA[24m) is a vector, then the index of the
+        smallest value is returned. If [4mA[24m is a MxN matrix, then a row-
+        vector of the column indices of the smallest column values of [4mA[0m
+        is returned.
+
+
+     [1mSee Also[0m
+        max, maxi, min
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

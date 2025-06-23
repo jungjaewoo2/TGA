@@ -1,0 +1,66 @@
+  ifft
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Inverse Discrete Fourier Transform
+
+      [1mSyntax[0m
+        ifft ( [4mX[24m )
+
+        ifft ( [4mX[24m, [4mN[24m )
+
+      [1mDescription[0m
+        Ifft utilizes the FFTPACK subroutine CFFTB to compute a discrete
+        Fourier transform of the input. The output is scaled by 1/N, so
+        that a call to fft() followed by a call to ifft() will reproduce
+        the original input.
+
+        If ifft is used with a second argument, [4mN[24m, then the matrix [4mX[24m is
+        either padded with zeros, or truncated till it is of length [4mN[0m
+        (if [4mX[24m is a vector), or has row dimension [4mN[24m (if it is a matrix).
+
+        Subroutine CFFTB computes the backward complex discrete Fourier
+        transform (the Fourier synthesis). equivalently, CFFTB computes
+        a complex periodic sequence from its Fourier coefficients.
+
+
+
+                  for j=1,...,n
+
+                     c(j)=the sum from k=1,...,n of
+
+                           c(k)*exp(i*(j-1)*(k-1)*2*pi/n)
+
+                                   where i=sqrt(-1)
+
+
+
+
+
+     The argument [4mX[24m must be a matrix. If [4mX[24m is a row, or column matrix
+     then a vector ifft is performed. If [4mX[24m is a MxN matrix then the N
+     columns of [4mX[24m are ifft'ed.
+
+
+     [1mSee Also[0m
+        fft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

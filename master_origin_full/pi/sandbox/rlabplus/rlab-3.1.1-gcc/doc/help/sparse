@@ -1,0 +1,66 @@
+  sparse
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Convert full (dense) storage to sparse storage
+
+      [1mSyntax[0m
+        sparse ( [4mA[24m )
+
+      [1mDescription[0m
+        sparse converts its argument from a dense storage format to the
+        sparse storage format. If the argument is already sparse, then
+        it is condensed (any non-zeros are removed).  The sparse storage
+        format is commonly referred to as [4msparse[24m [4mrow-wise[24m storage. Only
+        the non-zero elements of the matrix are stored in a row-wise
+        fashion. Row-wise storage is used for several reasons:
+
+
+     +o  The matrix vector product A*x is a very common operation,
+        efficiently performed with row-wise storage.
+
+     +o  Row-wise (and column-wise) storage is a very general storage
+        scheme that works well for general non-symmetric matrices. There
+        is a penalty to pay for storing symmetric matrices in this
+        fashion, but it is small.
+
+        Rlab does not attempt to out-smart the user by automatically
+        converting sparse matrices to dense matrices, or vice-versa.
+        Even if the user explicitly fills the a sparse matrix so that
+        the number of non-zeros is equal to the full size of the matrix,
+        the sparse storage format is retained.
+
+        Certain operations on sparse matrices will return dense
+        matrices. For instance, the cosine operation on a sparse matrix
+        will create a dense matrix with ones where there used to be
+        zeros.
+
+        Sparse matrices are printed differently than full, or dense
+        matrices. Only the non-zero elements are printed, along with
+        their row and column values. For example:
+
+
+
+          > a = [0, 1, 0;
+          >      2, 0, 0;
+          >      0, 0, 3];
+          > s = sparse(a)
+           (1, 2)                 1
+           (2, 1)                 2
+           (3, 3)                 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+

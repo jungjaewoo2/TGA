@@ -1,0 +1,66 @@
+  all
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Check if [4mall[24m elements are non-zero.
+
+      [1mSyntax[0m
+        all ( [4mA[24m )
+
+      [1mDescription[0m
+        When [4mA[24m is a vector (row or column):
+
+          all returns TRUE (1) if all of the elements of [4mA[24m are non-
+          zero.  all returns zero otherwise.
+
+
+     When [4mA[24m is a matrix:
+
+          all operates on the columns of [4mA[24m, returning a row-vector
+          of ones and zeros.
+
+
+
+     [1mSee Also[0m
+        any
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,479 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:562: checking for uname
+configure:702: checking whether ln -s works
+configure:727: checking for gawk
+configure:727: checking for mawk
+configure:787: checking for a BSD compatible install
+configure:872: checking for ar
+configure:1015: checking for gfortran
+configure:901: checking for g77
+configure:930: checking for f77
+configure:959: checking for fort
+configure:988: checking for fort77
+configure:1018: checking for /usr/bin/sh5
+configure:1406: checking size of double
+configure:1425: gcc -o conftest    conftest.c -L/usr/local/lib  1>&5
+configure:1416:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+ ^~~~
+configure: In function 'main':
+configure:1419:11: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ elif test $ac_cv_prog_cc_g = yes; then
+           ^~~~
+configure:1419:11: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1419:11: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1421:3: warning: incompatible implicit declaration of built-in function 'exit'
+     CFLAGS="-g -O2"
+   ^ ~~
+configure:1421:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1445: checking size of long int
+configure:1464: gcc -o conftest    conftest.c -L/usr/local/lib  1>&5
+configure:1455:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ echo "configure:1406: checking size of double" >&5
+ ^~~~
+configure: In function 'main':
+configure:1458:11: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ else
+           ^   
+configure:1458:11: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1458:11: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1460:3: warning: incompatible implicit declaration of built-in function 'exit'
+     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
+   ^ ~~
+configure:1460:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1484: checking size of int
+configure:1503: gcc -o conftest    conftest.c -L/usr/local/lib  1>&5
+configure:1494:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ echo "configure:1445: checking size of long int" >&5
+ ^~~~
+configure: In function 'main':
+configure:1497:11: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ else
+           ^   
+configure:1497:11: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1497:11: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1499:3: warning: incompatible implicit declaration of built-in function 'exit'
+     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
+   ^ ~~
+configure:1499:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1523: checking size of short int
+configure:1542: gcc -o conftest    conftest.c -L/usr/local/lib  1>&5
+configure:1533:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ echo "configure:1484: checking size of int" >&5
+ ^~~~
+configure: In function 'main':
+configure:1536:11: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ else
+           ^   
+configure:1536:11: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1536:11: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1538:3: warning: incompatible implicit declaration of built-in function 'exit'
+     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
+   ^ ~~
+configure:1538:3: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1563: checking for working const
+configure:1617: gcc -c    conftest.c 1>&5
+configure:1638: checking how to run the C preprocessor
+configure:1659: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1718: checking for ANSI C header files
+configure:1731: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1798: gcc -o conftest    conftest.c -L/usr/local/lib  1>&5
+configure: In function 'main':
+configure:1793:67: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ 
+                                                                   ^   
+configure:1793:67: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1793:67: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1794:1: warning: incompatible implicit declaration of built-in function 'exit'
+ if test $ac_cv_header_stdc = yes; then
+ ^~~~
+configure:1794:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1822: checking for size_t
+configure:1855: checking whether byte ordering is bigendian
+configure:1873: gcc -c    conftest.c 1>&5
+configure:1888: gcc -c    conftest.c 1>&5
+configure: In function 'main':
+configure:1883:2: error: unknown type name 'not'
+ EOF
+  ^~ 
+configure:1883:10: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'endian'
+ EOF
+          ^     
+configure: failed program was:
+#line 1877 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/param.h>
+int main() {
+
+#if BYTE_ORDER != BIG_ENDIAN
+ not big endian
+#endif
+; return 0; }
+configure:1947: checking C -> Fortran interlanguage calling convention
+configure:1972: gcc -o conftest -DUSE_UPPER   conftest.c -L. -lfitest_f 1>&5
+configure:1963:18: warning: return type defaults to 'int' [-Wimplicit-int]
+     long l;
+                  ^   
+configure: In function 'main':
+configure:1968:20: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ }
+                    ^   
+configure:1968:20: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1968:20: note: include '<stdlib.h>' or provide a declaration of 'exit'
+/tmp/ccNlMaal.o: In function `main':
+conftest.c:(.text+0x2c): undefined reference to `TEST'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1961 "configure"
+#include "confdefs.h"
+#include "fitest.h"
+                 main()
+                 {
+                   F_REAL a = 1.0;
+                   F_REAL b = 2.0;
+                   TEST (&a, &b);
+                   exit(0);
+                 }
+configure:2002: gcc -o conftest -DUSE_F2C   conftest.c -L. -lfitest_f 1>&5
+configure:1993:18: warning: return type defaults to 'int' [-Wimplicit-int]
+ 
+                  ^   
+configure: In function 'main':
+configure:1998:20: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ 
+                    ^   
+configure:1998:20: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1998:20: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:2108: checking for less
+configure:2200: checking for ANSI C header files
+configure:2308: checking for dirent.h that defines DIR
+configure:2321: gcc -c -DUSE_F2C   conftest.c 1>&5
+configure:2346: checking for opendir in -ldir
+configure:2365: gcc -o conftest -DUSE_F2C   conftest.c -ldir  -L/usr/local/lib  1>&5
+/usr/bin/ld: cannot find -ldir
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 2354 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char opendir();
+
+int main() {
+opendir()
+; return 0; }
+configure:2432: checking for stdlib.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for time.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for float.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for unistd.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for dlfcn.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for values.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2432: checking for dl.h
+configure:2442: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2438:16: fatal error: dl.h: No such file or directory
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+                ^
+compilation terminated.
+configure: failed program was:
+#line 2437 "configure"
+#include "confdefs.h"
+#include <dl.h>
+configure:2472: checking for ieeefp.h
+configure:2482: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2478:20: fatal error: ieeefp.h: No such file or directory
+ do
+                    ^
+compilation terminated.
+configure: failed program was:
+#line 2477 "configure"
+#include "confdefs.h"
+#include <ieeefp.h>
+configure:2472: checking for floatingpoint.h
+configure:2482: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2478:27: fatal error: floatingpoint.h: No such file or directory
+ do
+                           ^
+compilation terminated.
+configure: failed program was:
+#line 2477 "configure"
+#include "confdefs.h"
+#include <floatingpoint.h>
+configure:2472: checking for machine/fpu.h
+configure:2482: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2478:25: fatal error: machine/fpu.h: No such file or directory
+ do
+                         ^
+compilation terminated.
+configure: failed program was:
+#line 2477 "configure"
+#include "confdefs.h"
+#include <machine/fpu.h>
+configure:2472: checking for fpu_control.h
+configure:2482: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2512: checking for difftime
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2512: checking for rindex
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2524:6: warning: conflicting types for built-in function 'rindex'
+ else
+      ^     
+configure:2512: checking for matherr
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2512: checking for getenv
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2512: checking for putenv
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2512: checking for sleep
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2512: checking for logb
+configure:2540: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2524:6: warning: conflicting types for built-in function 'logb'
+ else
+      ^   
+configure:2567: checking for working alloca.h
+configure:2579: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2600: checking for alloca
+configure:2633: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2800: checking for elf.h
+configure:2810: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2867: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:2858:18: warning: return type defaults to 'int' [-Wimplicit-int]
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+                  ^~~~
+configure: In function 'main':
+configure:2861:22: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+ if test -z "$ac_err"; then
+                      ^~~~
+configure:2861:22: warning: incompatible implicit declaration of built-in function 'exit'
+configure:2861:22: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:2863:22: warning: incompatible implicit declaration of built-in function 'exit'
+   eval "ac_cv_header_$ac_safe=yes"
+                      ^~~~
+configure:2863:22: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:2901: checking for main in -lieee
+configure:2916: gcc -o conftest -DUSE_F2C   conftest.c -lieee  -L/usr/local/lib  -lm -lc 1>&5
+configure:2939: checking for fpsetmask
+configure:2967: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+/tmp/ccOXYtze.o: In function `main':
+conftest.c:(.text+0x8): undefined reference to `fpsetmask'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 2944 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char fpsetmask(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char fpsetmask();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_fpsetmask) || defined (__stub___fpsetmask)
+choke me
+#else
+fpsetmask();
+#endif
+
+; return 0; }
+configure:2939: checking for ieee_handler
+configure:2967: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+/tmp/ccYdB25S.o: In function `main':
+conftest.c:(.text+0x8): undefined reference to `ieee_handler'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 2944 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char ieee_handler(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char ieee_handler();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_ieee_handler) || defined (__stub___ieee_handler)
+choke me
+#else
+ieee_handler();
+#endif
+
+; return 0; }
+configure:2939: checking for ieee_set_fp_control
+configure:2967: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+/tmp/ccPhsVBg.o: In function `main':
+conftest.c:(.text+0x8): undefined reference to `ieee_set_fp_control'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 2944 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char ieee_set_fp_control(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char ieee_set_fp_control();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_ieee_set_fp_control) || defined (__stub___ieee_set_fp_control)
+choke me
+#else
+ieee_set_fp_control();
+#endif
+
+; return 0; }
+configure:2939: checking for __setfpucw
+configure:2967: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+/tmp/ccGMZyXI.o: In function `main':
+conftest.c:(.text+0x8): undefined reference to `__setfpucw'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 2944 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __setfpucw(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __setfpucw();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___setfpucw) || defined (__stub_____setfpucw)
+choke me
+#else
+__setfpucw();
+#endif
+
+; return 0; }
+configure:2992: checking for __setfpucw in -lc
+configure:3011: gcc -o conftest -DUSE_F2C   conftest.c -lc  -L/usr/local/lib  -lm -lc 1>&5
+/tmp/ccITd4bk.o: In function `main':
+conftest.c:(.text+0x8): undefined reference to `__setfpucw'
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 3000 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __setfpucw();
+
+int main() {
+__setfpucw()
+; return 0; }
+configure:3043: checking for times
+configure:3071: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:3098: checking for clock
+configure:3126: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:3153: checking for sysconf
+configure:3181: gcc -o conftest -DUSE_F2C   conftest.c -L/usr/local/lib  -lm -lc 1>&5
+configure:3209: checking for sys/types.h
+configure:3219: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3249: checking for sys/times.h
+configure:3259: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3289: checking for sys/time.h
+configure:3299: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3329: checking for main in -ldl
+configure:3344: gcc -o conftest -DUSE_F2C   conftest.c -ldl  -L/usr/local/lib  -lm -lc 1>&5
+configure:3366: checking for dlopen
+configure:3394: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:3418: checking for dlsym
+configure:3446: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:3470: checking for dlclose
+configure:3498: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:3666: checking for tgetnum in -lncurses
+configure:3685: gcc -o conftest -DUSE_F2C   conftest.c -lncurses  -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:3708: checking for -lreadline
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:3739: checking for X
+configure:3806: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3882: gcc -o conftest -DUSE_F2C   conftest.c -lXt -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure: In function 'main':
+configure:3878:1: warning: implicit declaration of function 'XtMalloc' [-Wimplicit-function-declaration]
+ 
+ ^       
+configure:3979: checking for main in -lnsl
+configure:3994: gcc -o conftest -DUSE_F2C   conftest.c -lnsl  -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure:4019: checking for main in -lsocket
+configure:4034: gcc -o conftest -DUSE_F2C   conftest.c -lsocket  -ldl -L/usr/local/lib  -lm -lc -lnsl 1>&5
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 4027 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }
+configure: checking for -lblas
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -lblas -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc 1>&5
+configure: checking for -llapack
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -llapack -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas 1>&5
+configure: checking for -lgsl
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -lgsl -lgslcblas -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack 1>&5
+configure: checking for -lcurl
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -lcurl -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 1>&5
+configure: checking for -larpack
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -larpack -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:3708: checking for -lsuperlu
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c -lsuperlu -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:3712:33: fatal error: superlu_enum_consts.h: No such file or directory
+   CMDLIBS="-lncurses $CMDLIBS"
+                                 ^
+compilation terminated.
+configure: failed program was:
+#line 3711 "configure"
+#include "confdefs.h"
+#include <superlu_enum_consts.h>
+int MAIN__(){return(1);}
+int main() {
+return(1);
+; return 0; }
+configure:4258: checking for -lglpk
+configure gcc -o conftest -DUSE_F2C   conftest.c -lglpk -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:3708: checking for 
+configure:3718: gcc -o conftest -DUSE_F2C   conftest.c  -lreadline -lncurses  -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:3712:27: fatal error: python/Python.h: No such file or directory
+   CMDLIBS="-lncurses $CMDLIBS"
+                           ^
+compilation terminated.
+configure: failed program was:
+#line 3711 "configure"
+#include "confdefs.h"
+#include "python/Python.h"
+int MAIN__(){return(1);}
+int main() {
+return(1);
+; return 0; }
+configure:4282: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:4301: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5
+configure:4320: gcc -o conftest -DUSE_F2C   conftest.c -ldl -L/usr/local/lib  -lm -lc -lblas -llapack -lhdf5 -lcurl 1>&5

@@ -1,0 +1,20 @@
+plhold:
+
+Synopsis: 2-Dimensional incremental plotting.
+
+Syntax: plhold ( A )
+
+Description:
+
+	Plhold can be used to incrementally create a 2-dimensional
+	plot. This can be useful to display data/results while an
+	analysis is in progres for monitoring purposes. After the plot
+	is finished plhold_off() must be used to reset the plot-object
+	attributes, and advance the "page" for the next plot.
+
+	Note that if the plot line-style is set to "point", then
+	plhold can be given a single point to plot. If the plot
+	line-style is set to "line", then plhold must be called with
+	at least two points in order to draw something visible.
+
+See Also: plhold_off

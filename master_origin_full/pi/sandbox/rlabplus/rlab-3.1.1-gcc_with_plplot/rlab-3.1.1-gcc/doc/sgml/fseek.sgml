@@ -1,0 +1,33 @@
+<sect> fseek 
+<p>
+<descrip>
+<tag> Synopsis </tag> Reposition a stream.
+<tag> Syntax </tag> fseek ( <em>FILENAME</>, <em>OFFSET</> )
+             <p>    fseek ( <em>FILENAME</>, <em>OFFSET</>, <em>OFFSET</> )
+<tag> Description </tag>
+
+	fseek sets the current position in <em>FILENAME</>. a
+	subsequent read will access data beginning at the new
+	position. fseek is an interface to the C library function of
+	the same name. <em>OFFSET</> is specified in bytes.
+
+	<descrip>
+	<tag><em>ORIGIN</></tag>
+
+	<quote>
+	"SEEK_SET"	beginning of file (default)
+	</quote>
+
+	<quote>
+	"SEEK_CUR"	current position
+	</quote>
+
+	<quote>
+	"SEEK_END"	end of file
+	</quote>
+
+	</descrip>
+
+<tag>See Also</tag>   FILES, fread, open, close
+
+</descrip>

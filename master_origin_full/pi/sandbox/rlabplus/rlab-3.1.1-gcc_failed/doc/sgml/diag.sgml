@@ -1,0 +1,29 @@
+<sect> diag 
+<p>
+<descrip>
+<tag> Synopsis </tag> Diagnonal matrix. 
+<tag> Syntax </tag> diag ( <em>A</> )
+             <p>    diag ( <em>A</>, <em>K</> )
+<tag> Description </tag>
+
+	If the 1st argument, <em>A</> is a 1xN matrix construct a
+	diagonal matrix from the input. Optionally if <em>K</>
+	(scalar) is specified then create a matrix with the vector as
+	the <em>K</>th diagonal.
+
+	If the 1st argument is a MxN matrix, construct a 1xN matrix
+	from the diagonal elements of the input matrix. Optionally if
+	<em>K</> is specified return the vector from the <em>K</>th
+	diagonal of the input matrix.
+
+	<quote>
+	<em>K</> &lt; is below the main diagonal.
+	</quote>
+
+	<quote>
+	<em>K</> &gt; is above the main diagonal.
+	</quote>
+
+<tag>See Also</tag>   tril, triu
+
+</descrip>

@@ -1,0 +1,60 @@
+	I would like to acknowledge the following peoples
+	contributions to RLaB. They are listed in no specific order:
+
+	Mike Brennan has provided lots of suggestions and guidance and
+	some excellent code from mawk.
+
+	Many thanks to Phillip Musumeci and Brad Hards for
+	volunteering to help with the documentation, and for many
+	helpful suggestions and advice. Also special thanks to Phillip
+	for providiing the main archive site.
+
+	T. S. Yang for doing a nice job on the Macintosh
+	port. Furthermore, for helping out so much with contributed
+	rfiles, and C-language code for the sparse factorization
+	problem. And for turning me on to Boehm's Garbage
+	Collector... (I am sure there is more I am forgetting).
+
+	Dave Raymond for generally helping out, and for writing the
+	pgraf interface to Rlab.
+
+	Thanks to Matt Wette for providing an archive site in the U.S.
+
+	Thanks to Fook Fah Yap for contributing faster matrix multiply
+	functions, and being a very persistent tester.
+
+      	Chris Thewalt, for donating the getline interface. 
+
+	J.J Green for contributing rfiles and developing m2r.
+
+	Jeff Layton, for donating rfiles, and especially for authoring
+	the Controls-Toolbox.
+
+	Maurice LeBrun and Geoffrey Furnish for doing such a nice job
+	with PLPLOT, and for providing lots of help.
+
+      	Scott Hunziker, in addition to lots of helpful discussion over
+      	the years, Scott recently contributed much of the
+      	sparse-matrix routines from Alki. I could have re-created
+      	these myself, but Scott's contribution has made the effort far
+      	less painful that it would otherwise be. His sparse-assignment
+      	routines alone probably saved me at least a week of time.
+
+	Glen Greers for help and advice with dynamic linking.
+
+	John Peterson for doing the OS/2 and DOS ports.
+
+	Don Morris, another persistent tester.
+
+	Dave Beste, as usual, has provided a unique perspective.
+
+	Much thanks to the authors and sponsors of LAPACK, RANLIB, and
+	FFTPACK.
+
+	Thamks to the authors, and maintainers of GNUPLOT.
+
+	The alpha testers have been a great help... Most notably:
+	Phillip Musumeci, Brad Hards, Ove Ewerlid, Tarun Soni, Roumen
+	Antonov, Charles H. Romine, Paul Cloke, Sze Tan, Jinghong
+	Chen, Alan Magnuson, Edwin Ng, Michael C. Grant, Thomas
+	Witelski, Timothy Kay, and Fook Fah Yap.

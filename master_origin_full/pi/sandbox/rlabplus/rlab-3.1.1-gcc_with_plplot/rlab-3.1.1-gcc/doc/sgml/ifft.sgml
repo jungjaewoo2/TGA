@@ -1,0 +1,40 @@
+<sect> ifft 
+<p>
+<descrip>
+<tag> Synopsis </tag> Inverse Discrete Fourier Transform
+<tag> Syntax </tag> ifft ( <em>X</> )
+             <p>    ifft ( <em>X</>, <em>N</> )
+<tag> Description </tag>
+
+	Ifft utilizes the FFTPACK subroutine CFFTB to compute a
+	discrete Fourier transform of the input. The output is scaled
+	by 1/N, so that a call to fft() followed by a call to ifft()
+	will reproduce the original input. 
+
+	If ifft is used with a second argument, <em>N</>, then the
+	matrix <em>X</> is either padded with zeros, or truncated till
+	it is of length <em>N</> (if <em>X</> is a vector), or has row
+	dimension <em>N</> (if it is a matrix).
+
+	Subroutine CFFTB computes the backward complex discrete
+	Fourier transform (the Fourier synthesis). equivalently, CFFTB
+	computes a complex periodic sequence from its Fourier
+	coefficients.
+
+	<tscreen><verb>
+	for j=1,...,n
+
+           c(j)=the sum from k=1,...,n of
+
+               	 c(k)*exp(i*(j-1)*(k-1)*2*pi/n)
+
+                     	 where i=sqrt(-1)
+	</verb></tscreen>
+
+	The argument <em>X</> must be a matrix. If <em>X</> is a row,
+	or column matrix then a vector ifft is performed. If <em>X</>
+	is a MxN matrix then the N columns of <em>X</> are ifft'ed.
+
+<tag>See Also</tag>   fft
+
+</descrip>

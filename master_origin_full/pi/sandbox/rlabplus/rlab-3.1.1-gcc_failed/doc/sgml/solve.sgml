@@ -1,0 +1,46 @@
+<sect> solve 
+<p>
+<descrip>
+<tag> Synopsis </tag> Solve linear equations.
+<tag> Syntax </tag> solve ( <em>A</>, <em>B</> )
+             <p>    solve ( <em>A</>, <em>B</>, <em>TYPE</> )
+<tag> Description </tag>
+
+	Solve solves a system of linear equations:
+
+	<quote>
+	<em>A * X = B</>
+	</quote>
+
+	<descrip>
+	<tag><em>A</></tag>  is the coefficient matrix.
+	<tag><em>B</></tag>  is the right hand side.
+	<tag><em>X</></tag>  is the solution.
+	</descrip>
+
+	<em>B</> can contain multiple right-hand-sides, one in each
+	column.  Solve returns a matrix of the solutions, <em>X</>,
+	where each column of the solution corresponds to a column of
+	<em>B</>.
+
+	Solve uses the LAPACK subroutines DGETRF, and ZGETRF if
+	<em>A</> is general.
+
+	Solve uses the LAPACK subroutines DSYTRF, and ZHETRF if
+	<em>A</> is symmetric.
+
+	The third and optional argument, <em>TYPE</> allows the user
+	to overide the symmetry check, and force the solve to use
+	either the general or the symmetric solver.
+
+	<quote>
+	TYPE = "g" or "G":	The general solution is used.
+	</quote>
+
+	<quote>
+	TYPE = "s" or "S":	The symmetric solution is used.
+	</quote>
+
+<tag>See Also</tag>   backsub, inv, factor, lu, rcond
+
+</descrip>

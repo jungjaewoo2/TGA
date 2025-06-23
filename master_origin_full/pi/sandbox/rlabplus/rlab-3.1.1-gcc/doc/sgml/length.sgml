@@ -1,0 +1,23 @@
+<sect> length
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the length of an object.
+<tag> Syntax </tag> length ( <em>A</> )
+<tag> Description </tag>
+
+	The length function returns the length of a vector <em>A</>. It
+	is equivalent to <tt>max (size (A))</>.
+
+	To summarize:
+
+	<descrip>
+
+	<tag>MATRIX or VECTOR:</tag> <tt>max (size (A))</tt>
+
+	<tag>LIST:</tag> number of elements in list.
+
+	</descrip>
+
+<tag>See Also</tag>  show, size
+
+</descrip>

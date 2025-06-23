@@ -1,0 +1,16 @@
+plaz:
+
+Synopsis: Set the azimuth for the current sub-plot.
+
+Syntax: plaz ( AZ )
+
+Description:
+
+	Set the "azimuth" for the current sub-plot in the current
+	plot-window. Azimuth represents the viewing angle in degrees.
+	When AZ=0, the observer is looking face onto the ZX plane, and
+	as AZ is increased, the  observer moves clockwise around the
+	box when viewed from above the XY plane. Only affects 3D
+	plots. 
+
+

@@ -1,0 +1,19 @@
+/* confdefs.h */
+#define PACKAGE_NAME "librpip"
+#define PACKAGE_TARNAME "librpip"
+#define PACKAGE_VERSION "version-0.1.0"
+#define PACKAGE_STRING "librpip version-0.1.0"
+#define PACKAGE_BUGREPORT ""
+#define PACKAGE_URL ""
+#define STDC_HEADERS 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_STRUCT_SPI_IOC_TRANSFER_TX_NBITS 1
+#define LIBRPIP_HAVE_SPI_STRUCT_NBITS 1

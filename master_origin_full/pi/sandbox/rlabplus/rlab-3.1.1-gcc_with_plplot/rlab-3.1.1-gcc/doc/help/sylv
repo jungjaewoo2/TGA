@@ -1,0 +1,66 @@
+  sylv
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Solve the Sylvester matrix equation
+
+      [1mSyntax[0m
+        sylv ( [4mA[24m , [4mB[24m , [4mC[24m )
+
+        sylv ( [4mA[24m , [4mC[24m )
+
+      [1mDescription[0m
+        Sylv solves the Sylvester matrix equation:
+
+
+
+          [4mA*X[24m [4m+[24m [4mX*B[24m [4m=[24m [4m-C[0m
+
+
+     or
+
+
+
+          [4mA*X[24m [4m+[24m [4mX*A'[24m [4m=[24m [4m-C[24m   (Lyapunov equation)
+
+
+     [4mA[24m and [4mB[24m must both be upper quasi-triangular (if real), or
+     triangular (if complex).
+
+     If [4mA[24m and or [4mB[24m are not upper quasi-triangular/triangular, then it is
+     usually easier to use lyap. Lyap performs a Schur decomposition on
+     A and B before using sylv.
+
+     Sylv uses the LAPACK functions DTRSYL, or ZTRSYL.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

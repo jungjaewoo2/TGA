@@ -1,0 +1,11 @@
+zlabel:
+
+Synopsis: Set the Z-axis text label for the current sub-plot.
+
+Syntax: zlabel ( ZLABEL )
+
+Description:
+
+	Set the z-axis label for the current sub-plot in the current
+	plot-window. If zlabel is used without any arguments, then the
+	z-axis label is set to the null-string.

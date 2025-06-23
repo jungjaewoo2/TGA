@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE> Rlab2 Reference Manual: Tutorial</TITLE>
+ <LINK HREF="rlab-ref-3.html" REL=next>
+ <LINK HREF="rlab-ref-1.html" REL=previous>
+ <LINK HREF="rlab-ref.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="rlab-ref-3.html">Next</A>
+<A HREF="rlab-ref-1.html">Previous</A>
+<A HREF="rlab-ref.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2. Tutorial</A></H2>
+
+<P>
+<P>Now that you have seen how to start Rlab, run a program, get help,
+and interpret error messages, you should be ready to try out some
+elementary operations. These simple examples are here to help you
+``get your feet wet''. Please read this section in front of a
+computer, and try the examples as you read each one.
+<P>Since this is a tutorial, every detail and nuance of each example
+may not be fully explained. As you work through this section you may
+have to take some ideas ``on faith''. However, everything should be
+fully explained in subsequent sections of this manual. If you find
+something that is not explained, please bring it to the author's
+attention.
+<P>
+<P>
+<H2><A NAME="ss2.1">2.1 Fundamental Operations</A>
+</H2>
+
+<P>
+<P>Rlab does not require definition of variable types and size, Unlike
+more conventional languages such as: Fortran, Pascal, and C. This
+approach may seem daring at first, but practice has shown that it is
+most often a much more productive environment for rapid development
+of programs than strictly typed languages.
+<P>
+<H3>Creating Matrices / Arrays</H3>
+
+<P>
+<P>For starters we will introduce the reader to basic operations that
+are used in many applications. The first is to create a matrix or
+array of data so that operations can be demonstrated. The matrix
+elements are entered at the command line (or in a file). The commas
+separate the elements of a row, and the semi-colons separate one row
+from the next.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a = [1,2,3; 4,5,6; 7,8,9]
+        1          2          3  
+        4          5          6  
+        7          8          9  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The commas are <EM>required</EM> so that there are no ambiguities when
+more complex expressions are used to create a matrix. For an
+example, lets create the Attitude matrix for a 3-2-3 Euler angle
+rotation. The variables <CODE>th</CODE>, <CODE>ph</CODE>, and <CODE>ps</CODE>
+represent the three Euler angles. To make the notation more concise,
+we will make the variables <CODE>c</CODE> and <CODE>s</CODE> copies of the
+builtin functions <CODE>sin</CODE> and <CODE>cos</CODE>. Next the matrix is
+entered, with the result displayed upon completion.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> th = pi/8; ph = pi/4; ps = pi/16;
+> c = cos; s = sin;
+> A = [ c(ps)*c(th)*c(ph)-s(ps)*s(ph), c(ps)*c(th)*s(ph)+s(ps)*c(ph), -c(ps)*s(th);
+>      -s(ps)*c(th)*c(ph)-c(ps)*s(ph),-s(ps)*c(th)*s(ph)+c(ps)*c(ph),  s(ps)*s(th);
+>       s(th)*c(ph),                   s(th)*s(ph),                    c(th) ]
+    0.503      0.779     -0.375  
+   -0.821      0.566     0.0747  
+    0.271      0.271      0.924  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The matrices we have created thus far: <CODE>a</CODE>, and <CODE>A</CODE> are
+two-dimensional; they have row and column dimensions. Actually, all
+arrays are two-dimensional. Row and column vectors merely have one
+dimension equal to one, and scalar values have both dimensions equal
+to one.
+<P>The <CODE>show</CODE> function displays information about its argument. In
+the following example, we see that the entire array <CODE>a</CODE> is a
+3-by-3 matrix, from the numeric class, data type real, and uses
+dense storage. Note that the scalar value <CODE>a[1]</CODE> is also the
+same kind of object, just with different dimensions.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> show(a);
+        nr                  :   3
+        nc                  :   3
+        n                   :   9
+        class               :   num
+        type                :   real
+        storage             :   dense
+> show(a[1]);
+        nr                  :   1
+        nc                  :   1
+        n                   :   1
+        class               :   num
+        type                :   real
+        storage             :   dense
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H3>Reading Data From a File</H3>
+
+<P>
+<P>Numeric data can also be easily read from a file with the buitin
+functions (see Section 
+<A HREF="rlab-ref-5.html#reading-data">Data</A>). For
+this example we will read a matrix stored in a text file. The
+<CODE>readm</CODE> function will read a text file that contains columns of
+numbers. In this instance the file looks like:
+<P>
+<HR>
+<PRE>
+        17        24         1         8        15
+        23         5         7        14        16
+         4         6        13        20        22
+        10        12        19        21         3
+        11        18        25         2         9
+</PRE>
+<HR>
+<P>The matrix can be read with the following statement.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> m = readm("magic.dat");
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3>Basic Math Operations</H3>
+
+<P>
+<P>The basic mathematical operators: <CODE>+,-,*,/</CODE> work on numeric
+objects of any dimension. If the operands are scalars, then the
+operations are performed as expected:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> 2 + 3
+        5  
+> 2 - 3
+       -1  
+> 2 * 3
+        6  
+> 2 / 3
+    0.667  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>If either of the operands have dimensions higher than one, then
+array or matrix operations are performed. Array operations act in an
+element-by-element sense. That is, the scalar value is used
+repeatedley to perform the operation on each element of the
+array. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a+2
+        3          4          5  
+        6          7          8  
+        9         10         11  
+> 2*a
+        2          4          6  
+        8         10         12  
+       14         16         18  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>When both operands are matrices, then matrix operations are
+performed, provided the dimensions of the operands are
+appropriate. For example:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> a+a
+        2          4          6  
+        8         10         12  
+       14         16         18  
+> a*a
+       30         36         42  
+       66         81         96  
+      102        126        150  
+> [1,2,3] * a
+       30         36         42  
+> a * [1;2;3]
+       14  
+       32  
+       50  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3>Basic Tools</H3>
+
+<P>
+<P>In addition to the basic mathematical operators, there are many
+functions designed to operate efficiently on arrays. Most of the
+functionality these functions provide could be performed with fairly
+simple algorithms written in the Rlab language. However, these
+functions are written in the C-language (a compiled language), and
+are optimized for operations on arrays. Generally, using these
+functions will produce programs with good performance, and a minimum
+of effort. Generally, there are three types of functions: scalar,
+vector, and matrix.
+<P>
+<DL>
+<DT><B>Scalar Functions:</B><DD><P>These functions operate on scalar
+values, and treat arrays (matrices) in an element-by-element
+fashion. For example, the function <CODE>abs</CODE> will return the
+absolute value of an object (provided it is a numeric
+object). If the object is scalar in size, the result is
+scalar. If the object is an array, either a vector or a matrix,
+then the result is an array of the same size, with each
+element representing the absolute value of the corresponding
+element of the input array.
+<P>
+<DT><B>Vector Functions:</B><DD><P>These functions operate on either row
+(1-by-N), or column (N-by-1) vectors. If the argument is an
+array with dimensions N-by-M, then the operation is performed
+on the M columns of the input.
+<P>
+<DT><B>Matrix Functions:</B><DD><P>These function operate on matrices as a
+single entity. These functions may return a scalar, a vector,
+another matrix, or any combination. For example, the function
+<CODE>det</CODE> returns a scalar value, while <CODE>eig</CODE> returns a
+matrix (the eigenvectors), and a vector (the eigenvalues).
+</DL>
+<P>Using the matrices created in the previous section we will
+demonstrate some of the most frequently used functions.
+<P>The matrix <CODE>m</CODE> has been termed a "magic square" matrix by
+some. The name is due to the properties of the matrix. First of all,
+its elements are integers from 1 to N squared (N is the dimension of
+the matrix). The sum of each row, the sum of each column, and the
+sum of the diagonal elements are all the same. These properties can
+be displayed very simply with the help of some functions.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> sum(m)
+       65         65         65         65         65  
+> sum(m')
+       65         65         65         65         65  
+> sum(diag(m))
+       65  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<P>
+<H3>Linear Algebra</H3>
+
+<P>
+<P>Rlab contains a high-level interfaces to the LAPACK (Linear Algebra
+PACKage), the FFTPACK (Fast Fourier Transform PACKage), and the
+RANLIB (RANdom number LIBrary) libraries. These interfaces can
+simplify many, otherwise difficult programming tasks. For example,
+we might be interested in solving a system of equations. Using the
+magic-square matrix once again
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> 1/rcond(m)
+      6.7  
+> x = solve(m, ones(5,1))
+   0.0154  
+   0.0154  
+   0.0154  
+   0.0154  
+   0.0154  
+> m*x - ones(5,1)
+        0  
+        0  
+        0  
+        0  
+        0  
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The function <CODE>rcond</CODE> estimates the reciprocal of the matrix
+condition number. A value of 6.7 indicates that the magic-square
+matrix is reasonably well conditioned (full-rank). Next, we use the
+<CODE>solve</CODE> function, to get the solution to the system of
+equations with coefficients of the magic-square, and right-hand
+sides of unity. Lastly, we check the result by mulitplying the
+coefficient matrix by the solution vector (<CODE>m*x</CODE>) and
+subtracting the right-hand side. The result should be a zero-vector
+(and it is).
+<P>Note that there are other ways to solve a system of equations. The
+<CODE>\</CODE> operator (see Section 
+<A HREF="rlab-ref-3.html#arithmetic-ops">Arithmetic Operations</A>) could be used like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> x = m\ones(5,1)
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Or, the <CODE>inv</CODE> function could be used. However, using <CODE>inv</CODE>
+is usually a bad idea.
+<P>In addition to the linear-algebra functions supplied to solve
+systems of equations, there are numerous others such as <CODE>eig</CODE>
+for solving eigenvalue problems, and <CODE>qr</CODE> for performing QR
+decomposition, and <CODE>svd</CODE> for performing the singular value
+decomposition. 
+<P>
+<P>
+<H2><A NAME="ss2.2">2.2 Computing the Mean</A>
+</H2>
+
+<P>
+<P>This example is fairly long, but it does cover allot of ground.  For
+this example it is assumed that there exist data in a file, for
+which you want to know some statistics. In this case, the mean or
+average, and the standard deviation. The file looks like:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+1        90
+2        86
+3        55
+4        92
+5        73
+6        30
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>The students are identified with an integer (the first column). To
+read this data, and compute the mean or average test score is
+simple. The <CODE>readm</CODE> function is used to get the data from the
+file. The contents of the file are read, and assigned to the matrix
+<CODE>grades</CODE>.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> grades = readm("jnk");
+> sum(grades)
+       21        426  
+> sum(grades[;2])/grades.nr
+       71  
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>The function <CODE>sum</CODE> sums the column of a matrix, and is used
+here to look at the sums of both columns. However, only the average
+of the second column is desired. The following statement singles out
+the second column of <CODE>grades</CODE>, uses it as an argument to
+<CODE>sum</CODE>, and divides the result by the number of rows in
+<CODE>grades</CODE>. 
+<P>
+<P>
+<H2><A NAME="ss2.3">2.3 Computing the Mean Again</A>
+</H2>
+
+<P>
+<P>A more complicated version (only at first glance) of the 
+problems is created when the professor wants to eliminate numeric
+identification of each student and use their names instead. This
+file consists of student's names in the first column, and grades in
+the second column.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+Jeanne       90
+John         86
+Fred         55
+David        92
+Alice        73
+Dork         30
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>Although the file format is simple, many programs/languages would
+have difficulty handling the mixture of string and numeric
+data. Rlab has a list-object which allows for convenient association
+of numeric and string data. Lists are N-dimensional arrays that are
+indexed associatively. With the list we can create elements that are
+indexed with the student's name. Each element will then contain the
+student's grade. For example: <CODE>grade.Alice</CODE> will contain
+Alice's grade of 73. First the data must be read and the array
+<CODE>grade</CODE> created.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> while((length(line = getline("mean_std.ex"))) != 0)
+  {
+    grade.[line.[1]] = line.[2];
+  }
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>The previous four lines of code may look at little complex, but is
+really quite simple, taken one step at a time. Starting with the
+getline function call: 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+line = getline("mean_std.ex")
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>The <CODE>getline</CODE> function takes a filename as argument, reads one
+line, and splits it into numbers and strings. The data are returned
+as a list, with the first element containing the data in the first
+field, the second element containing the data in the second field
+and so on. When <CODE>getline</CODE> can't read anymore information from
+the file it returns a list with zero length. To read from a file,
+until the end we use:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+length(line = getline("mean_std.ex")) != 0
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>inside a <CODE>while</CODE> statement. The <CODE>while</CODE> statement executes
+until the condition is false (zero). Thus, when the end-of-file is
+reached, and <CODE>getline</CODE> returns a zero-length list, the
+while-loop will terminate. The statement inside the while-loop:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+    grade.[line.[1]] = line.[2];
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>creates a list-variable named <CODE>grade</CODE>. Each element of grade
+is a student's grade. These elements are indexed with the student's
+name. Remember, <CODE>getline</CODE> returns a list containing the
+whitespace separated fields of each line, so: <CODE>line.[1]</CODE> is the
+first field, or the student's name in each line, and <CODE>line.[2]</CODE>
+is the second field, or the student's grade in each line. The result
+is a list. We can see the list indices by typing the list-variable's
+name at the prompt, and we can see the contents of a list element by
+using the appropriate list index.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> grade
+   Alice        David        Dork         Fred         Jeanne       
+   John         
+> grade.Alice
+       73
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>To compute the mean value of the students grades, a simple for-loop
+is used to sum up the grades, prior to dividing the total by the
+number of students.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> total = 0;
+> for (i in members (grade))
+  {
+    total = total + grade.[i];
+  }
+> mean = total / length(grade)
+       71  
+</PRE>
+</CODE></BLOCKQUOTE>
+  
+<P>
+<P>
+<H2><A NAME="ss2.4">2.4 Fitting a Curve</A>
+</H2>
+
+<P>
+<P>It is often necessary to fit a curve to some experimental data. This
+is a simple matter with a high-level language. We will start by
+generating our own "experimental" data.
+<P>First, set the random number generator to generate numbers from a
+uniform distribution, with a lower bound of -2, and an upper bound
+of 5.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> rand("uniform",-2, 5);
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Next, generate random data with a linearly varying component.  The
+linearly varying component is formed, and stored in <CODE>off</CODE>. The
+simulated, measured data is stored in <CODE>b</CODE>.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> off = 0:-20:-.2;
+> b = ((off + 22) + rand( size(off) ));
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Next, generate the Data matrix, <CODE>A</CODE>.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> m = b.n;
+> t = (1:m)/m;
+> A = [ ones(m,1), t', (t.^2)' ];
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Now use left division (least squares) to solve for <CODE>x</CODE>.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> x = A\b';
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Now, create a simple function that uses the computed parameters to
+make predictions. 
+<P>
+<HR>
+<PRE>
+ls = function(t)
+{
+  global (x)
+  return x[1] + x[2]*t + x[3]*t.^2;
+}
+</PRE>
+<HR>
+<P>Last, plot a comparison of the original data, and the computed
+values. 
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+> plgrid ();
+> pltitle ( "RLaB Least Squares Example" );
+> xlabel ( "Indeplendent Variable" );
+> ylabel ( "Deplendent Variable" );
+> plot( [ t; b; ls( t ) ]' );
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Figure XX shows the
+output from the previous plot commands. The plot command is very
+simple, but a little mystifying at first. For the time being, you
+can ignore the <CODE>plgrid</CODE>, <CODE>pltitle</CODE>, <CODE>xlabel</CODE>, and
+<CODE>ylabel</CODE> statements; they merely server to add window dressing
+to the displayed plot. The <CODE>plot</CODE> takes a matrix as an
+argument, and plots columns two through the last versus the first
+column. So, the first column is <CODE>t</CODE>, the independent variable,
+The second column is <CODE>b</CODE>, the experimental data, and the last
+column is the result of the least-squares fit of the data. The
+matrix is formed by stacking the three individual row-vectors on top
+of one another, then transposing the entire matrix so that in the
+end it is a three column matrix.
+<P>
+<P>
+<P>
+<P>
+<P>
+<HR>
+<A HREF="rlab-ref-3.html">Next</A>
+<A HREF="rlab-ref-1.html">Previous</A>
+<A HREF="rlab-ref.html#toc2">Contents</A>
+</BODY>
+</HTML>

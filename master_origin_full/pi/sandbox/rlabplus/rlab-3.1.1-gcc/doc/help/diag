@@ -1,0 +1,66 @@
+  diag
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Diagnonal matrix.
+
+      [1mSyntax[0m
+        diag ( [4mA[24m )
+
+        diag ( [4mA[24m, [4mK[24m )
+
+      [1mDescription[0m
+        If the 1st argument, [4mA[24m is a 1xN matrix construct a diagonal
+        matrix from the input. Optionally if [4mK[24m (scalar) is specified
+        then create a matrix with the vector as the [4mK[24mth diagonal.
+
+        If the 1st argument is a MxN matrix, construct a 1xN matrix from
+        the diagonal elements of the input matrix. Optionally if [4mK[24m is
+        specified return the vector from the [4mK[24mth diagonal of the input
+        matrix.
+
+
+          [4mK[24m < is below the main diagonal.
+
+
+
+          [4mK[24m > is above the main diagonal.
+
+
+
+     [1mSee Also[0m
+        tril, triu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

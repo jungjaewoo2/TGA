@@ -1,0 +1,12 @@
+plclose:
+
+Synopsis: Close the current plot window
+
+Syntax: plclose ( )
+
+Description:
+
+	Close the current plot-window. The new current plot-window is
+	the remaining plot-window with the lowest tag value.
+
+See Also: plend

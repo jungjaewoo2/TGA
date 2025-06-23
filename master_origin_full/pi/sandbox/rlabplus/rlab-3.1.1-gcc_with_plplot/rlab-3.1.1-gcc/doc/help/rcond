@@ -1,0 +1,66 @@
+  rcond
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Condition number.
+
+      [1mSyntax[0m
+        rcond( [4mA[24m )
+
+      [1mDescription[0m
+        Rcond computes an estimate of the condition number of the input
+        matrix, [4mA[24m. rcond() uses the LAPACK routines DGECON, or ZGECON.
+
+        Probably the most published way to compute the condition of a
+        matrix is:
+
+
+
+          Kcond = ||A|| * ||inv(A)||
+
+
+
+
+
+     Another method is to use the 1st and last singular values of A:
+
+
+
+          Kcond = sigma(1)/sigma(n)
+
+
+
+
+
+     rcond computes an ESTIMATE of the condition number without
+     computing all of the columns of inv(A). For more information see
+     the LAPACK User's Guide.
+
+     See Also  inv, det, lu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

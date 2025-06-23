@@ -1,0 +1,16 @@
+plaxis:
+
+Synopsis: A "friendly" interface to plot axis styles.
+
+Syntax: plaxis ( X_STR , Y_STR )
+
+Description:
+
+	A friendlier interface to the plot axis styles. Currently
+	plaxis only supports the default and a predefined logarithmic
+	axis styles. X_STR and/or Y_STR can be either "log" or "", or
+	omitted. If the string "log" is used for either argument, then
+	that axis is scaled logarithmically. Otherwise, the default
+	axis style is used.
+
+	Example: plaxis ("log", "log")

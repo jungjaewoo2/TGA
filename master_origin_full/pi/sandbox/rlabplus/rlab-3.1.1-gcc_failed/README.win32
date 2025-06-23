@@ -1,0 +1,74 @@
+  README.win32:  Windows NT Notes and Instructions.
+
+  There are now Visual C++ (version 6.0/sp2) project and workspace
+  files that can be used to build Rlab.  The caveat is that all the
+  supporting libraries must also be built, and I am not presently
+  supplying project/workspace files for those.  Windows may always be
+  a little more difficult to build for than Unix.  To build the
+  libraries (BLAS, LAPACK, etc.) I run the Fortran sources through
+  f2c, then compile the libraries with VC++.  It is probably easiest
+  for most people to get the compiled/binary distribution of Rlab for win32.
+
+  This source/binary release for Windows offers no plotting
+  capability.  If you need to graphically view data, you will have to
+  write it to a file and display it with another program (gnuplot,
+  excel, whatever...). 
+
+  To install:
+
+    1) Unzip the distribution file into a directory, which we will
+       refer to as RLAB2_HOME
+
+    2) Optional: put %RLAB2_HOME%\bin in your path.  You only need to
+       do this if you want to run Rlab from the command window.  If
+       you make a shortcut on the desktop for Rlab, or start it from
+       explorer, then you don't need to do this.
+
+    3) run it, and have fun!
+
+    4) If you want to customize the setup the following environment
+       variables are available:
+
+       RLAB2_RC0         The Rlab startup script.
+
+       RLAB2_HELP_DIR    The directory where the help files are
+                         located.
+
+       RLAB2_LIB_DIR     The directory where the Rlab library is
+                         located.
+
+       RLAB2_PATH        The search path for rfiles.
+
+       RLAB2_PAGER       The pager program to use to print information
+                         to the screen.
+
+    5) Regression testing.  If you want to verify that everything is
+       OK, the you can do:
+
+             .\rlab -qrlp test.r
+
+       If the test runs successfully, the last line will look something
+       like:
+
+             DONE, Elapsed time =      2.784 seconds
+
+    6) Documentation:
+
+       HTML manual is located in .\doc\html\rlab-ref.html
+       PDF version is located in .\doc\rlab-ref.pdf
+
+  To Build: 
+
+    These build instructions are incomplete.  At present, their
+    purpose is mostly to remind myself what I do to build on Windows.
+
+    1) copy config.h.win32 to config.h
+
+    2) build libraries
+
+    3) use rlab.dsw via VC++6 to build.
+
+    4) run buildwin-zip to make distribution...
+
+-Ian Searle
+ 01/03/2000

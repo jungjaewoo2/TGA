@@ -1,0 +1,66 @@
+  system
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Execute operating system commands.
+
+      [1mSyntax[0m
+        system ( [4mCOMMAND[24m )
+
+      [1mDescription[0m
+        The system function behaves like the the UNIX system call. The
+        string argument to system, [4mCOMMAND[24m, is passed directly to the
+        bourne-shell for execution. The program waits until the system
+        call is finished.
+
+        Example:
+
+
+          > system( "vi test.r" )
+
+
+
+
+     will allow the user to edit (create) the file test.r. When the vi
+     process is finished the user will be back at the RLaB prompt.
+
+
+
+          > rfile test
+
+
+
+
+     will then load the result of the vi process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

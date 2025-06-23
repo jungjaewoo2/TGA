@@ -1,0 +1,24 @@
+<sect>toupper
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>Convert alphabet characters of a string to uppercase.
+	
+	<tag>Syntax</tag> 
+		<p>t = <tt>toupper ( <em>s</em> )</tt>
+		
+
+   Arguments:
+	<descrip>
+   	<tag><em>s</em></tag>
+      	string matrix.
+   </descrip>
+   
+   
+   Result:
+	<descrip>	   
+	  	<tag>t</tag>
+      	string matrix.
+  	</descrip>  
+
+</descrip>

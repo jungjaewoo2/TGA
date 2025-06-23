@@ -1,0 +1,17 @@
+plot3:
+
+Synopsis: Create a 3-dimensional surface plot in the current sub-plot.
+
+Syntax: plot3 ( L1 , L2 , L3 )
+
+Description:
+
+	Plot3 creates a 3-dimensional surface plot from the data in
+	lists L1, L2, L3 (L2 and L3 are optional). The list must
+	contain elements `x', `y', and `z'. the z element is a
+	rectangular matrix that is a function of x and y (z[i;j] =
+	f(x[i],y[j])). Up to 3 surface plots can be created on the
+	same sub-plot. A surface plot is viewed as a solid of sorts,
+	the bottom is not visible.
+
+See Also: plmesh

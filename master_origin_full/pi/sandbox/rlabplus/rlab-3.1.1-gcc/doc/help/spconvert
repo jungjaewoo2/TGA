@@ -1,0 +1,66 @@
+  spconvert
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Convert a full column matrix to sparse storage.
+
+      [1mSyntax[0m
+        spconvert ( [4mA[24m )
+
+      [1mDescription[0m
+        spconvert converts its argument to, or from, the sparse storage
+        format. If the argument is a 3 (or 4) column full matrix, the
+        argument is converted to sparse storage format. The 1st two
+        columns are taken as the row and column indices for the elements
+        in the third column. The rows of the input matrix do not have to
+        be in any particular order. If there are duplicate elements
+        (same row and column number), then they are summed.
+
+        If the argument is a sparse matrix, then it is converted to a
+        full matrix with 3 columns. The first two columns being the row
+        and column indices of each non-zero element, and the third
+        column in the element value (columns 3 and 4 if the matrix is
+        complex).
+
+        Example:
+
+        Create a sparse matrix of zeros with 1000 rows, and 1000 columns
+
+
+
+          > s = spconvert ([ 1000, 1000, 0 ])
+           (1000, 1000)                   0
+          > show(s);
+                  nr                  :   1000
+                  nc                  :   1000
+                  n                   :   1e+06
+                  nnz                 :   1
+                  class               :   num
+                  type                :   real
+                  storage             :   sparse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

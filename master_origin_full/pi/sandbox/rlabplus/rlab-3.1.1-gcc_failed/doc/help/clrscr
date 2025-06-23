@@ -1,0 +1,66 @@
+  clrscr
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Clears the konsole.
+
+      [1mSyntax[0m
+        clrscr (  )
+
+        clrscr uses termcap library.
+
+
+     [1mSee Also[0m
+        mvcrsr, clrpos, colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

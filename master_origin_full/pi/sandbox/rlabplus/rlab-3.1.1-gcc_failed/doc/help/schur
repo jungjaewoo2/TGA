@@ -1,0 +1,66 @@
+  schur
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Schur decomposition.
+
+      [1mSyntax[0m
+        schur ( [4mA[24m )
+
+      [1mDescription[0m
+        The schur function returns a list containing elements [4mt[24m and [4mz[24m,
+        such that:
+
+
+
+          [4mA[24m [4m=[24m [4mz[24m [4m*[24m [4mt[24m [4m*[24m [4mz'[0m
+
+
+     If [4mA[24m is real, the [4mt[24m is in "Real-Schur" form. The "Real-Schur" form
+     is block upper-triangular with 1-by-1 and 2-by-2 diagonal blocks;
+     each 2-by-2 diagonal block has its diagonal elements equal and its
+     off-diagonal elements of opposite sign. The eigenvalues of the
+     2-by-2 block: [a, b; c, a] are: a +/- sqrt(b*c)
+
+     schur uses the LAPACK subroutines DGEES, and ZGEES.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

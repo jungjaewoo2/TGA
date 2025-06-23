@@ -1,0 +1,30 @@
+<sect> sign 
+<p>
+<descrip>
+<tag> Synopsis </tag> Return the sign of <em>A</>
+<tag> Syntax </tag> sign ( <em>A</> ) 
+<tag> Description </tag>
+
+
+	For real scalar argument, sign returns:
+
+	<quote>
+	1 if A &gt; 0
+	</quote>
+	<quote>
+	0 if A == 0
+	</quote>
+	<quote>
+	-1 if A &lt; 0
+	</quote>
+
+	For a complex scalar sign returns:
+
+	<quote>
+		A ./ abs (A)
+	</quote>
+
+	sign performs its operation on real and complex matrices in an
+	element by element fashion.
+
+</descrip>

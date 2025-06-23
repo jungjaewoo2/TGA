@@ -1,0 +1,13 @@
+#!/bin/sh
+
+./configure \
+  --with-arpack \
+  --with-superlu \
+  --enable-glpk \
+  --with-plplot \
+  --with-suitesparse
+
+
+
+
+make scanner

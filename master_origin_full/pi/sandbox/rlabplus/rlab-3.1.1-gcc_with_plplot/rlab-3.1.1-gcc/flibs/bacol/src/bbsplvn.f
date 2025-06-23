@@ -1,0 +1,62 @@
+      SUBROUTINE BBSPLVN ( XT, JHIGH, INDEX, X, ILEFT, VNIKX )
+C-----------------------------------------------------------------------
+C THIS SUBROUTINE IS PART OF THE B-SPLINE PACKAGE FOR THE STABLE
+C EVALUATION OF ANY B-SPLINE BASIS FUNCTION OR DERIVATIVE VALUE.
+C SEE REFERENCE BELOW.
+C
+C CALCULATES THE VALUE OF ALL POSSIBLY NONZERO B-SPLINES AT THE
+C POINT X OF ORDER MAX(JHIGH,(J+1)(INDEX-1)) FOR THE BREAKPOINT SEQ-
+C UENCE XT.  ASSUMING THAT XT(ILEFT) .LE. X .LE. XT(ILEFT+1), THE ROUT-
+C INE RETURNS THE B-SPLINE VALUES IN THE ONE DIMENSIONAL ARRAY VNIKX.
+C
+C LAST MODIFIED BY RONG WANG, JAN 8, 2001.
+C
+C REFERENCE
+C
+C    DEBOOR, C., PACKAGE FOR CALCULATING WITH B-SPLINES, SIAM J.
+C      NUMER. ANAL., VOL. 14, NO. 3, JUNE 1977, PP. 441-472.
+C
+C PACKAGE ROUTINES CALLED..  NONE
+C USER ROUTINES CALLED..     NONE
+C CALLED BY..                BSPLVD
+C FORTRAN FUNCTIONS USED..   NONE
+C-----------------------------------------------------------------------
+C SUBROUTINE PARAMETERS
+      DOUBLE PRECISION XT(*),X,VNIKX(*)
+      INTEGER JHIGH,INDEX,ILEFT
+C-----------------------------------------------------------------------
+C LOCAL VARIABLES
+      INTEGER IPJ,IMJP1,JP1,JP1ML
+      DOUBLE PRECISION VMPREV,VM
+C-----------------------------------------------------------------------
+C CONSTANT
+      DOUBLE PRECISION ZERO, ONE
+      PARAMETER (ZERO = 0.D0)
+      PARAMETER (ONE  = 1.D0)
+      DOUBLE PRECISION DELTAM(20),DELTAP(20)
+      INTEGER J
+      DATA J/1/,DELTAM/20*0.D+0/,DELTAP/20*0.D+0/
+C-----------------------------------------------------------------------
+C LOOP INDICE
+      INTEGER L
+C-----------------------------------------------------------------------
+      GO TO (10,20),INDEX
+   10 J = 1
+      VNIKX(1) = ONE
+      IF (J .GE. JHIGH) GO TO 40
+   20 IPJ = ILEFT+J
+      DELTAP(J) = XT(IPJ) - X
+      IMJP1 = ILEFT-J+1
+      DELTAM(J) = X - XT(IMJP1)
+      VMPREV = ZERO
+      JP1 = J+1
+      DO 30 L=1,J
+        JP1ML = JP1-L
+        VM = VNIKX(L)/(DELTAP(L) + DELTAM(JP1ML))
+        VNIKX(L) = VM*DELTAP(L) + VMPREV
+   30   VMPREV = VM*DELTAM(JP1ML)
+      VNIKX(JP1) = VMPREV
+      J = JP1
+      IF (J .LT. JHIGH) GO TO 20
+   40 RETURN
+      END

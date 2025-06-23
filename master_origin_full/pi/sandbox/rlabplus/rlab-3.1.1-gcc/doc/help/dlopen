@@ -1,0 +1,66 @@
+  dlopen
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Dynamically link a function.
+
+      [1mSyntax[0m
+        dlopen ( [4mFILENAME[24m , [4mFUNCTION_NAME[24m )
+
+      [1mDescription[0m
+        dlopen opens a shared object, [4mFILENAME[24m, and creates a builtin
+        function that points to [4mFUNCTION_NAME[24m. dlopen returns the newly
+        created builtin function.
+
+        For information on how to write and compile functions that can
+        be linked with dlopen, consult the RLaB Programmer's Guide and
+        Reference Manual.
+
+        dlopen only exists for those platforms that support dynamic
+        linking. As of this writing support exists for Solaris 2.x and
+        Linux/ELF platforms.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

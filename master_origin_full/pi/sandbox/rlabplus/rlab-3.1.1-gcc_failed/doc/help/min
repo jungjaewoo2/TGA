@@ -1,0 +1,66 @@
+  min
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Minimum function.
+
+      [1mSyntax[0m
+        min ( [4mA[24m )
+
+        min ( [4mA[24m, [4mB[24m )
+
+      [1mDescription[0m
+        Min returns the minimum value(s) contained in the matrix [4mA[24m. If
+        the argument is a vector, then the smallest value is returned.
+        If [4mA[24m is a MxN matrix, then a row-vector of N columns is returned
+        containing the minimum value from each column of [4mA[24m.
+
+        If min is used with two arguments, then min returns a matrix the
+        same size as [4mA[24m and [4mB[24m filled with the smallest elements from [4mA[0m
+        and [4mB[24m.
+
+        When matrix elements are complex the absolute value is used for
+        comparison purposes.
+
+
+     [1mSee Also[0m
+        mini, max, maxi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

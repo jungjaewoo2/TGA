@@ -1,0 +1,37 @@
+<sect>gsub
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>Replace parts of the string with another string.
+	
+	<tag>Syntax</tag> 
+		<p>x = <tt>gsub ( <em>r</em>, <em>s</em>, <em>t</em> )</tt>
+      
+	<tag>Description</tag> 
+		In target string <em>t</em> replace every occurence of a source
+		string <em>s</em> with a replacement string <em>r</em>.
+		The order of input parameters follows that of the same GAWK command.
+
+
+   Arguments:
+	<descrip>
+   	<tag><em>r</em></tag>
+      	string, a replacement.
+     	<tag><em>s</em></tag>
+     		string, a source.
+      <tag><em>t</em></tag>
+      	string, a target.
+   </descrip>
+   
+   
+   Result:
+   <p>x = << <em>count</em>; <em>string</em> >>
+	<descrip>	   
+	  	<tag><em>string</em></tag>
+      	string, a result of replacement.
+   	<tag><em>count</em></tag>
+     		integer, a number of replacements performed for each entry in the
+	     	target string <em>t</em>.
+  	</descrip>  
+
+</descrip>

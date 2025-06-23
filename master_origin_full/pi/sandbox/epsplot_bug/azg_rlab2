@@ -1,0 +1,129 @@
+#!/bin/sh
+
+RLAB="rlab"
+RLABV="2"
+
+#
+# A simple Bourne-shell script to run RLaB2 from any installed location.
+# To get RlaB2 working you only need to modify the first
+# shell variable.
+#
+
+# figure out the version of the gcc compiler used to build rlabplus
+# with:
+HOSTTYPE=`uname -i`
+if [ "$HOSTTYPE" = "x86_64" ]; then
+  CPUINFO="64";
+else
+  CPUINFO="";
+fi
+
+# [azg]
+# HOSTTYPE=`uname -m`
+# if [ "$HOSTTYPE" = "x86_64" ] || [ "$HOSTTYPE" = "armv7l" ]; then
+  # CPUINFO="64";
+# else
+  # CPUINFO="";
+# fi
+
+
+#
+# Modify the following to identify where the RLaB2 "root"
+# directory is...
+#
+RROOT="/usr/lib"               # Where the rlab directory is.
+RLAB_VER="..-gcc"
+
+#
+# Do _not_ modify the next two definitions...
+# (unless you are sure of what you are doing).
+#
+RD="$RROOT/lib$CPUINFO/${RLAB}${RLABV}"           # The parent rlab library directory.
+RLABEXE="$RROOT/bin/${RLAB}$CPUINFO-$RLAB_VER"    # The rlab executable.
+
+#
+# rlabplus extension: allow users private libraries
+#
+USER=`whoami`
+USER_LIB="/home/$USER/rlab/lib.r:/home/$USER/rlab/lib.so"
+
+#
+# Set the RLAB2_PATH env var.  This provides a auto path to the most
+# commonly used rfiles.  You can overide this value by setting RLAB2_PATH
+# in your environment prior to running rlab2
+#
+if test -z "$RLAB2_PATH" ; then
+    RLAB2_PATH=".:$RD/rlib:$RD/toolbox:$RD/controls-toolbox"
+fi
+RLAB2_PATH="$USER_LIB:$RLAB2_PATH"
+
+#
+# The RLaB2 startup script.
+#
+RLAB2_RC0="$RD/.rlab"
+
+#
+# The RLaB2 Library directory.
+#
+RLAB2_LIB_DIR="$RD/rlib"
+
+#
+# The RLaB2 help directory
+#
+RLAB2_HELP_DIR="$RD/doc/help"
+
+#
+# The pager to use.
+#
+RLAB2_PAGER="less"
+if test "$RLAB2_PAGER" = "less" ; then
+  LESS="${LESS} -R"
+  fi
+export LESS
+
+#
+# Export the shell environment variables so the RLaB process can
+# access them.
+#
+export RD
+export PATH RLAB2_PATH
+export RLAB2_RC0
+export RLAB2_LIB_DIR
+export RLAB2_HELP_DIR
+export RLAB2_PAGER
+
+
+#
+# Setup the environment to handle PGplot if necessary.
+#
+# PLOT_DIR="pgplot"
+# PLOT_PROG="pgplot"
+PLOT_DIR="pgplot"
+PLOT_PROG="plplot"
+PLOT_PROG="pgplot"
+if test "$PLOT_PROG" = "pgplot" ; then
+  PGPLOT_XW_WIDTH="0.5"
+  PGPLOT_FONT="$RD/$PLOT_DIR/grfont.dat"
+  PGPLOT_DIR="$RD/$PLOT_DIR"
+# try built in RPi libpgplot etc. #  
+# dies: input buffer overflow, can't enlarge buffer because scanner uses REJECT
+#  PGPLOT_DIR=/usr/lib/arm-linux-gnueabihf/
+  LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$PGPLOT_DIR"
+  export PGPLOT_XW_WIDTH
+  export PGPLOT_FONT
+  export PGPLOT_DIR
+fi
+
+#
+# setup the environemnt for JVM if configured with --with-jvm=$LIBJVM_DIR
+#
+LIBJVM_DIR=""
+[ -n "$LIBJVM_DIR" ]&& LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$LIBJVM_DIR"
+
+export LD_LIBRARY_PATH
+
+#
+# Finally, run RLaB...
+#
+$RLABEXE "$@"
+

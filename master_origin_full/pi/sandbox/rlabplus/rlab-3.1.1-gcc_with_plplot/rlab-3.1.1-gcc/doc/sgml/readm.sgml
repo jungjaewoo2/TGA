@@ -1,0 +1,73 @@
+<sect> readm 
+<p>
+<descrip>
+<tag> Synopsis </tag> Read ASCII matrices from a file.
+<tag> Syntax </tag> readm ( <em>FILENAME</> )
+   <p>    readm ( <em>FILENAME</>, &lsqb; <em>NR</>,<em>NC</> &rsqb; )
+   <p>    readm ( <em>FILENAME</>, <em>NROW</> )
+<tag> Description </tag>
+
+	Readm reads a generic matrix of data from the file denoted by
+	the string argument <em>FILENAME</>. The return value is the
+	newly created matrix. The second, and optional, argument is a
+	two-element matrix that specifies the size of the matrix to
+	read.
+
+	If the matrix size is not specified, then the matrix is filled
+	row-wise with the input data. Otherwise (if the size is
+	specified), the matrix if filled column-wise, as the input is
+	read.
+
+	The file format is generic ASCII. The rows of the matrix are
+	separated by newlines, and the columns are separated by
+	whitespace. Unnecessary newlines, either before, or after the
+	data will confuse readm, and will probably result in an error
+	message. Only one matrix can be stored in a file. If you need
+	to store more than one matrix in a file, use write, and
+	read. 
+
+	Readm can only read in numeric matrices. The result of reading
+	in string matrices is undefined.
+
+	Example:
+
+<tscreen><verb>
+1 2 3 4
+5 6 7 8
+9 10 11 12
+</verb></tscreen>
+
+	The above values in a file called "test" would be read in like:
+
+<tscreen><verb>
+> a = readm("test")
+ a =
+ matrix columns 1 thru 4
+        1          2          3          4  
+        5          6          7          8  
+        9         10         11         12  
+</verb></tscreen>
+
+	Readm exists to read in data from other programs. In many
+	cases a simple awk script will filter the other programs
+	output into one or more columns of data. readm will read the
+	data into the matrix, then the matrix can be reshaped if
+	necessary.
+
+        Notes:
+
+	Readm has no idea how many rows are in the matrix it is
+	reading. This is because readm can work with pipes and process
+	output where it gets the matrix as a stream. Readm uses a
+	heuristic to guess how many rows of the matrix to allocate at
+	one time. A second, optional argument, NROW can be specified
+	if the heuristic does not yield the performance you
+	desire. The heuristic is purposely memory conservative.
+
+<tscreen><verb>
+readm ( "filename" , NROW )
+</verb></tscreen>
+
+<tag>See Also</tag> reshape, getline, open, read, write, writem
+
+</descrip>

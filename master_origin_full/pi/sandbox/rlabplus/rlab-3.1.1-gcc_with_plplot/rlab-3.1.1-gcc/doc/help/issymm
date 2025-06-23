@@ -1,0 +1,66 @@
+  issymm
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Test matrix for symmetry
+
+      [1mSyntax[0m
+        issymm ( [4mA[24m )
+
+      [1mDescription[0m
+        Issymm returns TRUE (1) if the argument [4mA[24m is a symmetric (or
+        Hermitian) matrix, and FALSE (0) if [4mA[24m is not symmetric
+        (Hermitian).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

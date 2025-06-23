@@ -1,0 +1,11 @@
+subplot:
+
+Synopsis: Set the current subplot in the current window.
+
+Syntax: subplot ( N )
+
+Description:
+
+	Force the next plot, in the current plot window, to be drawn
+	as subplot N. If N == 0, then the current plot is not
+	advanced. The next plot will occur in the same place.

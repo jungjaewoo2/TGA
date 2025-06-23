@@ -1,0 +1,28 @@
+<sect> spwrite 
+<p>
+<descrip>
+<tag> Synopsis </tag> Write a sparse matrix to file.
+<tag> Syntax </tag> spwrite ( <em>FILENAME</> , <em>SPM</>  )
+<tag> Syntax </tag> spwrite ( <em>FILENAME</> , <em>SPM</> , <em>FORMAT</> )
+<tag> Description </tag>
+	
+	The spwrite function takes at least two arguments. The 1st
+	argument is the string that identifies the file to write to.
+	The file is opened with write permission, destroying any
+	pre-existing contents. The file closed after the matrix is
+	written.
+
+	The default format for the sparse matrix is the internal
+	storage format: compressed row-wise storage. See the Rlab
+	Reference Manual for more explanation of this storage format.
+
+	A third, and optional argument, is a string specifying either
+	the default, or an optional output format. The value of the
+	string can be either <tt>"sparse"</> (default) or
+	<tt>"graph"</>. The graph output is a file suitable for use
+	with the Metis or Chaco graph partitioning/re-ordering
+	software. 
+
+<tag>See Also</tag> write
+
+</descrip>

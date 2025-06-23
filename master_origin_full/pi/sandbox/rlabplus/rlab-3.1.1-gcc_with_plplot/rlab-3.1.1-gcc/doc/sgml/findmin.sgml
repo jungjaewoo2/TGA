@@ -1,0 +1,25 @@
+<sect> findmin
+<p>
+<descrip>
+<tag> Synopsis </tag> Find a minimum of a scalar function using bracketing method.
+
+<tag> Syntax </tag> 
+        <p><tt>findmin (<em>f</em>, /<em>p</em>/, <em>X</em> /, <em>options</em>/ )</tt>
+
+
+
+Arguments:
+<descrip>
+<tag><em>f</em> = funtion(x/,p/)</tag> function, and optionally,
+its parameter <em>p</em>.
+<tag><em>X</em> = [xlo, xhi]</tag> An interval over which the bracketing 
+is to be performed.
+<tag><em>options</em> = << eabs; erel; maxi; imethod >></tag> a list 
+containing absolute and relative error bounds, <em>eabs</em> and <em>erel</em>,
+respectively, maximum number of iterations <em>maxi</em> to satisfy them,
+and <em>imethod</em>=0 for Brent method, and 1 for golden section.
+</descrip>
+
+
+The solver utilizes the GSL functions. 
+</descrip>

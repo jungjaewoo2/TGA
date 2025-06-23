@@ -1,0 +1,66 @@
+  putenv
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Change or add an environment variable.
+
+      [1mSyntax[0m
+        putenv ( [4mSTRING[24m )
+
+      [1mDescription[0m
+        putenv takes a single argument, [4mSTRING[24m, of the form:
+
+
+
+          "NAME=VALUE"
+
+
+
+
+
+     putenv make the value of the environment variable NAME equal to
+     VALUE by altering an existing variable or creating a new one.
+
+     Exactly how putenv behaves is depends upon the underlying operating
+     system implementation.
+
+     On most Unix systems putenv will return  non-zero if an error
+     occurred, and zero otherwise.
+
+
+     [1mSee Also[0m
+        getenv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

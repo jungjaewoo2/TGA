@@ -1,0 +1,14 @@
+plfont:
+
+Synopsis: Change the text font for the current sub-plot.
+
+Syntax: plfont ( FONT )
+
+Description:
+
+	Change to font-style FONT.
+
+	FONT 1:	Normal (simplest and fastest)
+	     2: Roman font
+	     3: Italic font
+	     4: Script font

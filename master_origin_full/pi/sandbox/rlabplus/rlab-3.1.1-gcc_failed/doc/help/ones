@@ -1,0 +1,66 @@
+  ones
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Create a matrix filled with ones.
+
+      [1mSyntax[0m
+        ones ( nrow , ncol )
+
+        ones ( A )
+
+      [1mDescription[0m
+        Create a matrix of ones. If the input is two scalars, then
+        create a matrix of 1s with dimensions [4mnrow[24m-by-[4mncol[24m. If the input
+        is a matrix [4mA[24m, then it creates a matrix with row and column
+        dimensions equal to that of [4mA[24m.
+
+
+
+          X = rand(3,2);
+          ones( X )
+
+
+
+
+     will return a matrix of ones the same size as X.
+
+
+     [1mSee Also[0m
+        zeros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

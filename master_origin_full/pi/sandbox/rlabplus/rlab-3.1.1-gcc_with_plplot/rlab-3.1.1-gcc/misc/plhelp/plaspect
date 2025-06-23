@@ -1,0 +1,16 @@
+plaspect:
+
+Synopsis: Set the aspect ratio of the current subplot.
+
+Syntax: plaspect ( )
+	plaspect ( aspect )
+
+Description:
+
+	plaspect sets the aspect ratio of the X and Y axis for the
+	current subplot in the current window. The aspect ratio is the
+	ratio of the y-axis length to the x-axis length.
+
+	Calling plaspect with no arguments will reset to the default
+	aspect ratio (whatever fills up the viewport).
+

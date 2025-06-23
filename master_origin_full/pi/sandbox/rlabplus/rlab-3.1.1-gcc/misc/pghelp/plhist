@@ -1,0 +1,15 @@
+plhist:
+
+Synopsis: Plot a histogram.
+
+Syntax: plhist ( DATA , NBIN )
+
+Description:
+
+	Plot a histogram of the data in DATA. DATA is a 1-column
+	matrix. The column of DATA are plotted in histogram fashion.
+	An optional second argument, NBIN specifies the number of bins
+	to separate the data into. If NBIN is not specified the
+	default is 10. 
+
+See Also:

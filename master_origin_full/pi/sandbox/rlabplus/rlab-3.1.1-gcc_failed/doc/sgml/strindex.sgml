@@ -1,0 +1,32 @@
+<sect>strindex
+<p>
+<descrip>
+	<tag>Synopsis</tag> 
+		<p>Locate a string inside entries of a larger string matrix.
+	
+	<tag>Syntax</tag> 
+		<p>r = <tt>strindex ( <em>s</em> , <em>c</em> )</tt>
+		
+	<tag>Description</tag> 
+		In entries of a string matrix <em>s</em> find the first occurence
+		of the string <em>c</em> from the left, and return its position.		
+      
+
+   Arguments:
+	<descrip>
+   	<tag><em>s</em></tag>
+      	string matrix.
+      <tag><em>c</em></tag>
+      	string being sought.
+   </descrip>
+   
+   
+   Result:
+	<descrip>	   
+	  	<tag>x</tag>
+      	real matrix, each entry contains a first left position of <em>c</em>
+      	in entries of string matrix <em>s</em>, or 0 if <em>c</em> is not
+      	found.
+  	</descrip>  
+
+</descrip>

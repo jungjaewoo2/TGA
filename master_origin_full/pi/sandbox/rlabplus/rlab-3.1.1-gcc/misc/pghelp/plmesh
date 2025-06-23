@@ -1,0 +1,40 @@
+plmesh:
+
+Synopsis: Plot a 3-dimensional mesh
+
+Syntax: plmesh ( X, Y, Z, THETA, PHI, AXIS )
+
+Description:
+
+	plmesh takes two vectors, and a matrix of Z-values to plot a
+	mesh. 
+
+		X	The x-axis values, a vector with number of
+			elements equal to the number of rows of z.
+
+		Y	The y-axis values, a vector with number of
+			elements equal to the number of column of z.
+
+		Z	A rectangular matrix, z[i;j] = f(x[i],y[j])
+
+
+	THETA   Defaults to 60 degrees. The angle (in degrees) of
+                rotation about the Z-axis.
+
+	PHI     Defaults to 35 degrees. The angle (in degrees) of
+                rotation about the X-axis.
+
+        AXIS    If AXIS is TRUE (1), then the 3 orthogonal axes will
+                be drawn. Axis-1: [1, 0, 0], Axis-2: [0, 1, 0],
+                Axis-3: [0, 0, 1].  The axes are scaled to the plot
+                window. 
+
+        There are only two rotations for the user to specify.  They
+        rotate the mesh relative to the "eye".  The first rotation
+        (THETA) rotates the mesh about the Z-axis.  You can imagine
+        looking down on a table, the top of the table being the
+        mesh. THETA rotations rotate the table about an axis parallel
+        to the legs.  PHI rotations rotate the mesh about the X-axis,
+        or an axis perpendicular to the legs of the table.
+
+See Also: plcont

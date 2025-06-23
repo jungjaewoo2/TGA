@@ -1,0 +1,14 @@
+getplot:
+
+Synopsis: Get the current plot list
+
+Syntax: getplot ( WINNO )
+
+Description:
+
+	Getplot returns a list containing all the current information
+	used for plotting to window WINNO. If WINNO is not specified,
+	then the current plot window information is returned. If there
+	are no plot windows active, then an empty list is returned.
+
+See Also: showpin

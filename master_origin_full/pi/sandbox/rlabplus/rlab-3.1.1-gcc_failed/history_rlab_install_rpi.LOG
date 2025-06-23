@@ -1,0 +1,1 @@
+sudo ln -s /usr/include/arm-linux-gnueabihf/ImageMagick-6/magick/magick-baseconfig.h /usr/include/magick/magick-baseconfig.h

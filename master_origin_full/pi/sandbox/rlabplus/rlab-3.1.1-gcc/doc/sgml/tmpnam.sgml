@@ -1,0 +1,15 @@
+<sect> tmpnam 
+<p>
+<descrip>
+<tag> Synopsis </tag> Generate temporary file name.
+<tag> Syntax </tag> tmpnam ( ) 
+<tag> Description </tag>
+
+	tmpnam returns a string that is not the name of an existing
+	file. tmpnam generates a different name each time it is
+	called. The string tmpnam returns can be used a a filename
+	with RLaB's file I/O functions.
+
+<tag>See Also</tag>   open, close, read, write, fprintf
+
+</descrip>

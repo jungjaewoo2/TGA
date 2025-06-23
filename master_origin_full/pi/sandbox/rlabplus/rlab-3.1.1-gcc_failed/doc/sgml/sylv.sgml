@@ -1,0 +1,31 @@
+<sect> sylv
+<p>
+<descrip>
+<tag> Synopsis </tag> Solve the Sylvester matrix equation
+<tag> Syntax </tag> sylv ( <em>A</> , <em>B</> , <em>C</> )
+         <p>        sylv ( <em>A</> , <em>C</> )
+<tag> Description </tag>
+
+        Sylv solves the Sylvester matrix equation:
+
+	<quote>	
+		<em>A*X + X*B = -C</>
+	</quote>
+
+        or
+
+	<quote>	
+		<em>A*X + X*A' = -C</>   (Lyapunov equation)
+	</quote>
+
+	<em>A</> and <em>B</> must both be upper quasi-triangular (if
+	real), or triangular (if complex).
+
+	If <em>A</> and or <em>B</> are not upper
+	quasi-triangular/triangular, then it is usually easier to use
+	lyap. Lyap performs a Schur decomposition on A and B before
+	using sylv.
+
+	Sylv uses the LAPACK functions DTRSYL, or ZTRSYL.
+	
+</descrip>

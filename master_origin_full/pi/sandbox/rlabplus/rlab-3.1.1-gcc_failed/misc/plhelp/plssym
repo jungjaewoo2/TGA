@@ -1,0 +1,12 @@
+plssym:
+
+Synopsis: Set the symbol size, and scale values.
+
+Syntax: plssym ( DEF , SCALE )
+
+Description:
+
+	Set the symbol size. The size is the product of the default
+	symbol size (DEF), and scale value (SCALE). For most
+	applications it is recommended that DEF be left alone, and the
+	SCALE value used to adjust symbol size.

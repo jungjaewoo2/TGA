@@ -1,0 +1,35 @@
+<sect> cumprod 
+<p>
+<descrip>
+<tag> Synopsis </tag> Cumulative product. 
+<tag> Syntax </tag> cumprod ( <em>A</> ) 
+<tag> Description </tag>
+
+	cumprod computes the running, or cumulative product of the
+	input, <em>A</>. If the input is a rectangular matrix, then the
+	cumulative product is performed over the columns of the
+	matrix. 
+
+	Example:
+
+	<tscreen><verb>
+> a=1:4
+ a =
+        1          2          3          4  
+> cumprod (a)
+        1          2          6         24  
+> a = [1,2,3;4,5,6;7,8,9]
+ a =
+        1          2          3  
+        4          5          6  
+        7          8          9  
+> cumprod (a)
+        1          2          3  
+        4         10         18  
+       28         80        162  
+</verb></tscreen>
+
+ <tag>See Also</tag>   cumsum, prod, sum
+
+
+</descrip>

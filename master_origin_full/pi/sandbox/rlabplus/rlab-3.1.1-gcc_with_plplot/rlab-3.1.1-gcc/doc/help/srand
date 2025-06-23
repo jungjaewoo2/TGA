@@ -1,0 +1,66 @@
+  srand
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Seed the random number generator.
+
+      [1mSyntax[0m
+        srand ( )
+
+        srand ( [4mA[24m )
+
+        srand ( [4mSEED[24m )
+
+      [1mDescription[0m
+        Srand sets the seed for the random number generator.  srand()
+        sets the seed to the original value (the last value given to
+        srand, or the default value, 1).
+
+        srand( "clock" )' sets the seed based upon the machines clock
+        value. This provides users a way of picking a unique seed each
+        time.
+
+        Srand uses the RANLIB subroutine SETALL.
+
+
+     [1mSee Also[0m
+        rand
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

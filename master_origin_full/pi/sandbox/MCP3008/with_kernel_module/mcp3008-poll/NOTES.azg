@@ -1,0 +1,5 @@
+When using the sysfs interface, remember to either open/close the file handle between reads or reset the file location back to zero before each read.
+
+In C, something like this
+
+lseek(fd, 0, SEEK_SET)

@@ -1,0 +1,66 @@
+  require
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Specify program dependencies/requirements.
+
+      [1mSyntax[0m
+        require [4mNAME[0m
+
+      [1mDescription[0m
+        The require command takes Rfile names as operands, and checks
+        the workspace for a function variable called [4mNAME[24m. If that
+        function exists, then no action is taken. If the function does
+        not exist, then the file NAME.r is loaded.
+
+        More than one [4mNAME[24m can be given on the same line. Continuations
+        are not allowed.
+
+        [4mNAME[24m can contain the `.r' extension that distinguishes Rfiles
+        (by convention), or [4mNAME[24m can omit the `.r' extension. In either
+        case a workspace variable without the `.r' extension is checked
+        for.
+
+        Example:
+
+
+
+          > require roots poly.r bode
+
+
+
+
+     The require command syntax is identical to the rfile command, with
+     the obvious exception of the initial keyword.
+
+     The rules for searching the user's RLAB2_PATH are the same as those
+     used with the rfile command.
+
+
+     [1mSee Also[0m
+        rfile, load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

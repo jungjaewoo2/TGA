@@ -1,0 +1,11 @@
+plend:
+
+Synopsis: End the current plotting session.
+
+Syntax: plend ( )
+
+Description:
+
+	End the current plotting session. Closes all the plot-windows.
+
+See Also: plclose

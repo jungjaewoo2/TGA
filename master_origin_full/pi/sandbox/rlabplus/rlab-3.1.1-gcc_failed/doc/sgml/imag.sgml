@@ -1,0 +1,20 @@
+<sect> imag 
+<p>
+<descrip>
+<tag> Synopsis </tag> Imaginary part
+<tag> Syntax </tag> imag ( <em>A</> )
+<tag> Description </tag>
+
+	Imag returns the imaginary part of an <em>A</>.
+
+	Example:
+<tscreen><verb>
+> z = pi + 3*pi*1j
+            3.14 + 9.42i
+> imag(z)
+     9.42  
+</verb></tscreen>
+
+<tag>See Also</tag>   conj, real
+
+</descrip>

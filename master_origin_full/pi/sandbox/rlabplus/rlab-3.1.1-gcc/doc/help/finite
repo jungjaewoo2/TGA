@@ -1,0 +1,66 @@
+  finite
+  Builtin Function
+
+
+
+      [1mSynopsis[0m
+        Test variable for finite values.
+
+      [1mSyntax[0m
+        finite ( [4mA[24m )
+
+      [1mDescription[0m
+        finite returns a matrix, the same size as the input ([4mA[24m),
+        consisting of ones and zeros. The elements of the return matrix
+        are 1 if the corresponding value of [4mA[24m is finite, or zero if the
+        corresponding element of [4mA[24m is an Inf or a NaN.
+
+        Example:
+
+
+          > a = [1, inf(), 3; 4, 5, 6; inf(), 8, nan()]
+           a =
+                  1        inf          3
+                  4          5          6
+                inf          8  nan0x80000000
+          > finite (a)
+                  1          0          1
+                  1          1          1
+                  0          1          0
+
+
+
+
+     [1mSee Also[0m
+        isinf, isnan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

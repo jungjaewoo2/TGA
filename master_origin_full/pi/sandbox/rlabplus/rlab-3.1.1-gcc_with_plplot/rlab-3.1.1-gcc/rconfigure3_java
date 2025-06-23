@@ -1,0 +1,66 @@
+#!/bin/sh
+
+
+#
+# figure out 32/64 bit
+#
+HOSTTYPE=`uname -i`
+if [ "$HOSTTYPE" = "x86_64" ]; then
+  CPUINFO="64";
+else
+  CPUINFO="";
+fi
+
+#
+# figure out java library
+#
+JVMDFLT=`ls -1Ad /usr/lib${CPUINFO}/gcj* | tail -1`
+JVMS=`find /usr/lib${CPUINFO} -mount -name libjvm.so 2>/dev/null`
+JVMDIRS=`echo $JVMS | gawk '{gsub(/\/libjvm.so/,"",$0); print $0}'`
+#echo $JVMDFLT
+#echo $JVMS
+#echo $JVMDIRS
+if [ -n "$JVMS" ]; then
+	echo "These are the JVM's present"
+	j=0
+	for jvm in $JVMDIRS; do
+		let j=$j+1
+		echo "$j: $jvm/libjvm.so"
+	done
+	echo -n "Which one do you want to use (copy and paste the library you want here)? "
+	read -p "" CHOICE
+	JVM=`echo $CHOICE | gawk '{gsub(/\/libjvm.so/,"",$0); print $0}'`
+	[ -s ${JVM}/libjvm.so ]&& \
+		JAVAFLAG="--with-jvm=${JVM}"
+fi
+
+#
+# figure out if ngspice is present
+#
+dirs="/usr/lib${CPUINFO} /usr/local/lib${CPUINFO}"
+for dir in $dirs;
+do
+	if [ -h ${dir}/libngspice.so ]; then
+		SPICEFLAG="--with-ngspice=$dir"
+		break
+	fi
+done
+
+./configure \
+	${JAVAFLAG} \
+	${SPICEFLAG} \
+  --with-flex \
+  --with-bison \
+  --with-arpack \
+  --with-superlu \
+  --with-im \
+  --with-gphoto2 \
+	--with-plplot \
+	--enable-python \
+	--enable-glpk \
+	--with-suitesparse \
+
+
+
+
+make scanner

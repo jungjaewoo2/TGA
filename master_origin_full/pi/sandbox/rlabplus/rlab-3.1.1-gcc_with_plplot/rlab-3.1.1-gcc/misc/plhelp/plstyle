@@ -1,0 +1,15 @@
+plstyle:
+
+Synopsis: Control the line style for 2-dimensinal plots.
+
+Syntax: plstyle ( STYLE )
+
+Description:
+
+	Plstyle controls the line-style for 2-dimensional graphs.
+	STYLE can be: "line", "point", and "line-point". The argument
+	STYLE can be a vector of strings - in this case, the first
+	line uses the first line-style, the 2nd line uses the 2nd
+	line-style, and so-on. When all the line-styles have been
+	used, the next line uses the 1st line-style, and the process
+	starts all over again.

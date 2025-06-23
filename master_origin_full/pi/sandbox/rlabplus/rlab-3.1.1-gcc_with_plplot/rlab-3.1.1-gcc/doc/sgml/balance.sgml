@@ -1,0 +1,31 @@
+<sect> balance 
+<p>
+<descrip>
+<tag> Synopsis </tag> Balance a matrix for equal row and column norms. 
+<tag> Syntax </tag> balance ( <em>A</> )
+<tag> Description </tag>
+
+	Balance uses the LAPACK subroutines DGEBAL and ZGEBAL to
+	balance the input matrix so that the row and column norms are
+	approximately equal.
+
+	balance returns a list with elements <em>t</> and <em>ab</>.
+
+	Example:
+<tscreen><verb>
+> a
+        0          0          1          0  
+        0          0          0          1  
+       11         10          0          0  
+       10         11          0          0  
+> </ ab ; t /> = balance(a);
+> inv(t)*a*t - ab
+        0          0          0          0  
+        0          0          0          0  
+        0          0          0          0  
+        0          0          0          0  
+</verb></tscreen>
+
+	Only square matrices are allowed.
+
+</descrip>
